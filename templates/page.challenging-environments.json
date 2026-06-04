@@ -1,0 +1,199 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": true
+      }
+    },
+    "image_text_QGFYg4": {
+      "type": "image-text",
+      "blocks": {
+        "content_6ANtMq": {
+          "type": "content",
+          "settings": {
+            "title": "<em>Practical</em> solutions for challenging environments",
+            "title_size": "display",
+            "text": "In settings where behaviours, vulnerabilities, and complex needs must be carefully managed, the environment becomes a crucial part of care.\n\n\nOur furniture is developed specifically for these high-demand spaces, offering strength, stability, and reassurance for both users and staff. With a focus on durability, safety, and controlled comfort, each product is engineered to reduce risk without compromising on the quality of the space. \n\n\nThe result is a reliable, adaptable range that helps care providers maintain safe, calming environments that support positive outcomes and everyday wellbeing.",
+            "button_style": "secondary",
+            "button_text": "Get in touch",
+            "button_url": "shopify://pages/show-van"
+          }
+        },
+        "images_zLGb8j": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Bistro_Area_7_db797914-60d8-451f-bfa3-af94e9b6f83b.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "content_6ANtMq",
+        "images_zLGb8j"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "warm-stone",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "richtext_B4pri3": {
+      "type": "richtext",
+      "blocks": {
+        "heading_JRXgph": {
+          "type": "heading",
+          "settings": {
+            "text": "Carefully crafted to meet the unique demands of both care providers and the people they support.",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "button_EjdeRe": {
+          "type": "button",
+          "name": "Button",
+          "settings": {
+            "style": "primary",
+            "text": "Shop Challenging Environments Furniture & Furnishings",
+            "url": "shopify://collections/challenging-environments-furniture-furnishings",
+            "new_tab": false
+          },
+          "blocks": {}
+        },
+        "tagline_Gxj9Ak": {
+          "type": "tagline",
+          "disabled": true,
+          "settings": {
+            "content": "As specialist designers and manufacturers of furniture for challenging behaviour environments, our full collection is crafted to meet the demands of care providers and users. Beautifully designed with robust construction, our furniture includes key features such as piano hinges, rounded corners, impact-resistant edging, and anti-ligature properties, ensuring secure, durable, and reliable furniture suitable for any challenging environment.",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_JRXgph",
+        "button_EjdeRe",
+        "tagline_Gxj9Ak"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "green-01",
+        "enable_animation": true
+      }
+    },
+    "image_text_DLkDEt": {
+      "type": "image-text",
+      "blocks": {
+        "images_6Pag6P": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Anker.jpg",
+            "image_two": "shopify://shop_images/Untitled_-_2025-11-14T120439.933.png"
+          }
+        },
+        "content_EEQyVL": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "title_size": "xl",
+            "text": "As specialist designers and manufacturers of furniture for challenging behaviour environments, our full collection is crafted to meet the demands of care providers and users. Beautifully designed with robust construction, our furniture includes key features such as piano hinges, rounded corners, impact-resistant edging, and anti-ligature properties, ensuring secure, durable, and reliable furniture suitable for any challenging environment.\n\n\nFrom reinforced sofas to anti-ligature bedroom furniture and strong dining chairs, Furncare is a trusted supplier of special needs and autism furniture to challenging environments across the UK. We also provide interior design services and can cater for full fit-out projects.",
+            "button_style": "underline",
+            "button_text": "View our case studies",
+            "button_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/case-study"
+          }
+        }
+      },
+      "block_order": [
+        "images_6Pag6P",
+        "content_EEQyVL"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "featured_blocks_tJyBpX": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_TmGLtm": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/CAreTech_2.png",
+            "caption": ""
+          }
+        },
+        "block_c7iVjG": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/priory-logo.png",
+            "caption": ""
+          }
+        },
+        "block_3PK3kD": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/logo11_0_f83b4fa5-2505-4d9b-a5f4-c146e017546e.png",
+            "caption": ""
+          }
+        },
+        "block_9JDWVn": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Achieve-Together-Sized.png",
+            "caption": ""
+          }
+        },
+        "block_Y8CXfE": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Cygnet-Logo-CMYK.png",
+            "caption": ""
+          }
+        },
+        "block_JnUzMz": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/ivolve-og-image.png",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_TmGLtm",
+        "block_c7iVjG",
+        "block_3PK3kD",
+        "block_9JDWVn",
+        "block_Y8CXfE",
+        "block_JnUzMz"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "our trusted partners",
+        "padding": "default",
+        "layout": "line_grid"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_text_QGFYg4",
+    "richtext_B4pri3",
+    "image_text_DLkDEt",
+    "featured_blocks_tJyBpX"
+  ]
+}

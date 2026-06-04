@@ -1,0 +1,33 @@
+{%- liquid
+  assign class = class | default: ''
+-%}
+
+<uwp-layout-switcher
+  class="layout-switcher {{ class }}"
+  role="region"
+  aria-label="Layout switcher"
+  aria-roledescription="region"
+>
+  <div class="layout-switcher__label body-sm body-sm--bold">
+    {{ 'collection.view' | t }}:
+  </div>
+  <button
+    class="layout-switcher__button is-active"
+    type="button"
+    data-layout="grid-2"
+    aria-label="{{ 'collection.change_grid' | t }}"
+    aria-pressed="true"
+  >
+    {% render 'icons', icon: 'view-grid-2', class: 'layout-switcher__icon' %}
+  </button>
+
+  <button
+    class="layout-switcher__button"
+    type="button"
+    data-layout="grid-1"
+    aria-label="{{ 'collection.change_grid' | t }}"
+    aria-pressed="false"
+  >
+    {% render 'icons', icon: 'view-grid-1', class: 'layout-switcher__icon' %}
+  </button>
+</uwp-layout-switcher>

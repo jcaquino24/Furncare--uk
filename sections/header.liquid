@@ -1,0 +1,248 @@
+{%- liquid
+  assign support_links = section.blocks | where: 'type', 'support_link'
+  assign all_menu_promotions = section.blocks | where: 'type', 'menu_promotions'
+  assign is_transparent = false
+
+  if template.name == 'index' and section.settings.transparent
+    assign is_transparent = true
+  endif
+
+  if [request.page_type].metafields.custom.transparent_header == true
+    assign is_transparent = true
+  endif
+
+  render 'vite-tag' with '@sections/header.ts'
+  render 'vite-tag' with '@snippets/mobile-menu.ts'
+-%}
+
+<uwp-header
+  class="header__inner{% if is_transparent %} is-transparent{% endif %}"
+  role="region"
+  aria-label="Header"
+  aria-roledescription="region"
+>
+  <div class="header__container container">
+    <button
+      class="header__mobile-menu-wrapper hide-on-desktop"
+      type="button"
+      js-header="open-mobile-menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu-wrapper"
+    >
+      <p class="visually-hidden">Toggle menu</p>
+
+      {% render 'icons', icon: 'menu' %}
+      {% render 'icons', icon: 'close' %}
+    </button>
+
+    <div class="header__top-bar">
+      {% if section.settings.logo != blank %}
+        <a
+          class="header__logo"
+          href="{{ routes.root_url }}"
+          aria-label="Furncare Homepage"
+        >
+          {{ section.settings.logo }}
+        </a>
+      {% endif %}
+
+      {% if support_links.size > 0 %}
+        <div class="header__support-links hide-on-mobile">
+          {% for block in support_links %}
+            <a class="header__support-link" href="{{ block.settings.url }}">
+              {% if block.settings.icon != blank %}
+                {{ block.settings.icon }}
+              {% endif %}
+
+              {% if block.settings.label != blank %}
+                {{ block.settings.label }}
+              {% endif %}
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="header__bottom-bar">
+      {% if section.settings.menu != blank %}
+        {% render 'megamenu',
+          menu: linklists[section.settings.menu],
+          all_menu_promotions: all_menu_promotions,
+          support_links: support_links,
+          hide_on_mobile: true
+        %}
+      {% endif %}
+
+      <div class="header__actions">
+        <button
+          class="header__action header__action--search hide-on-mobile"
+          type="button"
+          js-header="open-search"
+        >
+          <span class="visually-hidden">Search</span>
+          {% render 'icons', icon: 'search' %}
+        </button>
+
+        {% render 'input-search',
+          id: 'header-search',
+          placeholder: 'What are you looking for?',
+          hide_on_mobile: true
+        %}
+
+        {% comment @TODO: Add wishlist back in once we have a wishlist feature %}
+        <a class="header__action hide-on-mobile" href="#" aria-label="Wishlist">
+          {% render 'icons', icon: 'wishlist' %}
+        </a>
+        {% endcomment %}
+
+        <a
+          class="header__action"
+          href="{{ routes.account_url }}"
+          aria-label="Account"
+        >
+          {% render 'icons', icon: 'account' %}
+        </a>
+
+        {% liquid
+          assign upsell_product_obj = settings.cart_upsell.product
+          if upsell_product_obj != blank and upsell_product_obj.value
+            assign upsell_product_obj = upsell_product_obj.value
+          endif
+        %}
+        <div
+          data-product-id="{{ upsell_product_obj.id }}"
+          class="header__action header__action--cart"
+        >
+          <uwp-minicart
+            open="false"
+            role="region"
+            aria-label="Minicart"
+            aria-roledescription="region"
+          >
+          </uwp-minicart>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container header__mobile-search hide-on-desktop">
+    {% render 'input-search',
+      id: 'header-search-mobile',
+      placeholder: 'What are you looking for?'
+    %}
+  </div>
+</uwp-header>
+
+{% render 'mobile-menu',
+  menu: linklists[section.settings.menu],
+  all_menu_promotions: all_menu_promotions,
+  support_links: support_links
+%}
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "header",
+  "class": "header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "transparent",
+      "label": "Make header transparent",
+      "info": "Homepage only. For other pages find the \"Transparent Header\" metafield on the page you want to make it transparent on.",
+      "default": false
+    },
+    {
+      "type": "html",
+      "id": "logo",
+      "label": "Logo SVG Code"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Support link",
+      "type": "support_link",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "html",
+          "id": "icon",
+          "label": "Icon SVG Code"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        }
+      ]
+    },
+    {
+      "name": "Menu Promotions",
+      "type": "menu_promotions",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title",
+          "label": "Menu Title",
+          "info": "Add the menu title to add this package to (case sensitive)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "metaobject",
+          "id": "package",
+          "label": "Package",
+          "metaobject_type": "menu_package"
+        },
+        {
+          "type": "number",
+          "id": "package_limit",
+          "label": "Package Item Limit",
+          "default": 2
+        },
+        {
+          "type": "metaobject",
+          "id": "promo_banner",
+          "label": "Promo Banner",
+          "metaobject_type": "menu_promo_banner"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_overlay",
+          "label": "Show overlay",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "overlay_style",
+          "label": "Overlay style",
+          "default": "light",
+          "options": [
+            {
+              "value": "light",
+              "label": "Light"
+            },
+            {
+              "value": "dark",
+              "label": "Dark"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,305 @@
+{% doc %}
+  @prompt
+    Add a button that when clicked smoothly scrolls down to a form section at the bottom of the page using anchor/scroll-to functionality. The button should be styled to match the existing theme design and include a customisable label and target anchor ID.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-scroll-button-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-scroll-button-link-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    border: {{ block.settings.button_border_width }}px solid {{ block.settings.button_border_color }};
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: {{ block.settings.button_font_weight }};
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+  }
+
+  .ai-scroll-button-link-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+    border-color: {{ block.settings.button_hover_border_color }};
+    transform: translateY(-2px);
+  }
+
+  .ai-scroll-button-icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-scroll-button-link-{{ ai_gen_id }}:hover .ai-scroll-button-icon-{{ ai_gen_id }} {
+    transform: translateY(4px);
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-scroll-button-{{ ai_gen_id }} {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+<smooth-scroll-button-{{ ai_gen_id }}
+  class="ai-scroll-button-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <a
+    href="#{{ block.settings.target_anchor_id }}"
+    class="ai-scroll-button-link-{{ ai_gen_id }}"
+    data-scroll-target="{{ block.settings.target_anchor_id }}"
+    aria-label="{{ block.settings.button_label | escape }}"
+  >
+    <span>{{ block.settings.button_label }}</span>
+    {% if block.settings.show_icon %}
+      <svg
+        class="ai-scroll-button-icon-{{ ai_gen_id }}"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <polyline points="19 12 12 19 5 12"></polyline>
+      </svg>
+    {% endif %}
+  </a>
+</smooth-scroll-button-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class SmoothScrollButton{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.button = this.querySelector('.ai-scroll-button-link-{{ ai_gen_id }}');
+        if (this.button) {
+          this.setupScrollBehavior();
+        }
+      }
+
+      setupScrollBehavior() {
+        this.button.addEventListener('click', (event) => {
+          event.preventDefault();
+          
+          const targetId = this.button.getAttribute('data-scroll-target');
+          if (!targetId) return;
+
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            const offset = {{ block.settings.scroll_offset }};
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      }
+    }
+
+    customElements.define('smooth-scroll-button-{{ ai_gen_id }}', SmoothScrollButton{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Scroll to section button",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Button content"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Scroll to form"
+    },
+    {
+      "type": "text",
+      "id": "target_anchor_id",
+      "label": "Target anchor ID",
+      "info": "Enter the ID of the section to scroll to (without #). Example: contact-form"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icon",
+      "label": "Show down arrow icon",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "scroll_offset",
+      "label": "Scroll offset",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80,
+      "info": "Space from top of viewport when scrolled"
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Border color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border_color",
+      "label": "Hover border color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "button_font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Vertical padding",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 16,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Scroll to section button"
+    }
+  ]
+}
+{% endschema %}

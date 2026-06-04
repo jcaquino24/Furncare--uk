@@ -1,0 +1,379 @@
+{% liquid
+  assign review_blocks = section.blocks | where: 'type', 'review'
+  assign show_nav = false
+  assign use_swiper = false
+
+  assign fallback_section_id = section.id | default: 'review-blocks'
+  if fallback_section_id == blank or fallback_section_id == empty
+    assign fallback_section_id = 'review-blocks'
+  endif
+
+  if review_blocks.size > 0
+    assign use_swiper = true
+  endif
+
+  if use_swiper
+    assign show_nav = true
+  endif
+%}
+
+<uwp-review-blocks
+  class="review-blocks colour-scheme--{{ section.settings.colour_scheme }} {% if show_nav %}review-blocks--has-swiper{% endif %}"
+  id="{{ fallback_section_id }}"
+  data-section-id="{{ fallback_section_id }}"
+  style="--section-padding: var({{ section.settings.section_padding }});"
+  role="region"
+  aria-label="Review blocks"
+  aria-roledescription="region"
+>
+  <div class="review-blocks__container container">
+    {% if section.settings.title != blank %}
+      <div class="review-blocks__header">
+        {% render 'title-with-nav',
+          title: section.settings.title,
+          heading_level: 'h2',
+          heading_style: 'eyebrow-sm',
+          show_nav: show_nav,
+          nav_class: 'title-with-nav__nav',
+          section_id: fallback_section_id
+        %}
+      </div>
+    {% endif %}
+
+    <div class="review-blocks__content">
+      {% if review_blocks.size > 0 %}
+        <div class="review-blocks__layout">
+          {% if section.settings.show_summary %}
+            <div class="review-blocks__summary-wrapper">
+              <div class="review-blocks__summary">
+                {% if section.settings.summary_title != blank %}
+                  <h3 class="review-blocks__summary-title title-sm">
+                    {{ section.settings.summary_title }}
+                  </h3>
+                {% endif %}
+                <div class="review-blocks__summary-rating">
+                  {% assign rating = section.settings.summary_rating
+                    | default: 5
+                  %}
+                  {% for i in (1..5) %}
+                    <span
+                      class="review-blocks__summary-star {% if i <= rating %}review-blocks__summary-star--filled{% endif %}"
+                      aria-hidden="true"
+                    >
+                      {% render 'icons', icon: 'star' %}
+                    </span>
+                  {% endfor %}
+                  <span class="sr-only">{{ rating }} out of 5 stars</span>
+                </div>
+                {% if section.settings.summary_text != blank %}
+                  <p class="review-blocks__summary-text body-md">
+                    {{ section.settings.summary_text }}
+                  </p>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+
+          <div class="review-blocks__reviews-wrapper">
+            {% if use_swiper %}
+              <swiper-container
+                class="review-blocks__swiper"
+                slides-per-view="1.5"
+                space-between="12"
+                navigation-prev-el="#swiper-button-prev-{{ fallback_section_id }}"
+                navigation-next-el="#swiper-button-next-{{ fallback_section_id }}"
+                breakpoints='
+                  {
+                    "768": {
+                      "spaceBetween": 20,
+                      "slidesPerView": 3
+                    },
+                    "1440": {
+                      "spaceBetween": 24,
+                      "slidesPerView": 4.25
+                    }
+                  }
+                '
+                role="region"
+                aria-label="Review blocks carousel"
+                aria-roledescription="carousel"
+              >
+                {% for block in review_blocks %}
+                  <swiper-slide class="review-blocks__slide">
+                    {% render 'review-card',
+                      rating: block.settings.rating,
+                      headline: block.settings.headline,
+                      body: block.settings.body,
+                      reviewer_name: block.settings.reviewer_name,
+                      meta: block.settings.meta,
+                      block_id: block.id,
+                      shopify_attributes: block.shopify_attributes
+                    %}
+                  </swiper-slide>
+                {% endfor %}
+              </swiper-container>
+            {% else %}
+              <div class="review-blocks__grid review-blocks__grid--{{ review_blocks.size }}">
+                {% for block in review_blocks
+                  limit: section.settings.review_limit
+                %}
+                  {% render 'review-card',
+                    rating: block.settings.rating,
+                    headline: block.settings.headline,
+                    body: block.settings.body,
+                    reviewer_name: block.settings.reviewer_name,
+                    meta: block.settings.meta,
+                    block_id: block.id,
+                    shopify_attributes: block.shopify_attributes
+                  %}
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% else %}
+        <div class="review-blocks__fallback">
+          <p>
+            {{
+              section.settings.fallback_message
+              | default: 'No reviews available at this time.'
+            }}
+          </p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</uwp-review-blocks>
+
+{% schema %}
+{
+  "name": "Review blocks",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Customer Reviews"
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section padding",
+      "default": "--spacing-2xl",
+      "options": [
+        {
+          "value": "--spacing-md",
+          "label": "Narrow"
+        },
+        {
+          "value": "--spacing-2xl",
+          "label": "Default"
+        },
+        {
+          "value": "--spacing-4xl",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "colour_scheme",
+      "label": "Colour scheme",
+      "default": "base-white-01",
+      "options": [
+        {
+          "value": "base-white-01",
+          "label": "Base white 01"
+        },
+        {
+          "value": "base-white-02",
+          "label": "Base white 02"
+        },
+        {
+          "value": "warm-stone",
+          "label": "Warm stone"
+        },
+        {
+          "value": "duck-egg",
+          "label": "Duck Egg"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Summary Card"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_summary",
+      "label": "Show summary card",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "summary_label",
+      "label": "Summary label",
+      "default": "Loved by over 10,000 customers",
+      "info": "Optional label above the summary (e.g., 'Loved by over 10,000 customers')"
+    },
+    {
+      "type": "text",
+      "id": "summary_title",
+      "label": "Summary title",
+      "default": "Excellent",
+      "info": "Overall rating headline (e.g., 'Excellent', 'Great', 'Good')"
+    },
+    {
+      "type": "range",
+      "id": "summary_rating",
+      "label": "Summary rating",
+      "min": 1,
+      "max": 5,
+      "step": 0.5,
+      "default": 5,
+      "info": "Overall star rating (1-5 stars)"
+    },
+    {
+      "type": "text",
+      "id": "summary_text",
+      "label": "Summary text",
+      "default": "Based on 1,234 reviews",
+      "info": "Text below the rating (e.g., 'Based on X reviews')"
+    },
+    {
+      "type": "header",
+      "content": "Reviews"
+    },
+    {
+      "type": "text",
+      "id": "fallback_message",
+      "label": "Fallback message",
+      "default": "No reviews available at this time.",
+      "info": "Message shown when no reviews are present"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Star rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5,
+          "info": "Number of stars (1-5)"
+        },
+        {
+          "type": "text",
+          "id": "headline",
+          "label": "Review headline",
+          "default": "Great product!"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "body",
+          "label": "Review body",
+          "default": "This product exceeded my expectations. Highly recommend!",
+          "info": "Short review text (will be truncated if too long)"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer name",
+          "default": "John D."
+        },
+        {
+          "type": "text",
+          "id": "meta",
+          "label": "Meta text",
+          "default": "3 days ago",
+          "info": "Optional meta information (e.g., '3 days ago', 'Verified purchase')"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Review blocks",
+      "settings": {
+        "title": "Customer Reviews",
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "base-white-01",
+        "show_summary": true,
+        "summary_label": "Loved by over 10,000 customers",
+        "summary_title": "Excellent",
+        "summary_rating": 5,
+        "summary_text": "Based on 1,234 reviews",
+        "fallback_message": "No reviews available at this time."
+      },
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Amazing quality!",
+            "body": "This product is exactly what I was looking for. The quality is outstanding and it arrived quickly.",
+            "reviewer_name": "Sarah M.",
+            "meta": "2 days ago"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Highly recommend",
+            "body": "Great value for money. Very satisfied with my purchase.",
+            "reviewer_name": "Michael T.",
+            "meta": "5 days ago"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 4,
+            "headline": "Good product",
+            "body": "Works well and looks great. Would buy again.",
+            "reviewer_name": "Emma L.",
+            "meta": "1 week ago"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Perfect!",
+            "body": "Exceeded expectations. Fast shipping and excellent customer service.",
+            "reviewer_name": "David K.",
+            "meta": "2 weeks ago"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Love it!",
+            "body": "This is my second purchase. Can't recommend enough!",
+            "reviewer_name": "Lisa P.",
+            "meta": "3 weeks ago"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 4,
+            "headline": "Great value",
+            "body": "Good quality product at a fair price. Very happy with my purchase.",
+            "reviewer_name": "Robert H.",
+            "meta": "1 month ago"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

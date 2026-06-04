@@ -1,0 +1,288 @@
+{% doc %}
+  @prompt
+    make a rich text block which has the form app embedded on the right
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-richtext-form-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-richtext-form__container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.gap }}px;
+    align-items: start;
+  }
+
+  .ai-richtext-form__content-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    line-height: 1.6;
+  }
+
+  .ai-richtext-form__content-{{ ai_gen_id }} h1,
+  .ai-richtext-form__content-{{ ai_gen_id }} h2,
+  .ai-richtext-form__content-{{ ai_gen_id }} h3,
+  .ai-richtext-form__content-{{ ai_gen_id }} h4,
+  .ai-richtext-form__content-{{ ai_gen_id }} h5,
+  .ai-richtext-form__content-{{ ai_gen_id }} h6 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-richtext-form__content-{{ ai_gen_id }} p {
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  .ai-richtext-form__content-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-richtext-form__content-{{ ai_gen_id }} ul,
+  .ai-richtext-form__content-{{ ai_gen_id }} ol {
+    margin-top: 0;
+    margin-bottom: 16px;
+    padding-left: 24px;
+  }
+
+  .ai-richtext-form__content-{{ ai_gen_id }} li {
+    margin-bottom: 8px;
+  }
+
+  .ai-richtext-form__content-{{ ai_gen_id }} a {
+    color: {{ block.settings.link_color }};
+    text-decoration: underline;
+  }
+
+  .ai-richtext-form__content-{{ ai_gen_id }} a:hover {
+    opacity: 0.8;
+  }
+
+  .ai-richtext-form__form-{{ ai_gen_id }} {
+    background-color: {{ block.settings.form_background }};
+    padding: {{ block.settings.form_padding }}px;
+    border-radius: {{ block.settings.form_border_radius }}px;
+    min-height: 200px;
+  }
+
+  .ai-richtext-form__html-content-{{ ai_gen_id }} {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-richtext-form__container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.mobile_gap }}px;
+    }
+
+    .ai-richtext-form__content-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_text_size }}px;
+    }
+
+    .ai-richtext-form__form-{{ ai_gen_id }} {
+      order: {{ block.settings.mobile_form_position }};
+    }
+
+    .ai-richtext-form__content-{{ ai_gen_id }} {
+      order: {{ block.settings.mobile_content_position }};
+    }
+  }
+{% endstyle %}
+
+<div class="ai-richtext-form-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-richtext-form__container-{{ ai_gen_id }}">
+    <div class="ai-richtext-form__content-{{ ai_gen_id }}">
+      {% if block.settings.content != blank %}
+        {{ block.settings.content }}
+      {% else %}
+        <h2>Add your content here</h2>
+        <p>Use the rich text editor to add headings, paragraphs, lists, and links to complement your form.</p>
+      {% endif %}
+    </div>
+
+    <div class="ai-richtext-form__form-{{ ai_gen_id }}">
+      {% if block.settings.form_embed != blank %}
+        <div class="ai-richtext-form__html-content-{{ ai_gen_id }}">
+          {{ block.settings.form_embed }}
+        </div>
+      {% else %}
+        <div style="padding: 40px; text-align: center; color: #999;">
+          <p style="margin: 0; font-size: 14px;">Next, paste your form app embed code in the settings</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Rich text with form",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Rich text content",
+      "default": "<h2>Get in touch</h2><p>Have questions about our furniture? Fill out the form and our team will get back to you within 24 hours.</p><ul><li>Expert advice on product selection</li><li>Custom specifications available</li><li>Trade and bulk order enquiries welcome</li></ul>"
+    },
+    {
+      "type": "html",
+      "id": "form_embed",
+      "label": "Form embed code"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap between columns",
+      "min": 20,
+      "max": 80,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Mobile gap",
+      "min": 20,
+      "max": 60,
+      "step": 10,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "select",
+      "id": "mobile_form_position",
+      "label": "Mobile form position",
+      "options": [
+        {
+          "value": "1",
+          "label": "Top"
+        },
+        {
+          "value": "2",
+          "label": "Bottom"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_position",
+      "label": "Mobile content position",
+      "options": [
+        {
+          "value": "1",
+          "label": "Top"
+        },
+        {
+          "value": "2",
+          "label": "Bottom"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "header",
+      "content": "Text style"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_size",
+      "label": "Mobile text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link color",
+      "default": "#000f9f"
+    },
+    {
+      "type": "header",
+      "content": "Form style"
+    },
+    {
+      "type": "color",
+      "id": "form_background",
+      "label": "Form background",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "range",
+      "id": "form_padding",
+      "label": "Form padding",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "form_border_radius",
+      "label": "Form border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich text with form"
+    }
+  ]
+}
+{% endschema %}

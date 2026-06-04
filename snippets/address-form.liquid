@@ -1,0 +1,110 @@
+{% liquid
+  assign address = address
+%}
+{% form 'customer_address', address, class: 'addresses__form' %}
+  {% if form.posted_successfully? %}
+    <div class="addresses__form__success">
+      {{ 'customer.addresses.address_updated' | t }}
+    </div>
+  {% endif %}
+
+  {% if form.errors %}
+    <div class="addresses__form__errors">
+      {{ form.errors | default_errors }}
+    </div>
+  {% endif %}
+
+  <div class="addresses__form__input-wrapper addresses__form__input-wrapper--two-columns">
+    <div>
+      <label for="firstName-{{ form.id }}">{{ 'forms.first_name' | t }}</label>
+      <input
+        type="text"
+        name="address[first_name]"
+        id="firstName-{{ form.id }}"
+        value="{{ form.first_name }}"
+      >
+    </div>
+
+    <div>
+      <label for="lastName-{{ form.id }}">{{ 'forms.last_name' | t }}</label>
+      <input
+        type="text"
+        name="address[last_name]"
+        id="lastName-{{ form.id }}"
+        value="{{ form.last_name }}"
+      >
+    </div>
+  </div>
+
+  <div class="addresses__form__input-wrapper">
+    <label for="country-{{ form.id }}">{{ 'forms.country' | t }}</label>
+    <select
+      id="country-{{ form.id }}"
+      name="address[country]"
+      data-default="{{ form.country }}"
+    >
+      {{ country_option_tags }}
+    </select>
+  </div>
+
+  <div class="addresses__form__input-wrapper">
+    <label for="province-{{ form.id }}">{{ 'forms.province' | t }}</label>
+    <select
+      id="province-{{ form.id }}"
+      name="address[province]"
+      data-default="{{ form.province }}"
+    ></select>
+  </div>
+
+  <div class="addresses__form__input-wrapper">
+    <label for="address1-{{ form.id }}">{{ 'forms.address1' | t }}</label>
+    <input
+      type="text"
+      name="address[address1]"
+      id="address1-{{ form.id }}"
+      value="{{ form.address1 }}"
+    >
+  </div>
+
+  <div class="addresses__form__input-wrapper">
+    <label for="address2-{{ form.id }}">{{ 'forms.address2' | t }}</label>
+    <input
+      type="text"
+      name="address[address2]"
+      id="address2-{{ form.id }}"
+      value="{{ form.address2 }}"
+    >
+  </div>
+
+  <div class="addresses__form__input-wrapper addresses__form__input-wrapper--two-columns">
+    <div>
+      <label for="city-{{ form.id }}">{{ 'forms.city' | t }}</label>
+      <input
+        type="text"
+        name="address[city]"
+        id="city-{{ form.id }}"
+        value="{{ form.city }}"
+      >
+    </div>
+    <div>
+      <label for="zip-{{ form.id }}">{{ 'forms.postal_code' | t }}</label>
+      <input
+        type="text"
+        name="address[zip]"
+        id="zip-{{ form.id }}"
+        value="{{ form.zip }}"
+      >
+    </div>
+  </div>
+
+  <div class="addresses__form__input-wrapper addresses__form__input-wrapper--checkbox">
+    {{ form.set_as_default_checkbox }}
+    <label for="address_default_address_{{ form.id }}">
+      {{- 'customer.addresses.set_default' | t -}}
+    </label>
+  </div>
+
+  <button class="addresses__form__submit-button" type="submit">
+    {{ 'customer.addresses.submit_button' | t }}
+  </button>
+{% endform %}

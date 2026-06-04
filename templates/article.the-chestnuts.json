@@ -1,0 +1,658 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_video_banner_Mx3q8g": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_8TMHFP": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "case study",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_DXxf3y": {
+          "type": "title",
+          "settings": {
+            "text": "The Chestnuts",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_TY8nED": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_GeUmxJ": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_aDpXic": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_8TMHFP",
+        "title_DXxf3y",
+        "button_TY8nED",
+        "card_GeUmxJ",
+        "card_aDpXic"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 600,
+        "height_mobile": 430,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Lounge_25_of_53_8f00827e-69bb-44d0-9a87-b636c9349e84.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(54deg, rgba(255, 250, 99, 1), rgba(38, 37, 32, 0.4) 1%)",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_PhprEj": {
+      "type": "richtext",
+      "blocks": {
+        "heading_mYLH3K": {
+          "type": "heading",
+          "settings": {
+            "text": "The Chestnuts Care Home transformed with stylish new extension",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_LFtXUT": {
+          "type": "tagline",
+          "settings": {
+            "content": "Independent residential care home ‘<a href=\"https://www.chestnutscarehome.com/\">The Chestnuts</a>’ has undergone a major expansion, all furnished by Furncare. Owner for over two decades, Arnas Mauremootoo, invested in the latest phase of works to add eleven further bedrooms, a luxury lounge and dining room to transform the property. A spacious new reception area has also been added.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_mYLH3K",
+        "tagline_LFtXUT"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "featured_blocks_QcyUqa": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_WB6nUy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Reception_16_of_39.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_FtmPpy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Reception_19_of_39.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_AVijMm": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Reception_26_of_39.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_URpxKx": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Reception_30_of_39.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_6ywDUB": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bed_One_22_of_33.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_yDAmiw": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bed_One_20_of_33.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_yV3p8h": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bed_One_18_of_33.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_ULB7yp": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bed_One_29_of_33.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_qDha6W": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bed_Three_15_of_21.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_K888tP": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bed_Three_18_of_21.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_dj6J4q": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bed_Two_25_of_32.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_eh8MAq": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bed_Two_29_of_32.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_CaQpeY": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Exterior_and_Garden_Room_3_of_18.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_pKJkqw": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_22_of_53.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_E9iTg6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_24_of_53.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_N9zzF7": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_26_of_53.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_YHRjrC": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_31_of_53.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_eTkFgf": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_43_of_53.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_hdmmHq": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/TV_Lounge_20_of_43.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_36qbcH": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/TV_Lounge_23_of_43.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_aT43GB": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/TV_Lounge_33_of_43_copy.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_ry6fYT": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/TV_Lounge_31_of_43.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_WB6nUy",
+        "block_FtmPpy",
+        "block_AVijMm",
+        "block_URpxKx",
+        "block_6ywDUB",
+        "block_yDAmiw",
+        "block_yV3p8h",
+        "block_ULB7yp",
+        "block_qDha6W",
+        "block_K888tP",
+        "block_dj6J4q",
+        "block_eh8MAq",
+        "block_CaQpeY",
+        "block_pKJkqw",
+        "block_E9iTg6",
+        "block_N9zzF7",
+        "block_YHRjrC",
+        "block_eTkFgf",
+        "block_hdmmHq",
+        "block_36qbcH",
+        "block_aT43GB",
+        "block_ry6fYT"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "",
+        "padding": "wide",
+        "layout": "line_grid",
+        "enable_lightbox": true
+      }
+    },
+    "richtext_EW6cqY": {
+      "type": "richtext",
+      "blocks": {
+        "heading_C9ihxn": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Team Effort",
+            "heading_level": "h2",
+            "heading_style": "title-sm"
+          },
+          "blocks": {}
+        },
+        "tagline_JPEfFQ": {
+          "type": "tagline",
+          "settings": {
+            "content": "The Furncare team including Sheldon Southall, Declan Turner, Arnie Goodenough and Jade Eaglen have all contributed to The Chestnuts success story since receiving the first order in 2016. The latest chapter started in the Spring of 2024 when Declan and Arnie met with Arnas and deputy manager Stacey at the home. A few days later, Arnie returned with Furncare Project Design Manager Jade to discuss the brief, identify the interior themes and preferred fabrics.",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_BbWT6G": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "It was imperative to maintain the high standards of quality and style, yet still work to a set budget and specific lead time as the building works progressed.",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        },
+        "button_T6qrbf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_C9ihxn",
+        "tagline_JPEfFQ",
+        "tagline_BbWT6G",
+        "button_T6qrbf"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "richtext_8A8XFb": {
+      "type": "richtext",
+      "blocks": {
+        "heading_pynaTk": {
+          "type": "heading",
+          "settings": {
+            "text": "“You’ve managed to really understand what we are after and have transformed our thoughts into something really special.”",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_MVeU86": {
+          "type": "tagline",
+          "settings": {
+            "content": "Arnas Mauremootoo, Owner, The Chestnuts",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_8YkTbQ": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_pynaTk",
+        "tagline_MVeU86",
+        "button_8YkTbQ"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_text_Rr8iJJ": {
+      "type": "image-text",
+      "blocks": {
+        "images_NXFXtC": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Bed_Two_14_of_32.jpg",
+            "image_two": "shopify://shop_images/Bed_Three_15_of_21.jpg"
+          }
+        },
+        "content_c9CaD6": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "title_size": "xl",
+            "text": "Meeting all the quality, style and value requirements, the Furncare Liberta Vie ‘Grandios’ and ‘Remini’ on-demand stock ranges were ideal. Although available within just five days, installation was scheduled with a seven week lead time to synchronise with construction and decorating schedules.\n\nHighest Rating Possible\nLiberta Vie is a Collection of pre-designed, coordinated room themes. Grandios features quality cabinet furniture, seating and soft furnishings. The upholstery chosen features calm, neutral tones with rust highlights which give the rooms a warm, homely appeal.\n\nThe choice and flexibility within the Furncare on-demand ranges enables customers to select additional and alternative products from stock to tailor-make their ideal interiors. Karsson cabinetry was chosen at The Chestnuts as the clean lines and contemporary style of the wardrobes and drawer units perfectly complemented the look and feel Arnas was after.\n\nRemini is the latest award-winning Furncare dementia range. Having achieved the highest rating possible from The University of Stirling Dementia Services Development Centre (DSDC), Remini has become a popular bedroom and communal space design solution for dementia units across the UK. It was launched exclusively by Furncare in March this year and accredited with A1 and Gold Standard ratings by the DSDC in May.\n\nWith the first Chestnuts residents now comfortably settled in their new rooms, Furncare’s Project Design Manager, Jade Eaglen, is delighted to see the project reach such a successful and hassle-free conclusion.",
+            "button_style": "underline",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_NXFXtC",
+        "content_c9CaD6"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-4xl"
+      }
+    },
+    "richtext_znBbzx": {
+      "type": "richtext",
+      "blocks": {
+        "heading_qBVQQe": {
+          "type": "heading",
+          "settings": {
+            "text": "“Our Liberta Vie Collection features no less than 14 different themes and styles. All can be tailored to suit specific requirements, and that’s how we managed to create such exclusive, stylish environments for Arnas and his team at The Chestnuts.”",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_DLcG7y": {
+          "type": "tagline",
+          "settings": {
+            "content": "Jade Eaglen, Furncare Project Design Manager",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_bKjrMf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_qBVQQe",
+        "tagline_DLcG7y",
+        "button_bKjrMf"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_video_banner_xWTgmR": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_YJpC8H": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "text": "Retirement furniture",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_qDHCNx": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "text": "Designed for Comfort, Built for <em>Care</em>.",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_GDbKwj": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_e3GTdX": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_UehPPd": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_YJpC8H",
+        "title_qDHCNx",
+        "button_GDbKwj",
+        "card_e3GTdX",
+        "card_UehPPd"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Exterior_and_Garden_Room_13_of_18.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "linear-gradient(320deg, rgba(255, 250, 99, 0.2), rgba(203, 68, 194, 1), rgba(255, 250, 99, 0))",
+        "colour_scheme": "light",
+        "content_position": "center-bottom",
+        "content_alignment": "center"
+      }
+    },
+    "product_blocks_hr4bkw": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_HdNPmE": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "the-3p-fulfilled-snowboard",
+              "the-collection-snowboard-liquid",
+              "the-inventory-not-tracked-snowboard-3",
+              "the-complete-snowboard",
+              "the-compare-at-price-snowboard"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_HdNPmE"
+      ],
+      "disabled": true,
+      "name": "Product blocks",
+      "settings": {
+        "title": "Products featured in this case study",
+        "section_padding": "--spacing-2xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_video_banner_Mx3q8g",
+    "richtext_PhprEj",
+    "featured_blocks_QcyUqa",
+    "richtext_EW6cqY",
+    "richtext_8A8XFb",
+    "image_text_Rr8iJJ",
+    "richtext_znBbzx",
+    "image_video_banner_xWTgmR",
+    "product_blocks_hr4bkw"
+  ]
+}

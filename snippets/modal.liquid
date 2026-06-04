@@ -1,0 +1,46 @@
+<uwp-modal
+  modal-name="{{ modal_name }}"
+  class="modal"
+  aria-hidden="true"
+  role="region"
+  aria-label="Modal"
+  aria-roledescription="modal"
+  aria-labelledby="modalTitle"
+>
+  {% unless content == blank %}
+    {% comment %} Overlay element {% endcomment %}
+    <div class="modal__overlay" tabindex="-1" data-close-modal></div>
+
+    {% comment %} Main dialog component {% endcomment %}
+    <dialog
+      class="modal__container"
+      role="dialog"
+      aria-modal="true"
+      js-uwp-modal="modal"
+      {% unless title == blank %}
+        aria-labelledby="modalTitle"
+      {% else %}
+        aria-label="{{ 'accessibility.modal_element' | t }}"
+      {% endunless %}
+    >
+      <div class="modal__container-content">
+        <button
+          class="modal__close-button"
+          data-close-modal
+          type="button"
+          aria-label="{{ 'accessibility.close_dialog' | t }}"
+        >
+          {% render 'icons', icon: 'close' %}
+        </button>
+        {% unless title == blank %}
+          <div class="modal__header">
+            <h2 id="modalTitle" class="modal__title">{{ title }}</h2>
+          </div>
+        {% endunless %}
+        <div class="modal__content">
+          {{ content }}
+        </div>
+      </div>
+    </dialog>
+  {% endunless %}
+</uwp-modal>

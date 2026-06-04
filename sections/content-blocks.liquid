@@ -1,0 +1,609 @@
+{% liquid
+  assign tab1_images = section.blocks | where: 'type', 'tab1'
+  assign tab2_images = section.blocks | where: 'type', 'tab2'
+  assign has_tabs = false
+
+  assign fallback_section_id = section.id | default: 'content-blocks'
+  if fallback_section_id == blank or fallback_section_id == empty
+    assign fallback_section_id = 'content-blocks'
+  endif
+
+  if tab1_images.size > 0 and tab2_images.size > 0 and section.settings.tab1_title != blank and section.settings.tab1_handle != blank and section.settings.tab2_title != blank and section.settings.tab2_handle != blank
+    assign has_tabs = true
+  endif
+
+  render 'vite-tag' with '@sections/content-blocks.ts'
+%}
+
+{% capture tabs_html %}
+  {% if has_tabs %}
+
+    {% assign attributes = 'js-content-blocks="tab-trigger" data-tab="tab1" data-colour-scheme="' | append: section.settings.tab1_colour_scheme | append: '"' %}
+    {% render 'button',
+      class: 'is-active',
+      label: section.settings.tab1_title,
+      style: 'underline',
+      attributes: attributes
+    %}
+    
+    {% assign attributes = 'js-content-blocks="tab-trigger" data-tab="tab2" data-colour-scheme="' | append: section.settings.tab2_colour_scheme | append: '"' %}
+    {% render 'button',
+      label: section.settings.tab2_title,
+      style: 'underline',
+      attributes: attributes
+    %}
+  {% endif %}
+{% endcapture %}
+
+{% assign show_nav = false %}
+{% if tab1_images.size > 4 or tab2_images.size > 4 %}
+  {% assign show_nav = true %}
+{% endif %}
+
+{% assign title_classes = 'title-with-nav__nav' %}
+{% if show_nav and tabs_html != blank %}
+  {% assign title_classes = 'hide-on-mobile title-with-nav__nav' %}
+{% endif %}
+
+<uwp-content-blocks
+  class="content-blocks--{{ template | handleize}} content-blocks colour-scheme--{{ section.settings.tab1_colour_scheme }} {% if show_nav %}content-blocks--has-swiper{% endif %}"
+  style="--section-padding: var({{ section.settings.section_padding }});"
+  role="region"
+  aria-label="Content blocks"
+  aria-roledescription="region"
+>
+  <div class="container">
+    <div class="content-blocks__header">
+      {% render 'title-with-nav',
+        title: section.settings.title,
+        heading_level: 'h2',
+        heading_style: 'eyebrow-sm',
+        tabs: tabs_html,
+        show_nav: show_nav,
+        nav_class: title_classes,
+        section_id: fallback_section_id
+      %}
+    </div>
+
+    <div class="content-blocks__content">
+      <!-- Tab 1 Content -->
+      {% if tab1_images.size > 0 %}
+        <div
+          class="content-blocks__tab is-active"
+          js-content-blocks="tab-content"
+          data-tab="tab1"
+        >
+          {% if tab1_images.size > 4 %}
+            <swiper-container
+              class="content-blocks__swiper"
+              slides-per-view="auto"
+              space-between="12"
+              breakpoints='
+                {
+                  "768": {
+                    "spaceBetween": 20
+                  }
+                }
+              '
+              navigation-prev-el="#swiper-button-prev-{{ fallback_section_id }}-tab1"
+              navigation-next-el="#swiper-button-next-{{ fallback_section_id }}-tab1"
+              role="region"
+              aria-label="Content blocks carousel"
+              aria-roledescription="carousel"
+            >
+              {% for block in tab1_images %}
+                {% if block.settings.image != blank %}
+                  <swiper-slide class="content-blocks__slide">
+                    {% render 'content-block-item',
+                      image: block.settings.image,
+                      image_mobile: block.settings.image_mobile,
+                      video: block.settings.video,
+                      video_mobile: block.settings.video_mobile,
+                      text: block.settings.text,
+                      richtext: block.settings.richtext,
+                      richtext_color: block.settings.richtext_color,
+                      richtext_font_size: block.settings.richtext_font_size,
+                      richtext_font_weight: block.settings.richtext_font_weight,
+                      richtext_text_transform: block.settings.richtext_text_transform,
+                      richtext_letter_spacing: block.settings.richtext_letter_spacing,
+                      link: block.settings.link,
+                      gradient_overlay: block.settings.gradient_overlay,
+                      block_id: block.id,
+                      image_index: forloop.index
+                    %}
+                  </swiper-slide>
+                {% endif %}
+              {% endfor %}
+            </swiper-container>
+            {% if tabs_html != blank %}
+              {% assign section_id_with_tab = fallback_section_id
+                | append: '-tab1'
+              %}
+              {% render 'swiper-nav',
+                class: 'hide-on-desktop content-blocks__swiper-nav',
+                section_id: section_id_with_tab
+              %}
+            {% endif %}
+          {% else %}
+            <div class="content-blocks__grid content-blocks__grid--{{ tab1_images.size }}">
+              {% for block in tab1_images %}
+                {% if block.settings.image != blank %}
+                  {% render 'content-block-item',
+                    image: block.settings.image,
+                    image_mobile: block.settings.image_mobile,
+                    video: block.settings.video,
+                    video_mobile: block.settings.video_mobile,
+                    text: block.settings.text,
+                    richtext: block.settings.richtext,
+                    richtext_color: block.settings.richtext_color,
+                    richtext_font_size: block.settings.richtext_font_size,
+                    richtext_font_weight: block.settings.richtext_font_weight,
+                    richtext_text_transform: block.settings.richtext_text_transform,
+                    richtext_letter_spacing: block.settings.richtext_letter_spacing,
+                    link: block.settings.link,
+                    gradient_overlay: block.settings.gradient_overlay,
+                    block_id: block.id,
+                    image_index: forloop.index
+                  %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <!-- Tab 2 Content -->
+      {% if tab2_images.size > 0 %}
+        <div
+          class="content-blocks__tab{% unless has_tabs %} is-active{% endunless %}"
+          js-content-blocks="tab-content"
+          data-tab="tab2"
+        >
+          {% if tab2_images.size > 4 %}
+            <swiper-container
+              class="content-blocks__swiper"
+              space-between="20"
+              slides-per-view="auto"
+              navigation-prev-el="#swiper-button-prev-{{ fallback_section_id }}-tab2"
+              navigation-next-el="#swiper-button-next-{{ fallback_section_id }}-tab2"
+              role="region"
+              aria-label="Content blocks carousel"
+              aria-roledescription="carousel"
+            >
+              {% for block in tab2_images %}
+                {% if block.settings.image != blank %}
+                  <swiper-slide class="content-blocks__slide">
+                    {% render 'content-block-item',
+                      image: block.settings.image,
+                      image_mobile: block.settings.image_mobile,
+                      video: block.settings.video,
+                      video_mobile: block.settings.video_mobile,
+                      text: block.settings.text,
+                      richtext: block.settings.richtext,
+                      richtext_color: block.settings.richtext_color,
+                      richtext_font_size: block.settings.richtext_font_size,
+                      richtext_font_weight: block.settings.richtext_font_weight,
+                      richtext_text_transform: block.settings.richtext_text_transform,
+                      richtext_letter_spacing: block.settings.richtext_letter_spacing,
+                      link: block.settings.link,
+                      gradient_overlay: block.settings.gradient_overlay,
+                      block_id: block.id,
+                      image_index: forloop.index
+                    %}
+                  </swiper-slide>
+                {% endif %}
+              {% endfor %}
+            </swiper-container>
+
+            {% if tabs_html != blank %}
+              {% assign section_id_with_tab = fallback_section_id
+                | append: '-tab2'
+              %}
+              {% render 'swiper-nav',
+                class: 'hide-on-desktop content-blocks__swiper-nav',
+                section_id: section_id_with_tab
+              %}
+            {% endif %}
+          {% else %}
+            <div class="content-blocks__grid content-blocks__grid--{{ tab2_images.size }}">
+              {% for block in tab2_images %}
+                {% if block.settings.image != blank %}
+                  {% render 'content-block-item',
+                    image: block.settings.image,
+                    image_mobile: block.settings.image_mobile,
+                    video: block.settings.video,
+                    video_mobile: block.settings.video_mobile,
+                    text: block.settings.text,
+                    richtext: block.settings.richtext,
+                    richtext_color: block.settings.richtext_color,
+                    richtext_font_size: block.settings.richtext_font_size,
+                    richtext_font_weight: block.settings.richtext_font_weight,
+                    richtext_text_transform: block.settings.richtext_text_transform,
+                    richtext_letter_spacing: block.settings.richtext_letter_spacing,
+                    link: block.settings.link,
+                    gradient_overlay: block.settings.gradient_overlay,
+                    block_id: block.id,
+                    image_index: forloop.index
+                  %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</uwp-content-blocks>
+
+{% schema %}
+{
+  "name": "Content blocks",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Content Gallery"
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section padding",
+      "default": "--spacing-2xl",
+      "options": [
+        {
+          "value": "--spacing-md",
+          "label": "Narrow"
+        },
+        {
+          "value": "--spacing-2xl",
+          "label": "Default"
+        },
+        {
+          "value": "--spacing-4xl",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Tab 1"
+    },
+    {
+      "type": "text",
+      "id": "tab1_title",
+      "label": "Tab 1 title",
+      "default": "Collection 1"
+    },
+    {
+      "type": "text",
+      "id": "tab1_handle",
+      "label": "Tab 1 handle",
+      "default": "collection-1"
+    },
+    {
+      "type": "select",
+      "id": "tab1_colour_scheme",
+      "label": "Tab 1 colour scheme",
+      "default": "base-white-01",
+      "options": [
+        {
+          "value": "base-white-01",
+          "label": "Base white 01"
+        },
+        {
+          "value": "base-white-02",
+          "label": "Base white 02"
+        },
+        {
+          "value": "warm-stone",
+          "label": "Warm stone"
+        },
+        {
+          "value": "duck-egg",
+          "label": "Duck Egg"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Tab 2"
+    },
+    {
+      "type": "text",
+      "id": "tab2_title",
+      "label": "Tab 2 title",
+      "default": "Collection 2"
+    },
+    {
+      "type": "text",
+      "id": "tab2_handle",
+      "label": "Tab 2 handle",
+      "default": "collection-2"
+    },
+    {
+      "type": "select",
+      "id": "tab2_colour_scheme",
+      "label": "Tab 2 colour scheme",
+      "default": "warm-stone",
+      "options": [
+        {
+          "value": "base-white-01",
+          "label": "Base white 01"
+        },
+        {
+          "value": "base-white-02",
+          "label": "Base white 02"
+        },
+        {
+          "value": "warm-stone",
+          "label": "Warm stone"
+        },
+        {
+          "value": "duck-egg",
+          "label": "Duck Egg"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab1",
+      "name": "Tab 1 Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image (mobile)"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "A Shopify-hosted video"
+        },
+        {
+          "type": "video",
+          "id": "video_mobile",
+          "label": "A Shopify-hosted video (mobile)"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "placeholder": "Image description"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "Text description"
+      
+        },
+        {
+          "type": "color",
+          "id": "richtext_color",
+          "label": "Text description — Color",
+          "default": "#000000"
+        },
+        {
+          "type": "select",
+          "id": "richtext_font_size",
+          "label": "Text description — Font size",
+          "default": "16px",
+          "options": [
+            { "value": "14px", "label": "Small" },
+            { "value": "16px", "label": "Default" },
+            { "value": "18px", "label": "Large" },
+            { "value": "20px", "label": "XL" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "richtext_font_weight",
+          "label": "Text description — Font style",
+          "default": "400",
+          "options": [
+            { "value": "300", "label": "Light (300)" },
+            { "value": "400", "label": "Normal (400)" },
+            { "value": "500", "label": "Medium (500)" },
+            { "value": "600", "label": "Semi-bold (600)" },
+            { "value": "700", "label": "Bold (700)" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "richtext_text_transform",
+          "label": "Text description — Text transform",
+          "default": "none",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "uppercase", "label": "Uppercase" },
+            { "value": "capitalize", "label": "Capitalize" },
+            { "value": "lowercase", "label": "Lowercase" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "richtext_letter_spacing",
+          "label": "Text description — Letter spacing",
+          "default": "normal",
+          "options": [
+            { "value": "normal", "label": "Normal" },
+            { "value": "0.02em", "label": "Tight" },
+            { "value": "0.04em", "label": "Medium" },
+            { "value": "0.08em", "label": "Wide" }
+          ]
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "gradient_overlay",
+          "label": "Gradient overlay",
+          "default": "dark",
+          "options": [
+            {
+              "value": "light",
+              "label": "Light"
+            },
+            {
+              "value": "dark",
+              "label": "Dark"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "tab2",
+      "name": "Tab 2 Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image (mobile)"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "A Shopify-hosted video"
+        },
+        {
+          "type": "video",
+          "id": "video_mobile",
+          "label": "A Shopify-hosted video (mobile)"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "placeholder": "Image description"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "Text description"
+        },
+        {
+          "type": "color",
+          "id": "richtext_color",
+          "label": "Text description — Color",
+          "default": "#000000"
+        },
+        {
+          "type": "select",
+          "id": "richtext_font_size",
+          "label": "Text description — Font size",
+          "default": "16px",
+          "options": [
+            { "value": "14px", "label": "Small" },
+            { "value": "16px", "label": "Default" },
+            { "value": "18px", "label": "Large" },
+            { "value": "20px", "label": "XL" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "richtext_font_weight",
+          "label": "Text description — Font style",
+          "default": "400",
+          "options": [
+            { "value": "300", "label": "Light (300)" },
+            { "value": "400", "label": "Normal (400)" },
+            { "value": "500", "label": "Medium (500)" },
+            { "value": "600", "label": "Semi-bold (600)" },
+            { "value": "700", "label": "Bold (700)" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "richtext_text_transform",
+          "label": "Text description — Text transform",
+          "default": "none",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "uppercase", "label": "Uppercase" },
+            { "value": "capitalize", "label": "Capitalize" },
+            { "value": "lowercase", "label": "Lowercase" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "richtext_letter_spacing",
+          "label": "Text description — Letter spacing",
+          "default": "normal",
+          "options": [
+            { "value": "normal", "label": "Normal" },
+            { "value": "0.02em", "label": "Tight" },
+            { "value": "0.04em", "label": "Medium" },
+            { "value": "0.08em", "label": "Wide" }
+          ]
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "gradient_overlay",
+          "label": "Gradient overlay",
+          "default": "dark",
+          "options": [
+            {
+              "value": "light",
+              "label": "Light"
+            },
+            {
+              "value": "dark",
+              "label": "Dark"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Content blocks",
+      "settings": {
+        "title": "Content Gallery",
+        "section_padding": "--spacing-2xl",
+        "tab1_title": "Collection 1",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "Collection 2",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
+      },
+      "blocks": [
+        {
+          "type": "tab1"
+        },
+        {
+          "type": "tab1"
+        },
+        {
+          "type": "tab2"
+        },
+        {
+          "type": "tab2"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

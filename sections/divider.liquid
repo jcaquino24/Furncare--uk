@@ -1,0 +1,53 @@
+{% liquid
+  assign colour_scheme = section.settings.colour_scheme
+%}
+
+<div class="divider colour-scheme--{{ colour_scheme }}" style="--section-padding: var({{ section.settings.section_padding }});">
+  <div class="container">
+    {% if section.settings.show_line %}
+      <div class="divider__line"></div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Divider",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_line",
+      "label": "Show divider line",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "colour_scheme",
+      "label": "Colour scheme",
+      "default": "base-white-01",
+      "options": [
+        { "value": "base-white-01", "label": "Base white 01" },
+        { "value": "base-white-02", "label": "Base white 02" },
+        { "value": "warm-stone", "label": "Warm stone" },
+        { "value": "green-01", "label": "Green 01" },
+        { "value": "green-02", "label": "Green 02" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section Padding",
+      "default": "--spacing-2xl",
+      "options": [
+        { "value": "--spacing-md", "label": "Narrow" },
+        { "value": "--spacing-2xl", "label": "Default" },
+        { "value": "--spacing-4xl", "label": "Wide" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Divider" }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,51 @@
+{% liquid
+  render 'vite-tag' with '@snippets/article-share.ts'
+%}
+
+<article-share class="article-share">
+  <button
+    class="article-share__trigger"
+    aria-expanded="false"
+    aria-controls="article-share-menu"
+  >
+    <span class="article-share__icon">
+      {% render 'icons', icon: 'share' %}
+    </span>
+
+    <span class="article-share__text eyebrow-2xs">
+      {{- 'blogs.article.share' | t -}}
+    </span>
+  </button>
+
+  <div class="article-share__menu" id="article-share-menu" aria-hidden="true">
+    <a
+      href="https://www.facebook.com/sharer/sharer.php?u={{ article.url | url_encode }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="article-share__link"
+      aria-label="Share on Facebook"
+    >
+      {% render 'icons', icon: 'facebook' %}
+    </a>
+
+    <a
+      href="https://twitter.com/intent/tweet?url={{ article.url | url_encode }}&text={{ article.title | url_encode }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="article-share__link"
+      aria-label="Share on X"
+    >
+      {% render 'icons', icon: 'twitter' %}
+    </a>
+
+    <a
+      href="https://www.instagram.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="article-share__link"
+      aria-label="Share on Instagram"
+    >
+      {% render 'icons', icon: 'instagram' %}
+    </a>
+  </div>
+</article-share>

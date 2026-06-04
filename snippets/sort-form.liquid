@@ -1,0 +1,48 @@
+{%- liquid
+  # Use search object on search page, collection on collection page
+  if request.page_type == 'search'
+    assign object = search
+    assign sort_by = search.sort_by | default: search.default_sort_by
+  else
+    assign object = object | default: collection
+    assign sort_by = collection.sort_by | default: collection.default_sort_by
+  endif
+
+  assign class = class | default: ''
+-%}
+
+<uwp-sort-form
+  class="sort-form {{ class }}"
+  data-section-id="{{ section.id }}"
+  role="region"
+  aria-label="Sort form"
+  aria-roledescription="region"
+>
+  <form class="sort-form__form">
+    <label class="sort-form__label text-regular" for="SortBy-{{ section.id }}">
+      {{ 'collection.filters.sort_by' | t }}
+
+      <select
+        id="SortBy-{{ section.id }}"
+        class="sort-form__select"
+        name="sort_by"
+      >
+        {% for option in object.sort_options %}
+          <option
+            value="{{ option.value }}"
+            {% if option.value == sort_by %}
+              selected="selected"
+            {% endif %}
+          >
+            {{ option.name }}
+          </option>
+        {% endfor %}
+      </select>
+
+      {% render 'icons',
+        icon: 'chevron-down',
+        class: 'sort-form__select-icon'
+      %}
+    </label>
+  </form>
+</uwp-sort-form>

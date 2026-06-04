@@ -1,0 +1,123 @@
+{% doc %}
+  Product Information Component
+
+  Renders complete product information including badges, title, price, description, USPs, and form.
+
+  @param {product} product - Product object (required)
+  @param {string} section_id - Section ID for unique form IDs
+  @param {section} section - Section object for accessing settings
+
+  @example
+  {% render 'product-info', product: product, section_id: section.id, section: section %}
+{% enddoc %}
+
+{%- liquid
+  assign section_id = section_id | default: 'product'
+-%}
+
+<div class="product-info">
+  {% comment %} Badges {% endcomment %}
+  {% render 'badge', product: product %}
+
+  {% if section.settings.show_sku and product.selected_or_first_available_variant.sku != blank %}
+    <div class="product-info__sku eyebrow-2xs">
+      {{ 'product.product_sku' | t }}: {{ product.selected_or_first_available_variant.sku }}
+    </div>
+  {% endif %}
+
+  {% comment %} Title {% endcomment %}
+  {% if product.title %}
+    <h1 class="product-info__title title-sm">
+      {{ product.title | split: '|' | first }}
+    </h1>
+  {% endif %}
+
+  {% comment %} Price {% endcomment %}
+  {%- assign has_swatch_collections = product.metafields.custom.swatch_collections.value -%}
+  {% render 'price',
+    product: product,
+    use_variant: true,
+    show_compare_at_price: true,
+    show_vat_badge: section.settings.show_vat_badge,
+    show_free_sample_label: section.settings.show_free_sample_label,
+    force_from_price: has_swatch_collections
+  %}
+
+  {% comment %} Description {% endcomment %}
+  {% if product.description != blank %}
+    <div class="product-info__description-wrapper">
+      <div
+        class="product-info__description body-md rte"
+        js-product-info="description"
+      >
+        {{ product.description }}
+      </div>
+    </div>
+  {% endif %}
+
+  {% comment %} Product Swatch Information - Show if hubspot_form exists and not bespoke {% endcomment %}
+  {% liquid
+    assign has_hubspot_form = false
+    assign is_bespoke = false
+
+    if product.metafields.custom.hubspot_form != blank
+      assign has_hubspot_form = true
+    endif
+
+    if product.metafields.custom.is_bespoke_product.value == true
+      assign is_bespoke = true
+    endif
+  %}
+
+  {% if has_hubspot_form
+    and is_bespoke == false
+    and section.settings.product_swatch_information != blank
+  %}
+    <div class="product-info__swatch-information body-sm body-sm--bold rte">
+      {{ section.settings.product_swatch_information }}
+    </div>
+  {% endif %}
+
+  {% comment %} Lead time {% endcomment %}
+
+  {% if product.metafields.custom.delivered_within.value != blank %}
+  <div class="delivered-within">
+    
+    {% if section.settings.lead_time_icon != blank %}
+      <div>
+
+        <img src="{{ section.settings.lead_time_icon | image_url: width: 40 }}" 
+          alt="Delivery Icon" 
+          loading="lazy"
+          width=""
+          height="" 
+        >
+
+      </div>
+    {% endif %}
+
+    <div class="eyebrow-2xs">
+      {{  section.settings.lead_time_text }} {{ product.metafields.custom.delivered_within.value }}
+    </div>
+
+  </div>
+{% endif %}
+
+  
+  {% comment %} End of lead time code {% endcomment %}
+
+  {% comment %} Product Form {% endcomment %}
+  {% render 'product-form', product: product, section_id: section_id %}
+
+  {% comment %} USPs {% endcomment %}
+  {% render 'product-usp', product: product %}
+
+  {% comment %} Action Buttons {% endcomment %}
+  <uwp-product-actions
+    role="region"
+    aria-label="Product actions"
+    aria-roledescription="region"
+  >
+    {% render 'product-actions', product: product, section: section %}
+  </uwp-product-actions>
+</div>

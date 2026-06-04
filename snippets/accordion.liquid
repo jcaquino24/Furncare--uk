@@ -1,0 +1,49 @@
+{%- doc -%}
+  @description
+  This snippet renders an accordion component.
+
+  @param {string} title - The title of the accordion.
+  @param {string} content - The content of the accordion.
+  @param {boolean} [open] - Whether the accordion should be open. Defaults to false.
+  @param {string} [class] - Additional classes to apply to the accordion.
+  @param {string} [attributes] - Additional attributes to apply to the accordion.
+  @param {string} [scheme] - Optional colour scheme for the accordion (base-white-01, base-white-02, warm-stone, green-01, green-02)
+
+  @example
+  {% render 'accordion', title: 'Accordion Title', content: 'Accordion content goes here.' %}
+{%- enddoc -%}
+
+{%- liquid
+  if title == blank or content == blank
+    continue
+  endif
+
+  assign scheme_class = 'light'
+  case scheme
+    when 'green-01'
+      assign scheme_class = 'dark'
+    when 'green-02'
+      assign scheme_class = 'dark'
+  endcase
+-%}
+
+<details
+  class="accordion {{ class }} accordion--{{ scheme_class }}"
+  {% if open %}
+    open
+  {% endif %}
+  {{ attributes }}
+>
+  <summary class="accordion__title body-md">
+    {{ title }}
+
+    <div class="accordion__title-icons">
+      {% render 'icons', icon: 'plus' %}
+      {% render 'icons', icon: 'minus' %}
+    </div>
+  </summary>
+
+  <div class="accordion__body body-md">
+    {{ content }}
+  </div>
+</details>

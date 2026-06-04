@@ -1,0 +1,620 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_video_banner_Mx3q8g": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_8TMHFP": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "case study",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_DXxf3y": {
+          "type": "title",
+          "settings": {
+            "text": "Brainkind",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_TY8nED": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_GeUmxJ": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_aDpXic": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_8TMHFP",
+        "title_DXxf3y",
+        "button_TY8nED",
+        "card_GeUmxJ",
+        "card_aDpXic"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 600,
+        "height_mobile": 430,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/20240221_Lounge_ViewArtwork.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(54deg, rgba(255, 250, 99, 1), rgba(38, 37, 32, 0.4) 1%)",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_PhprEj": {
+      "type": "richtext",
+      "blocks": {
+        "heading_mYLH3K": {
+          "type": "heading",
+          "settings": {
+            "text": "Unique interiors for flagship brain injury centre",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_LFtXUT": {
+          "type": "tagline",
+          "settings": {
+            "content": "Brainkind (formerly The Disabilities Trust) appointed Furncare to provide unique interiors for their flagship Neurological Centre. Shortlisted in the prestigious Royal Institute of Chartered Surveyors (RICS) Awards, the centre is now preparing to welcome its first residents.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_mYLH3K",
+        "tagline_LFtXUT"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "featured_blocks_QcyUqa": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_WB6nUy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-1_b2743c7e-19d9-4dcb-9c1f-d8ebd0114b3e.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_pRfLKC": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-6_60747f5f-c71d-4d10-8a94-933b3470246e.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_Xjkzza": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-4_f321a149-4174-46e5-ac85-209ea3086006.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_fTVPDX": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-5_69fe4433-1754-42d8-a56a-c407f2a23187.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_iedH8H": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-2_6b75d4c2-c774-4d8f-b499-f4d5c98475b3.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_XkmCTr": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-3_0c350551-49ed-4ab2-9067-55c46cd64553.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_hgWWY4": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-7_01915f48-bf39-453a-a67a-8e3ff647b689.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_AqbGEe": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-8_d5c8b08d-1049-407f-83f5-97513b7b0878.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_RnjcbR": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-11.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_ND3HbP": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-10.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_YgNTq6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-12.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_CPzKJ6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-9_37dfc227-dfc4-4d30-ba29-5c5c1533c287.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_9Dfi6D": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-13.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_tGXbgH": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-14.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_AHFQib": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-15.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_TcRKmV": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-17.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_T6R4xw": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-16.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_ncPRe4": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-18.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_zR8iDQ": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-19.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_WB6nUy",
+        "block_pRfLKC",
+        "block_Xjkzza",
+        "block_fTVPDX",
+        "block_iedH8H",
+        "block_XkmCTr",
+        "block_hgWWY4",
+        "block_AqbGEe",
+        "block_RnjcbR",
+        "block_ND3HbP",
+        "block_YgNTq6",
+        "block_CPzKJ6",
+        "block_9Dfi6D",
+        "block_tGXbgH",
+        "block_AHFQib",
+        "block_TcRKmV",
+        "block_T6R4xw",
+        "block_ncPRe4",
+        "block_zR8iDQ"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "",
+        "padding": "wide",
+        "layout": "line_grid",
+        "enable_lightbox": true
+      }
+    },
+    "richtext_EW6cqY": {
+      "type": "richtext",
+      "blocks": {
+        "heading_C9ihxn": {
+          "type": "heading",
+          "settings": {
+            "text": "“From the outset, Furncare demonstrated a deep commitment to understanding our unique requirements and vision for our flagship service. Their expertise has been invaluable in creating a space that not only meets but exceeds the expectations of our clients and staff alike.”",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_JPEfFQ": {
+          "type": "tagline",
+          "settings": {
+            "content": "Liam Busby, Brainkind",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_T6qrbf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_C9ihxn",
+        "tagline_JPEfFQ",
+        "button_T6qrbf"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_text_Rr8iJJ": {
+      "type": "image-text",
+      "blocks": {
+        "images_NXFXtC": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/20240221_Lounge_ViewArtwork_a285f8b2-73cf-4373-afb6-79ba67c321ce.jpg"
+          }
+        },
+        "content_c9CaD6": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "title_size": "xl",
+            "text": "Where it all began\nArnie Goodenough worked closely with Brainkind and  Jefferson Sheard Architects. Initially we provided samples for a Brainkind refurbishment site, and Furncare furniture samples were assessed by Brainkind and residents at their York House site. They received the thumbs up.\n\nUnique interiors for flagship centre\nPlans for an alternative flagship Neurological Centre a few miles away emerged shortly after. Furncare were invited to tender for the project on the former Terrys Chocolate Factory site. The project presented many challenges for Brainkind and Jefferson Sheard Architects, but we were still able to supply furniture for all 36 ensuite bedrooms, transitional living apartments and extensive dining and communal areas.\n\nA Nurturing and Comfortable Environment\nDeliveries were scheduled with Brainkind, and the renowned Furncare ‘White Glove’ team ensured almost 600 items of furniture to create the unique interiors for the flagship centre were delivered hassle-free and on time as arranged, fully assembled and placed in pre-allocated rooms.",
+            "button_style": "underline",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_NXFXtC",
+        "content_c9CaD6"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "richtext_TJAtU7": {
+      "type": "richtext",
+      "blocks": {
+        "heading_wY7KwX": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Furncare Teams Up with Bright Bay Design to Furnish Stunning New Care Home in Hampshire",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_3xMBBU": {
+          "type": "tagline",
+          "settings": {
+            "content": "Younger people with very different needs",
+            "tagline_style": "body-xl--bold"
+          },
+          "blocks": {}
+        },
+        "button_xcfn4f": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Elm Lodge Virtual Tour",
+            "url": "https://www.forestcare.co.uk/wp-content/themes/forestcare/virtual-tour-elm.php",
+            "new_tab": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_wY7KwX",
+        "tagline_3xMBBU",
+        "button_xcfn4f"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "image_video_banner_xWTgmR": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_YJpC8H": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "text": "Retirement furniture",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_qDHCNx": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "text": "Designed for Comfort, Built for <em>Care</em>.",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_GDbKwj": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_e3GTdX": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_UehPPd": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_YJpC8H",
+        "title_qDHCNx",
+        "button_GDbKwj",
+        "card_e3GTdX",
+        "card_UehPPd"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/20240221_Frontage_ViewSignageNight.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "linear-gradient(320deg, rgba(255, 250, 99, 0.2), rgba(203, 68, 194, 1), rgba(255, 250, 99, 0))",
+        "colour_scheme": "light",
+        "content_position": "center-bottom",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_znBbzx": {
+      "type": "richtext",
+      "blocks": {
+        "heading_qBVQQe": {
+          "type": "heading",
+          "settings": {
+            "text": "“The Neuro Centre is a fantastic example of how we work so well with centres catering for younger people with very different needs. Brainkind fulfil such an important role in the sector and we look forward to supporting their next project with all our resources, commitment and energy as always.”",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_DLcG7y": {
+          "type": "tagline",
+          "settings": {
+            "content": "Arnie Goodenough, Key Account Manager, Furncare",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_bKjrMf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_qBVQQe",
+        "tagline_DLcG7y",
+        "button_bKjrMf"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "product_blocks_hr4bkw": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_HdNPmE": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "the-3p-fulfilled-snowboard",
+              "the-collection-snowboard-liquid",
+              "the-inventory-not-tracked-snowboard-3",
+              "the-complete-snowboard",
+              "the-compare-at-price-snowboard"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_HdNPmE"
+      ],
+      "disabled": true,
+      "name": "Product blocks",
+      "settings": {
+        "title": "Products featured in this case study",
+        "section_padding": "--spacing-2xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_video_banner_Mx3q8g",
+    "richtext_PhprEj",
+    "featured_blocks_QcyUqa",
+    "richtext_EW6cqY",
+    "image_text_Rr8iJJ",
+    "richtext_TJAtU7",
+    "image_video_banner_xWTgmR",
+    "richtext_znBbzx",
+    "product_blocks_hr4bkw"
+  ]
+}

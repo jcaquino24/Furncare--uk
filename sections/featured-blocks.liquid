@@ -1,0 +1,380 @@
+{% liquid
+  assign layout = section.settings.layout
+  assign padding = section.settings.padding
+  assign enable_lightbox = section.settings.enable_lightbox
+  assign has_caption = false
+  for block in section.blocks
+    if block.settings.caption != blank
+      assign has_caption = true
+    endif
+  endfor
+
+  if enable_lightbox
+    render 'vite-tag' with '@sections/featured-blocks.ts'
+  endif
+%}
+<uwp-featured-blocks-lightbox>
+<div
+  class="
+    featured-blocks
+    colour-scheme--{{ section.settings.colour_scheme }}
+    featured-blocks--padding-{{ padding }}
+    featured-blocks--{{ layout }}
+    {% if has_caption %}
+      featured-blocks--usp
+    {% else %}
+      featured-blocks--logo
+    {% endif %}
+  "
+>
+  <div class="container featured-blocks__container">
+    {% if section.settings.title != blank %}
+      <div class="featured-blocks__header">
+        <h2 class="featured-blocks__title body-sm eyebrow-sm">
+          {{ section.settings.title }}
+        </h2>
+      </div>
+    {% endif %}
+    {% if layout == 'marquee' %}
+      <div class="featured-blocks__marquee">
+        <div class="featured-blocks__marquee-track">
+          {% for block in section.blocks %}
+            {% assign alt_text = block.settings.alt_text
+              | default: block.settings.caption
+            %}
+            <div class="featured-blocks__item">
+              {% if block.settings.image != blank %}
+                {% if enable_lightbox %}
+                  <button
+                    type="button"
+                    class="featured-blocks__lightbox-trigger"
+                    js-featured-blocks="trigger"
+                    data-slide-index="{{ forloop.index0 }}"
+                    aria-label="{{ 'accessibility.view_larger_image' | t }}"
+                  >
+                    {{
+                      block.settings.image
+                      | image_url: width: 600
+                      | image_tag:
+                        alt: alt_text,
+                        class: 'featured-blocks__img',
+                        loading: 'lazy'
+                    }}
+                  </button>
+                {% else %}
+                  {{
+                    block.settings.image
+                    | image_url: width: 600
+                    | image_tag:
+                      alt: alt_text,
+                      class: 'featured-blocks__img',
+                      loading: 'lazy'
+                  }}
+                {% endif %}
+                {% if block.settings.caption != blank %}
+                  <div class="featured-blocks__caption body-md">
+                    {{ block.settings.caption }}
+                  </div>
+                {% endif %}
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+        <div aria-hidden="true" class="featured-blocks__marquee-track">
+          {% for block in section.blocks %}
+            {% assign alt_text = block.settings.alt_text
+              | default: block.settings.caption
+            %}
+            <div class="featured-blocks__item">
+              {% if block.settings.image != blank %}
+                {{
+                  block.settings.image
+                  | image_url: width: 600
+                  | image_tag:
+                    alt: alt_text,
+                    class: 'featured-blocks__img',
+                    loading: 'lazy'
+                }}
+                {% if block.settings.caption != blank %}
+                  <div class="featured-blocks__caption body-md">
+                    {{ block.settings.caption }}
+                  </div>
+                {% endif %}
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% else %}
+      <div class="featured-blocks__list">
+        {% for block in section.blocks %}
+          {% assign alt_text = block.settings.alt_text
+            | default: block.settings.caption
+          %}
+          <div class="featured-blocks__item">
+            {% if block.settings.image != blank %}
+              {% if enable_lightbox %}
+                <button
+                  type="button"
+                  class="featured-blocks__lightbox-trigger"
+                  js-featured-blocks="trigger"
+                  data-slide-index="{{ forloop.index0 }}"
+                  aria-label="{{ 'accessibility.view_larger_image' | t }}"
+                >
+                  {{
+                    block.settings.image
+                    | image_url: width: 600
+                    | image_tag:
+                      alt: alt_text,
+                      class: 'featured-blocks__img',
+                      loading: 'lazy'
+                  }}
+                </button>
+              {% else %}
+                {{
+                  block.settings.image
+                  | image_url: width: 600
+                  | image_tag:
+                    alt: alt_text,
+                    class: 'featured-blocks__img',
+                    loading: 'lazy'
+                }}
+              {% endif %}
+              {% if block.settings.caption != blank %}
+                <div class="featured-blocks__caption body-md">
+                  {{ block.settings.caption }}
+                </div>
+              {% endif %}
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% if enable_lightbox %}
+  <div class="featured-blocks__lightbox" js-featured-blocks="lightbox">
+    <div class="featured-blocks__lightbox-content">
+      <button
+        class="featured-blocks__lightbox-close"
+        aria-label="{{ 'general.close' | t }}"
+      >
+        {% render 'icons', icon: 'close' %}
+      </button>
+
+      <div class="featured-blocks__lightbox-gallery">
+        <div class="featured-blocks__lightbox-thumbnails-wrapper">
+          {% render 'swiper-nav',
+            section_id: section.id | append: '-thumbs',
+            direction: 'vertical',
+            layout: 'inline',
+            class: 'featured-blocks__lightbox-thumbs-nav'
+          %}
+          <swiper-container
+            class="featured-blocks__lightbox-thumbnails"
+            id="featured-blocks-lightbox-thumbs-{{ section.id }}"
+            js-featured-blocks="lightbox-thumbnails"
+            slides-per-view="auto"
+            loop="false"
+            space-between="4"
+            navigation-prev-el="#shopify-section-{{ section.id }} .featured-blocks__lightbox-thumbs-nav > .swiper-button-prev"
+            navigation-next-el="#shopify-section-{{ section.id }} .featured-blocks__lightbox-thumbs-nav > .swiper-button-next"
+            breakpoints='
+              {
+                "1024": {
+                  "direction": "vertical"
+                }
+              }
+            '
+            role="region"
+            aria-label="Featured blocks thumbnails"
+            aria-roledescription="carousel"
+          >
+            {% for block in section.blocks %}
+              {% if block.settings.image != blank %}
+                {% assign lb_image = block.settings.lightbox_image | default: block.settings.image %}
+                {% assign lb_alt = block.settings.alt_text | default: block.settings.caption %}
+                <swiper-slide class="featured-blocks__lightbox-thumbnails-slide">
+                  {{
+                    lb_image
+                    | image_url: width: 200
+                    | image_tag:
+                      alt: lb_alt,
+                      loading: 'lazy'
+                  }}
+                </swiper-slide>
+              {% endif %}
+            {% endfor %}
+          </swiper-container>
+        </div>
+
+        <div class="featured-blocks__lightbox-main featured-blocks__lightbox-main--{{ section.id }}">
+          <div class="featured-blocks__lightbox-main-wrapper">
+            <div class="featured-blocks__lightbox-main-carousel">
+              <swiper-container
+                js-featured-blocks="lightbox-swiper"
+                navigation-prev-el=".featured-blocks__lightbox-main--{{ section.id }} .swiper-button-prev"
+                navigation-next-el=".featured-blocks__lightbox-main--{{ section.id }} .swiper-button-next"
+                slides-per-view="1"
+                direction="horizontal"
+                keyboard="true"
+                thumbs-swiper="#featured-blocks-lightbox-thumbs-{{ section.id }}"
+                role="region"
+                aria-label="Featured blocks lightbox"
+                aria-roledescription="carousel"
+              >
+                {% for block in section.blocks %}
+                  {% if block.settings.image != blank %}
+                    {% assign lb_image = block.settings.lightbox_image | default: block.settings.image %}
+                    {% assign lb_alt = block.settings.alt_text | default: block.settings.caption %}
+                    <swiper-slide 
+                      class="featured-blocks__lightbox-slide"
+                      data-caption="{{ block.settings.lightbox_caption | escape }}"
+                    >
+                      {{
+                        lb_image
+                        | image_url: width: 1200
+                        | image_tag:
+                          alt: lb_alt,
+                          class: 'featured-blocks__lightbox-image',
+                          loading: 'lazy'
+                      }}
+                    </swiper-slide>
+                  {% endif %}
+                {% endfor %}
+              </swiper-container>
+            </div>
+
+            {% render 'swiper-nav',
+              section_id: section.id,
+              direction: 'horizontal',
+              layout: 'edges'
+            %}
+          </div>
+
+          <div class="featured-blocks__lightbox-caption-wrapper">
+            <p class="featured-blocks__lightbox-caption body-md" js-featured-blocks="caption"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+</uwp-featured-blocks-lightbox>
+
+{% schema %}
+{
+  "name": "Featured Blocks",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "colour_scheme",
+      "label": "Colour scheme",
+      "default": "base-white-01",
+      "options": [
+        {
+          "value": "base-white-01",
+          "label": "Base white 01"
+        },
+        {
+          "value": "base-white-02",
+          "label": "Base white 02"
+        },
+        {
+          "value": "warm-stone",
+          "label": "Warm stone"
+        },
+        {
+          "value": "green-01",
+          "label": "Green 01"
+        },
+        {
+          "value": "green-02",
+          "label": "Green 02"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Featured Blocks"
+    },
+    {
+      "type": "select",
+      "id": "padding",
+      "label": "Padding",
+      "options": [
+        { "value": "narrow", "label": "Narrow" },
+        { "value": "default", "label": "Default" },
+        { "value": "wide", "label": "Wide" }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout Format",
+      "options": [
+        { "value": "line_grid", "label": "Line/Grid (wraps)" },
+        { "value": "marquee", "label": "Marquee" }
+      ],
+      "default": "line_grid",
+      "info": "Recommended 6 block when not marquee"
+    },
+    {
+      "type": "header",
+      "content": "Lightbox"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_lightbox",
+      "label": "Enable lightbox",
+      "default": false,
+      "info": "Allow images to open in a lightbox when clicked"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption or Description"
+        },
+        {
+          "type": "header",
+          "content": "Lightbox"
+        },
+        {
+          "type": "image_picker",
+          "id": "lightbox_image",
+          "label": "Lightbox image",
+          "info": "Optional larger image for lightbox. Uses main image if blank."
+        },
+        {
+          "type": "textarea",
+          "id": "lightbox_caption",
+          "label": "Lightbox caption",
+          "info": "Optional caption displayed below the image in lightbox"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Blocks",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,59 @@
+{% assign class = 'cart-item' %}
+<line-item class="{{ class }}" data-key="{{ item.key }}" data-line="{{ line }}">
+  <div class="{{ class }}__details">
+    <div class="{{ class }}__product-details">
+      <a
+        href="{{ item.url }}"
+        class="{{ class }}__image"
+        aria-label="{{ item.product.title | split: ' | Colour: ' | first }}"
+      >
+        {{ item.image | image_url: width: 320 | image_tag }}
+      </a>
+      <div class="{{ class }}__info">
+        <h2 class="h3 title-2xs">
+          <a class="title-2xs" href="{{ item.url }}">
+            {{- item.product.title | split: ' | Colour: ' | first -}}
+          </a>
+        </h2>
+        {% for option in item.options_with_values %}
+          {% if option.value != 'Default Title' %}
+            <p class="eyebrow-2xs">{{ option.name }}: {{ option.value }}</p>
+          {% endif %}
+        {% endfor %}
+        <div class="{{ class }}__price hide-on-cart-desktop show-in-minicart">
+          {% render 'price', product: item.product, use_variant: true %}
+        </div>
+        <div class="{{ class }}__quantity hide-on-cart-desktop show-in-minicart">
+          {% render 'quantity-selector',
+            item: item,
+            value: item.quantity,
+            id: item.variant_id
+          %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="{{ class }}__qty hide-on-cart-mobile hide-in-minicart">
+    {% render 'quantity-selector',
+      item: item,
+      value: item.quantity,
+      id: item.variant_id
+    %}
+  </div>
+
+  <div class="{{ class }}__subtotal hide-on-cart-mobile hide-in-minicart">
+    {% render 'price', product: item.product, use_variant: true %}
+  </div>
+
+  <div class="{{ class }}__remove">
+    <a
+      href="{{ routes.cart_change_url }}?line={{ line }}&quantity=0"
+      class="{{ class }}__remove-button"
+      js-line-item="remove"
+      aria-label="{{ 'cart.remove' | t }}"
+    >
+      {% render 'icons', icon: 'bin' %}
+    </a>
+  </div>
+</line-item>

@@ -1,0 +1,254 @@
+{% doc %}
+  @prompt
+    make a block with a title and eyebrow, with the text completely customisable in terms of size, font and colour, make the background colour editable and also the title font needs to be the default title font, with just the size editable thanks, the title needs to be the display font, which is a serif
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-title-eyebrow-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    text-align: {{ block.settings.text_alignment }};
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding_vertical }}px {{ block.settings.padding_horizontal }}px;
+  }
+
+  .ai-title-eyebrow__eyebrow-{{ ai_gen_id }} {
+    font-family: {{ block.settings.eyebrow_font.family }}, {{ block.settings.eyebrow_font.fallback_families }};
+    font-weight: {{ block.settings.eyebrow_font.weight }};
+    font-style: {{ block.settings.eyebrow_font.style }};
+    font-size: {{ block.settings.eyebrow_font_size }}px;
+    color: {{ block.settings.eyebrow_color }};
+    margin: 0 0 {{ block.settings.eyebrow_spacing }}px 0;
+    letter-spacing: {{ block.settings.eyebrow_letter_spacing }}px;
+    text-transform: {{ block.settings.eyebrow_text_transform }};
+  }
+
+  .ai-title-eyebrow__title-{{ ai_gen_id }} {
+    font-family: serif;
+    font-size: {{ block.settings.title_font_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0;
+    letter-spacing: {{ block.settings.title_letter_spacing }}px;
+    line-height: {{ block.settings.title_line_height }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-title-eyebrow__eyebrow-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.eyebrow_font_size }}px * 0.8);
+    }
+
+    .ai-title-eyebrow__title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.title_font_size }}px * 0.8);
+    }
+  }
+{% endstyle %}
+
+<div class="ai-title-eyebrow-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.eyebrow_text != blank %}
+    <p class="ai-title-eyebrow__eyebrow-{{ ai_gen_id }}">
+      {{ block.settings.eyebrow_text }}
+    </p>
+  {% endif %}
+
+  {% if block.settings.title_text != blank %}
+    <h2 class="ai-title-eyebrow__title-{{ ai_gen_id }}">
+      {{ block.settings.title_text }}
+    </h2>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Title with eyebrow",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_text",
+      "label": "Eyebrow text",
+      "default": "New collection"
+    },
+    {
+      "type": "font_picker",
+      "id": "eyebrow_font",
+      "label": "Font",
+      "default": "red_hat_display_n4"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_letter_spacing",
+      "label": "Letter spacing",
+      "min": 0,
+      "max": 5,
+      "step": 0.5,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_text_transform",
+      "label": "Text transform",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "lowercase",
+          "label": "Lowercase"
+        },
+        {
+          "value": "capitalize",
+          "label": "Capitalize"
+        }
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_spacing",
+      "label": "Spacing below",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "text",
+      "id": "title_text",
+      "label": "Title text",
+      "default": "Premium furniture collection"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Font size",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "title_letter_spacing",
+      "label": "Letter spacing",
+      "min": 0,
+      "max": 5,
+      "step": 0.5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "title_line_height",
+      "label": "Line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.2
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "label": "Vertical padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Title with eyebrow"
+    }
+  ]
+}
+{% endschema %}

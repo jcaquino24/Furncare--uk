@@ -1,0 +1,291 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "settings": {}
+    },
+    "richtext_hLWh3Q": {
+      "type": "richtext",
+      "blocks": {
+        "heading_FpyQAy": {
+          "type": "heading",
+          "settings": {
+            "text": "Need expert advice on furniture?",
+            "heading_level": "h1",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_zTP8pf": {
+          "type": "tagline",
+          "settings": {
+            "content": "Get in touch to discuss the furniture requirements for <em>your </em>care environment.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_x8ErWE": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "Contact Us",
+            "url": "#https://www.furncare.co.uk/pages/contact-us",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_FpyQAy",
+        "tagline_zTP8pf",
+        "button_x8ErWE"
+      ],
+      "disabled": true,
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "product_blocks_hr4bkw": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_fJtzXF": {
+          "type": "product_block",
+          "settings": {
+            "title": "",
+            "handle": "",
+            "product_feed_source": "product_list",
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        },
+        "product_block_HdNPmE": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "5164-maxwell-small-sideboard-finish-grey-oak",
+              "alpha-extreme-270-double-wardrobe-finish-mountain-oak-cashmere",
+              "alpha-extreme-3-drawer-chest-finish-mountain-oak-cashmere",
+              "alpha-extreme-3-drawer-bedside-top-drawer-with-lock-finish-mountain-oak-cashmere"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": true,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_fJtzXF",
+        "product_block_HdNPmE"
+      ],
+      "disabled": true,
+      "name": "Product blocks",
+      "settings": {
+        "title": "Products featured in this case study",
+        "section_padding": "--spacing-4xl"
+      }
+    },
+    "17734008217d1e75ff": {
+      "type": "_blocks",
+      "blocks": {
+        "richtext_KnzTeq": {
+          "type": "richtext",
+          "name": "Rich Text",
+          "disabled": true,
+          "settings": {
+            "content": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "richtext_KnzTeq"
+      ],
+      "settings": {}
+    },
+    "17734008399d1dd4b6": {
+      "type": "apps",
+      "settings": {}
+    },
+    "content_blocks_XhGhrq": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_hnDpD3": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Remini-B901-Olive-Bedroom-Package-main-image-with-logo_1.jpg",
+            "text": "",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_GKhxW4": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Remini-B902-Marine-Bedroom-Package-main-image-with-logo_2094f4ba-72d4-4e0f-a04d-70d8f0e9f9e8.jpg",
+            "text": "",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_hnDpD3",
+        "tab1_GKhxW4"
+      ],
+      "disabled": true,
+      "name": "Content blocks",
+      "settings": {
+        "title": "Remini Range",
+        "section_padding": "--spacing-2xl",
+        "tab1_title": "Remini Range",
+        "tab1_handle": "",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "---",
+        "tab2_handle": "",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    },
+    "blocks_qzKYrP": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_NtaXrE": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 40,
+            "padding_bottom": 55
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_NtaXrE"
+      ],
+      "name": "Form embed",
+      "settings": {}
+    },
+    "blocks_6QCHbm": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_MDq8nb": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "medium",
+            "small_height": 80,
+            "medium_height": 110,
+            "large_height": 200,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_MDq8nb"
+      ],
+      "disabled": true,
+      "name": "Spacer",
+      "settings": {}
+    },
+    "richtext_jdtPNG": {
+      "type": "richtext",
+      "blocks": {
+        "heading_3PaJFm": {
+          "type": "heading",
+          "settings": {
+            "text": "Browse the full Remini range",
+            "heading_level": "h1",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_r3UmmT": {
+          "type": "tagline",
+          "settings": {
+            "content": "Our pre-designed bedroom packages for dementia-friendly environments",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        },
+        "button_g9ryKw": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "See what’s included",
+            "url": "https://www.furncare.co.uk/pages/remini-campaign",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_3PaJFm",
+        "tagline_r3UmmT",
+        "button_g9ryKw"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "blocks_jVTwqG": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3e4b0ee_QpRz9U": {
+          "type": "ai_gen_block_3e4b0ee",
+          "settings": {
+            "spacing_size": "medium"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3e4b0ee_QpRz9U"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "richtext_hLWh3Q",
+    "product_blocks_hr4bkw",
+    "17734008217d1e75ff",
+    "17734008399d1dd4b6",
+    "content_blocks_XhGhrq",
+    "blocks_qzKYrP",
+    "blocks_6QCHbm",
+    "richtext_jdtPNG",
+    "blocks_jVTwqG"
+  ]
+}

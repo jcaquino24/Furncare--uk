@@ -1,0 +1,73 @@
+{% doc %}
+  Reusable custom range slider snippet.
+
+  @param {string} id - ID of the radio input.
+  @param {string} name - Name of the radio input.
+  @param {string} class - Additional classes for the radio input.
+  @param {string} label - Label for the radio input.
+  @param {string} help_text - Help text for the radio input.
+  @param {number} min - Minimum value of the slider.
+  @param {number} max - Maximum value of the slider.
+  @param {number} step - Step value of the slider.
+  @param {string} value - Value of the slider.
+  @param {string} value_prefix - Prefix for the value.
+  @param {boolean} disabled - Whether the slider is disabled.
+  @param {object} slider_attributes - Additional HTML attributes for the slider.
+
+  @example
+  {% render 'input-slider',
+    id: 'form-element',
+    name: 'properties[slider]',
+    label: 'Slider',
+    help_text: 'Default',
+    min: 0,
+    max: 100,
+    step: 1,
+    value: '10 - 70',
+    value_prefix: '$',
+    disabled: false,
+  %}
+{% enddoc %}
+
+{%- liquid
+  render 'vite-tag' with '@snippets/input-slider.ts'
+
+  if min == blank and max == blank
+    continue
+  endif
+
+  assign step = step | default: 1
+-%}
+
+<uwp-input-slider
+  id="{{- id -}}"
+  class="input-slider {{- class -}}"
+  name="{{- name -}}"
+  data-min="{{- min -}}"
+  data-max="{{- max -}}"
+  data-step="{{- step -}}"
+  data-value="{{- value -}}"
+  data-disabled="{{- disabled -}}"
+  data-value-prefix="{{- value_prefix -}}"
+  {{- slider_attributes }}
+  role="region"
+  aria-label="Slider"
+  aria-roledescription="region"
+>
+  <div class="input-slider__header">
+    <label class="input-slider__label body-md" for="{{- id -}}">
+      {{- label -}}
+    </label>
+
+    <div class="input-slider__value body-md" js-input-slider="value">
+      {{- value_prefix -}}
+      {{- value -}}
+    </div>
+  </div>
+
+  <div js-input-slider="slider"></div>
+
+  {%- if help_text != blank -%}
+    <span class="input-slider__help-text body-sm">{{- help_text -}}</span>
+  {%- endif -%}
+</uwp-input-slider>

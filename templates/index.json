@@ -1,0 +1,863 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_video_banner_XGAaBn": {
+      "type": "image-video-banner",
+      "blocks": {
+        "button_Fd4JPd": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "/",
+            "new_tab": false,
+            "button_style": "underline"
+          }
+        },
+        "title_mY98gr": {
+          "type": "title",
+          "settings": {
+            "text": "Transforming <em>Spaces</em>, Elevating <em>Lives</em>",
+            "title_element": "h1",
+            "title_size": "display",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "eyebrow_mUTnQz": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "FURNITURE FOR LATER LIVING  & CHALLENGING ENVIRONMENTS",
+            "eyebrow_size": "md",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "card_rxRzbP": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Elderly_Care.jpg",
+            "title": "Elderly Care",
+            "tagline": "",
+            "button_text": "Shop now",
+            "button_url": "shopify://collections/cabinet-furniture",
+            "button_style": "underline",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_TD7x4w": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Challenging_Environment.jpg",
+            "title": "Challenging Environments",
+            "tagline": "",
+            "button_text": "Shop now",
+            "button_url": "shopify://collections/cabinet-furniture",
+            "button_style": "underline",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "button_Fd4JPd",
+        "title_mY98gr",
+        "eyebrow_mUTnQz",
+        "card_rxRzbP",
+        "card_TD7x4w"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 800,
+        "height_mobile": 620,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": true,
+        "media_type": "video",
+        "image_desktop": "shopify://shop_images/Lounge_Roomset_Lifestyle.jpg",
+        "video_desktop": "shopify://files/videos/My Movie 12.mp4",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) 83%)",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "featured_blocks_M7Nrnn": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_hU6T7W": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Made_to_Order.svg",
+            "caption": "End to End Project Management",
+            "lightbox_caption": ""
+          }
+        },
+        "block_RTBaXG": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Collections.svg",
+            "caption": "Quick Delivery Products",
+            "lightbox_caption": ""
+          }
+        },
+        "block_z496ct": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Fabric.svg",
+            "caption": "Complete Room Packages",
+            "lightbox_caption": ""
+          }
+        },
+        "block_LzW4LY": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Guarantee.svg",
+            "caption": "10-year Guarantee",
+            "lightbox_caption": ""
+          }
+        },
+        "block_NXdTAU": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Delivery_783a034c-54ae-4e82-bcf4-f449a843e776.svg",
+            "caption": "White Glove Delivery Service",
+            "lightbox_caption": ""
+          }
+        },
+        "block_UE4k6h": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Phone_f4b0d652-6e2d-4972-8b79-3fee1c34b42d.svg",
+            "caption": "UK Based Customer Service Team",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_hU6T7W",
+        "block_RTBaXG",
+        "block_z496ct",
+        "block_LzW4LY",
+        "block_NXdTAU",
+        "block_UE4k6h"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-02",
+        "title": "",
+        "padding": "default",
+        "layout": "marquee",
+        "enable_lightbox": false
+      }
+    },
+    "content_blocks_fLpHR3": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_d4cTkL": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Roomset_Lifestyle_db5be164-ab96-4916-b221-0f3c73ecb202.jpg",
+            "text": "Lounge",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/elderly-care-lounge-furniture",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_4A8V47": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Roomset_Lifestyle.jpg",
+            "text": "Bedroom",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/elderly-care-bedroom-furniture-1",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_M8TcUm": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_7.jpg",
+            "text": "Activity Room",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/elderly-care-activity-rooms",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_BimTxJ": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Tables_Roomset_Lifestyle.jpg",
+            "text": "Dining Room",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/elderly-care-dining-rooms",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_VkQJXA": {
+          "type": "tab1",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/TV_Lounge_12_of_43.jpg",
+            "text": "Café",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/cabinet-furniture",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_DwpTFL": {
+          "type": "tab1",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/WD_1.jpg",
+            "text": "Garden",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/curtains-blinds-soft-furnishings",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_fyrc9A": {
+          "type": "tab2",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_14.jpg",
+            "text": "Lounge",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/challenging-environment-lounges",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_ebYHQr": {
+          "type": "tab2",
+          "settings": {
+            "image": "shopify://shop_images/BEDROOM_HERO1-min.jpg",
+            "text": "Bedroom",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/challenging-environment-bedrooms",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_zW3qxL": {
+          "type": "tab2",
+          "settings": {
+            "image": "shopify://shop_images/Generated_image_2_5ef8c65a-5fbd-42d6-9d23-bec7b379ffa3.png",
+            "text": "Sensory Room",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/sensory-activity-rooms",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_FDpNGJ": {
+          "type": "tab2",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_16.jpg",
+            "text": "Dining Room",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/challenging-environment-dining-rooms",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_HqfhPP": {
+          "type": "tab2",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Untitled_5.jpg",
+            "text": "Café",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/lounge-chairs-2-seaters",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_NdUW7w": {
+          "type": "tab2",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/1_5m-Pine-Park-Bench-Arden-Range_jpg.webp",
+            "text": "Garden",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/cabinet-furniture",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_d4cTkL",
+        "tab1_4A8V47",
+        "tab1_M8TcUm",
+        "tab1_BimTxJ",
+        "tab1_VkQJXA",
+        "tab1_DwpTFL",
+        "tab2_fyrc9A",
+        "tab2_ebYHQr",
+        "tab2_zW3qxL",
+        "tab2_FDpNGJ",
+        "tab2_HqfhPP",
+        "tab2_NdUW7w"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "Shop by room",
+        "section_padding": "--spacing-2xl",
+        "tab1_title": "Later Living",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "warm-stone",
+        "tab2_title": "Challenging Environments",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "duck-egg"
+      }
+    },
+    "review_blocks_TFrKC6": {
+      "type": "review-blocks",
+      "blocks": {
+        "review_RnbEAP": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "met our expectations and more",
+            "body": "I have recently purchased furniture for a care home where durability and is a key factor as well as being easy to clean, the furniture met our expectations and more and the sales rep Declan was a delight to work with. Big thumbs up from me and we will be coming back for more.",
+            "reviewer_name": "Jamie",
+            "meta": ""
+          }
+        },
+        "review_ahQpCT": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "excellent communication",
+            "body": "Furncare were a delight to deal with start to finish, offering site visits to previously completed projects, design support and excellent communication throughout. The physical fit out went well, and the aftercare has been second to none.",
+            "reviewer_name": "Gareth Rogers",
+            "meta": ""
+          }
+        },
+        "review_HiYJXg": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Amazing",
+            "body": "This is our second order with Furncare and there is a reason we picked them again. The customer service is fantastic. The delivery driver even built the furniture for us. Highly recommend",
+            "reviewer_name": "Elmbrook Court",
+            "meta": ""
+          }
+        },
+        "review_pcKP7F": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Great Furniture, Great Service!",
+            "body": "The quality of the furniture excellent, delivery times are fast. The products were unpacked, assembled in the rooms of our choosing in a professional and timely manner, with the packaging removed too.",
+            "reviewer_name": "Silver Birch Care",
+            "meta": ""
+          }
+        },
+        "review_w8LckW": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Thank you!",
+            "body": "They delivered carefully and unpacked all the items and disposed of all the packaging. A very big thank you for moving an old piece of furniture for me. It’s that personal touch and helpfulness that makes all the difference.",
+            "reviewer_name": "Bill Woolliscroft",
+            "meta": ""
+          }
+        },
+        "review_gNfdr4": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "5/5 experience",
+            "body": "Ian and Ollie were great at supporting delivering the furniture in the home and assembling this straight away! Friendly, kind and considerate of residents in the home. Thankyou!",
+            "reviewer_name": "Ces",
+            "meta": ""
+          }
+        },
+        "review_WL4EDw": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Furncare Have been amazing",
+            "body": "Furncare have been amazing in supporting us to furnish our 3-bed childrens home. The quality of the furniture is great and the communication between Declan and us has been amazing. I would highly recommend this company",
+            "reviewer_name": "Damini Rura",
+            "meta": ""
+          }
+        },
+        "review_CQqHGd": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Furncare came to the rescue!",
+            "body": "Furncare came to the rescue with an express delivery for bespoke furniture for one of our services! They assembled on delivery which was also a huge help and we're impressed with the quality of the furniture. Thanks Furncare, you never fail to assist when needed. We'll be ordering again soon :)",
+            "reviewer_name": "Emma",
+            "meta": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_RnbEAP",
+        "review_ahQpCT",
+        "review_HiYJXg",
+        "review_pcKP7F",
+        "review_w8LckW",
+        "review_gNfdr4",
+        "review_WL4EDw",
+        "review_CQqHGd"
+      ],
+      "name": "Review blocks",
+      "settings": {
+        "title": "What our customers think",
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "warm-stone",
+        "show_summary": true,
+        "summary_label": "Loved by over 10,000 customers",
+        "summary_title": "Excellent",
+        "summary_rating": 5,
+        "summary_text": "Based on 500 reviews",
+        "fallback_message": "No reviews available at this time."
+      }
+    },
+    "featured_blocks_cFzCid": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_4FDMAq": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_5_970d40d9-f1ee-4409-a17f-b317eefb53ef.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_i6YPKM": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_2_f3030b0a-2deb-49af-8ff3-18f506f2cff0.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_y8XbHp": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/priory-logo.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_jqzNtJ": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_7_4e3454ce-6eb8-4c8a-bea5-abd2d3f0b8c0.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_Y6gqbd": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_1_bf3d4c38-2d38-460e-9767-d84c5ac0ad56.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_AdQ8QD": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/CAreTech_2.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_QBgTz6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_6_876d59f6-a91b-4a01-afda-746f99e41bf4.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_kRaLeP": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/maria-mallaband.svg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_4FDMAq",
+        "block_i6YPKM",
+        "block_y8XbHp",
+        "block_jqzNtJ",
+        "block_Y6gqbd",
+        "block_AdQ8QD",
+        "block_QBgTz6",
+        "block_kRaLeP"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "Our trusted partners",
+        "padding": "wide",
+        "layout": "line_grid",
+        "enable_lightbox": false
+      }
+    },
+    "richtext_raLCwa": {
+      "type": "richtext",
+      "blocks": {
+        "heading_GgTENM": {
+          "type": "heading",
+          "settings": {
+            "text": "We design and manufacture furniture for care homes that is practical, safe, and innovative.  Our focus is <em>creating spaces</em> that support both residents and caregivers.",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_GgTENM"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-6xl",
+        "text_alignment": "center",
+        "colour_scheme": "green-01",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "blog_article_row_8MhRNW": {
+      "type": "blog-article-row",
+      "blocks": {
+        "article_Aqdf9K": {
+          "type": "article",
+          "settings": {
+            "article": "news/old-malton"
+          }
+        },
+        "article_HgyWKR": {
+          "type": "article",
+          "settings": {
+            "article": "news/furncare-project-team-shines-at-chapel-view-care-home"
+          }
+        },
+        "article_JyLBK7": {
+          "type": "article",
+          "settings": {
+            "article": "news/furncare-completes-installation-of-one-of-their-largest-ever-single-site-projects-for-ashton-group-1"
+          }
+        },
+        "article_tEF9Ve": {
+          "type": "article",
+          "settings": {
+            "article": "news/dementia-and-nursing-care-at-letcombe-regis"
+          }
+        }
+      },
+      "block_order": [
+        "article_Aqdf9K",
+        "article_HgyWKR",
+        "article_JyLBK7",
+        "article_tEF9Ve"
+      ],
+      "name": "Blog article row",
+      "settings": {
+        "title": "Latest Case Studies",
+        "section_padding": "--spacing-2xl",
+        "show_badges": true,
+        "show_video_indicator": true,
+        "background_colour_scheme": "base-white-01"
+      }
+    },
+    "content_blocks_tyrXJd": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_9C4VMK": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/TV_Lounge_24_of_43.jpg",
+            "text": "Later Living",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/later-living-furniture",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_zqwyfA": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_7_998c544b-983e-4232-bac2-c188d7c2bdf5.jpg",
+            "text": "Challenging Environments",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/challenging-environments-furniture",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_aHLTXF": {
+          "type": "tab1",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Image2-D.png",
+            "text": "Quick Delivery Packages",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/quick-delivery-care-furniture",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_9C4VMK",
+        "tab1_zqwyfA",
+        "tab1_aHLTXF"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "Explore our sectors",
+        "section_padding": "--spacing-4xl",
+        "tab1_title": "",
+        "tab1_handle": "",
+        "tab1_colour_scheme": "warm-stone",
+        "tab2_title": "",
+        "tab2_handle": "",
+        "tab2_colour_scheme": "base-white-01"
+      }
+    },
+    "richtext_DiEacU": {
+      "type": "richtext",
+      "blocks": {
+        "heading_QYWXra": {
+          "type": "heading",
+          "settings": {
+            "text": "Why Furncare?",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_QYWXra"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "image_text_cqfzwp": {
+      "type": "image-text",
+      "blocks": {
+        "images_TdUbCb": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/PREG2451_94e26ec3-27c4-48f2-af68-5bc1057a2950.jpg",
+            "image_two": "shopify://shop_images/Dining_Room_-_Chapel_View_46_of_60.jpg"
+          }
+        },
+        "content_Y6iyFn": {
+          "type": "content",
+          "settings": {
+            "title": "Care Home Furniture Suppliers",
+            "title_size": "xl",
+            "text": "Our experienced team builds relationships with customers to create long-lasting partnerships that help deliver outstanding care through ergonomically designed, contract-standard furniture. Our customers know we can support them with repeat orders and larger projects, including complete room refurbishment and full fit-outs.\n\nWe work with owners, managers, interior designers and staff of residential care homes, dementia care, nursing homes, mental health, and supported living services to deliver a wide range of furniture for care homes, including care home chairs, fire-retardant curtains, bedroom furniture, and care home beds, as well as complete pre-designed bedroom packages.",
+            "button_style": "primary",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_TdUbCb",
+        "content_Y6iyFn"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "image_text_V4HwxM": {
+      "type": "image-text",
+      "blocks": {
+        "content_tzYwRN": {
+          "type": "content",
+          "settings": {
+            "title": "Care Home Furniture",
+            "title_size": "xl",
+            "text": "Furncare specialises in the design, manufacture, and installation of distinctive care home furniture and interiors. With the widest range of furniture for care homes and the shortest lead times on the market, our 5 working-day delivery promise has revolutionised turnaround times, helping care homes maintain their occupancy rates and deliver excellent care.",
+            "button_style": "primary",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "content_QErGBb": {
+          "type": "content",
+          "settings": {
+            "title": "Safety First",
+            "title_size": "xl",
+            "text": "We manufacture our chairs and fabrics to meet care industry standards, and continually work with our customers to develop inspirational ranges. \n\n\nEvery care is taken to ensure the finish and longevity of our unique furniture. Crafted to meet contract standards, our customers know that they can count on us for durable, well-finished furniture.",
+            "button_style": "primary",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_tzYwRN",
+        "content_QErGBb"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-02",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "image_text_aYpUjc": {
+      "type": "image-text",
+      "blocks": {
+        "content_qim3KV": {
+          "type": "content",
+          "settings": {
+            "title": "Furncare's Mission",
+            "title_size": "xl",
+            "text": "Since being founded in 2004, Furncare's focus has been on quality and delivery. It is our mission to support architects and interior designers working on large-scale care home projects so they can develop their ideas knowing they have a robust, creative furniture supplier.\nOur customers know that they can rely on us, time and time again, to help them deliver superb-quality furnishings for their homes and care facilities. If you would like to discuss a project with Furncare, please contact us.",
+            "button_style": "primary",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "images_DmXTEf": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/P1049405_7f098fdc-acc5-4c85-a706-d928d1e8a12f.jpg",
+            "image_two": "shopify://shop_images/P1049349.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "content_qim3KV",
+        "images_DmXTEf"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "17760941991c9f024b": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "1779893029a43fff23": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "image_video_banner_XGAaBn",
+    "featured_blocks_M7Nrnn",
+    "content_blocks_fLpHR3",
+    "review_blocks_TFrKC6",
+    "featured_blocks_cFzCid",
+    "richtext_raLCwa",
+    "blog_article_row_8MhRNW",
+    "content_blocks_tyrXJd",
+    "richtext_DiEacU",
+    "image_text_cqfzwp",
+    "image_text_V4HwxM",
+    "image_text_aYpUjc",
+    "17760941991c9f024b",
+    "1779893029a43fff23"
+  ]
+}

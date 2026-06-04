@@ -1,0 +1,58 @@
+{% liquid
+  assign upsell_product_object = upsell_product
+  if upsell_product_object != blank and upsell_product_object.value
+    assign upsell_product_object = upsell_product_object.value
+  endif
+  assign has_product = false
+  if upsell_product_object and upsell_product_object.id
+    assign has_product = true
+  endif
+%}
+{% if has_product %}
+  <uwp-upsell-block
+    class="upsell-block colour-scheme--warm-stone"
+    data-product-id="{{ upsell_product_object.id }}"
+    data-variant-id="{{ upsell_product_object.selected_or_first_available_variant.id }}"
+    role="region"
+    aria-label="Upsell block"
+    aria-roledescription="region"
+  >
+    <div class="upsell-block__image">
+      {{ image | image_url: width: 1000 | image_tag }}
+    </div>
+    <div class="upsell-block__content">
+      <div class="upsell-block__content-header">
+        <div class="upsell-block__title eyebrow-xs eyebrow-xs--bold">
+          {{ title }}
+        </div>
+        <div class="upsell-block__price eyebrow-xs eyebrow-xs--bold">
+          +
+          {% render 'price',
+            product: upsell_product_object,
+            use_variant: true
+          %}
+        </div>
+      </div>
+      <div class="upsell-block__content-text">
+        {{ content }}
+      </div>
+    </div>
+
+    <div class="upsell-block__content-button-wrapper body-md">
+      <button
+        type="button"
+        class="button button--md button--secondary button--full-width upsell-block__content-button"
+        data-variant-id="{{ upsell_product_object.selected_or_first_available_variant.id }}"
+        data-quantity="1"
+      >
+        {% assign product_price = upsell_product_object.selected_or_first_available_variant.price
+          | money
+        %}
+        {{ 'upsells.add_for_price_text' | t: price: product_price }}
+        {% render 'icons', icon: 'cart' %}
+      </button>
+    </div>
+  </uwp-upsell-block>
+{% else %}
+  <!-- upsell-block: missing product -->
+{% endif %}

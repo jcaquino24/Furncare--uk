@@ -1,0 +1,572 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "image_video_banner_RfGNUe": {
+      "type": "image-video-banner",
+      "blocks": {
+        "title_nmn8Bq": {
+          "type": "title",
+          "settings": {
+            "text": "The Vallen Range",
+            "title_element": "h1",
+            "title_size": "display",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "eyebrow_YfqfTp": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "CONTRACT LOUNGE FURNITURE FOR CHALLENGING ENVIRONMENTS",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_kiTM7t": {
+          "type": "button",
+          "settings": {
+            "text": "Enquire today",
+            "button_url": "shopify://pages/contact-us",
+            "new_tab": true,
+            "button_style": "underline"
+          }
+        }
+      },
+      "block_order": [
+        "title_nmn8Bq",
+        "eyebrow_YfqfTp",
+        "button_kiTM7t"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 800,
+        "height_mobile": 650,
+        "maintain_aspect_ratio": true,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/VALLEN.png",
+        "show_controls": false,
+        "mute_video": false,
+        "autoplay_video": false,
+        "show_overlay": false,
+        "overlay_background": "linear-gradient(180deg, rgba(249, 247, 240, 1) 63%, rgba(249, 249, 240, 1) 88.216%, rgba(249, 247, 240, 0) 100%)",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "blocks_hNh9mU": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_800d78e_3iQDjX": {
+          "type": "ai_gen_block_800d78e",
+          "settings": {
+            "accordion_heading": "Request your quote",
+            "default_open": false,
+            "desktop_width_percent": 100,
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"d13cb61a-817e-42e1-baa9-08d63b586063\" data-portal-id=\"145723791\"></div>",
+            "min_form_height": 350,
+            "heading_size": 32,
+            "heading_color": "#f9f7f0",
+            "header_background_color": "#c3c0b0",
+            "header_hover_color": "#243222",
+            "header_padding": 40,
+            "icon_size": 32,
+            "icon_color": "#f9f7f0",
+            "background_color": "#f9f7f0",
+            "content_padding": 50,
+            "border_width": 0,
+            "border_color": "#e0e0e0",
+            "border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_800d78e_3iQDjX"
+      ],
+      "name": "Form accordion",
+      "settings": {}
+    },
+    "1779968161f5e3af07": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_yF9YVz": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 135,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#fffef8"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_yF9YVz"
+      ],
+      "settings": {}
+    },
+    "richtext_cfEUkM": {
+      "type": "richtext",
+      "blocks": {
+        "heading_KbCB86": {
+          "type": "heading",
+          "settings": {
+            "text": "Contemporary bedroom furniture, designed to deliver more for <em>your </em>budget.",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_KbCB86"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-02",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "image_text_Ahf7nk": {
+      "type": "image-text",
+      "blocks": {
+        "images_pqAJxr": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Vallenfinalmockup_sunny_pm_bb20a884-719d-4188-8d78-1e138c3a8484.png"
+          }
+        },
+        "content_qHnp8Q": {
+          "type": "content",
+          "settings": {
+            "title": "The Practical Details",
+            "title_size": "xl",
+            "text": "<h4>Accessible price point</h4>\n\nA refined bedroom look without the premium price tag.\n\n<h4>Built for everyday use</h4>\n\nSolid 18mm construction and robust internal storage.\n\n<h4>Easy to maintain</h4>\n\nDurable melamine surfaces engineered to resist heat and moisture.\n\n\n<h4>3 year guarantee</h4>\n\nPeace of mind built into every piece.",
+            "button_style": "primary",
+            "button_text": "Enquire today",
+            "button_url": "shopify://pages/contact-us"
+          }
+        }
+      },
+      "block_order": [
+        "images_pqAJxr",
+        "content_qHnp8Q"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-02",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "blocks_yVDnJ8": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_eQP8bm": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 135,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#fffef8"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_eQP8bm"
+      ],
+      "settings": {}
+    },
+    "product_blocks_CTKjAE": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_zEmWpy": {
+          "type": "product_block",
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [
+              "essentials-bundle",
+              "essentials-2-drawer-bedside",
+              "essentials-3-drawer-chest",
+              "essentials-double-wardrobe"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_zEmWpy"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "browse the range",
+        "section_padding": "--spacing-4xl"
+      }
+    },
+    "17800419587d38fd81": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a0c6286_iL9N79": {
+          "type": "ai_gen_block_a0c6286",
+          "disabled": true,
+          "settings": {
+            "product": "essentials-bundle",
+            "button_text": "Click here to add to cart",
+            "sold_out_text": "Sold out",
+            "show_icon": true,
+            "icon_size": 24,
+            "font_size": 19,
+            "font_weight": "400",
+            "button_padding": 20,
+            "border_radius": 0,
+            "border_width": 0,
+            "desktop_width_percent": 100,
+            "button_bg_color": "#839488",
+            "button_text_color": "#f9f7f0",
+            "border_color": "#000000",
+            "button_hover_bg_color": "#243222",
+            "button_hover_text_color": "#f9f7f0",
+            "border_hover_color": "#243222",
+            "success_message": "Added to cart successfully!",
+            "error_message": "Unable to add to cart. Please try again.",
+            "success_color": "#839488",
+            "error_color": "#998c4d"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_a0c6286_XhHqjD": {
+          "type": "ai_gen_block_a0c6286",
+          "disabled": true,
+          "settings": {
+            "product": "essentials-bundle",
+            "button_text": "Click here to add to cart",
+            "sold_out_text": "Sold out",
+            "show_icon": true,
+            "icon_size": 24,
+            "font_size": 19,
+            "font_weight": "400",
+            "button_padding": 20,
+            "border_radius": 0,
+            "border_width": 0,
+            "desktop_width_percent": 100,
+            "button_bg_color": "#839488",
+            "button_text_color": "#f9f7f0",
+            "border_color": "#000000",
+            "button_hover_bg_color": "#243222",
+            "button_hover_text_color": "#f9f7f0",
+            "border_hover_color": "#243222",
+            "success_message": "Added to cart successfully!",
+            "error_message": "Unable to add to cart. Please try again.",
+            "success_color": "#839488",
+            "error_color": "#998c4d"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_fc5f1cc_DRXha7": {
+          "type": "ai_gen_block_fc5f1cc",
+          "disabled": true,
+          "settings": {
+            "product": "essentials-bundle",
+            "button_text": "Click here to add to cart",
+            "button_color": "#839488",
+            "button_hover_color": "#243222",
+            "button_text_color": "#f9f7f0",
+            "button_padding": 24,
+            "font_size": 16,
+            "border_radius": 0,
+            "desktop_width_percent": 100,
+            "notification_bg_color": "#c3c0b0",
+            "notification_text_color": "#f9f7f0",
+            "success_color": "#839488",
+            "error_color": "#998c4d",
+            "notification_border_radius": 8
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_a4d6361_zgCigc": {
+          "type": "ai_gen_block_a4d6361",
+          "disabled": true,
+          "settings": {
+            "button_text": "Click here to add to cart",
+            "show_icon": true,
+            "icon_size": 26,
+            "font_size": 20,
+            "font_weight": "400",
+            "button_bg_color": "#839488",
+            "button_text_color": "#f9f7f0",
+            "button_hover_bg_color": "#243222",
+            "button_hover_text_color": "#f9f7f0",
+            "button_padding": 32,
+            "border_radius": 0,
+            "border_width": 0,
+            "border_color": "#000000",
+            "border_hover_color": "#333333",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_30cad42_8DVYJ6": {
+          "type": "ai_gen_block_30cad42",
+          "settings": {
+            "product": "essentials-bundle",
+            "button_text": "Click here to add to cart",
+            "show_icon": true,
+            "icon_image": "shopify://shop_images/Untitled_-_29_May_2026_at_12.00.05_2.png",
+            "button_text_color": "#f9f7f0",
+            "button_bg_color": "#839488",
+            "button_hover_bg_color": "#243222",
+            "button_font_family": "red_hat_display_n4",
+            "button_font_weight": "400",
+            "button_font_style": "normal",
+            "button_font_size": 21,
+            "button_border_radius": 8,
+            "button_padding": 38,
+            "desktop_width_percent": 100,
+            "toast_success_message": "Successfully added to cart",
+            "toast_error_message": "Could not add product to cart. Please try again!",
+            "toast_position": "top-right",
+            "toast_bg_color": "#c3c0b0",
+            "toast_text_color": "#f9f7f0",
+            "toast_font_family": "red_hat_display_n4",
+            "toast_font_weight": "400",
+            "toast_font_style": "normal",
+            "toast_border_radius": 8
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a0c6286_iL9N79",
+        "ai_gen_block_a0c6286_XhHqjD",
+        "ai_gen_block_fc5f1cc_DRXha7",
+        "ai_gen_block_a4d6361_zgCigc",
+        "ai_gen_block_30cad42_8DVYJ6"
+      ],
+      "settings": {}
+    },
+    "richtext_Qqf7Wm": {
+      "type": "richtext",
+      "blocks": {
+        "heading_XHUFCR": {
+          "type": "heading",
+          "settings": {
+            "text": "A faster way to furnish",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_jF7hMy": {
+          "type": "tagline",
+          "settings": {
+            "content": "For projects working to tighter timescales, the Essentials Range offers a straightforward, quick-delivery furniture option without overcomplicating the decision. If you’d like to see the finish, scale and quality before placing an </> order, simply fill out the form below and a member of our team will be in touch to arrange a convenient time for your Show Van visit - we’ll bring the range to you.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        },
+        "heading_aXVgaH": {
+          "type": "heading",
+          "name": "Heading",
+          "settings": {
+            "text": "",
+            "heading_level": "h2",
+            "heading_style": "title-xs"
+          },
+          "blocks": {}
+        },
+        "button_pTd4RG": {
+          "type": "button",
+          "settings": {
+            "style": "secondary",
+            "text": "Request a Show Van",
+            "url": "shopify://pages/show-van",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_XHUFCR",
+        "tagline_jF7hMy",
+        "heading_aXVgaH",
+        "button_pTd4RG"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 63,
+        "section_padding": "--spacing-6xl",
+        "text_alignment": "center",
+        "colour_scheme": "green-01",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "blocks_jFNdRE": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_Aq7dfJ": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "medium",
+            "small_height": 30,
+            "medium_height": 60,
+            "large_height": 100,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_Aq7dfJ"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "richtext_gkR3mA": {
+      "type": "richtext",
+      "blocks": {
+        "heading_MHemby": {
+          "type": "heading",
+          "settings": {
+            "text": "Any Questions?",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_AfH4Yn": {
+          "type": "tagline",
+          "settings": {
+            "content": "Get in touch with our expert team who are more than happy to assist.",
+            "tagline_style": "body-sm"
+          },
+          "blocks": {}
+        },
+        "button_TQFYtd": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_MHemby",
+        "tagline_AfH4Yn",
+        "button_TQFYtd"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "blocks_zQrGGK": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_93e87q": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 40,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_93e87q"
+      ],
+      "name": "Form embed",
+      "settings": {}
+    },
+    "blocks_N4QKeR": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_niXn4a": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "medium",
+            "small_height": 30,
+            "medium_height": 60,
+            "large_height": 100,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_niXn4a"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "1780042802c7123f4c": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "17800432390c4eb2b4": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "image_video_banner_RfGNUe",
+    "blocks_hNh9mU",
+    "1779968161f5e3af07",
+    "richtext_cfEUkM",
+    "image_text_Ahf7nk",
+    "blocks_yVDnJ8",
+    "product_blocks_CTKjAE",
+    "17800419587d38fd81",
+    "richtext_Qqf7Wm",
+    "blocks_jFNdRE",
+    "richtext_gkR3mA",
+    "blocks_zQrGGK",
+    "blocks_N4QKeR",
+    "1780042802c7123f4c",
+    "17800432390c4eb2b4"
+  ]
+}

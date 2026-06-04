@@ -1,0 +1,13 @@
+{% liquid
+  assign icon = icon | default: 'image'
+  assign is_background = is_background | default: false, allow_false: true
+  assign background_color = background_color | default: 'var(--color-surface-secondary)'
+%}
+<div
+  class="placeholder-image {% if is_background %}background-image{% endif %}"
+  style="
+    --background-color: {{ background_color }};
+  "
+>
+  {% render 'icons', icon: icon %}
+</div>

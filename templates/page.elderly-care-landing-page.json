@@ -1,0 +1,238 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": true
+      }
+    },
+    "image_text_QGFYg4": {
+      "type": "image-text",
+      "blocks": {
+        "images_zLGb8j": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Bistro_Area_18_d8ac1a7e-8f95-47be-b83c-97781847cf3e.jpg",
+            "image_two": "shopify://shop_images/Team_Caring_9.jpg"
+          }
+        },
+        "content_6ANtMq": {
+          "type": "content",
+          "settings": {
+            "title": "Care spaces that feel like <em>home.</em>",
+            "title_size": "display",
+            "text": "Everyone deserves to live in comfort and dignity, surrounded by spaces that feel safe and personal.\nFurncare furniture is created with that belief at its core - crafted to make care environments more than just functional, but truly homely.\n\nEach Furncare piece is crafted with attention to detail, using materials that stand up to daily use while offering warmth and familiarity. The result is furniture that supports residents’ independence, comfort, and wellbeing, while making life easier for the people who care for them every day.",
+            "button_style": "primary",
+            "button_text": "Get in touch",
+            "button_url": "shopify://pages/show-van"
+          }
+        }
+      },
+      "block_order": [
+        "images_zLGb8j",
+        "content_6ANtMq"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "warm-stone",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "richtext_844wCb": {
+      "type": "richtext",
+      "blocks": {
+        "heading_xDnC7k": {
+          "type": "heading",
+          "settings": {
+            "text": "Contemporary furniture solutions that balance innovation, practicality, and a warmth for later living environments.",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_G6dkzN": {
+          "type": "tagline",
+          "disabled": true,
+          "settings": {
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_gBQibY": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "Shop Later Living Furniture & Furnishings",
+            "url": "shopify://collections/elderly-care-furniture",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_xDnC7k",
+        "tagline_G6dkzN",
+        "button_gBQibY"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "green-01",
+        "enable_animation": true
+      }
+    },
+    "image_text_xjAqkz": {
+      "type": "image-text",
+      "blocks": {
+        "content_6yK9UL": {
+          "type": "content",
+          "settings": {
+            "title": "Transforming spaces",
+            "title_size": "xl",
+            "text": "We design and create environments that enhance comfort, dignity, and well-being, transforming spaces to elevate lives through our distinctive, quality furniture and interiors.\n\nFrom single items to refurbishments and new build projects, we support our customers from concept to completion, delivering expertise, practicality, and impact in every care space we design, even down to the final finishing touches, such as curtains and lighting.",
+            "button_style": "primary",
+            "button_text": "Make an Enquiry",
+            "button_url": "shopify://pages/contact-us"
+          }
+        },
+        "images_FDCacP": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Livonia_Pedestal_Table_Lifestyle_95127a5a-5e82-455c-82ff-08c1a71cfa44.jpg",
+            "image_two": "shopify://shop_images/Ethan_Medium_Back_Chair_Lifestyle_ef9d8132-97de-42fb-866f-fb3611bd60b5.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "content_6yK9UL",
+        "images_FDCacP"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "image_text_Yqccjx": {
+      "type": "image-text",
+      "blocks": {
+        "images_Ba74kP": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Lounge_One_6_16207a7b-9552-4293-9da6-178419ec7488.jpg"
+          }
+        },
+        "content_QXB6M8": {
+          "type": "content",
+          "settings": {
+            "title": "Elevating lives",
+            "title_size": "xl",
+            "text": "Whether enhancing daily living for residents, solving challenges for care providers, or creating thoughtful, functional spaces, we stand beside our customers, reinforcing trust, innovation, and a deep understanding of specialist care needs.\n\n- We always put people first.\n\n- We listen, collaborate, and build trust.\n\n- We can then deliver thoughtful, practical, yet beautiful solutions.",
+            "button_style": "primary",
+            "button_text": "Download the Later Living Brochure",
+            "button_url": "https://publuu.com/flip-book/link/4035670"
+          }
+        }
+      },
+      "block_order": [
+        "images_Ba74kP",
+        "content_QXB6M8"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "featured_blocks_YgAnW7": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_6Ch4dW": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_5_970d40d9-f1ee-4409-a17f-b317eefb53ef.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_kHPw4h": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/prime-life-logo.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_yK6ybV": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_1_bf3d4c38-2d38-460e-9767-d84c5ac0ad56.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_9Fk67b": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_7.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_na3QFU": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_3_cc54cde1-92f9-45ac-ad1b-30bddf4226f4.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_dqEtay": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_2_f3030b0a-2deb-49af-8ff3-18f506f2cff0.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_6Ch4dW",
+        "block_kHPw4h",
+        "block_yK6ybV",
+        "block_9Fk67b",
+        "block_na3QFU",
+        "block_dqEtay"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "our trusted partners",
+        "padding": "default",
+        "layout": "marquee",
+        "enable_lightbox": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_text_QGFYg4",
+    "richtext_844wCb",
+    "image_text_xjAqkz",
+    "image_text_Yqccjx",
+    "featured_blocks_YgAnW7"
+  ]
+}

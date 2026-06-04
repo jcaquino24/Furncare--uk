@@ -1,0 +1,83 @@
+{% liquid
+  assign aspect_ratio = aspect_ratio | default: '16/9'
+  assign alt = image.alt | default: ''
+  assign initial_size = initial_size | default: '480x'
+  assign max_width = max_width | default: image.width
+  assign widths = widths | default: '320, 480, 640, 768, 960, 1024, 1366, 1536, 1920, 2048, 2560, 2880'
+  assign sizes = sizes
+  assign block_class_custom = 'responsive-image'
+  assign image_class_custom = 'responsive-image__image'
+  assign force_height = force_height | default: false
+  assign focal_point = image.presentation.focal_point | default: '50% 50%'
+  assign loading = loading | default: 'eager'
+  assign preload = preload | default: false, allow_false: true
+  assign fetchpriority = fetchpriority | default: 'auto'
+  assign placeholder_icon = placeholder_icon | default: 'image'
+  assign placeholder_background_color = placeholder_background_color | default: 'var(--color-surface-secondary)'
+
+  if block_class != blank
+    assign block_class_custom = block_class_custom | append: ' ' | append: block_class
+  endif
+
+  if image_class != blank
+    assign image_class_custom = image_class_custom | append: ' ' | append: image_class
+  endif
+
+  unless alt == blank
+    assign alt = alt | escape
+  endunless
+
+  assign width = initial_size | remove: 'x' | plus: 0
+  assign aspect_ratio_parts = aspect_ratio | split: '/'
+  assign aspect_ratio_numerator = aspect_ratio_parts[0] | plus: 0
+  assign aspect_ratio_denominator = aspect_ratio_parts[1] | plus: 0
+  assign height = width | divided_by: aspect_ratio_numerator | times: aspect_ratio_denominator | round: 0
+%}
+
+{% if sizes == blank %}
+  {% capture sizes %}
+    (max-width: 320px) 320px,
+    (max-width: 480px) 480px,
+    (max-width: 768px) 768px,
+    (max-width: 1024px) 1024px,
+    (max-width: 1440px) 1440px,
+    (max-width: 2048px) 2048px,
+    2880px,
+  {% endcapture %}
+{% endif %}
+
+<div
+  class="
+    {{ block_class_custom }}
+    {% if force_height %}
+      responsive-image--force-height
+    {% endif %}
+  "
+  style="
+    --aspect-ratio: {{ aspect_ratio }};
+    --focal-point: {{ focal_point }};
+  "
+>
+  {% if image != blank %}
+    {{
+      image
+      | image_url: width: max_width
+      | image_tag:
+        width: width,
+        height: height,
+        widths: widths,
+        sizes: sizes,
+        loading: loading,
+        alt: alt,
+        class: image_class_custom,
+        height: image.height,
+        fetchpriority: fetchpriority,
+        preload: preload
+    }}
+  {% else %}
+    {% render 'placeholder-image',
+      icon: placeholder_icon,
+      background_color: placeholder_background_color
+    %}
+  {% endif %}
+</div>

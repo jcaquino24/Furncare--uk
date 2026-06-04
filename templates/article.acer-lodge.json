@@ -1,0 +1,422 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_video_banner_Mx3q8g": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_8TMHFP": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "case study",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_DXxf3y": {
+          "type": "title",
+          "settings": {
+            "text": "Acer Lodge Care Home",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_TY8nED": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_GeUmxJ": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_aDpXic": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_8TMHFP",
+        "title_DXxf3y",
+        "button_TY8nED",
+        "card_GeUmxJ",
+        "card_aDpXic"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 600,
+        "height_mobile": 430,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/JGP_4048.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(54deg, rgba(255, 250, 99, 1), rgba(38, 37, 32, 0.4) 1%)",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_PhprEj": {
+      "type": "richtext",
+      "blocks": {
+        "heading_mYLH3K": {
+          "type": "heading",
+          "settings": {
+            "text": "Furncare Joins Up with EQ Care on the Delivery of Acer Lodge, Blackburn",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_LFtXUT": {
+          "type": "tagline",
+          "settings": {
+            "content": "We were proud to collaborate with EQ Care on the delivery of <a href=\"https://eqcare.org/care-home/acer-lodge/\" target=\"_blank\" title=\"https://eqcare.org/care-home/acer-lodge/\">Acer Lodge</a>, a newly developed, purpose-built care home in Blackburn designed to offer high-quality residential care in a setting that promotes independence, comfort, and dignity. Our team was appointed to design, manufacture, and fully install bespoke bedroom furniture across 70 resident rooms, helping to shape interiors that are as practical as they are thoughtfully styled.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_mYLH3K",
+        "tagline_LFtXUT"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "featured_blocks_QcyUqa": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_WB6nUy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-1.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_KWGGtg": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-3.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_eTrEcG": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-6.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_Ad8rHB": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-8.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_EwtUPP": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-2.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_Y6EamE": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-7.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_HcUa8h": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-9.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_XUpzFc": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-4.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_tftheH": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-5.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_WB6nUy",
+        "block_KWGGtg",
+        "block_eTrEcG",
+        "block_Ad8rHB",
+        "block_EwtUPP",
+        "block_Y6EamE",
+        "block_HcUa8h",
+        "block_XUpzFc",
+        "block_tftheH"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "",
+        "padding": "wide",
+        "layout": "line_grid",
+        "enable_lightbox": true
+      }
+    },
+    "richtext_EW6cqY": {
+      "type": "richtext",
+      "blocks": {
+        "heading_C9ihxn": {
+          "type": "heading",
+          "settings": {
+            "text": "Project Scope",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_JPEfFQ": {
+          "type": "tagline",
+          "settings": {
+            "content": "The brief focused on creating safe, stylish, and long-lasting bedroom spaces that support both resident wellbeing and the day-to-day operations of care staff. Working closely with the client, we delivered:",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "tagline_Raci9K": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "• Bespoke dressing tables and chests• Triple wardrobes with integrated storage• Coordinated bedside units• Custom TV panels designed for seamless wall integration• Full delivery and professional installation across all roomsEach piece was made to order, with attention to finish, form, and function. From internal layouts and hardware choices to external detailing, every element was specified with care in mind.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_T6qrbf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_C9ihxn",
+        "tagline_JPEfFQ",
+        "tagline_Raci9K",
+        "button_T6qrbf"
+      ],
+      "disabled": true,
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_text_Rr8iJJ": {
+      "type": "image-text",
+      "blocks": {
+        "images_NXFXtC": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/JGP_4048.jpg"
+          }
+        },
+        "content_c9CaD6": {
+          "type": "content",
+          "settings": {
+            "title": "Project Scope",
+            "title_size": "xl",
+            "text": "The brief focused on creating safe, stylish, and long-lasting bedroom spaces that support both resident wellbeing and the day-to-day operations of care staff. Working closely with the client, we delivered:\n\n• Bespoke dressing tables and chests\n• Triple wardrobes with integrated storage\n• Coordinated bedside units\n• Custom TV panels designed for seamless wall integration\n• Full delivery and professional installation across all rooms\n\nEach piece was made to order, with attention to finish, form, and function. From internal layouts and hardware choices to external detailing, every element was specified with care in mind.",
+            "button_style": "underline",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_NXFXtC",
+        "content_c9CaD6"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-4xl"
+      }
+    },
+    "richtext_TJAtU7": {
+      "type": "richtext",
+      "disabled": true,
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "richtext_znBbzx": {
+      "type": "richtext",
+      "blocks": {
+        "heading_qBVQQe": {
+          "type": "heading",
+          "settings": {
+            "text": "From manufacturing to on-site installation, our team provided a complete end-to-end solution. Furniture was delivered to schedule, assembled on site, and installed by our specialist fitters – ensuring every room was completed to the highest standard, ready for occupancy.",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_DLcG7y": {
+          "type": "tagline",
+          "disabled": true,
+          "settings": {
+            "content": "Carl Southall, Managing Director at Furncare",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_bKjrMf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_qBVQQe",
+        "tagline_DLcG7y",
+        "button_bKjrMf"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-6xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "product_blocks_hr4bkw": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_HdNPmE": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "the-3p-fulfilled-snowboard",
+              "the-collection-snowboard-liquid",
+              "the-inventory-not-tracked-snowboard-3",
+              "the-complete-snowboard",
+              "the-compare-at-price-snowboard"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_HdNPmE"
+      ],
+      "disabled": true,
+      "name": "Product blocks",
+      "settings": {
+        "title": "Products featured in this case study",
+        "section_padding": "--spacing-2xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_video_banner_Mx3q8g",
+    "richtext_PhprEj",
+    "featured_blocks_QcyUqa",
+    "richtext_EW6cqY",
+    "image_text_Rr8iJJ",
+    "richtext_TJAtU7",
+    "richtext_znBbzx",
+    "product_blocks_hr4bkw"
+  ]
+}

@@ -1,0 +1,20 @@
+<article class="collection-card product-card">
+  <a href="{{ collection.url }}">
+    <div class="collection-card__image product-card__image">
+      {{
+        collection.image
+        | image_url: width: 642
+        | image_tag:
+          width: 321,
+          class: 'collection-card__image-element product-card__image-element',
+          alt: collection.title,
+          loading: 'lazy'
+      }}
+    </div>
+    <div class="collection-card__info product-card__info">
+      <h3 class="collection-card__title product-card__title title-2xs">
+        {{ collection.title }}
+      </h3>
+    </div>
+  </a>
+</article>

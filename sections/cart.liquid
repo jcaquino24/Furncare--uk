@@ -1,0 +1,173 @@
+<div class="cart-page container colour-scheme--base-white-01">
+  <h1 class="text-center title-md cart-page__title">
+    {{ 'cart.my_cart' | t }}
+    {% if cart.item_count > 0 %}
+      {% if cart.item_count == 1 %}
+        ({{ 'cart.count_item' | t: count: cart.item_count }})
+      {% else %}
+        ({{ 'cart.count_items' | t: count: cart.item_count }})
+      {% endif %}
+    {% endif %}
+  </h1>
+
+  <form action="{{ routes.cart_url }}" method="post" novalidate class="cart-form">
+    <div class="cart-form__table">
+      {% if cart.item_count == 0 %}
+        <div class="cart-form__table-body">
+          <div class="cart-form__empty">
+            <p class="cart-form__empty-message body-xl body-xl--bold">{{ 'cart.empty_cart_message' | t }}</p>
+            <a href="{{ 'cart.empty_cart_cta_url' | t }}" class="button button--primary">
+              {{ 'cart.empty_cart_cta_text' | t }}
+            </a>
+          </div>
+        </div>
+      {% else %}
+        <div class="cart-form__table-header hide-on-mobile">
+          <div class="cart-form__table-heading eyebrow-xs eyebrow-xs--bold">{{ 'cart.item' | t }}</div>
+          <div class="cart-form__table-heading eyebrow-xs eyebrow-xs--bold hide-on-mobile cart-form__table-header-quantity">{{ 'cart.quantity' | t }}</div>
+          <div class="cart-form__table-heading eyebrow-xs eyebrow-xs--bold hide-on-mobile cart-form__table-header-subtotal">{{ 'cart.subtotal' | t }}</div>
+          <div class="cart-form__table-heading eyebrow-xs eyebrow-xs--bold"></div>
+        </div>
+        <div class="cart-form__table-body">
+          {% for item in cart.items %}
+            {% render 'cart-item', item: item, line: forloop.index, class: 'cart-item' %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if cart.item_count > 0 %}
+    <div class="cart-form__summary-block">
+        <div class="cart-form__summary">
+          <h2 class="eyebrow-sm eyebrow-sm--bold text-center hide-in-minicart">{{ 'cart.summary' | t }}</h2>
+          
+          <div class="cart-form__summary-rows"> 
+            <div class="cart-form__summary-row">
+              <span class="cart-form__summary-row-label eyebrow-2xs">
+                <strong>{{ 'cart.subtotal' | t }}</strong>
+              </span>
+              <span class="cart-form__summary-row-value eyebrow-xs eyebrow-xs--bold">{{ cart.total_price | money }}</span>
+            </div>
+            <div class="cart-form__summary-row">
+              <span class="cart-form__summary-row-label eyebrow-2xs">
+                <strong>{{ 'cart.shipping' | t }}:</strong>
+              </span>
+              <span class="cart-form__summary-row-value eyebrow-2xs">{{ 'cart.shipping_calculated_at_checkout' | t }}</span>
+            </div>
+            <div class="cart-form__summary-row">
+              <span class="cart-form__summary-row-label eyebrow-2xs">
+                <strong>{{ 'cart.estimated_delivery' | t }}:</strong>
+              </span>
+              <span class="cart-form__summary-row-value eyebrow-2xs">{{ 'cart.estimated_delivery_value' | t }}</span>
+            </div>
+          </div>
+          
+          
+          <a href="/checkout" class="button button--primary button--full-width cart-form__checkout">
+            {{ 'cart.checkout' | t }} {% render 'icons', icon: 'lock' %}
+          </a>
+
+          <a href="{{ routes.cart_url }}" class="button button--underline button--underline-with-svg button--full-width hide-on-cart cart-form__view-cart">
+            {{ 'cart.view_cart' | t }} {% render 'icons', icon: 'arrow-right' %}
+          </a>
+
+          {% comment %} Payment methods {% endcomment %}
+          <div class="cart-form__payment-methods hide-in-minicart">
+            {% render 'payment-icons' %}
+          </div>
+
+          <div class="cart-form__accordions hide-in-minicart">
+            {% for block in section.blocks %}
+              {% if block.type == 'accordion_item' %}
+                {% comment %}uwp-accordion{% endcomment %}
+                {% render 'accordion', title: block.settings.title, content: block.settings.content %}
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          {% liquid
+            assign upsell_in_cart = false
+            assign upsell_product_obj = settings.cart_upsell.product
+            if upsell_product_obj != blank and upsell_product_obj.value
+              assign upsell_product_obj = upsell_product_obj.value
+            endif
+            if upsell_product_obj and upsell_product_obj.id
+              for line_item in cart.items
+                if line_item.product and line_item.product.id == upsell_product_obj.id
+                  assign upsell_in_cart = true
+                endif
+              endfor
+            endif
+          %}
+
+          <div class="cart-form__upsells hide-in-minicart">
+            {% if settings.cart_upsell != blank and upsell_in_cart == false %}
+              {% render 'upsell-block', title: settings.cart_upsell.title, content: settings.cart_upsell.content, image: settings.cart_upsell.image, upsell_product: settings.cart_upsell.product %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </form>
+</div>
+
+{% schema %}
+{
+  "name": "Cart",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Cart"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Accordion Item",
+      "type": "accordion_item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Accordion Item"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    },
+    {
+      "name": "Upsell Block",
+      "type": "upsell_block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "White Glove Delivery Service"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content",
+          "default": "Upgrade to an expert in-room setup and packaging removal."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

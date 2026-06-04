@@ -1,0 +1,168 @@
+{% liquid
+  assign show_home = show_home | default: true, allow_false: true
+%}
+
+<nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+  <ol class="breadcrumbs__list">
+    {% if show_home %}
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link eyebrow-2xs" href="/">Home</a>
+      </li>
+    {% endif %}
+
+    {%- case template.name -%}
+      {%- when 'page' -%}
+        <li class="breadcrumbs__item">
+          {% render 'icons', icon: 'chevron-right' %}
+
+          <a
+            class="breadcrumbs__link eyebrow-2xs"
+            href="{{ page.url }}"
+            aria-current="page"
+          >
+            {{- page.title -}}
+          </a>
+        </li>
+      {%- when 'product' -%}
+        {%- liquid
+          assign custom_breadcrumbs = product.metafields.custom.breadcrumbs.value
+        -%}
+
+        {%- if custom_breadcrumbs != blank -%}
+          {%- comment -%} Render custom breadcrumbs from metaobjects {%- endcomment -%}
+          {%- for breadcrumb_item in custom_breadcrumbs -%}
+            <li class="breadcrumbs__item eyebrow-2xs">
+              {% render 'icons', icon: 'chevron-right' %}
+
+              <a
+                class="breadcrumbs__link eyebrow-2xs"
+                href="{{ breadcrumb_item.url }}"
+              >
+                {{- breadcrumb_item.text -}}
+              </a>
+            </li>
+          {%- endfor -%}
+        {%- else -%}
+          {%- comment -%} Fallback to collection if no custom breadcrumbs {%- endcomment -%}
+          {%- if collection.url -%}
+            <li class="breadcrumbs__item eyebrow-2xs">
+              {% render 'icons', icon: 'chevron-right' %}
+
+              {{
+                collection.title
+                | link_to: collection.url,
+                  class: 'breadcrumbs__link eyebrow-2xs'
+              }}
+            </li>
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- comment -%} Always show product name as last item {%- endcomment -%}
+        <li class="breadcrumbs__item eyebrow-2xs">
+          {% render 'icons', icon: 'chevron-right' %}
+
+          <a
+            class="breadcrumbs__link eyebrow-2xs"
+            href="{{ product.url }}"
+            aria-current="page"
+          >
+            {{- product.title | split: '|' | first -}}
+          </a>
+        </li>
+      {%- when 'collection' and collection.handle -%}
+        {%- if current_tags -%}
+          <li class="breadcrumbs__item">
+            {% render 'icons', icon: 'chevron-right' %}
+
+            {{ collection.title | link_to: collection.url }}
+          </li>
+          <li class="breadcrumbs__item">
+            {% render 'icons', icon: 'chevron-right' %}
+
+            {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+" }}{%- endcapture -%}
+            <a
+              class="breadcrumbs__link eyebrow-2xs"
+              href="{{ tag_url }}"
+              aria-current="page"
+            >
+              {{- current_tags | join: ' + ' -}}
+            </a>
+          </li>
+        {%- else -%}
+          <li class="breadcrumbs__item">
+            {% render 'icons', icon: 'chevron-right' %}
+
+            <a
+              class="breadcrumbs__link eyebrow-2xs"
+              href="{{ collection.url }}"
+              aria-current="page"
+            >
+              {{- collection.title -}}
+            </a>
+          </li>
+        {%- endif -%}
+      {%- when 'blog' -%}
+        {%- if current_tags -%}
+          <li class="breadcrumbs__item">
+            {% render 'icons', icon: 'chevron-right' %}
+
+            {{ blog.title | link_to: blog.url }}
+          </li>
+          <li class="breadcrumbs__item">
+            {% render 'icons', icon: 'chevron-right' %}
+
+            {%- capture tag_url -%}{{ blog.url }}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+            <a
+              class="breadcrumbs__link eyebrow-2xs"
+              href="{{ tag_url }}"
+              aria-current="page"
+            >
+              {{- current_tags | join: ' + ' -}}
+            </a>
+          </li>
+
+        {%- else -%}
+          <li class="breadcrumbs__item">
+            {% render 'icons', icon: 'chevron-right' %}
+
+            <a
+              class="breadcrumbs__link eyebrow-2xs"
+              href="{{ blog.url }}"
+              aria-current="page"
+            >
+              {{- blog.title -}}
+            </a>
+          </li>
+        {%- endif -%}
+      {%- when 'article' -%}
+        <li class="breadcrumbs__item">
+          {% render 'icons', icon: 'chevron-right' %}
+
+          <a
+            class="breadcrumbs__link eyebrow-2xs"
+            href="{{ blog.url }}"
+            aria-current="page"
+            >Blog</a
+          >
+        </li>
+
+        <li class="breadcrumbs__item">
+          {% render 'icons', icon: 'chevron-right' %}
+
+          <span>{{ article.title }}</span>
+        </li>
+      {%- else -%}
+        <li class="breadcrumbs__item">
+          {% render 'icons', icon: 'chevron-right' %}
+
+          <a
+            class="breadcrumbs__link eyebrow-2xs"
+            href="{{ request.path }}"
+            aria-current="page"
+          >
+            {{- page_title -}}
+          </a>
+        </li>
+    {%- endcase -%}
+  </ol>
+</nav>

@@ -1,0 +1,30 @@
+{% liquid
+  assign sort_by = collection.sort_by
+%}
+
+<div class="collection__sort-by">
+  <select class="collection__sort-by__select" onchange="Filter.handleSortBy(event)">
+
+    {% if sort_by == blank %}
+      <option class="collection__sort-by__option" value="" disabled selected>
+          Sort By
+      </option>
+    {% endif %}
+
+    {% for option in collection.sort_options %}
+      <option
+          class="collection__sort-by__option"
+          value="{{ option.value }}" 
+          {% if option.value == sort_by %}
+          selected="selected"
+          {% endif %}
+      >
+          {{ option.name }}
+      </option>
+    {% endfor %}
+
+  </select>
+
+  {% render "icons", icon: "chevron-down", class: "collection__sort-by__select-icon" %}
+  
+</div>

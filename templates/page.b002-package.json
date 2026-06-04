@@ -1,0 +1,278 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "hotspots_bfFtxR": {
+      "type": "hotspots",
+      "blocks": {
+        "tab_gHwhLq": {
+          "type": "tab",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/Green-Bedroom-scaled.jpg",
+            "image_desktop": "shopify://shop_images/Green-Bedroom-scaled.jpg",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "hotspot_jU6tVh": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "luna-table-lamp",
+            "description": "",
+            "desktop_x": 8,
+            "desktop_y": 44,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_Hfrm4T": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "waylen-gents-wardrobe",
+            "description": "",
+            "desktop_x": 72,
+            "desktop_y": 32,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_YWnXpz": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-l001-cushion",
+            "description": "",
+            "desktop_x": 21,
+            "desktop_y": 47,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_cM38dX": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-l001-cushion",
+            "description": "",
+            "desktop_x": 64,
+            "desktop_y": 47,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_bAW49F": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "waylen-two-over-three-drawer-chest",
+            "description": "",
+            "desktop_x": 30,
+            "desktop_y": 44,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_8jz7tE": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "imbali-emerald",
+            "description": "",
+            "desktop_x": 50,
+            "desktop_y": 44,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_7YJDbQ": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "single-everly-bed-base",
+            "description": "",
+            "desktop_x": 42,
+            "desktop_y": 65,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_PBy3kK": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "viktor-single-vandalproof-mattress",
+            "description": "",
+            "desktop_x": 39,
+            "desktop_y": 65,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_bXfKbd": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "waylen-3-drawer-bedside-table",
+            "description": "",
+            "desktop_x": 10,
+            "desktop_y": 75,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_9KCAia": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "elm-tub-chair",
+            "description": "",
+            "desktop_x": 63,
+            "desktop_y": 58,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_PU7L99": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "jansson-side-chair-fabric-nevis-putty",
+            "description": "",
+            "desktop_x": 80,
+            "desktop_y": 54,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_BkqGXb": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "waylen-dressing-table",
+            "description": "",
+            "desktop_x": 90,
+            "desktop_y": 60,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        }
+      },
+      "block_order": [
+        "tab_gHwhLq",
+        "hotspot_jU6tVh",
+        "hotspot_Hfrm4T",
+        "hotspot_YWnXpz",
+        "hotspot_cM38dX",
+        "hotspot_bAW49F",
+        "hotspot_8jz7tE",
+        "hotspot_7YJDbQ",
+        "hotspot_PBy3kK",
+        "hotspot_bXfKbd",
+        "hotspot_9KCAia",
+        "hotspot_PU7L99",
+        "hotspot_BkqGXb"
+      ],
+      "name": "Hotspots",
+      "settings": {
+        "remove_top_padding": false,
+        "colour_scheme": "base-white-01"
+      }
+    },
+    "product_blocks_Fra7Pt": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_3mFakK": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "elm-tub-chair",
+              "single-everly-bed-base",
+              "luna-table-lamp",
+              "jansson-side-chair-fabric-nevis-putty",
+              "everly-small-double-bed-base",
+              "waylen-two-over-three-drawer-chest",
+              "waylen-3-drawer-bedside-table",
+              "waylen-dressing-table"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        },
+        "product_block_gbHrnY": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_3mFakK",
+        "product_block_gbHrnY"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Featured Products",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "blocks_r3JddM": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_LRrarr": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 70,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_LRrarr"
+      ],
+      "name": "Form embed",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "hotspots_bfFtxR",
+    "product_blocks_Fra7Pt",
+    "blocks_r3JddM"
+  ]
+}

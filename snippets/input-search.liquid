@@ -1,0 +1,70 @@
+{% doc %}
+  Reusable search input field.
+
+  @param {string} id - ID of the text field input.
+  @param {string} placeholder - Placeholder text for the text field input.
+  @param {string} name - Name of the text field input.
+  @param {string} value - Value of the text field input.
+  @param {string} class - Additional classes for the text field input.
+  @param {string} attributes - Additional HTML attributes for the text field input.
+  @param {boolean} in_form - Whether the input is inside a form. Default is false.
+
+  @example
+  {% render 'input-search',
+    id: 'header-search',
+    name: 'products',
+    placeholder: 'Search',
+    value: 'John',
+    attributes: 'required',
+  %}
+{% enddoc %}
+
+<uwp-search-input
+  {% if hide_on_mobile %}
+    class="hide-on-mobile"
+  {% endif %}
+  role="region"
+  aria-label="Search input"
+  aria-roledescription="region"
+>
+  <div class="input-search">
+    <label
+      class="input-search__label visually-hidden"
+      for="{{ id }}"
+    >
+      {{ placeholder }}
+    </label>
+
+    <button
+      class="input-search__submit"
+      type="{% if in_form %}submit{% else %}button{% endif %}"
+      js-search-input="button"
+      aria-label="{{ 'header.accessibility.search' | t }}"
+    >
+      {% render 'icons', icon: 'search' %}
+    </button>
+
+    <input
+      id="{{ id }}"
+      class="input-search__input body-md {{ class }}"
+      type="search"
+      name="{{ name }}"
+      value="{{ value }}"
+      placeholder="{{ placeholder }}"
+      js-search-input="input"
+      {{ attributes }}
+    >
+
+    <button
+      class="input-search__reset"
+      type="button"
+      js-search-input="reset"
+      aria-label="Clear search"
+    >
+      {% render 'icons', icon: 'close' %}
+    </button>
+  </div>
+
+  <!-- Pull in the results UI -->
+  {% render 'instant-search-results' %}
+</uwp-search-input>

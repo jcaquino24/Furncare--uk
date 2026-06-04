@@ -1,0 +1,776 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_video_banner_Mx3q8g": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_8TMHFP": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "case study",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_DXxf3y": {
+          "type": "title",
+          "settings": {
+            "text": "Chapel View",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_TY8nED": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_GeUmxJ": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_aDpXic": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_8TMHFP",
+        "title_DXxf3y",
+        "button_TY8nED",
+        "card_GeUmxJ",
+        "card_aDpXic"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 600,
+        "height_mobile": 430,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Dining_Room_-_Chapel_View_37_of_60.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(54deg, rgba(255, 250, 99, 1), rgba(38, 37, 32, 0.4) 1%)",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_PhprEj": {
+      "type": "richtext",
+      "blocks": {
+        "heading_mYLH3K": {
+          "type": "heading",
+          "settings": {
+            "text": "Furncare Project Team shines at Chapel View Care Home",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_LFtXUT": {
+          "type": "tagline",
+          "settings": {
+            "content": "Longstanding Furncare customer, the award-winning <a href=\"https://woodcaregroup.com/\">Wood Care Group</a>, operates seven care homes in the north of England accounting for 411 beds. First established in 1985, it employs over 400 care sector professionals. Like Furncare, the Group is a thriving family business, with the third generation of the Wood family now involved.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        },
+        "button_GqjYpW": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Elm Lodge Virtual Tour",
+            "url": "https://www.forestcare.co.uk/wp-content/themes/forestcare/virtual-tour-elm.php",
+            "new_tab": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_mYLH3K",
+        "tagline_LFtXUT",
+        "button_GqjYpW"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "featured_blocks_QcyUqa": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_WB6nUy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Cinema_Room_-_Chapel_View_12_of_28.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_tFmLrm": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Cinema_Room_-_Chapel_View_16_of_28.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_YagEQK": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Cinema_Room_-_Chapel_View_20_of_28.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_JbK8yB": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Cinema_Room_-_Chapel_View_21_of_28.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_DefGg3": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Conservatory_-_Chapel_View_6_of_12.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_kgWLnd": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Conservatory_-_Chapel_View_9_of_12.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_bTdTHr": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Conservatory_-_Chapel_View_12_of_12.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_UgEw44": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Dining_Room_-_Chapel_View_24_of_60.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_nfVeEW": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Dining_Room_-_Chapel_View_27_of_60.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_YJAftC": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Dining_Room_-_Chapel_View_29_of_60.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_RmJVEe": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Dining_Room_-_Chapel_View_33_of_60.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_tpJVEW": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Dining_Room_-_Chapel_View_34_of_60.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_a6Cjim": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Dining_Room_-_Chapel_View_47_of_60.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_FKWatQ": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Dining_Room_-_Chapel_View_48_of_60.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_BmCjN6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Garden_-_Chapel_View_6_of_15.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_PB3U3h": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_-_Chapel_View_18_of_47.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_HxpPDm": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_-_Chapel_View_15_of_47.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_XcLcCe": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_-_Chapel_View_16_of_47.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_qLTpXE": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_-_Chapel_View_30_of_47.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_qrRTMW": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_-_Chapel_View_40_of_47.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_gMgeiz": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_-_Chapel_View_45_of_47.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_kgq9pa": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_-_Chapel_View_43_of_47.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_9JyjVD": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Pub_-_Chapel_View_17_of_40.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_Tcmqp6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Pub_-_Chapel_View_20_of_40.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_yLrDAK": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Pub_-_Chapel_View_21_of_40.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_BxVpEc": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Pub_-_Chapel_View_31_of_40.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_bpitgE": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Pub_-_Chapel_View_33_of_40.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_w3A8cK": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Pub_-_Chapel_View_38_of_40.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_WB6nUy",
+        "block_tFmLrm",
+        "block_YagEQK",
+        "block_JbK8yB",
+        "block_DefGg3",
+        "block_kgWLnd",
+        "block_bTdTHr",
+        "block_UgEw44",
+        "block_nfVeEW",
+        "block_YJAftC",
+        "block_RmJVEe",
+        "block_tpJVEW",
+        "block_a6Cjim",
+        "block_FKWatQ",
+        "block_BmCjN6",
+        "block_PB3U3h",
+        "block_HxpPDm",
+        "block_XcLcCe",
+        "block_qLTpXE",
+        "block_qrRTMW",
+        "block_gMgeiz",
+        "block_kgq9pa",
+        "block_9JyjVD",
+        "block_Tcmqp6",
+        "block_yLrDAK",
+        "block_BxVpEc",
+        "block_bpitgE",
+        "block_w3A8cK"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "",
+        "padding": "wide",
+        "layout": "line_grid",
+        "enable_lightbox": true
+      }
+    },
+    "richtext_EW6cqY": {
+      "type": "richtext",
+      "blocks": {
+        "heading_C9ihxn": {
+          "type": "heading",
+          "settings": {
+            "text": "“You got our vision in one” ",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_JPEfFQ": {
+          "type": "tagline",
+          "settings": {
+            "content": "<strong>Alexandra Ledger, Director at Bright Bay Design</strong>",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_T6qrbf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_C9ihxn",
+        "tagline_JPEfFQ",
+        "button_T6qrbf"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_text_Rr8iJJ": {
+      "type": "image-text",
+      "blocks": {
+        "images_NXFXtC": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Pub_-_Chapel_View_21_of_40.jpg",
+            "image_two": "shopify://shop_images/Cinema_Room_-_Chapel_View_27_of_28.jpg"
+          }
+        },
+        "content_c9CaD6": {
+          "type": "content",
+          "settings": {
+            "title": "Special Projects Team",
+            "title_size": "xl",
+            "text": "In their most recent refurbishment project, ‘Chapel View’ in South Yorkshire has been refreshed and upgraded. The Furncare Special Projects Team oversaw the project, led by Arnie Goodenough and Jade Eaglen. Although not a dedicated dementia unit itself, Chapel View compliments nearby Group dementia care homes Riverside and Field View, with support and respite care services.\n\nHaving measured up and taken a comprehensive client brief during a site visit with owner and Director Andrew Wood and his father in February 2024, Furncare Project Design Manager Jade set about turning their ‘vision’ into a stylish, functional and homely care home.\n\nWith the help of Molly Tinker, one of over 20 staff based at the Furncare Head Office, floorplans, room layouts, mood boards and costings were then developed. Originally inspired by bold, distinctive wall coverings in another Wood Care Group home, the final designs help to create a suitably confident yet stylish environment.",
+            "button_style": "underline",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_NXFXtC",
+        "content_c9CaD6"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-4xl"
+      }
+    },
+    "image_text_MWUrUE": {
+      "type": "image-text",
+      "blocks": {
+        "content_zq6UEN": {
+          "type": "content",
+          "settings": {
+            "title": "Tactile & Organic",
+            "title_size": "xl",
+            "text": "New customer lighting was factored in to ensure maximum benefit was achieved. For the seating, rather than opt for stock upholstery fabrics, bespoke faux leather was utilised extensively to provide a more tactile and organic feel. The Overton dining room cabinets featured Mountain Oak natural wood surfaces and a Mussel paint finish. Just days after the designs were submitted, they were reviewed and given an emphatic ‘thumbs up’ by Andrew Wood.",
+            "button_style": "underline",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "images_yNWAEq": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Dining_Room_-_Chapel_View_42_of_60.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "content_zq6UEN",
+        "images_yNWAEq"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "image_text_n3pjU3": {
+      "type": "image-text",
+      "blocks": {
+        "images_RQ74Gb": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Cinema_Room_-_Chapel_View_9_of_28.jpg"
+          }
+        },
+        "content_9BRRFm": {
+          "type": "content",
+          "settings": {
+            "title": "It's all in the detail",
+            "title_size": "xl",
+            "text": "With only minor adjustments left to address, most of which were to accommodate new lighting plans, the order was signed off. Despite the bespoke requirements and tailor-made upholstery, Andrew and his sister Jenny greeted Jade and the Furncare ‘White Glove’ Team just a few weeks later when they delivered and installed the interiors – cabinet furniture, seating, curtains, blinds and soft furnishings. Delivery was scheduled by the Logistics Team and the Furncare National Distribution Centre to synchronise with the customers construction team so had to be flexible and ‘on-call’ to ensure the seamless completion of the project.\n\nStill able to accommodate further last-minute adjustments on site, the team were able to deliver and install all the lounges, the ‘Pub’, cinema and dining room in full and on schedule.",
+            "button_style": "underline",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_RQ74Gb",
+        "content_9BRRFm"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "richtext_znBbzx": {
+      "type": "richtext",
+      "blocks": {
+        "heading_qBVQQe": {
+          "type": "heading",
+          "settings": {
+            "text": "“The style and variety of our ranges provide interior designers with such a wonderful choice of quality furnishings to work with. Chapel View showcases our ability to tailor-make exceptional interiors for care homes.”",
+            "heading_level": "h2",
+            "heading_style": "title-md"
+          },
+          "blocks": {}
+        },
+        "tagline_DLcG7y": {
+          "type": "tagline",
+          "settings": {
+            "content": "Jade Eaglen, Project Design Manager, Furncare",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_bKjrMf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_qBVQQe",
+        "tagline_DLcG7y",
+        "button_bKjrMf"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_video_banner_xWTgmR": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_YJpC8H": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "text": "Retirement furniture",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_qDHCNx": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "text": "Designed for Comfort, Built for <em>Care</em>.",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_GDbKwj": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_e3GTdX": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_UehPPd": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_YJpC8H",
+        "title_qDHCNx",
+        "button_GDbKwj",
+        "card_e3GTdX",
+        "card_UehPPd"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/159_bg__01.webp",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "linear-gradient(320deg, rgba(255, 250, 99, 0.2), rgba(203, 68, 194, 1), rgba(255, 250, 99, 0))",
+        "colour_scheme": "light",
+        "content_position": "center-bottom",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_tQRH8m": {
+      "type": "richtext",
+      "blocks": {
+        "heading_GY3EAJ": {
+          "type": "heading",
+          "settings": {
+            "text": "“The entire installation was completed without needing to close any sections of the home whilst the work was done. It was highly professional and completely hassle-free.”",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_94B8CP": {
+          "type": "tagline",
+          "settings": {
+            "content": "Andrew Wood, Owner and Director, Wood Care Group",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_jwbrzm": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_GY3EAJ",
+        "tagline_94B8CP",
+        "button_jwbrzm"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "product_blocks_hr4bkw": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_HdNPmE": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "the-3p-fulfilled-snowboard",
+              "the-collection-snowboard-liquid",
+              "the-inventory-not-tracked-snowboard-3",
+              "the-complete-snowboard",
+              "the-compare-at-price-snowboard"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_HdNPmE"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Products featured in this case study",
+        "section_padding": "--spacing-2xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_video_banner_Mx3q8g",
+    "richtext_PhprEj",
+    "featured_blocks_QcyUqa",
+    "richtext_EW6cqY",
+    "image_text_Rr8iJJ",
+    "image_text_MWUrUE",
+    "image_text_n3pjU3",
+    "richtext_znBbzx",
+    "image_video_banner_xWTgmR",
+    "richtext_tQRH8m",
+    "product_blocks_hr4bkw"
+  ]
+}

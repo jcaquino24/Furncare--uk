@@ -1,0 +1,734 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_video_banner_Mx3q8g": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_8TMHFP": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "case study",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_DXxf3y": {
+          "type": "title",
+          "settings": {
+            "text": "Letcombe Regis",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_TY8nED": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_GeUmxJ": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_aDpXic": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_8TMHFP",
+        "title_DXxf3y",
+        "button_TY8nED",
+        "card_GeUmxJ",
+        "card_aDpXic"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 600,
+        "height_mobile": 430,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Untitled-2_4_072652b7-474a-40cc-9cfd-5e567e4f5d08.png",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(54deg, rgba(255, 250, 99, 1), rgba(38, 37, 32, 0.4) 1%)",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_PhprEj": {
+      "type": "richtext",
+      "blocks": {
+        "heading_mYLH3K": {
+          "type": "heading",
+          "settings": {
+            "text": "Dementia and Nursing Care at Letcombe Regis",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "button_GqjYpW": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Elm Lodge Virtual Tour",
+            "url": "https://www.forestcare.co.uk/wp-content/themes/forestcare/virtual-tour-elm.php",
+            "new_tab": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_mYLH3K",
+        "button_GqjYpW"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "featured_blocks_QcyUqa": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_zNLzM4": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-8_bbe86a69-a209-48ee-bf02-9e0ee2f23904.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_XwitGB": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-9_5a67be4f-4cfb-4e31-8c16-cf51eafab7cf.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_yH7FnD": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-7_146ec8e7-9017-4d8a-80f3-bff4352e50b9.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_YpAnbL": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-2_ce5318a2-551d-4857-91e9-692aa5167551.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_ndtJLy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-27.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_DkdiFG": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-26.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_tNpLHx": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-25.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_jiTtwh": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-23.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_AcNMgH": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-22.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_yjVtk6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-6_8a9d5d8c-9821-4153-86c7-d24fc364999e.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_hRbqqU": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-24.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_d4TfUe": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-20_71e827e0-4524-400a-89ca-e959e71001cf.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_BDRUpK": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-4_76bfb254-5052-4e5c-9a78-67b5c3bb2efc.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_nWMRRG": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-3_b944d1f1-0d3a-4c86-b924-747511839226.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_LFVVJC": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-1_35f8d3d9-63e6-45b8-b4bb-c23067dc99d4.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_JL4BTW": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-5_8eff4791-2f09-4fe3-98f2-7d0f6898c64a.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_7KKrcT": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-19_72448260-5c72-46e1-a7da-55f5b8af29f0.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_phMtpg": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-21.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_49R9NF": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-17_b1346a46-4d5a-4038-91d6-1cb0b5c8a5b8.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_LLKP7W": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-18_13694c74-22ce-4cb1-9b54-541188968ce8.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_y7Mf8t": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-16_aaed9a51-e851-45b4-a794-43eb073045fc.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_DXQhNA": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-14_4b9fd686-12b2-4e4c-be59-4ebcb75d6ed6.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_CAGh8t": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-12_1025e2d5-1915-427a-b11c-146bcaa2d995.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_NXH96J": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-10_f3f78c92-b028-4f7f-9afb-6488501e8b1d.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_bGpcpR": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-15_d780bc04-ba57-42c9-8ab1-bafc9d5561eb.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_WzN8P8": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-13_3195f5f7-4e53-4016-8da8-cc8f2dd3125b.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_Xn3YCc": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-11_c74831bc-83a4-42f6-a717-60d92174f9b9.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_zRcm6x": {
+          "type": "block",
+          "settings": {
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_hqRLAc": {
+          "type": "block",
+          "settings": {
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_6NGqDQ": {
+          "type": "block",
+          "settings": {
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_WB6nUy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2421.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_zNLzM4",
+        "block_XwitGB",
+        "block_yH7FnD",
+        "block_YpAnbL",
+        "block_ndtJLy",
+        "block_DkdiFG",
+        "block_tNpLHx",
+        "block_jiTtwh",
+        "block_AcNMgH",
+        "block_yjVtk6",
+        "block_hRbqqU",
+        "block_d4TfUe",
+        "block_BDRUpK",
+        "block_nWMRRG",
+        "block_LFVVJC",
+        "block_JL4BTW",
+        "block_7KKrcT",
+        "block_phMtpg",
+        "block_49R9NF",
+        "block_LLKP7W",
+        "block_y7Mf8t",
+        "block_DXQhNA",
+        "block_CAGh8t",
+        "block_NXH96J",
+        "block_bGpcpR",
+        "block_WzN8P8",
+        "block_Xn3YCc",
+        "block_zRcm6x",
+        "block_hqRLAc",
+        "block_6NGqDQ",
+        "block_WB6nUy"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "",
+        "padding": "wide",
+        "layout": "line_grid",
+        "enable_lightbox": true
+      }
+    },
+    "richtext_EW6cqY": {
+      "type": "richtext",
+      "blocks": {
+        "tagline_bUpPLb": {
+          "type": "tagline",
+          "settings": {
+            "content": "The exclusive BUPA Richmond Villages Letcombe Regis Care Home was designed by Vogue Living. It is located in the heart of the Oxfordshire countryside and incorporates private ensuite bedrooms, an indoor swimming pool, gym, restaurant and licensed bar, library, lounges and accessible grounds. The dedicated dementia unit has been designed and furnished sensitively, whilst the nursing care home provides highly personalised accommodation and premium care. Letcombe Regis also provides respite care so is an ideal place to recuperate or convalesce.",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_xQFxgp": {
+          "type": "tagline",
+          "settings": {
+            "content": "The beautiful interiors throughout have been sensitively designed and furnished to create a warm, luxurious and comfortable environment for residents. The upholstery colours and designs pair seamlessly with the furniture shapes and designs, transforming the spaces into a luxurious, opulent and homely environment.",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "tagline_bUpPLb",
+        "tagline_xQFxgp"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_text_Rr8iJJ": {
+      "type": "image-text",
+      "blocks": {
+        "images_NXFXtC": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Untitled_-_2025-10-02T072427.794.png",
+            "image_two": "shopify://shop_images/Untitled_-_2025-10-02T072641.731.png"
+          }
+        },
+        "content_c9CaD6": {
+          "type": "content",
+          "settings": {
+            "title": "Key Features",
+            "title_size": "xl",
+            "text": "Resident-Focused Furniture:\nAll furniture supplied by Furncare prioritises safety and ease of use, without compromising on aesthetics. Comfortable & stylish seating, as well as bedroom and dining furniture have been crafted to meet the specific needs of care home residents.\n\nCustom Interiors: \nBright Bay Design expertly balanced the high-quality design aesthetic with robust interiors which meet the complex demands of a care home, creating a stylish, comfortable and tranquil atmosphere conducive to both relaxation and community.\n\nDurability and Sustainability: \nFurncare’s commitment to sustainability is reflected in their use of responsibly sourced materials, ensuring Elm Lodge’s interiors are environmentally conscious, fit for purpose and long-lasting.",
+            "button_style": "underline",
+            "button_text": "Elm Lodge Virtual Tour",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_NXFXtC",
+        "content_c9CaD6"
+      ],
+      "disabled": true,
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-4xl"
+      }
+    },
+    "richtext_TJAtU7": {
+      "type": "richtext",
+      "blocks": {
+        "heading_wY7KwX": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Furncare Teams Up with Bright Bay Design to Furnish Stunning New Care Home in Hampshire",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_3xMBBU": {
+          "type": "tagline",
+          "settings": {
+            "content": "Elm Lodge is now welcoming residents and is set to provide a caring and uplifting environment for years to come. For more information about Furncare and their bespoke furniture solutions, call 01603 664900. To learn more about Bright Bay Design, visit www.brightbaydesign.co.uk",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        },
+        "button_xcfn4f": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Elm Lodge Virtual Tour",
+            "url": "https://www.forestcare.co.uk/wp-content/themes/forestcare/virtual-tour-elm.php",
+            "new_tab": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_wY7KwX",
+        "tagline_3xMBBU",
+        "button_xcfn4f"
+      ],
+      "disabled": true,
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "image_video_banner_xWTgmR": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_YJpC8H": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "text": "Retirement furniture",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_qDHCNx": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "text": "Designed for Comfort, Built for <em>Care</em>.",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_GDbKwj": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_e3GTdX": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_UehPPd": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_YJpC8H",
+        "title_qDHCNx",
+        "button_GDbKwj",
+        "card_e3GTdX",
+        "card_UehPPd"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Screenshot_2025-10-29_101458.png",
+        "image_mobile": "shopify://shop_images/Screenshot_2025-10-29_101458.png",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "linear-gradient(294deg, rgba(233, 255, 207, 0), rgba(255, 250, 99, 0.2), rgba(213, 255, 114, 0), rgba(235, 255, 107, 0.2), rgba(235, 255, 107, 0), rgba(233, 233, 233, 1) 3%, rgba(255, 250, 99, 0) 3%)",
+        "colour_scheme": "light",
+        "content_position": "center-bottom",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_znBbzx": {
+      "type": "richtext",
+      "blocks": {
+        "heading_qBVQQe": {
+          "type": "heading",
+          "settings": {
+            "text": "“Collaborating with Bright Bay Design on Elm Lodge has been a truly rewarding experience. Our furniture, designed specifically for care environments, aligns perfectly with Bright Bay Design’s vision for a space that feels both nurturing and beautiful. We’re proud to play a part in creating a home that supports residents’ wellbeing.”",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_DLcG7y": {
+          "type": "tagline",
+          "settings": {
+            "content": "Carl Southall, Managing Director at Furncare",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_bKjrMf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_qBVQQe",
+        "tagline_DLcG7y",
+        "button_bKjrMf"
+      ],
+      "disabled": true,
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "product_blocks_hr4bkw": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_fJtzXF": {
+          "type": "product_block",
+          "settings": {
+            "title": "",
+            "handle": "",
+            "product_feed_source": "product_list",
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        },
+        "product_block_HdNPmE": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "5164-maxwell-small-sideboard-finish-grey-oak",
+              "alpha-extreme-270-double-wardrobe-finish-mountain-oak-cashmere",
+              "alpha-extreme-3-drawer-chest-finish-mountain-oak-cashmere",
+              "alpha-extreme-3-drawer-bedside-top-drawer-with-lock-finish-mountain-oak-cashmere"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": true,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_fJtzXF",
+        "product_block_HdNPmE"
+      ],
+      "disabled": true,
+      "name": "Product blocks",
+      "settings": {
+        "title": "Products featured in this case study",
+        "section_padding": "--spacing-4xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_video_banner_Mx3q8g",
+    "richtext_PhprEj",
+    "featured_blocks_QcyUqa",
+    "richtext_EW6cqY",
+    "image_text_Rr8iJJ",
+    "richtext_TJAtU7",
+    "image_video_banner_xWTgmR",
+    "richtext_znBbzx",
+    "product_blocks_hr4bkw"
+  ]
+}

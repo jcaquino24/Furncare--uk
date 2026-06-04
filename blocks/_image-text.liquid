@@ -1,0 +1,59 @@
+{% if section.settings.layout == 'carousel' %}
+<swiper-slide class="image-text-row__swiper-slide">
+{% endif %}
+
+<div
+  class="image-text-row__item image-text-row__item--{{ section.settings.items_layout }}"
+>
+  {% render 'responsive-image',
+    image: block.settings.image,
+    block_class: 'image-text-row__item-image',
+    aspect_ratio: '1/1',
+    placeholder_icon: 'tag',
+    placeholder_background_color: 'var(--color-surface-primary)',
+  %}
+
+  <div class="image-text-row__item-content">
+    <span class="body-md--bold">{{ block.settings.title }}</span>
+    <p class="body-sm">{{ block.settings.text }}</p>
+  </div>
+</div>
+
+{% if section.settings.layout == 'carousel' %}
+</swiper-slide>
+{% endif %}
+{% schema %}
+{
+  "name": "Img - Text Block",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Block Title"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image - Text Block",
+      "settings": {
+        "image": "",
+        "title": "Block Title",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      }
+    }
+  ],
+}
+{% endschema %}

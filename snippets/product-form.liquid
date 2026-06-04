@@ -1,0 +1,175 @@
+{%- doc -%}
+  Product Form
+
+  Renders a product form with variant swatches, quantity selector, and add-to-cart button.
+  Handles out-of-stock variants and displays notify-me modal when applicable.
+
+  @param {product} product - Product object (required)
+  @param {string} section_id - Section ID for unique form IDs
+
+  @example
+  {% render 'product-form', product: product, section_id: section.id %}
+{%- enddoc -%}
+
+{% liquid
+  assign base_class = 'product'
+  assign show_notify_modal = false
+  assign section_id = section_id | default: 'product'
+  assign hubspot_form = product.metafields.custom.hubspot_form
+  assign swatch_collections = product.metafields.custom.swatch_collections.value
+  assign data_sheet = product.metafields.custom.data_sheet
+
+  # Show data sheet download if product has one
+  assign show_data_sheet = false
+  if data_sheet != blank
+    assign show_data_sheet = true
+  endif
+
+  for tag in product.tags
+    if tag == 'back-in-stock'
+      assign show_notify_modal = true
+    endif
+  endfor
+%}
+
+{% render 'product-swatches', product: product, section_id: section_id %}
+
+{% if swatch_collections != blank %}
+  {% render 'product-collection-swatches', product: product %}
+{% if show_data_sheet %}
+      <div class="{{ base_class }}__data-sheet">
+        <a
+          href="{{ data_sheet | file_url }}"
+          download
+          class="{{ base_class }}__data-sheet-button button button--outlined button--full-width button--sm"
+        >
+          {{ 'product.download_data_sheet' | t }}
+          {% render 'icons', icon: 'download' %}
+        </a>
+      </div>
+    {% endif %}
+  {% if hubspot_form != blank %}
+    <div class="{{ base_class }}__hubspot-form">
+      {{ hubspot_form }}
+    </div>
+  {% endif %}
+{% elsif hubspot_form != blank %}
+  {% if show_data_sheet %}
+      <div class="{{ base_class }}__data-sheet">
+        <a
+          href="{{ data_sheet | file_url }}"
+          download
+          class="{{ base_class }}__data-sheet-button button button--outlined button--full-width button--sm"
+        >
+          {{ 'product.download_data_sheet' | t }}
+          {% render 'icons', icon: 'download' %}
+        </a>
+      </div>
+    {% endif %}
+  <div class="{{ base_class }}__hubspot-form">
+    {{ hubspot_form }}
+  </div>
+{% else %}
+  {%- form 'product',
+    product,
+    class: 'ProductForm',
+    data-productForm: 'true'
+  -%}
+    {%- comment -%} Hidden input for variant ID - required for add to cart {%- endcomment -%}
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+    {% if show_data_sheet %}
+      <div class="{{ base_class }}__data-sheet">
+        <a
+          href="{{ data_sheet | file_url }}"
+          download
+          class="{{ base_class }}__data-sheet-button button button--outlined button--full-width button--sm"
+        >
+          {{ 'product.download_data_sheet' | t }}
+          {% render 'icons', icon: 'download' %}
+        </a>
+      </div>
+    {% endif %}
+
+    <div class="{{ base_class }}__button__wrapper">
+      <div class="{{ base_class }}__quantity">
+        {% render 'quantity-selector',
+          id: 'product-quantity',
+          value: 1,
+          step: 1,
+          min: 1,
+          variant: product.selected_or_first_available_variant
+        %}
+      </div>
+
+      {% comment %}
+        If product is completely sold out show either notify me modal toggle CTA or sold out CTA depending on product tags
+        If product has sold out variants then we need to toggle the notify me modal CTA when a sold out swatch is selected
+      {% endcomment %}
+
+      {% if product.available %}
+        <button
+          type="submit"
+          class="{{ base_class }}__atc-button button button--primary button--full-width button--md"
+          id="atcButton"
+          data-add-to-cart
+        >
+          <span>
+            {{ 'product.add_to_cart' | t }} -
+            {{ product.selected_or_first_available_variant.price | money }}
+            {% render 'icons', icon: 'cart' %}
+          </span>
+        </button>
+
+        {% if show_notify_modal %}
+          <button
+            onclick="toggleNotifyModal()"
+            type="button"
+            id="alternativeButton"
+            class="{{ base_class }}__preorder-button button button--full-width button--secondary"
+            style="display: none;"
+          >
+            <span>{{ 'product.notify_me' | t }}</span>
+          </button>
+        {% endif %}
+
+      {% else %}
+        {% if show_notify_modal %}
+          <button
+            onclick="toggleNotifyModal()"
+            type="button"
+            id="alternativeButton"
+            class="{{ base_class }}__preorder-button button button--full-width button--secondary"
+            style="display: inline-block;"
+          >
+            <span>{{ 'product.notify_me' | t }}</span>
+          </button>
+        {% else %}
+          <button
+            type="button"
+            id="alternativeButton"
+            class="{{ base_class }}__preorder-button button button--full-width button--secondary"
+            style="display:inline-block"
+            disabled
+          >
+            <span>{{ 'product.sold_out' | t }}</span>
+          </button>
+        {% endif %}
+      {% endif %}
+    </div>
+
+    <div
+      class="{{ base_class }}__inventory-error body-sm body-sm--bold"
+      id="inventory-error"
+      style="display: none;"
+      role="alert"
+    >
+      {% render 'icons', icon: 'info' %}
+      <span class="body-sm body-sm--bold"></span>
+    </div>
+  {%- endform -%}
+{% endif %}
+
+{% if show_notify_modal %}
+  {% render 'product-notify-me', base_class: base_class %}
+{% endif %}

@@ -1,0 +1,48 @@
+{%- comment -%}
+  Section: 404 Error Page
+  Description:
+    Displays a custom 404 error page layout with a predefined message and a button linking back to the shop's main page.
+
+  Usage:
+    - Shows a large '404' title, a custom error message, and a button that redirects users to the home page.
+
+  Configuration Options:
+    - Message: The text displayed as the error message.
+    - Button Text: The label on the button that redirects users.
+{%- endcomment -%}
+
+
+<div class="not-found__container text-center colour-scheme--base-white-01">
+  <h1 class="not-found__title title-md">{{ section.settings.title }}</h1>
+  <p class="not-found__message body-md">{{ section.settings.message }}</p>
+  <a href="{{ shop.url }}" class="not-found__button button button--secondary">
+    {{- section.settings.button_text -}}
+  </a>
+</div>
+
+{% schema %}
+{
+  "name": "404",
+  "class": "not-found",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "404 page not found"
+    },
+    {
+      "type": "text",
+      "id": "message",
+      "label": "Message",
+      "default": "The page you are looking for doesn't exist."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button",
+      "default": "Continue Shopping"
+    }
+  ]
+}
+{% endschema %}

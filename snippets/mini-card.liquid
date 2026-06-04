@@ -1,0 +1,48 @@
+{% liquid
+  assign target = blank
+  if new_tab == true
+    assign target = '_blank'
+  endif
+-%}
+
+<div
+  class="card--block colour-scheme--{{ card_style }}"
+  {{ block.shopify_attributes }}
+>
+  {% if image != blank %}
+    <div class="card--block__image">
+      {{
+        image
+        | image_url: width: 270
+        | image_tag:
+          width: 135,
+          height: 135,
+          loading: 'lazy',
+          class: 'card--block__image-element'
+      }}
+    </div>
+  {% endif %}
+
+  <div class="card--block__content">
+    {% if title != blank %}
+      <h3 class="card--block__title">{{ title }}</h3>
+    {% endif %}
+
+    {% if tagline != blank %}
+      <div class="card--block__tagline">{{ tagline }}</div>
+    {% endif %}
+
+    {% if button_text != blank and button_url != blank %}
+      {%- render 'button',
+        label: button_text,
+        link: button_url,
+        new_tab: new_tab,
+        target: target,
+        icon: 'arrow-right',
+        style: button_style,
+        size: button_size,
+        scheme: card_style
+      -%}
+    {% endif %}
+  </div>
+</div>

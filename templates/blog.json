@@ -1,0 +1,67 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "blog",
+      "blocks": {
+        "tab_XDXNhU": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "All Resources",
+            "tab_url": "shopify://blogs/news"
+          }
+        },
+        "tab_e4TgKP": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Case Study",
+            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/case-study"
+          }
+        },
+        "tab_jdbnxx": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Article",
+            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/article"
+          }
+        },
+        "tab_mP7RQi": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Video",
+            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/video"
+          }
+        },
+        "tab_KBYrMH": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "News",
+            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/news"
+          }
+        }
+      },
+      "block_order": [
+        "tab_XDXNhU",
+        "tab_e4TgKP",
+        "tab_jdbnxx",
+        "tab_mP7RQi",
+        "tab_KBYrMH"
+      ],
+      "settings": {
+        "blog_intro": "<p>Insights, guidance, and inspiration from the world of care furniture - designed to transform care spaces, and elevate lives of residents.</p>",
+        "blog_posts_per_page": 12
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

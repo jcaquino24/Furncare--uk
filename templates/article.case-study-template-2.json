@@ -1,0 +1,640 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_video_banner_Mx3q8g": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_8TMHFP": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "case study",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_DXxf3y": {
+          "type": "title",
+          "settings": {
+            "text": "Elm Lodge Care Home",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_TY8nED": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_GeUmxJ": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_aDpXic": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_8TMHFP",
+        "title_DXxf3y",
+        "button_TY8nED",
+        "card_GeUmxJ",
+        "card_aDpXic"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 600,
+        "height_mobile": 430,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/PREG2501.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(54deg, rgba(255, 250, 99, 1), rgba(38, 37, 32, 0.4) 1%)",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_PhprEj": {
+      "type": "richtext",
+      "blocks": {
+        "heading_mYLH3K": {
+          "type": "heading",
+          "settings": {
+            "text": "Furncare Teams Up with Bright Bay Design to Furnish Stunning New Care Home in Hampshire",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_LFtXUT": {
+          "type": "tagline",
+          "settings": {
+            "content": "<a href=\"http://www.furncare.co.uk/\" target=\"_blank\">Furncare</a>, a leading provider of high-quality care home furniture for over 20 years, is proud to announce its collaboration with <a href=\"https://brightbaydesign.co.uk/\" target=\"_blank\">Bright Bay Design</a> in furnishing the newly launched <a href=\"https://www.forestcare.co.uk/homes/elm-lodge/\" target=\"_blank\">Forest Care Elm Lodge</a>, a state-of-the-art care home that promises to set a new benchmark in residential care.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_AtLUnj": {
+          "type": "tagline",
+          "settings": {
+            "content": "The project brought together Furncare’s expertise in crafting furniture tailored for comfort, safety, and durability with Bright Bay Design’s innovative approach to interior aesthetics, which has resulted in an elegant, welcoming environment designed to enhance residents’ quality of life.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        },
+        "button_GqjYpW": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Elm Lodge Virtual Tour",
+            "url": "https://www.forestcare.co.uk/wp-content/themes/forestcare/virtual-tour-elm.php",
+            "new_tab": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_mYLH3K",
+        "tagline_LFtXUT",
+        "tagline_AtLUnj",
+        "button_GqjYpW"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "featured_blocks_QcyUqa": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_WB6nUy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2421.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_9HR9qb": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2481.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_WQpPgr": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2371.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_pgBF4K": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2389.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_4cYAbe": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2443.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_X4iqhW": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2557.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_tFgQja": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2395.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_LAG8rN": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2495.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_Fmd3eR": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2391.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_mcnJrx": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2458.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_HNwPwh": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2535.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_Kq6Vab": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2468.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_RDJ8xg": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2521.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_qkJ4Lc": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2513.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_WArqpk": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2472.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_McQdHE": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2447.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_djDk6m": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2376.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_zJTmib": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2375.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_aKCpzq": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PREG2437_4bab0a7b-caa9-4697-9e92-1747ba907bca.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_WB6nUy",
+        "block_9HR9qb",
+        "block_WQpPgr",
+        "block_pgBF4K",
+        "block_4cYAbe",
+        "block_X4iqhW",
+        "block_tFgQja",
+        "block_LAG8rN",
+        "block_Fmd3eR",
+        "block_mcnJrx",
+        "block_HNwPwh",
+        "block_Kq6Vab",
+        "block_RDJ8xg",
+        "block_qkJ4Lc",
+        "block_WArqpk",
+        "block_McQdHE",
+        "block_djDk6m",
+        "block_zJTmib",
+        "block_aKCpzq"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "",
+        "padding": "wide",
+        "layout": "line_grid",
+        "enable_lightbox": true
+      }
+    },
+    "richtext_EW6cqY": {
+      "type": "richtext",
+      "blocks": {
+        "heading_C9ihxn": {
+          "type": "heading",
+          "settings": {
+            "text": "“Bright Bay Design’s involvement across the full project process, from initial building design through to final fit-out, enabled us to create a care home that stands out in so many ways, and we were delighted to include Furncare’s specialist furniture which, with their excellent service, helped us realise our and Forest Care’s vision for Elm Lodge.”",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_JPEfFQ": {
+          "type": "tagline",
+          "settings": {
+            "content": "Alexandra Ledger, Director at Bright Bay Design",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_T6qrbf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_C9ihxn",
+        "tagline_JPEfFQ",
+        "button_T6qrbf"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_text_Rr8iJJ": {
+      "type": "image-text",
+      "blocks": {
+        "images_NXFXtC": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Untitled_-_2025-10-02T072427.794.png",
+            "image_two": "shopify://shop_images/Untitled_-_2025-10-02T072641.731.png"
+          }
+        },
+        "content_c9CaD6": {
+          "type": "content",
+          "settings": {
+            "title": "Key Features",
+            "title_size": "xl",
+            "text": "Resident-Focused Furniture:\nAll furniture supplied by Furncare prioritises safety and ease of use, without compromising on aesthetics. Comfortable & stylish seating, as well as bedroom and dining furniture have been crafted to meet the specific needs of care home residents.\n\nCustom Interiors: \nBright Bay Design expertly balanced the high-quality design aesthetic with robust interiors which meet the complex demands of a care home, creating a stylish, comfortable and tranquil atmosphere conducive to both relaxation and community.\n\nDurability and Sustainability: \nFurncare’s commitment to sustainability is reflected in their use of responsibly sourced materials, ensuring Elm Lodge’s interiors are environmentally conscious, fit for purpose and long-lasting.",
+            "button_style": "underline",
+            "button_text": "Elm Lodge Virtual Tour",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_NXFXtC",
+        "content_c9CaD6"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-4xl"
+      }
+    },
+    "richtext_TJAtU7": {
+      "type": "richtext",
+      "blocks": {
+        "heading_wY7KwX": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Furncare Teams Up with Bright Bay Design to Furnish Stunning New Care Home in Hampshire",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_3xMBBU": {
+          "type": "tagline",
+          "settings": {
+            "content": "Elm Lodge is now welcoming residents and is set to provide a caring and uplifting environment for years to come. For more information about Furncare and their bespoke furniture solutions, call 01603 664900. To learn more about Bright Bay Design, visit www.brightbaydesign.co.uk",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        },
+        "button_xcfn4f": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Elm Lodge Virtual Tour",
+            "url": "https://www.forestcare.co.uk/wp-content/themes/forestcare/virtual-tour-elm.php",
+            "new_tab": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_wY7KwX",
+        "tagline_3xMBBU",
+        "button_xcfn4f"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "image_video_banner_xWTgmR": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_YJpC8H": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "text": "Retirement furniture",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_qDHCNx": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "text": "Designed for Comfort, Built for <em>Care</em>.",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_GDbKwj": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_e3GTdX": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_UehPPd": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_YJpC8H",
+        "title_qDHCNx",
+        "button_GDbKwj",
+        "card_e3GTdX",
+        "card_UehPPd"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/P1044815_CARS_REMOVED.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "linear-gradient(320deg, rgba(255, 250, 99, 0.2), rgba(203, 68, 194, 1), rgba(255, 250, 99, 0))",
+        "colour_scheme": "light",
+        "content_position": "center-bottom",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_znBbzx": {
+      "type": "richtext",
+      "blocks": {
+        "heading_qBVQQe": {
+          "type": "heading",
+          "settings": {
+            "text": "“Collaborating with Bright Bay Design on Elm Lodge has been a truly rewarding experience. Our furniture, designed specifically for care environments, aligns perfectly with Bright Bay Design’s vision for a space that feels both nurturing and beautiful. We’re proud to play a part in creating a home that supports residents’ wellbeing.”",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_DLcG7y": {
+          "type": "tagline",
+          "settings": {
+            "content": "Carl Southall, Managing Director at Furncare",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_bKjrMf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_qBVQQe",
+        "tagline_DLcG7y",
+        "button_bKjrMf"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "product_blocks_hr4bkw": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_HdNPmE": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "5164-maxwell-small-sideboard-finish-grey-oak",
+              "alpha-extreme-270-double-wardrobe-finish-mountain-oak-cashmere",
+              "alpha-extreme-3-drawer-chest-finish-mountain-oak-cashmere",
+              "alpha-extreme-3-drawer-bedside-top-drawer-with-lock-finish-mountain-oak-cashmere"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_HdNPmE"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Products featured in this case study",
+        "section_padding": "--spacing-4xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_video_banner_Mx3q8g",
+    "richtext_PhprEj",
+    "featured_blocks_QcyUqa",
+    "richtext_EW6cqY",
+    "image_text_Rr8iJJ",
+    "richtext_TJAtU7",
+    "image_video_banner_xWTgmR",
+    "richtext_znBbzx",
+    "product_blocks_hr4bkw"
+  ]
+}

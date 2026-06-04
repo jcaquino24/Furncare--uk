@@ -1,0 +1,31 @@
+{% liquid
+  assign show_title = section.settings.show_title
+%}
+
+<div class="page colour-scheme--base-white-01">
+  <div class="page__container container container--small">
+    {% if show_title %}
+      <div class="page__title">
+        <h1 class="page__title-text">{{ page.title }}</h1>
+      </div>
+    {% endif %}
+
+    <div class="page__content">
+      {{ page.content }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Show Page Title",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

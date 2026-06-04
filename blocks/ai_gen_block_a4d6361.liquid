@@ -1,0 +1,293 @@
+{% doc %}
+  @prompt
+    On the Essentials Range page, find the second "Add to Cart" button and: 1) Add the same cart/bag icon that appears on the first Add to Cart button, and 2) Make the button's text font size and font weight (thickness) customizable via theme block settings with a range slider for font size and a select dropdown for font weight., now please change the icon to match the one on the first add to cart button 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-add-to-cart-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-add-to-cart-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: {{ block.settings.button_padding }}px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    font-size: {{ block.settings.font_size }}px;
+    font-weight: {{ block.settings.font_weight }};
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .ai-add-to-cart-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+    border-color: {{ block.settings.border_hover_color }};
+  }
+
+  .ai-add-to-cart-icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    flex-shrink: 0;
+  }
+
+  .ai-add-to-cart-icon-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  .ai-add-to-cart-text-{{ ai_gen_id }} {
+    line-height: 1.2;
+  }
+{% endstyle %}
+
+<add-to-cart-{{ ai_gen_id }}
+  class="ai-add-to-cart-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <button
+    type="button"
+    class="ai-add-to-cart-button-{{ ai_gen_id }}"
+    aria-label="Add to cart"
+  >
+    {% if block.settings.show_icon %}
+      <span class="ai-add-to-cart-icon-{{ ai_gen_id }}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+        </svg>
+      </span>
+    {% endif %}
+    <span class="ai-add-to-cart-text-{{ ai_gen_id }}">{{ block.settings.button_text }}</span>
+  </button>
+</add-to-cart-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class AddToCart{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.button = this.querySelector('.ai-add-to-cart-button-{{ ai_gen_id }}');
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        if (!this.button) return;
+
+        this.button.addEventListener('click', () => {
+          this.addToCart();
+        });
+      }
+
+      async addToCart() {
+        const formData = {
+          items: [{
+            id: this.getVariantId(),
+            quantity: 1
+          }]
+        };
+
+        try {
+          const response = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+          });
+
+          if (response.ok) {
+            window.location.href = '/cart';
+          }
+        } catch (error) {
+          console.error('Error adding to cart:', error);
+        }
+      }
+
+      getVariantId() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('variant') || '';
+      }
+    }
+
+    customElements.define('add-to-cart-{{ ai_gen_id }}', AddToCart{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Add to cart button",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Button content"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icon",
+      "label": "Show cart icon",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_padding",
+      "label": "Padding",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "border_hover_color",
+      "label": "Hover border color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Add to cart button"
+    }
+  ]
+}
+{% endschema %}

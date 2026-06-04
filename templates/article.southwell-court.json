@@ -1,0 +1,555 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_video_banner_Mx3q8g": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_8TMHFP": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "case study",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_DXxf3y": {
+          "type": "title",
+          "settings": {
+            "text": "Southwell Court",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_TY8nED": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_GeUmxJ": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_aDpXic": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_8TMHFP",
+        "title_DXxf3y",
+        "button_TY8nED",
+        "card_GeUmxJ",
+        "card_aDpXic"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 600,
+        "height_mobile": 430,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Furncare-113.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(54deg, rgba(255, 250, 99, 1), rgba(38, 37, 32, 0.4) 1%)",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_PhprEj": {
+      "type": "richtext",
+      "blocks": {
+        "heading_mYLH3K": {
+          "type": "heading",
+          "settings": {
+            "text": "Southwell Court",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_LFtXUT": {
+          "type": "tagline",
+          "settings": {
+            "content": "Having enjoyed a great working relationship with this group for many years, we were delighted to be working with them again to provide the furniture and furnishings for their latest refurbishment project, Southwell Court.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        },
+        "button_GqjYpW": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Elm Lodge Virtual Tour",
+            "url": "https://www.forestcare.co.uk/wp-content/themes/forestcare/virtual-tour-elm.php",
+            "new_tab": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_mYLH3K",
+        "tagline_LFtXUT",
+        "button_GqjYpW"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "featured_blocks_QcyUqa": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_cRDNrr": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-5_65400c0e-272a-4095-bd91-039387b6449c.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_FyXHTY": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-3_85de937b-efc7-4915-b1ec-2103ac8f0bf7.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_hnHcRM": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-4_82314f1e-8c94-41ae-80ff-826f7d07bcef.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_KNVppQ": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-29.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_ka33if": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-7_603ff75c-febe-42e5-bd73-4e6d51f6a843.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_DrMhrE": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-6_4871312d-a6e4-42d1-a278-6b86e8616d43.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_9CDmbU": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-9_f1bc1e33-d575-4502-9f01-19bc858a3ccd.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_CW3ydV": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-8_ddf73d03-a640-4608-b6cf-e09c4ae3c288.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_CAnMz9": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-10_fbac67be-414f-4378-9ad8-19774eda53f4.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_LP8NnV": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-11_3930b0e1-4e3f-4a9d-9b4a-52371bab99a7.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_4AJcLj": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-12_c4bc8d2c-5879-4a5e-adf1-08cf55770dca.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_6TnwMq": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-16_f30cd3ca-34c6-46d2-a62d-5a00c7a43087.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_yjbjEH": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-14_4fc957bd-fd85-4932-84a0-1888307b4890.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_CyyqGH": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-1_f5c90511-3e16-438f-a865-4f7df521e1a3.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_hLzC7L": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-15_47fcf8a5-77bb-4749-b2ab-8a9fd5415474.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_jVUyWQ": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-13_68a0422d-9955-47bb-b55c-0c92469af6ee.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_eaGQVy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-2_84ffece2-2e67-4d6e-bf98-ed9729cded72.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_3yAEBU": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-17_1e83d3ac-a96e-4b07-aa30-7d50791d9919.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_7TDx7e": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-18_aa89fafa-fa61-4871-beb8-f13b139d462f.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_mBWQ8j": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-22_92b0abef-6405-4229-afa4-1d5775176c17.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_P8MWae": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-20_e2ce3330-a5a2-4e65-93e9-f3af185116f6.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_R3XwnQ": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-21_4476791d-a897-40ac-b999-3d01dcbbcb8d.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_zY9aML": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-23_6de38e2a-10de-4a47-b95e-8f7b8ae54006.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_Q6ewJN": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-26_78896d5d-7f93-404a-a45e-d762aa5e8f12.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_pDHfz4": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-25_5d2a5585-2c0f-4ab4-86f5-055c81d9c16e.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_xwMmYx": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-24_1acd8224-06d4-4dc0-900b-a645717bf88b.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_CF4GHi": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-27_bbb4aa76-2e76-4e8a-af85-19b41e76a645.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_RwzPqT": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-28.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_cRDNrr",
+        "block_FyXHTY",
+        "block_hnHcRM",
+        "block_KNVppQ",
+        "block_ka33if",
+        "block_DrMhrE",
+        "block_9CDmbU",
+        "block_CW3ydV",
+        "block_CAnMz9",
+        "block_LP8NnV",
+        "block_4AJcLj",
+        "block_6TnwMq",
+        "block_yjbjEH",
+        "block_CyyqGH",
+        "block_hLzC7L",
+        "block_jVUyWQ",
+        "block_eaGQVy",
+        "block_3yAEBU",
+        "block_7TDx7e",
+        "block_mBWQ8j",
+        "block_P8MWae",
+        "block_R3XwnQ",
+        "block_zY9aML",
+        "block_Q6ewJN",
+        "block_pDHfz4",
+        "block_xwMmYx",
+        "block_CF4GHi",
+        "block_RwzPqT"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "",
+        "padding": "wide",
+        "layout": "line_grid",
+        "enable_lightbox": true
+      }
+    },
+    "richtext_EW6cqY": {
+      "type": "richtext",
+      "blocks": {
+        "heading_C9ihxn": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "“Bright Bay Design’s involvement across the full project process, from initial building design through to final fit-out, enabled us to create a care home that stands out in so many ways, and we were delighted to include Furncare’s specialist furniture which, with their excellent service, helped us realise our and Forest Care’s vision for Elm Lodge.”",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_JPEfFQ": {
+          "type": "tagline",
+          "settings": {
+            "content": "As this group wanted to provide a touch of luxury, as well as comfort, to the home, all the bedrooms feature a range of woven fabrics along with items from our Liberta Vie collection, including the Dawson bedroom furniture range and also the Loren divan bed base and Alina headboard both in neutral mushroom faux leather.",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        },
+        "button_T6qrbf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_C9ihxn",
+        "tagline_JPEfFQ",
+        "button_T6qrbf"
+      ],
+      "disabled": true,
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_text_Rr8iJJ": {
+      "type": "image-text",
+      "blocks": {
+        "images_NXFXtC": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Untitled-12_c4bc8d2c-5879-4a5e-adf1-08cf55770dca.png",
+            "image_two": "shopify://shop_images/Untitled-13_68a0422d-9955-47bb-b55c-0c92469af6ee.png"
+          }
+        },
+        "content_c9CaD6": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "title_size": "xl",
+            "text": "As this group wanted to provide a touch of luxury, as well as comfort, to the home, all the bedrooms feature a range of woven fabrics along with items from our Liberta Vie collection, including the Dawson bedroom furniture range and also the Loren divan bed base and Alina headboard both in neutral mushroom faux leather. \n\nThese items all perfectly compliment the neutral decor and allow the residents to make the rooms their own. We’ve really enjoyed working on this project and hope the residents enjoy their amazing new home!",
+            "button_style": "underline",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_NXFXtC",
+        "content_c9CaD6"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-4xl"
+      }
+    },
+    "image_video_banner_xWTgmR": {
+      "type": "image-video-banner",
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/605c88ec9e2d9Southwell-1-1200x781.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "linear-gradient(320deg, rgba(255, 250, 99, 0.2), rgba(203, 68, 194, 1), rgba(255, 250, 99, 0))",
+        "colour_scheme": "light",
+        "content_position": "center-bottom",
+        "content_alignment": "center"
+      }
+    },
+    "product_blocks_hr4bkw": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_HdNPmE": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "5164-maxwell-small-sideboard-finish-grey-oak",
+              "alpha-extreme-270-double-wardrobe-finish-mountain-oak-cashmere",
+              "alpha-extreme-3-drawer-chest-finish-mountain-oak-cashmere",
+              "alpha-extreme-3-drawer-bedside-top-drawer-with-lock-finish-mountain-oak-cashmere"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_HdNPmE"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Products featured in this case study",
+        "section_padding": "--spacing-4xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_video_banner_Mx3q8g",
+    "richtext_PhprEj",
+    "featured_blocks_QcyUqa",
+    "richtext_EW6cqY",
+    "image_text_Rr8iJJ",
+    "image_video_banner_xWTgmR",
+    "product_blocks_hr4bkw"
+  ]
+}

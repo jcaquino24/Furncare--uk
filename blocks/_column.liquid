@@ -1,0 +1,139 @@
+<div
+  class="column"
+  style="
+    --padding-desktop: {{ block.settings.padding_desktop }};
+    --padding-mobile: {{ block.settings.padding_mobile }};
+  "
+>
+  {% content_for 'blocks' %}
+</div>
+{% schema %}
+{
+  "name": "Column",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "padding_desktop",
+      "label": "Padding (desktop)",
+      "default": "var(--spacing-2xl)",
+      "options": [
+        {
+          "value": "0",
+          "label": "None (0px)"
+        },
+        {
+          "value": "var(--spacing-4xs)",
+          "label": "Extra Extra Extra Small (4px)"
+        },
+        {
+          "value": "var(--spacing-3xs)",
+          "label": "Extra Extra Small (8px)"
+        },
+        {
+          "value": "var(--spacing-2xs)",
+          "label": "Extra Small (12px)"
+        },
+        {
+          "value": "var(--spacing-xs)",
+          "label": "Small (16px)"
+        },
+        {
+          "value": "var(--spacing-sm)",
+          "label": "Medium Small (20px)"
+        },
+        {
+          "value": "var(--spacing-md)",
+          "label": "Medium (24px)"
+        },
+        {
+          "value": "var(--spacing-lg)",
+          "label": "Large (32px)"
+        },
+        {
+          "value": "var(--spacing-xl)",
+          "label": "Extra Large (40px)"
+        },
+        {
+          "value": "var(--spacing-2xl)",
+          "label": "Extra Extra Large (48px)"
+        },
+        {
+          "value": "var(--spacing-3xl)",
+          "label": "Extra Extra Extra Large (72px)"
+        },
+        {
+          "value": "var(--spacing-4xl)",
+          "label": "Extra Extra Extra Extra Large (80px)"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_mobile",
+      "label": "Padding (mobile)",
+      "default": "0",
+      "options": [
+        {
+          "value": "0",
+          "label": "None (0px)"
+        },
+        {
+          "value": "var(--spacing-4xs)",
+          "label": "Extra Extra Extra Small (4px)"
+        },
+        {
+          "value": "var(--spacing-3xs)",
+          "label": "Extra Extra Small (8px)"
+        },
+        {
+          "value": "var(--spacing-2xs)",
+          "label": "Extra Small (12px)"
+        },
+        {
+          "value": "var(--spacing-xs)",
+          "label": "Small (16px)"
+        },
+        {
+          "value": "var(--spacing-sm)",
+          "label": "Medium Small (20px)"
+        },
+        {
+          "value": "var(--spacing-md)",
+          "label": "Medium (24px)"
+        },
+        {
+          "value": "var(--spacing-lg)",
+          "label": "Large (32px)"
+        },
+        {
+          "value": "var(--spacing-xl)",
+          "label": "Extra Large (40px)"
+        },
+        {
+          "value": "var(--spacing-2xl)",
+          "label": "Extra Extra Large (48px)"
+        },
+        {
+          "value": "var(--spacing-3xl)",
+          "label": "Extra Extra Extra Large (72px)"
+        },
+        {
+          "value": "var(--spacing-4xl)",
+          "label": "Extra Extra Extra Extra Large (80px)"
+        }
+      ]
+    }
+  ],
+  "blocks": [{ "type": "@theme" }, { "type": "@app" }],
+  "presets": [
+    {
+      "name": "Column",
+      "settings": {
+        "padding_desktop": "var(--spacing-2xl)",
+        "padding_mobile": "0"
+      }
+    }
+  ]
+}
+{% endschema %}

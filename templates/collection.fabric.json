@@ -1,0 +1,65 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "grid_style": "default_noprice",
+        "promo_block": "inspiration",
+        "price_filter_vat_percent": 20,
+        "collection_catalog_max_price": ""
+      }
+    },
+    "richtext_mNnJcU": {
+      "type": "richtext",
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "left",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false,
+        "optional_richtext": "{{ collection.metafields.custom.collection_richtext | metafield_tag }}",
+        "small_container": true
+      }
+    },
+    "faqs_MgjtQz": {
+      "type": "faqs",
+      "blocks": {
+        "faq_YhdDPB": {
+          "type": "faq",
+          "repeater": "{{ collection.metafields.custom.faqs.value.faqs_list.value }}",
+          "settings": {
+            "question": "{{ block.repeater.question.value }}",
+            "answer": "{{ block.repeater.answer | metafield_tag }}"
+          }
+        }
+      },
+      "block_order": [
+        "faq_YhdDPB"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "faq_title": "{{ collection.metafields.custom.faqs.value.title.value }}",
+        "title_element": "h2",
+        "faq_text": "",
+        "title_alignment": "center",
+        "colour_scheme": "base-white-02",
+        "padding": "narrow"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "richtext_mNnJcU",
+    "faqs_MgjtQz"
+  ]
+}

@@ -1,0 +1,447 @@
+{%- comment -%}
+  Furncare SEO structured data snippet for Shopify.
+  Install: create snippets/furncare-seo-schema.liquid, paste this file, then add
+  {% render 'furncare-seo-schema' %}
+  before </head> in layout/theme.liquid.
+
+  Notes:
+  - Do not add SearchAction: Google deprecated the sitelinks search box visual result.
+  - Do not add review/aggregateRating unless the rating is visible on the same page and eligible.
+  - Keep product price, availability, images, SKU and descriptions synced from Shopify data.
+{%- endcomment -%}
+
+{%- assign org_id = shop.url | append: '/#organization' -%}
+{%- assign website_id = shop.url | append: '/#website' -%}
+{%- assign webpage_id = canonical_url | append: '#webpage' -%}
+{%- assign breadcrumb_id = canonical_url | append: '#breadcrumb' -%}
+{%- assign page_desc = page_description | default: shop.description | strip_html | strip_newlines | truncate: 300 -%}
+
+{%- assign include_org = false -%}
+{%- if request.page_type == 'index' -%}{%- assign include_org = true -%}{%- endif -%}
+{%- if request.page_type == 'page' and page.handle == 'about-us' -%}{%- assign include_org = true -%}{%- endif -%}
+{%- if request.page_type == 'page' and page.handle == 'contact-us' -%}{%- assign include_org = true -%}{%- endif -%}
+
+{%- if request.page_type == 'index' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": {{ website_id | json }},
+  "name": "Furncare",
+  "alternateName": "Furncare Limited",
+  "url": {{ shop.url | append: '/' | json }},
+  "publisher": { "@id": {{ org_id | json }} }
+}
+</script>
+{%- endif -%}
+
+{%- if include_org -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Organization", "OnlineStore"],
+  "@id": {{ org_id | json }},
+  "name": "Furncare",
+  "legalName": "Furncare Limited",
+  "url": {{ shop.url | append: '/' | json }},
+  {%- if settings.logo != blank -%}
+  "logo": {{ settings.logo | image_url: width: 512 | prepend: 'https:' | json }},
+  {%- endif -%}
+  "telephone": "+44 1603 664900",
+  "email": "sales@furncare.co.uk",
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "UK Company Registration Number",
+    "value": "08093065"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+44 1603 664900",
+    "email": "sales@furncare.co.uk",
+    "contactType": "customer service",
+    "areaServed": "GB",
+    "availableLanguage": "en"
+  }
+  {%- if request.page_type == 'page' and page.handle == 'contact-us' -%},
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "name": "Head Office & Showroom",
+      "streetAddress": "Wyatt House, Wyatt Way, Fison Way Industrial Estate",
+      "addressLocality": "Thetford",
+      "addressRegion": "Norfolk",
+      "postalCode": "IP24 1HB",
+      "addressCountry": "GB"
+    },
+    {
+      "@type": "PostalAddress",
+      "name": "National Distribution Centre",
+      "streetAddress": "Unit 6, Johnston Quarter, Harling Road, Snetterton",
+      "addressLocality": "Norwich",
+      "addressRegion": "Norfolk",
+      "postalCode": "NR16 2JU",
+      "addressCountry": "GB"
+    }
+  ]
+  {%- endif -%}
+}
+</script>
+{%- endif -%}
+
+{%- unless request.page_type == 'search' or request.page_type == 'cart' or request.page_type == 'customers/account' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": {{ breadcrumb_id | json }},
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": {{ shop.url | append: '/' | json }}
+    }
+    {%- case request.page_type -%}
+      {%- when 'product' -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Products",
+          "item": {{ shop.url | append: '/collections/all' | json }}
+        },{
+          "@type": "ListItem",
+          "position": 3,
+          "name": {{ product.title | json }},
+          "item": {{ canonical_url | json }}
+        }
+      {%- when 'collection' -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Collections",
+          "item": {{ shop.url | append: '/collections' | json }}
+        },{
+          "@type": "ListItem",
+          "position": 3,
+          "name": {{ collection.title | json }},
+          "item": {{ canonical_url | json }}
+        }
+      {%- when 'blog' -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ blog.title | json }},
+          "item": {{ canonical_url | json }}
+        }
+      {%- when 'article' -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ blog.title | json }},
+          "item": {{ shop.url | append: blog.url | json }}
+        },{
+          "@type": "ListItem",
+          "position": 3,
+          "name": {{ article.title | json }},
+          "item": {{ canonical_url | json }}
+        }
+      {%- when 'page' -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ page.title | json }},
+          "item": {{ canonical_url | json }}
+        }
+    {%- endcase -%}
+  ]
+}
+</script>
+{%- endunless -%}
+
+{%- case request.page_type -%}
+
+{%- when 'index' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": {{ webpage_id | json }},
+  "url": {{ canonical_url | json }},
+  "name": {{ page_title | json }},
+  "description": {{ page_desc | json }},
+  "isPartOf": { "@id": {{ website_id | json }} },
+  "about": { "@id": {{ org_id | json }} },
+  "breadcrumb": { "@id": {{ breadcrumb_id | json }} }
+}
+</script>
+
+{%- when 'product' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": {{ canonical_url | append: '#product' | json }},
+  "name": {{ product.title | json }},
+  "url": {{ canonical_url | json }},
+  "description": {{ product.description | strip_html | strip_newlines | truncate: 500 | json }},
+  {%- if product.featured_image -%}
+  "image": [
+    {%- for image in product.images limit: 10 -%}
+      {{ image | image_url: width: 1200 | prepend: 'https:' | json }}{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ],
+  {%- endif -%}
+  {%- if product.selected_or_first_available_variant.sku != blank -%}
+  "sku": {{ product.selected_or_first_available_variant.sku | json }},
+  {%- endif -%}
+  "brand": { "@type": "Brand", "name": "Furncare" },
+  {%- if product.type != blank or product.collections.first.title != blank -%}
+  "category": {{ product.type | default: product.collections.first.title | json }},
+  {%- endif -%}
+  "offers": [
+    {%- for variant in product.variants -%}
+    {
+      "@type": "Offer",
+      "url": {{ shop.url | append: product.url | append: '?variant=' | append: variant.id | json }},
+      {%- if variant.sku != blank -%}"sku": {{ variant.sku | json }},{%- endif -%}
+      "priceCurrency": {{ shop.currency | default: 'GBP' | json }},
+      "price": {{ variant.price | money_without_currency | replace: ',', '' | json }},
+      "availability": "https://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+      "itemCondition": "https://schema.org/NewCondition"
+    }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ]
+}
+</script>
+
+{%- when 'collection' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": {{ webpage_id | json }},
+  "url": {{ canonical_url | json }},
+  "name": {{ collection.title | json }},
+  "description": {{ collection.description | strip_html | strip_newlines | truncate: 500 | default: page_desc | json }},
+  "breadcrumb": { "@id": {{ breadcrumb_id | json }} },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListOrder": "https://schema.org/ItemListOrderAscending",
+    "numberOfItems": {{ collection.products_count | default: collection.all_products_count | json }},
+    "itemListElement": [
+      {%- for item in collection.products limit: 24 -%}
+      {
+        "@type": "ListItem",
+        "position": {{ forloop.index | json }},
+        "url": {{ shop.url | append: item.url | json }},
+        "name": {{ item.title | json }}
+      }{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    ]
+  }
+}
+</script>
+
+{%- when 'blog' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": {{ canonical_url | append: '#blog' | json }},
+  "url": {{ canonical_url | json }},
+  "name": {{ blog.title | json }},
+  "description": {{ page_desc | json }},
+  "publisher": { "@id": {{ org_id | json }} },
+  "blogPost": [
+    {%- for item in blog.articles limit: 12 -%}
+    {
+      "@type": "BlogPosting",
+      "headline": {{ item.title | json }},
+      "url": {{ shop.url | append: item.url | json }},
+      "datePublished": {{ item.published_at | date_to_xmlschema | json }}
+    }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ]
+}
+</script>
+
+{%- when 'article' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": {{ canonical_url | append: '#article' | json }},
+  "mainEntityOfPage": { "@type": "WebPage", "@id": {{ canonical_url | json }} },
+  "headline": {{ article.title | truncate: 110 | json }},
+  "description": {{ article.excerpt_or_content | strip_html | strip_newlines | truncate: 300 | json }},
+  {%- if article.image -%}
+  "image": [{{ article.image | image_url: width: 1200 | prepend: 'https:' | json }}],
+  {%- endif -%}
+  "datePublished": {{ article.published_at | date_to_xmlschema | json }},
+  "dateModified": {{ article.updated_at | date_to_xmlschema | json }},
+  "author": {
+    "@type": "Organization",
+    "name": "Furncare",
+    "url": {{ shop.url | append: '/' | json }}
+  },
+  "publisher": { "@id": {{ org_id | json }} },
+  "articleSection": {{ blog.title | json }},
+  "url": {{ canonical_url | json }}
+}
+</script>
+
+{%- when 'page' -%}
+  {%- if page.handle == 'faq' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": {{ webpage_id | json }},
+  "url": {{ canonical_url | json }},
+  "name": {{ page.title | json }},
+  "description": {{ page_desc | json }},
+  "breadcrumb": { "@id": {{ breadcrumb_id | json }} },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How can I place an order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can place an order online, by email, by phone, or through the website live chat. After your order is placed, Furncare sends confirmation and the operations team contacts you to arrange delivery."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are my payment options?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "New customers usually pay the first order by proforma using card, payment link, BACS or cheque. Returning customers may request a 30-day credit account subject to approval, or pay by card, BACS or cheque."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When will I receive my order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Delivery times depend on stock status and delivery area. Some stock items are delivered within 5, 10 or 15 working days, while non-stock items are usually delivered within 4 to 8 weeks unless stated otherwise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your furniture and soft furnishings fire retardant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Furncare states that upholstery and textiles are fire retardant, and furniture to which Crib 5 applies is Crib 5 fire retardant."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I have a project I would like to discuss. Will you visit my home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Furncare can discuss projects with you and arrange a visit or virtual appointment through its advisory team."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is faux leather upholstery the best option for my home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Furncare offers healthcare upholstery options and recommends speaking with the advisory team to choose the best material for the setting, care type and practical requirements."
+      }
+    }
+  ]
+}
+</script>
+  {%- elsif page.handle == 'contact-us' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": {{ webpage_id | json }},
+  "url": {{ canonical_url | json }},
+  "name": {{ page.title | json }},
+  "description": {{ page_desc | json }},
+  "breadcrumb": { "@id": {{ breadcrumb_id | json }} },
+  "mainEntity": { "@id": {{ org_id | json }} }
+}
+</script>
+  {%- elsif page.handle == 'about-us' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": {{ webpage_id | json }},
+  "url": {{ canonical_url | json }},
+  "name": {{ page.title | json }},
+  "description": {{ page_desc | json }},
+  "breadcrumb": { "@id": {{ breadcrumb_id | json }} },
+  "about": { "@id": {{ org_id | json }} }
+}
+</script>
+  {%- elsif page.handle == 'delivery' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": {{ webpage_id | json }},
+  "url": {{ canonical_url | json }},
+  "name": {{ page.title | json }},
+  "description": {{ page_desc | json }},
+  "breadcrumb": { "@id": {{ breadcrumb_id | json }} },
+  "mainEntity": {
+    "@type": "Service",
+    "name": "Furncare Delivery Service",
+    "serviceType": "Furniture delivery, placement, assembly and packaging removal",
+    "provider": { "@id": {{ org_id | json }} },
+    "areaServed": { "@type": "Country", "name": "United Kingdom" }
+  }
+}
+</script>
+  {%- elsif page.handle == 'later-living-furniture' or page.handle == 'challenging-environments-furniture' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": {{ webpage_id | json }},
+  "url": {{ canonical_url | json }},
+  "name": {{ page.title | json }},
+  "description": {{ page_desc | json }},
+  "breadcrumb": { "@id": {{ breadcrumb_id | json }} },
+  "mainEntity": {
+    "@type": "Service",
+    "name": {{ page.title | json }},
+    "provider": { "@id": {{ org_id | json }} },
+    "areaServed": { "@type": "Country", "name": "United Kingdom" }
+  }
+}
+</script>
+  {%- else -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": {{ webpage_id | json }},
+  "url": {{ canonical_url | json }},
+  "name": {{ page.title | json }},
+  "description": {{ page_desc | json }},
+  "breadcrumb": { "@id": {{ breadcrumb_id | json }} },
+  "isPartOf": { "@id": {{ website_id | json }} }
+}
+</script>
+  {%- endif -%}
+
+{%- else -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": {{ webpage_id | json }},
+  "url": {{ canonical_url | json }},
+  "name": {{ page_title | json }},
+  "description": {{ page_desc | json }},
+  "breadcrumb": { "@id": {{ breadcrumb_id | json }} }
+}
+</script>
+
+{%- endcase -%}

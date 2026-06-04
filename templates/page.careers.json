@@ -1,0 +1,70 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "richtext_Wecpfy": {
+      "type": "richtext",
+      "blocks": {
+        "heading_BqbCkR": {
+          "type": "heading",
+          "settings": {
+            "text": "Work with us",
+            "heading_level": "h1",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_8QDAJc": {
+          "type": "tagline",
+          "settings": {
+            "content": "Interested in joining our team? We’re on the lookout for talented people to join us on our amazing journey! Please fill out the below form to register your interest.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        },
+        "button_TGaKUG": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_BqbCkR",
+        "tagline_8QDAJc",
+        "button_TGaKUG"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 55,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    }
+  },
+  "order": [
+    "richtext_Wecpfy",
+    "main"
+  ]
+}

@@ -1,0 +1,90 @@
+{% liquid  
+  if image_mobile == blank
+    assign image_mobile = image
+  endif
+
+  if video_mobile == blank
+    assign video_mobile = video
+  endif
+
+
+%}
+
+{% capture image_text_block_content %} 
+    <div class="image-text-block__header">
+      <div class="image-text-block__header-inner">
+        {% if subtitle != blank %}
+          <span class="image-text-block__subtitle eyebrow-2xs eyebrow-2xs--bold">{{ subtitle }}</span>
+        {% endif %}
+
+        {% if title != blank %}
+          <div class="image-text-block__title  title-xs">{{ title }}</div>
+        {% endif %}
+      </div>
+
+      {% if text != blank and text_position == 'over_image' %}
+        <span class="image-text-block__plus button button--primary {% if block_colour_scheme == 'dark-mode' %}button--dark{% endif %} button--icon-only">
+          {% render 'icons', icon: 'plus' %}
+        </span>
+        <span class="image-text-block__close button button--primary button--icon-only">
+          {% render 'icons', icon: 'close' %}
+        </span>
+      {% endif %}
+    </div>
+
+    <div class="image-text-block__text">
+      {{ text }}
+    </div>
+{% endcapture %}
+
+<div
+  class="image-text-block {% if show_gradient %}image-text-block--gradient{% endif %} image-text-block--{{ text_position }} image-text-block--{{ block_colour_scheme }}"
+  data-image-index="{{ image_index }}"
+>
+<div class="image-text-block__inner">
+  <div class="image-text-block__image">
+    {% if enable_lightbox %}
+      <button
+        type="button"
+        class="image-text-blocks__lightbox-trigger"
+        js-image-text-blocks="lightbox-trigger"
+        data-slide-index="{{ slide_index }}"
+        aria-label="{{ 'accessibility.view_larger_image' | t }}"
+      >
+    {% endif %}
+    {% if image != blank %}
+      {{ image | image_url: width: 1100, height: nil | image_tag: class: 'image-text-block__image-desktop hide-on-mobile' }}
+      {% if image_mobile != blank %}
+        {{ image_mobile | image_url: width: 400, height: nil | image_tag: class: 'image-text-block__image-mobile hide-on-desktop' }}
+      {% endif %}
+    {% else %}
+      {% render 'placeholder-image', aspect_ratio: 1 %}
+    {% endif %}
+    {% if enable_lightbox %}
+      </button>
+    {% endif %}
+  </div>
+
+  {% if video != blank %}
+    <div class="image-text-block__video">
+      {{ video | video_tag: width: 1100, height: 664, class: 'image-text-block__video-desktop hide-on-mobile', muted }}
+      {% if video_mobile != blank %}
+        {{ video_mobile | video_tag: width: 400, height: 500, class: 'image-text-block__video-mobile hide-on-desktop', muted }}
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if text_position == 'over_image' %}
+    <div class="image-text-block__content">
+      {{ image_text_block_content }}
+    </div>
+  {% endif %}
+
+</div>
+
+{% if text_position == 'under_image' %}
+  <div class="image-text-block__content">
+    {{ image_text_block_content }}
+  </div>
+{% endif %}
+</div> 

@@ -1,0 +1,60 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "hotspots_JXMTFi": {
+      "type": "hotspots",
+      "blocks": {
+        "hotspot_XrmTnP": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "admonere-double-wardrobe",
+            "description": "",
+            "desktop_x": 25,
+            "desktop_y": 27,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "tab_NzijfF": {
+          "type": "tab",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/B903-Remini-Bedroom-Package-main-image-with-logo_149142cc-f387-4190-b7ae-418cc1898dc5.jpg",
+            "image_desktop": "shopify://shop_images/B903-Remini-Bedroom-Package-main-image-with-logo_149142cc-f387-4190-b7ae-418cc1898dc5.jpg",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_XrmTnP",
+        "tab_NzijfF"
+      ],
+      "name": "Hotspots",
+      "settings": {
+        "remove_top_padding": false,
+        "colour_scheme": "base-white-01"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hotspots_JXMTFi"
+  ]
+}

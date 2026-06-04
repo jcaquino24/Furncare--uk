@@ -1,0 +1,332 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "hotspots_bfFtxR": {
+      "type": "hotspots",
+      "blocks": {
+        "tab_gHwhLq": {
+          "type": "tab",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/Green-Living-Room-scaled.jpg",
+            "image_desktop": "shopify://shop_images/Green-Living-Room-scaled.jpg",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "hotspot_PU7L99": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "waylen-mini-sideboard",
+            "description": "",
+            "desktop_x": 67,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_LXJ4CB": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "jansson-side-chair-fabric-nevis-putty",
+            "description": "",
+            "desktop_x": 75,
+            "desktop_y": 60,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_BkqGXb": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "waylen-6-seater-dining-table",
+            "description": "",
+            "desktop_x": 90,
+            "desktop_y": 64,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_bXfKbd": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "rita-3-seater-sofa-fabric-luxe-bottle-green",
+            "description": "",
+            "desktop_x": 53,
+            "desktop_y": 75,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_BUJznc": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "rita-armchair-fabric-luxe-bottle-green",
+            "description": "",
+            "desktop_x": 20,
+            "desktop_y": 85,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_7YJDbQ": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-l002-cushion-1",
+            "description": "",
+            "desktop_x": 42,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_bAW49F": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-l002-cushion",
+            "description": "",
+            "desktop_x": 38,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_i9AFjf": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "waylen-coffee-table",
+            "description": "",
+            "desktop_x": 29,
+            "desktop_y": 65,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_jU6tVh": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "maja-floor-lamp",
+            "description": "",
+            "desktop_x": 24,
+            "desktop_y": 25,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_jhrzfR": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "maja-table-lamp",
+            "description": "",
+            "desktop_x": 73,
+            "desktop_y": 31,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_cEkJ9X": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "gazania-ochre",
+            "description": "",
+            "desktop_x": 83,
+            "desktop_y": 20,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_38cgcR": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-l002-palm-canvas",
+            "description": "",
+            "desktop_x": 95,
+            "desktop_y": 32,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_XACKH8": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "waylen-tv-unit",
+            "description": "",
+            "desktop_x": 19,
+            "desktop_y": 53,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_CN7dtr": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "waylen-small-bookcase-1",
+            "description": "",
+            "desktop_x": 52,
+            "desktop_y": 45,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_f8TGjd": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "waylen-small-sideboard",
+            "description": "",
+            "desktop_x": 64,
+            "desktop_y": 44,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_wtDi9W": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-l002-lagoon-canvas-1",
+            "description": "",
+            "desktop_x": 59,
+            "desktop_y": 30,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        }
+      },
+      "block_order": [
+        "tab_gHwhLq",
+        "hotspot_PU7L99",
+        "hotspot_LXJ4CB",
+        "hotspot_BkqGXb",
+        "hotspot_bXfKbd",
+        "hotspot_BUJznc",
+        "hotspot_7YJDbQ",
+        "hotspot_bAW49F",
+        "hotspot_i9AFjf",
+        "hotspot_jU6tVh",
+        "hotspot_jhrzfR",
+        "hotspot_cEkJ9X",
+        "hotspot_38cgcR",
+        "hotspot_XACKH8",
+        "hotspot_CN7dtr",
+        "hotspot_f8TGjd",
+        "hotspot_wtDi9W"
+      ],
+      "name": "Hotspots",
+      "settings": {
+        "remove_top_padding": false,
+        "colour_scheme": "base-white-01"
+      }
+    },
+    "product_blocks_Fra7Pt": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_3mFakK": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "rita-2-seater-sofa-fabric-luxe-bottle-green",
+              "jansson-side-chair-fabric-nevis-putty",
+              "waylen-small-sideboard",
+              "maja-floor-lamp",
+              "maja-table-lamp",
+              "waylen-6-seater-dining-table",
+              "koppla-l002-cushion",
+              "koppla-l002-palm-canvas",
+              "waylen-tv-unit",
+              "waylen-small-bookcase-1"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        },
+        "product_block_gbHrnY": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_3mFakK",
+        "product_block_gbHrnY"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Featured Products",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "blocks_PMiqTJ": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_Rg6nUR": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 55,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_Rg6nUR"
+      ],
+      "name": "Form embed",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "hotspots_bfFtxR",
+    "product_blocks_Fra7Pt",
+    "blocks_PMiqTJ"
+  ]
+}

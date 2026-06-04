@@ -1,0 +1,40 @@
+<p class="{{ block.settings.tagline_style }}">{{ block.settings.content }}</p>
+{% schema %}
+{
+  "name": "Tagline",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "type": "select",
+      "id": "tagline_style",
+      "label": "Tagline Style",
+      "options": [
+          { "value": "body-xl", "label": "Body XLarge" },
+          { "value": "body-xl--bold", "label": "Body XLarge Bold" },
+          { "value": "body-lg", "label": "Body Large" },
+          { "value": "body-lg--bold", "label": "Body Large Bold" },
+          { "value": "body-md", "label": "Body Medium" },
+          { "value": "body-md--bold", "label": "Body Medium Bold" },
+          { "value": "body-sm", "label": "Body Small" },
+          { "value": "body-sm--bold", "label": "Body Small Bold" },
+          { "value": "body-xs", "label": "Body XSmall" },
+          { "value": "body-xs--bold", "label": "Body XSmall Bold" }
+      ],
+      "default": "body-md"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tagline",
+      "settings": {
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      }
+    }
+  ]
+}
+{% endschema %}

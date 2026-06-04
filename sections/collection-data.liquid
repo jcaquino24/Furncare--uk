@@ -1,0 +1,81 @@
+{%- comment -%}
+  Component: Collection Data Script
+  Description:
+    This script tag stores structured data about the collection's products, which is utilized by a Preact application on the collection page.
+    The data includes detailed information about each product, such as titles, pricing, images, tags, and variants, formatted as JSON.
+
+  Usage:
+    - The data is fetched asynchronously post-page-load and when product filters are applied ensuring a non-blocking UI experience.
+    - It provides a base for the Preact app to render product information dynamically and handle user interactions efficiently.
+    - This script is crucial for interacting with the section rendering API, which supplies updated data in response to user actions such as filtering.
+{%- endcomment -%}
+
+<script type="json" id="CollectionData">
+  {
+    "products":[
+      {% paginate collection.products by 50 %}
+      {% for product in collection.products %}
+        {
+            "title": "{{ product.title | escape }}",
+            "handle": "{{ product.handle }}",
+            "compare_at_price": "{{ product.compare_at_price | money_without_currency }}",
+            "created_at": "{{ product.created_at }}",
+            "published_at": "{{ product.published_at }}",
+            "id": "{{ product.id }}",
+            "images": [
+                {% for image in product.images limit: 2 %}
+                    {
+                        "src": "https:{{ image | image_url }}",
+                        "alt": "{{ image.alt | escape }}",
+                        "width": {{ image.width }},
+                        "height": {{ image.height }}
+                    }{% unless forloop.last %},{% endunless %}
+                {% endfor %}
+            ],
+            "price": "{{ product.price | money_without_currency }}",
+            "tags": [
+                {% for tag in product.tags %}
+                    "{{ tag }}"{% unless forloop.last %},{% endunless %}
+                {% endfor %}
+            ],
+            "vendor": "{{ product.vendor }}",
+            "variants": [
+                {% for variant in product.variants %}
+                    {
+                        "id": "{{ variant.id }}",
+                        "inventory_quantity": {{ variant.inventory_quantity }}
+                    }{% unless forloop.last %},{% endunless %}
+                {% endfor %}
+            ]
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+      {% endpaginate %}
+    ],
+    "productCount": "{{ products_count }}",
+    "pagination": {
+      "currentPage": "{{ paginate.current_page }}",
+      "perPage": "{{ paginate.page_size }}",
+      "pages": "{{ paginate.pages }}"
+    },
+    "filters": [
+      {% for filter in collection.filters %}
+          {
+              "label": "{{ filter.label }}",
+              "max_value": "{{ filter.max_value.value }}",
+              "min_value": "{{ filter.min_value.value }}",
+              "range_max": "{{ filter.range_max }}",
+              "values": [
+                  {% for value in filter.values %}
+                      {
+                          "label": "{{ value.label }}",
+                          "count": "{{ value.count }}",
+                          "value": "{{ value.param_value }}"
+                      }{% unless forloop.last %},{% endunless %}
+                  {% endfor %}
+              ],
+              "param_name": "{{ filter.param_name }}"
+          }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }
+</script>

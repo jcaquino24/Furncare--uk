@@ -1,0 +1,561 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_video_banner_Mx3q8g": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_8TMHFP": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "case study",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_DXxf3y": {
+          "type": "title",
+          "settings": {
+            "text": "Sherbourne Lodge",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_TY8nED": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_GeUmxJ": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_aDpXic": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_8TMHFP",
+        "title_DXxf3y",
+        "button_TY8nED",
+        "card_GeUmxJ",
+        "card_aDpXic"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 600,
+        "height_mobile": 430,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/PHOTO-2025-01-28-23-01-35_2.jpg",
+        "image_mobile": "shopify://shop_images/PHOTO-2025-01-28-23-01-35_2.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(54deg, rgba(255, 250, 99, 1), rgba(38, 37, 32, 0.4) 1%)",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_PhprEj": {
+      "type": "richtext",
+      "blocks": {
+        "heading_mYLH3K": {
+          "type": "heading",
+          "settings": {
+            "text": "Applying the Principles of Luxury Hotel Design and Hospitality to Sherbourne Lodge",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_LFtXUT": {
+          "type": "tagline",
+          "settings": {
+            "content": "The new owners acquired Sherbourne Lodge in November 2022. They planned to apply their extensive experience of the luxury hotel sector to their first care home and transform it into a premium facility.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_mYLH3K",
+        "tagline_LFtXUT"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "featured_blocks_QcyUqa": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_WB6nUy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PHOTO-2025-01-28-23-01-31_3.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_9HR9qb": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PHOTO-2025-01-28-23-01-39.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_WQpPgr": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PHOTO-2025-01-28-23-01-37.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_pgBF4K": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PHOTO-2025-01-28-23-01-36_4.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_4cYAbe": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PHOTO-2025-01-28-23-01-31_2.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_X4iqhW": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PHOTO-2025-01-28-23-01-37_2.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_DjQYdY": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-1_3ff01845-1f6c-443f-bfb7-b5ff0c18ad13.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_hddtnP": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-2_5b4d2112-da28-4294-a17a-4d94c45aabe8.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_DhNxNH": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-7_540f5d2b-16f1-4aff-b95f-f09fdc807411.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_NJr8BG": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-5_d11ffcfb-50df-42fc-95f7-d72f908e0442.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_Cwkcp6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-4_08a2bcbd-a56d-49d5-8155-028787f5c4f2.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_C4Hjc7": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-6_32c21d02-aa97-412e-8e53-096c6e6484ab.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_6NL8aE": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-3_e4b488e7-5794-4ee0-be4c-c84be3eb1416.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_tFgQja": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/PHOTO-2025-01-28-23-01-40_7.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_WB6nUy",
+        "block_9HR9qb",
+        "block_WQpPgr",
+        "block_pgBF4K",
+        "block_4cYAbe",
+        "block_X4iqhW",
+        "block_DjQYdY",
+        "block_hddtnP",
+        "block_DhNxNH",
+        "block_NJr8BG",
+        "block_Cwkcp6",
+        "block_C4Hjc7",
+        "block_6NL8aE",
+        "block_tFgQja"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "",
+        "padding": "wide",
+        "layout": "line_grid",
+        "enable_lightbox": true
+      }
+    },
+    "richtext_EW6cqY": {
+      "type": "richtext",
+      "blocks": {
+        "heading_C9ihxn": {
+          "type": "heading",
+          "settings": {
+            "text": "“We were determined to apply the same premium standards to Sherbourne Lodge as in our luxury boutique hotels. The user experience is everything to us, and Furncare were instrumental in helping us to create our first fantastic premium care environment for our residents.”",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_JPEfFQ": {
+          "type": "tagline",
+          "settings": {
+            "content": "Oguz ‘Oz’ Goker, Director, Sherbourne Lodge",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_T6qrbf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_C9ihxn",
+        "tagline_JPEfFQ",
+        "button_T6qrbf"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_text_Rr8iJJ": {
+      "type": "image-text",
+      "blocks": {
+        "images_NXFXtC": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/PHOTO-2025-01-28-23-01-39_4.jpg",
+            "image_two": "shopify://shop_images/PHOTO-2025-01-28-23-01-31_3_1.jpg"
+          }
+        },
+        "content_c9CaD6": {
+          "type": "content",
+          "settings": {
+            "title": "Key Features",
+            "title_size": "xl",
+            "text": "Interior Design:\nThe property had been unoccupied for a year before incoming Directors Nihat Özdal and Oguz ‘Oz’ Goker started planning the refurbishment. In December 2023, they visited the Furncare Head Office & Showroom with architectural plans, but still had an open mind as to the interior design of the bedrooms and communal areas. Having seen the wide selection of interior themes and furniture ranges on display and agreed principles with Jade Eaglen, Furncare Projects Design Manager, the plans began to take shape. Jonathan Southall, Furncare Founding Director, surveyed the site, meaning that all the designs could be specified to a high level of detail in advance and uniquely tailored to each space.\n\nOperational Suitability:\nJade developed and presented exclusive, bespoke themes for each interior space. Whilst the Directors were well qualified to comment on the pure design aspects of the Furncare concepts, they relied on the experience of care professional Sophie to assess their operational suitability. Sophie is now the Manager at Sherbourne Lodge.",
+            "button_style": "underline",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_NXFXtC",
+        "content_c9CaD6"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-4xl"
+      }
+    },
+    "image_text_gAPx8t": {
+      "type": "image-text",
+      "blocks": {
+        "content_GDXBUg": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "title_size": "xl",
+            "text": "The whole team then revisited Furncare just two weeks later to fine-tune the design details. In March they were ready to go, and were welcomed back to the Furncare Showrooms by MD Carl Southall and the Special Projects Management Team of Arnie Goodenough and Jade Eaglen to finalise and sign-off the project.\n\nCommunity Living\nThose soon to be living in the newly refurbished home are likely to be drawn from local neighbourhoods as the rooms are completed. Jade therefore made a point of factoring local influences into the 31 bedrooms, dining room, lounge, library, quiet room and reception interiors. She even included framed prints of local landmarks into the designs to make the home relevant, familiar and homely for elderly residents and those living with dementia.\n\nWhilst construction work on the remaining rooms is being completed, the focus is on the ‘Marketing Suite’ at Sherbourne Lodge. This fully furnished representative room set enables prospective residents and their families to appreciate the style and quality of the furniture, fixtures and fittings at the home prior to taking up residence.",
+            "button_style": "primary",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "images_czQpVe": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/PHOTO-2025-01-28-23-01-35_3.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "content_GDXBUg",
+        "images_czQpVe"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "richtext_znBbzx": {
+      "type": "richtext",
+      "blocks": {
+        "heading_qBVQQe": {
+          "type": "heading",
+          "settings": {
+            "text": "“Nihat and Oz have a unique understanding of premium living and hospitality from their hotel experience. So many of the principles are transferable, and we are very proud of the partnership that developed during this project, and of the end result.”",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_DLcG7y": {
+          "type": "tagline",
+          "settings": {
+            "content": "Arnie Goodenough, Key Account Manager, Furncare",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_bKjrMf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_qBVQQe",
+        "tagline_DLcG7y",
+        "button_bKjrMf"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_video_banner_xWTgmR": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_YJpC8H": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "text": "Retirement furniture",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_qDHCNx": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "text": "Designed for Comfort, Built for <em>Care</em>.",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_GDbKwj": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_e3GTdX": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_UehPPd": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_YJpC8H",
+        "title_qDHCNx",
+        "button_GDbKwj",
+        "card_e3GTdX",
+        "card_UehPPd"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/PHOTO-2025-01-28-23-01-33_4.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "linear-gradient(320deg, rgba(227, 226, 195, 0.2), rgba(223, 227, 197, 0.2) 24%, rgba(203, 68, 194, 1) 48%, rgba(255, 250, 99, 0) 100%)",
+        "colour_scheme": "light",
+        "content_position": "center-bottom",
+        "content_alignment": "center"
+      }
+    },
+    "product_blocks_hr4bkw": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_HdNPmE": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "the-3p-fulfilled-snowboard",
+              "the-collection-snowboard-liquid",
+              "the-inventory-not-tracked-snowboard-3",
+              "the-complete-snowboard",
+              "the-compare-at-price-snowboard"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_HdNPmE"
+      ],
+      "disabled": true,
+      "name": "Product blocks",
+      "settings": {
+        "title": "Products featured in this case study",
+        "section_padding": "--spacing-2xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_video_banner_Mx3q8g",
+    "richtext_PhprEj",
+    "featured_blocks_QcyUqa",
+    "richtext_EW6cqY",
+    "image_text_Rr8iJJ",
+    "image_text_gAPx8t",
+    "richtext_znBbzx",
+    "image_video_banner_xWTgmR",
+    "product_blocks_hr4bkw"
+  ]
+}

@@ -1,0 +1,199 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_video_banner_3rDLwV": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_BJN7yG": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "Retirement furniture",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_zA7Vx4": {
+          "type": "title",
+          "settings": {
+            "text": "Test Case Study Weekly Sync",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_ecyVmj": {
+          "type": "button",
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_rw7jkX": {
+          "type": "card",
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_TGmgAm": {
+          "type": "card",
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_BJN7yG",
+        "title_zA7Vx4",
+        "button_ecyVmj",
+        "card_rw7jkX",
+        "card_TGmgAm"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Lounge_Roomset_Lifestyle.jpg",
+        "image_mobile": "shopify://shop_images/63fe1f2ffac87df74182c0c4bc2e38aefdb5a90b.png",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "left"
+      }
+    },
+    "content_blocks_chEUpC": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_M6CNKj": {
+          "type": "tab1",
+          "settings": {
+            "text": "",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_AadWXY": {
+          "type": "tab1",
+          "settings": {
+            "text": "",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_wYVxt9": {
+          "type": "tab2",
+          "settings": {
+            "text": "",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_tk3f3f": {
+          "type": "tab2",
+          "settings": {
+            "text": "",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_M6CNKj",
+        "tab1_AadWXY",
+        "tab2_wYVxt9",
+        "tab2_tk3f3f"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "Content Gallery",
+        "section_padding": "--spacing-2xl",
+        "tab1_title": "Collection 1",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "Collection 2",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    },
+    "featured_blocks_4GbQwL": {
+      "type": "featured-blocks",
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "Featured Blocks",
+        "padding": "default",
+        "layout": "line_grid",
+        "enable_lightbox": true
+      }
+    },
+    "image_text_Jin8nk": {
+      "type": "image-text",
+      "blocks": {
+        "images_rPeGUX": {
+          "type": "images",
+          "settings": {}
+        },
+        "content_jxwXHe": {
+          "type": "content",
+          "settings": {
+            "title": "Image with Text",
+            "title_size": "xl",
+            "text": "Display an image alongside text content to highlight key information about your brand or products.",
+            "button_style": "primary",
+            "button_text": "Learn more",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_rPeGUX",
+        "content_jxwXHe"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_video_banner_3rDLwV",
+    "content_blocks_chEUpC",
+    "featured_blocks_4GbQwL",
+    "image_text_Jin8nk"
+  ]
+}

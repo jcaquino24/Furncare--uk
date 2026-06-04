@@ -1,0 +1,537 @@
+{%- comment -%}
+  Section: Footer
+  Description:
+    Defines a customizable footer section with multiple layout and content options. Capable of displaying varied content types like HTML, Liquid, and link lists through configurable blocks, providing flexibility in presentation and functionality.
+
+  Usage:
+    This footer is designed to adapt to various user needs with adjustable settings for desktop and mobile columns, container usage, and optional subfooter elements. Each block can be individually styled and configured to match the site's branding and layout preferences.
+
+  TODO:
+    - Confirm the existence of or create necessary CSS to ensure that all footer elements are styled consistently, especially considering responsive behaviour across devices.
+    - Evaluate HTML markup to maintain semantic integrity, particularly considering Shopify's automatic wrapping of content in a `<section>` tag to avoid redundant or nested sections.
+    - Implement accessibility features for all interactive elements to ensure compliance with current accessibility standards, making the footer user-friendly for all visitors.
+{%- endcomment -%}
+
+{% liquid
+  assign use_container = section.settings.use_container
+  assign use_subfooter = section.settings.use_subfooter
+  assign inner_class = 'footer__inner'
+  if use_container
+    assign inner_class = inner_class | append: ' container'
+  endif
+%}
+
+<footer class="footer">
+  <div class="{{ inner_class }}">
+    {% for block in section.blocks %}
+      {% liquid
+        assign block_class_list = 'footer__block'
+        assign block_class_list = block_class_list | append: ' ' | append: block_class_list | append: '--' | append: block.type
+      %}
+      {%- case block.type -%}
+        {% when 'company_info' %}
+          <div class="{{ block_class_list }}" {{ block.shopify_attributes }}>
+            {%- if block.settings.company_logo != blank -%}
+              {% assign alt_text = block.settings.company_logo.alt
+                | default: 'Furncare logo'
+              %}
+              {{
+                block.settings.company_logo
+                | image_url: width: 250
+                | image_tag:
+                  alt: alt_text,
+                  width: 125,
+                  height: 100,
+                  class: 'footer__company-logo',
+                  loading: 'lazy'
+              }}
+            {%- endif -%}
+            {%- if block.settings.content != blank -%}
+              {{ block.settings.content }}
+            {%- endif -%}
+            <div class="footer__cert-logos">
+              {%- if block.settings.cert_logo_one != blank -%}
+                {% assign alt_text = block.settings.cert_logo_one.alt
+                  | default: 'Furncare Certification'
+                %}
+                {{
+                  block.settings.cert_logo_one
+                  | image_url: width: 160
+                  | image_tag:
+                    alt: alt_text,
+                    width: 160,
+                    height: 160,
+                    loading: 'lazy'
+                }}
+              {%- endif -%}
+              {%- if block.settings.cert_logo_two != blank -%}
+                {% assign alt_text = block.settings.cert_logo_two.alt
+                  | default: 'Furncare Certification'
+                %}
+                {{
+                  block.settings.cert_logo_two
+                  | image_url: width: 160
+                  | image_tag:
+                    alt: alt_text,
+                    width: 160,
+                    height: 160,
+                    loading: 'lazy'
+                }}
+              {%- endif -%}
+            </div>
+          </div>
+
+        {% when 'html' %}
+          <div class="{{ block_class_list }}" {{ block.shopify_attributes }}>
+            {%- if block.settings.content != blank -%}
+              {{ block.settings.content }}
+            {%- endif -%}
+          </div>
+
+        {% when 'liquid' %}
+          <div
+            class="{{ block_class_list }}"
+            {{ block.shopify_attributes }}
+          >
+            {%- if block.settings.content != blank -%}
+              {{ block.settings.content }}
+            {%- endif -%}
+          </div>
+
+        {% when 'newsletter' %}
+          <div
+            class="{{ block_class_list }}"
+            {{ block.shopify_attributes }}
+          >
+            {%- if block.settings.title != blank -%}
+              <p class="footer__title">{{ block.settings.title }}</p>
+            {%- endif -%}
+
+            {%- if block.settings.subtitle != blank -%}
+              <p class="footer__subtitle">{{ block.settings.subtitle }}</p>
+            {%- endif -%}
+
+            {%- if block.settings.content != blank -%}
+              <div class="footer__form">
+                {{ block.settings.content }}
+              </div>
+            {%- endif -%}
+          </div>
+
+        {% when 'linklist' %}
+          <div
+            class="{{ block_class_list }}"
+            {{ block.shopify_attributes }}
+          >
+            {%- if block.settings.title != blank -%}
+              <p class="footer__title">{{ block.settings.title }}</p>
+            {%- endif -%}
+
+            {%- if block.settings.link_list != blank -%}
+              {% assign links = block.settings.link_list.links %}
+              <ul class="footer__list">
+                {% for link in links %}
+                  <li class="footer__list-item">
+                    <a href="{{ link.url }}" class="footer__list-link">
+                      {{- link.title -}}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {%- endif -%}
+          </div>
+
+        {% when 'connect' %}
+          <div class="{{ block_class_list }}" {{ block.shopify_attributes }}>
+            {%- if block.settings.title != blank -%}
+              <p class="footer__title">{{ block.settings.title }}</p>
+            {%- endif -%}
+
+            <ul class="footer__list">
+              {%- if block.settings.phone != blank -%}
+                <li class="footer__phone">
+                  {%- if block.settings.phone_icon != blank -%}
+                    {% assign alt_text = block.settings.phone_icon.alt
+                      | default: 'Contact by phone'
+                    %}
+                    {{
+                      block.settings.phone_icon
+                      | image_url: width: 24
+                      | image_tag:
+                        alt: alt_text,
+                        width: 24,
+                        height: 24,
+                        loading: 'lazy'
+                    }}
+                  {%- endif -%}
+
+                  <a href="tel:{{ block.settings.phone }}">
+                    {{- block.settings.phone -}}
+                  </a>
+                </li>
+              {%- endif -%}
+
+              {%- if block.settings.email != blank -%}
+                <li class="footer__email">
+                  {%- if block.settings.email_icon != blank -%}
+                    {% assign alt_text = block.settings.email_icon.alt
+                      | default: 'Contact by email'
+                    %}
+                    {{
+                      block.settings.email_icon
+                      | image_url: width: 24
+                      | image_tag:
+                        alt: alt_text,
+                        width: 24,
+                        height: 24,
+                        loading: 'lazy'
+                    }}
+                  {%- endif -%}
+
+                  <a href="mailto:{{ block.settings.email }}">
+                    {{- block.settings.email -}}
+                  </a>
+                </li>
+              {%- endif -%}
+
+              {%- if block.settings.location_text != blank -%}
+                <li class="footer__location">
+                  {%- if block.settings.location_icon != blank -%}
+                    {% assign alt_text = block.settings.location_icon.alt
+                      | default: 'Find us on'
+                    %}
+                    {{
+                      block.settings.location_icon
+                      | image_url: width: 24
+                      | image_tag:
+                        alt: alt_text,
+                        width: 24,
+                        height: 24,
+                        loading: 'lazy'
+                    }}
+                  {%- endif -%}
+
+                  <a
+                    href="{{ block.settings.location_address }}"
+                    target="_blank"
+                  >
+                    {{- block.settings.location_text -}}
+                  </a>
+                </li>
+              {%- endif -%}
+            </ul>
+
+            {% if block.settings.show_social_icons %}
+              <div class="footer__connect-social">
+                {% render 'social-icons',
+                  base_class: 'social-media',
+                  inner_class: 'list-icons',
+                  color: 'color-text-invert'
+                %}
+              </div>
+            {% endif %}
+          </div>
+      {%- endcase -%}
+    {% endfor %}
+  </div>
+
+  {% if use_container %}
+    <div class="container">
+  {% endif %}
+
+  <div class="divider"></div>
+
+  {% if use_container %}
+    </div>
+  {% endif %}
+
+  {% if use_subfooter %}
+    <div class="footer__sub">
+      {% if use_container %}
+        <div class="container">
+      {% endif %}
+
+      <div class="footer__sub-inner">
+        {%- if section.settings.subfooter_link_list != blank -%}
+          <ul class="footer__sub-list">
+            {% for link in section.settings.subfooter_link_list.links %}
+              <li class="footer__sub-item">
+                <a href="{{ link.url }}" class="footer__sub-link">
+                  {{- link.title -}}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {%- endif -%}
+
+        {%- if section.settings.copyright != blank -%}
+          <p class="footer__sub-text">{{ section.settings.copyright }}</p>
+        {%- endif -%}
+
+        {%- unless shop.enabled_payment_types == empty -%}
+          {% render 'payment-icons' %}
+        {%- endunless -%}
+      </div>
+
+      {% if use_container %}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Container"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_container",
+      "label": "Use container?",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Sub Footer"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_subfooter",
+      "label": "Use subfooter?",
+      "default": true
+    },
+    {
+      "type": "link_list",
+      "id": "subfooter_link_list",
+      "label": "Link List",
+      "info": "You can create link list at Online Store > Navigation."
+    },
+    {
+      "type": "liquid",
+      "id": "copyright",
+      "label": "Copyright Text",
+      "info": "You can use liquid tags in this field.",
+      "default": "&copy; {{ 'now' | date: '%Y' }} {{ shop.address.company | default: shop.name }}.  All Rights Reserved. Company Reg: 08093065"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "company_info",
+      "name": "Company Info",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "company_logo",
+          "label": "Company logo"
+        },
+        {
+          "type": "html",
+          "id": "content",
+          "label": "HTML",
+          "info": "You can use this field to add a custom HTML content."
+        },
+        {
+          "type": "header",
+          "content": "Certification logos"
+        },
+        {
+          "type": "image_picker",
+          "id": "cert_logo_one",
+          "label": "Logo one"
+        },
+        {
+          "type": "image_picker",
+          "id": "cert_logo_two",
+          "label": "Logo two"
+        }
+      ]
+    },
+    {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Join our mailing list"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Keep up to date and get special news and offers."
+        },
+        {
+          "type": "html",
+          "id": "content",
+          "label": "HTML Form",
+          "info": "You can use this field to add a custom HTML form."
+        }
+      ]
+    },
+    {
+      "type": "linklist",
+      "name": "Link List",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Support"
+        },
+        {
+          "type": "link_list",
+          "id": "link_list",
+          "label": "Link List",
+          "info": "You can create link list at Online Store > Navigation."
+        }
+      ]
+    },
+    {
+      "type": "html",
+      "name": "HTML",
+      "settings": [
+        {
+          "type": "html",
+          "id": "content",
+          "label": "HTML Content"
+        }
+      ]
+    },
+    {
+      "type": "liquid",
+      "name": "Liquid",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Layout"
+        },
+        {
+          "type": "range",
+          "id": "desktop_colspan",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "label": "Desktop Column Span",
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "mobile_colspan",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "label": "Mobile Column Span",
+          "default": 1
+        },
+        {
+          "type": "liquid",
+          "id": "content",
+          "label": "Liquid Content"
+        }
+      ]
+    },
+    {
+      "type": "connect",
+      "name": "Connect",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Connect"
+        },
+        {
+          "type": "header",
+          "content": "Phone"
+        },
+        {
+          "type": "text",
+          "id": "phone",
+          "label": "Phone",
+          "default": "01603664900"
+        },
+        {
+          "type": "image_picker",
+          "id": "phone_icon",
+          "label": "Icon"
+        },
+        {
+          "type": "header",
+          "content": "Email"
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Email",
+          "default": "info@furncare.co.uk"
+        },
+        {
+          "type": "image_picker",
+          "id": "email_icon",
+          "label": "Icon"
+        },
+        {
+          "type": "header",
+          "content": "Location"
+        },
+        {
+          "type": "text",
+          "id": "location_text",
+          "label": "Location title",
+          "default": "Find us"
+        },
+        {
+          "type": "text",
+          "id": "location_address",
+          "label": "Location url",
+          "info": "You can use this field to add a custom Google Maps URL for the location."
+        },
+        {
+          "type": "image_picker",
+          "id": "location_icon",
+          "label": "Icon"
+        },
+        {
+          "type": "header",
+          "content": "Social media"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_social_icons",
+          "label": "Show social icons",
+          "default": true
+        },
+        {
+          "type": "paragraph",
+          "content": "Social media icons and links can be set in the Theme Settings > Social media."
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,8 @@
+{{ article.published_at | date: '%d' }}
+
+{% assign month_published = article.published_at | date: '%m' | minus: 1 %}
+{% capture months %}{{ "date_formats.jan" | t }},{{ "date_formats.feb" | t }},{{ "date_formats.mar" | t }},{{ "date_formats.apr" | t }},{{ "date_formats.may" | t }},{{ "date_formats.jun" | t }},{{ "date_formats.jul" | t }},{{ "date_formats.aug" | t }},{{ "date_formats.sep" | t }},{{ "date_formats.oct" | t }},{{ "date_formats.nov" | t }},{{ "date_formats.dec" | t }}{% endcapture %}
+{% assign month_array = months | split: ',' %}
+{{ month_array[month_published] }}
+
+{{ article.published_at | date: '%Y' }}

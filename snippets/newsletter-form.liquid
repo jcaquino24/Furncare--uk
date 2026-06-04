@@ -1,0 +1,10 @@
+{% form 'customer', class: 'form-group newsletter-form' %}
+  <input type="hidden" name="contact[tags]" value="newsletter">
+
+  <div class="form-group__input-wrapper">
+    <label for="email">{{ "newsletter.email" | t }}</label>
+    <input type="email" name="contact[email]">
+  </div>
+
+  <input type="button button--primary" value="{{ "newsletter.signup" | t }}">
+{% endform %}

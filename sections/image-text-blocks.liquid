@@ -1,0 +1,518 @@
+{% liquid
+  assign block_images = section.blocks
+  assign fallback_section_id = section.id | default: 'image-text-blocks'
+  if fallback_section_id == blank or fallback_section_id == empty
+    assign fallback_section_id = 'image-text-blocks'
+  endif
+
+  assign enable_lightbox = section.settings.enable_lightbox
+
+  render 'vite-tag' with '@sections/image-text-blocks.ts'
+%}
+
+{%- comment -%}
+  Navigation logic:
+  • Desktop nav shown when we have a desktop swiper (>4 blocks).
+  • Mobile nav shown when merchant selected swiper.
+{%- endcomment -%}
+
+{% assign show_nav_desktop = false %}
+{% if block_images.size > 4 %}
+  {% assign show_nav_desktop = true %}
+{% endif %}
+
+{% assign show_nav_mobile = false %}
+{% if section.settings.mobile_layout == 'swiper' %}
+  {% assign show_nav_mobile = true %}
+{% endif %}
+
+{% assign show_nav_combined = false %}
+{% if show_nav_desktop or show_nav_mobile %}
+  {% assign show_nav_combined = true %}
+{% endif %}
+
+{%- comment -%}Classes for nav rendered via title-with-nav{%- endcomment -%}
+{% assign title_classes = '' %}
+{% if show_nav_desktop and show_nav_mobile %}
+  {% assign title_classes = 'title-with-nav__nav' %}
+{% elsif show_nav_desktop %}
+  {% assign title_classes = 'title-with-nav__nav hide-on-mobile' %}
+{% elsif show_nav_mobile %}
+  {% assign title_classes = 'title-with-nav__nav hide-on-desktop' %}
+{% endif %}
+
+{% comment %}Mobile layout preference: 'swiper' or 'grid'{% endcomment %}
+{% assign use_mobile_swiper = false %}
+{% if section.settings.mobile_layout == 'swiper' %}
+  {% assign use_mobile_swiper = true %}
+{% endif %}
+
+{% assign wrapper_classes = 'image-text-blocks colour-scheme--'
+  | append: section.settings.colour_scheme
+%}
+
+{%- comment -%}Desktop modifier{%- endcomment -%}
+{% if show_nav_desktop %}
+  {% assign wrapper_classes = wrapper_classes
+    | append: ' image-text-blocks--desktop-swiper'
+  %}
+{% endif %}
+
+{%- comment -%}Mobile modifier{%- endcomment -%}
+{% if use_mobile_swiper %}
+  {% assign wrapper_classes = wrapper_classes
+    | append: ' image-text-blocks--mobile-swiper'
+  %}
+{% else %}
+  {% assign wrapper_classes = wrapper_classes
+    | append: ' image-text-blocks--mobile-grid'
+  %}
+{% endif %}
+
+<uwp-image-text-blocks
+  class="{{ wrapper_classes }}"
+  style="--section-padding: var({{ section.settings.section_padding }});"
+  data-section-id="{{ fallback_section_id }}"
+  role="region"
+  aria-label="Image text blocks"
+  aria-roledescription="region"
+>
+  <div class="container">
+    {% if section.settings.title != blank %}
+      <div class="image-text-blocks__header">
+        {% render 'title-with-nav',
+          title: section.settings.title,
+          heading_level: 'h2',
+          heading_style: 'eyebrow-sm',
+          show_nav: show_nav_combined,
+          nav_class: title_classes,
+          section_id: fallback_section_id
+        %}
+      </div>
+    {% endif %}
+    <div class="image-text-blocks__content">
+      {% if block_images.size > 0 %}
+        {%- comment -%}Desktop layout{%- endcomment -%}
+        {% if block_images.size > 4 %}
+          <swiper-container
+            init="false"
+            class="image-text-blocks__swiper hide-on-mobile"
+            slides-per-view="auto"
+            space-between="12"
+            breakpoints='{"768": {"spaceBetween": 20}}'
+            navigation-prev-el="#swiper-button-prev-{{ fallback_section_id }}"
+            navigation-next-el="#swiper-button-next-{{ fallback_section_id }}"
+            role="region"
+            aria-label="Image text blocks carousel"
+            aria-roledescription="carousel"
+          >
+            {% assign slide_index = 0 %}
+            {% for block in block_images %}
+              {% if block.settings.image != blank %}
+                <swiper-slide class="image-text-blocks__slide">
+                  {% render 'content-image-text-block',
+                    image: block.settings.image,
+                    image_mobile: block.settings.image_mobile,
+                    video: block.settings.video,
+                    video_mobile: block.settings.video_mobile,
+                    text: block.settings.text,
+                    title: block.settings.title,
+                    subtitle: block.settings.subtitle,
+                    block_id: block.id,
+                    text_position: section.settings.text_position,
+                    image_index: forloop.index,
+                    block_colour_scheme: block.settings.block_colour_scheme,
+                    show_gradient: block.settings.show_gradient,
+                    enable_lightbox: enable_lightbox,
+                    slide_index: slide_index
+                  %}
+                </swiper-slide>
+                {% assign slide_index = slide_index | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+          </swiper-container>
+
+        {% else %}
+          <div class="image-text-blocks__grid image-text-blocks__grid--{{ block_images.size }} hide-on-mobile">
+            {% assign slide_index = 0 %}
+            {% for block in block_images %}
+              {% if block.settings.image != blank %}
+                {% render 'content-image-text-block',
+                  image: block.settings.image,
+                  image_mobile: block.settings.image_mobile,
+                  video: block.settings.video,
+                  video_mobile: block.settings.video_mobile,
+                  text: block.settings.text,
+                  title: block.settings.title,
+                  subtitle: block.settings.subtitle,
+                  block_id: block.id,
+                  text_position: section.settings.text_position,
+                  image_index: forloop.index,
+                  block_colour_scheme: block.settings.block_colour_scheme,
+                  show_gradient: block.settings.show_gradient,
+                  enable_lightbox: enable_lightbox,
+                  slide_index: slide_index
+                %}
+                {% assign slide_index = slide_index | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {%- comment -%}Mobile layout (based on merchant selection){%- endcomment -%}
+        {% if use_mobile_swiper %}
+          <swiper-container
+            init="false"
+            class="image-text-blocks__swiper hide-on-desktop"
+            slides-per-view="1.33"
+            breakpoints='{"768": {"slidesPerView": "auto"}}'
+            space-between="12"
+            navigation-prev-el="#swiper-button-prev-{{ fallback_section_id }}"
+            navigation-next-el="#swiper-button-next-{{ fallback_section_id }}"
+          >
+            {% assign slide_index = 0 %}
+            {% for block in block_images %}
+              {% if block.settings.image != blank %}
+                <swiper-slide class="image-text-blocks__slide">
+                  {% render 'content-image-text-block',
+                    image: block.settings.image,
+                    image_mobile: block.settings.image_mobile,
+                    video: block.settings.video,
+                    video_mobile: block.settings.video_mobile,
+                    text: block.settings.text,
+                    title: block.settings.title,
+                    subtitle: block.settings.subtitle,
+                    block_id: block.id,
+                    text_position: section.settings.text_position,
+                    image_index: forloop.index,
+                    block_colour_scheme: block.settings.block_colour_scheme,
+                    show_gradient: block.settings.show_gradient,
+                    enable_lightbox: enable_lightbox,
+                    slide_index: slide_index
+                  %}
+                </swiper-slide>
+                {% assign slide_index = slide_index | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+          </swiper-container>
+        {% else %}
+          <div class="image-text-blocks__grid image-text-blocks__grid--{{ block_images.size }} hide-on-desktop">
+            {% assign slide_index = 0 %}
+            {% for block in block_images %}
+              {% if block.settings.image != blank %}
+                {% render 'content-image-text-block',
+                  image: block.settings.image,
+                  image_mobile: block.settings.image_mobile,
+                  video: block.settings.video,
+                  video_mobile: block.settings.video_mobile,
+                  text: block.settings.text,
+                  title: block.settings.title,
+                  subtitle: block.settings.subtitle,
+                  block_id: block.id,
+                  text_position: section.settings.text_position,
+                  image_index: forloop.index,
+                  block_colour_scheme: block.settings.block_colour_scheme,
+                  show_gradient: block.settings.show_gradient,
+                  enable_lightbox: enable_lightbox,
+                  slide_index: slide_index
+                %}
+                {% assign slide_index = slide_index | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+
+  {% if enable_lightbox %}
+    <div class="image-text-blocks__lightbox" js-image-text-blocks="lightbox">
+      <div class="image-text-blocks__lightbox-content">
+        <button
+          class="image-text-blocks__lightbox-close"
+          aria-label="{{ 'general.close' | t }}"
+        >
+          {% render 'icons', icon: 'close' %}
+        </button>
+
+        <div class="image-text-blocks__lightbox-gallery">
+          <div class="image-text-blocks__lightbox-thumbnails-wrapper">
+            <swiper-container
+              class="image-text-blocks__lightbox-thumbnails"
+              id="image-text-blocks-lightbox-thumbs-{{ fallback_section_id }}"
+              js-image-text-blocks="lightbox-thumbnails"
+              slides-per-view="auto"
+              loop="false"
+              space-between="4"
+              breakpoints='
+                {
+                  "1024": {
+                    "direction": "vertical"
+                  }
+                }
+              '
+              role="region"
+              aria-label="Image text blocks thumbnails"
+              aria-roledescription="carousel"
+            >
+              {% for block in block_images %}
+                {% if block.settings.image != blank %}
+                  {% assign lb_image = block.settings.lightbox_image | default: block.settings.image %}
+                  {% assign lb_alt = block.settings.title | default: block.settings.subtitle %}
+                  <swiper-slide class="image-text-blocks__lightbox-thumbnails-slide">
+                    {{
+                      lb_image
+                      | image_url: width: 200
+                      | image_tag:
+                        alt: lb_alt,
+                        loading: 'lazy'
+                    }}
+                  </swiper-slide>
+                {% endif %}
+              {% endfor %}
+            </swiper-container>
+          </div>
+
+          <div class="image-text-blocks__lightbox-main image-text-blocks__lightbox-main--{{ fallback_section_id }}">
+            <div class="image-text-blocks__lightbox-main-wrapper">
+              <div class="image-text-blocks__lightbox-main-carousel">
+                <swiper-container
+                  js-image-text-blocks="lightbox-swiper"
+                  navigation-prev-el=".image-text-blocks__lightbox-main--{{ fallback_section_id }} .swiper-button-prev"
+                  navigation-next-el=".image-text-blocks__lightbox-main--{{ fallback_section_id }} .swiper-button-next"
+                  slides-per-view="1"
+                  direction="horizontal"
+                  keyboard="true"
+                  rewind="true"
+                  thumbs-swiper="#image-text-blocks-lightbox-thumbs-{{ fallback_section_id }}"
+                  role="region"
+                  aria-label="Image text blocks lightbox"
+                  aria-roledescription="carousel"
+                >
+                  {% for block in block_images %}
+                    {% if block.settings.image != blank %}
+                      {% assign lb_image = block.settings.lightbox_image | default: block.settings.image %}
+                      {% assign lb_alt = block.settings.title | default: block.settings.subtitle %}
+                      <swiper-slide
+                        class="image-text-blocks__lightbox-slide"
+                        data-caption="{{ block.settings.lightbox_caption | escape }}"
+                      >
+                        {{
+                          lb_image
+                          | image_url: width: 1200
+                          | image_tag:
+                            alt: lb_alt,
+                            class: 'image-text-blocks__lightbox-image',
+                            loading: 'lazy'
+                        }}
+                      </swiper-slide>
+                    {% endif %}
+                  {% endfor %}
+                </swiper-container>
+              </div>
+
+              {% assign lb_nav_section_id = fallback_section_id | append: '-lb' %}
+              {% render 'swiper-nav',
+                section_id: lb_nav_section_id,
+                direction: 'horizontal',
+                layout: 'edges'
+              %}
+            </div>
+
+            <div class="image-text-blocks__lightbox-caption-wrapper">
+              <p class="image-text-blocks__lightbox-caption body-md" js-image-text-blocks="caption"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</uwp-image-text-blocks>
+
+{% schema %}
+{
+  "name": "Content blocks",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Content Gallery"
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section padding",
+      "default": "--spacing-2xl",
+      "options": [
+        {
+          "value": "--spacing-md",
+          "label": "Narrow"
+        },
+        {
+          "value": "--spacing-2xl",
+          "label": "Default"
+        },
+        {
+          "value": "--spacing-4xl",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "colour_scheme",
+      "label": "Colour scheme",
+      "default": "base-white-01",
+      "options": [
+        {
+          "value": "base-white-01",
+          "label": "Base white 01"
+        },
+        {
+          "value": "base-white-02",
+          "label": "Base white 02"
+        },
+        {
+          "value": "warm-stone",
+          "label": "Warm stone"
+        },
+        {
+          "value": "duck-egg",
+          "label": "Duck Egg"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "default": "over_image",
+      "options": [
+        {
+          "value": "over_image",
+          "label": "Over image"
+        },
+        {
+          "value": "under_image",
+          "label": "Under Image"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "default": "swiper",
+      "options": [
+        {
+          "value": "swiper",
+          "label": "Swiper"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Lightbox"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_lightbox",
+      "label": "Enable lightbox",
+      "default": false,
+      "info": "Allow images to open in a lightbox when clicked"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image_card",
+      "name": "Image Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image (mobile)"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "A Shopify-hosted video"
+        },
+        {
+          "type": "video",
+          "id": "video_mobile",
+          "label": "A Shopify-hosted video (mobile)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "block_colour_scheme",
+          "label": "Block Colour Scheme",
+          "options": [
+            {
+              "value": "light-mode",
+              "label": "Light Mode (dark text)"
+            },
+            {
+              "value": "dark-mode",
+              "label": "Dark Mode (light text)"
+            }
+          ],
+          "default": "light-mode"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_gradient",
+          "label": "Show gradient",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Lightbox"
+        },
+        {
+          "type": "image_picker",
+          "id": "lightbox_image",
+          "label": "Lightbox image",
+          "info": "Optional larger image for lightbox. Uses main image if blank."
+        },
+        {
+          "type": "textarea",
+          "id": "lightbox_caption",
+          "label": "Lightbox caption",
+          "info": "Optional caption displayed below the image in lightbox"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image text blocks"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,78 @@
+{% doc %}
+  A reusable button component with different states, styles and sizes.
+  This component can be used as a button or a link, depending on the provided parameters.
+
+  @param {string} label - The button text
+  @param {string} [size] - Optional size of the button (xs, sm, md)
+  @param {string} [style] - Optional style of the button (primary, secondary, underline)
+  @param {string} [link] - Optional URL to link to
+  @param {string} [target] - Optional target for the link (e.g., _blank)
+  @param {string} [icon] - Optional icon to display, refer to icons.liquid snippet and pass in the icon name only
+  @param {boolean} [icon_only] - Toggle to show only the icon without text. A label is still required for accessibility. Only for primary and secondary styles.
+  @param {string} [button_type] - Optional button type (button, submit, reset)
+  @param {string} [attributes] - Optional HTML additional attributes for the button. Capture value in Liquid if it needs to be dynamic
+  @param {string} [class] - Optional additional classes for the button
+  @param {string} [scheme] - Optional colour scheme for the button (base-white-01, base-white-02, warm-stone, green-01, green-02)
+
+  @example
+  {% render 'button', label: 'Button', style: 'primary', size: 'md', icon: 'arrow-right', scheme: 'green-01' %}
+{% enddoc %}
+
+{%- liquid
+  if label == blank
+    continue
+  endif
+
+  if scheme == blank
+    assign scheme = section.settings.colour_scheme
+  endif
+  
+  if scheme contains 'green'
+    assign scheme_class = 'dark'
+  endif
+
+  if class contains 'button--light'
+    assign scheme_class = 'light'
+  endif
+
+  assign element = 'button'
+
+  assign size = size | default: 'md'
+  assign icon_only = icon_only | default: false
+  assign style = style | default: 'primary'
+  assign target = target | default: null
+  assign icon = icon | default: null
+  assign button_type = button_type | default: 'button'
+
+  if link != blank
+    assign element = 'a'
+  endif
+
+  if icon != blank and icon_only == false and style == 'underline'
+    assign class = class | append: ' button--underline-with-svg'
+  endif
+-%}
+
+<{{ element }}
+  class="button button--{{ style }}{% if scheme_class != blank %} button--{{ scheme_class }}{% endif %} button--{{ size }}{% if icon_only %} button--icon-only{% endif %} {{ class }}"
+  {%- if element == 'a' -%}
+    href="{{- link -}}"
+    {%- if target -%}
+      target="{{- target -}}"
+    {%- endif -%}
+  {%- else -%}
+    type="{{- button_type -}}"
+  {%- endif -%}
+  {%- if icon_only -%}
+    aria-label="{{- label -}}"
+  {%- endif -%}
+  {{- attributes -}}
+>
+  {%- unless icon_only -%}
+    {{- label -}}
+  {%- endunless -%}
+
+  {%- if icon -%}
+    {%- render 'icons', icon: icon -%}
+  {%- endif -%}
+</{{ element }}>

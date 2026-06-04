@@ -1,0 +1,278 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "hotspots_bfFtxR": {
+      "type": "hotspots",
+      "blocks": {
+        "tab_gHwhLq": {
+          "type": "tab",
+          "settings": {
+            "title": "",
+            "image_desktop": "shopify://shop_images/Koppla-B201-main-package-image.jpg",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "hotspot_jU6tVh": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-b201-cushion",
+            "description": "",
+            "desktop_x": 21,
+            "desktop_y": 57,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_BpYdj8": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-b201-cushion",
+            "description": "",
+            "desktop_x": 60,
+            "desktop_y": 48,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_YWnXpz": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "elm-tub-chair",
+            "description": "",
+            "desktop_x": 18,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_Hfrm4T": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "luna-table-lamp",
+            "description": "",
+            "desktop_x": 71,
+            "desktop_y": 37,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_bAW49F": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "kibale-papaya",
+            "description": "",
+            "desktop_x": 30,
+            "desktop_y": 44,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_8jz7tE": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-b201-scotland-canvas",
+            "description": "",
+            "desktop_x": 54,
+            "desktop_y": 35,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_7YJDbQ": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "anker-3-drawer-chest",
+            "description": "",
+            "desktop_x": 42,
+            "desktop_y": 65,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_bXfKbd": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "linton-circular-side-table",
+            "description": "",
+            "desktop_x": 9,
+            "desktop_y": 72,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_9KCAia": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "single-anker-box-bed-base",
+            "description": "",
+            "desktop_x": 68,
+            "desktop_y": 74,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_Q9i8Kx": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "fintan-single-all-foam-mattress",
+            "description": "",
+            "desktop_x": 68,
+            "desktop_y": 66,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_PU7L99": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "anker-3-drawer-bedside-table",
+            "description": "",
+            "desktop_x": 75,
+            "desktop_y": 54,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_BkqGXb": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "anker-double-wardrobe",
+            "description": "",
+            "desktop_x": 90,
+            "desktop_y": 60,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        }
+      },
+      "block_order": [
+        "tab_gHwhLq",
+        "hotspot_jU6tVh",
+        "hotspot_BpYdj8",
+        "hotspot_YWnXpz",
+        "hotspot_Hfrm4T",
+        "hotspot_bAW49F",
+        "hotspot_8jz7tE",
+        "hotspot_7YJDbQ",
+        "hotspot_bXfKbd",
+        "hotspot_9KCAia",
+        "hotspot_Q9i8Kx",
+        "hotspot_PU7L99",
+        "hotspot_BkqGXb"
+      ],
+      "name": "Hotspots",
+      "settings": {
+        "remove_top_padding": false,
+        "colour_scheme": "base-white-01"
+      }
+    },
+    "product_blocks_Fra7Pt": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_3mFakK": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "single-anker-box-bed-base",
+              "small-double-anker-box-bed-base",
+              "kibale-papaya",
+              "anker-3-drawer-bedside-table",
+              "anker-3-drawer-chest",
+              "anker-double-wardrobe",
+              "anker-bedroom-furniture-bundle",
+              "kira-table-lamp",
+              "linton-circular-side-table-nera-oak"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        },
+        "product_block_gbHrnY": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_3mFakK",
+        "product_block_gbHrnY"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Featured Products",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "blocks_ieDMEU": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_GDG4by": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 70,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_GDG4by"
+      ],
+      "name": "Form embed",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "hotspots_bfFtxR",
+    "product_blocks_Fra7Pt",
+    "blocks_ieDMEU"
+  ]
+}

@@ -1,0 +1,292 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "richtext_BPbhNU": {
+      "type": "richtext",
+      "blocks": {
+        "heading_YMw6jH": {
+          "type": "heading",
+          "settings": {
+            "text": "The Story so Far",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_FRiGty": {
+          "type": "tagline",
+          "settings": {
+            "content": "From our early days as a family-run business in Norfolk, Furncare has grown through a hands-on approach to designing and manufacturing furniture for care environments. Working closely with partners and understanding the needs of the people who use our products has shaped everything we do. These are some of the moments that tell that story.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_LGWtDh": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_YMw6jH",
+        "tagline_FRiGty",
+        "button_LGWtDh"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 70,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true
+      }
+    },
+    "blocks_48dU37": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_5c59c4a_iHRqUh": {
+          "type": "ai_gen_block_5c59c4a",
+          "settings": {
+            "desktop_width_percent": 100,
+            "section_padding": 0,
+            "item_spacing": 75,
+            "content_gap": 80,
+            "content_padding": 30,
+            "border_radius": 8,
+            "background_color": "#f9f7f0",
+            "content_bg_color": "#c3c0b0",
+            "line_color": "#c3c0b0",
+            "line_width": 2,
+            "dot_size": 16,
+            "dot_color": "#c3c0b0",
+            "dot_border_width": 3,
+            "dot_border_color": "#c3c0b0",
+            "dot_ring_width": 4,
+            "dot_ring_color": "#c3c0b0",
+            "date_size": 12,
+            "date_color": "#262520",
+            "date_weight": "400",
+            "date_spacing": 12,
+            "date_transform": "uppercase",
+            "date_letter_spacing": 1,
+            "heading_size": 28,
+            "heading_color": "#262520",
+            "heading_weight": "400",
+            "heading_spacing": 16,
+            "description_size": 16,
+            "description_color": "#262520",
+            "shadow_horizontal": 0,
+            "shadow_vertical": 2,
+            "shadow_blur": 8,
+            "shadow_color": "#0000000f",
+            "item_1_enabled": true,
+            "item_1_date": "1992",
+            "item_1_heading": "Our Beginnings",
+            "item_1_description": "Utilising time honoured cabinet making skills, our founding director Jonathan channeled his passion for solid wood antique replicas and founded Earlwood Furniture. Based on traditional construction methods, Earlwood Furniture specialised in made to order, bespoke mahogany, oak and cherry items.",
+            "item_2_enabled": true,
+            "item_2_date": "2004",
+            "item_2_heading": "The Birth of Furncare",
+            "item_2_description": "After honing traditional skills for 14 years, Furncare was born. With a desire to diversify in the contract furniture industry, the team chose to shift to a more sustainable market – the healthcare sector.",
+            "item_3_enabled": true,
+            "item_3_date": "2014",
+            "item_3_heading": "Expansion",
+            "item_3_description": "Having outgrown our current space, we relocated 30 miles south west to 16 Roman Way. Along with an additional 7000 square foot, as care home furniture providers we are now in an ideal location to fulfil our 5 day delivery promise.",
+            "item_4_enabled": true,
+            "item_4_date": "2017",
+            "item_4_heading": "Liberta Vie",
+            "item_4_description": "Recognising a gap in the market, we launched Liberta Vie as a solution to interior design led, fast care home bedroom furniture packages for the elderly care sector.",
+            "item_5_enabled": true,
+            "item_5_date": "2024",
+            "item_5_heading": "5 Day Delivery",
+            "item_5_description": "With our growing quick delivery range, we released Edition One of the Furncare Quick Delivery Brochure. We can now proudly claim to hold the largest range of care furniture available at the fastest delivery speed in the country.",
+            "item_6_enabled": true,
+            "item_6_date": "2021",
+            "item_6_heading": "Liv",
+            "item_6_description": "Following the success of Liberta Vie for the elderly care sector, we created Liv to replicate our pre-designed package concept for challenging environments services, growing our reputation as industry leading care home furniture manufacturers and continuing to offer a speedy five day delivery turnaround.",
+            "item_7_enabled": true,
+            "item_7_date": "2022",
+            "item_7_heading": "New HQ",
+            "item_7_description": "We moved to Wyatt House! With our ever expanding workforce, we outgrew our offices at Unit 16.  With a large office space, meeting rooms and a showroom space, this new space better equips the team to provide you with a 5 star service.",
+            "item_8_enabled": true,
+            "item_8_date": "2023",
+            "item_8_heading": "A Big Move",
+            "item_8_description": "The launch of our new National Distribution Centre! Consolidating four units into one, this new facility revolutionises operations; resulting in higher quality products, better stocks, and faster lead times!",
+            "item_9_enabled": true,
+            "item_9_date": "2024",
+            "item_9_heading": "20 Years of Furncare",
+            "item_9_description": "20 years in business, and what a journey it’s been. From where we started to where we are today, this milestone gave us a chance to look back at everything we’ve built along the way.",
+            "item_10_enabled": true,
+            "item_10_date": "2025",
+            "item_10_heading": "Our New Look",
+            "item_10_description": "2025 marked a bold new chapter for us. We unveiled a complete rebrand - refining who we are, how we show up, and how we connect with our customers. From a fresh visual identity to a clearer, more confident voice, every detail was thoughtfully reimagined."
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_5c59c4a_iHRqUh"
+      ],
+      "settings": {}
+    },
+    "richtext_atnQNR": {
+      "type": "richtext",
+      "blocks": {
+        "heading_LpDXUK": {
+          "type": "heading",
+          "settings": {
+            "text": "The Journey Continues...",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_LRD8yF": {
+          "type": "tagline",
+          "disabled": true,
+          "settings": {
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_Ge9wXf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_LpDXUK",
+        "tagline_LRD8yF",
+        "button_Ge9wXf"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true
+      }
+    },
+    "image_video_banner_jaWwYC": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_djbrLE": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "text": "Retirement furniture",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_teCycg": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "text": "Designed for Comfort, Built for <em>Care</em>.",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_wRqeRY": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_i88VP7": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_zLAQmW": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_djbrLE",
+        "title_teCycg",
+        "button_wRqeRY",
+        "card_i88VP7",
+        "card_zLAQmW"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 800,
+        "height_mobile": 300,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "video",
+        "video_desktop": "shopify://files/videos/Furncare Edit V6-1_380d84d1-144a-4f06-8683-81fdf8054b5d.mp4",
+        "video_mobile": "shopify://files/videos/Furncare Edit V6-1_380d84d1-144a-4f06-8683-81fdf8054b5d.mp4",
+        "show_controls": true,
+        "mute_video": false,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "light",
+        "content_position": "center-center",
+        "content_alignment": "left"
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    }
+  },
+  "order": [
+    "richtext_BPbhNU",
+    "blocks_48dU37",
+    "richtext_atnQNR",
+    "image_video_banner_jaWwYC",
+    "main"
+  ]
+}

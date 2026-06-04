@@ -1,0 +1,68 @@
+<div class="customers__container container container--xsmall">
+  <h1 class="customers__title">{{ "customer.register.title" | t }}</h1>
+
+  {% form "create_customer", class: "form-group" %}
+
+    {% if form.errors %}
+      <div class="notification notification--error">
+        {{ form.errors | default_errors }}
+      </div>
+    {% endif %}
+
+    <div class="form-group__input-wrapper">
+      <label for="first_name">{{ "forms.first_name" | t }}</label>
+      <input
+        type="text"
+        name="customer[first_name]"
+        placeholder="{{ "forms.first_name" | t }}"
+      >
+    </div>
+
+    <div class="form-group__input-wrapper">
+      <label for="last_name">{{ "forms.last_name" | t }}</label>
+      <input
+        type="text"
+        name="customer[last_name]"
+        placeholder="{{ "forms.last_name" | t }}"
+      >
+    </div>
+
+    <div class="form-group__input-wrapper">
+      <label for="email">{{ "forms.email" | t }}</label>
+      <input
+        type="email"
+        name="customer[email]"
+        placeholder="{{ "forms.email" | t }}"
+      >
+    </div>
+
+    <div class="form-group__input-wrapper">
+      <label for="password">{{ "forms.password" | t }}</label>
+      <input
+        type="password"
+        name="customer[password]"
+        placeholder="{{ "forms.password" | t }}"
+      >
+    </div>
+
+    <button
+      class="button button--primary"
+      type="submit"
+    >
+      {{ "customer.register.submit_button" | t }}
+    </button>
+
+    <p class="form-group__message">
+      {{ "customer.register.login_message_html" | t }}
+    </p>
+  {% endform %}
+</div>
+
+{% schema %}
+{
+  "name": "Login",
+  "tag": "section",
+  "class": "customers",
+  "settings": []
+}
+{% endschema %}

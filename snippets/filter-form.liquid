@@ -1,0 +1,411 @@
+{%- liquid
+  assign sort_by = [request.page_type].sort_by | default: [request.page_type].default_sort_by
+
+  # Use results_count (filtered) instead of products_count (total)
+  if template.name == 'search'
+    assign results_count = search.results_count
+  else
+    assign results_count = collection.results_count | default: collection.products_count
+  endif
+
+  assign price_filter_vat_percent = price_filter_vat_percent | default: 0
+  assign price_filter_tax_rate = price_filter_vat_percent | divided_by: 100.0
+  assign collection_catalog_max_price_cents = collection_catalog_max_price_cents | default: 0
+-%}
+
+<uwp-filter-form
+  id="filter-form"
+  class="filter-form colour-scheme--light"
+  data-section-id="{{- section.id -}}"
+  data-price-filter-tax-rate="{{ price_filter_tax_rate }}"
+  role="region"
+  aria-label="Filter form"
+  aria-roledescription="region"
+>
+  <form class="filter-form__form">
+    {% if template.name == 'search' %}
+      <input type="hidden" name="q" value="{{- search.terms -}}">
+      <input type="hidden" name="type" value="product">
+    {% endif %}
+
+    <div class="filter-form__header hide-on-desktop">
+      <div class="filter-form__header-title">
+        {% render 'icons', icon: 'filter' %}
+
+        <span class="body-lg body-lg--bold">
+          {{ 'collection.filters.title' | t }}
+        </span>
+      </div>
+
+      <uwp-filter-toggle
+        role="region"
+        aria-label="Filter toggle"
+        aria-roledescription="region"
+        ><button
+          class="filter-form__header-close"
+          type="button"
+          js-filter-visibility="close"
+        >
+          <span class="visually-hidden">Close filter</span>
+          {%- render 'icons', icon: 'close' -%}
+        </button></uwp-filter-toggle
+      >
+    </div>
+
+    <div
+      class="filter-form__applied-filters hide-on-mobile"
+      js-filter="applied-filters"
+    >
+      <div class="body-md">
+        {{- 'collection.filters.applied_filters' | t -}}
+      </div>
+
+      <div class="filter-form__applied-filters-wrapper">
+        {%- for filter in [request.page_type].filters -%}
+          {%- for value in filter.active_values -%}
+            <button
+              class="filter-form__applied-filter button button--secondary"
+              type="button"
+              js-filter="appied-filter"
+              data-url="{{- value.url_to_remove -}}"
+            >
+              <span class="body-sm">
+                {{- value.label -}}
+              </span>
+
+              {%- render 'icons', icon: 'close' -%}
+            </button>
+          {%- endfor -%}
+        {%- endfor -%}
+      </div>
+
+      <button
+        class="filter-form__clear-all button button--underline button--md"
+        type="button"
+        js-filter="clear-all"
+      >
+        {{- 'collection.filters.clear_all' | t -}}
+      </button>
+    </div>
+
+    <div class="filter-form__wrapper">
+      <details class="filter-form__filter hide-on-desktop">
+        <summary class="filter-form__filter-header">
+          <p class="eyebrow-m">
+            {{- 'collection.filters.sort_by' | t | remove: ':' -}}
+          </p>
+
+          {%- render 'icons', icon: 'chevron-down' -%}
+        </summary>
+
+        <div class="filter-form__filter-body">
+          {% for option in [request.page_type].sort_options %}
+            <label
+              class="filter-form__filter-item input-checkbox input-checkbox--light"
+              for="Sort-{{ option.value }}"
+              js-filter="input"
+            >
+              <input
+                id="Sort-{{ option.value }}"
+                type="radio"
+                name="sort_by"
+                class="input-checkbox__input"
+                value="{{- option.value -}}"
+                {%- if option.value == sort_by -%}
+                  checked
+                {%- endif -%}
+              >
+
+              <div class="input-checkbox__element">
+                {% render 'icons', icon: 'tick' %}
+              </div>
+
+              <span class="body-md">
+                {{ option.name }}
+              </span>
+            </label>
+          {% endfor %}
+        </div>
+      </details>
+
+      {%- for filter in [request.page_type].filters -%}
+        {%- if filter.type == 'price_range' -%}
+          {%- liquid
+            if template.name == 'search'
+              assign price_max_cents_for_filter = filter.range_max
+            elsif collection_catalog_max_price_cents > 0
+              assign price_max_cents_for_filter = collection_catalog_max_price_cents
+            else
+              assign price_max_cents_for_filter = filter.range_max
+            endif
+
+            assign price_range_max_ex = price_max_cents_for_filter | divided_by: 100.0
+            assign one_plus_tax = 1 | plus: price_filter_tax_rate
+            assign price_range_max_display = price_range_max_ex | times: one_plus_tax | round: 2
+            assign price_range_max_display_cents = price_range_max_display | times: 100 | round
+
+            assign ex_min_num = 0.0
+            if filter.min_value.value
+              assign raw = filter.min_value.value
+              if raw >= 10000
+                assign ex_min_num = raw | divided_by: 100.0 | round: 2
+              else
+                assign ex_min_num = raw | round: 2
+              endif
+            endif
+
+            assign has_max_filter = false
+            assign ex_max_num = price_range_max_ex
+            if filter.max_value.value
+              assign has_max_filter = true
+              assign raw = filter.max_value.value
+              if raw >= 10000
+                assign ex_max_num = raw | divided_by: 100.0 | round: 2
+              else
+                assign ex_max_num = raw | round: 2
+              endif
+            endif
+
+            assign display_min_num = ex_min_num | times: one_plus_tax | round: 2
+            assign display_max_num = ex_max_num | times: one_plus_tax | round: 2
+          -%}
+          <details
+            class="filter-form__filter"
+            {% if filter.active_values.size > 0 %}
+              open
+            {% endif %}
+          >
+            <summary class="filter-form__filter-header">
+              <p class="body-md body-md--bold" js-filter="label">
+                {{ filter.label }}
+                {% if filter.active_values.size > 0 %}
+                  ({{ filter.active_values.size }})
+                {% endif %}
+              </p>
+              {%- render 'icons', icon: 'arrow-down' -%}
+            </summary>
+            <div class="filter-form__filter-body">
+              <p class="body-sm filter-form__filter-price-hint">
+                {{ 'collection.filters.max_price' | t }}
+                <span data-price-range-hint-max>{{ price_range_max_display_cents | money }}</span>
+              </p>
+              <div
+                class="filter-form__price-range"
+                data-range-max-ex="{{ price_range_max_ex }}"
+                data-range-max-display="{{ price_range_max_display }}"
+                data-range-max-ex-baseline="{{ price_range_max_ex }}"
+                data-currency-symbol="{{ cart.currency.symbol }}"
+              >
+                <input
+                  id="Filter-{{ filter.param_name }}-min"
+                  type="hidden"
+                  class="filter-form__filter-price-input filter-form__filter-price-input--hidden"
+                  name="filter.v.price.gte"
+                  min="0"
+                  max="{{ price_range_max_ex }}"
+                  step="0.01"
+                  value="{% if filter.min_value.value %}{{ ex_min_num }}{% endif %}"
+                  js-filter="input"
+                >
+                <input
+                  id="Filter-{{ filter.param_name }}-max"
+                  type="hidden"
+                  class="filter-form__filter-price-input filter-form__filter-price-input--hidden"
+                  name="filter.v.price.lte"
+                  min="0"
+                  max="{{ price_range_max_ex }}"
+                  step="0.01"
+                  value="{% if has_max_filter %}{{ ex_max_num }}{% endif %}"
+                  js-filter="input"
+                >
+                <div class="filter-form__price-range-track">
+                  <input
+                    id="Filter-{{ filter.param_name }}-range-min"
+                    class="filter-form__price-range-input filter-form__price-range-input--min"
+                    type="range"
+                    min="0"
+                    max="{{ price_range_max_display }}"
+                    step="0.01"
+                    value="{{ display_min_num }}"
+                    aria-label="{{ 'collection.filters.price_slider_min' | t }}"
+                    aria-valuemin="0"
+                    aria-valuemax="{{ price_range_max_display }}"
+                    data-price-range="min"
+                  >
+                  <input
+                    id="Filter-{{ filter.param_name }}-range-max"
+                    class="filter-form__price-range-input filter-form__price-range-input--max"
+                    type="range"
+                    min="0"
+                    max="{{ price_range_max_display }}"
+                    step="0.01"
+                    value="{{ display_max_num }}"
+                    aria-label="{{ 'collection.filters.price_slider_max' | t }}"
+                    aria-valuemin="0"
+                    aria-valuemax="{{ price_range_max_display }}"
+                    data-price-range="max"
+                  >
+                </div>
+                <div class="filter-form__price-range-readout" aria-hidden="true">
+                  <span class="filter-form__price-range-readout-item">
+                    <span class="body-md">{{ 'collection.filters.from' | t }}</span>
+                    <span class="body-md body-md--bold">
+                      <span class="filter-form__filter-price-prefix">{{ cart.currency.symbol }}</span><span data-price-range-readout="min">{{ display_min_num }}</span>
+                    </span>
+                  </span>
+                  <span class="filter-form__price-range-readout-item">
+                    <span class="body-md">{{ 'collection.filters.to' | t }}</span>
+                    <span class="body-md body-md--bold">
+                      <span class="filter-form__filter-price-prefix">{{ cart.currency.symbol }}</span><span data-price-range-readout="max">{{ display_max_num }}</span>
+                    </span>
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  class="filter-form__apply-price button button--secondary button--md"
+                  js-filter="apply-price"
+                >
+                  {{ 'collection.filters.apply_price' | t }}
+                </button>
+              </div>
+              <p class="body-sm filter-form__filter-price-vat-hint">
+                {{ 'collection.filters.price_inclusive_of_vat' | t }}
+              </p>
+            </div>
+          </details>
+        {%- elsif filter.type == 'boolean' -%}
+          <details
+            class="filter-form__filter"
+            {% if filter.active_values.size > 0 %}
+              open
+            {% endif %}
+          >
+            <summary class="filter-form__filter-header">
+              <p class="body-md body-md--bold" js-filter="label">
+                {{ filter.label }}
+                {% if filter.active_values.size > 0 %}
+                  ({{ filter.active_values.size }})
+                {% endif %}
+              </p>
+              {%- render 'icons', icon: 'arrow-down' -%}
+            </summary>
+            <div class="filter-form__filter-body">
+              {%- if filter.true_value -%}
+                <label
+                  class="filter-form__filter-item input-checkbox input-checkbox--light"
+                  for="Filter-{{ filter.param_name }}-true"
+                  js-filter="input"
+                >
+                  <input
+                    id="Filter-{{ filter.param_name }}-true"
+                    type="checkbox"
+                    class="input-checkbox__input"
+                    name="{{ filter.true_value.param_name }}"
+                    value="{{ filter.true_value.value }}"
+                    {% if filter.true_value.active %}checked{% endif %}
+                  >
+                  <div class="input-checkbox__element">
+                    {% render 'icons', icon: 'tick' %}
+                  </div>
+                  <span class="body-md input-checkbox__text">{{ filter.true_value.label }} ({{ filter.true_value.count }})</span>
+                </label>
+              {%- endif -%}
+              {%- if filter.false_value -%}
+                <label
+                  class="filter-form__filter-item input-checkbox input-checkbox--light"
+                  for="Filter-{{ filter.param_name }}-false"
+                  js-filter="input"
+                >
+                  <input
+                    id="Filter-{{ filter.param_name }}-false"
+                    type="checkbox"
+                    class="input-checkbox__input"
+                    name="{{ filter.false_value.param_name }}"
+                    value="{{ filter.false_value.value }}"
+                    {% if filter.false_value.active %}checked{% endif %}
+                  >
+                  <div class="input-checkbox__element">
+                    {% render 'icons', icon: 'tick' %}
+                  </div>
+                  <span class="body-md input-checkbox__text">{{ filter.false_value.label }} ({{ filter.false_value.count }})</span>
+                </label>
+              {%- endif -%}
+            </div>
+          </details>
+        {%- elsif filter.type == 'list' -%}
+          <details
+            class="filter-form__filter"
+            {% if filter.active_values.size > 0 %}
+              open
+            {% endif %}
+          >
+            <summary class="filter-form__filter-header">
+              <p class="body-md body-md--bold" js-filter="label">
+                {{ filter.label }}
+
+                {% if filter.active_values.size > 0 %}
+                  ({{ filter.active_values.size }})
+                {% endif %}
+              </p>
+
+              {%- render 'icons', icon: 'arrow-down' -%}
+            </summary>
+
+            <div class="filter-form__filter-body">
+              {%- for value in filter.values -%}
+                <label
+                  class="filter-form__filter-item input-checkbox input-checkbox--light"
+                  for="Filter-{{- filter.param_name -}}-{{- forloop.index -}}"
+                  js-filter="input"
+                >
+                  <input
+                    id="Filter-{{- filter.param_name -}}-{{- forloop.index -}}"
+                    type="checkbox"
+                    class="input-checkbox__input"
+                    name="{{- value.param_name -}}"
+                    value="{{- value.value -}}"
+                    {%- if value.active -%}
+                      checked
+                    {%- endif -%}
+                  >
+
+                  <div class="input-checkbox__element">
+                    {% render 'icons', icon: 'tick' %}
+                  </div>
+
+                  <span class="body-md input-checkbox__text">
+                    {{ value.label }} ({{ value.count }})
+                  </span>
+                </label>
+              {%- endfor -%}
+            </div>
+          </details>
+        {%- endif -%}
+      {%- endfor -%}
+
+      {% if promo_block != blank %}
+        <div class="filter-form__promo">
+          {% render 'promo-block', promo_block: promo_block %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="filter-form__footer">
+      <button
+        class="filter-form__footer-submit button button--primary hide-on-desktop"
+        type="button"
+        js-filter="submit"
+      >
+        {{ 'collection.filters.view' | t }} ({{ results_count }})
+      </button>
+
+      <button
+        class="filter-form__clear-all button button--secondary hide-on-desktop"
+        type="button"
+        js-filter="clear-all"
+      >
+        {{- 'collection.filters.clear_all' | t -}}
+      </button>
+    </div>
+  </form>
+</uwp-filter-form>

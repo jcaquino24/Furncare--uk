@@ -1,0 +1,348 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_video_banner_Mx3q8g": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_8TMHFP": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "case study",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_DXxf3y": {
+          "type": "title",
+          "settings": {
+            "text": "Frognal House",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_TY8nED": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_GeUmxJ": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_aDpXic": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_8TMHFP",
+        "title_DXxf3y",
+        "button_TY8nED",
+        "card_GeUmxJ",
+        "card_aDpXic"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 600,
+        "height_mobile": 430,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/IMG-20210903-WA0011.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(54deg, rgba(255, 250, 99, 1), rgba(38, 37, 32, 0.4) 1%)",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_PhprEj": {
+      "type": "richtext",
+      "blocks": {
+        "heading_mYLH3K": {
+          "type": "heading",
+          "settings": {
+            "text": "Sunrise of Frognal House",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_LFtXUT": {
+          "type": "tagline",
+          "settings": {
+            "content": "Working with the design team at Sunrise Senior Living, we were pleased to support the team at Sunrise of Frognal House with the reopening of their Memory Care Neighbourhood.",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_mYLH3K",
+        "tagline_LFtXUT"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "featured_blocks_QcyUqa": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_KtAU9z": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-2_845eff84-2a17-4128-ba3d-11e77b68124c.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_V9rakX": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-4_99b25493-9a81-4d2b-8e45-dd5b23dd8426.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_tGXF8Q": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-2_34.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_CYkFpC": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-1_19.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_YdJkbq": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-3_bbb58ce3-96e3-48fa-92e6-d5986f67dae6.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_dgjzyB": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-6_9b30fb27-ebc1-47da-825d-dcbd4a2a3fdb.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_fpCpcp": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-7_3fc03c26-2aaa-4c93-8838-e10a6ce2f8ea.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_yc6KHz": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-8_bea052c0-0d3a-4e97-aa47-b23ef57e8c3e.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_trcCKj": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-5_135caddb-a0f1-4c60-adcd-576a34d3c8cf.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_KtAU9z",
+        "block_V9rakX",
+        "block_tGXF8Q",
+        "block_CYkFpC",
+        "block_YdJkbq",
+        "block_dgjzyB",
+        "block_fpCpcp",
+        "block_yc6KHz",
+        "block_trcCKj"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "",
+        "padding": "wide",
+        "layout": "line_grid",
+        "enable_lightbox": true
+      }
+    },
+    "richtext_EW6cqY": {
+      "type": "richtext",
+      "blocks": {
+        "heading_C9ihxn": {
+          "type": "heading",
+          "settings": {
+            "text": "Combining luxurious woven fabrics, smooth velvets and restful colour combinations, the furniture and décor of this home oozes quality and provides a premium living environment for residents and staff alike.",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_C9ihxn"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_video_banner_xWTgmR": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_YJpC8H": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "text": "Retirement furniture",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_qDHCNx": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "text": "Designed for Comfort, Built for <em>Care</em>.",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_GDbKwj": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_e3GTdX": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_UehPPd": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_YJpC8H",
+        "title_qDHCNx",
+        "button_GDbKwj",
+        "card_e3GTdX",
+        "card_UehPPd"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/frognall-house-hero-1-scaled.jpg",
+        "image_mobile": "shopify://shop_images/frognall-house-hero-1-scaled.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "linear-gradient(320deg, rgba(255, 250, 99, 0.2), rgba(203, 68, 194, 1), rgba(255, 250, 99, 0))",
+        "colour_scheme": "light",
+        "content_position": "center-bottom",
+        "content_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_video_banner_Mx3q8g",
+    "richtext_PhprEj",
+    "featured_blocks_QcyUqa",
+    "richtext_EW6cqY",
+    "image_video_banner_xWTgmR"
+  ]
+}

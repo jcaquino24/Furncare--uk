@@ -1,0 +1,98 @@
+{%- liquid
+  render 'vite-tag' with '@sections/addresses.ts'
+  render 'vite-tag' with '@sections/address-form.ts'
+-%}
+<uwp-addresses
+  role="region"
+  aria-label="Addresses"
+  aria-roledescription="region"
+>
+  <div class="container">
+    <div class="addresses__header">
+      <h1 class="addresses__title title-display">
+        {{ 'customer.addresses.title' | t }}
+      </h1>
+
+      <div class="addresses__actions">
+        <button
+          class="button button--primary"
+          js-uwp-modal-trigger="addAddress"
+        >
+          {{ 'customer.addresses.add' | t }}
+        </button>
+
+        <a
+          href="{{ routes.account_url }}"
+          class="button button--secondary"
+        >
+          {{ 'customer.addresses.back_to_account' | t }}
+        </a>
+      </div>
+    </div>
+
+    {% capture content %}
+      {% render 'address-form', address: customer.new_address %}
+    {% endcapture %}
+    {% render 'modal',
+      content: content,
+      modal_name: 'addAddress',
+      max_width: 600
+    %}
+
+    <ul class="addresses__list">
+      {% for address in customer.addresses %}
+        <li class="addresses__item">
+          <h3 class="addresses__item-title heading-3">
+            {% if address == customer.default_address %}
+              {{ 'customer.addresses.item_default_title' | t }}
+            {% else %}
+              {{ 'customer.addresses.item_title' | t: count: forloop.index }}
+            {% endif %}
+          </h3>
+
+          <div class="addresses__item-details">
+            {{ address | format_address }}
+          </div>
+
+          <div class="addresses__item-actions">
+            <button
+              class="button-text"
+              js-uwp-modal-trigger="{{ 'editAddress-' | append: address.id }}"
+            >
+              {{ 'customer.addresses.edit' | t }}
+            </button>
+
+            <button
+              class="button-text"
+              js-delete-address
+              data-address-url="{{ address.url }}"
+            >
+              {{ 'customer.addresses.delete' | t }}
+            </button>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+
+    {% for address in customer.addresses %}
+      {% capture content %}
+        {% render 'address-form', address: address %}
+      {% endcapture %}
+      {% assign modalName = 'editAddress-' | append: address.id %}
+      {% render 'modal',
+        content: content,
+        modal_name: modalName,
+        max_width: 600
+      %}
+    {% endfor %}
+  </div>
+</uwp-addresses>
+
+{% schema %}
+{
+  "name": "Addresses",
+  "tag": "section",
+  "class": "addresses",
+  "settings": []
+}
+{% endschema %}

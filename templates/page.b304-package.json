@@ -1,0 +1,296 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "richtext_BPjriN": {
+      "type": "richtext",
+      "blocks": {
+        "heading_CCpkLx": {
+          "type": "heading",
+          "settings": {
+            "text": "The Primrose Scheme",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_re9BJi": {
+          "type": "tagline",
+          "settings": {
+            "content": "PACKAGE SKU: B304",
+            "tagline_style": "body-sm"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_CCpkLx",
+        "tagline_re9BJi"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "hotspots_bfFtxR": {
+      "type": "hotspots",
+      "blocks": {
+        "tab_gHwhLq": {
+          "type": "tab",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/Untitled_35.jpg",
+            "image_desktop": "shopify://shop_images/Untitled_35.jpg",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "hotspot_a9JU6t": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "dawson-double-wardrobe",
+            "description": "",
+            "desktop_x": 11,
+            "desktop_y": 35,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_Rtw73F": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "dawson-3-drawer-chest",
+            "description": "",
+            "desktop_x": 42,
+            "desktop_y": 52,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_RPxeYB": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "dawson-3-drawer-bedside-table",
+            "description": "",
+            "desktop_x": 90,
+            "desktop_y": 63,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_WWcGt8": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "asprey-high-back-chair-elm",
+            "description": "",
+            "desktop_x": 24,
+            "desktop_y": 71,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_DUbtC7": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "venice-visitor-chair-seat-elm-back-blush",
+            "description": "",
+            "desktop_x": 49,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_BDqRyP": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "vienna-pedestal-side-table",
+            "description": "",
+            "desktop_x": 35,
+            "desktop_y": 55,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_BgQHjR": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "single-loren-divan-bed-base-beige",
+            "description": "",
+            "desktop_x": 51,
+            "desktop_y": 78,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_HK4R9L": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "motivo-b304-bed-runner",
+            "description": "",
+            "desktop_x": 62,
+            "desktop_y": 60,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_CkYe3F": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "motivo-b304-bed-cushion",
+            "description": "",
+            "desktop_x": 74,
+            "desktop_y": 51,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_7qNhjA": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "grandios-framed-mirror",
+            "description": "",
+            "desktop_x": 60,
+            "desktop_y": 26,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_q46ckF": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "motivo-b304-framed-picture",
+            "description": "",
+            "desktop_x": 80,
+            "desktop_y": 23,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_PU7L99": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "dawson-headboard",
+            "description": "",
+            "desktop_x": 78,
+            "desktop_y": 41,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        }
+      },
+      "block_order": [
+        "tab_gHwhLq",
+        "hotspot_a9JU6t",
+        "hotspot_Rtw73F",
+        "hotspot_RPxeYB",
+        "hotspot_WWcGt8",
+        "hotspot_DUbtC7",
+        "hotspot_BDqRyP",
+        "hotspot_BgQHjR",
+        "hotspot_HK4R9L",
+        "hotspot_CkYe3F",
+        "hotspot_7qNhjA",
+        "hotspot_q46ckF",
+        "hotspot_PU7L99"
+      ],
+      "name": "Hotspots",
+      "settings": {
+        "remove_top_padding": false,
+        "colour_scheme": "base-white-01"
+      }
+    },
+    "product_blocks_Fra7Pt": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_3mFakK": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "dawson-bedroom-furniture-bundle",
+              "venice-visitor-chair-seat-elm-back-blush",
+              "asprey-high-back-chair-elm",
+              "vienna-pedestal-side-table",
+              "motivo-b304-bed-cushion",
+              "motivo-b304-bed-runner",
+              "motivo-b304-framed-picture",
+              "grandios-framed-mirror",
+              "dawson-double-wardrobe",
+              "dawson-3-drawer-chest",
+              "dawson-3-drawer-bedside-table"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        },
+        "product_block_gbHrnY": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_3mFakK",
+        "product_block_gbHrnY"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Featured Products",
+        "section_padding": "--spacing-2xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "richtext_BPjriN",
+    "hotspots_bfFtxR",
+    "product_blocks_Fra7Pt"
+  ]
+}

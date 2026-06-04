@@ -1,0 +1,55 @@
+{% doc %}
+  Badge Component
+
+  Renders product badges from metafield and "On sale" badge if applicable.
+
+  @param {product} product - Product object (required)
+
+  @example
+  {% render 'badge', product: product %}
+{% enddoc %}
+
+{%- liquid
+  assign badges = product.metafields.custom.badges.value
+  assign selected_or_first_variant = product.selected_or_first_available_variant
+  assign is_product_page = false
+  if template.name == 'product'
+    assign is_product_page = true
+  endif
+  
+  # Check if product is on sale (has compare_at_price)
+  assign is_on_sale = false
+  if selected_or_first_variant.compare_at_price and selected_or_first_variant.compare_at_price > selected_or_first_variant.price
+    assign is_on_sale = true
+  endif
+  
+  # Only render if there are badges or product is on sale
+  unless badges != blank and badges.size > 0 or is_on_sale
+    break
+  endunless
+-%}
+
+<div class="product-badges" data-product-badges>
+  {% comment %} Custom badges from metafield {% endcomment %}
+  {% for badge in badges %}
+    <div class="badge">
+      {% if is_product_page and badge.dark_icon != blank %}
+        <span class="badge__icon">
+          {{ badge.dark_icon | image_url: width: 24 | image_tag: width: 24, loading: 'lazy' }}
+        </span>
+      {% elsif badge.icon != blank %}
+        <span class="badge__icon">
+          {{ badge.icon | image_url: width: 24 | image_tag: width: 24, loading: 'lazy' }}
+        </span>
+      {% endif %}
+      <span class="badge__label body-sm">{{ badge.label }}</span>
+    </div>
+  {% endfor %}
+
+  {% comment %} On sale badge {% endcomment %}
+  {% if is_on_sale %}
+    <div class="badge badge--on-sale" data-on-sale-badge>
+      <span class="badge__label body-sm">{{ 'product.price.on_sale' | t }}</span>
+    </div>
+  {% endif %}
+</div>

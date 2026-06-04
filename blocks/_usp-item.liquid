@@ -1,0 +1,53 @@
+{% if section.settings.layout == 'carousel' %}
+  <swiper-slide>
+{% endif %}
+
+<div class="usp-bar__item">
+  {% if section.settings.show_icons %}
+    {% if block.settings.icon != blank %}
+      {{
+        block.settings.icon
+        | image_url: width: 40
+        | image_tag: alt: block.settings.title, class: 'usp-bar__icon'
+      }}
+    {% else %}
+      {% render 'icons', icon: 'delivery' %}
+    {% endif %}
+  {% endif %}
+
+  {% if block.settings.title != blank %}
+    <span class="usp-bar__title body-md">{{ block.settings.title }}</span>
+  {% endif %}
+</div>
+
+{% if section.settings.layout == 'carousel' %}
+  </swiper-slide>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "USP Item",
+    "tag": null,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Icon"
+      }
+    ],
+    "presets": [
+      {
+        "name": "USP Item",
+        "settings": {
+          "title": "USP Item",
+          "icon": ""
+        }
+      }
+    ]
+  }
+{% endschema %}

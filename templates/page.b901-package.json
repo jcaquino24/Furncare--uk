@@ -1,0 +1,339 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "richtext_eptWB7": {
+      "type": "richtext",
+      "blocks": {
+        "heading_YcayPt": {
+          "type": "heading",
+          "settings": {
+            "text": "The Olive Scheme",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_XiXFL3": {
+          "type": "tagline",
+          "settings": {
+            "content": "PACKAGE SKU: B901",
+            "tagline_style": "body-sm"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_YcayPt",
+        "tagline_XiXFL3"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "hotspots_TDrnVw": {
+      "type": "hotspots",
+      "blocks": {
+        "hotspot_FzEQ4y": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "anais-table-lamp",
+            "description": "",
+            "desktop_x": 94,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_ATbfkH": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "admonere-3-drawer-bedside-table",
+            "description": "",
+            "desktop_x": 88,
+            "desktop_y": 65,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_xGKVAL": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "remini-b901-bed-cushion",
+            "description": "",
+            "desktop_x": 70,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_pADX6c": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "remini-b901-chair-cushion",
+            "description": "",
+            "desktop_x": 16,
+            "desktop_y": 58,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_bUbb4F": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "remini-b901-bed-runner",
+            "description": "",
+            "desktop_x": 61,
+            "desktop_y": 56,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_w36Un3": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "isla-fully-electric-profiling-bed",
+            "description": "",
+            "desktop_x": 48,
+            "desktop_y": 62,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_6JCGgd": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "remini-b901-framed-picture",
+            "description": "",
+            "desktop_x": 76,
+            "desktop_y": 21,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_TxEzmx": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "admonere-memory-box",
+            "description": "",
+            "desktop_x": 64,
+            "desktop_y": 21,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_LTpPnX": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "admonere-3-drawer-desk",
+            "description": "",
+            "desktop_x": 63,
+            "desktop_y": 44,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_i3qe9w": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "venice-visitor-chair-seat-stone-back-taupe",
+            "description": "",
+            "desktop_x": 54,
+            "desktop_y": 43,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_pYWamx": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "admonere-3-drawer-chest",
+            "description": "",
+            "desktop_x": 41,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_qENHDf": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "bark-sage",
+            "description": "",
+            "desktop_x": 48,
+            "desktop_y": 17,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_rB7c36": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "vienna-pedestal-side-table",
+            "description": "",
+            "desktop_x": 30,
+            "desktop_y": 54,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_rqQWbK": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "admonere-double-wardrobe",
+            "description": "",
+            "desktop_x": 25,
+            "desktop_y": 24,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_qejgbt": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "morgan-high-back-chair-duo-style-2-olive-sage",
+            "description": "",
+            "desktop_x": 8,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "tab_QFtJcG": {
+          "type": "tab",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/Remini-B901-Olive-Bedroom-Package-main-image-with-logo_1.jpg",
+            "image_desktop": "shopify://shop_images/Remini-B901-Olive-Bedroom-Package-main-image-with-logo_1.jpg",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_FzEQ4y",
+        "hotspot_ATbfkH",
+        "hotspot_xGKVAL",
+        "hotspot_pADX6c",
+        "hotspot_bUbb4F",
+        "hotspot_w36Un3",
+        "hotspot_6JCGgd",
+        "hotspot_TxEzmx",
+        "hotspot_LTpPnX",
+        "hotspot_i3qe9w",
+        "hotspot_pYWamx",
+        "hotspot_qENHDf",
+        "hotspot_rB7c36",
+        "hotspot_rqQWbK",
+        "hotspot_qejgbt",
+        "tab_QFtJcG"
+      ],
+      "name": "Hotspots",
+      "settings": {
+        "remove_top_padding": false,
+        "colour_scheme": "base-white-01"
+      }
+    },
+    "product_blocks_JaqkP9": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_tNpGL9": {
+          "type": "product_block",
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [
+              "admonere-bedroom-furniture-bundle",
+              "morgan-high-back-chair-duo-style-2-olive-sage",
+              "venice-visitor-chair-seat-stone-back-taupe",
+              "vienna-pedestal-side-table",
+              "remini-b901-bed-cushion",
+              "remini-b901-bed-runner",
+              "remini-b901-chair-cushion",
+              "remini-b901-framed-picture",
+              "anais-table-lamp"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_tNpGL9"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Featured Products",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "blocks_tgiqcF": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_Fr7fF8": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 50,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_Fr7fF8"
+      ],
+      "name": "Form embed",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "richtext_eptWB7",
+    "hotspots_TDrnVw",
+    "product_blocks_JaqkP9",
+    "blocks_tgiqcF"
+  ]
+}

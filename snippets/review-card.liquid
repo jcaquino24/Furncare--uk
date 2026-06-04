@@ -1,0 +1,57 @@
+{% doc %}
+  Review card snippet for displaying individual customer reviews.
+
+  @param {number} rating - Star rating (1-5)
+  @param {string} headline - Review headline
+  @param {string} body - Review body text
+  @param {string} reviewer_name - Name of the reviewer
+  @param {string} meta - Optional meta text (e.g., "3 days ago")
+  @param {string} block_id - Block ID for shopify_attributes
+  @param {string} shopify_attributes - Shopify block attributes for theme editor
+
+  @example
+  {% render 'review-card',
+    rating: 5,
+    headline: 'Great product!',
+    body: 'This product exceeded my expectations.',
+    reviewer_name: 'John D.',
+    meta: '3 days ago',
+    block_id: block.id,
+    shopify_attributes: block.shopify_attributes
+  %}
+{% enddoc %}
+
+{% liquid
+  assign rating = rating | default: 5
+  assign headline = headline | default: ''
+  assign body = body | default: ''
+  assign reviewer_name = reviewer_name | default: 'Anonymous'
+  assign meta = meta | default: ''
+%}
+
+<article class="review-card" {% if block_id %}id="block-{{ block_id }}" data-block-id="{{ block_id }}"{% endif %} {{ shopify_attributes }}>
+  <div class="review-card__rating">
+    {% for i in (1..5) %}
+      <span class="review-card__star {% if i <= rating %}review-card__star--filled{% endif %}" aria-hidden="true">
+        {% render 'icons', icon: 'star' %}
+      </span>
+    {% endfor %}
+    <span class="sr-only">{{ rating }} out of 5 stars</span>
+  </div>
+  
+  {% if headline != blank %}
+    <h3 class="review-card__headline eyebrow-2xs eyebrow-2xs--bold">{{ headline }}</h3>
+  {% endif %}
+  
+  {% if body != blank %}
+    <p class="review-card__body body-md">{{ body }}</p>
+  {% endif %}
+  
+  <div class="review-card__footer">
+    <span class="review-card__name eyebrow-2xs">{{ reviewer_name }}</span>
+    {% if meta != blank %}
+      <span class="review-card__meta body-xs">{{ meta }}</span>
+    {% endif %}
+  </div>
+</article>
+

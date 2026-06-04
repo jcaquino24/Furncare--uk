@@ -1,0 +1,253 @@
+{%- liquid
+  assign colour_scheme = section.settings.colour_scheme
+-%}
+
+<div
+  class="image-text colour-scheme--{{ colour_scheme }}"
+  style="--section-padding: var({{ section.settings.section_padding }});"
+>
+  <div class="container">
+    <div class="image-text__grid">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'images' %}
+            {%- liquid
+              if block.settings.image_two != blank
+                assign has_two_images = ' has-two-images'
+              endif
+            -%}
+            <div
+              class="image-text__images{{ has_two_images }}"
+              data-index="{{ forloop.index }}"
+              {{ block.shopify_attributes }}
+            >
+              <div class="image-text__image">
+                {%- if block.settings.image_one != blank -%}
+                  {%- assign image_one = block.settings.image_one -%}
+                  {%- render 'responsive-image',
+                    image: image_one,
+                    sizes: '(min-width: 1024px) 60vw, 100vw',
+                    widths: '375, 550, 750, 1100, 1500, 1780, 2000',
+                    preload: true,
+                    aspect_ratio: image_one.aspect_ratio
+                  -%}
+                {%- endif -%}
+              </div>
+              <div class="image-text__image">
+                {%- if block.settings.image_two != blank -%}
+                  {%- assign image_two = block.settings.image_two -%}
+                  {%- render 'responsive-image',
+                    image: image_two,
+                    sizes: '(min-width: 1024px) 60vw, 100vw',
+                    widths: '375, 550, 750, 1100, 1500, 1780, 2000',
+                    preload: true,
+                    aspect_ratio: image_two.aspect_ratio
+                  -%}
+                {%- endif -%}
+              </div>
+            </div>
+          {% when 'content' %}
+            <div
+              class="image-text__content {% if block.settings.button_text == blank and block.settings.text == blank %}image-text__content--only-heading{% endif %}"
+              data-index="{{ forloop.index }}"
+              {{ block.shopify_attributes }}
+            >
+              {% if block.settings.title != blank %}
+                <uwp-text-animation
+                  role="region"
+                  aria-label="Image text title"
+                  aria-roledescription="region"
+                >
+                  <div class="richtext__content">
+                    <h2 class="image-text__title heading__text title-{{ block.settings.title_size }}">
+                      {{ block.settings.title }}
+                    </h2>
+                  </div>
+                </uwp-text-animation>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <p class="image-text__text body-md">
+                  {{ block.settings.text }}
+                </p>
+              {% endif %}
+              {% if block.settings.button_text != blank %}
+                {%- render 'button',
+                  label: block.settings.button_text,
+                  style: block.settings.button_style,
+                  link: block.settings.button_url,
+                  icon: 'arrow-right',
+                  scheme: section.settings.colour_scheme
+                -%}
+              {% endif %}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image - Text",
+  "class": "image-text__wrapper",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "header",
+      "content": "Styles"
+    },
+    {
+      "type": "select",
+      "id": "colour_scheme",
+      "label": "Colour scheme",
+      "default": "base-white-01",
+      "options": [
+        {
+          "value": "base-white-01",
+          "label": "Base white 01"
+        },
+        {
+          "value": "base-white-02",
+          "label": "Base white 02"
+        },
+        {
+          "value": "warm-stone",
+          "label": "Warm stone"
+        },
+        {
+          "value": "green-01",
+          "label": "Green 01"
+        },
+        {
+          "value": "green-02",
+          "label": "Green 02"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section Padding",
+      "default": "--spacing-2xl",
+      "options": [
+        {
+          "value": "--spacing-md",
+          "label": "Narrow"
+        },
+        {
+          "value": "--spacing-2xl",
+          "label": "Default"
+        },
+        {
+          "value": "--spacing-4xl",
+          "label": "Wide"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "images",
+      "name": "Images",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_one",
+          "label": "Image one"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_two",
+          "label": "Image two"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "select",
+          "id": "title_size",
+          "label": "Title size",
+          "options": [
+            {
+              "value": "display",
+              "label": "Display"
+            },
+            {
+              "value": "xl",
+              "label": "X-Large"
+            }
+          ],
+          "default": "xl"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "underline",
+              "label": "Underline"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "More about us"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image - Text",
+      "blocks": [
+        {
+          "type": "images"
+        },
+        {
+          "type": "content",
+          "settings": {
+            "title": "Image with Text",
+            "text": "Display an image alongside text content to highlight key information about your brand or products.",
+            "button_text": "Learn more",
+            "button_style": "primary"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

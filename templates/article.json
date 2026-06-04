@@ -1,0 +1,41 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "settings": {}
+    },
+    "article_products": {
+      "type": "article-products",
+      "settings": {
+        "title": "Product in this story",
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "base-white-01"
+      }
+    },
+    "related_articles": {
+      "type": "related-articles",
+      "disabled": true,
+      "settings": {
+        "title": "Explore Related Resources",
+        "section_padding": "--spacing-2xl",
+        "show_badges": true,
+        "show_video_indicator": false,
+        "background_colour_scheme": "base-white-01"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "article_products",
+    "related_articles"
+  ]
+}

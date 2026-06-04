@@ -1,0 +1,149 @@
+{% comment %}
+  Renders a list of product's price (regular, sale)
+
+  Accepts:
+  - product: {Object} Product Liquid object (optional)
+  - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
+  - show_badges: {Boolean} Renders 'Sale' and 'Sold Out' tags if the product matches the condition (optional)
+  - price_class: {String} Adds a price class to the price element (optional)
+  - show_compare_at_price: {Boolean} Renders the compare at price if the product matches the condition (optional)
+
+  Usage:
+  {% render 'price', product: product %}
+{% endcomment %}
+{%- liquid
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  else
+    assign target = product
+  endif
+
+  assign compare_at_price = target.compare_at_price
+  assign price = target.price | default: 1999
+  assign price_min = product.price_min
+  assign price_max = product.price_max
+  assign available = target.available | default: false
+  assign money_price = price | money
+  assign money_price_min = price_min | money
+  assign money_price_max = price_max | money
+
+  # Check if price is 0 (free sample)
+  assign is_free_sample = false
+  if price == 0
+    assign is_free_sample = true
+  endif
+
+  assign show_free_sample_label = show_free_sample_label | default: false
+
+  if settings.currency_code_enabled
+    assign money_price = price | money_with_currency
+    assign money_price_min = price_min | money_with_currency
+    assign money_price_max = price_max | money_with_currency
+  endif
+
+  if target == product and product.price_varies
+    assign money_price = 'product.price.from_price_html' | t: price: money_price
+  elsif force_from_price
+    assign money_price = 'product.price.from_price_html' | t: price: money_price
+  endif
+-%}
+
+<div
+  class="
+    price
+    {%- if price_class %} {{ price_class }}{% endif -%}
+    {%- if available == false %} price--sold-out{% endif -%}
+    {%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %} price--on-sale{% endif -%}
+    {%- if compare_at_price > price and product.quantity_price_breaks_configured? %} price--volume-pricing-sale-badge{% endif -%}
+    {%- if product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif -%}
+    {%- if show_badges %} price--show-badge{% endif -%}
+  "
+>
+  <div class="price__container">
+    {%- comment -%}
+      Explanation of description list:
+        - div.price__regular: Displayed when there are no variants on sale
+        - div.price__sale: Displayed when a variant is a sale
+    {%- endcomment -%}
+    <div class="price__regular">
+      {%- if product.quantity_price_breaks_configured? -%}
+        {%- if show_compare_at_price and compare_at_price -%}
+          {%- unless product.price_varies == false
+            and product.compare_at_price_varies
+          %}
+            <span class="visually-hidden">
+              {{- 'product.price.regular' | t -}}
+            </span>
+            <span>
+              <span class="price__item price__item--regular variant-item__old-price dprice__item price__item--sale price__item--last eyebrow-sm eyebrow-sm--bold">
+                {% if settings.currency_code_enabled %}
+                  {{ compare_at_price | money_with_currency }}
+                {% else %}
+                  {{ compare_at_price | money }}
+                {% endif %}
+              </span>
+            </span>
+          {%- endunless -%}
+        {%- endif -%}
+        <span class="visually-hidden">{{ 'product.price.regular' | t }}</span>
+        <span class="price__item price__item--regular dprice__item price__item--sale price__item--last eyebrow-sm eyebrow-sm--bold">
+          {{-
+            'product.price.price_range'
+            | t: minimum: money_price_min, maximum: money_price_max
+          -}}
+        </span>
+      {%- else -%}
+        <span class="visually-hidden">{{ 'product.price.regular' | t }}</span>
+        <span class="visually-hidden">{{ 'product.price.regular' | t }}</span>
+        <span class="price__item price__item--regular dprice__item price__item--sale price__item--last eyebrow-sm eyebrow-sm--bold">
+          {{ money_price }}{% if is_free_sample and show_free_sample_label %} - {{ 'product.price.free_sample' | t }}{% endif %}
+        </span>
+        {% if show_vat_badge and price > 0 %}<span class="price__vat-badge eyebrow-2xs eyebrow-2xs--bold">{{ 'product.price.including_vat' | t | default: 'Including VAT' }}</span>{% endif %}
+      {%- endif -%}
+    </div>
+    <div class="price__sale">
+      {%- unless product.price_varies == false
+        and product.compare_at_price_varies
+      %}
+        <span class="visually-hidden">{{ 'product.price.regular' | t }}</span>
+        <span>
+          <s class="price__item price__item--regular dprice__item price__item--sale price__item--last eyebrow-sm">
+            {% if settings.currency_code_enabled %}
+              {{ compare_at_price | money_with_currency }}
+            {% else %}
+              {{ compare_at_price | money }}
+            {% endif %}
+          </s>
+        </span>
+      {%- endunless -%}
+      <span
+        class="visually-hidden"
+      >
+        {{- 'product.price.sale' | t -}}
+      </span>
+      <span class="price__item price__item--sale price__item--last dprice__item price__item--sale price__item--last eyebrow-sm eyebrow-sm--bold">
+        {{ money_price }}{% if is_free_sample and show_free_sample_label %} - {{ 'product.price.free_sample' | t }}{% endif %}
+      </span>
+      {% if show_vat_badge and price > 0 %}<span class="price__vat-badge">{{ 'product.price.including_vat' | t | default: 'Including VAT' }}</span>{% endif %}
+    </div>
+  </div>
+  {%- if show_badges -%}
+    <span
+      class="
+        product-badge
+        price__badge--sale
+      "
+    >
+      {{ 'product.price.on_sale' | t }}
+    </span>
+
+    <span
+      class="
+        product-badge
+        price__badge--sold-out
+      "
+    >
+      {{ 'product.price.sold_out' | t }}
+    </span>
+  {%- endif -%}
+</div>

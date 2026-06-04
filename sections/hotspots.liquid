@@ -1,0 +1,340 @@
+{%- liquid
+  assign tabs = section.blocks | where: 'type', 'tab'
+
+  if tabs.size == 0
+    continue
+  endif
+
+  render 'vite-tag' with '@sections/hotspots.ts'
+-%}
+
+<uwp-hotspots
+  class="hotspots colour-scheme--{{ section.settings.colour_scheme }}"
+  role="region"
+  aria-label="Hotspots"
+  aria-roledescription="region"
+>
+  <div class="hotspots__container">
+    {% if tabs.size > 1 %}
+      <div class="hotspots__tabs">
+        <div class="hotspots__tabs-container container{% if section.settings.remove_top_padding %} hotspots__tabs-container--no-padding{% endif %}">
+          {% for block in tabs %}
+            {%- liquid
+              if block.settings.title == blank
+                continue
+              endif
+
+              assign button_class = ''
+
+              if forloop.first
+                assign button_class = 'is-active'
+              endif
+
+              assign attributes = 'js-hotspots="tab-trigger" data-tab="' | append: block.id | append: '"'
+            -%}
+
+            {% render 'button',
+              class: button_class,
+              label: block.settings.title,
+              style: 'underline',
+              attributes: attributes
+            %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="hotspots__tab-content">
+      {% for block in tabs %}
+        {%- liquid
+          assign tab_index = forloop.index
+          assign hotspots = section.blocks | where: 'type', 'hotspot'
+        -%}
+
+        <div
+          class="hotspots__tab{% if forloop.first %} is-active{% endif %}"
+          js-hotspots="tab-content"
+          data-tab="{{ block.id }}"
+        >
+          <div class="hotspots__overlay" js-hotspots="overlay"></div>
+          {% if block.settings.image != blank %}
+            {{
+              block.settings.image
+              | image_url: width: 600
+              | image_tag: class: 'hide-on-desktop', loading: 'lazy'
+            }}
+          {% endif %}
+
+          {% if block.settings.image_desktop != blank %}
+            {{
+              block.settings.image_desktop
+              | image_url: width: 1900
+              | image_tag: class: 'hide-on-mobile', loading: 'lazy'
+            }}
+          {% endif %}
+
+          {% if block.settings.cta_text != blank
+            and block.settings.cta_link != blank
+          %}
+            <div class="container">
+              <div class="hotspot__cta">
+                {% render 'button',
+                  label: block.settings.cta_text,
+                  link: block.settings.cta_link,
+                  style: 'primary'
+                %}
+              </div>
+            </div>
+          {% endif %}
+
+          {% for hotspot in hotspots %}
+            {%- liquid
+              assign product = hotspot.settings.product
+              assign tab = hotspot.settings.tab | times: 1
+
+              if tab != tab_index or product == blank
+                continue
+              endif
+            -%}
+
+            <button
+              class="hotspots__hotspot colour-scheme--light"
+              type="button"
+              js-hotspots="hotspot"
+              data-hotspot="{{ hotspot.id }}"
+              style="
+                --position-desktop-x: {{ hotspot.settings.desktop_x }}%;
+                --position-desktop-y: {{ hotspot.settings.desktop_y }}%;
+                --position-mobile-x: {{ hotspot.settings.mobile_x }}%;
+                --position-mobile-y: {{ hotspot.settings.mobile_y }}%;
+              "
+            >
+              {% render 'icons', icon: 'plus' %}
+            </button>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% for hotspot in hotspots %}
+    {%- liquid
+      assign product = hotspot.settings.product
+
+      if product == blank
+        continue
+      endif
+    -%}
+    <div
+      id="{{ hotspot.id }}-tooltip"
+      class="is-hidden"
+      js-hotspots="tooltip-content"
+      data-hotspot="{{ hotspot.id }}"
+    >
+      <div class="hotspots__product colour-scheme--light">
+        <p class="hotspots__product-title title-2xs">
+          {{ product.title }}
+        </p>
+
+        <p class="eyebrow-2xs hotspots__product-description">
+          {{ hotspot.settings.description }}
+        </p>
+
+        <p class="hotspots__product-price eyebrow-2xs eyebrow-2xs--bold">
+          {{ product.price | money }}
+        </p>
+
+        <div class="hotspots__product-actions">
+          {% render 'button',
+            class: 'hotspots__product-link button--light',
+            label: 'Details',
+            link: product.url,
+            style: 'primary',
+            icon: 'cart'
+          %}
+
+          {% render 'button',
+            class: 'hotspots__wishlist-link button--light',
+            label: 'Wishlist',
+            icon_only: true,
+            style: 'wishlist',
+            icon: 'wishlist'
+          %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</uwp-hotspots>
+
+{% schema %}
+{
+  "name": "Hotspots",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "remove_top_padding",
+      "label": "Remove top padding",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "colour_scheme",
+      "label": "Colour scheme",
+      "default": "base-white-01",
+      "info": "Details of the colour schemes in use are found here [INSERT LINK]",
+      "options": [
+        {
+          "value": "base-white-01",
+          "label": "Base white 01"
+        },
+        {
+          "value": "base-white-02",
+          "label": "Base white 02"
+        },
+        {
+          "value": "warm-stone",
+          "label": "Warm stone"
+        },
+        {
+          "value": "duck-egg",
+          "label": "Duck Egg"
+        },
+        {
+          "value": "green-01",
+          "label": "Green 01"
+        },
+        {
+          "value": "green-02",
+          "label": "Green 02"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Tab",
+      "type": "tab",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Mobile"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Image",
+          "info": "Desktop"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA Link"
+        }
+      ]
+    },
+    {
+      "name": "Hotspot",
+      "type": "hotspot",
+      "limit": 16,
+      "settings": [
+        {
+          "type": "select",
+          "id": "tab",
+          "label": "Tab",
+          "info": "Select the tab that this hotspot belongs to",
+          "options": [
+            {
+              "value": "1",
+              "label": "Tab 1"
+            },
+            {
+              "value": "2",
+              "label": "Tab 2"
+            }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "header",
+          "content": "Coordinates (Desktop)"
+        },
+        {
+          "type": "range",
+          "id": "desktop_x",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "X Axis",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "desktop_y",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Y Axis",
+          "default": 50
+        },
+        {
+          "type": "header",
+          "content": "Coordinates (Mobile)"
+        },
+        {
+          "type": "range",
+          "id": "mobile_x",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "X Axis",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "mobile_y",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Y Axis",
+          "default": 50
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hotspots",
+      "settings": {
+        "colour_scheme": "base-white-01"
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,115 @@
+{% capture error_icon %}
+  {% render 'icons', icon: 'error' %}
+{% endcapture %}
+{% liquid
+  assign success_message = success_message | default: "Thanks for contacting us. We'll get back to you as soon as possible."
+  assign error_required_fields = 'forms.error_required_fields' | t
+  capture error_message
+    echo error_icon
+    echo error_required_fields
+  endcapture
+%}
+
+{% form 'contact', data-error-message: error_message %}
+  
+
+  <div class="contact-form__inner">
+    <div class="contact-form__field email">
+      <label for="email" class="label-for-screen-readers">
+        {{- 'forms.email' | t -}}
+        <sup>*</sup></label
+      >
+      <input
+        type="email"
+        name="contact[email]"
+        id="email"
+        placeholder="{{- 'forms.email' | t -}}"
+        required
+      >
+    </div>
+
+    <div class="contact-form__field first-name">
+      <label for="first-name" class="label-for-screen-readers">
+        {{- 'forms.first_name' | t -}}
+        <sup>*</sup></label
+      >
+      <input
+        type="text"
+        name="contact[first_name]"
+        id="first-name"
+        placeholder="{{ 'forms.first_name' | t }}*"
+        required
+      >
+    </div>
+
+    <div class="contact-form__field phone">
+      <label for="phone" class="label-for-screen-readers">{{ 'forms.phone' | t }}</label>
+      <input type="tel" required name="contact[phone]" id="phone" placeholder="{{ 'forms.phone' | t }}">
+    </div>
+
+    <div class="contact-form__field mailing-list-signup">
+      <div class="mailing-list-signup__title body-sm body-sm--bold">
+        {{- 'forms.mailing_list_signup_html' | t -}}
+      </div>
+      <div class="mailing-list-signup__options">
+        {% assign mailing_list_signup_elderly_label = 'forms.mailing_list_signup_elderly' | t %}
+        {% assign mailing_list_signup_challenging_environment_label = 'forms.mailing_list_signup_challenging_environment' | t %}
+        {% render 'input-checkbox',
+          id: 'mailing-list-signup-elderly',
+          name: 'contact[mailing_list_signup-elderly]',
+          value: 'accepts_mailing_list_signup_elderly',
+          class: 'input-checkbox mailing-list-signup__option body-sm',
+          label: mailing_list_signup_elderly_label,
+        %}
+        {% render 'input-checkbox',
+          id: 'mailing-list-signup-challenging-environment',
+          name: 'contact[mailing_list_signup-challenging-environment]',
+          value: 'accepts_mailing_list_signup_challenging_environment',
+          class: 'input-checkbox mailing-list-signup__option body-sm',
+          label: mailing_list_signup_challenging_environment_label,
+        %}
+      </div>
+    </div>
+
+    <div class="contact-form__field message">
+      <label for="message" class="label-for-screen-readers">
+        {{- 'forms.message' | t -}}
+        <sup>*</sup></label
+      >
+      <textarea
+        name="contact[body]"
+        id="message"
+        rows="6"
+        placeholder="{{- 'forms.message' | t -}}"
+        required
+      ></textarea>
+    </div>
+
+    <div class="contact-form__field">
+      {% assign terms_label = 'forms.terms_html' | t %}
+      {% render 'input-checkbox',
+        id: 'terms',
+        name: 'contact[terms]',
+        value: 'accepts_terms',
+        parentClass: 'body-sm contact-form__field-terms__label',
+        attributes: 'required',
+        label: terms_label,
+      %}
+    </div>
+  </div>
+
+  <div class="contact-form__footer">
+    <div class="submit">
+      <input type="submit" class="button button--primary button-sm disabled" value="Submit">
+    </div>
+    <div class="contact-form__messages body-sm body-sm--bold">
+      {%- if form.posted_successfully? -%}
+        <span class="contact-form__messages__success" tabindex="-1" autofocus>
+          {{- success_message -}}
+        </span>
+      {%- elsif form.errors -%}
+        {{ form.errors | default_errors }}
+      {%- endif -%}
+    </div>
+  </div>
+{% endform %}

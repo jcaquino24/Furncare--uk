@@ -1,0 +1,330 @@
+{% doc %}
+  Snippet / Product Gallery
+  - This snippet is used to render a product gallery carousel.
+  - Automatically detects and handles 3D models (model media type).
+  - Disables touch move when 3D models are present to allow model interaction.
+
+  @param {Array} images - Array of Media objects to render (supports image, video, external_video, and model types).
+  @param {Boolean} show_thumbnails - Show thumbnails for the gallery.
+  @param {Boolean} zoom - Enables/Disables zoom functionality.
+  @param {Boolean} autoplay - Enables/Disables autoplay functionality.
+  @param {Number} autoplay_speed - Speed of autoplay in seconds.
+  @param {Boolean} arrows - Enables/Disables arrows functionality.
+  @param {Boolean} enlarge - Enables/Disables lightbox functionality.
+  @param {String} section_id - Section ID for unique button identifiers.
+
+  @example
+  {% render 'product-gallery',
+    images: product.media,
+    show_thumbnails: true,
+    zoom: true,
+    arrows: true,
+    enlarge: true,
+    section_id: section.id
+  %}
+{% enddoc %}
+
+{%- liquid
+  render 'vite-tag' with '@snippets/product-gallery.ts'
+
+  assign show_thumbnails = show_thumbnails | default: true
+  assign zoom = zoom | default: true
+  assign arrows = arrows | default: true
+  assign enlarge = enlarge | default: true
+  assign autoplay = autoplay | default: false
+  assign autoplay_speed = autoplay_speed | default: 3
+
+  # Check if any media is a 3D model
+  assign has_3d_model = false
+  for media in images
+    if media.media_type == 'model'
+      assign has_3d_model = true
+      break
+    endif
+  endfor
+-%}
+
+<uwp-product-gallery
+  class="loading"
+  role="region"
+  aria-label="Product gallery"
+  aria-roledescription="region"
+>
+  <div class="product-gallery__wrapper">
+    {% if show_thumbnails %}
+      <div class="product-gallery__thumbnails-wrapper">
+        <swiper-container
+          class="product-gallery__thumbnails"
+          space-between="8"
+          slides-per-view="auto"
+          slides-offset-before="0"
+          {% if images.size > 1 %}
+            navigation-prev-el=".product-gallery__thumbnails-navigation .swiper-button-prev"
+            navigation-next-el=".product-gallery__thumbnails-navigation .swiper-button-next"
+          {% endif %}
+          breakpoints='
+            {
+              "1024": {
+                "direction": "vertical",
+                "slidesOffsetBefore": 0
+              }
+            }
+          '
+          role="region"
+          aria-label="Product gallery thumbnails"
+          aria-roledescription="carousel"
+        >
+          {% for media in images %}
+            <swiper-slide
+              class="product-gallery__thumbnails-slide"
+              data-media-type="{{ media.media_type }}"
+            >
+              {% render 'product-media', media: media, thumbnails: true %}
+              {% if media.media_type == 'model' %}
+                <span class="product-gallery__thumbnail-icon">
+                  {% render 'icons', icon: '360' %}
+                </span>
+              {% elsif media.media_type == 'video'
+                or media.media_type == 'external_video'
+              %}
+                <span class="product-gallery__thumbnail-icon product-gallery__thumbnail-icon--video">
+                  {% render 'icons', icon: 'video-play-button' %}
+                </span>
+              {% endif %}
+            </swiper-slide>
+          {% endfor %}
+        </swiper-container>
+
+        {% if images.size > 1 %}
+          <div class="product-gallery__thumbnails-navigation">
+            <button
+              class="swiper-button-prev fade-on-hover"
+              aria-label="{{ 'carousel.previous' | t }}"
+            >
+              {% render 'icons', icon: 'chevron-up' %}
+            </button>
+
+            <button
+              class="swiper-button-next fade-on-hover"
+              aria-label="{{ 'carousel.next' | t }}"
+            >
+              {% render 'icons', icon: 'chevron-down' %}
+            </button>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="product-gallery__main">
+      <div class="product-gallery__main-wrapper">
+        {% if enlarge %}
+          <button
+            class="product-gallery__navigation-expand-button"
+            aria-label="{{ 'products.gallery.expand' | t }}"
+          >
+            {% render 'icons', icon: 'expand' %}
+          </button>
+        {% endif %}
+        <div class="product-gallery__main-carousel">
+          <swiper-container
+            js-product-gallery="main-swiper"
+            slides-per-view="1"
+            space-between="8"
+            loop="true"
+            {% if show_thumbnails %}
+              thumbs-swiper=".product-gallery__thumbnails"
+            {% endif %}
+            {% if product.selected_variant
+              and product.selected_variant.featured_image != blank
+            %}
+              {% assign selected_variant_image_index = product.selected_variant.featured_media.position
+                | minus: 1
+              %}
+              initial-slide="{{ selected_variant_image_index }}"
+            {% endif %}
+            {% if autoplay %}
+              autoplay-speed="{{ autoplay_speed | times: 1000 }}"
+            {% endif %}
+            {% if arrows and images.size > 1 %}
+              navigation-prev-el="#swiper-button-prev-{{ section_id }}"
+              navigation-next-el="#swiper-button-next-{{ section_id }}"
+            {% endif %}
+            {% if zoom %}
+              zoom="true"
+            {% endif %}
+            {% if has_3d_model %}
+              allow-touch-move="false"
+            {% endif %}
+            role="region"
+            aria-label="Product gallery main"
+            aria-roledescription="carousel"
+          >
+            {% for media in images %}
+              <swiper-slide
+                class="product-gallery__main-slide"
+                data-media-type="{{ media.media_type }}"
+              >
+                {% if media.media_type == 'model' %}
+                  <div class="product-gallery__model-container">
+                    {% render 'product-media', media: media, forloop: forloop %}
+                  </div>
+                {% else %}
+                  <div class="swiper-zoom-container">
+                    {% render 'product-media', media: media, forloop: forloop %}
+                  </div>
+                {% endif %}
+              </swiper-slide>
+            {% endfor %}
+          </swiper-container>
+        </div>
+
+        {% if arrows and images.size > 1 %}
+          <nav class="product-gallery__navigation">
+            {% render 'swiper-nav',
+              section_id: section_id,
+              direction: 'horizontal',
+              layout: 'inline'
+            %}
+          </nav>
+        {% endif %}
+
+        {% if has_3d_model %}
+          <div
+            class="product-gallery__model-indicator"
+            js-product-gallery="model-indicator"
+          >
+            {% render 'icons', icon: '360-viewer' %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-loader">
+    <div class="gallery-image-loader"></div>
+  </div>
+
+  {% if enlarge %}
+    <div class="product-gallery__lightbox" js-product-gallery="lightbox">
+      <div class="product-gallery__lightbox-content">
+        <button
+          class="product-gallery__lightbox-close"
+          aria-label="{{ 'general.close' | t }}"
+        >
+          {% render 'icons', icon: 'close' %}
+        </button>
+
+        <div class="product-gallery__lightbox-gallery">
+          {% if show_thumbnails %}
+            <div class="product-gallery__lightbox-thumbnails-wrapper">
+              <swiper-container
+                class="product-gallery__lightbox-thumbnails"
+                slides-per-view="auto"
+                space-between="4"
+                breakpoints='
+                  {
+                    "1024": {
+                      "direction": "vertical"
+                    }
+                  }
+                '
+                role="region"
+                aria-label="Product gallery thumbnails lightbox"
+                aria-roledescription="carousel"
+              >
+                {% for media in images %}
+                  <swiper-slide
+                    class="product-gallery__thumbnails-slide"
+                    data-media-type="{{ media.media_type }}"
+                  >
+                    {% render 'product-media', media: media, thumbnails: true %}
+                    {% if media.media_type == 'model' %}
+                      <span class="product-gallery__thumbnail-icon">
+                        {% render 'icons', icon: '360' %}
+                      </span>
+                    {% elsif media.media_type == 'video'
+                      or media.media_type == 'external_video'
+                    %}
+                      <span class="product-gallery__thumbnail-icon product-gallery__thumbnail-icon--video">
+                        {% render 'icons', icon: 'video-play-button' %}
+                      </span>
+                    {% endif %}
+                  </swiper-slide>
+                {% endfor %}
+              </swiper-container>
+            </div>
+          {% endif %}
+
+          <div class="product-gallery__lightbox-main">
+            <div class="product-gallery__lightbox-main-wrapper">
+              <div class="product-gallery__lightbox-main-carousel">
+                <swiper-container
+                  js-product-gallery="lightbox-swiper"
+                  navigation-prev-el="#swiper-button-prev-{{ section_id }}"
+                  navigation-next-el="#swiper-button-next-{{ section_id }}"
+                  slides-per-view="1"
+                  direction="horizontal"
+                  loop="true"
+                  {% if show_thumbnails %}
+                    thumbs-swiper=".product-gallery__lightbox-thumbnails"
+                  {% endif %}
+                  {% if zoom %}
+                    zoom="true"
+                  {% endif %}
+                  {% if has_3d_model %}
+                    allow-touch-move="false"
+                  {% endif %}
+                  role="region"
+                  aria-label="Product gallery main lightbox"
+                  aria-roledescription="carousel"
+                >
+                  {% for media in images %}
+                    <swiper-slide
+                      class="product-gallery__main-slide"
+                      data-media-type="{{ media.media_type }}"
+                    >
+                      <div class="gallery-image-wrapper">
+                        {% if media.media_type == 'model' %}
+                          <div class="product-gallery__model-container">
+                            {% render 'product-media',
+                              media: media,
+                              forloop: forloop,
+                              lightbox: true
+                            %}
+                          </div>
+                        {% else %}
+                          <div class="swiper-zoom-container">
+                            {% render 'product-media',
+                              media: media,
+                              forloop: forloop,
+                              lightbox: true
+                            %}
+                          </div>
+                        {% endif %}
+                      </div>
+                    </swiper-slide>
+                  {% endfor %}
+                </swiper-container>
+              </div>
+
+              {% render 'swiper-nav',
+                section_id: section_id,
+                direction: 'horizontal',
+                layout: 'edges'
+              %}
+
+              {% if has_3d_model %}
+                <div
+                  class="product-gallery__model-indicator product-gallery__model-indicator--lightbox"
+                  js-product-gallery="lightbox-model-indicator"
+                >
+                  {% render 'icons', icon: '360-viewer' %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</uwp-product-gallery>

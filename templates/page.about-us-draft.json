@@ -1,0 +1,366 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_video_banner_3wpb9a": {
+      "type": "image-video-banner",
+      "blocks": {
+        "title_LqiqLX": {
+          "type": "title",
+          "settings": {
+            "text": "Your furniture partner for <em>contemporary</em> care spaces",
+            "title_element": "h1",
+            "title_size": "display",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_pXDQqL": {
+          "type": "button",
+          "settings": {
+            "text": "Work with us",
+            "button_url": "shopify://pages/contact-us",
+            "new_tab": false,
+            "button_style": "underline"
+          }
+        }
+      },
+      "block_order": [
+        "title_LqiqLX",
+        "button_pXDQqL"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 800,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "video",
+        "image_desktop": "shopify://shop_images/StaffMeeting2026_Unedited-005.png",
+        "video_desktop": "shopify://files/videos/My Movie 16_bb9103ad-90f4-442d-8720-000a2881db0b.mp4",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(356deg, rgba(36, 50, 34, 0.72), rgba(36, 50, 34, 0) 100%)",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_BPbhNU": {
+      "type": "richtext",
+      "blocks": {
+        "heading_YMw6jH": {
+          "type": "heading",
+          "settings": {
+            "text": "From our roots as a family-run business in Norfolk, we’ve built our reputation on designing and manufacturing furniture for care environments. By working closely with our partners and understanding the realities of care, we deliver solutions that are trusted, durable, and made to perform.",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "button_LGWtDh": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_YMw6jH",
+        "button_LGWtDh"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "faqs_ca7UHJ": {
+      "type": "faqs",
+      "blocks": {
+        "faq_6yWngK": {
+          "type": "faq",
+          "settings": {
+            "question": "Our Vision",
+            "answer": "<p>To be the first-choice furniture brand for every designer in care.</p>"
+          }
+        },
+        "faq_YYHm79": {
+          "type": "faq",
+          "settings": {
+            "question": "Our Mission",
+            "answer": "<p>To transform spaces and elevate lives in care.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_6yWngK",
+        "faq_YYHm79"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "faq_title": "The principles that shape everything we do.",
+        "title_element": "h2",
+        "faq_text": "",
+        "title_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "padding": "default"
+      }
+    },
+    "image_text_blocks_QkRm4p": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "image_card_x3zQM7": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Home_Banner___Elderly_Care.jpg",
+            "image_mobile": "shopify://shop_images/Home_Banner___Elderly_Care.jpg",
+            "title": "Care",
+            "subtitle": "",
+            "text": "<p>We put people first. Every decision we make is about enhancing comfort, dignity, and well-being for those in care environments.</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_azpE4p": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/StaffMeeting2026_Unedited-086.png",
+            "image_mobile": "shopify://shop_images/StaffMeeting2026_Unedited-086.png",
+            "title": "Connect",
+            "subtitle": "",
+            "text": "<p>We listen, collaborate, and build trusted relationships with our customers, designers, care providers and colleagues.</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_JU8wQ4": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/DSC_2087.png",
+            "image_mobile": "shopify://shop_images/DSC_2087.png",
+            "title": "Create",
+            "subtitle": "",
+            "text": "<p>We bring thoughtful, practical, and beautiful solutions that transform care spaces into places of warmth and support.</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_x3zQM7",
+        "image_card_azpE4p",
+        "image_card_JU8wQ4"
+      ],
+      "name": "Image text blocks",
+      "settings": {
+        "title": "",
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "base-white-01",
+        "text_position": "over_image",
+        "mobile_layout": "swiper",
+        "enable_lightbox": false
+      }
+    },
+    "image_text_rdJE8g": {
+      "type": "image-text",
+      "blocks": {
+        "images_d6kptY": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/DSC_1918.png",
+            "image_two": "shopify://shop_images/DSC_1967.png"
+          }
+        },
+        "content_yiy8XW": {
+          "type": "content",
+          "settings": {
+            "title": "In-house product design and manufacture.",
+            "title_size": "display",
+            "text": "",
+            "button_style": "primary",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_d6kptY",
+        "content_yiy8XW"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-4xl"
+      }
+    },
+    "richtext_YFtjwM": {
+      "type": "richtext",
+      "blocks": {
+        "heading_3CwpFM": {
+          "type": "heading",
+          "settings": {
+            "text": "The history of Furncare in 137 seconds",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "button_KLF77j": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_3CwpFM",
+        "button_KLF77j"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "image_video_banner_jaWwYC": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_djbrLE": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "text": "Retirement furniture",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_teCycg": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "text": "Designed for Comfort, Built for <em>Care</em>.",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_wRqeRY": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_i88VP7": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_zLAQmW": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_djbrLE",
+        "title_teCycg",
+        "button_wRqeRY",
+        "card_i88VP7",
+        "card_zLAQmW"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 800,
+        "height_mobile": 300,
+        "maintain_aspect_ratio": true,
+        "add_header_offset": false,
+        "media_type": "video",
+        "video_desktop": "shopify://files/videos/Furncare Edit V6-1_380d84d1-144a-4f06-8683-81fdf8054b5d.mp4",
+        "video_mobile": "shopify://files/videos/Furncare Edit V6-1_380d84d1-144a-4f06-8683-81fdf8054b5d.mp4",
+        "show_controls": true,
+        "mute_video": false,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "light",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "blocks_E7kt4i": {
+      "type": "_blocks",
+      "name": "Image",
+      "settings": {}
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    }
+  },
+  "order": [
+    "image_video_banner_3wpb9a",
+    "richtext_BPbhNU",
+    "faqs_ca7UHJ",
+    "image_text_blocks_QkRm4p",
+    "image_text_rdJE8g",
+    "richtext_YFtjwM",
+    "image_video_banner_jaWwYC",
+    "blocks_E7kt4i",
+    "main"
+  ]
+}

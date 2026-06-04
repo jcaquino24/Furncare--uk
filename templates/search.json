@@ -1,0 +1,74 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "search",
+      "settings": {
+        "promo_block": ""
+      }
+    },
+    "content_blocks_qbXmqt": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_KNPAXQ": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/P1044762.jpg",
+            "image_mobile": "shopify://shop_images/P1044762.jpg",
+            "text": "Case Studies",
+            "link": "https://www.furncare.co.uk/blogs/news/tagged/case-study",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_zpALVX": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/P1091374-2-HDR.jpg",
+            "image_mobile": "shopify://shop_images/P1091374-2-HDR.jpg",
+            "text": "Inspiration",
+            "link": "https://pin.it/4882WQDjd",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_tNatxg": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_7_f2121886-34fa-4304-96dd-467db6119328.jpg",
+            "image_mobile": "shopify://shop_images/Bistro_Area_7_f2121886-34fa-4304-96dd-467db6119328.jpg",
+            "text": "Contact Us",
+            "link": "shopify://pages/contact-us",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_KNPAXQ",
+        "tab1_zpALVX",
+        "tab1_tNatxg"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "How can we help?",
+        "section_padding": "--spacing-2xl",
+        "tab1_title": "Collection 1",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "",
+        "tab2_handle": "",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "content_blocks_qbXmqt"
+  ]
+}

@@ -1,0 +1,74 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "contact",
+      "blocks": {
+        "forms_inline_LYdNT4": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "disabled": true,
+          "settings": {
+            "form_id": "639372",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#ffffff",
+            "links_color": "#1878b9",
+            "errors_color": "#e02229",
+            "text_alignment": "left",
+            "form_alignment": "flex-start",
+            "padding_top": 20,
+            "padding_bottom": 24,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_LYdNT4"
+      ],
+      "settings": {
+        "title": "Work with us",
+        "intro_text": "<p>Interested in joining our team? We’re always on the lookout for talented, motivated people who share our passion for quality, care, and craftsmanship to join us on our exciting journey.</p><p>Please fill out the form below to register your interest, and a member of our team will be in touch should a suitable opportunity arise.</p>",
+        "success_message": "",
+        "phone": "01603664900",
+        "phone_icon": "shopify://shop_images/Phone_f4b0d652-6e2d-4972-8b79-3fee1c34b42d.svg",
+        "email": "sales@furncare.co.uk",
+        "email_icon": "shopify://shop_images/Enveloppe_9440784c-af0a-43f4-8f42-462a9a7043e6.svg",
+        "show_social_icons": true,
+        "hubspot_form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"0ee73ac3-c92e-40d6-bb24-23d9453b73da\" data-portal-id=\"145723791\"></div>"
+      }
+    },
+    "image_video_banner_k3GKVQ": {
+      "type": "image-video-banner",
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 800,
+        "height_mobile": 800,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "video",
+        "video_desktop": "shopify://files/videos/Furncare_26_Launch_Event_Draft_2.mp4",
+        "show_controls": true,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "light",
+        "content_position": "center-center",
+        "content_alignment": "left"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_video_banner_k3GKVQ"
+  ]
+}

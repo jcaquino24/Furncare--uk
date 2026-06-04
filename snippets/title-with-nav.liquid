@@ -1,0 +1,44 @@
+{% doc %}
+  Reusable section title snippet.
+
+  @param {string} title - The section title.
+
+  @param [{string}] heading_level - The heading level (h1, h2, h3, h4, h5, h6).
+  @param [{string}] heading_style - The heading style (title-2xs, title-xs, title-sm, title-md, title-lg, title-xl, title-display).
+  @param [{boolean}] show_nav - Whether to show the navigation arrows.
+  @param [{string}] tabs - HTML content for tabs navigation.
+  @param [{string}] section_id - The section ID for navigation buttons.
+
+  @example
+  {% render 'title-with-nav',
+    title: section.settings.title,
+    show_nav: true,
+    tabs: tabs_html,
+    section_id: section.id
+  %}
+{% enddoc %}
+{% liquid
+  assign heading_level = heading_level | default: 'h2'
+  assign heading_style = heading_style | default: 'title-xs'
+  assign show_nav = show_nav | default: false, allow_false: true
+%}
+<div class="title-with-nav {% if tabs == blank %}title-with-nav--no-tabs{% endif %}">
+  <div class="title-with-nav__row">
+    {% if title != blank %}
+      <{{ heading_level }} class="{{ heading_style }} title-with-nav__title">
+        {{ title }}
+      </{{ heading_level }}>
+    {% endif %}
+    
+    {% if tabs != blank %}
+      <div class="title-with-nav__tabs">
+        {{ tabs }}
+      </div>
+    {% endif %}
+  </div>
+
+  {% assign nav_class = nav_class | default: 'title-with-nav__nav' %}
+  {% if show_nav %}
+    {% render 'swiper-nav', class: nav_class, section_id: section_id %}
+  {% endif %}
+</div>

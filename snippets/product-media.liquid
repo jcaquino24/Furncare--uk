@@ -1,0 +1,108 @@
+{%- liquid
+  assign lightbox = lightbox | default: false
+-%}
+
+{% case media.media_type %}
+  {% when 'image' %}
+    {% if thumbnails %}
+      {{
+        media
+        | image_url: width: 192, height: 192, crop: 'center'
+        | image_tag: loading: 'lazy', sizes: '96px', widths: '96, 192'
+      }}
+    {% else %}
+      {% assign lazyloading = 'lazy' %}
+
+      {% if forloop.first %}
+        {% assign lazyloading = 'eager' %}
+      {% endif %}
+      {{
+        media
+        | image_url: width: 2048
+        | image_tag:
+          loading: lazyloading,
+          sizes: '(min-width: 1024px) 730px, 100vw',
+          widths: '375, 550, 730, 1100, 1460, 2048'
+      }}
+    {% endif %}
+  {% when 'external_video' %}
+    {% if thumbnails %}
+      {{
+        media.preview_image
+        | image_url: width: 192, height: 192, crop: 'center'
+        | image_tag: loading: 'lazy', sizes: '96px', widths: '96, 192'
+      }}
+    {% else %}
+      {% if media.host == 'youtube' %}
+        {{
+          media
+          | external_video_url:
+            autoplay: true,
+            loop: true,
+            playlist: media.external_id
+          | external_video_tag: loading: 'lazy'
+        }}
+      {% else %}
+        {{
+          media
+          | external_video_url: autoplay: true, loop: true
+          | external_video_tag: loading: 'lazy'
+        }}
+      {% endif %}
+    {% endif %}
+  {% when 'video' %}
+    {% if thumbnails %}
+      {{
+        media.preview_image
+        | image_url: width: 192, height: 192, crop: 'center'
+        | image_tag: loading: 'lazy', sizes: '96px', widths: '96, 192'
+      }}
+    {% else %}
+      <div class="product-media__video-wrapper" data-video-wrapper>
+        {% liquid
+          assign is_simple = false
+          if lightbox == false
+            assign is_simple = true
+          endif
+        %}
+        {% assign alt_text = media.alt | default: product.title | strip_html %}
+
+        {% assign video_player_html = media
+          | media_tag:
+            image_size: '2048x',
+            autoplay: false,
+            loop: true,
+            controls: false,
+            preload: 'metadata',
+            id: media.id,
+            muted: true
+        %}
+        {{
+          video_player_html
+          | replace: '<img src="', '<img alt="%alt_text%" src="'
+          | replace: '%alt_text%', alt_text
+        }}
+        {% render 'video-controls',
+          video_id: media.id,
+          loop: true,
+          muted: true,
+          simple: is_simple
+        %}
+      </div>
+    {% endif %}
+  {% when 'model' %}
+    {% if thumbnails %}
+      {{
+        media.preview_image
+        | image_url: width: 192, height: 192, crop: 'center'
+        | image_tag: loading: 'lazy', sizes: '96px', widths: '96, 192'
+      }}
+    {% else %}
+      {{ media | model_viewer_tag }}
+    {% endif %}
+  {% else %}
+    {% if thumbnails %}
+    {% else %}
+      {{ media | media_tag }}
+    {% endif %}
+{% endcase %}

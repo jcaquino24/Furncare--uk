@@ -1,0 +1,272 @@
+{% comment %}
+  When you render a product card you must send a product with the render.
+  Example:
+    {% render 'product-card', product: collections['all'].products.first %}
+
+  Below is a list of variables that alter things like default text,
+  or show and hide different pieces of information. You can override
+  any of the default settings by sending your own value with the render.
+  Examples:
+    {% render 'product-card', product: collections['all'].products.first, button_text: "Add to basket" %}
+    {% render 'product-card', product: collections['all'].products.first, quickshop_enabled: false %}
+    {% render 'product-card', product: collections['all'].products.first, show_vendor: true %}
+
+    .product-grid--mobile-1x on the parent will toggle the mobile 1x view
+{% endcomment %}
+
+{% liquid
+  assign title_class = 'title-2xs'
+
+  assign product_card_style = product_card_style | default: 'default'
+  if product.type == 'Swatch' and product_card_style != 'condensed'
+    assign product_card_style = 'swatch_card'
+  endif
+
+  if product.type == 'Swatch' and product_card_style == 'condensed'
+    assign product_card_style = 'condensed_swatch_card'
+  endif
+
+  assign additional_classes = additional_classes | default: ''
+  assign is_loading = is_loading | default: false, allow_false: true
+
+  if is_loading
+    assign additional_classes = additional_classes | append: ' is-loading'
+  endif
+
+  if product_card_style == 'swatch_card'
+    assign additional_classes = additional_classes | append: ' product-card--swatch'
+  endif
+
+  if product_card_style == 'interior_designer'
+    assign additional_classes = additional_classes | append: ' product-card--interior-designer'
+  endif
+
+  if product_card_style == 'condensed' or product_card_style == 'condensed_swatch_card'
+    assign additional_classes = additional_classes | append: ' product-card--condensed'
+    assign title_class = 'title-2xs'
+  endif
+
+  comment
+  endcomment
+  assign show_button = show_button | default: true, allow_false: true
+  assign button_text = button_text | default: 'product_card.view_product' | t
+  assign quickshop_enabled = quickshop_enabled | default: false, allow_false: true
+  assign quickshop_button_text = quickshop_button_text | default: 'product_card.quick_shop' | t
+
+  comment
+  endcomment
+  assign show_sale_tag = show_sale_tag | default: true, allow_false: true
+  assign sale_tag_text = sale_tag_text | default: 'product_card.sale' | t
+  assign is_on_sale = false
+  if product.compare_at_price and product.compare_at_price > product.price
+    assign is_on_sale = true
+  endif
+  comment
+  endcomment
+  assign show_description = show_description | default: false
+  assign truncate_description = truncate_description | default: true, allow_false: true
+  assign description_words_limit = description_words_limit | default: 20
+
+  comment
+  endcomment
+  assign show_title = show_title | default: true, allow_false: true
+  assign show_vendor = show_vendor | default: true, allow_false: true
+  assign show_product_type = show_product_type | default: false
+  assign show_price = show_price | default: true, allow_false: true
+  assign show_compare_at_price = show_compare_at_price | default: true, allow_false: true
+
+  if product_card_style == 'interior_designer' or product_card_style == 'swatch_card' or product_card_style == 'default_noprice'
+    assign show_price = false
+  endif
+  comment
+  endcomment
+%}
+
+{% capture button_content %}
+  {% comment %} Button {% endcomment %}
+  {% if show_button %}
+    {% if product.available %}
+      {% if quickshop_enabled %}
+        <button
+          aria-label="Open Quickshop for {{ product.title }}"
+          data-quickshop="{{ product.handle }}"
+          class="product-card__button button button--primary"
+        >
+          {{- quickshop_button_text -}}
+        </button>
+      {% else %}
+        <a
+          aria-label="Visit {{ product.title }}"
+          href="{{ product.url }}"
+          class="product-card__button button button--primary"
+        >
+          {{- button_text -}} {% render 'icons', icon: 'cart' %}
+        </a>
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endcapture %}
+
+{% if product %}
+  {%- liquid
+    comment
+      Variant price in pounds (backend) for collection price filter.
+      data-taxable: so grid can hide non-taxable cards that fall outside the display price range.
+    endcomment
+    assign price_pounds = product.price | divided_by: 100.0
+    assign variant_taxable = product.selected_or_first_available_variant.taxable
+  -%}
+  <article class="product-card {{ additional_classes }}" data-price="{{ price_pounds }}" data-taxable="{{ variant_taxable }}">
+    <div class="product-card__rollover-images">
+      {% comment %} Alternate Image - shown on hover {% endcomment %}
+      {% if product.images.size > 1 %}
+        <div class="product-card__alternate-image product-card__image">
+          <a href="{{ product.url }}">
+            {{
+              product.images[1]
+              | image_url: width: 1284
+              | image_tag:
+                width: 642,
+                class: 'product-card__image',
+                loading: 'lazy',
+                sizes: '(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw',
+                widths: '321, 642, 964, 1284'
+            }}
+          </a>
+        </div>
+      {% endif %}
+
+      {% comment %} Image {% endcomment %}
+      {% if product.featured_image != blank %}
+        <div class="product-card__original-image product-card__image">
+          <a href="{{ product.url }}">
+            {% if product.featured_image %}
+              {{
+                product.featured_image
+                | image_url: width: 1284
+                | image_tag:
+                  width: 642,
+                  class: 'product-card__image',
+                  loading: 'lazy',
+                  sizes: '(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw',
+                  widths: '321, 642, 964, 1284'
+              }}
+            {% endif %}
+          </a>
+        </div>
+      {% endif %}
+
+      <div class="product-card__button-container--inline product-card__button-container">
+        {{ button_content }}
+      </div>
+    </div>
+
+    {% comment %} Badges {% endcomment %}
+    <div class="product-card__badges {% if is_on_sale %}product-card__badges--on-sale{% endif %}">
+      {% unless product.available %}
+        <div class="product-card__badge--sold-out product-card__badge">
+          {% render 'icons', icon: 'close' %}
+          <span class="product-card__sold-out-tag__text body-sm product-card__badge__text">
+            {{ 'product.sold_out' | t }}
+          </span>
+        </div>
+
+      {% else %}
+        {% comment %} Sale tag {% endcomment %}
+        {% if show_sale_tag and is_on_sale %}
+          <div class="product-card__badge--sale product-card__badge">
+            <span class="product-card__sale-tag__text body-sm product-card__badge__text">
+              {{- sale_tag_text -}}
+            </span>
+          </div>
+        {% endif %}
+      {% endunless %}
+
+      {% comment %} Get metafield metaobjects list of badges {% endcomment %}
+      {% assign badges = product.metafields.custom.badges.value %}
+
+      {% for badge in badges %}
+        <div class="product-card__badge--{{ badge.label | handleize }} product-card__badge">
+          {{
+            badge.icon
+            | image_url: width: 16
+            | image_tag: width: 16, loading: 'lazy'
+          }}
+          <span class="product-card__badge__text body-sm product-card__badge__text">
+            {{- badge.label -}}
+          </span>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% comment %} Product info {% endcomment %}
+    <div class="product-card__info">
+      {% comment %} Title {% endcomment %}
+      {% if show_title %}
+        <div class="product-card__title {{ title_class }}">
+          <a class="{{ title_class }}" href="{{ product.url }}">
+            {{- product.title | split: '|' | first -}}
+          </a>
+        </div>
+      {% endif %}
+
+      {% comment %} Price {% endcomment %}
+      {% if show_price %}
+        <div class="product-card__price-container eyebrow-xs eyebrow-xs--bold">
+          {% comment %} Compare at price {% endcomment %}
+          {% if show_compare_at_price and product.compare_at_price %}
+            <span class="product-card__compare-at-price eyebrow-xs">
+              {{- product.compare_at_price | money -}}
+            </span>
+          {% endif %}
+
+          {% comment %} Default price {% endcomment %}
+          <span class="product-card__price eyebrow-xs eyebrow-xs--bold">
+            {%- if product.price_varies %}From {% endif -%}
+            {{- product.price | money -}}
+          </span>
+        </div>
+      {% endif %}
+
+      {% if product.metafields.custom.available_in != blank %}
+        <div class="product-card__available-in eyebrow-2xs">
+          {{ product.metafields.custom.available_in }}
+        </div>
+      {% endif %}
+
+      {% if product.metafields.custom.delivered_within != blank %}
+        <div class="product-card__delivered-within body-sm">
+          {{
+            settings.delivered_within_icon
+            | image_url: width: 32
+            | image_tag: width: 16
+          }}
+          {{ product.metafields.custom.delivered_within }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="product-card__button-container product-card__button-container--bottom">
+      {{ button_content }}
+    </div>
+  </article>
+{% elsif is_loading %}
+  <div
+    class="product-card is-loading"
+    aria-busy="true"
+    tabindex="-1"
+    aria-hidden="true"
+    role="presentation"
+  >
+    <!-- Render skeleton loading UI for product card -->
+    <div class="product-card__rollover-images">
+      <div class="product-card__original-image">
+        <div class="product-card__skeleton-image is-loading__skeleton"></div>
+      </div>
+    </div>
+    <div class="product-card__info">
+      <div class="product-card__title is-loading__skeleton"></div>
+      <div class="product-card__div"></div>
+    </div>
+  </div>
+{% endif %}

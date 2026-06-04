@@ -1,0 +1,128 @@
+<div class="container">
+
+  <div class="account__header">
+
+    <div class="account__title-wrapper">
+      <h1 class="account__title title-display">
+        {{ "customer.account.title" | t }}
+      </h1>
+
+      <p class="account__subtitle body">
+        {{ "customer.account.welcome" | t: first_name: customer.first_name }}
+      </p>
+    </div>
+
+    <div class="account__actions">
+      <a
+        href="/tools/recurring/login/"
+        class="button button--primary"
+      >
+        {{ "customer.account.manage_subscriptions" | t }}
+      </a>
+
+      <a
+        href="{{ routes.account_logout_url }}"
+        class="button button--secondary"
+      >
+        {{ "customer.account.logout" | t }}
+      </a>
+    </div>
+  </div>
+
+  <div class="account__inner">
+    <div class="account__table-wrapper">
+
+      <h2 class="account__table-title heading-2">
+        {{ "customer.account.order_history.title" | t }}
+      </h2>
+
+      {% if customer.orders.size > 0 %}
+        <table class="account__table">
+          <thead>
+            <tr>
+              <th>{{ "customer.account.order_history.order" | t }}</th>
+              <th>{{ "customer.account.order_history.date" | t }}</th>
+              <th>{{ "customer.account.order_history.total" | t }}</th>
+              <th>{{ "customer.account.order_history.status" | t }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for order in customer.orders %}
+              <tr>
+                <td>
+                  <a
+                    href="{{ order.order_status_url }}"
+                    class="button-text"
+                  >
+                    {{ order.name }}
+                  </a>
+                </td>
+                <td>{{ order.created_at | date: format: 'abbreviated_date' }}</td>
+                <td>{{ order.total_price | money }}</td>
+                <td>{{ order.fulfillment_status }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p>{{ "customer.account.order_history.no_orders" | t }}</p>
+      {% endif %}
+    </div>
+
+    <div class="account__addresses">
+      <h2
+        class="account__addresses-title heading-2"
+      >
+        {{ "customer.account.addresses.title" | t }}
+      </h2>
+
+      <div class="account__addresses-default">
+        <div class="account__default-address body-small">
+          {{ customer.default_address | format_address }}
+        </div>
+
+        <a
+          href="{{ routes.account_addresses_url }}"
+          class="button-text"
+        >
+          {% if customer.default_address != blank %}
+            {{ "customer.account.addresses.edit_address" | t }}
+          {% else %}
+            {{ "customer.account.addresses.add_address" | t }}
+          {% endif %}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {% assign yotpo_blocks = section.blocks | where: "type", "yotpo_widget" %}
+  {% for block in yotpo_blocks %}
+    <div
+      class="yotpo-widget-instance"
+      data-yotpo-instance-id="{{ block.settings.yotpo_widget_id }}"
+    ></div>
+  {% endfor %}
+
+</div>
+
+{% schema %}
+{
+  "name": "Account",
+  "tag": "section",
+  "class": "account",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "yotpo_widget",
+      "name": "Yotpo Widget",
+      "settings": [
+        {
+          "type": "text",
+          "id": "yotpo_widget_id",
+          "label": "Yotpo Widget ID"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

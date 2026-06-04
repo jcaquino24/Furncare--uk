@@ -1,0 +1,279 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "hotspots_bfFtxR": {
+      "type": "hotspots",
+      "blocks": {
+        "tab_gHwhLq": {
+          "type": "tab",
+          "settings": {
+            "title": "",
+            "image_desktop": "shopify://shop_images/Koppla-B202-main-package-image.jpg",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "hotspot_jU6tVh": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "henda-touch-lamp",
+            "description": "",
+            "desktop_x": 8,
+            "desktop_y": 44,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_Hfrm4T": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-b202-reeds-canvas",
+            "description": "",
+            "desktop_x": 71,
+            "desktop_y": 32,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_YWnXpz": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-b202-cushion",
+            "description": "",
+            "desktop_x": 20,
+            "desktop_y": 51,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_BjtyGL": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-b202-cushion",
+            "description": "",
+            "desktop_x": 66,
+            "desktop_y": 47,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_8jz7tE": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "gazania-ochre",
+            "description": "",
+            "desktop_x": 50,
+            "desktop_y": 44,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_7YJDbQ": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "single-anker-box-bed-base",
+            "description": "",
+            "desktop_x": 42,
+            "desktop_y": 65,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_WVircP": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "fintan-single-all-foam-mattress",
+            "description": "",
+            "desktop_x": 39,
+            "desktop_y": 65,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_bXfKbd": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "anker-3-drawer-bedside-table",
+            "description": "",
+            "desktop_x": 10,
+            "desktop_y": 62,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_9KCAia": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "elm-tub-chair",
+            "description": "",
+            "desktop_x": 65,
+            "desktop_y": 59,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_UQxmgy": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "linton-circular-side-table",
+            "description": "",
+            "desktop_x": 53,
+            "desktop_y": 59,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_PU7L99": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "anker-3-drawer-chest",
+            "description": "",
+            "desktop_x": 80,
+            "desktop_y": 54,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_BkqGXb": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "anker-double-wardrobe",
+            "description": "",
+            "desktop_x": 90,
+            "desktop_y": 60,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        }
+      },
+      "block_order": [
+        "tab_gHwhLq",
+        "hotspot_jU6tVh",
+        "hotspot_Hfrm4T",
+        "hotspot_YWnXpz",
+        "hotspot_BjtyGL",
+        "hotspot_8jz7tE",
+        "hotspot_7YJDbQ",
+        "hotspot_WVircP",
+        "hotspot_bXfKbd",
+        "hotspot_9KCAia",
+        "hotspot_UQxmgy",
+        "hotspot_PU7L99",
+        "hotspot_BkqGXb"
+      ],
+      "name": "Hotspots",
+      "settings": {
+        "remove_top_padding": false,
+        "colour_scheme": "base-white-01"
+      }
+    },
+    "product_blocks_Fra7Pt": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_3mFakK": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "anker-bedroom-furniture-bundle",
+              "henda-touch-lamp",
+              "linton-circular-side-table",
+              "koppla-b202-reeds-canvas",
+              "anker-3-drawer-bedside-table",
+              "anker-3-drawer-chest",
+              "anker-double-wardrobe",
+              "small-double-anker-box-bed-base",
+              "single-anker-box-bed-base",
+              "koppla-b202-cushion"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        },
+        "product_block_gbHrnY": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_3mFakK",
+        "product_block_gbHrnY"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Featured Products",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "blocks_FPDefp": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_gzTmAH": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 65,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_gzTmAH"
+      ],
+      "name": "Form embed",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "hotspots_bfFtxR",
+    "product_blocks_Fra7Pt",
+    "blocks_FPDefp"
+  ]
+}

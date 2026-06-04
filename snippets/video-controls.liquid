@@ -1,0 +1,127 @@
+{% doc %}
+  Video Controls Component
+
+  Renders custom video controls overlay for video elements.
+
+  @param {string} video_id - Unique identifier for the video element (required)
+  @param {boolean} autoplay - Enable autoplay (default: false)
+  @param {boolean} loop - Enable loop (default: false)
+  @param {boolean} muted - Start muted (default: false)
+  @param {boolean} simple - Simple mode with only play/pause button (default: false)
+
+  @example
+  {% render 'video-controls', video_id: 'product-video-1', simple: true %}
+{% enddoc %}
+
+{%- liquid
+  render 'vite-tag' with '@snippets/video-controls.ts'
+
+  assign video_id = video_id | default: ''
+  assign autoplay = autoplay | default: false
+  assign loop = loop | default: false
+  assign muted = muted | default: false
+  assign simple = simple | default: false
+
+  unless video_id != blank
+    echo '<!-- Error: video_id parameter required for video-controls snippet -->'
+    break
+  endunless
+-%}
+
+<uwp-video-controls
+  data-video-id="{{ video_id }}"
+  data-autoplay="{{ autoplay }}"
+  data-loop="{{ loop }}"
+  data-muted="{{ muted }}"
+  class="video-controls{% if simple %} video-controls--simple{% endif %}"
+  role="region"
+  aria-label="Video controls"
+  aria-roledescription="region"
+>
+  {% unless simple %}
+    <div class="video-controls__overlay">
+      <button
+        class="video-controls__play-toggle"
+        aria-label="{{ 'video.play' | t }}"
+        js-video-controls="play-toggle"
+      >
+        <span class="video-controls__play-icon">
+          {% render 'icons', icon: 'play' %}
+        </span>
+        <span class="video-controls__pause-icon hidden">
+          {% render 'icons', icon: 'pause' %}
+        </span>
+      </button>
+    </div>
+  {% endunless %}
+
+  {% if simple %}
+    <div class="video-controls__simple-toggle">
+      <button
+        class="video-controls__simple-play-toggle"
+        aria-label="{{ 'video.play' | t }}"
+        js-video-controls="play-toggle"
+      >
+        <span class="video-controls__play-icon">
+          {% render 'icons', icon: 'play' %}
+        </span>
+        <span class="video-controls__pause-icon hidden">
+          {% render 'icons', icon: 'pause' %}
+        </span>
+      </button>
+    </div>
+  {% endif %}
+
+  {% unless simple %}
+    <div class="video-controls__bar">
+      <button
+        class="video-controls__bar-play-toggle"
+        aria-label="{{ 'video.play' | t }}"
+        js-video-controls="play-toggle"
+      >
+        <span class="video-controls__play-icon">
+          {% render 'icons', icon: 'play' %}
+        </span>
+        <span class="video-controls__pause-icon hidden">
+          {% render 'icons', icon: 'pause' %}
+        </span>
+      </button>
+
+      <div class="video-controls__time">
+        <span js-video-controls="current-time">0:00</span>
+        <span class="video-controls__time-separator">/</span>
+        <span js-video-controls="duration">0:00</span>
+      </div>
+
+      <div class="video-controls__progress-wrapper">
+        <input
+          type="range"
+          class="video-controls__progress"
+          js-video-controls="progress"
+          min="0"
+          max="100"
+          value="0"
+          step="0.1"
+          aria-label="{{ 'video.seek' | t }}"
+        >
+        <div
+          class="video-controls__progress-filled"
+          js-video-controls="progress-filled"
+        ></div>
+      </div>
+
+      <button
+        class="video-controls__volume-toggle"
+        aria-label="{{ 'video.mute' | t }}"
+        js-video-controls="volume-toggle"
+      >
+        <span class="video-controls__volume-icon hidden">
+          {% render 'icons', icon: 'sound' %}
+        </span>
+        <span class="video-controls__muted-icon">
+          {% render 'icons', icon: 'mute' %}
+        </span>
+      </button>
+    </div>
+  {% endunless %}
+</uwp-video-controls>

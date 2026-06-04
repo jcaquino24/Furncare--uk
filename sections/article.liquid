@@ -1,0 +1,51 @@
+{%- comment -%}
+  Section: Article Main Display
+  Description:
+    This section is designed to display an article with a formatted publish date, title, and content. It incorporates breadcrumbs for improved navigation and readability.
+  Usage:
+    This section is expected to be used within blog posts or article display pages in Shopify themes, whereby the article data is dynamically pulled from Shopify's backend.
+
+  TODO:
+    - Consider adding accessibility enhancements, such as ARIA labels or roles, to improve semantic meaning and support for screen readers.
+    - Review if semantic tags are needed.
+{%- endcomment -%}
+
+<div class="article-main">
+  <div class="article-main__meta container">
+    <div class="article-main__meta-inner">
+      <a href="{{ blog.url }}" class="article-main__meta-button eyebrow-2xs">
+        < {{ 'blogs.article.back_to_blog' | t }}
+      </a>
+      <div class="article-main__meta-share eyebrow-2xs">
+        {% render 'article-share', article: article %}
+      </div>
+      <div class="article-main__meta-date eyebrow-2xs">
+        {{ 'blogs.article.published_on' | t }}
+        {{ article.published_at | date: '%d.%m.%Y' }}
+      </div>
+    </div>
+  </div>
+
+  <div class="article-main__container container container--small">
+    <div class="article-main__heading">
+      <h1 class="article-main__title title-xl">{{ article.title }}</h1>
+      <div class="article-main__meta-author eyebrow-2xs eyebrow-2xs--bold">
+        {{ article.tags[0] }} | {{ 'blogs.article.written_by' | t: author: article.author }}
+      </div>
+    </div>
+
+    <div class="article-main__content rte">
+      {% capture custom_content %}
+        {% render 'article-custom-content' %}
+      {% endcapture %}
+      {{ article.content | replace: '<p>[custom_contents]</p>', custom_content | replace: '[custom_contents]', custom_content }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Article",
+  "settings": []
+}
+{% endschema %}

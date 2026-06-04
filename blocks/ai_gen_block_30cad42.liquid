@@ -1,0 +1,561 @@
+{% doc %}
+  @prompt
+    Please create a new Shopify theme block for a “Quick Add to Cart” button.
+    
+    The block should let me select a product in the Shopify theme editor/backend using a product picker. When the customer clicks the button, it should add that selected product to the cart using AJAX, without redirecting the customer away from the current page.
+    
+    The front-end button should include:
+    
+    Text: “Click here to add to cart”
+    
+    An icon displayed before the text. I need to be able to change the icon in the theme editor. Please use an image picker for the icon, and also include an option to hide the icon.
+    
+    Theme editor settings needed for the button:
+    
+    Product selector
+    Button text
+    Icon image
+    Show/hide icon
+    Text colour
+    Background colour
+    Hover background colour
+    Font family
+    Font weight/thickness
+    Font style, for example normal or italic
+    Font size
+    Border radius
+    Padding
+    
+    When clicked, the block should add the selected product’s first available variant to the cart. If the product has no available variant, the button should show as disabled and should not try to add the product.
+    
+    After the customer clicks the button, show a small popup/toast notification on the screen.
+    
+    The popup should show either:
+    
+    Success message: “Successfully added to cart”
+    
+    Or an error message if the product could not be added.
+    
+    The popup/toast should also be customisable in the theme editor, including:
+    
+    Success message text
+    Error message text
+    Popup background colour
+    Popup text colour
+    Popup font family
+    Popup font weight/thickness
+    Popup font style
+    Popup border radius
+    Popup position, for example top right or bottom right
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-quick-add-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-quick-add-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: {{ block.settings.button_padding }}px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-family: {{ block.settings.button_font_family.family }}, {{ block.settings.button_font_family.fallback_families }};
+    font-weight: {{ block.settings.button_font_weight }};
+    font-style: {{ block.settings.button_font_style }};
+    font-size: {{ block.settings.button_font_size }}px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+
+  .ai-quick-add-button-{{ ai_gen_id }}:hover:not(:disabled) {
+    background-color: {{ block.settings.button_hover_bg_color }};
+  }
+
+  .ai-quick-add-button-{{ ai_gen_id }}:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .ai-quick-add-icon-{{ ai_gen_id }} {
+    width: {{ block.settings.button_font_size }}px;
+    height: {{ block.settings.button_font_size }}px;
+    flex-shrink: 0;
+  }
+
+  .ai-quick-add-icon-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .ai-quick-add-toast-{{ ai_gen_id }} {
+    position: fixed;
+    z-index: 9999;
+    padding: 16px 24px;
+    background-color: {{ block.settings.toast_bg_color }};
+    color: {{ block.settings.toast_text_color }};
+    border-radius: {{ block.settings.toast_border_radius }}px;
+    font-family: {{ block.settings.toast_font_family.family }}, {{ block.settings.toast_font_family.fallback_families }};
+    font-weight: {{ block.settings.toast_font_weight }};
+    font-style: {{ block.settings.toast_font_style }};
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transform: translateY(20px);
+  }
+
+  .ai-quick-add-toast-{{ ai_gen_id }}.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .ai-quick-add-toast-{{ ai_gen_id }}--top-right {
+    top: 20px;
+    right: 20px;
+  }
+
+  .ai-quick-add-toast-{{ ai_gen_id }}--top-left {
+    top: 20px;
+    left: 20px;
+  }
+
+  .ai-quick-add-toast-{{ ai_gen_id }}--bottom-right {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .ai-quick-add-toast-{{ ai_gen_id }}--bottom-left {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .ai-quick-add-toast-{{ ai_gen_id }}--top-center {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+  }
+
+  .ai-quick-add-toast-{{ ai_gen_id }}--top-center.active {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .ai-quick-add-toast-{{ ai_gen_id }}--bottom-center {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+  }
+
+  .ai-quick-add-toast-{{ ai_gen_id }}--bottom-center.active {
+    transform: translateX(-50%) translateY(0);
+  }
+{% endstyle %}
+
+<quick-add-to-cart-{{ ai_gen_id }}
+  class="ai-quick-add-{{ ai_gen_id }}"
+  data-product-id="{{ block.settings.product.id }}"
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.product %}
+    {% assign first_available_variant = null %}
+    {% for variant in block.settings.product.variants %}
+      {% if variant.available %}
+        {% assign first_available_variant = variant %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
+    <button
+      class="ai-quick-add-button-{{ ai_gen_id }}"
+      data-variant-id="{% if first_available_variant %}{{ first_available_variant.id }}{% endif %}"
+      {% unless first_available_variant %}disabled{% endunless %}
+      aria-label="{{ block.settings.button_text }}"
+    >
+      {% if block.settings.show_icon and block.settings.icon_image %}
+        <span class="ai-quick-add-icon-{{ ai_gen_id }}">
+          <img
+            src="{{ block.settings.icon_image | image_url: width: 100 }}"
+            alt=""
+            loading="lazy"
+            width="100"
+            height="100"
+          >
+        </span>
+      {% endif %}
+      <span>{{ block.settings.button_text }}</span>
+    </button>
+  {% else %}
+    <button
+      class="ai-quick-add-button-{{ ai_gen_id }}"
+      disabled
+      aria-label="{{ block.settings.button_text }}"
+    >
+      {% if block.settings.show_icon and block.settings.icon_image %}
+        <span class="ai-quick-add-icon-{{ ai_gen_id }}">
+          <img
+            src="{{ block.settings.icon_image | image_url: width: 100 }}"
+            alt=""
+            loading="lazy"
+            width="100"
+            height="100"
+          >
+        </span>
+      {% endif %}
+      <span>{{ block.settings.button_text }}</span>
+    </button>
+  {% endif %}
+
+  <div class="ai-quick-add-toast-{{ ai_gen_id }} ai-quick-add-toast-{{ ai_gen_id }}--{{ block.settings.toast_position }}"></div>
+</quick-add-to-cart-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class QuickAddToCart{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.button = this.querySelector('.ai-quick-add-button-{{ ai_gen_id }}');
+        this.toast = this.querySelector('.ai-quick-add-toast-{{ ai_gen_id }}');
+        this.successMessage = {{ block.settings.toast_success_message | json }};
+        this.errorMessage = {{ block.settings.toast_error_message | json }};
+      }
+
+      connectedCallback() {
+        if (this.button) {
+          this.button.addEventListener('click', this.handleAddToCart.bind(this));
+        }
+      }
+
+      async handleAddToCart(event) {
+        event.preventDefault();
+        
+        const variantId = this.button.getAttribute('data-variant-id');
+        
+        if (!variantId) {
+          this.showToast(this.errorMessage, false);
+          return;
+        }
+
+        this.button.disabled = true;
+
+        try {
+          const response = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              id: variantId,
+              quantity: 1
+            })
+          });
+
+          if (response.ok) {
+            this.showToast(this.successMessage, true);
+            
+            document.dispatchEvent(new CustomEvent('cart:updated'));
+          } else {
+            const error = await response.json();
+            this.showToast(error.description || this.errorMessage, false);
+          }
+        } catch (error) {
+          this.showToast(this.errorMessage, false);
+        } finally {
+          this.button.disabled = false;
+        }
+      }
+
+      showToast(message, isSuccess) {
+        this.toast.textContent = message;
+        this.toast.classList.add('active');
+
+        setTimeout(() => {
+          this.toast.classList.remove('active');
+        }, 3000);
+      }
+    }
+
+    customElements.define('quick-add-to-cart-{{ ai_gen_id }}', QuickAddToCart{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Quick add to cart",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Click here to add to cart"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icon",
+      "label": "Show icon",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_image",
+      "label": "Icon image"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#333333"
+    },
+    {
+      "type": "font_picker",
+      "id": "button_font_family",
+      "label": "Font family",
+      "default": "red_hat_display_n4"
+    },
+    {
+      "type": "select",
+      "id": "button_font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "select",
+      "id": "button_font_style",
+      "label": "Font style",
+      "options": [
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "italic",
+          "label": "Italic"
+        }
+      ],
+      "default": "normal"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "button_padding",
+      "label": "Padding",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Toast notification"
+    },
+    {
+      "type": "text",
+      "id": "toast_success_message",
+      "label": "Success message",
+      "default": "Successfully added to cart"
+    },
+    {
+      "type": "text",
+      "id": "toast_error_message",
+      "label": "Error message",
+      "default": "Could not add product to cart"
+    },
+    {
+      "type": "select",
+      "id": "toast_position",
+      "label": "Position",
+      "options": [
+        {
+          "value": "top-right",
+          "label": "Top right"
+        },
+        {
+          "value": "top-left",
+          "label": "Top left"
+        },
+        {
+          "value": "top-center",
+          "label": "Top center"
+        },
+        {
+          "value": "bottom-right",
+          "label": "Bottom right"
+        },
+        {
+          "value": "bottom-left",
+          "label": "Bottom left"
+        },
+        {
+          "value": "bottom-center",
+          "label": "Bottom center"
+        }
+      ],
+      "default": "top-right"
+    },
+    {
+      "type": "color",
+      "id": "toast_bg_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "toast_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "font_picker",
+      "id": "toast_font_family",
+      "label": "Font family",
+      "default": "red_hat_display_n4"
+    },
+    {
+      "type": "select",
+      "id": "toast_font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "select",
+      "id": "toast_font_style",
+      "label": "Font style",
+      "options": [
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "italic",
+          "label": "Italic"
+        }
+      ],
+      "default": "normal"
+    },
+    {
+      "type": "range",
+      "id": "toast_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quick add to cart"
+    }
+  ]
+}
+{% endschema %}

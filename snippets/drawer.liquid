@@ -1,0 +1,33 @@
+{%- liquid
+  assign drawer_direction = drawer_direction | default: 'left'
+-%}
+
+<uwp-drawer
+  modal-name="{{ modal_name }}"
+  drawer-direction="{{ drawer_direction }}"
+  class="drawer"
+  aria-hidden="true"
+  role="region"
+  aria-label="Drawer"
+  aria-roledescription="drawer"
+>
+  {% unless content == blank %}
+    {% comment %} Overlay element {% endcomment %}
+    <div class="modal__overlay" tabindex="-1" data-close-drawer></div>
+
+    {% comment %} Main dialog component {% endcomment %}
+    <aside
+      class="drawer__container"
+      role="dialog"
+      aria-modal="true"
+      js-uwp-modal="modal"
+      {% unless title == blank %}
+        aria-labelledby="drawerTitle"
+      {% else %}
+        aria-label="{{ 'accessibility.drawer_element' | t }}"
+      {% endunless %}
+    >
+      {{ content }}
+    </aside>
+  {% endunless %}
+</uwp-drawer>
