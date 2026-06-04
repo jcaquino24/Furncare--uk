@@ -141,7 +141,11 @@
           "type": "hotspot",
           "settings": {
             "tab": "1",
+<<<<<<< HEAD
             "product": "linton-circular-side-table-nera-oak",
+=======
+            "product": "linton-circular-coffee-table",
+>>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "description": "",
             "desktop_x": 35,
             "desktop_y": 55,
@@ -264,7 +268,11 @@
               "motivo-b301-bed-runner",
               "motivo-b301-chair-cushion",
               "motivo-b301-framed-picture",
+<<<<<<< HEAD
               "linton-circular-side-table-nera-oak"
+=======
+              "linton-circular-coffee-table"
+>>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             ],
             "collection": "",
             "seed_product": "",

@@ -164,7 +164,11 @@
         "heading_FxDXBy": {
           "type": "heading",
           "settings": {
+<<<<<<< HEAD
             "text": "Hello, Georgina!",
+=======
+            "text": "Hello, Carl!",
+>>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "heading_level": "h2",
             "heading_style": "title-display"
           },
@@ -174,7 +178,11 @@
           "type": "tagline",
           "name": "Tagline",
           "settings": {
+<<<<<<< HEAD
             "content": "Congratulations on finding us! We hope you and the team at Park Grove enjoy the cake. Whilst you do, pop the kettle on and watch the below video to find out more about us...",
+=======
+            "content": "Congratulations on finding us! We're delighted to give you exclusive access to our new furniture ranges that are launching next month. Watch the below video to find out more...",
+>>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "tagline_style": "body-lg"
           },
           "blocks": {}
@@ -215,6 +223,7 @@
         "content_alignment": "center"
       }
     },
+<<<<<<< HEAD
     "image_text_AnXHqr": {
       "type": "image-text",
       "blocks": {
@@ -246,13 +255,19 @@
         "section_padding": "--spacing-2xl"
       }
     },
+=======
+>>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
     "richtext_9YY97W": {
       "type": "richtext",
       "blocks": {
         "heading_Vt6bA3": {
           "type": "heading",
           "settings": {
+<<<<<<< HEAD
             "text": "5 Styles, 13 Finishes.",
+=======
+            "text": "5 Styles, 13 Finishes, 1 Collection.",
+>>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "heading_level": "h2",
             "heading_style": "title-display"
           },
@@ -262,7 +277,11 @@
           "type": "tagline",
           "name": "Tagline",
           "settings": {
+<<<<<<< HEAD
             "content": "We're delighted to give you exclusive access to our new furniture ranges that are launching next month. Discover truly bespoke bedrooms in 3 simple steps.",
+=======
+            "content": "Truly bespoke bedrooms in 3 simple steps.",
+>>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "tagline_style": "body-lg"
           },
           "blocks": {}
@@ -289,6 +308,7 @@
         "image_card_YdKMVW": {
           "type": "image_card",
           "settings": {
+<<<<<<< HEAD
             "image": "shopify://shop_images/Galloway_cb03bba7-3c60-4822-b570-f3e1a3ffddc3.png",
             "image_mobile": "shopify://shop_images/Galloway_e32465c3-b0d0-42b8-94e4-17f8b6fe5f96.png",
             "title": "Galloway",
@@ -297,18 +317,36 @@
             "block_colour_scheme": "dark-mode",
             "show_gradient": true,
             "lightbox_image": "shopify://shop_images/Galloway_542f340d-6eb6-4a59-b8df-ae0b47448fe1.png",
+=======
+            "image": "shopify://shop_images/B0A.jpg",
+            "image_mobile": "shopify://shop_images/B0A.jpg",
+            "title": "Galloway",
+            "subtitle": "",
+            "text": "<p>A Georgian inspired model for a traditional, elegant look.</p>",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": true,
+>>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "lightbox_caption": ""
           }
         },
         "image_card_rnGB3p": {
           "type": "image_card",
           "settings": {
+<<<<<<< HEAD
             "image": "shopify://shop_images/Abbott_5de1ee9e-695c-4a6c-9911-da8ad6320859.png",
             "image_mobile": "shopify://shop_images/Abbott.png",
             "title": "Abbott",
             "subtitle": "",
             "text": "",
             "block_colour_scheme": "dark-mode",
+=======
+            "image": "shopify://shop_images/B0B.jpg",
+            "image_mobile": "shopify://shop_images/B0B.jpg",
+            "title": "Abbott",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+>>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "show_gradient": true,
             "lightbox_caption": ""
           }
@@ -316,6 +354,7 @@
         "image_card_QnhtGF": {
           "type": "image_card",
           "settings": {
+<<<<<<< HEAD
             "image": "shopify://shop_images/Tilbury.png",
             "image_mobile": "shopify://shop_images/Tilbury_0a20a59b-2ad7-4ddd-b793-a7ca6b072a0b.png",
             "title": "Tilbury",
@@ -323,12 +362,22 @@
             "text": "",
             "block_colour_scheme": "dark-mode",
             "show_gradient": true,
+=======
+            "image": "shopify://shop_images/Screenshot_2026-03-10_at_16.24.43.png",
+            "image_mobile": "shopify://shop_images/Screenshot_2026-03-10_at_16.24.43.png",
+            "title": "Tilbury",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+>>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "lightbox_caption": ""
           }
         },
         "image_card_WzggzG": {
           "type": "image_card",
           "settings": {
+<<<<<<< HEAD
             "image": "shopify://shop_images/Bronson.png",
             "image_mobile": "shopify://shop_images/Bronson_2bba57f2-8f10-40b1-aa2d-8b8cd30a919e.png",
             "title": "Bronson",
@@ -336,12 +385,20 @@
             "text": "",
             "block_colour_scheme": "dark-mode",
             "show_gradient": true,
+=======
+            "title": "Bronson",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+>>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "lightbox_caption": ""
           }
         },
         "image_card_UNtNfH": {
           "type": "image_card",
           "settings": {
+<<<<<<< HEAD
             "image": "shopify://shop_images/Ellington.png",
             "image_mobile": "shopify://shop_images/Ellington_da814b8b-811d-481e-a3e3-6f9c716a943f.png",
             "title": "Ellington",
@@ -349,6 +406,13 @@
             "text": "",
             "block_colour_scheme": "dark-mode",
             "show_gradient": true,
+=======
+            "title": "Ellington",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+>>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "lightbox_caption": ""
           }
         }
@@ -594,7 +658,11 @@
         "heading_pnWBUd": {
           "type": "heading",
           "settings": {
+<<<<<<< HEAD
             "text": "Worth a chat?",
+=======
+            "text": "We'd love to bring you a sample.",
+>>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "heading_level": "h2",
             "heading_style": "title-display"
           },
@@ -604,7 +672,11 @@
           "type": "tagline",
           "name": "Tagline",
           "settings": {
+<<<<<<< HEAD
             "content": "We'd love to bring you a sample of these new pieces. Please select a date from the options below for when we can meet at your studio with samples.",
+=======
+            "content": "Please select a date from the options below for when we can meet at your studio with samples.",
+>>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "tagline_style": "body-lg"
           },
           "blocks": {}
@@ -654,7 +726,10 @@
     "blocks_YBCEMw",
     "richtext_ppgrRb",
     "image_video_banner_rymz8n",
+<<<<<<< HEAD
     "image_text_AnXHqr",
+=======
+>>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
     "richtext_9YY97W",
     "image_text_blocks_ktBnWr",
     "image_text_blocks_Njxr6K",
