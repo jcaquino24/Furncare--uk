@@ -1,0 +1,91 @@
+<div class="colour-scheme-tester colour-scheme--{{ section.settings.colour_scheme }}">
+  <div class="colour-scheme-tester__content">
+    <h1>Colour scheme tester</h1>
+    <p>This is a test of the colour scheme {{ section.settings.colour_scheme }}</p>
+    <ul>
+      <li>Testing a ul list item</li>
+      <li>Testing a ul list item</li>
+    </ul>
+    <ol>
+      <li>Testing a ol list item</li>
+      <li>Testing a ol list item</li>
+    </ol>
+
+    {% render 'input-checkbox', label: 'Checkbox', scheme: section.settings.colour_scheme %}
+    {% render 'input-checkbox', label: 'Checkbox', scheme: section.settings.colour_scheme, attributes: 'checked' %}
+    {% render 'input-radio', label: 'Radio', scheme: section.settings.colour_scheme %}
+
+    {% render 'button', label: 'Button', style: 'primary', scheme: section.settings.colour_scheme %}
+    {% render 'button', label: 'Button', style: 'secondary', scheme: section.settings.colour_scheme %}
+    {% render 'button', label: 'Button', style: 'underline', scheme: section.settings.colour_scheme %}
+
+    {% render 'button', label: 'Button', style: 'primary', size: 'md', icon: 'arrow-right', scheme: section.settings.colour_scheme %}
+    {% render 'button', label: 'Button', style: 'secondary', size: 'md', icon: 'arrow-right', scheme: section.settings.colour_scheme %}
+    {% render 'button', label: 'Button', style: 'underline', size: 'md', icon: 'arrow-right', scheme: section.settings.colour_scheme %}
+
+  </div>
+</div>
+
+{% stylesheet %}
+  .colour-scheme-tester {
+    padding: var(--spacing-xl);
+    background-color: var(--color-surface-primary);
+    color: var(--color-text-primary);
+  }
+
+  .colour-scheme-tester__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+{% endstylesheet %}
+
+{% schema %}
+  {
+    "name": "Colour scheme tester",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "select",
+        "id": "colour_scheme",
+        "label": "Colour scheme",
+        "default": "base-white-01",
+        "info": "Details of the colour schemes in use are found here [INSERT LINK]",
+        "options": [
+          {
+            "value": "base-white-01",
+            "label": "Base white 01"
+            
+          },
+          {
+            "value": "base-white-02",
+            "label": "Base white 02"
+          },
+          {
+            "value": "warm-stone",
+            "label": "Warm stone"
+          },
+          {
+            "value": "green-01",
+            "label": "Green 01"
+          },
+          {
+            "value": "green-02",
+            "label": "Green 02"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Colour scheme tester",
+        "settings": {
+          "colour_scheme": "base-white-01"
+        }
+      }
+    ]
+  }
+{% endschema %}

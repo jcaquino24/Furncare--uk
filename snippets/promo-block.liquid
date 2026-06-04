@@ -1,0 +1,20 @@
+<div class="promo-block">
+  <div class="promo-block__image">
+    {{ promo_block.image | image_url: width: 1000 | image_tag }}
+  </div>
+
+  {% if promo_block.link != blank %}
+    <a href="{{ promo_block.link }}" class="promo-block__content">
+  {% else %}
+    <div class="promo-block__content">
+  {% endif %}
+  <h2 class="promo-block__title title-xs">{{ promo_block.title }}</h2>
+  <div class="promo-block__button button button--primary">
+    {{ promo_block.link_label }}
+  </div>
+  {% if promo_block.link != blank %}
+    </a>
+  {% else %}
+    </div>
+  {% endif %}
+</div>

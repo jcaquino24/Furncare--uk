@@ -1,0 +1,206 @@
+{% liquid
+  render 'vite-tag' with '@sections/localization-ui.ts'
+
+  assign countries = localization.available_countries | sort: 'name'
+  assign languages = localization.available_languages | sort: 'name'
+  assign is_multi_store = false
+  assign store_instances = false
+  assign show_languages = false
+  if languages.size > 0
+    assign show_languages = true
+  endif
+
+  if shop.metaobjects.store_instance.values != blank
+    assign is_multi_store = true
+  endif
+%}
+
+{% comment %} theme-check-disable {% endcomment %}
+{% capture store_instances %}
+  {
+    "instances": [
+    {% for store_instance in shop.metaobjects.store_instance.values %}
+      {
+        "name": "{{ store_instance.name }}",
+        "publicUrl": "{{ store_instance.public_url }}",
+        "shopifyUrl": "{{ store_instance.shopify_url }}",
+        "supportedLocales": {{ store_instance.supported_locales}},
+        "supportedCountries": {{ store_instance.supported_countries}},
+        "supportedLanguages": {{ store_instance.supported_languages}},
+        "baseCountry": "{{ store_instance.base_country }}",
+        "baseLanguage": "{{ store_instance.base_language }}"
+      }{% unless forloop.last %},{% endunless %}{% endfor %}
+    ]
+  }
+{% endcapture %}
+{% comment %} theme-check-enable {% endcomment %}
+
+{% comment %} theme-check-disable {% endcomment %}
+{% capture store_markets %}
+  {
+    "markets": [
+      {% for country in countries %}
+        {
+          "name": "{{ country.name }}",
+          "isoCode": "{{ country.iso_code }}",
+          "languages": [
+            {% for language in country.available_languages %}
+              {
+                "name": "{{ language.name }}",
+                "isoCode": "{{ language.iso_code | upcase }}"
+              }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]
+        }{% unless forloop.last %},{% endunless %}{% endfor %}
+      ]
+  }
+{% endcapture %}
+{% comment %} theme-check-enable {% endcomment %}
+
+<uwp-localization-ui
+  role="region"
+  class="localization-ui"
+  aria-label="{{ 'localization.localization_modal_title' | t }}"
+  setting-multi-store="{{ is_multi_store }}"
+  setting-store-instances="{{ store_instances | escape }}"
+  setting-store-markets="{{ store_markets | escape }}"
+  setting-current-country="{{ localization.country.iso_code }}"
+  setting-current-language="{{ localization.language.iso_code | upcase }}"
+  setting-persist-days="{{ settings.persist_days }}"
+>
+  {% comment %} theme-check-disable{% endcomment %}
+  {% capture localization_modal %}
+
+    {% comment %}
+      Choices UI
+    {% endcomment %}
+    <div
+      js-localization-ui="choice"
+      class="localization-ui__choice visually-hidden"
+    >
+      <span class="localization-ui__title text-2l--bold">
+        {{ 'localization.choice.looks_like' | t }}
+        <span js-localization-ui="choice-country"></span>
+      </span>
+
+      <span class="localization-ui__text text-m" js-localization-ui="choice-text">
+        {{ 'localization.choice.choose_country' | t }}
+      </span>
+
+      <div class="localization-ui__choice-actions">
+        <button
+          js-localization-ui="shop-here"
+          class="button button--primary localization-ui__button"
+          type="button"
+        >
+          {{ 'localization.choice.shop_here' | t }}
+        </button>
+
+        <button
+          js-localization-ui="change-region"
+          class="localization-ui__button button button--secondary"
+          type="button"
+        >
+          {{ 'localization.choice.change_region' | t }}
+        </button>
+      </div>
+    </div>
+
+    {% comment %}
+      Settings UI
+    {% endcomment %}
+    <div
+      js-localization-ui="settings"
+      class="localization-ui__settings"
+    >
+      {%- form 'localization',
+        id: 'localization-ui-settings-form',
+        class: 'localization-ui__form',
+        return_to: request.path
+      -%}
+        <span class="localization-ui__title text-2l--bold">
+          {{ 'localization.settings.title' | t }}
+        </span>
+        <div class="localization-ui__form-field">
+          <label class="localization-ui__form-label label">
+            {{- 'localization.settings.country' | t -}}
+          </label>
+
+          <select
+              js-localization-ui="country-select"
+              class="localization-ui__form-select"
+              name="country_code"
+            >
+              <option disabled value="">
+                {{ 'localization.settings.country_default' | t }}
+              </option>
+              {%- for country in countries -%}
+                <option
+                  value="{{ country.iso_code }}"
+                  {% if country.iso_code == localization.country.iso_code %}
+                    selected
+                  {% endif %}
+                  {% if country.iso_code == localization.country.iso_code %}
+                    selected
+                  {% endif %}
+                >
+                  {{ country.name }} - {{ country.iso_code -}}
+                </option>
+              {%- endfor -%}
+            </select>
+        </div>
+
+        {% comment %}
+          Language Selector
+        {% endcomment %}
+        {% if show_languages %}
+          <div class="localization-ui__form-field">
+            <label class="localization-ui__form-label label">
+              {{- 'localization.settings.language' | t -}}
+            </label>
+            <select
+              js-localization-ui="language-select"
+              class="localization-ui__form-select"
+              name="locale_code"
+            >
+              <option disabled value="">
+                {{ 'localization.settings.language_default' | t }}
+              </option>
+              {%- for shop_locale in languages -%}
+                <option
+                  value="{{ shop_locale.iso_code }}"
+                  {% if shop_locale.iso_code == localization.language.iso_code %}
+                    selected
+                  {% endif %}
+                >
+                  {{ shop_locale.name }}
+                </option>
+              {%- endfor -%}
+            </select>
+          </div>
+        {% endif %}
+
+        <button
+          js-localization-ui="submit"
+          class="localization-ui__submit button button--primary button--block"
+          type="button"
+        >
+          {{ 'localization.settings.save' | t }}
+        </button>
+      {%- endform -%}
+    </div>
+  {% endcapture %}
+  {% comment %} theme-check-enable {% endcomment %}
+
+  {%
+    render 'modal' with
+    content: localization_modal,
+    modal_name: 'localization',
+  %}
+</uwp-localization-ui>
+
+{% schema %}
+{
+  "name": "Localization UI"
+}
+{% endschema %}

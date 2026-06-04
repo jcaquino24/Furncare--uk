@@ -1,0 +1,77 @@
+{% liquid
+  assign article_image = article.image | default: article.featured_image
+  assign article_url = article.url
+  assign has_video_tag = false
+
+  # Check if article has video tag to show video indicator
+  if show_video_indicator and article.tags contains 'Video'
+    assign has_video_tag = true
+  endif
+
+  # Generate article category badge from first tag (if badges enabled)
+  assign article_category = ''
+  if show_badges and article.tags.size > 0
+    assign article_category = article.tags.first
+  endif
+%}
+
+<article class="blog-article-item">
+  <a href="{{ article_url }}" class="blog-article-item__link">
+    <div class="blog-article-item__image">
+      {% if article_image != blank %}
+        {{
+          article_image
+          | image_url: width: 800, height: 600
+          | image_tag:
+            class: 'blog-article-item__img',
+            alt: article.title,
+            loading: 'lazy'
+        }}
+      {% else %}
+        {% render 'placeholder-image',
+          aspect_ratio: '4/3',
+          class: 'blog-article-item__img'
+        %}
+      {% endif %}
+
+      {% if show_badges or has_video_tag %}
+        <div class="blog-article-item__badges colour-scheme--green-02">
+          {% if has_video_tag %}
+            <span class="blog-article-item__badge blog-article-item__badge--video body-sm">
+              {% render 'icons', icon: 'video-camera' %}
+              <span class="blog-article-item__video-text body-sm">
+                {{- 'blogs.article.video' | t | default: 'Video' -}}
+              </span>
+            </span>
+          {% else %}
+            {% if article_category != blank %}
+              <span class="blog-article-item__badge body-sm">
+                {{ article_category | capitalize }}
+              </span>
+            {% endif %}
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="blog-article-item__content">
+      <div class="blog-article-item__meta">
+        <time
+          class="blog-article-item__date eyebrow-xs"
+          datetime="{{ article.published_at | date: '%Y-%m-%d' }}"
+        >
+          {{ article.published_at | date: '%d.%m.%y' }}
+        </time>
+      </div>
+
+      <h2 class="blog-article-item__title title-2xs">
+        {{ article.title }}
+      </h2>
+
+      <span class="blog-article-item__read-more button button--underline button--underline-with-svg">
+        {{ 'blogs.article.read_more' | t | default: 'Read more' }}
+        {% render 'icons', icon: 'arrow-right' %}
+      </span>
+    </div>
+  </a>
+</article>

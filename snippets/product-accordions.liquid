@@ -1,0 +1,167 @@
+{%- doc -%}
+  Product Accordions
+
+  Renders accordion items for product details including description, dimensions, 
+  specifications, and care instructions.
+
+  @param {product} product - Product object (required)
+  @param {section} section - Section object (optional, for template-level settings)
+
+  @example
+  {% render 'product-accordions', product: product, section: section %}
+{%- enddoc -%}
+
+{%- liquid
+  render 'vite-tag' with '@snippets/accordion.css'
+  render 'vite-tag' with '@snippets/product-accordions.css'
+
+  # Check which accordions have content
+  assign has_description = false
+  if product.description != blank
+    assign has_description = true
+  endif
+
+  assign has_dimensions = false
+  assign dimensions = product.metafields.custom.dimensions.value
+  if dimensions != blank
+    assign has_dimensions = true
+  endif
+
+  assign has_specifications = false
+  if product.metafields.custom.specifications != blank
+    assign has_specifications = true
+  endif
+
+  assign has_care_instructions = false
+  if product.metafields.custom.care_instructions != blank
+    assign has_care_instructions = true
+  endif
+-%}
+
+{% if has_description
+  or has_dimensions
+  or has_specifications
+  or has_care_instructions
+%}
+  <div class="product-accordions">
+    {% comment %} 1. Description {% endcomment %}
+    {% if has_description %}
+      {% assign title = 'product.accordions.description' | t %}
+      {% render 'accordion',
+        title: title,
+        content: product.description,
+        open: true
+      %}
+    {% endif %}
+
+    {% comment %} 2. Dimensions {% endcomment %}
+    {% if has_dimensions %}
+      {% capture dimensions_content %}
+        <div class="product-dimensions">
+          {% if dimensions.image != blank %}
+            <div class="product-dimensions__image">
+              {{
+                dimensions.image
+                | image_url: width: 600
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '300, 600, 800',
+                  alt: 'Product dimensions diagram'
+              }}
+            </div>
+          {% endif %}
+
+          <div class="product-dimensions__info">
+            <div class="product-dimensions__specs">
+              {% if dimensions.width != blank %}
+                <div class="product-dimensions__item">
+                  <span class="product-dimensions__label">Width:</span>
+                  <span class="product-dimensions__value">{{ dimensions.width }}</span>
+                </div>
+              {% endif %}
+
+              {% if dimensions.height != blank %}
+                <div class="product-dimensions__item">
+                  <span class="product-dimensions__label">Height:</span>
+                  <span class="product-dimensions__value">{{ dimensions.height }}</span>
+                </div>
+              {% endif %}
+
+              {% if dimensions.depth != blank %}
+                <div class="product-dimensions__item">
+                  <span class="product-dimensions__label">Depth:</span>
+                  <span class="product-dimensions__value">{{ dimensions.depth }}</span>
+                </div>
+              {% endif %}
+
+              {% if dimensions.weight != blank %}
+                <div class="product-dimensions__item">
+                  <span class="product-dimensions__label">Weight:</span>
+                  <span class="product-dimensions__value">{{ dimensions.weight }}</span>
+                </div>
+              {% endif %}
+            </div>
+
+            {% if dimensions.measuring_guide != blank %}
+              <a 
+                href="{{ dimensions.measuring_guide | file_url }}" 
+                class="product-dimensions__download-link" download
+              >
+                <span>{{ 'product.dimensions.download_measuring_guide' | t }}</span>
+                {% render 'icons', icon: 'download' %}
+              </a>
+            {% endif %}
+
+            {%- comment -%} 5. Price Band {% endcomment %}
+          </div>
+        </div>
+      {% endcapture %}
+
+      {% render 'accordion', title: 'Dimensions', content: dimensions_content %}
+    {% endif %}
+
+    {% comment %} 3. Specifications {% endcomment %}
+    {% if has_specifications %}
+      {% assign specifications_content = product.metafields.custom.specifications
+        | metafield_tag
+      %}
+      {% render 'accordion', title: 'Specifications', content: specifications_content %}
+    {% endif %}
+
+    {% comment %} 4. Care Instructions {% endcomment %}
+    {% if has_care_instructions %}
+      {% assign care_instructions_content = product.metafields.custom.care_instructions
+        | metafield_tag
+      %}
+      {% assign title = 'product.accordions.care_instructions' | t %}
+      {% render 'accordion', title: title, content: care_instructions_content %}
+    {% endif %}
+
+    {% comment %} 5. Sustainability (template-level) {% endcomment %}
+    {% if section.settings.sustainability_content != blank %}
+      {% assign title = 'product.accordions.sustainability' | t %}
+      {% render 'accordion',
+        title: title,
+        content: section.settings.sustainability_content
+      %}
+    {% endif %}
+
+    {% comment %} 6. Warranty (template-level) {% endcomment %}
+    {% if section.settings.warranty_content != blank %}
+      {% assign title = 'product.accordions.warranty' | t %}
+      {% render 'accordion',
+        title: title,
+        content: section.settings.warranty_content
+      %}
+    {% endif %}
+
+    {% comment %} 7. Shipping & Returns (template-level) {% endcomment %}
+    {% if section.settings.shipping_returns_content != blank %}
+      {% assign title = 'product.accordions.shipping_returns' | t %}
+      {% render 'accordion',
+        title: title,
+        content: section.settings.shipping_returns_content
+      %}
+    {% endif %}
+  </div>
+{% endif %}

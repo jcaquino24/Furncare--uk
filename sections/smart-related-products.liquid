@@ -1,0 +1,304 @@
+{% assign current_product = product %}
+{% assign mode = section.settings.mode %}
+{% assign layout = section.settings.layout %}
+{% assign limit = section.settings.limit %}
+
+<div class="smart-related-products page-width">
+  <div class="section-header">
+    <h3 class="section-title">{{ section.settings.heading }}</h3>
+
+    {% if layout == 'carousel' %}
+      <div class="nav-buttons">
+        <button class="prev">‹</button>
+        <button class="next">›</button>
+      </div>
+    {% endif %}
+  </div>
+
+  <div
+  class="products-wrapper" 
+  data-layout="{{ layout }}"
+  style="--per-view: {{ section.settings.products_per_view }}">
+    <div class="products-container">
+
+      {% comment %} ===== PRODUCT SOURCE ===== {% endcomment %}
+
+      {% assign products_list = blank %}
+
+      {% if mode == 'collection' %}
+        {% assign products_list = current_product.collections.first.products %}
+      {% elsif mode == 'ai' %}
+        {% assign products_list = current_product.metafields.custom.ai_related_products.value %}
+      {% endif %}
+
+      {% comment %} ===== LOOP ===== {% endcomment %}
+
+      {% if mode == 'related' %}
+        <!-- Shopify Recommendations -->
+        <div
+          class="product-recommendations"
+          data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ limit }}"
+        >
+        </div>
+
+      {% else %}
+        {% assign count = 0 %}
+        {% for product in products_list %}
+          {% if product.id != current_product.id and count < limit %}
+            {% assign count = count | plus: 1 %}
+            <div class="product-card">
+              <a href="{{ product.url }}">
+                <div class="image-wrapper">
+                  <img
+                    src="{{ product.featured_image | image_url: width: 500 }}"
+                    alt="{{ product.title }}"
+                  >
+                </div>
+                <div class="info">
+                  <p class="title">{{ product.title }}</p>
+                  <span class="price">{{ product.price | money }}</span>
+                </div>
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const wrapper = document.querySelector(".products-wrapper");
+  const container = document.querySelector(".products-container");
+
+  if (!wrapper || !container) return;
+
+  let layout = wrapper.dataset.layout;
+  const items = container.children.length;
+  const gridLimit = {{ section.settings.grid_limit }};
+  const perView = parseInt(getComputedStyle(wrapper).getPropertyValue('--per-view'));
+
+  // ✅ Auto switch grid → carousel
+  if (layout === "grid" && items > gridLimit) {
+    layout = "carousel";
+  }
+
+  if (layout === "carousel") {
+    container.classList.add("carousel");
+
+    let index = 0;
+
+    const prev = document.querySelector(".prev");
+    const next = document.querySelector(".next");
+
+    function update() {
+      const cardWidth = container.querySelector(".product-card").offsetWidth;
+      container.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+
+    next?.addEventListener("click", () => {
+      if (index < items - perView) {
+        index++;
+        update();
+      }
+    });
+
+    prev?.addEventListener("click", () => {
+      if (index > 0) {
+        index--;
+        update();
+      }
+    });
+  }
+
+});
+</script>
+
+
+<style>
+.smart-related-products {
+  margin-top: 60px;
+  background: {{ section.settings.bg_color }};
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.product-card {
+  background: {{ section.settings.card_bg }};
+  padding: {{ section.settings.padding }}px;
+  border-radius: {{ section.settings.card_radius }}px;
+  min-width: 220px;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: {{ section.settings.card_radius }}px;
+}
+
+.title {
+  font-size: {{ section.settings.title_size }}px;
+  color: {{ section.settings.text_color }};
+}
+
+.price {
+  font-size: {{ section.settings.price_size }}px;
+  color: {{ section.settings.price_color }};
+}
+
+.products-container.carousel {
+  display: flex;
+  overflow: hidden;
+}
+
+.products-container.carousel .product-card {
+  flex: 0 0 calc(100% / var(--per-view));
+}
+
+</style>
+
+
+{% schema %}
+{
+  "name": "Smart Related Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "You may also like",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "mode",
+      "label": "Data source",
+      "options": [
+        { "value": "related", "label": "Shopify Related" },
+        { "value": "collection", "label": "Collection" },
+        { "value": "ai", "label": "AI Metafield" }
+      ],
+      "default": "related"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        { "value": "grid", "label": "Grid" },
+        { "value": "carousel", "label": "Carousel" }
+      ],
+      "default": "grid"
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 8,
+      "label": "Total products"
+    },
+    {
+      "type": "range",
+      "id": "grid_limit",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 4,
+      "label": "Grid max before carousel triggers"
+    },
+    {
+      "type": "range",
+      "id": "products_per_view",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4,
+      "label": "Products per slide (carousel)"
+    },
+    {
+  "type": "header",
+  "content": "Style Settings"
+},
+{
+  "type": "color",
+  "id": "bg_color",
+  "label": "Background color",
+  "default": "#ffffff"
+},
+{
+  "type": "color",
+  "id": "card_bg",
+  "label": "Card background",
+  "default": "#f7f7f7"
+},
+{
+  "type": "color",
+  "id": "text_color",
+  "label": "Title color",
+  "default": "#000000"
+},
+{
+  "type": "color",
+  "id": "price_color",
+  "label": "Price color",
+  "default": "#666666"
+},
+{
+  "type": "range",
+  "id": "card_radius",
+  "min": 0,
+  "max": 30,
+  "step": 1,
+  "label": "Card border radius",
+  "default": 10
+},
+{
+  "type": "range",
+  "id": "gap",
+  "min": 0,
+  "max": 40,
+  "step": 2,
+  "label": "Grid gap",
+  "default": 20
+},
+{
+  "type": "range",
+  "id": "title_size",
+  "min": 12,
+  "max": 30,
+  "step": 1,
+  "label": "Product title size",
+  "default": 16
+},
+{
+  "type": "range",
+  "id": "price_size",
+  "min": 10,
+  "max": 24,
+  "step": 1,
+  "label": "Price size",
+  "default": 14
+},
+{
+  "type": "range",
+  "id": "padding",
+  "min": 0,
+  "max": 40,
+  "step": 2,
+  "label": "Card padding",
+  "default": 16
+}
+  ],
+  "presets": [
+    {
+      "name": "Smart Related Products"
+    }
+  ]
+}
+{% endschema %}

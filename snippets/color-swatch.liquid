@@ -1,0 +1,33 @@
+{%- doc -%}
+  @description
+  A color swatch input element for selecting a color option.
+
+  @param {string} id - The unique identifier for the input element.
+  @param {string} name - The name attribute for the input element.
+  @param {string} value - The value attribute for the input element.
+  @param {string} class - Additional classes for the input element.
+  @param {string} color - The color value for the swatch.
+  @param {string} attributes - Additional attributes for the input element.
+
+  @example
+  {% render 'color-swatch', id: 'color1', name: 'color', value: '#ff0000', attributes: 'checked' %}
+{%- enddoc -%}
+
+<label
+  class="color-swatch {{ class }}"
+  for="{{ id }}"
+  style="--color: {{ color }};"
+>
+  <input
+    id="{{ id }}"
+    class="color-swatch__input"
+    type="radio"
+    name="{{ name }}"
+    value="{{ value }}"
+    {{ attributes }}
+  >
+
+  <div class="color-swatch__element"></div>
+
+  {% render 'icons', icon: 'close', class: 'color-swatch__disabled' %}
+</label>

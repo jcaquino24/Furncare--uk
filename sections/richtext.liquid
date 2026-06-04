@@ -1,0 +1,205 @@
+{% render 'vite-tag' with '@sections/richtext.ts' %}
+
+{% liquid
+  assign text_alignment = section.settings.text_alignment
+  if text_alignment == 'left'
+    assign align_items = 'flex-start'
+  elsif text_alignment == 'center'
+    assign align_items = 'center'
+  elsif text_alignment == 'right'
+    assign align_items = 'flex-end'
+  endif
+
+  assign component_scheme = 'light'
+  if section.settings.colour_scheme contains 'green'
+    assign component_scheme = 'dark'
+  endif
+%}
+
+{% capture block_content %}
+  {% if section.blocks.size > 0 %}
+    <div class="richtext__content">
+      {% content_for 'blocks' %}
+    </div>
+  {% endif %}
+{% endcapture %}
+
+{% capture optional_content %}
+  {% if section.settings.optional_richtext != blank %}
+    <div class="richtext__optional-content richtext__content">
+      {{ section.settings.optional_richtext }}
+    </div>
+  {% endif %}
+{% endcapture %}
+{% if block_content != blank or optional_content != blank %}
+  <div
+    class="richtext colour-scheme--{{ section.settings.colour_scheme }}"
+    style="
+      --max-width-desktop: {{ section.settings.max_width_desktop }}%;
+      --text-align: {{ text_alignment }};
+      --align-items: {{ align_items }};
+      --section-padding: var({{ section.settings.section_padding }});
+    "
+  >
+    <div class="container {% if section.settings.small_container %}container--small{% endif %}">
+      {% if section.settings.enable_animation %}
+        <uwp-text-animation
+          role="region"
+          aria-label="Rich text"
+          aria-roledescription="region"
+        >
+      {% endif %}
+      {% if block_content != blank %}
+        {{ block_content }}
+      {% endif %}
+      {% if optional_content != blank %}
+        {{ optional_content }}
+      {% endif %}
+      {% if section.settings.enable_animation %}
+        </uwp-text-animation>
+      {% endif %}
+    </div>
+  </div>
+
+{% endif %}
+
+{% schema %}
+{
+  "name": "Rich Text",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "max_width_desktop",
+      "label": "Max width (Desktop)",
+      "default": 80,
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "%"
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section Padding",
+      "default": "--spacing-4xl",
+      "options": [
+        {
+          "value": "--spacing-2xl",
+          "label": "Narrow"
+        },
+        {
+          "value": "--spacing-4xl",
+          "label": "Default"
+        },
+        {
+          "value": "--spacing-6xl",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "colour_scheme",
+      "label": "Colour scheme",
+      "default": "base-white-01",
+      "options": [
+        {
+          "value": "base-white-01",
+          "label": "Base white 01"
+        },
+        {
+          "value": "base-white-02",
+          "label": "Base white 02"
+        },
+        {
+          "value": "warm-stone",
+          "label": "Warm stone"
+        },
+        {
+          "value": "green-01",
+          "label": "Green 01"
+        },
+        {
+          "value": "green-02",
+          "label": "Green 02"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "Enable text animation",
+      "default": false,
+      "info": "Enable scroll-triggered text animation for headings in this section"
+    },
+    {
+      "type": "richtext",
+      "id": "optional_richtext",
+      "label": "Optional richtext",
+      "info": "This will be displayed below the main richtext content, should be used for metafield connections (optional)"
+    },
+    {
+      "type": "checkbox",
+      "id": "small_container",
+      "label": "Small container",
+      "default": false,
+      "info": "Enable a small container for all the richtext content"
+    }
+  ],
+  "blocks": [
+    { "type": "heading" },
+    { "type": "tagline" },
+    { "type": "button" }
+  ],
+  "presets": [
+    {
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100
+      },
+      "blocks": [
+        {
+          "type": "heading",
+          "settings": {
+            "text": "We design furniture and interiors that are practical, safe, and welcoming. Our focus is creating spaces that support both residents and caregivers."
+          }
+        },
+        {
+          "type": "tagline",
+          "settings": {
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          }
+        },
+        {
+          "type": "button",
+          "settings": {
+            "text": "Button",
+            "url": "#"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

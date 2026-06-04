@@ -1,0 +1,63 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "not_found",
+      "settings": {
+        "title": "404 page not found",
+        "message": "The page you are looking for could not be found.",
+        "button_text": "Continue Shopping"
+      }
+    },
+    "content_blocks_KBG9HX": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_wdQQJh": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/38633b22a7004bd57cf78591487d824f7a0796c3.png",
+            "text": "Contact Us",
+            "link": "shopify://pages/contact-us",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_GBEazL": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/2fa6ad5a451ff814996cddf42c5e31a1a7fe2d03.png",
+            "text": "FAQs",
+            "link": "shopify://pages/faq",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_wdQQJh",
+        "tab1_GBEazL"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "Need Help?",
+        "section_padding": "--spacing-2xl",
+        "tab1_title": "",
+        "tab1_handle": "",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "Collection 2",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "content_blocks_KBG9HX"
+  ]
+}

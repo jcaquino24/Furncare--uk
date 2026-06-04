@@ -1,0 +1,307 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "richtext_q6RNq4": {
+      "type": "richtext",
+      "blocks": {
+        "heading_KxYBUC": {
+          "type": "heading",
+          "settings": {
+            "text": "The Indigo Scheme",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_LqmzTk": {
+          "type": "tagline",
+          "settings": {
+            "content": "PACKAGE SKU: B701",
+            "tagline_style": "body-sm"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_KxYBUC",
+        "tagline_LqmzTk"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "hotspots_bfFtxR": {
+      "type": "hotspots",
+      "blocks": {
+        "tab_gHwhLq": {
+          "type": "tab",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/Untitled_67.jpg",
+            "image_desktop": "shopify://shop_images/Untitled_67.jpg",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "hotspot_a9JU6t": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "portland-gents-wardrobe",
+            "description": "",
+            "desktop_x": 11,
+            "desktop_y": 35,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_Rtw73F": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "portland-three-drawer-chest",
+            "description": "",
+            "desktop_x": 38,
+            "desktop_y": 44,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_RPxeYB": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "portland-three-drawer-bedside",
+            "description": "",
+            "desktop_x": 85,
+            "desktop_y": 63,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_WWcGt8": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "alice-highback-chair-with-wings-luxe-indigo",
+            "description": "",
+            "desktop_x": 24,
+            "desktop_y": 60,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_w4UamA": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "grandios-b701-chair-cushion",
+            "description": "",
+            "desktop_x": 27,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_yGUBJH": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "beatrice-indigo",
+            "description": "",
+            "desktop_x": 42,
+            "desktop_y": 20,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_DUbtC7": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "perla-tub-chair-fabric-luxe-elm",
+            "description": "",
+            "desktop_x": 47,
+            "desktop_y": 39,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_BDqRyP": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "livonia-small-traditional-circular-pedestal-table",
+            "description": "",
+            "desktop_x": 53,
+            "desktop_y": 45,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_BgQHjR": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "small-double-loren-divan-bed-base-grey",
+            "description": "",
+            "desktop_x": 49,
+            "desktop_y": 72,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_HK4R9L": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "grandios-b701-bed-runner",
+            "description": "",
+            "desktop_x": 62,
+            "desktop_y": 54,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_CkYe3F": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "grandios-b701-bed-cushion",
+            "description": "",
+            "desktop_x": 70,
+            "desktop_y": 44,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_q46ckF": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "grandios-b701-framed-picture",
+            "description": "",
+            "desktop_x": 75,
+            "desktop_y": 23,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_7qNhjA": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "grandios-framed-mirror",
+            "description": "",
+            "desktop_x": 56,
+            "desktop_y": 26,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        }
+      },
+      "block_order": [
+        "tab_gHwhLq",
+        "hotspot_a9JU6t",
+        "hotspot_Rtw73F",
+        "hotspot_RPxeYB",
+        "hotspot_WWcGt8",
+        "hotspot_w4UamA",
+        "hotspot_yGUBJH",
+        "hotspot_DUbtC7",
+        "hotspot_BDqRyP",
+        "hotspot_BgQHjR",
+        "hotspot_HK4R9L",
+        "hotspot_CkYe3F",
+        "hotspot_q46ckF",
+        "hotspot_7qNhjA"
+      ],
+      "name": "Hotspots",
+      "settings": {
+        "remove_top_padding": false,
+        "colour_scheme": "base-white-01"
+      }
+    },
+    "product_blocks_Fra7Pt": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_3mFakK": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "portland-bedroom-furniture-bundle",
+              "alice-highback-chair-with-wings-luxe-indigo",
+              "perla-tub-chair-fabric-luxe-elm",
+              "livonia-small-traditional-circular-pedestal-table",
+              "grandios-framed-mirror",
+              "grandios-b701-framed-picture",
+              "grandios-b701-bed-runner",
+              "grandios-b701-bed-cushion",
+              "grandios-b701-chair-cushion"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        },
+        "product_block_gbHrnY": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_3mFakK",
+        "product_block_gbHrnY"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Featured Products",
+        "section_padding": "--spacing-2xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "richtext_q6RNq4",
+    "hotspots_bfFtxR",
+    "product_blocks_Fra7Pt"
+  ]
+}

@@ -1,0 +1,45 @@
+{% if section.settings.layout == 'carousel' %}
+  <swiper-slide>
+{% endif %}
+  {% render 'content-block',
+    blocks_size: section.blocks.size,
+    title: block.settings.title,
+    image: block.settings.image,
+    url: block.settings.url
+  %}
+{% if section.settings.layout == 'carousel' %}
+  </swiper-slide>
+{% endif %}
+{% schema %}
+{
+  "name": "Content block",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Block Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Content block",
+      "settings": {
+        "title": "Block Title",
+        "url": "#"
+      }
+    }
+  ]
+}
+{% endschema %}

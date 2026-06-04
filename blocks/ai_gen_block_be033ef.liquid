@@ -1,0 +1,157 @@
+{% doc %}
+  @prompt
+    Create a custom Liquid block that embeds a HubSpot form using the following embed code: portal ID 145723791, form ID 09631399-dabb-4b06-95ad-b7723e4d52c2, region eu1. The embed should load the HubSpot script from https://js-eu1.hsforms.net/forms/embed/145723791.js (deferred) and render the form using a div with class "hs-form-frame" and the appropriate data attributes. The block should be compact and small in size to fit within an Image with Text section alongside other content blocks.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hubspot-form-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-hubspot-form-wrapper-{{ ai_gen_id }} {
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding }}px;
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-hubspot-form-wrapper-{{ ai_gen_id }} .hs-form-frame {
+    min-height: 200px;
+  }
+
+  .ai-hubspot-form-wrapper-{{ ai_gen_id }} .hs-form-frame iframe {
+    width: 100%;
+    border: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hubspot-form-{{ ai_gen_id }} {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+<hubspot-form-{{ ai_gen_id }}
+  class="ai-hubspot-form-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-hubspot-form-wrapper-{{ ai_gen_id }}">
+    <div
+      class="hs-form-frame"
+      data-portal-id="145723791"
+      data-form-id="09631399-dabb-4b06-95ad-b7723e4d52c2"
+      data-region="eu1"
+    ></div>
+  </div>
+</hubspot-form-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class HubSpotForm{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.scriptLoaded = false;
+      }
+
+      connectedCallback() {
+        this.loadHubSpotScript();
+      }
+
+      loadHubSpotScript() {
+        if (this.scriptLoaded || window.hbspt) {
+          this.renderForm();
+          return;
+        }
+
+        const script = document.createElement('script');
+        script.src = 'https://js-eu1.hsforms.net/forms/embed/v2.js';
+        script.defer = true;
+        script.onload = () => {
+          this.scriptLoaded = true;
+          this.renderForm();
+        };
+        document.head.appendChild(script);
+      }
+
+      renderForm() {
+        const formContainer = this.querySelector('.hs-form-frame');
+        if (!formContainer || !window.hbspt) return;
+
+        const portalId = formContainer.getAttribute('data-portal-id');
+        const formId = formContainer.getAttribute('data-form-id');
+        const region = formContainer.getAttribute('data-region');
+
+        if (window.hbspt.forms) {
+          window.hbspt.forms.create({
+            region: region,
+            portalId: portalId,
+            formId: formId,
+            target: '.hs-form-frame'
+          });
+        }
+      }
+    }
+
+    customElements.define('hubspot-form-{{ ai_gen_id }}', HubSpotForm{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "HubSpot form",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Padding",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HubSpot form"
+    }
+  ]
+}
+{% endschema %}

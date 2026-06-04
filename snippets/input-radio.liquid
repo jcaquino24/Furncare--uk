@@ -1,0 +1,41 @@
+{% doc %}
+  Reusable custom radio snippet.
+
+  @param {string} id - ID of the radio input.
+  @param {string} name - Name of the radio input.
+  @param {string} value - Value of the radio input.
+  @param {string} class - Additional classes for the radio input.
+  @param {string} attributes - Additional HTML attributes for the radio input.
+
+  @example
+  {% render 'input-radio',
+    id: 'form-element',
+    name: 'variant',
+    value: 'yes',
+  %}
+{% enddoc %}
+
+{%  liquid 
+  if scheme == blank
+    assign scheme = section.settings.colour_scheme
+  endif
+
+  if scheme contains 'green'
+    assign scheme_class = 'dark'
+  else
+    assign scheme_class = 'light'
+  endif
+%}
+
+<label class="input-radio input-radio--{{ scheme_class }}" for="{{ id }}">
+  <input
+    id="{{ id }}"
+    class="input-radio__input {{ class }}"
+    type="radio"
+    name="{{ name }}"
+    value="{{ value }}"
+    {{ attributes }}
+  >
+
+  <div class="input-radio__element"></div>
+</label>

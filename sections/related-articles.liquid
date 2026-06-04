@@ -1,0 +1,300 @@
+{% liquid
+  assign first_tag = article.tags.first
+  assign max_articles = 8
+  assign section_id = section.id | default: 'related-articles'
+
+  if section_id == blank or section_id == empty
+    assign section_id = 'related-articles'
+  endif
+
+  # Calculate how many articles we'll actually display
+  assign articles_count = 0
+  assign displayed_articles = ''
+
+  # Count tagged articles first
+  if first_tag != blank
+    for blog_article in blog.articles
+      unless blog_article.id == article.id
+        unless displayed_articles contains blog_article.id
+          for article_tag in blog_article.tags
+            if article_tag == first_tag
+              assign articles_count = articles_count | plus: 1
+              assign displayed_articles = displayed_articles | append: blog_article.id | append: ','
+              break
+            endif
+          endfor
+        endunless
+      endunless
+    endfor
+  endif
+
+  # Count latest articles to fill remaining slots
+  for blog_article in blog.articles
+    unless blog_article.id == article.id
+      unless displayed_articles contains blog_article.id
+        assign articles_count = articles_count | plus: 1
+        assign displayed_articles = displayed_articles | append: blog_article.id | append: ','
+        if articles_count >= max_articles
+          break
+        endif
+      endunless
+    endunless
+  endfor
+
+  # Determine if we need navigation (more than 4 articles)
+  assign show_nav = false
+  if articles_count > 4
+    assign show_nav = true
+  endif
+%}
+
+{% if articles_count > 0 %}
+  <div
+    class="related-articles colour-scheme--{{ section.settings.background_colour_scheme }} {% if show_nav %}related-articles--has-swiper{% endif %}"
+    style="--section-padding: var({{ section.settings.section_padding }});"
+  >
+    <div class="container">
+      {% if section.settings.title != blank %}
+        <div class="related-articles__header">
+          {% render 'title-with-nav',
+            title: section.settings.title,
+            heading_level: 'h2',
+            heading_style: 'eyebrow-sm',
+            show_nav: show_nav,
+            nav_class: 'title-with-nav__nav',
+            section_id: section_id
+          %}
+        </div>
+      {% endif %}
+
+      <div class="related-articles__content">
+        {% if show_nav %}
+          <swiper-container
+            class="related-articles__swiper"
+            slides-per-view="1.75"
+            space-between="12"
+            breakpoints='
+              {
+                "768": {
+                  "spaceBetween": 20,
+                  "slidesPerView": 4
+                }
+              }
+            '
+            navigation-prev-el="#swiper-button-prev-{{ section_id }}"
+            navigation-next-el="#swiper-button-next-{{ section_id }}"
+            role="region"
+            aria-label="Related articles carousel"
+            aria-roledescription="carousel"
+          >
+            {% assign article_count = 0 %}
+            {% assign displayed_articles = '' %}
+
+            {% comment %} First pass: show tagged articles {% endcomment %}
+            {% if first_tag != blank %}
+              {% for blog_article in blog.articles %}
+                {% unless blog_article.id == article.id %}
+                  {% unless displayed_articles contains blog_article.id %}
+                    {% for article_tag in blog_article.tags %}
+                      {% if article_tag == first_tag %}
+                        {% assign article_count = article_count | plus: 1 %}
+                        {% assign displayed_articles = displayed_articles
+                          | append: blog_article.id
+                          | append: ','
+                        %}
+                        {% if article_count <= max_articles %}
+                          <swiper-slide class="related-articles__slide">
+                            {% render 'article-card',
+                              article: blog_article,
+                              show_badges: section.settings.show_badges,
+                              show_video_indicator: section.settings.show_video_indicator,
+                              block_id: section_id,
+                              article_index: article_count
+                            %}
+                          </swiper-slide>
+                        {% endif %}
+                        {% break %}
+                      {% endif %}
+                    {% endfor %}
+                  {% endunless %}
+                {% endunless %}
+              {% endfor %}
+            {% endif %}
+
+            {% comment %} Second pass: fill with latest articles {% endcomment %}
+            {% for blog_article in blog.articles %}
+              {% unless blog_article.id == article.id %}
+                {% unless displayed_articles contains blog_article.id %}
+                  {% assign article_count = article_count | plus: 1 %}
+                  {% assign displayed_articles = displayed_articles
+                    | append: blog_article.id
+                    | append: ','
+                  %}
+                  {% if article_count <= max_articles %}
+                    <swiper-slide class="related-articles__slide">
+                      {% render 'article-card',
+                        article: blog_article,
+                        show_badges: section.settings.show_badges,
+                        show_video_indicator: section.settings.show_video_indicator,
+                        block_id: section_id,
+                        article_index: article_count
+                      %}
+                    </swiper-slide>
+                  {% endif %}
+                {% endunless %}
+              {% endunless %}
+            {% endfor %}
+          </swiper-container>
+
+        {% else %}
+          <div class="related-articles__grid">
+            {% assign article_count = 0 %}
+            {% assign displayed_articles = '' %}
+
+            {% comment %} First pass: show tagged articles {% endcomment %}
+            {% if first_tag != blank %}
+              {% for blog_article in blog.articles %}
+                {% unless blog_article.id == article.id %}
+                  {% unless displayed_articles contains blog_article.id %}
+                    {% for article_tag in blog_article.tags %}
+                      {% if article_tag == first_tag %}
+                        {% assign article_count = article_count | plus: 1 %}
+                        {% assign displayed_articles = displayed_articles
+                          | append: blog_article.id
+                          | append: ','
+                        %}
+                        {% if article_count <= max_articles %}
+                          {% render 'article-card',
+                            article: blog_article,
+                            show_badges: section.settings.show_badges,
+                            show_video_indicator: section.settings.show_video_indicator,
+                            block_id: section_id,
+                            article_index: article_count
+                          %}
+                        {% endif %}
+                        {% break %}
+                      {% endif %}
+                    {% endfor %}
+                  {% endunless %}
+                {% endunless %}
+              {% endfor %}
+            {% endif %}
+
+            {% comment %} Second pass: fill with latest articles {% endcomment %}
+            {% for blog_article in blog.articles %}
+              {% unless blog_article.id == article.id %}
+                {% unless displayed_articles contains blog_article.id %}
+                  {% assign article_count = article_count | plus: 1 %}
+                  {% assign displayed_articles = displayed_articles
+                    | append: blog_article.id
+                    | append: ','
+                  %}
+                  {% if article_count <= max_articles %}
+                    {% render 'article-card',
+                      article: blog_article,
+                      show_badges: section.settings.show_badges,
+                      show_video_indicator: section.settings.show_video_indicator,
+                      block_id: section_id,
+                      article_index: article_count
+                    %}
+                  {% endif %}
+                {% endunless %}
+              {% endunless %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Related Articles",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Explore Related Resources"
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section padding",
+      "default": "--spacing-2xl",
+      "options": [
+        {
+          "value": "--spacing-md",
+          "label": "Narrow"
+        },
+        {
+          "value": "--spacing-2xl",
+          "label": "Default"
+        },
+        {
+          "value": "--spacing-4xl",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badges",
+      "label": "Show category badges",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_video_indicator",
+      "label": "Show video article indicator",
+      "default": false,
+      "info": "Indicates selected articles as video content with icon and badge"
+    },
+    {
+      "type": "select",
+      "id": "background_colour_scheme",
+      "label": "Section background colour",
+      "default": "base-white-01",
+      "options": [
+        {
+          "value": "base-white-01",
+          "label": "Base white 01"
+        },
+        {
+          "value": "base-white-02",
+          "label": "Base white 02"
+        },
+        {
+          "value": "warm-stone",
+          "label": "Warm stone"
+        },
+        {
+          "value": "green-01",
+          "label": "Green 01"
+        },
+        {
+          "value": "green-02",
+          "label": "Green 02"
+        }
+      ]
+    }
+  ],
+  "enabled_on": {
+    "templates": ["article"]
+  },
+  "presets": [
+    {
+      "name": "Related Articles",
+      "settings": {
+        "title": "Explore Related Resources",
+        "section_padding": "--spacing-2xl",
+        "show_badges": true,
+        "show_video_indicator": false,
+        "background_colour_scheme": "base-white-01"
+      }
+    }
+  ]
+}
+{% endschema %}

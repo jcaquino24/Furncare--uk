@@ -1,0 +1,29 @@
+{% doc %}
+  Reusable custom switch snippet that uses a HTML checkbox.
+
+  @param {string} id - ID of the checkbox input.
+  @param {string} name - Name of the checkbox input.
+  @param {string} value - Value of the checkbox input.
+  @param {string} class - Additional classes for the checkbox input.
+  @param {string} attributes - Additional HTML attributes for the checkbox input.
+
+  @example
+  {% render 'input-switch',
+    id: 'form-element',
+    name: 'properties[accepts_marketing]',
+    value: 'yes',
+  %}
+{% enddoc %}
+
+<label class="input-switch" for="{{ id }}">
+  <input
+    id="{{ id }}"
+    class="input-switch__input {{ class }}"
+    type="checkbox"
+    name="{{ name }}"
+    value="{{ value }}"
+    {{ attributes }}
+  >
+
+  <div class="input-switch__element"></div>
+</label>

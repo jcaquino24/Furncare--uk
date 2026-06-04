@@ -1,0 +1,715 @@
+{% liquid
+  assign media_desktop = blank
+  assign media_mobile = blank
+  assign card_blocks = section.blocks | where: 'type', 'card'
+
+  if section.settings.media_type == 'image'
+    assign media_desktop = section.settings.image_desktop
+    assign media_mobile = section.settings.image_mobile
+  elsif section.settings.media_type == 'video'
+    assign media_desktop = section.settings.video_desktop
+    assign media_mobile = section.settings.video_mobile
+  endif
+  if section.settings.show_controls == false
+    assign media_class = 'image-video-banner__media background-image'
+  else
+    assign media_class = 'image-video-banner__media background-image image-video-banner__media--controls'
+  endif
+  assign media_class_desktop = media_class
+  assign media_class_mobile = media_class
+  if media_mobile != blank
+    assign media_class_desktop = media_class | append: ' hide-on-mobile'
+  endif
+
+  if media_desktop != blank
+    assign media_class_mobile = media_class | append: ' hide-on-desktop'
+  endif
+
+  if card_blocks.size > 0
+    assign has_cards = ' has-cards'
+  endif
+
+  assign desktop_ratio = blank
+  assign mobile_ratio = blank
+  if section.settings.media_type == 'video' and section.settings.maintain_aspect_ratio
+    if media_desktop != blank
+      assign desktop_width = media_desktop.width | default: 1920
+      assign desktop_height = media_desktop.height | default: 1080
+      assign desktop_ratio = desktop_width | append: '/' | append: desktop_height
+    endif
+    if media_mobile != blank
+      assign mobile_width = media_mobile.width | default: 768
+      assign mobile_height = media_mobile.height | default: 1024
+      assign mobile_ratio = mobile_width | append: '/' | append: mobile_height
+    elsif media_desktop != blank
+      assign mobile_ratio = desktop_ratio
+    endif
+  endif
+%}
+
+<div
+  class="
+    image-video-banner{{ has_cards }}
+    colour-scheme--{{ section.settings.colour_scheme }}
+    {% if section.settings.maintain_aspect_ratio %}
+     image-video-banner--maintain-aspect
+    {% endif %}
+    {% if section.settings.add_header_offset %}
+      {% if card_blocks.size > 0 %}
+        image-video-banner--header-offset
+      {% else %}
+        image-video-banner--header-offset-no-cards
+      {% endif %}
+    {% endif %}
+  "
+  style="
+    --height-desktop: {{ section.settings.height_desktop }}px;
+    --height-mobile: {{ section.settings.height_mobile }}px;
+    {% if desktop_ratio != blank %}
+      --aspect-ratio-desktop: {{ desktop_ratio }};
+    {% endif %}
+    {% if mobile_ratio != blank %}
+      --aspect-ratio-mobile: {{ mobile_ratio }};
+    {% endif %}
+  "
+>
+  {% assign check_autoplay = false %}
+  {% assign check_muted = section.settings.mute_video %}
+  {% if section.settings.autoplay_video %}
+    {% assign check_autoplay = true %}
+    {% assign check_muted = true %}
+  {% endif %}
+
+  {% comment %} Generate poster URLs for videos {% endcomment %}
+  {% if section.settings.media_type == 'video' %}
+    {% if media_desktop != blank %}
+      {% assign poster_desktop = media_desktop.preview_image
+        | image_url: width: 1920
+      %}
+    {% endif %}
+    {% if media_mobile != blank %}
+      {% assign poster_mobile = media_mobile.preview_image
+        | image_url: width: 768
+      %}
+    {% endif %}
+  {% endif %}
+  {% if section.settings.media_type == 'video' %}
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'title' -%}
+          {% assign alt_text = block.settings.text
+            | default: 'Video Media'
+            | strip_html
+          %}
+      {%- endcase -%}
+    {%- endfor -%}
+
+    {% if media_desktop != blank %}
+      {% assign video_player_html = media_desktop
+        | video_tag:
+          autoplay: check_autoplay,
+          loop: true,
+          muted: check_muted,
+          controls: section.settings.show_controls,
+          class: media_class_desktop,
+          width: 1920,
+          height: 1080,
+          poster: poster_desktop
+        | replace: '<video', '<video aria-hidden="true" tabindex="-1"'
+      %}
+      {{
+        video_player_html
+        | replace: '<img src="', '<img alt="%alt_text%" src="'
+        | replace: '%alt_text%', alt_text
+      }}
+    {% endif %}
+
+    {% if media_mobile != blank %}
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'title' -%}
+            {% assign alt_text = block.settings.text | default: 'Video Media' %}
+        {%- endcase -%}
+      {%- endfor -%}
+      {% assign video_player_html = media_mobile
+        | video_tag:
+          autoplay: check_autoplay,
+          loop: true,
+          muted: check_muted,
+          controls: section.settings.show_controls,
+          class: media_class_mobile,
+          width: 768,
+          height: 1024,
+          poster: poster_mobile
+        | replace: '<video', '<video aria-hidden="true" tabindex="-1"'
+      %}
+      {{
+        video_player_html
+        | replace: '<img src="', '<img alt="%alt_text%" src="'
+        | replace: '%alt_text%', alt_text
+      }}
+    {% endif %}
+  {% else %}
+    {% if media_desktop != blank or media_mobile != blank %}
+      {% if media_desktop %}
+        {{
+          media_desktop
+          | image_url: width: 2048
+          | image_tag:
+            width: 1440,
+            height: 540,
+            widths: '1366, 1536, 1920, 2048, 2560, 2880',
+            sizes: '100vw',
+            class: media_class_desktop
+        }}
+      {% endif %}
+
+      {% if media_mobile %}
+        {{
+          media_mobile
+          | image_url: width: 1440
+          | image_tag:
+            width: 375,
+            height: 540,
+            widths: '320, 480, 640, 768, 960, 1536',
+            sizes: '100vw',
+            class: media_class_mobile
+        }}
+      {% endif %}
+    {% else %}
+      {% render 'placeholder-image',
+        background_color: 'var(--color-surface-primary)',
+        is_background: true
+      %}
+    {% endif %}
+  {% endif %}
+
+  {% if section.settings.show_overlay
+    and section.settings.overlay_background != blank
+  %}
+    <div
+      class="image-video-banner__overlay"
+      style="background: {{ section.settings.overlay_background }};"
+    ></div>
+  {% endif %}
+
+  {% if section.blocks.size > 0 %}
+    <div
+      class="
+        image-video-banner__container
+        image-video-banner__container--{{ section.settings.content_position }}
+        container
+      "
+    >
+      <div
+        class="
+          image-video-banner__content
+          image-video-banner__content--{{ section.settings.content_alignment }}
+        "
+      >
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'eyebrow' -%}
+              <div
+                class="eyebrow--block eyebrow-{{ block.settings.eyebrow_size }}"
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.text }}
+              </div>
+            {%- when 'title' -%}
+              <{{ block.settings.title_element }}
+                class="title--block title-{{ block.settings.title_size }}"
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.text }}
+              </{{ block.settings.title_element }}>
+            {%- when 'button' -%}
+              {%- render 'button',
+                label: block.settings.text,
+                link: block.settings.button_url,
+                new_tab: block.settings.new_tab,
+                style: block.settings.button_style,
+                size: 'md',
+                scheme: section.settings.colour_scheme
+              -%}
+          {%- endcase -%}
+        {%- endfor -%}
+        {%- if card_blocks.size > 0 -%}
+          <div class="image-video-banner__cards">
+            {%- for block in card_blocks -%}
+              {%- render 'mini-card',
+                image: block.settings.image,
+                title: block.settings.title,
+                tagline: block.settings.tagline,
+                button_text: block.settings.button_text,
+                button_url: block.settings.button_url,
+                button_size: 'md',
+                new_tab: block.settings.new_tab,
+                card_style: block.settings.card_style,
+                button_style: block.settings.button_style
+              -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Image - Video Banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "height_desktop",
+      "label": "Height (Desktop)",
+      "default": 540,
+      "min": 300,
+      "max": 800,
+      "step": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "height_mobile",
+      "label": "Height (Mobile)",
+      "default": 540,
+      "min": 300,
+      "max": 800,
+      "step": 10,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "maintain_aspect_ratio",
+      "label": "Maintain aspect ratio",
+      "default": false,
+      "info": "When enabled, the banner will maintain the video/image aspect ratio instead of using fixed height. This setting only applies when Media Type is set to Video."
+    },
+    {
+      "type": "checkbox",
+      "id": "add_header_offset",
+      "label": "Add header offset",
+      "default": false,
+      "info": "If banner is used as a hero section, add header offset to ensure content is not covered by the header."
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media Type",
+      "default": "image",
+      "options": [
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "video",
+          "label": "Video"
+        }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Image (Desktop)",
+      "visible_if": "{{ section.settings.media_type == 'image' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (Mobile)",
+      "visible_if": "{{ section.settings.media_type == 'image' }}"
+    },
+    {
+      "type": "video",
+      "id": "video_desktop",
+      "label": "Video (Desktop)",
+      "visible_if": "{{ section.settings.media_type == 'video' }}"
+    },
+    {
+      "type": "video",
+      "id": "video_mobile",
+      "label": "Video (Mobile)",
+      "visible_if": "{{ section.settings.media_type == 'video' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_controls",
+      "label": "Show controls",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "mute_video",
+      "label": "Mute video",
+      "default": true,
+      "info": "This will mute the video on page load, if autoplay is enabled it's always muted"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay_video",
+      "label": "Autoplay video",
+      "default": true,
+      "info": "This will autoplay the video on page load"
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Show overlay",
+      "default": false
+    },
+    {
+      "type": "color_background",
+      "id": "overlay_background",
+      "label": "Overlay background",
+      "visible_if": "{{ section.settings.show_overlay }}"
+    },
+    {
+      "type": "header",
+      "content": "Styles"
+    },
+    {
+      "type": "select",
+      "id": "colour_scheme",
+      "label": "Colour scheme",
+      "default": "light",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "default": "center-center",
+      "options": [
+        {
+          "value": "left-center",
+          "label": "Left Center"
+        },
+        {
+          "value": "left-bottom",
+          "label": "Left Bottom"
+        },
+        {
+          "value": "center-center",
+          "label": "Center Center"
+        },
+        {
+          "value": "center-bottom",
+          "label": "Center Bottom"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content Alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "eyebrow",
+      "name": "Eyebrow",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Retirement furniture"
+        },
+        {
+          "type": "select",
+          "id": "eyebrow_size",
+          "label": "Eyebrow size",
+          "options": [
+            {
+              "value": "sm",
+              "label": "Small"
+            },
+            {
+              "value": "md",
+              "label": "Medium"
+            }
+          ],
+          "default": "sm"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#f9f7f0"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Title",
+          "default": "Designed for Comfort, Built for <em>Care</em>."
+        },
+        {
+          "type": "select",
+          "id": "title_element",
+          "label": "Title Element",
+          "options": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            }
+          ],
+          "default": "h2"
+        },
+        {
+          "type": "select",
+          "id": "title_size",
+          "label": "Title size",
+          "options": [
+            {
+              "value": "display",
+              "label": "Display"
+            },
+            {
+              "value": "xl",
+              "label": "X-Large"
+            }
+          ],
+          "default": "xl"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#f9f7f0"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Button"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "checkbox",
+          "id": "new_tab",
+          "label": "Open in new tab",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "underline",
+              "label": "Underline"
+            }
+          ],
+          "default": "primary"
+        }
+      ]
+    },
+    {
+      "type": "card",
+      "name": "Card",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Card Title"
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "Tagline",
+          "default": "Card tagline"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "Shop now"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "underline",
+              "label": "Underline"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "checkbox",
+          "id": "new_tab",
+          "label": "Open in new tab",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Style"
+        },
+        {
+          "type": "select",
+          "id": "card_style",
+          "label": "Card style",
+          "options": [
+            {
+              "value": "base-white-01",
+              "label": "Base white 01"
+            },
+            {
+              "value": "base-white-02",
+              "label": "Base white 02"
+            },
+            {
+              "value": "warm-stone",
+              "label": "Warm stone"
+            },
+            {
+              "value": "duck-egg",
+              "label": "Duck Egg"
+            },
+            {
+              "value": "green-01",
+              "label": "Green 01"
+            },
+            {
+              "value": "green-02",
+              "label": "Green 02"
+            }
+          ],
+          "default": "base-white-01"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image - Video Banner",
+      "blocks": [
+        {
+          "type": "eyebrow"
+        },
+        {
+          "type": "title"
+        },
+        {
+          "type": "button"
+        },
+        {
+          "type": "card"
+        },
+        {
+          "type": "card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

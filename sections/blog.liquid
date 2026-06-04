@@ -1,0 +1,140 @@
+{% paginate blog.articles by section.settings.blog_posts_per_page %}
+  <div class="blog colour-scheme--base-white-01">
+    <div class="container">
+      <div class="blog__intro">
+        <div class="blog__intro-title">
+          <h1>
+            {{ blog.title }}
+          </h1>
+        </div>
+        <div class="blog__intro-content body-lg text-center">
+          {{ section.settings.blog_intro }}
+        </div>
+        {% if section.blocks.size > 0 %}
+          <div class="blog__intro-tabs-wrapper">
+            <div class="blog__intro-tabs blog__intro-tabs--desktop">
+              {% for block in section.blocks %}
+                <div class="blog__intro-tab">
+                  {% assign tab_url = block.settings.tab_url
+                    | remove: shop.url
+                  %}
+                  <a
+                    class="blog__intro-tab-link button {% if tab_url == request.path %}active{% endif %}"
+                    href="{{ block.settings.tab_url }}"
+                  >
+                    {{ block.settings.tab_title }}
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+
+            <div class="blog__intro-tabs blog__intro-tabs--mobile">
+              <swiper-container
+                class="blog__intro-tabs__swiper"
+                slides-per-view="3.5"
+                space-between="12"
+                centered-slides="false"
+                navigation-next-el="#blog-tabs-next"
+                role="region"
+                aria-label="Blog tabs"
+                aria-roledescription="carousel"
+              >
+                {% for block in section.blocks %}
+                  <swiper-slide class="blog__intro-slide">
+                    {% assign tab_url = block.settings.tab_url
+                      | remove: shop.url
+                    %}
+                    <a
+                      class="blog__intro-tab-link button {% if tab_url == request.path %}active{% endif %}"
+                      href="{{ block.settings.tab_url }}"
+                    >
+                      {{ block.settings.tab_title }}
+                    </a>
+                  </swiper-slide>
+                {% endfor %}
+              </swiper-container>
+              <!-- navigation arrow outside container -->
+              <button
+                id="blog-tabs-next"
+                class="swiper-button-next blog__intro-tabs-arrow button button--icon-only"
+                aria-label="Next tabs"
+              >
+                <span class="visually-hidden">
+                  {{- 'accessibility.next_tabs' | t -}}
+                </span>
+                <span class="blog__intro-tabs-arrow-icon">
+                  {%- render 'icons', icon: 'arrow-right' -%}
+                </span>
+              </button>
+              <button
+                id="blog-tabs-prev"
+                class="swiper-button-prev blog__intro-tabs-arrow button button--icon-only"
+                aria-label="Previous tabs"
+              >
+                <span class="visually-hidden">
+                  {{- 'accessibility.previous_tabs' | t -}}
+                </span>
+                <span class="blog__intro-tabs-arrow-icon">
+                  {%- render 'icons', icon: 'arrow-left' -%}
+                </span>
+              </button>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="blog__posts">
+        {% for article in blog.articles %}
+          {% render 'article-card', article: article, show_badges: true %}
+        {% endfor %}
+      </div>
+      {% if paginate.pages > 1 %}
+        <div class="blog__pagination">
+          {% render 'pagination', paginate: paginate %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": "Blog",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "blog_intro",
+      "label": "Blog Intro",
+      "default": "<p>Insights, guidance, and inspiration from the world of care furniture—designed to support better living, one space at a time.</p>"
+    },
+    {
+      "type": "range",
+      "id": "blog_posts_per_page",
+      "label": "Blog Posts Per Page",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "info": "The number of blog posts to display per page."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Tab Title"
+        },
+        {
+          "type": "url",
+          "id": "tab_url",
+          "label": "Tab URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

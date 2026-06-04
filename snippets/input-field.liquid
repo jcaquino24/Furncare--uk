@@ -1,0 +1,72 @@
+{% doc %}
+  Reusable custom text field snippet.
+
+  @param {string} id - ID of the text field input.
+  @param {string} label - Label for the text field input.
+  @param {string} help_text - Help text for the text field input.
+  @param {string} input_type - Type of the text field input (e.g., text, email, password). textarea is also supported.
+  @param {string} placeholder - Placeholder text for the text field input.
+  @param {string} name - Name of the text field input.
+  @param {string} value - Value of the text field input.
+  @param {string} class - Additional classes for the text field input.
+  @param {string} attributes - Additional HTML attributes for the text field input.
+  @param {string} error - Error message for the text field input.
+
+  @example
+  {% render 'input-field',
+    id: 'form-element',
+    label: 'First name',
+    type: 'text',
+    name: 'properties[first_name]',
+    placeholder: 'Enter your first name',
+    value: 'John',
+    attributes: 'required',
+    error: 'This field is required',
+  %}
+{% enddoc %}
+
+{%- liquid
+  assign input_type = input_type | default: 'text'
+-%}
+
+<div class="input-field">
+  <div class="input-field__header">
+    <label
+      class="input-field__label eyebrow-2xs eyebrow-2xs--bold"
+      for="{{ id }}"
+    >
+      {{ label }}
+    </label>
+
+    {% if help_text %}
+      <span class="body-xs input-field__help-text">
+        {{ help_text }}
+      </span>
+    {% endif %}
+  </div>
+
+  {% if input_type == 'textarea' %}
+    <textarea
+      id="{{ id }}"
+      class="input-field__input input-field__input--textarea"
+      name="{{ name }}"
+      placeholder="{{ placeholder }}"
+      {{ attributes }}
+    ></textarea>
+
+  {% else %}
+    <input
+      id="{{ id }}"
+      class="input-field__input body-sm {{ class }}"
+      type="{{ input_type }}"
+      name="{{ name }}"
+      value="{{ value }}"
+      placeholder="{{ placeholder }}"
+      {{ attributes }}
+    >
+  {% endif %}
+
+  {% if error %}
+    <p class="input-field__error body-xs">{{ error }}</p>
+  {% endif %}
+</div>

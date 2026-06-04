@@ -1,0 +1,106 @@
+{%- render 'vite-tag' with '@sections/login.ts' -%}
+
+<div class="customers__container container container--xsmall">
+  <h1
+    class="title-display customers__title"
+    js-form-title
+  >
+    {{ 'customer.login.title' | t }}
+  </h1>
+
+  <div id="recover">
+    {% form 'recover_customer_password', class: 'form-group' %}
+      {% assign recover_success = form.posted_successfully? %}
+
+      {% if form.errors %}
+        <div class="notification notification--error">
+          {{ form.errors | default_errors }}
+        </div>
+      {% endif %}
+
+      <div class="form-group__input-wrapper">
+        <label for="email">{{ 'forms.email' | t }}</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="{{ "forms.email" | t }}"
+        >
+      </div>
+
+      <button
+        class="button button--primary"
+        type="submit"
+      >
+        {{ 'customer.recover_password.submit_button' | t }}
+      </button>
+
+      <a
+        href="#login"
+        class="button button--secondary"
+      >
+        {{ 'customer.recover_password.go_back' | t }}
+      </a>
+    {% endform %}
+  </div>
+
+  <div id="login">
+    {% if recover_success %}
+      <div class="notification notification--success">
+        <p>{{ 'customer.login.recover_success' | t }}</p>
+      </div>
+    {% endif %}
+
+    {% form 'customer_login', class: 'form-group' %}
+      {% if form.errors %}
+        <div class="notification notification--error">
+          {{ form.errors | default_errors }}
+        </div>
+      {% endif %}
+
+      <div class="form-group__input-wrapper">
+        <label for="email">{{ 'forms.email' | t }}</label>
+        <input
+          type="email"
+          name="customer[email]"
+          placeholder="{{ "forms.email" | t }}"
+        >
+      </div>
+
+      <div class="form-group__input-wrapper">
+        <label for="password">
+          {{- 'forms.password' | t }}
+          <a
+            href="#recover"
+          >
+            {{ 'forms.forgot_password' | t }}
+          </a>
+        </label>
+        <input
+          type="password"
+          name="customer[password]"
+          placeholder="{{ "forms.password" | t }}"
+        >
+      </div>
+
+      <p class="form-group__message">
+        {{ 'customer.login.register_message_html' | t }}
+      </p>
+
+      <button
+        class="button button--primary"
+        type="submit"
+      >
+        {{ 'customer.login.submit_button' | t }}
+      </button>
+    {% endform %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Login",
+  "tag": "section",
+  "class": "customers",
+  "settings": []
+}
+{% endschema %}

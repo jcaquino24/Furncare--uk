@@ -1,0 +1,68 @@
+{% liquid
+  if section.settings.collections_linklist != blank
+    assign collections = linklists[section.settings.collections_linklist].links | map: 'object'
+  endif
+%}
+
+<div class="list-collections">
+  <div class="container">
+    {% if section.settings.title != blank %}
+      <div class="list-collections__header">
+        <h1 class="title-display">{{ section.settings.title }}</h1>
+      </div>
+    {% endif %}
+
+    {% if section.settings.collections_linklist != blank %}
+      <ul class="list-collections__list">
+        {% for collection in collections %}
+          <li class="list-collections__item">
+            {% render 'content-block',
+              blocks_size: 4,
+              title: collection.title,
+              image: collection.image,
+              url: collection.url
+            %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      {% paginate collections by 24 %}
+        <ul class="list-collections__list">
+          {% for collection in collections %}
+            <li class="list-collections__item">
+              {% render 'content-block',
+                blocks_size: 4,
+                title: collection.title,
+                image: collection.image,
+                url: collection.url
+              %}
+            </li>
+          {% endfor %}
+        </ul>
+
+        {% render 'pagination', paginate: paginate %}
+      {% endpaginate %}
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "List collections",
+  "tag": "section",
+  "class": "list-collections",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "collections_linklist",
+      "label": "Collections"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Collections"
+    }
+  ]
+}
+{% endschema %}

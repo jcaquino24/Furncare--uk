@@ -1,0 +1,166 @@
+{%- comment -%}
+  Section: Contact Main
+  Description:
+    This section features a customizable contact form complemented by dynamically rendered text components such as a subtitle, title, and introductory text. These elements are adjustable through the Shopify theme settings.
+
+  Usage:
+    This section is designed for placement on the contact page of a Shopify store. It enables merchants to easily adapt the text and success messages according to their communication needs.
+
+  TODO:
+    - Implement comprehensive accessibility checks for form elements to ensure compliance with WCAG guidelines, including proper labeling and keyboard navigation.
+    - Check stylesheet and classes exist, if not create them.
+{%- endcomment -%}
+
+<div class="contact-main colour-scheme--base-white-01">
+  <div class="contact-main__container container container--medium">
+    <div class="contact-main__inner">
+      <div class="contact-main__content">
+        {% if section.settings.title != blank %}
+          <h1 class="contact-main__title">{{ section.settings.title }}</h1>
+        {% endif %}
+
+        {% if section.settings.intro_text != blank %}
+          {{ section.settings.intro_text }}
+        {% endif %}
+
+        {% if section.settings.phone != blank
+          or section.settings.email != blank
+          or section.settings.location_text != blank
+          or section.settings.show_social_icons
+        %}
+          <div class="contact-main__connect">
+            <ul class="contact-main__list">
+              {%- if section.settings.phone != blank -%}
+                <li class="contact-main__phone">
+                  {%- if section.settings.phone_icon != blank -%}
+                    {{
+                      section.settings.phone_icon
+                      | image_url: width: 24
+                      | image_tag:
+                        alt: section.settings.phone_icon.alt,
+                        width: 24,
+                        height: 24,
+                        loading: 'lazy'
+                    }}
+                  {%- endif -%}
+                  <a href="tel:{{ section.settings.phone }}">
+                    {{- section.settings.phone -}}
+                  </a>
+                </li>
+              {%- endif -%}
+
+              {%- if section.settings.email != blank -%}
+                <li class="contact-main__email">
+                  {%- if section.settings.email_icon != blank -%}
+                    {{
+                      section.settings.email_icon
+                      | image_url: width: 24
+                      | image_tag:
+                        alt: section.settings.email_icon.alt,
+                        width: 24,
+                        height: 24,
+                        loading: 'lazy'
+                    }}
+                  {%- endif -%}
+                  <a href="mailto:{{ section.settings.email }}">
+                    {{- section.settings.email -}}
+                  </a>
+                </li>
+              {%- endif -%}
+            </ul>
+
+            {%- if section.settings.show_social_icons -%}
+              <div class="contact-main__social">
+                {% render 'social-icons',
+                  base_class: 'social-media',
+                  inner_class: 'list-icons',
+                  color: 'color-text-primary'
+                %}
+              </div>
+            {%- endif -%}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="contact-main__form">
+        {% if section.settings.hubspot_form_embed_code != blank %}
+          {{ section.settings.hubspot_form_embed_code }}
+        {% endif %}
+
+        {% for block in section.blocks %}
+          {% render block %}
+        {% endfor %}
+        {% comment %}
+          {% render 'contact-form',
+            success_message: section.settings.success_message
+          %}
+        {% endcomment %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Contact",
+  "max_blocks": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Get in touch"
+    },
+    {
+      "type": "richtext",
+      "id": "intro_text",
+      "label": "Intro text",
+      "default": "<p>To discuss your care home furniture requirements, find out more info on Furncare or get your latest copy of our care home furniture brochure, please submit this form and we will be in touch shortly.</p>"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Form success message"
+    },
+    {
+      "type": "header",
+      "content": "Contact details"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone",
+      "default": "01603664900"
+    },
+    {
+      "type": "image_picker",
+      "id": "phone_icon",
+      "label": "Phone icon"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "default": "info@furncare.co.uk"
+    },
+    {
+      "type": "image_picker",
+      "id": "email_icon",
+      "label": "Email icon"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_icons",
+      "label": "Show social icons",
+      "default": true
+    },
+    {
+      "type": "html",
+      "id": "hubspot_form_embed_code",
+      "label": "Hubspot form embed code",
+      "info": "You can use this field to add a custom HTML content."
+    }
+  ],
+  "blocks": [{ "type": "@app" }]
+}
+{% endschema %}

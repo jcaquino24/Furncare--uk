@@ -1,0 +1,337 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "hotspots_bfFtxR": {
+      "type": "hotspots",
+      "blocks": {
+        "tab_gHwhLq": {
+          "type": "tab",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/Koppla-L201-main-package-image.jpg",
+            "image_desktop": "shopify://shop_images/Koppla-L201-main-package-image.jpg",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "hotspot_PU7L99": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "emil-4-seater-square-dining-table",
+            "description": "",
+            "desktop_x": 71,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_LXJ4CB": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "malin-side-chair",
+            "description": "",
+            "desktop_x": 72,
+            "desktop_y": 56,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_BkqGXb": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "malin-arm-chair",
+            "description": "",
+            "desktop_x": 90,
+            "desktop_y": 64,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_bXfKbd": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "freja-3-seater-sofa",
+            "description": "",
+            "desktop_x": 53,
+            "desktop_y": 75,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_7YJDbQ": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "freja-2-seater-sofa",
+            "description": "",
+            "desktop_x": 42,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_bAW49F": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-l201-medium-cushion",
+            "description": "",
+            "desktop_x": 36,
+            "desktop_y": 46,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_G9VmTF": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-l201-large-cushion",
+            "description": "",
+            "desktop_x": 31,
+            "desktop_y": 43,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_i9AFjf": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "marit-rectangular-coffee-table",
+            "description": "",
+            "desktop_x": 30,
+            "desktop_y": 65,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_jU6tVh": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "maja-floor-lamp",
+            "description": "",
+            "desktop_x": 24,
+            "desktop_y": 25,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_jhrzfR": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "marit-cube-combo-5",
+            "description": "",
+            "desktop_x": 65,
+            "desktop_y": 31,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_cEkJ9X": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "burlington-steel",
+            "description": "",
+            "desktop_x": 83,
+            "desktop_y": 20,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_XACKH8": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "marit-wall-mounted-42-tv-unit",
+            "description": "",
+            "desktop_x": 17,
+            "desktop_y": 20,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_XNt4zc": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "freja-armchair",
+            "description": "",
+            "desktop_x": 23,
+            "desktop_y": 76,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_ay4nV8": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-l201-baikal-canvas",
+            "description": "",
+            "desktop_x": 50,
+            "desktop_y": 23,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_q99Bdz": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-l201-earth-canvas",
+            "description": "",
+            "desktop_x": 64,
+            "desktop_y": 23,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_KyEGtm": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "koppla-l201-peggys-cove-large-canvas",
+            "description": "",
+            "desktop_x": 88,
+            "desktop_y": 31,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        }
+      },
+      "block_order": [
+        "tab_gHwhLq",
+        "hotspot_PU7L99",
+        "hotspot_LXJ4CB",
+        "hotspot_BkqGXb",
+        "hotspot_bXfKbd",
+        "hotspot_7YJDbQ",
+        "hotspot_bAW49F",
+        "hotspot_G9VmTF",
+        "hotspot_i9AFjf",
+        "hotspot_jU6tVh",
+        "hotspot_jhrzfR",
+        "hotspot_cEkJ9X",
+        "hotspot_XACKH8",
+        "hotspot_XNt4zc",
+        "hotspot_ay4nV8",
+        "hotspot_q99Bdz",
+        "hotspot_KyEGtm"
+      ],
+      "name": "Hotspots",
+      "settings": {
+        "remove_top_padding": false,
+        "colour_scheme": "base-white-01"
+      }
+    },
+    "product_blocks_Fra7Pt": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_3mFakK": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "freja-armchair",
+              "jansson-side-chair-fabric-nevis-putty",
+              "marit-rectangular-coffee-table",
+              "maja-table-lamp",
+              "maja-floor-lamp",
+              "freja-2-seater-sofa",
+              "freja-3-seater-sofa",
+              "marit-cube-combo-5",
+              "marit-wall-mounted-42-tv-unit",
+              "marit-wall-mounted-52-tv-unit",
+              "koppla-l201-baikal-canvas",
+              "koppla-l201-earth-canvas",
+              "koppla-l201-large-cushion",
+              "koppla-l201-medium-cushion",
+              "koppla-l201-peggys-cove-large-canvas"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        },
+        "product_block_gbHrnY": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_3mFakK",
+        "product_block_gbHrnY"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Featured Products",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "blocks_ibLKqa": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_khCcHW": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 60,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_khCcHW"
+      ],
+      "name": "Form embed",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "hotspots_bfFtxR",
+    "product_blocks_Fra7Pt",
+    "blocks_ibLKqa"
+  ]
+}

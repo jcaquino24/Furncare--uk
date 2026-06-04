@@ -1,0 +1,32 @@
+{% doc %}
+  Product USP Component
+
+  Renders product USPs (Unique Selling Points) from metafield.
+
+  @param {product} product - Product object (required)
+
+  @example
+  {% render 'product-usp', product: product %}
+{% enddoc %}
+
+{%- liquid
+  assign usps = product.metafields.custom.usps.value
+
+  unless usps != blank and usps.size > 0
+    break
+  endunless
+-%}
+
+<div class="product-usps">
+  {% for usp in usps %}
+    <div class="product-usp">
+      {% if usp.icon != blank %}
+        <span class="product-usp__icon">
+          {{ usp.icon | image_url: width: 20 | image_tag: alt: usp.text, class: 'product-usp__icon' }}
+        </span>
+      {% endif %}
+      <span class="product-usp__text body-md">{{ usp.text }}</span>
+    </div>
+  {% endfor %}
+</div>
+

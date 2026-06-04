@@ -1,0 +1,136 @@
+{%- comment -%}
+  Section: Product Collection Display
+  Description:
+    This section dynamically manages the presentation of product collections based on device type, implemented as part of a Preact application. It includes settings to customize the number of columns displayed on desktop and mobile interfaces, facilitating responsive and adaptive layouts.
+  Usage:
+    - The <uwp-product-collection> is the Preact application that renders the collection based on settings and user interactions.
+    - The web component is responsible for fetching and displaying the product data dynamically, enhancing user experience through interactive and responsive features.
+
+  TODO:
+    - Review and optimize the initial load performance of the Preact application to ensure faster page rendering.
+    - Consider enhancing accessibility within the Preact app by adding appropriate ARIA labels and roles, ensuring compliance with WCAG guidelines.
+    - Expand testing to cover edge cases and ensure consistent behavior across all major browsers and devices.
+{%- endcomment -%}
+
+{% liquid
+  render 'vite-tag' with '@sections/collection'
+%}
+<uwp-collection
+  collection-handle="{{ collection.handle }}"
+  collection-id="{{ collection.id }}"
+  collection-desktop-columns="{{ section.settings.desktop_columns }}"
+  collection-mobile-columns="{{ section.settings.mobile_columns }}"
+  search-term="{{ search.terms }}"
+  products-per-page="{{ section.settings.products_per_page }}"
+  role="region"
+  aria-label="Collection"
+  aria-roledescription="region"
+></uwp-collection>
+
+<style>
+  body {
+    background: #f9f7f0;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-inline: auto;
+    margin-block: 20px;
+  }
+
+  @media (width <= 768px) {
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .product-grid--condensed {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .product-grid--mobile-1x {
+    grid-template-columns: repeat(1, 1fr);
+  }
+</style>
+
+<div class="collection container colour-scheme--base-white-01">
+  <div class="product-grid product-grid--desktop-4x">
+    {% for product in collection.products limit: 8 %}
+      {% render 'product-card', product: product, title_level: 'h2' %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Columns"
+    },
+    {
+      "id": "desktop_columns",
+      "label": "Desktop Columns",
+      "type": "select",
+      "default": "5",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        },
+        {
+          "value": "5",
+          "label": "5"
+        },
+        {
+          "value": "6",
+          "label": "6"
+        }
+      ]
+    },
+    {
+      "id": "mobile_columns",
+      "label": "Mobile Columns",
+      "type": "select",
+      "default": "2",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ]
+    },
+    {
+      "id": "products_per_page",
+      "label": "Products per page",
+      "type": "range",
+      "default": 24,
+      "min": 1,
+      "max": 50,
+      "step": 1
+    }
+  ]
+}
+{% endschema %}

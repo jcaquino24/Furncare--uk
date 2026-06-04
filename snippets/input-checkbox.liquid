@@ -1,0 +1,50 @@
+{% doc %}
+  Reusable custom checkbox snippet.
+
+  @param {string} id - ID of the checkbox input.
+  @param {string} name - Name of the checkbox input.
+  @param {string} value - Value of the checkbox input.
+  @param {string} parentClass - Parent class for the checkbox input.
+  @param {string} class - Additional classes for the checkbox input.
+  @param {string} attributes - Additional HTML attributes for the checkbox input.
+
+  @example
+  {% render 'input-checkbox',
+    id: 'form-element',
+    name: 'properties[accepts_marketing]',
+    value: 'yes',
+    class: 'input-checkbox__input',
+    attributes: 'required',
+    label: 'Accepts marketing',
+  %}
+{% enddoc %}
+
+{%  liquid 
+  if scheme == blank
+    assign scheme = section.settings.colour_scheme
+  endif
+
+  if scheme contains 'green'
+    assign scheme_class = 'dark'
+  else
+    assign scheme_class = 'light'
+  endif
+%}
+
+<label class="input-checkbox {{ parentClass }} input-checkbox--{{ scheme_class }}" for="{{ id }}">
+  <input
+    id="{{ id }}"
+    class="input-checkbox__input {{ class }}"
+    type="checkbox"
+    name="{{ name }}"
+    value="{{ value }}"
+    {{ attributes }}
+  >
+
+  <div class="input-checkbox__element">
+    {% render 'icons', icon: 'tick' %}
+  </div>
+  {% if label %}
+    <span class="input-checkbox__label">{{ label }}</span>
+  {% endif %}
+</label>

@@ -1,0 +1,610 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_video_banner_Mx3q8g": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_8TMHFP": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "case study",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_DXxf3y": {
+          "type": "title",
+          "settings": {
+            "text": "Woolton Acres Care Home",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_8TMHFP",
+        "title_DXxf3y"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 600,
+        "height_mobile": 430,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Bedroom_One_17_of_26.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(54deg, rgba(255, 250, 99, 1), rgba(38, 37, 32, 0.4) 1%)",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_PhprEj": {
+      "type": "richtext",
+      "blocks": {
+        "heading_mYLH3K": {
+          "type": "heading",
+          "settings": {
+            "text": "Care home interiors on demand for Woolton Acre",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_LFtXUT": {
+          "type": "tagline",
+          "settings": {
+            "content": "Woolton Acre is a magnificent Grade II listed manor house nestling in a beautiful woodland setting in the north west of England. It is undergoing a comprehensive refurbishment and upgrade, and Phase 1 is now fully equipped and furnished, relying heavily on Furncare care home interiors from stock.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_mYLH3K",
+        "tagline_LFtXUT"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "featured_blocks_QcyUqa": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_WB6nUy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Small_Lounge_7_of_48.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_fFNEDD": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Small_Lounge_13_of_48.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_ain8Cx": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Small_Lounge_33_of_48.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_ncCYxY": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_One_19_of_26.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_cdd4rh": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Seven_17_of_20.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_mwpdEi": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Six_20_of_27.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_jMDWjm": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Six_9_of_27.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_6ywzDi": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Six_23_of_27.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_m7RfBM": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Six_12_of_27.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_y9NdDd": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Three_21_of_28.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_cV7xmi": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Three_10_of_28.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_4kYBDL": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Three_11_of_28.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_PiEpix": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Corridor_3_of_31.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_fdkPya": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Corridor_21_of_31.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_gcVd3F": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Corridor_11_of_31.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_GYBcVC": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Large_Lounge_Dining_Room_38_of_54.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_DGPanw": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Large_Lounge_Dining_Room_47_of_54.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_crnUJM": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Large_Lounge_Dining_Room_30_of_54.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_imxEBH": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Large_Lounge_Dining_Room_22_of_54.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_e86KDr": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Large_Lounge_Dining_Room_14_of_54.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_fR46EX": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Large_Lounge_Dining_Room_4_of_54.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_WB6nUy",
+        "block_fFNEDD",
+        "block_ain8Cx",
+        "block_ncCYxY",
+        "block_cdd4rh",
+        "block_mwpdEi",
+        "block_jMDWjm",
+        "block_6ywzDi",
+        "block_m7RfBM",
+        "block_y9NdDd",
+        "block_cV7xmi",
+        "block_4kYBDL",
+        "block_PiEpix",
+        "block_fdkPya",
+        "block_gcVd3F",
+        "block_GYBcVC",
+        "block_DGPanw",
+        "block_crnUJM",
+        "block_imxEBH",
+        "block_e86KDr",
+        "block_fR46EX"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "",
+        "padding": "wide",
+        "layout": "line_grid",
+        "enable_lightbox": true
+      }
+    },
+    "richtext_EW6cqY": {
+      "type": "richtext",
+      "blocks": {
+        "heading_C9ihxn": {
+          "type": "heading",
+          "settings": {
+            "text": "“Daniel set us a challenge which we were ready, willing and able to meet. The turnaround at Woolton Acres is most impressive, and Furncare are proud to have played a part in it.”",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_JPEfFQ": {
+          "type": "tagline",
+          "settings": {
+            "content": "<a href=\"https://furncare.co.uk/the-home-team/\">Arnie Goodenough</a>, Key Accounts Manager, Furncare",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_T6qrbf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_C9ihxn",
+        "tagline_JPEfFQ",
+        "button_T6qrbf"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_text_Rr8iJJ": {
+      "type": "image-text",
+      "blocks": {
+        "images_NXFXtC": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Bedroom_Four_19_of_22.jpg"
+          }
+        },
+        "content_c9CaD6": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "title_size": "xl",
+            "text": "Unusually Short Timeframe\nWoolton Acre has been completed to exacting standards despite the unusually short timeframe available. Having acquired the property, the new owners completed the turnaround with minimum delay. In mid-December 2023, Furncare were invited to bid to furnish all 48 bedrooms and communal areas, including the lounges, dining rooms, day clinic, bar area, quiet rooms, isolation room and corridors.\n\nLook & Feel of a Bespoke Designer Solution\nDetailed interior design proposals were developed at Furncare and even suggested decorative specifications and lighting schematics to ensure every room was bright, light and safe. The plans had the look and feel of a bespoke designer solution, but all the care home interiors were from stock and guarantees were provided assuring delivery within days of confirmation.\n\nThe contract was signed in January 2024 and all 1,831 items ordered were delivered from the Furncare National Distribution Centre. The order was installed in each room just days later in the first week of February.",
+            "button_style": "underline",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_NXFXtC",
+        "content_c9CaD6"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-4xl"
+      }
+    },
+    "richtext_TJAtU7": {
+      "type": "richtext",
+      "blocks": {
+        "heading_wY7KwX": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Daniel Blaney confirmed Furncares ‘White Glove’ delivery team “<em>arrived promptly and took impeccable care with installation</em>”. He was full of praise for the <em>“outstanding dedication to customer satisfaction”</em> from the Furncare team, and added <em>“Their attention to detail, genuine care, and understanding of the unique layout of our building make Furncare Woolton Acre’s top choice for furniture purchases.”</em>Phil Gill, Woolton Acre Site Manager, was equally impressed. <em>“I’ve never received better service in my 30 years experience. I didn’t have to lift a finger…”</em>",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_3xMBBU": {
+          "type": "tagline",
+          "settings": {
+            "content": "Daniel Blaney confirmed Furncares ‘White Glove’ delivery team “<em>arrived promptly and took impeccable care with installation</em>”. He was full of praise for the <em>“outstanding dedication to customer satisfaction”</em> from the Furncare team, and added <em>“Their attention to detail, genuine care, and understanding of the unique layout of our building make Furncare Woolton Acre’s top choice for furniture purchases.</em>",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_ihHhnM": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "<em>”</em>Phil Gill, Woolton Acre Site Manager, was equally impressed. <em>“I’ve never received better service in my 30 years experience. I didn’t have to lift a finger…”</em>",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        },
+        "button_xcfn4f": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Elm Lodge Virtual Tour",
+            "url": "https://www.forestcare.co.uk/wp-content/themes/forestcare/virtual-tour-elm.php",
+            "new_tab": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_wY7KwX",
+        "tagline_3xMBBU",
+        "tagline_ihHhnM",
+        "button_xcfn4f"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_video_banner_xWTgmR": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_YJpC8H": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "text": "Retirement furniture",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_qDHCNx": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "text": "Designed for Comfort, Built for <em>Care</em>.",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_GDbKwj": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_e3GTdX": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_UehPPd": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_YJpC8H",
+        "title_qDHCNx",
+        "button_GDbKwj",
+        "card_e3GTdX",
+        "card_UehPPd"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Screenshot_2025-10-27_115353.png",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "linear-gradient(320deg, rgba(255, 250, 99, 0.2), rgba(203, 68, 194, 1), rgba(255, 250, 99, 0))",
+        "colour_scheme": "light",
+        "content_position": "center-bottom",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_znBbzx": {
+      "type": "richtext",
+      "blocks": {
+        "heading_CBrDgB": {
+          "type": "heading",
+          "name": "Heading",
+          "settings": {
+            "text": "Looking Forward to Phase 2",
+            "heading_level": "h2",
+            "heading_style": "title-xs"
+          },
+          "blocks": {}
+        },
+        "tagline_DLcG7y": {
+          "type": "tagline",
+          "settings": {
+            "content": "With phase 1 now complete and staff recruitment in full swing, Daniel Blaney is now shifting his focus to the next phase which includes a further 23 bedrooms. Arnie Goodenough, Furncare Special Projects Manager, is looking forward to supporting the Woolton Acre team to deliver all the furniture and soft furnishings from stock once again.",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        },
+        "button_bKjrMf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_CBrDgB",
+        "tagline_DLcG7y",
+        "button_bKjrMf"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "product_blocks_hr4bkw": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_HdNPmE": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "the-3p-fulfilled-snowboard",
+              "the-collection-snowboard-liquid",
+              "the-inventory-not-tracked-snowboard-3",
+              "the-complete-snowboard",
+              "the-compare-at-price-snowboard"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_HdNPmE"
+      ],
+      "disabled": true,
+      "name": "Product blocks",
+      "settings": {
+        "title": "Products featured in this case study",
+        "section_padding": "--spacing-2xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_video_banner_Mx3q8g",
+    "richtext_PhprEj",
+    "featured_blocks_QcyUqa",
+    "richtext_EW6cqY",
+    "image_text_Rr8iJJ",
+    "richtext_TJAtU7",
+    "image_video_banner_xWTgmR",
+    "richtext_znBbzx",
+    "product_blocks_hr4bkw"
+  ]
+}

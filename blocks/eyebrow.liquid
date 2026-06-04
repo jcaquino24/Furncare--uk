@@ -1,0 +1,26 @@
+<p class="eyebrow--block" {{ block.shopify_attributes }}>
+  {{ block.settings.text }}
+</p>
+
+{% schema %}
+{
+  "name": "Eyebrow",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Eyebrow text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Eyebrow",
+      "settings": {
+        "text": "Eyebrow text"
+      }
+    }
+  ]
+}
+{% endschema %}

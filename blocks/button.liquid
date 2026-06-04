@@ -1,0 +1,67 @@
+{% liquid
+  assign target = blank
+  if block.settings.new_tab == true
+    assign target = '_blank'
+  endif
+%}
+{% render 'button',
+  label: block.settings.text,
+  link: block.settings.url,
+  new_tab: block.settings.new_tab,
+  style: block.settings.style,
+  target: target
+%}
+{% schema %}
+{
+  "name": "Button",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "default": "primary",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "underline",
+          "label": "Underline"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Button"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "new_tab",
+      "label": "Open in new tab?",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Button",
+      "settings": {
+        "text": "Button",
+        "url": "#"
+      }
+    }
+  ]
+}
+{% endschema %}

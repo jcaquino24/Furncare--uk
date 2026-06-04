@@ -1,0 +1,93 @@
+{%- liquid
+  unless section.blocks.size > 0
+    continue
+  endunless
+
+  render 'vite-tag' with '@sections/announcement-bar.ts'
+-%}
+
+<uwp-announcement-bar
+  style="--color-surface-primary: transparent;--color-border-primary: transparent; --color-surface-invert: transparent;"
+  class="announcement-bar announcement-bar--{{ section.settings.theme }}"
+  aria-label="{{ 'content_carousel.label' | t: section_id: section.id }}"
+  role="region"
+  aria-roledescription="carousel"
+>
+  <div class="announcement-bar__wrapper">
+    <swiper-container
+      {% if section.blocks.size > 1 %}
+        autoplay="{{ section.settings.autoplay }}"
+        autoplay-delay="{{ section.settings.autoplay_speed | times: 1000 }}"
+        loop="true"
+        centered-slides="true"
+      {% endif %}
+      slides-per-view="1"
+      role="region"
+    >
+      {% for block in section.blocks %}
+        <swiper-slide class="announcement-bar__message body-md">
+          {{ block.settings.message }}
+        </swiper-slide>
+      {% endfor %}
+    </swiper-container>
+
+    {% if section.blocks.size > 1 %}
+      {% render 'swiper-nav', layout: 'edges', section_id: section.id %}
+    {% endif %}
+  </div>
+</uwp-announcement-bar>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable Autoplay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay Speed",
+      "default": 5,
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "sec"
+    },
+    {
+      "type": "select",
+      "id": "theme",
+      "label": "Color Theme",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "light"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Message",
+      "type": "message",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "message",
+          "label": "Message",
+          "default": "<p>This is a test message</p>"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

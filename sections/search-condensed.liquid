@@ -1,0 +1,34 @@
+{% comment %}
+  Renders a condensed list of product results for instant search.
+  Used by templates/search.condensed.json via section type "search-condensed".
+{% endcomment %}
+
+{% liquid
+  assign has_products = false
+  for item in search.results
+    if item.object_type == 'product'
+      assign has_products = true
+      break
+    endif
+  endfor
+%}
+
+<div class="product-grid product-grid--condensed">
+  {% if has_products %}
+    {% for item in search.results %}
+      {% if item.object_type == 'product' %}
+        {% render 'product-card',
+          product: item,
+          product_card_style: 'condensed'
+        %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Search condensed",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,255 @@
+{%- doc -%}
+  @description Mobile menu component
+
+  @param {Object} menu - The menu to display
+  @param {Object} all_menu_promotions - All menu promotions
+  @param {Object} support_links - Support links
+
+  @example
+  {% render 'mobile-menu',
+    menu: linklists[section.settings.menu],
+    all_menu_promotions: all_menu_promotions,
+    support_links: support_links
+  %}
+{%- enddoc -%}
+
+{% capture menu_secondary %}
+  {% comment @TODO: Add wishlist back in once we have a wishlist feature %}
+  <a class="mobile-menu__action" href="#">
+    {% render 'icons', icon: 'wishlist' %}
+
+    <span class="mobile-menu__action-label body-md">
+      {{ 'header.wishlist' | t }}
+    </span>
+  </a>
+  {% endcomment %}
+
+  <a class="mobile-menu__action" href="{{ routes.account_url }}">
+    {% render 'icons', icon: 'account' %}
+
+    <span class="mobile-menu__action-label body-md">
+      {{ 'header.account' | t }}
+    </span>
+  </a>
+
+  <div class="mobile-menu__divider"></div>
+
+  {% if support_links.size > 0 %}
+    <div class="mobile-menu__support-links">
+      {% for block in support_links %}
+        <a class="mobile-menu__support-link" href="{{ block.settings.url }}">
+          {% if block.settings.icon != blank %}
+            {{ block.settings.icon }}
+          {% endif %}
+
+          {% if block.settings.label != blank %}
+            <span class="mobile-menu__support-link-label body-md">
+              {{ block.settings.label }}
+            </span>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endcapture %}
+
+<uwp-mobile-menu
+  class="mobile-menu"
+  role="region"
+  aria-label="Mobile menu"
+  aria-roledescription="region"
+>
+  <div class="mobile-menu__menu-primary">
+    {% for link in menu.links %}
+      {% if link.links.size > 0 %}
+        <button
+          class="mobile-menu__link mobile-menu__link--trigger body-md"
+          type="button"
+          js-mobile-menu="submenu-trigger"
+          data-submenu-id="{{ link.title | handle }}"
+          id="mobile-menu-trigger-{{ link.title | handle }}"
+          aria-controls="mobile-menu-{{ link.title | handle }}"
+          aria-expanded="false"
+        >
+          {{ link.title }}
+          {% render 'icons', icon: 'arrow-right' %}
+        </button>
+
+      {% else %}
+        <a class="mobile-menu__link body-md" href="{{ link.url }}">
+          {{ link.title }}
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="mobile-menu__menu-secondary">
+    {{ menu_secondary }}
+  </div>
+
+  {% for link in menu.links %}
+    {%- liquid
+      unless link.links.size > 0
+        continue
+      endunless
+
+      assign menu_packages = blank
+      assign menu_promo_banner = blank
+      assign menu_title = blank
+      assign menu_promo_block = blank
+
+      for block in all_menu_promotions
+        if block.settings.menu_title == link.title
+          assign menu_packages = block.settings.package
+          assign menu_promo_banner = block.settings.promo_banner
+          assign menu_title = block.settings.title
+          assign menu_promo_block = block
+          break
+        endif
+      endfor
+    -%}
+
+    <div
+      class="mobile-menu__submenu"
+      js-mobile-menu="submenu"
+      data-submenu-id="{{ link.title | handle }}"
+      id="mobile-menu-{{ link.title | handle }}"
+      role="region"
+      aria-labelledby="mobile-menu-trigger-{{ link.title | handle }}"
+    >
+      <div class="mobile-menu__submenu-inner">
+        <button
+          class="mobile-menu__submenu-close"
+          type="button"
+          js-mobile-menu="close"
+        >
+          {% render 'icons', icon: 'arrow-left' %}
+
+          <p class="body-mb body-md--bold">
+            {{ link.title }}
+          </p>
+        </button>
+
+        {% if menu_title != blank %}
+          <div class="mobile-menu__submenu-title body-md body-md--bold">
+            {{ menu_title }}
+          </div>
+        {% endif %}
+
+        <div class="mobile-menu__submenu-menu">
+          {% for child_link in link.links %}
+            <details class="mobile-menu__sublink-wrapper">
+              <summary class="mobile-menu__sublink-trigger">
+                <p class="body-md body-md--bold">
+                  {{ child_link.title }}
+                </p>
+
+                {% render 'icons', icon: 'plus' %}
+                {% render 'icons', icon: 'minus' %}
+              </summary>
+
+              <div class="mobile-menu__submenu-content">
+                {% for grandchild_link in child_link.links %}
+                  <a
+                    class="mobile-menu__sublink-link body-md"
+                    href="{{ grandchild_link.url }}"
+                  >
+                    {{ grandchild_link.title }}
+                  </a>
+                {% endfor %}
+              </div>
+            </details>
+          {% endfor %}
+        </div>
+
+        {% if menu_packages != blank %}
+          <details class="mobile-menu__sublink-wrapper">
+            <summary class="mobile-menu__sublink-trigger">
+              <p class="body-md body-md--bold">
+                {{ menu_packages.title }}
+              </p>
+
+              {% render 'icons', icon: 'plus' %}
+              {% render 'icons', icon: 'minus' %}
+            </summary>
+
+            <div class="mobile-menu__submenu-content">
+              {% if menu_packages.description != blank %}
+                <div class="mobile-menu__package-description body-md">
+                  {{ menu_packages.description }}
+                </div>
+              {% endif %}
+
+              <div class="mobile-menu__package-items">
+                {% for item in menu_packages.items.value %}
+                  <a
+                    class="mobile-menu__package-item body-md"
+                    href="{{ item.link.value.url }}"
+                  >
+                    {{
+                      item.image
+                      | image_url: width: 400
+                      | image_tag:
+                        class: 'mobile-menu__package-item-image',
+                        loading: 'lazy'
+                    }}
+
+                    {% if item.title != blank %}
+                      <p class="mobile-menu__package-item-title body-md body-md--bold">
+                        {{ item.title }}
+                      </p>
+                    {% endif %}
+
+                    {% if item.description != blank %}
+                      <div class="mobile-menu__package-item-description body-md">
+                        {{ item.description }}
+                      </div>
+                    {% endif %}
+
+                    {% render 'button',
+                      label: item.link.value.text,
+                      style: 'underline',
+                      size: 'md'
+                    %}
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+          </details>
+        {% endif %}
+
+        {% if menu_promo_banner != blank %}
+          {% assign overlay_style = menu_promo_block.settings.overlay_style
+            | default: 'primary'
+          %}
+          <div
+            class="mobile-menu__promo-banner {{ overlay_style }}"
+            style="--image: url({{ menu_promo_banner.image | image_url: width: 400, height: 300 }})"
+          >
+            {% if menu_promo_block.settings.show_overlay == true %}
+              <div
+                class="mobile-menu__promo-banner-overlay overlay--{{ overlay_style }}"
+              ></div>
+            {% endif %}
+
+            <p class="title-xs">
+              {{ menu_promo_banner.title }}
+            </p>
+
+            {% render 'button',
+              style: overlay_style,
+              size: 'md',
+              class: 'button--full-width',
+              label: menu_promo_banner.cta.value.text,
+              link: menu_promo_banner.cta.value.url
+            %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="mobile-menu__submenu-footer">
+        {{ menu_secondary }}
+      </div>
+    </div>
+  {% endfor %}
+</uwp-mobile-menu>

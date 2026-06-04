@@ -1,0 +1,162 @@
+{%- comment %}<locksmith:2d0d>{% endcomment -%}
+  {%- include 'locksmith' -%}
+{%- comment %}</locksmith:2d0d>{% endcomment -%}
+
+<!doctype html>
+<html lang="{{ shop.locale }}">
+  <head>
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wxmb2evbaq");
+</script>
+
+    {{ locksmith_initializations }}
+    {% comment %} Meta information {% endcomment %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%- comment %}<locksmith:a311>{% endcomment -%}
+      {%- capture var %}{% render 'locksmith-variables', variable: 'transparent', hiding_scope: 'resource' %}{% endcapture %}{% if var == 'true' %}<meta name="description" content="{{ page_description }}">{% endif -%}
+      {%- comment %}original: <meta name="description" content="{{ page_description }}">{%- endcomment %}
+    {%- comment %}</locksmith:a311>{% endcomment -%}
+
+    {%- liquid
+      render 'vite-tag' with 'critical.css', preload_stylesheet: true
+      render 'vite-tag' with 'main.css'
+      render 'vite-tag' with 'main.ts'
+    -%}
+
+    {% if settings.favicon != null %}
+      <link
+        rel="shortcut icon"
+        href="{{ settings.favicon | image_url: width: 32 }}"
+        type="image/png"
+      >
+      <link
+        rel="apple-touch-icon"
+        href="{{ settings.favicon | image_url: width: 180 }}"
+      >
+    {% endif %}
+
+    {% comment %} Preconnects {% endcomment %}
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {%- unless settings.type_body_font.system? -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- endunless -%}
+
+    {% comment %} Preloads {% endcomment %}
+    {%- unless settings.type_body_font.system? -%}
+      <link
+        rel="preload"
+        as="font"
+        href="{{ settings.type_body_font | font_url }}"
+        type="font/woff2"
+        crossorigin
+      >
+    {%- endunless -%}
+
+    {% comment %} Big Caslon font preloads {% endcomment %}
+    <link
+      rel="preload"
+      as="font"
+      href="{{ 'Big_Caslon_Medium.woff' | asset_url }}"
+      type="font/woff"
+      crossorigin
+    >
+    <link
+      rel="preload"
+      as="font"
+      href="{{ 'Big_Caslon_Bold.woff' | asset_url }}"
+      type="font/woff"
+      crossorigin
+    >
+
+    {% comment %} Scripts and utils {% endcomment %}
+    {% render 'header-scripts' %}
+
+    {% comment %} Theme variables {% endcomment %}
+    {% render 'theme-variables' %}
+    {% render 'theme-style-variables' %}
+    {% unless theme.role == 'development' %}
+      <style>
+        {{ 'uwp.critical.css' | inline_asset_content }}
+      </style>
+    {% endunless %}
+
+    {% comment %} Required header content (trekkie etc) {% endcomment %}
+    {{ content_for_header }}
+
+    {% render 'furncare-seo-schema' %}
+  </head>
+  <body class="template-{{ template.name }}">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5745TTG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <a class="visually-hidden focusable skip-link" href="#main-content">
+      {{ 'accessibility.skip_to_content' | t }}
+    </a>
+
+    <uwp-cart
+      role="region"
+      aria-label="Cart"
+      aria-roledescription="region"
+    ></uwp-cart>
+    {% sections 'header-group' %}
+
+    <!-- Megamenu overlay -->
+    <div class="megamenu-overlay" js-megamenu="overlay"></div>
+
+    <main id="main-content" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    {% sections 'footer-group' %}
+
+    {% comment %} Global drawers - rendered at root level to avoid z-index issues {% endcomment %}
+    <div id="global-drawers">
+      {% if template.name == 'product'
+        and product.metafields.custom.related_package != blank
+      %}
+        {% render 'related-package-drawer',
+          package: product.metafields.custom.related_package.value
+        %}
+      {% endif %}
+    </div>
+    <!-- begin olark code -->
+    <script type="text/javascript" async>
+      (function (o, l, a, r, k, y) {
+        if (o.olark) return;
+        r = 'script';
+        y = l.createElement(r);
+        r = l.getElementsByTagName(r)[0];
+        y.async = 1;
+        y.src = '//' + a;
+        r.parentNode.insertBefore(y, r);
+        y = o.olark = function () {
+          k.s.push(arguments);
+          k.t.push(+new Date());
+        };
+        y.extend = function (i, j) {
+          y('extend', i, j);
+        };
+        y.identify = function (i) {
+          y('identify', (k.i = i));
+        };
+        y.configure = function (i, j) {
+          y('configure', i, j);
+          k.c[i] = j;
+        };
+        k = y._ = { s: [], t: [+new Date()], c: {}, l: a };
+      })(window, document, 'static.olark.com/jsclient/loader.js');
+      /* custom configuration goes here (www.olark.com/documentation) */ olark.identify(
+        '6982-996-10-5917',
+      );
+    </script>
+    <!-- end olark code -->
+  </body>
+</html>

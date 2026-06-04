@@ -1,0 +1,150 @@
+{% comment %}
+  * /=========================================
+  *   This file houses all additional utilities
+  *   and scripts for the document <head>
+  *
+  *   It renders before the main js,
+  *   so if you want to set any js variables to
+  *   liquid properties you can here.
+  * \=========================================
+{% endcomment %}
+
+{% comment %} Adds canonical urls {% endcomment %}
+<link rel="canonical" href="{{ canonical_url }}">
+
+{% comment %} Sets the page title to something SEO friendly {% endcomment %}
+{%- capture seo_title -%}
+  {%- if template == 'search' and search.performed == true -%}
+    Search Results for {{ search.terms }} - {{ search.results_count }} results found
+  {%- else -%}
+    {{ page_title }}
+  {%- endif -%}
+  {%- if current_tags -%}
+    {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; Tagged with {{ meta_tags }}
+  {%- endif -%}
+  {%- if current_page != 1 -%}
+    &ndash; Page {{ current_page }}
+  {%- endif -%}
+  {%- assign escaped_page_title = page_title | escape -%}
+  {%- unless escaped_page_title contains shop.name -%}
+    &nbsp;&ndash; {{ shop.name }}
+  {%- endunless -%}
+{%- endcapture -%}
+<title>{{ seo_title | strip }}</title>
+
+{% comment %}
+  Default rich snippets
+  - Product
+  - Article
+  - Sitelinks search box
+{% endcomment %}
+{% if product %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Product",
+      "name": {{ product.title | json }},
+      "url": {{ request.origin | append: product.url | json }},
+      {% if seo_media and settings.rs_product_image -%}
+        {%- assign media_size = seo_media.preview_image.width -%}
+        "image": [
+          {{ seo_media | image_url: width: media_size | prepend: "https:" | json }}
+        ],
+      {%- endif %}
+      {% if settings.rs_product_description -%}
+        "description": {{ product.description | strip_html | json }},
+      {%- endif %}
+      {% if product.selected_or_first_available_variant.sku != blank and settings.rs_product_sku -%}
+        "sku": {{ product.selected_or_first_available_variant.sku | json }},
+      {%- endif %}
+      {% if settings.rs_product_brand -%}
+        "brand": {
+          "@type": "Thing",
+          "name": {{ product.vendor | json }}
+        },
+      {%- endif %}
+      "offers": [
+        {%- for variant in product.variants -%}
+          {
+            "@type" : "Offer",
+            {%- if variant.sku != blank and settings.rs_product_sku -%}
+              "sku": {{ variant.sku | json }},
+            {%- endif -%}
+            "availability" : "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+            "price" : {{ variant.price | divided_by: 100.00 | json }},
+            "priceCurrency" : {{ cart.currency.iso_code | json }},
+            "url" : {{ request.origin | append: variant.url | json }}
+          }{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ]
+    }
+  </script>
+{% endif %}
+{% if article %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      {% if settings.rs_article_body %}
+        "articleBody": {{ article.content | strip_html | json }},
+      {% endif %}
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ request.origin | append: page.url | json }}
+      },
+      "headline": {{ article.title | json }},
+      {% if article.excerpt != blank and settings.rs_article_description %}
+        "description": {{ article.excerpt | strip_html | json }},
+      {% endif %}
+      {% if article.image and settings.rs_article_image %}
+        {% assign image_size = article.image.width %}
+        "image": [
+          {{ article | image_url: width: image_size | prepend: "https:" | json }}
+        ],
+      {% endif %}
+      "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+      "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+      "author": {
+        "@type": "Person",
+        "name": {{ settings.rs_article_author | default: article.author | json }}
+      },
+      {% if settings.rs_article_publisher %}
+        "publisher": {
+          "@type": "Organization",
+          {% if settings.share_image %}
+            {% assign image_size = settings.share_image.width %}
+            "logo": {
+              "@type": "ImageObject",
+              "height": {{ settings.share_image.height | json }},
+              "url": {{ settings.share_image | image_url: width: image_size | prepend: "https:" | json }},
+              "width": {{ settings.share_image.width | json }}
+            },
+          {% endif %}
+          "name": {{ shop.name | json }}
+        }
+      {% endif %}
+    }
+  </script>
+{% endif %}
+{% if template == 'index' %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": {{ request.origin | json }},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ request.origin }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+{% endif %}
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5745TTG');</script>
+<!-- End Google Tag Manager -->

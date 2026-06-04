@@ -1,0 +1,386 @@
+{%- liquid
+  render 'vite-tag' with '@snippets/product-grid.ts'
+  render 'vite-tag' with '@snippets/filter-form.ts'
+  render 'vite-tag' with '@snippets/filter-toggle.ts'
+  render 'vite-tag' with '@snippets/load-more.ts'
+  render 'vite-tag' with '@snippets/product-count.ts'
+  render 'vite-tag' with '@snippets/sort-form.ts'
+  render 'vite-tag' with '@snippets/layout-switcher.ts'
+
+  assign is_compact_product_card = false
+
+  if template.suffix == 'compact'
+    assign is_compact_product_card = true
+  endif
+
+  assign has_active_filters = false
+
+  for filter in [request.page_type].filters
+    if filter.active_values.size > 0
+      assign has_active_filters = true
+      break
+    endif
+  endfor
+
+  # Catalog ceiling for the price slider (does not shrink when other filters narrow results). Optional section override when the collection has more than 50 products (Liquid can only scan the first 50).
+  assign collection_catalog_max_price_cents = 0
+  if section.settings.collection_catalog_max_price != blank
+    assign raw_pounds = section.settings.collection_catalog_max_price | strip | replace: ',', ''
+    assign pounds_num = raw_pounds | plus: 0
+    assign collection_catalog_max_price_cents = pounds_num | times: 100 | round
+  else
+    assign cat = collections[collection.handle]
+    for product in cat.products
+      if product.price > collection_catalog_max_price_cents
+        assign collection_catalog_max_price_cents = product.price
+      endif
+    endfor
+  endif
+-%}
+
+<div class="collection collection--{{ section.settings.grid_style }} colour-scheme--light colour-scheme--base-white-01">
+  <div class="collection__container container">
+    <div class="collection__header">
+      <div class="collection__header-content">
+        <h1 class="collection__header-title title-md">
+          {{ collection.title }}
+        </h1>
+
+        {% if collection.description %}
+          <div class="collection__header-description body-md">
+            {{ collection.description }}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if collection.metafields.custom.subcollections != blank %}
+        {%- liquid
+          assign subcollections_data = collection.metafields.custom.subcollections.value
+          assign subcollections_count = 0
+          assign use_swiper = false
+          assign active_slide_index = 0
+
+          # Count subcollections manually
+          for subcollection in subcollections_data
+            assign subcollections_count = subcollections_count | plus: 1
+          endfor
+
+          if subcollections_count > 6
+            assign use_swiper = true
+
+            # Find the active subcollection index for initial slide
+            for subcollection in subcollections_data
+              if subcollection.url == collection.url
+                assign active_slide_index = forloop.index0
+                break
+              endif
+            endfor
+          endif
+        -%}
+
+        {% if use_swiper %}
+          <div class="collection__header-subcollections collection__header-subcollections--swiper">
+            <swiper-container
+              class="collection__subcollections-swiper"
+              slides-per-view="auto"
+              space-between="8"
+              initial-slide="{{ active_slide_index }}"
+              breakpoints='
+                {
+                  "768": {
+                    "spaceBetween": 12,
+                    "slidesPerView": "auto"
+                  }
+                }
+              '
+              navigation-prev-el="#swiper-button-prev-{{ section.id }}-subcollections"
+              navigation-next-el="#swiper-button-next-{{ section.id }}-subcollections"
+            >
+              {% for subcollection in collection.metafields.custom.subcollections.value %}
+                {%- liquid
+                  assign is_active = false
+                  assign element = 'a'
+
+                  if subcollection.url == collection.url
+                    assign is_active = true
+                    assign element = 'div'
+                  endif
+                -%}
+
+                <swiper-slide class="collection__subcollections-slide">
+                  <{{ element }}
+                    class="collection__header-subcollection{% if is_active %} is-active{% endif %}"
+                    {% if element == 'a' %}
+                      href="{{ subcollection.url }}"
+                    {% endif %}
+                  >
+                    {% if subcollection.image != blank %}
+                      {{
+                        subcollection.image
+                        | image_url: width: 50, height: 50
+                        | image_tag
+                      }}
+                    {% endif %}
+
+                    <span class="eyebrow-2xs">
+                      {{ subcollection.title }}
+                    </span>
+                  </{{ element }}>
+                </swiper-slide>
+              {% endfor %}
+            </swiper-container>
+          </div>
+        {% else %}
+          <div class="collection__header-subcollections">
+            {% for subcollection in collection.metafields.custom.subcollections.value %}
+              {%- liquid
+                assign is_active = false
+                assign element = 'a'
+
+                if subcollection.url == collection.url
+                  assign is_active = true
+                  assign element = 'div'
+                endif
+              -%}
+
+              <{{ element }}
+                class="collection__header-subcollection{% if is_active %} is-active{% endif %}"
+                {% if element == 'a' %}
+                  href="{{ subcollection.url }}"
+                {% endif %}
+              >
+                {% if subcollection.image != blank %}
+                  {{
+                    subcollection.image
+                    | image_url: width: 50, height: 50
+                    | image_tag
+                  }}
+                {% endif %}
+
+                <span class="eyebrow-2xs">
+                  {{ subcollection.title }}
+                </span>
+              </{{ element }}>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endif %}
+
+      {%- liquid
+        assign subcollections_count = 0
+        assign show_nav = false
+
+        if collection.metafields.custom.subcollections != blank
+          assign subcollections_data_header = collection.metafields.custom.subcollections.value
+
+          # Count subcollections manually for header nav
+          for subcollection in subcollections_data_header
+            assign subcollections_count = subcollections_count | plus: 1
+          endfor
+
+          if subcollections_count > 6
+            assign show_nav = true
+          endif
+        endif
+      -%}
+
+      {% if show_nav %}
+        <div class="collection__header-nav-area">
+          {% assign section_id = section.id | append: '-subcollections' %}
+          {% render 'swiper-nav',
+            class: 'collection__header-nav',
+            section_id: section_id
+          %}
+        </div>
+      {% endif %}
+    </div>
+
+    {%- paginate collection.products by 24 -%}
+      <div class="collection__actions">
+        <uwp-filter-toggle
+          class="collection__filter-toggle"
+          role="region"
+          aria-label="Filter toggle"
+          aria-roledescription="region"
+        >
+          <button
+            class="collection__filter-trigger button button--secondary"
+            type="button"
+            aria-controls="filter-form"
+            js-filter-visibility="toggle"
+          >
+            <span class="hide-on-mobile body-md body-md--bold">
+              {{ 'collection.filter' | t }}
+            </span>
+
+            <span class="hide-on-desktop body-md body-md--bold">
+              {{ 'collection.filter_and_sort' | t }}
+            </span>
+
+            {%- render 'icons', icon: 'filter' -%}
+          </button>
+          <button
+            class="collection__filter-close button button--secondary"
+            type="button"
+            js-filter-visibility="close"
+          >
+            <span class="hide-on-mobile">
+              {{ 'collection.filter' | t }}
+            </span>
+
+            <span class="hide-on-desktop">
+              {{ 'collection.filter_and_sort' | t }}
+            </span>
+            {%- render 'icons', icon: 'close' -%}
+          </button>
+        </uwp-filter-toggle>
+
+        <uwp-product-count
+          class="collection__results-count body-md"
+          data-section-id="{{ section.id }}"
+          role="region"
+          aria-label="Product count"
+          aria-roledescription="region"
+        >
+          {{ 'collection.results' | t: count: collection.products_count }}
+        </uwp-product-count>
+
+        <div class="collection__sort-wrapper">
+          {%- render 'sort-form',
+            object: collection,
+            class: 'hide-on-mobile'
+          -%}
+          {%- render 'layout-switcher', class: 'hide-on-desktop' -%}
+        </div>
+      </div>
+      <div class="collection__wrapper" id="collection__wrapper">
+        {% render 'filter-form',
+          promo_block: section.settings.promo_block,
+          price_filter_vat_percent: section.settings.price_filter_vat_percent,
+          collection_catalog_max_price_cents: collection_catalog_max_price_cents
+        %}
+
+        <uwp-product-grid
+          class="collection__body"
+          data-section-id="{{ section.id }}"
+          role="region"
+          aria-label="Product grid"
+          aria-roledescription="region"
+        >
+          <div class="collection__grid">
+            {%- for product in collection.products -%}
+              {%- liquid
+                assign loading = 'eager'
+                assign preload = true
+
+                if forloop.index > 8
+                  assign loading = 'lazy'
+                  assign preload = false
+                endif
+              -%}
+
+              {%- render 'product-card',
+                product: product,
+                loading: loading,
+                preload: preload,
+                product_card_style: section.settings.grid_style
+              -%}
+            {%- endfor -%}
+
+            {% if collection.metafields.custom.in_grid_content != blank
+              and has_active_filters == false
+            %}
+              {% render 'in-grid-content',
+                object: collection.metafields.custom.in_grid_content.value
+              %}
+            {% endif %}
+          </div>
+
+          <uwp-load-more
+            class="collection__pagination"
+            data-section-id="{{ section.id }}"
+            role="region"
+            aria-label="Load more"
+            aria-roledescription="region"
+          >
+            <p class="body-md">
+              {%- liquid
+                assign to = paginate.page_size | times: paginate.current_page
+                assign to = to | at_most: collection.products_count
+              -%}
+
+              {{
+                'collection.items'
+                | t: from: 1, to: to, count: collection.products_count
+              }}
+            </p>
+
+            {%- if paginate.next -%}
+              <a
+                class="button button--secondary"
+                href="{{ paginate.next.url }}"
+              >
+                {{ 'collection.load_more' | t }}
+              </a>
+            {%- endif -%}
+          </uwp-load-more>
+        </uwp-product-grid>
+      </div>
+    {%- endpaginate -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection",
+  "settings": [
+    {
+      "type": "select",
+      "id": "grid_style",
+      "label": "Grid style",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "interior_designer",
+          "label": "Interior Designer"
+        },
+        {
+          "value": "swatch_card",
+          "label": "Swatch Cards"
+        },
+        {
+          "value": "default_noprice",
+          "label": "No Price"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "metaobject",
+      "id": "promo_block",
+      "label": "Promo Block",
+      "metaobject_type": "promo_blocks"
+    },
+    {
+      "type": "range",
+      "id": "price_filter_vat_percent",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Price filter VAT",
+      "info": "Matches the slider to VAT-inclusive prices on product cards. Filter URL parameters stay ex-VAT for Shopify. Use 0 if card prices are ex-VAT.",
+      "default": 20
+    },
+    {
+      "type": "text",
+      "id": "collection_catalog_max_price",
+      "label": "Catalog max price (override)",
+      "info": "Upper limit for the price slider, in major units (e.g. 1424.47). Same basis as product prices in admin. Use when this collection has more than 50 products so the theme cannot scan the full catalog. Leave blank to use the highest price among the first 50 products."
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,52 @@
+{% comment %}
+  Snippet: Localization Trigger
+  Description: This snippet is used to trigger the localization modal for the user
+  to trigger a change to a supported market.
+{% endcomment %}
+
+{% liquid
+  assign languages_count = localization.available_languages | size
+%}
+
+<button
+  class="
+    localization-trigger
+    {% if expanded_trigger %}
+      localization-trigger--expanded
+    {% endif %}
+  "
+  js-uwp-modal-trigger="localization"
+  type="button"
+  aria-label="{{ 'localization.localization_trigger' | t }}"
+>
+  {% comment %}
+    Icon
+  {% endcomment %}
+  <span class="localization-trigger__icon">
+    {{ localization.country | image_url: width: 32 | image_tag }}
+  </span>
+
+  {% comment %}
+    Label
+    If there are multiple languages supported, display the language and currency
+    otherwise just display the currency
+  {% endcomment %}
+  <div class="localization-trigger__label">
+    {% unless expanded_trigger %}
+      {% if languages_count > 0 %}
+        <span class="localization-trigger__label-text text-sm">
+          {{- localization.language.iso_code | upcase | append: ' -' -}}
+        </span>
+      {% endif %}
+
+      <span class="localization-trigger__label-text text-sm">
+        {{- localization.country.currency.iso_code | upcase -}}
+      </span>
+
+    {% else %}
+      <span class="localization-trigger__label-text text-sm">
+        {{- localization.country.name -}}
+      </span>
+    {% endunless %}
+  </div>
+</button>

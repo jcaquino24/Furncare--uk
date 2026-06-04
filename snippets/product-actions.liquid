@@ -1,0 +1,89 @@
+{%- doc -%}
+  Product Action Buttons
+
+  Renders action buttons below USPs including contact, services, and related package links.
+
+  @param {product} product - Product object (required)
+  @param {section} section - Section object for accessing settings
+
+  @example
+  {% render 'product-actions', product: product, section: section %}
+{%- enddoc -%}
+
+{%- liquid
+  render 'vite-tag' with '@snippets/product-actions.css'
+  render 'vite-tag' with '@snippets/product-actions.ts'
+
+  assign has_related_package = false
+  if product.metafields.custom.related_package != blank
+    assign has_related_package = true
+  endif
+
+  # Check if contact form HTML is defined in section settings
+  assign has_contact_form = false
+  if section and section.settings.contact_form_html != blank
+    assign has_contact_form = true
+  endif
+
+  if section
+    assign show_design_services = section.settings.show_design_services
+    if section.settings.design_services_text != blank
+      assign design_services_text = section.settings.design_services_text
+    endif
+    assign design_services_url = section.settings.design_services_url
+  endif
+-%}
+
+<div class="product-actions">
+  {% comment %} Need Help? Contact Us - Only shows if contact form HTML is defined {% endcomment %}
+  {% if has_contact_form %}
+    <button
+      type="button"
+      class="product-actions__button"
+      data-action="contact"
+      data-drawer-trigger="contact-form-drawer"
+      data-contact-trigger
+    >
+      {% render 'icons', icon: 'envelope' %}
+      <span class="eyebrow-2xs">Need help? Contact us</span>
+      {% render 'icons', icon: 'arrow-right' %}
+    </button>
+  {% endif %}
+
+  {% if show_design_services %}
+    {% if design_services_url != blank %}
+      <a
+        href="{{ design_services_url }}"
+        class="product-actions__button"
+        data-action="services"
+      >
+        {% render 'icons', icon: 'interior-design' %}
+        <span class="eyebrow-2xs">{{ design_services_text }}</span>
+        {% render 'icons', icon: 'arrow-right' %}
+      </a>
+    {% else %}
+      <button
+        type="button"
+        class="product-actions__button"
+        data-action="services"
+      >
+        {% render 'icons', icon: 'interior-design' %}
+        <span class="eyebrow-2xs">{{ design_services_text }}</span>
+        {% render 'icons', icon: 'arrow-right' %}
+      </button>
+    {% endif %}
+  {% endif %}
+
+  {% if has_related_package %}
+    <button
+      type="button"
+      class="product-actions__button"
+      data-action="related-package"
+      data-drawer-trigger="related-package-drawer"
+    >
+      {% render 'icons', icon: 'collections' %}
+      <span class="eyebrow-2xs">{{ 'product.actions.view_package' | t }}</span>
+      {% render 'icons', icon: 'arrow-right' %}
+    </button>
+  {% endif %}
+</div>

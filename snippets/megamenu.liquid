@@ -1,0 +1,174 @@
+{%- doc -%}
+  @description Desktop menu
+
+  @param menu - {Object} The menu to display
+  @param all_menu_promotions - {Object} The menu promotions to display
+  @param support_links - {Object} The support links to display
+
+  @example
+  {% render 'megamenu',
+    menu: linklists[section.settings.menu],
+    all_menu_promotions: all_menu_promotions,
+    support_links: support_links,
+    hide_on_mobile: true
+  %}
+{%- enddoc -%}
+
+<nav class="megamenu {% if hide_on_mobile %}hide-on-mobile{% endif %}">
+  {% for link in menu.links %}
+    {%- liquid
+      assign package_limit = 2
+      assign menu_packages = blank
+      assign menu_promo_banner = blank
+      assign menu_title = blank
+      assign menu_promo_block = blank
+
+      for block in all_menu_promotions
+        if block.settings.menu_title == link.title
+          assign package_limit = block.settings.package_limit
+          assign menu_packages = block.settings.package
+          assign menu_promo_banner = block.settings.promo_banner
+          assign menu_title = block.settings.title
+          assign menu_promo_block = block
+          break
+        endif
+      endfor
+    -%}
+
+    <div class="megamenu__menu-item">
+      {% if link.links.size > 0 %}
+        <div class="megamenu__megamenu-wrapper" data-megamenu-wrapper>
+          <button
+            class="megamenu__megamenu-trigger"
+            type="button"
+            aria-expanded="false"
+            aria-haspopup="true"
+            data-megamenu-trigger
+          >
+            <p class="body-md">{{ link.title }}</p>
+            {% render 'icons', icon: 'plus' %}
+          </button>
+
+          <div
+            class="megamenu__megamenu"
+            data-megamenu-content
+            aria-hidden="true"
+          >
+            <div class="megamenu__megamenu-container container">
+              <div class="megamenu__megamenu-submenu">
+                <div class="megamenu__megamenu-submenu-links">
+                  {% for child_link in link.links %}
+                    <div class="megamenu__megamenu-parent-link-wrapper">
+                      <a
+                        class="megamenu__megamenu-parent-link body-md body-md--bold"
+                        href="{{ child_link.url }}"
+                      >
+                        {{ child_link.title }}
+                      </a>
+
+                      <div class="megamenu__megamenu-sublinks">
+                        {% for grandchild_link in child_link.links %}
+                          <a
+                            class="megamenu__megamenu-sublink"
+                            href="{{ grandchild_link.url }}"
+                          >
+                            {{ grandchild_link.title }}
+                          </a>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+
+                {% if menu_packages != blank %}
+                  <div class="megamenu__packages">
+                    <p class="megamenu__packages-title body-md body-md--bold">
+                      {{ menu_packages.title }}
+                    </p>
+
+                    <div class="megamenu__packages-description body-md">
+                      {{ menu_packages.description }}
+                    </div>
+
+                    {% if menu_packages.items != blank %}
+                      <div class="megamenu__packages-items">
+                        {% for item in menu_packages.items.value
+                          limit: package_limit
+                        %}
+                          <a
+                            class="megamenu__package-item"
+                            href="{{ item.link.value.url }}"
+                          >
+                            {{
+                              item.image
+                              | image_url: width: 500
+                              | image_tag:
+                                class: 'megamenu__package-item-image',
+                                loading: 'lazy'
+                            }}
+
+                            {% if item.title != blank %}
+                              <p class="megamenu__package-item-title body-md body-md--bold">
+                                {{ item.title }}
+                              </p>
+                            {% endif %}
+
+                            {% if item.description != blank %}
+                              <div class="megamenu__package-item-description body-md">
+                                {{ item.description }}
+                              </div>
+                            {% endif %}
+
+                            {% render 'button',
+                              label: item.link.value.text,
+                              style: 'underline',
+                              size: 'md'
+                            %}
+                          </a>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+
+              {% if menu_promo_banner != blank %}
+                {% assign overlay_style = menu_promo_block.settings.overlay_style | default: 'primary' %}
+                <div
+                  class="megamenu__promo-banner {{ overlay_style }}"
+                  style="--image: url({{ menu_promo_banner.image | image_url: width: 250, height: 400 }})"
+                >
+                  {% if menu_promo_block.settings.show_overlay == true %}
+                    <div class="megamenu__promo-banner-overlay overlay--{{ overlay_style }}"></div>
+                  {% endif %}
+
+                  <p class="title-xs">
+                    {{ menu_promo_banner.title }}
+                  </p>
+
+                  {% render 'button',
+                    style: overlay_style,
+                    size: 'md',
+                    class: 'button--full-width',
+                    label: menu_promo_banner.cta.value.text,
+                    link: menu_promo_banner.cta.value.url
+                  %}
+                </div>
+              {% endif %}
+
+              {% if menu_title != blank %}
+                <div class="megamenu__megamenu-title body-md body-md--bold">
+                  {{ menu_title }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <a class="megamenu__menu-link body-md" href="{{ link.url }}">
+          {{ link.title }}
+        </a>
+      {% endif %}
+    </div>
+  {% endfor %}
+</nav>

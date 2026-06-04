@@ -1,0 +1,207 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "faqs_Lwg9Cg": {
+      "type": "faqs",
+      "blocks": {
+        "faq_zdCQx6": {
+          "type": "faq",
+          "name": "How can I place an order?",
+          "settings": {
+            "question": "How can I place an order?",
+            "answer": "<p>You can place an order by any of the following methods:</p><p></p><ul><li>online</li><li>email to <a href=\"mailto:sales@furncare.co.uk\">sales@furncare.co.uk</a></li><li>call <a href=\"tel:01603664900\">01603 664 900</a></li><li>via our website’s online chat function</li></ul><p></p><p>Our advisors will be able to talk through your purchase and offer advice based on your requirements. Please advise when placing your order if you have a purchase order number and if there are any special delivery instructions i.e. difficult access, stairs etc.</p><p>Once your order has been placed, you will receive a confirmation email along with any additional information you need to know and our operations team will then be in contact to book your delivery date.</p>"
+          }
+        },
+        "faq_mW9d3H": {
+          "type": "faq",
+          "name": "What are your delivery terms and where do you deliver to?",
+          "settings": {
+            "question": "What are your delivery terms and where do you deliver to?",
+            "answer": "<p>Please refer to the bottom of this page to view our Delivery Guide.</p>"
+          }
+        },
+        "faq_iVhRLj": {
+          "type": "faq",
+          "name": "What are my payment options?",
+          "settings": {
+            "question": "What are my payment options?",
+            "answer": "<p>New customers:</p><p>First order to be paid by proforma prior to processing by one of the following methods: credit/debit card via our online shop, credit/debit card or google pay via a payment link, BACS transfer or cheque. A credit account can then be set up for future orders subject to approval by our accounts team.</p><p>Returning customers:</p><p>We offer the option of a 30 day credit account subject to approval from our accounts team. If you would like to set up a credit account please contact us on 01603 664 900 to request a form which we require to be completed in full and returned to us. We also offer the option of payment by credit or debit card over the phone, BACS transfer or cheque.</p>"
+          }
+        },
+        "faq_DhwLYE": {
+          "type": "faq",
+          "name": "When will I receive my order?",
+          "settings": {
+            "question": "When will I receive my order?",
+            "answer": "<p>Please refer to the bottom of this page to view our Delivery Guide. </p><p>For stock items, delivery to the green highlighted areas is within 5 working days, delivery to the purple highlighted areas is within 10 working days, and delivery to the pink highlighted areas is within 15 working days. For any of the blue highlighted areas please contact our office on 01603 664900 for current lead times.</p><p>Delivery of all non stock items is 4 – 8 weeks unless otherwise advised.</p>"
+          }
+        },
+        "faq_D6hfGm": {
+          "type": "faq",
+          "name": "What should I expect on the day of my delivery?",
+          "settings": {
+            "question": "What should I expect on the day of my delivery?",
+            "answer": "<p>We pride ourselves on our outstanding delivery service. On the day of your delivery our driver will introduce themselves to reception and confirm which room(s) the furniture or furnishings are for. The items will then be placed in the room(s), with all packaging removed and recycled.</p><p>Many of our items are delivered fully assembled, in instances where this is not the case our driver will assemble the item on site. All of our drivers are DBS checked for your added peace of mind.</p><p>For full details on our delivery service please watch the short video below.</p><p><a href=\"/pages/delivery\" title=\"Delivery\">The Furncare Delivery Service</a></p>"
+          }
+        },
+        "faq_YYzig7": {
+          "type": "faq",
+          "name": "Are my items covered under a guarantee?",
+          "settings": {
+            "question": "Are my items covered under a guarantee?",
+            "answer": "<p>Our general guarantee terms are as below unless otherwise indicated on specific products. In the case of upholstered items, the upholstery itself will sometimes have a different guarantee which is in accordance with the upholstery manufacturers’ terms.</p><ul><li>Bedroom Furniture: 10 years<br/></li><li>Dining Chairs, Tables and Lounge Chairs: 5 years<br/></li><li>Cabinet Furniture: 5 years<br/></li><li>Beds & Mattresses: 1-5 years</li></ul>"
+          }
+        },
+        "faq_FNAWrc": {
+          "type": "faq",
+          "name": "Are your furniture and soft furnishings fire retardant?",
+          "settings": {
+            "question": "Are your furniture and soft furnishings fire retardant?",
+            "answer": "<p>All of our upholstery and textiles are fire retardant and wherever applicable all of our furniture is also Crib 5 FR.</p>"
+          }
+        },
+        "faq_hW9E4x": {
+          "type": "faq",
+          "name": "I have a project I'd like to discuss, will you visit my home?",
+          "settings": {
+            "question": "I have a project I'd like to discuss, will you visit my home?",
+            "answer": "<p>We’d love to hear about your next project! Our advisory team would be happy to visit to discuss your requirements. We also offer the facility of a virtual appointment if you would prefer.<br/></p><p>If you’d like to book an appointment please contact us on <a href=\"mailto:sales@furncare.co.uk\">sales@furncare.co.uk</a> or call 01603 664900.</p>"
+          }
+        },
+        "faq_k3HngJ": {
+          "type": "faq",
+          "name": "Is faux leather upholstery the best option for my home?",
+          "settings": {
+            "question": "Is faux leather upholstery the best option for my home?",
+            "answer": "<p>There are a wide range of healthcare upholstery options and in many cases both textile and faux leather upholstery would be suitable. Our advisors are happy to recommend upholsteries based on your requirements and the type of care you provide. Please discuss this with us when placing your order if you would like any guidance.</p>"
+          }
+        },
+        "faq_HeftDM": {
+          "type": "faq",
+          "name": "What sectors do you supply to?",
+          "settings": {
+            "question": "What sectors do you supply to?",
+            "answer": "<p>We supply to elderly care, including dementia and nursing, supported living, learning and physical disability homes and also more challenging environments.</p><p>As some products aren’t suitable for certain sectors, you can navigate through our menus on the homepage to the sector you require and the products that we would recommend. Our team are also able to offer advice on the suitability of a product for your environment.</p>"
+          }
+        },
+        "faq_77ewXj": {
+          "type": "faq",
+          "name": "How do I care for my products?",
+          "settings": {
+            "question": "How do I care for my products?",
+            "answer": "<p>For detailed care and maintenance information, please refer to our Care Instructions, available on each relevant product page on our website. <br/><br/>These care instructions and top tips have been designed to help preserve the craftsmanship and finish of your item.<br/></p>"
+          }
+        },
+        "faq_iC36hH": {
+          "type": "faq",
+          "name": "Do you have a showroom?",
+          "settings": {
+            "question": "Do you have a showroom?",
+            "answer": "<p>Yes. Our showroom is available for visits subject to booking. Please call 01603 664900 or email sales@furncare.co.uk to arrange a viewing. Alternatively, we offer a sample van service where we can bring products to you.</p>"
+          }
+        },
+        "faq_LGQt4L": {
+          "type": "faq",
+          "name": "Can you remove old furniture when you deliver?",
+          "settings": {
+            "question": "Can you remove old furniture when you deliver?",
+            "answer": "<p>Our furniture removal service was introduced to provide a completely hassle-free service for our clients. As old furniture and furnishings are always disposed of responsibly (materials are recycled where possible), this service does come at a small extra cost per item. Get in touch with our team today to request a quotation for this service.</p>"
+          }
+        },
+        "faq_CqbGNm": {
+          "type": "faq",
+          "name": "My payment isn't going through online. What do I do?",
+          "settings": {
+            "question": "My payment isn't going through online. What do I do?",
+            "answer": "<p>While it may seem obvious, please check you have the necessary funds in the account you are using. Check through the card details inputted for typos in the long card number, name on the card, expiry date or CCV number. If you are still having issues then please contact us, either through our web chat, email or give us a call.</p>"
+          }
+        },
+        "faq_jQitw7": {
+          "type": "faq",
+          "name": "Can you measure up our windows for curtains or blinds?",
+          "settings": {
+            "question": "Can you measure up our windows for curtains or blinds?",
+            "answer": "<p>We will come out to your locations to measure up if you are dressing 6 windows or more. If you are dressing less than 6 windows then we would charge a callout fee.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_zdCQx6",
+        "faq_mW9d3H",
+        "faq_iVhRLj",
+        "faq_DhwLYE",
+        "faq_D6hfGm",
+        "faq_YYzig7",
+        "faq_FNAWrc",
+        "faq_hW9E4x",
+        "faq_k3HngJ",
+        "faq_HeftDM",
+        "faq_77ewXj",
+        "faq_iC36hH",
+        "faq_LGQt4L",
+        "faq_CqbGNm",
+        "faq_jQitw7"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "faq_title": "Frequently Asked Questions",
+        "title_element": "h1",
+        "faq_text": "If you can't find an answer to your question, give us a call on <a href=\"tel:01603 664900\" title=\"tel:01603 664900\">01603 664900</a> or start a web chat and we'd be happy to help.",
+        "title_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "padding": "wide"
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "image_text_7HqNFR": {
+      "type": "image-text",
+      "blocks": {
+        "images_TXTXqf": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Furncare_Delivery_Map_October_2025.jpg"
+          }
+        },
+        "content_fDgJM6": {
+          "type": "content",
+          "settings": {
+            "title": "Delivery Guide",
+            "title_size": "xl",
+            "text": "This map shows details of our lead times and the areas we deliver to. For in-stock items delivery to the green highlighted areas is within 5 working days, delivery to the purple highlighted areas is within 10 working days, delivery to the red highlighted areas is within 15 working days. For any of the blue highlighted areas please contact our office on 01603 664900 for current lead times.\n\nDelivery of all non stock items is 4 – 8 weeks unless otherwise advised.",
+            "button_style": "underline",
+            "button_text": "Learn more about our delivery service",
+            "button_url": "shopify://pages/delivery"
+          }
+        }
+      },
+      "block_order": [
+        "images_TXTXqf",
+        "content_fDgJM6"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-02",
+        "section_padding": "--spacing-4xl"
+      }
+    }
+  },
+  "order": [
+    "faqs_Lwg9Cg",
+    "main",
+    "image_text_7HqNFR"
+  ]
+}

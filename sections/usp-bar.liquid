@@ -1,0 +1,79 @@
+{% liquid
+  assign element = 'div'
+  if section.settings.layout == 'carousel'
+    assign element = 'swiper-container'
+  endif
+%}
+<div
+  class="usp-bar"
+  style="
+    --background-color: {{ section.settings.background_color }};
+    --text-color: {{ section.settings.text_color }};
+  "
+>
+  <div class="usp-bar__container container">
+    <{{ element }}
+      {% if section.settings.layout == 'carousel' %}
+      space-between="24"
+      slides-per-view="auto"
+      loop="true"
+      speed="2000"
+      autoplay="true"
+      autoplay-delay="0"
+      breakpoints='{
+        "768": {
+          "spaceBetween": 40
+        }
+      }'
+      {% else %}
+      class="usp-bar__grid"
+      {% endif %}
+    >
+      {% content_for 'blocks' %}
+    </{{ element }}>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "USP Bar",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "grid",
+          "label": "Grid"
+        },
+        {
+          "value": "carousel",
+          "label": "Carousel"
+        }
+      ],
+      "default": "carousel"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icons",
+      "label": "Show icons",
+      "default": true
+    }
+  ],
+  "blocks": [{ "type": "_usp-item" }]
+}
+{% endschema %}

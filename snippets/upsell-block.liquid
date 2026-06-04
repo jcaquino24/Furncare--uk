@@ -1,0 +1,88 @@
+{% doc %}
+  Renders a cart upsell product card.
+
+  @param {product} upsell_product - Product to add to cart
+  @param {string} [title] - Optional title override
+  @param {string} [content] - Optional supporting content
+  @param {image} [image] - Optional image override
+  @param {string} [wrapper_class] - Optional extra class names
+  @param {string} [aria_label] - Optional region label
+  @param {string} [button_style] - Optional button style
+
+  @example
+  {% render 'upsell-block', upsell_product: product %}
+{% enddoc %}
+
+{% liquid
+  assign upsell_product_object = upsell_product
+  if upsell_product_object != blank and upsell_product_object.value
+    assign upsell_product_object = upsell_product_object.value
+  endif
+  assign has_product = false
+  if upsell_product_object and upsell_product_object.id
+    assign has_product = true
+  endif
+  assign upsell_title = title | default: upsell_product_object.title
+  assign upsell_image = image | default: upsell_product_object.featured_image
+  assign upsell_label = aria_label
+  if upsell_label == blank
+    assign upsell_label = 'upsells.region_label' | t
+  endif
+  assign upsell_button_style = button_style | default: 'secondary'
+%}
+{% if has_product %}
+  <uwp-upsell-block
+    class="upsell-block colour-scheme--warm-stone{% if wrapper_class != blank %} {{ wrapper_class }}{% endif %}"
+    data-product-id="{{ upsell_product_object.id }}"
+    data-variant-id="{{ upsell_product_object.selected_or_first_available_variant.id }}"
+    role="region"
+    aria-label="{{ upsell_label | escape }}"
+    aria-roledescription="region"
+  >
+    {% if upsell_image != blank %}
+      <div class="upsell-block__image">
+        {{
+          upsell_image
+          | image_url: width: 1000
+          | image_tag: loading: 'lazy', class: 'upsell-block__image-element'
+        }}
+      </div>
+    {% endif %}
+    <div class="upsell-block__content">
+      <div class="upsell-block__content-header">
+        <div class="upsell-block__title eyebrow-xs eyebrow-xs--bold">
+          {{ upsell_title }}
+        </div>
+        <div class="upsell-block__price eyebrow-xs eyebrow-xs--bold">
+          +
+          {% render 'price',
+            product: upsell_product_object,
+            use_variant: true
+          %}
+        </div>
+      </div>
+      {% if content != blank %}
+        <div class="upsell-block__content-text">
+          {{ content }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="upsell-block__content-button-wrapper body-md">
+      <button
+        type="button"
+        class="button button--md button--{{ upsell_button_style }} button--full-width upsell-block__content-button"
+        data-variant-id="{{ upsell_product_object.selected_or_first_available_variant.id }}"
+        data-quantity="1"
+      >
+        {% assign product_price = upsell_product_object.selected_or_first_available_variant.price
+          | money
+        %}
+        {{ 'upsells.add_for_price_text' | t: price: product_price }}
+        {% render 'icons', icon: 'cart' %}
+      </button>
+    </div>
+  </uwp-upsell-block>
+{% else %}
+  <!-- upsell-block: missing product -->
+{% endif %}

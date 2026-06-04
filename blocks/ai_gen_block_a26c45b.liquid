@@ -1,0 +1,363 @@
+{% doc %}
+  @prompt
+    i want to embed the virtual tour link so you can actually do it in this page, and then have txt on the left, can the tour be centred inside its border, and can the border colour be changed to warm stone
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-virtual-tour-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-virtual-tour__container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.gap }}px;
+    align-items: center;
+  }
+
+  .ai-virtual-tour__content-{{ ai_gen_id }} {
+    padding: {{ block.settings.content_padding }}px;
+  }
+
+  .ai-virtual-tour__heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.text_spacing }}px 0;
+    font-weight: 600;
+  }
+
+  .ai-virtual-tour__text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+  }
+
+  .ai-virtual-tour__text-{{ ai_gen_id }} p {
+    margin: 0 0 {{ block.settings.text_spacing }}px 0;
+  }
+
+  .ai-virtual-tour__text-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-virtual-tour__embed-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: {{ block.settings.border_padding }}px;
+    background-color: {{ block.settings.border_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-virtual-tour__embed-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: {{ block.settings.aspect_ratio }}%;
+    background-color: #f4f4f4;
+    border-radius: {{ block.settings.inner_border_radius }}px;
+    overflow: hidden;
+  }
+
+  .ai-virtual-tour__iframe-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: {{ block.settings.inner_border_radius }}px;
+  }
+
+  .ai-virtual-tour__placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    padding: 20px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-virtual-tour__container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.mobile_gap }}px;
+    }
+
+    {% if block.settings.mobile_layout == 'tour_first' %}
+      .ai-virtual-tour__embed-wrapper-{{ ai_gen_id }} {
+        order: -1;
+      }
+    {% endif %}
+
+    .ai-virtual-tour__heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.8 }}px;
+    }
+
+    .ai-virtual-tour__text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<virtual-tour-{{ ai_gen_id }}
+  class="ai-virtual-tour-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-virtual-tour__container-{{ ai_gen_id }}">
+    <div class="ai-virtual-tour__content-{{ ai_gen_id }}">
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-virtual-tour__heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      {% endif %}
+
+      {% if block.settings.text != blank %}
+        <div class="ai-virtual-tour__text-{{ ai_gen_id }}">
+          {{ block.settings.text }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-virtual-tour__embed-wrapper-{{ ai_gen_id }}">
+      <div class="ai-virtual-tour__embed-{{ ai_gen_id }}">
+        {% if block.settings.embed_url != blank %}
+          <iframe
+            class="ai-virtual-tour__iframe-{{ ai_gen_id }}"
+            src="{{ block.settings.embed_url }}"
+            title="{{ block.settings.heading | default: 'Virtual tour' }}"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        {% else %}
+          <div class="ai-virtual-tour__placeholder-{{ ai_gen_id }}">
+            Add your virtual tour embed URL in the block settings
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</virtual-tour-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class VirtualTour{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        const iframe = this.querySelector('.ai-virtual-tour__iframe-{{ ai_gen_id }}');
+        if (iframe) {
+          iframe.addEventListener('load', function() {
+            iframe.style.opacity = '1';
+          });
+        }
+      }
+    }
+
+    customElements.define('virtual-tour-{{ ai_gen_id }}', VirtualTour{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Virtual tour with text",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Explore our virtual tour"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Take a virtual tour to explore every detail. Navigate through the space at your own pace and discover all the features.</p>"
+    },
+    {
+      "type": "url",
+      "id": "embed_url",
+      "label": "Virtual tour embed URL"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "options": [
+        {
+          "value": "text_first",
+          "label": "Text first"
+        },
+        {
+          "value": "tour_first",
+          "label": "Tour first"
+        }
+      ],
+      "default": "text_first"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap between columns",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Mobile gap",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "content_padding",
+      "label": "Content padding",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Virtual tour style"
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "label": "Aspect ratio",
+      "options": [
+        {
+          "value": "56.25",
+          "label": "16:9"
+        },
+        {
+          "value": "75",
+          "label": "4:3"
+        },
+        {
+          "value": "100",
+          "label": "1:1"
+        },
+        {
+          "value": "66.67",
+          "label": "3:2"
+        }
+      ],
+      "default": "56.25"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#D4C5B0"
+    },
+    {
+      "type": "range",
+      "id": "border_padding",
+      "label": "Border padding",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Outer border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "inner_border_radius",
+      "label": "Inner border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Text style"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "text_spacing",
+      "label": "Text spacing",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Virtual tour with text"
+    }
+  ]
+}
+{% endschema %}

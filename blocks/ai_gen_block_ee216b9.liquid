@@ -1,0 +1,496 @@
+{% doc %}
+  @prompt
+    Create a self-contained Shopify OS 2.0 theme block with a button labelled "Request a Package Quote" (editable in theme editor settings). When the button is clicked, a modal/popup overlay appears centred on screen containing an embedded form via a customisable HTML embed code textarea setting (for third-party forms like Typeform, HubSpot, Calendly etc). The form should NOT be visible on the page by default — it only appears inside the modal when the button is clicked. The modal should have a close button (X) in the top right corner and close when clicking outside the overlay. Styling should be clean, minimal and premium to suit a luxury furniture brand. All text and embed code should be editable via theme editor settings.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-quote-modal-container-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-quote-modal-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    font-family: {{ block.settings.button_font.family }}, {{ block.settings.button_font.fallback_families }};
+    font-weight: {{ block.settings.button_font.weight }};
+    font-size: {{ block.settings.button_font_size }}px;
+    border: {{ block.settings.button_border_width }}px solid {{ block.settings.button_border_color }};
+    border-radius: {{ block.settings.button_border_radius }}px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+
+  .ai-quote-modal-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+    border-color: {{ block.settings.button_hover_border_color }};
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-quote-modal-overlay-{{ ai_gen_id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.overlay_bg_color }};
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 20px;
+  }
+
+  .ai-quote-modal-overlay-{{ ai_gen_id }}.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .ai-quote-modal-content-{{ ai_gen_id }} {
+    position: relative;
+    background-color: {{ block.settings.modal_bg_color }};
+    border-radius: {{ block.settings.modal_border_radius }}px;
+    width: 100%;
+    max-width: {{ block.settings.modal_max_width }}px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+  }
+
+  .ai-quote-modal-overlay-{{ ai_gen_id }}.active .ai-quote-modal-content-{{ ai_gen_id }} {
+    transform: scale(1);
+  }
+
+  .ai-quote-modal-header-{{ ai_gen_id }} {
+    position: sticky;
+    top: 0;
+    background-color: {{ block.settings.modal_bg_color }};
+    padding: {{ block.settings.modal_padding }}px;
+    border-bottom: 1px solid {{ block.settings.modal_border_color }};
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    border-radius: {{ block.settings.modal_border_radius }}px {{ block.settings.modal_border_radius }}px 0 0;
+  }
+
+  .ai-quote-modal-title-{{ ai_gen_id }} {
+    margin: 0;
+    font-size: {{ block.settings.modal_title_size }}px;
+    color: {{ block.settings.modal_text_color }};
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  .ai-quote-modal-close-{{ ai_gen_id }} {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: {{ block.settings.modal_text_color }};
+    opacity: 0.6;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    border-radius: 4px;
+  }
+
+  .ai-quote-modal-close-{{ ai_gen_id }}:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+  }
+
+  .ai-quote-modal-close-{{ ai_gen_id }} svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .ai-quote-modal-body-{{ ai_gen_id }} {
+    padding: {{ block.settings.modal_padding }}px;
+    min-height: 200px;
+  }
+
+  .ai-quote-modal-embed-{{ ai_gen_id }} {
+    width: 100%;
+    min-height: 400px;
+  }
+
+  .ai-quote-modal-embed-{{ ai_gen_id }} iframe {
+    width: 100%;
+    border: none;
+    min-height: 500px;
+  }
+
+  .ai-quote-modal-empty-state-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 60px 20px;
+    color: {{ block.settings.modal_text_color }};
+    opacity: 0.5;
+  }
+
+  .ai-quote-modal-empty-state-{{ ai_gen_id }} svg {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+    opacity: 0.3;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-quote-modal-content-{{ ai_gen_id }} {
+      max-width: 100%;
+      max-height: 95vh;
+      border-radius: {{ block.settings.modal_border_radius | divided_by: 2 }}px;
+    }
+
+    .ai-quote-modal-header-{{ ai_gen_id }} {
+      padding: {{ block.settings.modal_padding | times: 0.75 }}px;
+    }
+
+    .ai-quote-modal-body-{{ ai_gen_id }} {
+      padding: {{ block.settings.modal_padding | times: 0.75 }}px;
+    }
+
+    .ai-quote-modal-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.modal_title_size | times: 0.85 }}px;
+    }
+
+    .ai-quote-modal-button-{{ ai_gen_id }} {
+      font-size: {{ block.settings.button_font_size | times: 0.9 }}px;
+      padding: {{ block.settings.button_padding_vertical | times: 0.85 }}px {{ block.settings.button_padding_horizontal | times: 0.85 }}px;
+    }
+  }
+
+  body.ai-quote-modal-open-{{ ai_gen_id }} {
+    overflow: hidden;
+  }
+{% endstyle %}
+
+<quote-modal-{{ ai_gen_id }} class="ai-quote-modal-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <button
+    class="ai-quote-modal-button-{{ ai_gen_id }}"
+    aria-label="{{ block.settings.button_text }}"
+    aria-expanded="false"
+  >
+    {{ block.settings.button_text }}
+  </button>
+
+  <div class="ai-quote-modal-overlay-{{ ai_gen_id }}" role="dialog" aria-modal="true" aria-labelledby="modal-title-{{ ai_gen_id }}">
+    <div class="ai-quote-modal-content-{{ ai_gen_id }}">
+      <div class="ai-quote-modal-header-{{ ai_gen_id }}">
+        <h2 class="ai-quote-modal-title-{{ ai_gen_id }}" id="modal-title-{{ ai_gen_id }}">
+          {{ block.settings.modal_title }}
+        </h2>
+        <button
+          class="ai-quote-modal-close-{{ ai_gen_id }}"
+          aria-label="Close modal"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="ai-quote-modal-body-{{ ai_gen_id }}">
+        {% if block.settings.embed_code != blank %}
+          <div class="ai-quote-modal-embed-{{ ai_gen_id }}">
+            {{ block.settings.embed_code }}
+          </div>
+        {% else %}
+          <div class="ai-quote-modal-empty-state-{{ ai_gen_id }}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            <p>Add your form embed code in the theme editor settings</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</quote-modal-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class QuoteModal{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.button = this.querySelector('.ai-quote-modal-button-{{ ai_gen_id }}');
+        this.overlay = this.querySelector('.ai-quote-modal-overlay-{{ ai_gen_id }}');
+        this.closeButton = this.querySelector('.ai-quote-modal-close-{{ ai_gen_id }}');
+        this.content = this.querySelector('.ai-quote-modal-content-{{ ai_gen_id }}');
+
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.button.addEventListener('click', () => this.openModal());
+        this.closeButton.addEventListener('click', () => this.closeModal());
+        
+        this.overlay.addEventListener('click', (e) => {
+          if (e.target === this.overlay) {
+            this.closeModal();
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && this.overlay.classList.contains('active')) {
+            this.closeModal();
+          }
+        });
+      }
+
+      openModal() {
+        this.overlay.classList.add('active');
+        this.button.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('ai-quote-modal-open-{{ ai_gen_id }}');
+        
+        this.closeButton.focus();
+      }
+
+      closeModal() {
+        this.overlay.classList.remove('active');
+        this.button.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('ai-quote-modal-open-{{ ai_gen_id }}');
+        
+        this.button.focus();
+      }
+    }
+
+    customElements.define('quote-modal-{{ ai_gen_id }}', QuoteModal{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Quote request modal",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Request a Package Quote"
+    },
+    {
+      "type": "font_picker",
+      "id": "button_font",
+      "label": "Button font",
+      "default": "red_hat_display_n4"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Vertical padding",
+      "min": 8,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 16,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Border",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Button hover state"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border_color",
+      "label": "Hover border",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Modal"
+    },
+    {
+      "type": "text",
+      "id": "modal_title",
+      "label": "Modal title",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "html",
+      "id": "embed_code",
+      "label": "Form embed code"
+    },
+    {
+      "type": "range",
+      "id": "modal_max_width",
+      "label": "Maximum width",
+      "min": 400,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "default": 800
+    },
+    {
+      "type": "range",
+      "id": "modal_padding",
+      "label": "Padding",
+      "min": 16,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "modal_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "modal_title_size",
+      "label": "Title size",
+      "min": 16,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "modal_bg_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "modal_text_color",
+      "label": "Text",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "modal_border_color",
+      "label": "Border",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "color",
+      "id": "overlay_bg_color",
+      "label": "Overlay background",
+      "default": "rgba(0, 0, 0, 0.7)"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quote request modal"
+    }
+  ]
+}
+{% endschema %}

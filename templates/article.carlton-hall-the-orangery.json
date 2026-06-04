@@ -1,0 +1,332 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_video_banner_Mx3q8g": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_8TMHFP": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "case study",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_DXxf3y": {
+          "type": "title",
+          "settings": {
+            "text": "The Orangery",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_8TMHFP",
+        "title_DXxf3y"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 600,
+        "height_mobile": 430,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Untitled-1-10-qtm6hvgltb9e95uh1qd70uqvtpvooaqlr124t410co.png",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(54deg, rgba(255, 250, 99, 1), rgba(38, 37, 32, 0.4) 1%)",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_PhprEj": {
+      "type": "richtext",
+      "blocks": {
+        "heading_mYLH3K": {
+          "type": "heading",
+          "settings": {
+            "text": "The Orangery at Carlton Hall",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_LFtXUT": {
+          "type": "tagline",
+          "settings": {
+            "content": "Having worked with this customer on two previous projects we were delighted to undertake the next phase of furniture and furnishings in their care village, this time at the stunning new build The Orangery.",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_mYLH3K",
+        "tagline_LFtXUT"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "featured_blocks_QcyUqa": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_WB6nUy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-5_551151bc-de22-46b3-bffa-837731a2c504.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_9HR9qb": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-4_0660ee2b-fe41-45df-a0c8-37967d033eca.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_WQpPgr": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-6_0ec0e2b3-be1c-4e93-9f9b-8fe00b66572a.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_pgBF4K": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-3_950d868b-b7db-45e0-81ab-fbbe43118494.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_4cYAbe": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-8_94347dbf-7a58-4804-bc6d-3d220e46ed9c.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_X4iqhW": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-7_511167fa-a69e-4640-a709-dfea61f928d4.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_tFgQja": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-1_6225a9e6-e57d-4b6f-b820-a455423fc779.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_LAG8rN": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-2_2747f511-a682-4b7f-a760-c72bc3589720.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_WB6nUy",
+        "block_9HR9qb",
+        "block_WQpPgr",
+        "block_pgBF4K",
+        "block_4cYAbe",
+        "block_X4iqhW",
+        "block_tFgQja",
+        "block_LAG8rN"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "",
+        "padding": "wide",
+        "layout": "line_grid",
+        "enable_lightbox": true
+      }
+    },
+    "richtext_EW6cqY": {
+      "type": "richtext",
+      "blocks": {
+        "heading_C9ihxn": {
+          "type": "heading",
+          "settings": {
+            "text": "As this property has an incredibly light filled and airy atmosphere owing to the masses of windows, doors and high ceilings, it was important that the furniture and furnishings reflected and complimented this. A neutral and soft blue colour palette was chosen to provide a sense of calm and relaxation as well as complimenting the previous schemes used in other areas of the care village. We hope the residents enjoy their new home!",
+            "heading_level": "h2",
+            "heading_style": "title-sm"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_C9ihxn"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_video_banner_xWTgmR": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_YJpC8H": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "text": "Retirement furniture",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_qDHCNx": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "text": "Designed for Comfort, Built for <em>Care</em>.",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_GDbKwj": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        },
+        "card_e3GTdX": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_UehPPd": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_YJpC8H",
+        "title_qDHCNx",
+        "button_GDbKwj",
+        "card_e3GTdX",
+        "card_UehPPd"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Untitled-67.png",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "linear-gradient(320deg, rgba(255, 250, 99, 0.2), rgba(203, 68, 194, 1), rgba(255, 250, 99, 0))",
+        "colour_scheme": "light",
+        "content_position": "center-bottom",
+        "content_alignment": "center"
+      }
+    },
+    "product_blocks_hr4bkw": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_HdNPmE": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "5164-maxwell-small-sideboard-finish-grey-oak",
+              "alpha-extreme-270-double-wardrobe-finish-mountain-oak-cashmere",
+              "alpha-extreme-3-drawer-chest-finish-mountain-oak-cashmere",
+              "alpha-extreme-3-drawer-bedside-top-drawer-with-lock-finish-mountain-oak-cashmere"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_HdNPmE"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Products featured in this case study",
+        "section_padding": "--spacing-4xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_video_banner_Mx3q8g",
+    "richtext_PhprEj",
+    "featured_blocks_QcyUqa",
+    "richtext_EW6cqY",
+    "image_video_banner_xWTgmR",
+    "product_blocks_hr4bkw"
+  ]
+}

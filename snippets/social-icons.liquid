@@ -1,0 +1,19 @@
+<div style="color: var(--{{ color }});" class="{{ base_class }}__social-icons {{ inner_class }}">
+  {% assign social = 'facebook instagram twitter youtube linkedin'
+    | split: ' '
+  %}
+  {% for name in social %}
+    {% capture link %}{{ name }}_url{% endcapture %}
+    {% capture icon %}{{ name }}_icon{% endcapture %}
+    {% if settings[link] != blank and settings[icon] != blank %}
+      <a
+        href="{{ settings[link] }}"
+        title="{{ name | capitalize }}"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {{ settings[icon] }}
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>

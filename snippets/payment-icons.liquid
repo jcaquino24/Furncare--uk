@@ -1,0 +1,15 @@
+{% assign enabled_payment_types = 'shopify_pay,klarna,american_express,master,apple_pay,visa,google_pay,paypal'
+  | remove: ' '
+  | split: ','
+%}
+<div class="payment-icons">
+  <span class="visually-hidden">Supported payment methods</span>
+
+  <ul class="payment-icons__list">
+    {%- for type in enabled_payment_types -%}
+      <li class="payment-icons__icon">
+        {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>

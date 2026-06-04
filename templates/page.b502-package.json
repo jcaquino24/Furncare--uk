@@ -1,0 +1,309 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "richtext_CQzgzL": {
+      "type": "richtext",
+      "blocks": {
+        "heading_A4rrrk": {
+          "type": "heading",
+          "settings": {
+            "text": "The Lime Scheme",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_XRAfUW": {
+          "type": "tagline",
+          "settings": {
+            "content": "PACKAGE SKU: B502",
+            "tagline_style": "body-sm"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_A4rrrk",
+        "tagline_XRAfUW"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "hotspots_bfFtxR": {
+      "type": "hotspots",
+      "blocks": {
+        "tab_gHwhLq": {
+          "type": "tab",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/Untitled_32.jpg",
+            "image_desktop": "shopify://shop_images/Untitled_32.jpg",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "hotspot_a9JU6t": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "stellan-double-wardrobe",
+            "description": "",
+            "desktop_x": 11,
+            "desktop_y": 35,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_Rtw73F": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "stellan-3-drawer-chest",
+            "description": "",
+            "desktop_x": 42,
+            "desktop_y": 52,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_RPxeYB": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "stellan-3-drawer-bedside-table",
+            "description": "",
+            "desktop_x": 90,
+            "desktop_y": 63,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_WWcGt8": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "asprey-high-back-chair-steel",
+            "description": "",
+            "desktop_x": 24,
+            "desktop_y": 71,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_w4UamA": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "estila-b502-chair-cushion",
+            "description": "",
+            "desktop_x": 29,
+            "desktop_y": 59,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_DUbtC7": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "perla-tub-chair-main-lime-seat-cloud",
+            "description": "",
+            "desktop_x": 49,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_BDqRyP": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "vienna-pedestal-side-table-1",
+            "description": "",
+            "desktop_x": 35,
+            "desktop_y": 55,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_BgQHjR": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "single-loren-divan-bed-base-beige",
+            "description": "",
+            "desktop_x": 51,
+            "desktop_y": 78,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_HK4R9L": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "estila-b502-bed-runner",
+            "description": "",
+            "desktop_x": 62,
+            "desktop_y": 60,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_CkYe3F": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "estila-b502-bed-cushion",
+            "description": "",
+            "desktop_x": 74,
+            "desktop_y": 51,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_7qNhjA": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "grandios-framed-mirror",
+            "description": "",
+            "desktop_x": 60,
+            "desktop_y": 26,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_q46ckF": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "estila-b502-framed-picture",
+            "description": "",
+            "desktop_x": 80,
+            "desktop_y": 23,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_PU7L99": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "stellan-single-headboard",
+            "description": "",
+            "desktop_x": 78,
+            "desktop_y": 41,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        }
+      },
+      "block_order": [
+        "tab_gHwhLq",
+        "hotspot_a9JU6t",
+        "hotspot_Rtw73F",
+        "hotspot_RPxeYB",
+        "hotspot_WWcGt8",
+        "hotspot_w4UamA",
+        "hotspot_DUbtC7",
+        "hotspot_BDqRyP",
+        "hotspot_BgQHjR",
+        "hotspot_HK4R9L",
+        "hotspot_CkYe3F",
+        "hotspot_7qNhjA",
+        "hotspot_q46ckF",
+        "hotspot_PU7L99"
+      ],
+      "name": "Hotspots",
+      "settings": {
+        "remove_top_padding": false,
+        "colour_scheme": "base-white-01"
+      }
+    },
+    "product_blocks_Fra7Pt": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_3mFakK": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "stellan-bedroom-furniture-bundle",
+              "perla-tub-chair-main-lime-seat-cloud",
+              "asprey-high-back-chair-steel",
+              "estila-b502-bed-cushion",
+              "estila-b502-bed-runner",
+              "estila-b502-chair-cushion",
+              "estila-b502-framed-picture",
+              "vienna-pedestal-side-table-1",
+              "grandios-framed-mirror",
+              "stellan-3-drawer-desk",
+              "stellan-single-headboard"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        },
+        "product_block_gbHrnY": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_3mFakK",
+        "product_block_gbHrnY"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Featured Products",
+        "section_padding": "--spacing-2xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "richtext_CQzgzL",
+    "hotspots_bfFtxR",
+    "product_blocks_Fra7Pt"
+  ]
+}

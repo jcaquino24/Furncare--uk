@@ -1,0 +1,30 @@
+{% liquid
+  assign element = 'div'
+  if url != blank
+    assign element = 'a href="' | append: url | append: '"'
+  endif
+%}
+<{{ element }} class="content-block">
+  {% if image != blank %}
+    {{
+      image
+      | image_url: width: width
+      | image_tag:
+        sizes: '(min-width: 375px) 50vw, 100vw',
+        widths: '320, 480, 640, 768, 960, 1024, 1366, 1536, 1920, 2048, 2560, 2880',
+        class: 'background-image'
+    }}
+  {% else %}
+    {%
+      render 'placeholder-image',
+      is_background: true,
+      background_color: 'var(--color-surface-primary')
+    %}
+  {% endif %}
+
+  {% if title != blank %}
+    <span class="content-block__title body-md body-md--bold">
+      {{ title }}
+    </span>
+  {% endif %}
+</{{ element }}>

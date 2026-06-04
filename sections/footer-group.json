@@ -1,0 +1,87 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "html_bnFGfP": {
+          "type": "html",
+          "settings": {
+            "content": ""
+          }
+        },
+        "company_info_Yr3jmD": {
+          "type": "company_info",
+          "settings": {
+            "company_logo": "shopify://shop_images/Furncare_logo_charcoal_1.svg",
+            "content": "",
+            "cert_logo_one": "shopify://shop_images/cert1_bb355169-e7fa-4dd5-97e3-df8e1c50ce12.png"
+          }
+        },
+        "newsletter_MmQDa3": {
+          "type": "newsletter",
+          "settings": {
+            "title": "Join our mailing list",
+            "subtitle": "Keep up to date and get special news and offers.",
+            "content": "<div id=\"mc_embed_signup\">\n  <!-- Hidden iframe to swallow Mailchimp redirect -->\n  <iframe name=\"mc_hidden_iframe\" style=\"display:none;\"></iframe>\n\n  <form action=\"https://furncare.us9.list-manage.com/subscribe/post?u=da8e9ef69353ff18f46fd9dce&amp;id=79784ccdc8&amp;f_id=0034dbe3f0\" method=\"post\" id=\"mc-embedded-subscribe-form\" name=\"mc-embedded-subscribe-form\" class=\"validate\" target=\"mc_hidden_iframe\">\n    <div id=\"mc_embed_signup_scroll\">\n      <div class=\"mc-field-group\">\n        <input type=\"email\" name=\"EMAIL\" class=\"required email\" id=\"mce-EMAIL\" required=\"\" placeholder=\"Email\">\n      </div>\n\n      <div class=\"mc-field-group\">\n        <input type=\"text\" name=\"FULL_NAME\" class=\"required text\" id=\"mce-FULL_NAME\" required=\"\" placeholder=\"Name\">\n      </div>\n\n      <!-- Mailchimp responses (kept but unused) -->\n      <div id=\"mce-responses\" class=\"clear\">\n        <div class=\"response\" id=\"mce-error-response\" style=\"display:none;\"></div>\n        <div class=\"response\" id=\"mce-success-response\" style=\"display:none;\"></div>\n      </div>\n\n      <!-- Honeypot -->\n      <div aria-hidden=\"true\" style=\"position:absolute;left:-5000px;\">\n        <input type=\"text\" name=\"b_da8e9ef69353ff18f46fd9dce_79784ccdc8\" tabindex=\"-1\" value=\"\">\n      </div>\n\n      <div class=\"clear\">\n        <input type=\"submit\" name=\"subscribe\" id=\"mc-embedded-subscribe\" class=\"button button--secondary\" value=\"Sign up\">\n      </div>\n    </div>\n  </form>\n\n  <!-- Custom thank-you message -->\n  <p id=\"mc-thanks-message\" style=\"display:none;margin-top:1rem;\">\n    Thanks for signing up!\n  </p>\n</div>\n\n<script>\n  document.addEventListener('DOMContentLoaded', function () {\n    var form   = document.getElementById('mc-embedded-subscribe-form');\n    var thanks = document.getElementById('mc-thanks-message');\n    var button = document.getElementById('mc-embedded-subscribe');\n    var hideTimer;\n    const emailInput = document.getElementById('mce-EMAIL');\n    const nameInput = document.getElementById('mce-FULL_NAME');\n\n    if (!form || !thanks) return;\n\n    form.addEventListener('submit', function () {\n      if (!emailInput.value || !nameInput.value) {\n        return;\n      }\n\n      // Disable button to prevent double-submit\n      if (button) {\n        button.disabled = true;\n      }\n\n      // Clear fields immediately\n      setTimeout(function () {\n        form.reset();\n      }, 100);\n\n      // Show thank-you message\n      thanks.style.display = 'block';\n\n      // Clear any existing hide timer\n      if (hideTimer) {\n        clearTimeout(hideTimer);\n      }\n\n      // Hide thank-you + re-enable button after 5 seconds\n      hideTimer = setTimeout(function () {\n        thanks.style.display = 'none';\n\n        if (button) {\n          button.disabled = false;\n        }\n      }, 5000);\n    });\n  });\n</script>"
+          }
+        },
+        "linklist_VEJFKt": {
+          "type": "linklist",
+          "settings": {
+            "title": "Recommended",
+            "link_list": "footer"
+          }
+        },
+        "linklist_Qe8dhb": {
+          "type": "linklist",
+          "settings": {
+            "title": "Support",
+            "link_list": "footer-menu-support"
+          }
+        },
+        "connect_RJQCRN": {
+          "type": "connect",
+          "settings": {
+            "title": "Connect",
+            "phone": "01603664900",
+            "phone_icon": "shopify://shop_images/Phone_15bf9f2d-b770-47b8-91a8-e7196d0ab4e5.svg",
+            "email": "sales@furncare.co.uk",
+            "email_icon": "shopify://shop_images/Enveloppe.svg",
+            "location_text": "Find us",
+            "location_address": "https://w3w.co/amuse.liberated.retract",
+            "location_icon": "shopify://shop_images/Location.svg",
+            "show_social_icons": true
+          }
+        }
+      },
+      "block_order": [
+        "html_bnFGfP",
+        "company_info_Yr3jmD",
+        "newsletter_MmQDa3",
+        "linklist_VEJFKt",
+        "linklist_Qe8dhb",
+        "connect_RJQCRN"
+      ],
+      "settings": {
+        "use_container": true,
+        "use_subfooter": true,
+        "subfooter_link_list": "sub-footer",
+        "copyright": "&copy; {{ 'now' | date: '%Y' }} {{ shop.address.company | default: shop.name }}.  All Rights Reserved. Company Reg: 08093065"
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

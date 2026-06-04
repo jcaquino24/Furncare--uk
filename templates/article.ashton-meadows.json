@@ -1,0 +1,818 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_video_banner_Mx3q8g": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_8TMHFP": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "case study",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_DXxf3y": {
+          "type": "title",
+          "settings": {
+            "text": "Ashton Meadows",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_8TMHFP",
+        "title_DXxf3y"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 600,
+        "height_mobile": 430,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Bistro_Area_7.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(54deg, rgba(255, 250, 99, 1), rgba(38, 37, 32, 0.4) 1%)",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_PhprEj": {
+      "type": "richtext",
+      "blocks": {
+        "heading_mYLH3K": {
+          "type": "heading",
+          "settings": {
+            "text": "Furncare completes installation of one of their largest ever single site projects for Ashton Group",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_LFtXUT": {
+          "type": "tagline",
+          "settings": {
+            "content": "Furncare have just completed the installation of one of their largest ever single site projects. Working closely with the executive team at <a href=\"https://www.ashtonmeadows.co.uk/\">Ashton Meadows Nursing Home</a> in Kingston during construction, the prestigious 68 bedroom development is now in the final stages of preparation before opening.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_AtLUnj": {
+          "type": "tagline",
+          "settings": {
+            "content": "The project brought together Furncare’s expertise in crafting furniture tailored for comfort, safety, and durability with Bright Bay Design’s innovative approach to interior aesthetics, which has resulted in an elegant, welcoming environment designed to enhance residents’ quality of life.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_mYLH3K",
+        "tagline_LFtXUT",
+        "tagline_AtLUnj"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "featured_blocks_QcyUqa": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_DXB7Bf": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bathrooms_1_1b725842-c93b-4c73-92fc-65e8d56c20a0.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_qHALyV": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bedrooms_2.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_e7WAjf": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bedrooms_4.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_k7BEUn": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bedrooms_1.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_EezXy9": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bedrooms_5.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_itQMwe": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bedrooms_9.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_bmHWpM": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bedrooms_12.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_6nWUc6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_6.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_9HH8BN": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_13.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_JUAhHC": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_18.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_Uyb6Gh": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_30.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_F4tK78": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_35.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_aC9Vp8": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Cinema_3.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_4fCcHM": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Corridor_5.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_7Mw4p4": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Corridor_12.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_dW9eYh": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Corridor_16.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_bMyBWM": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Corridor_25.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_MVHCtp": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Corridor_32.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_rtDkMW": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Corridor_33.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_WaE9N8": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/External_Front_3.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_3UxQ3e": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/External_Front_5.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_BhKp7J": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/External_Front_7.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_4gLpWp": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/External_Garden_7.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_jNiDVq": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_21.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_zxW6TT": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_6.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_x4GmJp": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_8.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_CXeYRW": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_13.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_tPE86K": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_15.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_9VJwME": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_18.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_j6HTWr": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_21.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_iXKpYq": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_24.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_6b4BbT": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_27.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_yUjahr": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Three_4_jpg.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_eFMRHx": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Three_3.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_NEffVA": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Two_4.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_ELdcp6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Two_6.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_iF6FLD": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Two_10.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_Hzh4gk": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Two_11.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_MXKKCx": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Two_18.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_7BxWPV": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Two_16.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_jwnwzX": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Sensory_Room_2.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_Eryziq": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Salon_2.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_DCmeKF": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Reception_4.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_UcWRfd": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Team_Reception_6.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_DXB7Bf",
+        "block_qHALyV",
+        "block_e7WAjf",
+        "block_k7BEUn",
+        "block_EezXy9",
+        "block_itQMwe",
+        "block_bmHWpM",
+        "block_6nWUc6",
+        "block_9HH8BN",
+        "block_JUAhHC",
+        "block_Uyb6Gh",
+        "block_F4tK78",
+        "block_aC9Vp8",
+        "block_4fCcHM",
+        "block_7Mw4p4",
+        "block_dW9eYh",
+        "block_bMyBWM",
+        "block_MVHCtp",
+        "block_rtDkMW",
+        "block_WaE9N8",
+        "block_3UxQ3e",
+        "block_BhKp7J",
+        "block_4gLpWp",
+        "block_jNiDVq",
+        "block_zxW6TT",
+        "block_x4GmJp",
+        "block_CXeYRW",
+        "block_tPE86K",
+        "block_9VJwME",
+        "block_j6HTWr",
+        "block_iXKpYq",
+        "block_6b4BbT",
+        "block_yUjahr",
+        "block_eFMRHx",
+        "block_NEffVA",
+        "block_ELdcp6",
+        "block_iF6FLD",
+        "block_Hzh4gk",
+        "block_MXKKCx",
+        "block_7BxWPV",
+        "block_jwnwzX",
+        "block_Eryziq",
+        "block_DCmeKF",
+        "block_UcWRfd"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "",
+        "padding": "wide",
+        "layout": "line_grid",
+        "enable_lightbox": true
+      }
+    },
+    "richtext_MbPqHF": {
+      "type": "richtext",
+      "blocks": {
+        "heading_FhVTAz": {
+          "type": "heading",
+          "settings": {
+            "text": "“The care sector has been our life for two decades and we have such a close connection to the area, so this nursing home means so much to us. We’re delighted with the service and value that Furncare have provided and can’t wait to welcome our first residents.”",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_xjRgwb": {
+          "type": "tagline",
+          "settings": {
+            "content": "Kathy Ragunathan, Ashton Group Director",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "tagline_73JinG": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "<em>Kathy Ragunathan is a chartered accountant and Director of Ashton Group and controlled many of the financial and operational aspects of the new build. Along with her husband Gaj, both are experienced elderly care providers with a growing portfolio of premium care homes in West Sussex and Surrey.</em>",
+            "tagline_style": "body-sm"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_FhVTAz",
+        "tagline_xjRgwb",
+        "tagline_73JinG"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_text_Rr8iJJ": {
+      "type": "image-text",
+      "blocks": {
+        "images_NXFXtC": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Lounge_Two_13.jpg"
+          }
+        },
+        "content_c9CaD6": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "title_size": "xl",
+            "text": "The Ashton Group employs around 360 staff across their various sites, including the new Ashton Meadows Nursing Home. Gaj Ragunathan was born in neighbouring Kingston Hospital and attended Tiffin’s Grammar School just a few hundred metres from the new nursing home.\n\n\nAward-winning, multi-disciplined studio, DesignLSM, were commissioned to design the interiors, boasting a glowing reputation of delivering inspiring concepts within the hospitality, leisure and senior living industries over the last 36 years.",
+            "button_style": "underline",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_NXFXtC",
+        "content_c9CaD6"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "richtext_EW6cqY": {
+      "type": "richtext",
+      "blocks": {
+        "heading_C9ihxn": {
+          "type": "heading",
+          "settings": {
+            "text": "“Blending our vast experience in hospitality and senior living design, Ashton Meadows is set to present residents and staff with a beautiful home to enjoy – showcasing a luxurious concept that embodies tranquility, freshness and refinement.”",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_JPEfFQ": {
+          "type": "tagline",
+          "settings": {
+            "content": "Taryn Kallie, DesignLSM, Interior Designer",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_C9ihxn",
+        "tagline_JPEfFQ"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "image_text_ACHkic": {
+      "type": "image-text",
+      "blocks": {
+        "content_TRjRpz": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "title_size": "xl",
+            "text": "DesignLSM were already developing early concepts for the project when Bincy Mathew of the Ashton Group visited the Brighton Care Show in 2022. Having met Sheldon Southall on the Furncare stand, further meetings were arranged in London and Kingston over the next few months. A Furncare delivery vehicle loaded with sample furniture was taken to the site for first-hand assessment. Final specifications, bespoke upholstery designs, soft furnishings and budgets were then agreed. The final order was placed at the end of 2023, scheduled for spring and summer deliveries in time for an official opening event at the home in June this year.",
+            "button_style": "primary",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "images_Q4GCPV": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Bedrooms_11.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "content_TRjRpz",
+        "images_Q4GCPV"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "richtext_znBbzx": {
+      "type": "richtext",
+      "blocks": {
+        "heading_qBVQQe": {
+          "type": "heading",
+          "settings": {
+            "text": "“You can’t beat trying out the furniture itself. Taking actual samples to Kathy and Gaj took all the hassle out of the process for them. Our show van enables us to take furniture from our showroom to customers, no matter where they are in the UK.”",
+            "heading_level": "h2",
+            "heading_style": "title-md"
+          },
+          "blocks": {}
+        },
+        "tagline_DLcG7y": {
+          "type": "tagline",
+          "settings": {
+            "content": "Sheldon Southall, Head of Business Development, Furncare",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_bKjrMf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_qBVQQe",
+        "tagline_DLcG7y",
+        "button_bKjrMf"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "richtext_TJAtU7": {
+      "type": "richtext",
+      "blocks": {
+        "tagline_3xMBBU": {
+          "type": "tagline",
+          "settings": {
+            "content": "Everything from tables, lounge chairs, sofas and dining sets to bedside cabinets, curtains and soft furnishings were installed in scheduled phases. All the furniture, including cushions and bed linen, was delivered on schedule and placed ready-to-use in individual rooms – an aspect of the service which was especially appreciated by the nursing home team. Curtain poles were installed and curtains professionally hung by the Furncare ‘White Glove’ Moving Team. Even the patio sets were assembled and arranged in the gardens in time for the eagerly awaited summer sunshine and the VIP open day in June.",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "tagline_3xMBBU"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-6xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false
+      }
+    },
+    "image_video_banner_xWTgmR": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_YJpC8H": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "text": "Retirement furniture",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_qDHCNx": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "text": "Designed for Comfort, Built for <em>Care</em>.",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_YJpC8H",
+        "title_qDHCNx"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/External_Front_1.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "linear-gradient(320deg, rgba(255, 250, 99, 0.2), rgba(203, 68, 194, 1), rgba(255, 250, 99, 0))",
+        "colour_scheme": "light",
+        "content_position": "center-bottom",
+        "content_alignment": "center"
+      }
+    },
+    "product_blocks_hr4bkw": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_HdNPmE": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "the-3p-fulfilled-snowboard",
+              "the-collection-snowboard-liquid",
+              "the-inventory-not-tracked-snowboard-3",
+              "the-complete-snowboard",
+              "the-compare-at-price-snowboard"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_HdNPmE"
+      ],
+      "disabled": true,
+      "name": "Product blocks",
+      "settings": {
+        "title": "Products featured in this case study",
+        "section_padding": "--spacing-2xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_video_banner_Mx3q8g",
+    "richtext_PhprEj",
+    "featured_blocks_QcyUqa",
+    "richtext_MbPqHF",
+    "image_text_Rr8iJJ",
+    "richtext_EW6cqY",
+    "image_text_ACHkic",
+    "richtext_znBbzx",
+    "richtext_TJAtU7",
+    "image_video_banner_xWTgmR",
+    "product_blocks_hr4bkw"
+  ]
+}

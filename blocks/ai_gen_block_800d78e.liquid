@@ -1,0 +1,374 @@
+{% doc %}
+  @prompt
+    Create a new section with an accordion (collapsible toggle) that reveals an embedded form when expanded. The accordion should have a customisable heading/label, a smooth open/close animation, and the form area should accept an HTML or iframe embed code (e.g. HubSpot, Typeform, or custom HTML form). The closed state should show only the accordion header, and clicking it expands to reveal the form below., make it centered
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-form-accordion-{{ ai_gen_id }} {
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .ai-form-accordion__container-{{ ai_gen_id }} {
+    border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    background-color: {{ block.settings.background_color }};
+    overflow: hidden;
+  }
+
+  .ai-form-accordion__header-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: {{ block.settings.header_padding }}px;
+    background-color: {{ block.settings.header_background_color }};
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    gap: 12px;
+  }
+
+  .ai-form-accordion__header-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.header_hover_color }};
+  }
+
+  .ai-form-accordion__title-{{ ai_gen_id }} {
+    margin: 0;
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    font-weight: 600;
+  }
+
+  .ai-form-accordion__icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    color: {{ block.settings.icon_color }};
+  }
+
+  .ai-form-accordion__icon-{{ ai_gen_id }}.active {
+    transform: rotate(180deg);
+  }
+
+  .ai-form-accordion__content-{{ ai_gen_id }} {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 {{ block.settings.content_padding }}px;
+  }
+
+  .ai-form-accordion__content-{{ ai_gen_id }}.active {
+    max-height: 3000px;
+    padding: {{ block.settings.content_padding }}px;
+  }
+
+  .ai-form-accordion__form-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+  }
+
+  .ai-form-accordion__form-wrapper-{{ ai_gen_id }} iframe {
+    width: 100%;
+    border: none;
+    min-height: {{ block.settings.min_form_height }}px;
+  }
+
+  .ai-form-accordion__empty-state-{{ ai_gen_id }} {
+    padding: 40px 20px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-form-accordion__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.85 }}px;
+    }
+
+    .ai-form-accordion__header-{{ ai_gen_id }} {
+      padding: {{ block.settings.header_padding | times: 0.75 }}px;
+    }
+
+    .ai-form-accordion__content-{{ ai_gen_id }}.active {
+      padding: {{ block.settings.content_padding | times: 0.75 }}px;
+    }
+  }
+{% endstyle %}
+
+<form-accordion-{{ ai_gen_id }}
+  class="ai-form-accordion-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-form-accordion__container-{{ ai_gen_id }}">
+    <button
+      type="button"
+      class="ai-form-accordion__header-{{ ai_gen_id }}"
+      aria-expanded="false"
+      aria-controls="ai-form-accordion-content-{{ ai_gen_id }}"
+    >
+      <h3 class="ai-form-accordion__title-{{ ai_gen_id }}">
+        {{ block.settings.accordion_heading }}
+      </h3>
+      <svg
+        class="ai-form-accordion__icon-{{ ai_gen_id }}"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
+
+    <div
+      id="ai-form-accordion-content-{{ ai_gen_id }}"
+      class="ai-form-accordion__content-{{ ai_gen_id }}"
+    >
+      <div class="ai-form-accordion__form-wrapper-{{ ai_gen_id }}">
+        {% if block.settings.form_embed_code != blank %}
+          {{ block.settings.form_embed_code }}
+        {% else %}
+          <div class="ai-form-accordion__empty-state-{{ ai_gen_id }}">
+            <p>Add your form embed code in the block settings</p>
+            <p style="margin-top: 8px; font-size: 12px;">Supports HubSpot, Typeform, Google Forms, or custom HTML</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</form-accordion-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FormAccordion{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.header = this.querySelector('.ai-form-accordion__header-{{ ai_gen_id }}');
+        this.content = this.querySelector('.ai-form-accordion__content-{{ ai_gen_id }}');
+        this.icon = this.querySelector('.ai-form-accordion__icon-{{ ai_gen_id }}');
+        this.isOpen = {{ block.settings.default_open }};
+
+        if (this.isOpen) {
+          this.openAccordion();
+        }
+
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.header.addEventListener('click', () => {
+          this.toggleAccordion();
+        });
+      }
+
+      toggleAccordion() {
+        this.isOpen = !this.isOpen;
+
+        if (this.isOpen) {
+          this.openAccordion();
+        } else {
+          this.closeAccordion();
+        }
+      }
+
+      openAccordion() {
+        this.content.classList.add('active');
+        this.icon.classList.add('active');
+        this.header.setAttribute('aria-expanded', 'true');
+      }
+
+      closeAccordion() {
+        this.content.classList.remove('active');
+        this.icon.classList.remove('active');
+        this.header.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    customElements.define('form-accordion-{{ ai_gen_id }}', FormAccordion{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Form accordion",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Accordion"
+    },
+    {
+      "type": "text",
+      "id": "accordion_heading",
+      "label": "Heading",
+      "default": "Request a quote"
+    },
+    {
+      "type": "checkbox",
+      "id": "default_open",
+      "label": "Open by default",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Form embed"
+    },
+    {
+      "type": "html",
+      "id": "form_embed_code",
+      "label": "Embed code",
+      "info": "Paste your HubSpot, Typeform, Google Forms iframe or custom HTML form code here"
+    },
+    {
+      "type": "range",
+      "id": "min_form_height",
+      "label": "Minimum form height",
+      "min": 200,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "header",
+      "content": "Header style"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "header_background_color",
+      "label": "Background color",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "color",
+      "id": "header_hover_color",
+      "label": "Hover background color",
+      "default": "#e8e8e8"
+    },
+    {
+      "type": "range",
+      "id": "header_padding",
+      "label": "Padding",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Content area"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "content_padding",
+      "label": "Padding",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Border"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Form accordion"
+    }
+  ]
+}
+{% endschema %}

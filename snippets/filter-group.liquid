@@ -1,0 +1,72 @@
+<div class="filter-group">
+  <div class="filter-group__container">
+
+    <button class="filter-group__title" type="button">
+      <span>{{ filter.label }}</span>
+      {% render "icons", icon: "chevron-down", class: "filter-group__dropdown-icon" %}
+    </button>
+
+    <div class="filter-group__dropdown">
+
+      {% if filter.type == "price_range" %}
+        <div class="filter-group__max-price-wrapper">
+          <span>{{ "collection.filters.max_price" | t }} {{ filter.range_max | money }}</span>
+          <button class="filter-group__clear-button" onclick="Filter.clearAllFilters()" type="button">{{ "collection.filters.clear" | t }}</button>
+        </div>
+      {% else %}
+        <div class="filter-group__selected-count-wrapper">
+          <span class="filter-group__selected-count"><span data-active-filters-count>{{ filter.active_values.size | default: 0 }}</span> {{ "collection.filters.selected" | t }}</span>
+          <button class="filter-group__clear-button" onclick="Filter.clearAllFilters()" type="button">{{ "collection.filters.clear" | t }}</button>
+        </div>
+      {% endif %}
+
+      <ul class="filter-group__list">
+        {% if filter.type == "price_range" %}
+
+          <li class="filter-group__item filter-group__item--price">
+
+            <div class="filter-group__item__price-wrapper">
+              <span>{{ cart.currency.symbol }}</span>
+              <input
+                type="number"
+                name="filter.v.price.gte"
+                onchange="Filter.handleInputChange(event)"
+                placeholder="{{ "collection.filters.from" | t }}"
+              >
+            </div>
+
+            <div class="filter-group__item__price-wrapper">
+              <span>{{ cart.currency.symbol }}</span>
+              <input
+                type="number"
+                name="filter.v.price.lte"
+                onchange="Filter.handleInputChange(event)"
+                placeholder="{{ "collection.filters.to" | t }}"
+              >
+            </div>
+
+          </li>
+          
+        {% else %}
+
+          {% for value in filter.values %}
+            <li class="filter-group__item">
+              <input
+                type="checkbox"
+                name="{{ filter.param_name }}[]"
+                value="{{ value.value | replace: "&amp;", "%26" }}"
+                id="{{ filter.label | handle }}-{{ value.value | handle }}"
+                {% if value.active %}checked{% endif %}
+                onchange="Filter.handleInputChange(event)"
+              >
+              <label for="{{ filter.label | handle }}-{{ value.value | handle }}">{{ value.label }} <span>({{ value.count }})</span></label>
+            </li>
+          {% endfor %}
+
+        {% endif %}
+      </ul>
+
+    </div>
+
+  </div>
+</div>

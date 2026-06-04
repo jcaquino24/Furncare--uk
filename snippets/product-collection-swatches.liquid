@@ -1,0 +1,60 @@
+{%- doc -%}
+  Product Collection Swatches
+
+  Renders the collections referenced in `product.metafields.custom.swatch_collections`
+  as swatch-style links. Each swatch links to the collection URL and uses the
+  collection's `custom.swatch_title` metafield as its label (falling back to the
+  collection title) and `custom.swatch_image` as its image.
+
+  @param {product} product - Product object (required)
+
+  @example
+  {% render 'product-collection-swatches', product: product %}
+{%- enddoc -%}
+
+{%- liquid
+  assign swatch_collections = product.metafields.custom.swatch_collections.value
+  assign swatch_collection_title = product.metafields.custom.swatch_collection_title
+  if swatch_collection_title == blank
+    assign swatch_collection_title = 'product.swatch_collection_title' | t
+  endif
+-%}
+
+{%- if swatch_collections != blank -%}
+  <div class="product-swatches product-swatches--collections" id="swatches">
+    {%- if swatch_collection_title != blank -%}
+      <p class="product-swatches__collection-title body-sm--bold">
+        {{ swatch_collection_title }}
+      </p>
+    {%- endif -%}
+    <fieldset class="product-swatches__group">
+      <div class="product-swatches__items">
+        {%- for swatch_collection in swatch_collections -%}
+          {%- liquid
+            assign swatch_label = swatch_collection.metafields.custom.swatch_title | default: swatch_collection.title
+            assign swatch_image = swatch_collection.metafields.custom.swatch_image
+          -%}
+          <a
+            href="{{ swatch_collection.url }}"
+            class="product-swatch__label product-swatch__label--link"
+            aria-label="{{ swatch_label | escape }}"
+          >
+            {%- if swatch_image != blank -%}
+              <span class="product-swatch__image">
+                {{
+                  swatch_image
+                  | image_url: width: 80
+                  | image_tag: loading: 'lazy', width: 40, height: 40, alt: swatch_label
+                }}
+              </span>
+            {%- endif -%}
+            <span class="product-swatch__text">{{ swatch_label }}</span>
+            <span class="product-swatch__chevron">
+              {% render 'icons', icon: 'directional-arrow-right' %}
+            </span>
+          </a>
+        {%- endfor -%}
+      </div>
+    </fieldset>
+  </div>
+{%- endif -%}

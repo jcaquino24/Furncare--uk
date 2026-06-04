@@ -1,0 +1,78 @@
+{%- doc -%}
+  @description
+  A quantity selector component that allows users to increase or decrease the quantity of a product.
+
+  @param {string} id - The unique identifier for the input field.
+  @param {number} value - The initial quantity value.
+  @param {number} step - The increment/decrement step for the quantity.
+  @param {number} min - The minimum quantity allowed.
+  @param {number} max - The maximum quantity allowed.
+  @param {boolean} is_disabled - Whether the quantity selector is disabled or not.
+  @param {variant} variant - The product variant object (optional, for inventory tracking).
+
+  @example
+  {% render 'quantity-selector', id: 'product-quantity', value: 1, step: 1, min: 1, max: 10 %}
+{%- enddoc -%}
+
+<uwp-quantity-selector
+  class="quantity-selector"
+  role="region"
+  aria-label="Quantity selector"
+  aria-roledescription="region"
+>
+  <button
+    class="quantity-selector__button quantity-selector__button--minus"
+    type="button"
+    js-quantity-selector="minus"
+    {% if is_disabled %}
+      disabled
+    {% endif %}
+  >
+    <span class="visually-hidden">Decrease quantity</span>
+    {% render 'icons', icon: 'minus' %}
+  </button>
+
+  <label>
+    <span class="visually-hidden">{{ 'cart.quantity' | t }}</span>
+    <input
+      id="{{ id }}"
+      class="quantity-selector__input eyebrow-md"
+      type="number"
+      name="quantity"
+      step="{{ step | default: 1 }}"
+      min="{{ min | default: 1 }}"
+      value="{{ value }}"
+      readonly
+      js-quantity-selector="input"
+      {% if item %}
+        data-id="{{ item.variant_id }}"
+        {% if item.variant.inventory_quantity %}
+          max="{{ item.variant.inventory_quantity }}"
+        {% endif %}
+      {% elsif variant %}
+        data-variant-id="{{ variant.id }}"
+        {% if variant.inventory_management and variant.inventory_quantity %}
+          max="{{ variant.inventory_quantity }}"
+          data-inventory="{{ variant.inventory_quantity }}"
+        {% endif %}
+      {% endif %}
+      {% if max %}
+        max="{{ max }}"
+      {% endif %}
+      {% if is_disabled %}
+        disabled
+      {% endif %}
+    >
+  </label>
+  <button
+    class="quantity-selector__button quantity-selector__button--plus"
+    type="button"
+    js-quantity-selector="plus"
+    {% if is_disabled %}
+      disabled
+    {% endif %}
+  >
+    <span class="visually-hidden">Increase quantity</span>
+    {% render 'icons', icon: 'plus' %}
+  </button>
+</uwp-quantity-selector>

@@ -1,0 +1,70 @@
+{%- doc -%}
+  Product Family Swatches
+
+  Renders product family members as swatches based on product tags.
+  Looks for a tag with format `productfamily:{value}` and fetches all products with the same tag.
+  Uses GraphQL on the client-side to fetch products and displays them as clickable swatches
+  with featured images. When a swatch is selected, the full product page is fetched and
+  updated without page reload.
+
+  @param {product} product - Product object (required)
+  @param {string} section_id - Section ID for unique input IDs
+
+  @example
+  {% render 'product-swatches', product: product, section_id: section.id %}
+{%- enddoc -%}
+
+{%- liquid
+  render 'vite-tag' with '@snippets/product-swatches.ts'
+
+  assign section_id = section_id | default: 'product'
+
+  # Find the productfamily tag from the product's tags (lowercase)
+  assign product_family = ''
+
+  for tag in product.tags
+    if tag contains 'productfamily:'
+      assign product_family = tag | remove: 'productfamily:'
+    endif
+  endfor
+
+  # Get product family text from metafield
+  assign product_family_text = product.metafields.custom.product_family_text.value
+
+  # Check if this is a bespoke product
+  assign is_bespoke = product.metafields.custom.is_bespoke_product.value
+
+  # Exit early if no product family tag is set
+  unless product_family != blank
+    break
+  endunless
+-%}
+
+<uwp-product-swatches
+  product="{{ product | json | escape }}"
+  section-id="{{ section_id }}"
+  data-product-family="{{ product_family | escape }}"
+  data-current-handle="{{ product.handle }}"
+  data-family-text="{{ product_family_text | escape }}"
+  data-is-bespoke="{{ is_bespoke }}"
+  role="region"
+  aria-label="Product swatches"
+  aria-roledescription="region"
+>
+  <div class="product-swatches" id="swatches">
+    <fieldset class="product-swatches__group">
+      <legend class="product-swatches__label body-sm body-sm--bold">
+        <span data-selected-swatch-label>
+          {%- if product_family_text != blank -%}
+            {{ product_family_text }}
+          {%- else -%}
+            {{ 'product.family' | t }}
+          {%- endif -%}
+        </span>
+      </legend>
+
+      <div data-swatches-container class="product-swatches__items">
+      </div>
+    </fieldset>
+  </div>
+</uwp-product-swatches>

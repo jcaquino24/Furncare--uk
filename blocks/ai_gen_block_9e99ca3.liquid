@@ -1,0 +1,523 @@
+{% doc %}
+  @prompt
+    Create a new Shopify theme section called "Form and Text" that mirrors the layout of an image-text section, but replaces the image area with an embedded form (via iframe or embed code snippet). The section should have two columns: one side for the embed form (with a settings field to paste an embed URL or raw embed code), and the other side for text content (heading, body text, and an optional button). The layout should be responsive, stacking vertically on mobile. Include block support for the text content elements. The design should feel premium and minimal.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-form-text-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+  }
+
+  .ai-form-text-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_width }}px;
+    margin: 0 auto;
+    padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
+  }
+
+  .ai-form-text-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.column_gap }}px;
+    align-items: center;
+  }
+
+  .ai-form-text-form-column-{{ ai_gen_id }} {
+    width: 100%;
+    min-height: {{ block.settings.form_min_height }}px;
+  }
+
+  .ai-form-text-form-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    min-height: {{ block.settings.form_min_height }}px;
+    background-color: {{ block.settings.form_background_color }};
+    border-radius: {{ block.settings.form_border_radius }}px;
+    overflow: hidden;
+  }
+
+  .ai-form-text-form-wrapper-{{ ai_gen_id }} iframe {
+    width: 100%;
+    height: 100%;
+    min-height: {{ block.settings.form_min_height }}px;
+    border: none;
+    display: block;
+  }
+
+  .ai-form-text-embed-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    min-height: {{ block.settings.form_min_height }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: {{ block.settings.form_border_radius }}px;
+  }
+
+  .ai-form-text-content-column-{{ ai_gen_id }} {
+    width: 100%;
+  }
+
+  .ai-form-text-content-wrapper-{{ ai_gen_id }} {
+    max-width: 540px;
+    {% if block.settings.layout == 'form_left' %}
+      margin-left: auto;
+    {% else %}
+      margin-right: auto;
+    {% endif %}
+  }
+
+  .ai-form-text-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 {{ block.settings.heading_spacing }}px;
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+  }
+
+  .ai-form-text-body-{{ ai_gen_id }} {
+    font-size: {{ block.settings.body_size }}px;
+    line-height: 1.6;
+    color: {{ block.settings.body_color }};
+    margin: 0 0 {{ block.settings.body_spacing }}px;
+  }
+
+  .ai-form-text-body-{{ ai_gen_id }} p {
+    margin: 0 0 16px;
+  }
+
+  .ai-form-text-body-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-form-text-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_background_color }};
+    color: {{ block.settings.button_text_color }};
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+
+  .ai-form-text-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background_color }};
+    color: {{ block.settings.button_hover_text_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-form-text-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .ai-form-text-content-wrapper-{{ ai_gen_id }} {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .ai-form-text-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.8 }}px;
+    }
+
+    .ai-form-text-body-{{ ai_gen_id }} {
+      font-size: {{ block.settings.body_size | times: 0.9 }}px;
+    }
+
+    {% if block.settings.mobile_layout == 'form_first' %}
+      .ai-form-text-form-column-{{ ai_gen_id }} {
+        order: 1;
+      }
+      .ai-form-text-content-column-{{ ai_gen_id }} {
+        order: 2;
+      }
+    {% else %}
+      .ai-form-text-form-column-{{ ai_gen_id }} {
+        order: 2;
+      }
+      .ai-form-text-content-column-{{ ai_gen_id }} {
+        order: 1;
+      }
+    {% endif %}
+  }
+{% endstyle %}
+
+<ai-form-text-{{ ai_gen_id }} class="ai-form-text-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-form-text-container-{{ ai_gen_id }}">
+    <div class="ai-form-text-grid-{{ ai_gen_id }}">
+      <div class="ai-form-text-form-column-{{ ai_gen_id }}">
+        <div class="ai-form-text-form-wrapper-{{ ai_gen_id }}">
+          {% if block.settings.embed_code != blank %}
+            {{ block.settings.embed_code }}
+          {% elsif block.settings.embed_url != blank %}
+            <iframe
+              src="{{ block.settings.embed_url }}"
+              title="Embedded form"
+              loading="lazy"
+            ></iframe>
+          {% else %}
+            <div class="ai-form-text-embed-placeholder-{{ ai_gen_id }}">
+              Next, add an embed URL or embed code in the block settings
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="ai-form-text-content-column-{{ ai_gen_id }}">
+        <div class="ai-form-text-content-wrapper-{{ ai_gen_id }}">
+          {% if block.settings.heading != blank %}
+            <h2 class="ai-form-text-heading-{{ ai_gen_id }}">
+              {{ block.settings.heading }}
+            </h2>
+          {% endif %}
+
+          {% if block.settings.body_text != blank %}
+            <div class="ai-form-text-body-{{ ai_gen_id }}">
+              {{ block.settings.body_text }}
+            </div>
+          {% endif %}
+
+          {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+            <a
+              href="{{ block.settings.button_link }}"
+              class="ai-form-text-button-{{ ai_gen_id }}"
+            >
+              {{ block.settings.button_label }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</ai-form-text-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class AiFormText{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.adjustIframeHeight();
+      }
+
+      adjustIframeHeight() {
+        const iframe = this.querySelector('iframe');
+        if (!iframe) return;
+
+        iframe.addEventListener('load', () => {
+          try {
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            if (iframeDoc) {
+              const height = iframeDoc.body.scrollHeight;
+              if (height > 0) {
+                iframe.style.height = height + 'px';
+              }
+            }
+          } catch (e) {
+            console.log('Cannot access iframe content due to cross-origin restrictions');
+          }
+        });
+      }
+    }
+
+    customElements.define('ai-form-text-{{ ai_gen_id }}', AiFormText{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Form and text",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Desktop layout",
+      "options": [
+        {
+          "value": "form_left",
+          "label": "Form left, text right"
+        },
+        {
+          "value": "form_right",
+          "label": "Form right, text left"
+        }
+      ],
+      "default": "form_left"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "options": [
+        {
+          "value": "form_first",
+          "label": "Form first"
+        },
+        {
+          "value": "content_first",
+          "label": "Content first"
+        }
+      ],
+      "default": "content_first"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "label": "Container width",
+      "min": 800,
+      "max": 1600,
+      "step": 50,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Column gap",
+      "min": 20,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Form embed"
+    },
+    {
+      "type": "url",
+      "id": "embed_url",
+      "label": "Embed URL"
+    },
+    {
+      "type": "html",
+      "id": "embed_code",
+      "label": "Embed code"
+    },
+    {
+      "type": "range",
+      "id": "form_min_height",
+      "label": "Minimum height",
+      "min": 300,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "default": 500
+    },
+    {
+      "type": "color",
+      "id": "form_background_color",
+      "label": "Background color",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "range",
+      "id": "form_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Text content"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Get in touch</p>"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "red_hat_display_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "label": "Heading spacing",
+      "min": 10,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "<p>We'd love to hear from you. Fill out the form and our team will get back to you within 24 hours.</p>"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Body size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "body_spacing",
+      "label": "Body spacing",
+      "min": 10,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Padding vertical",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Padding horizontal",
+      "min": 16,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background_color",
+      "label": "Hover background color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Form and text"
+    }
+  ]
+}
+{% endschema %}

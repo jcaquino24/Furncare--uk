@@ -1,0 +1,87 @@
+{% comment %}
+  Art Direction Image Snippet
+
+  Accepts:
+    mobile_image: Mobile image liquid object (required)
+    desktop_image: Desktop image liquid object (required)
+    mobile_aspect_ratio: String (optional) - Aspect ratio for the mobile image, falls back to intrinsic aspect if not provided
+    desktop_aspect_ratio: String (optional) - Aspect ratio for the desktop image, defaults to mobile aspect ratio if not provided
+    alt_text: String (optional) - Alt text for the image
+    lazy_loading: Boolean (optional) - Whether to load the image lazily, default is true
+    fetchpriority: String (optional) - Fetch priority for the image, default is 'auto'
+    block_class: String (optional) - CSS class for the outer div, default is 'art-direction-image'
+    image_class: String (optional) - CSS class for the image, default is 'art-direction-image__image'
+    img_width: Integer (optional) - Width attribute for the fallback image, defaults to 1920
+    img_height: Integer (optional) - Height attribute for the fallback image, defaults to 1080
+
+  Usage:
+    {% include 'art-direction-image',
+      mobile_image: mobile_image,
+      desktop_image: desktop_image,
+      mobile_aspect_ratio: '1/1',
+      desktop_aspect_ratio: '16/9',
+      block_class: 'additional-class',
+      image_class: 'additional-img-class'
+    %}
+{% endcomment %}
+
+{% liquid
+  assign alt = alt | default: 'Image description' | escape
+  assign lazy_loading = lazy_loading | default: true, allow_false: true
+  assign fetchpriority = fetchpriority | default: 'auto'
+  assign loading = 'lazy'
+  if lazy_loading == false
+    assign loading = 'eager'
+  endif
+  assign img_width = img_width | default: 1920
+  assign img_height = img_height | default: 1080
+  assign mobile_aspect_ratio = mobile_aspect_ratio | default: '1/1'
+  assign desktop_aspect_ratio = desktop_aspect_ratio | default: '16/9'
+  assign mobile_focal_point = mobile_image.presentation.focal_point | default: '50% 50%'
+  assign preload = preload | default: false
+  assign desktop_focal_point = desktop_image.presentation.focal_point | default: '50% 50%'
+  assign block_class_custom = 'art-direction-image'
+  assign image_class_custom = 'art-direction-image__image'
+
+  if block_class != blank
+    assign block_class_custom = block_class_custom | append: ' ' | append: block_class
+    assign image_class_custom = image_class_custom | append: ' ' | append: block_class | append: '-image'
+  endif
+
+  if image_class != blank
+    assign image_class_custom = image_class_custom | append: ' ' | append: image_class
+  endif
+%}
+<div
+  class="{{ block_class_custom }}"
+  style="
+    --aspect-ratio: {{ mobile_aspect_ratio }};
+    --aspect-ratio-desktop: {{ desktop_aspect_ratio }};
+    --focal-point: {{ mobile_focal_point }};
+    --focal-point-desktop: {{ desktop_focal_point }};
+  "
+>
+  <picture class="{{ image_class_custom }}">
+    <source
+      media="(max-width: 767px)"
+      srcset="{{ mobile_image | image_url: width: '640x' }}"
+    >
+    <source
+      media="(min-width: 768px)"
+      srcset="{{ desktop_image | image_url: width: '2048x' }}"
+    >
+
+    {{
+      desktop_image
+      | image_url: width: '2048x'
+      | image_tag:
+        alt: alt,
+        class: image_class_custom,
+        width: img_width,
+        height: img_height,
+        loading: loading,
+        preload: preload,
+        fetchpriority: fetchpriority
+    }}
+  </picture>
+</div>

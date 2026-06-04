@@ -1,0 +1,298 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "UWP FW4 Theme",
+    "theme_version": "1.0.0",
+    "theme_author": "Underwaterpistol LTD",
+    "theme_documentation_url": "https:\/\/www.underwaterpistol.com",
+    "theme_support_url": "https:\/\/www.underwaterpistol.com"
+  },
+  {
+    "name": "Fonts",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Site fonts"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_font",
+        "default": "red_hat_display_n4",
+        "label": "Body Font",
+        "info": "Select a font for body and content text"
+      }
+    ]
+  },
+  {
+    "name": "Product",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "delivered_within_icon",
+        "label": "Delivered within icon"
+      }
+    ]
+  },
+  {
+    "name": "Instant Search",
+    "settings": [
+      {
+        "type": "text",
+        "id": "search_suggestions",
+        "label": "Search suggestions",
+        "default": "Angus Medium Back 2 Seater Sofa, Darius 3 Seater Sofa, Gino Tub Chair",
+        "info": "Comma separated list of terms to show as suggestions in the search results"
+      },
+      {
+        "type": "text",
+        "id": "search_popular_searches",
+        "label": "Popular searches",
+        "default": "Dining Chair, 2 Seater Sofa, Table, Cabinet Furniture",
+        "info": "Comma separated list of terms to show as popular searches in the search results"
+      },
+      {
+        "type": "checkbox",
+        "id": "instant_search_allow_suggestions",
+        "label": "Allow suggestions in results",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "instant_search_allow_collections",
+        "label": "Allow collections in results",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "instant_search_allow_pages",
+        "label": "Allow pages in results",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Rich snippets",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Products"
+      },
+      {
+        "type": "checkbox",
+        "id": "rs_product_description",
+        "default": true,
+        "label": "Show description"
+      },
+      {
+        "type": "checkbox",
+        "id": "rs_product_image",
+        "default": true,
+        "label": "Show image"
+      },
+      {
+        "type": "checkbox",
+        "id": "rs_product_sku",
+        "default": true,
+        "label": "Show SKU"
+      },
+      {
+        "type": "checkbox",
+        "id": "rs_product_brand",
+        "default": true,
+        "label": "Show brand"
+      },
+      {
+        "type": "header",
+        "content": "Articles"
+      },
+      {
+        "type": "text",
+        "id": "rs_article_author",
+        "label": "Overwrite author name"
+      },
+      {
+        "type": "checkbox",
+        "id": "rs_article_body",
+        "default": true,
+        "label": "Show body"
+      },
+      {
+        "type": "checkbox",
+        "id": "rs_article_description",
+        "default": true,
+        "label": "Show description"
+      },
+      {
+        "type": "checkbox",
+        "id": "rs_article_image",
+        "default": true,
+        "label": "Show image"
+      },
+      {
+        "type": "checkbox",
+        "id": "rs_article_publisher",
+        "default": true,
+        "label": "Show publisher"
+      }
+    ]
+  },
+  {
+    "name": "Social",
+    "settings": [
+      {
+        "type": "html",
+        "id": "facebook_icon",
+        "label": "Facebook icon svg code"
+      },
+      {
+        "type": "text",
+        "id": "facebook_url",
+        "label": "Facebook url",
+        "info": "https:\/\/www.facebook.com\/shopify"
+      },
+      {
+        "type": "html",
+        "id": "instagram_icon",
+        "label": "Instagram icon svg code"
+      },
+      {
+        "type": "text",
+        "id": "instagram_url",
+        "label": "Instagram url",
+        "info": "https:\/\/www.instagram.com\/shopify"
+      },
+      {
+        "type": "html",
+        "id": "pinterest_icon",
+        "label": "Pinterest icon svg code"
+      },
+      {
+        "type": "text",
+        "id": "pinterest_url",
+        "label": "Pinterest url",
+        "info": "https:\/\/www.pinterest.com\/shopify"
+      },
+      {
+        "type": "html",
+        "id": "tiktok_icon",
+        "label": "Tiktok icon svg code"
+      },
+      {
+        "type": "text",
+        "id": "tiktok_url",
+        "label": "Tiktok url",
+        "info": "https:\/\/www.tiktok.com\/shopify"
+      },
+      {
+        "type": "html",
+        "id": "youtube_icon",
+        "label": "Youtube icon svg code"
+      },
+      {
+        "type": "text",
+        "id": "youtube_url",
+        "label": "Youtube url",
+        "info": "https:\/\/www.youtube.com\/shopify"
+      },
+      {
+        "type": "html",
+        "id": "twitter_icon",
+        "label": "Twitter icon svg code"
+      },
+      {
+        "type": "text",
+        "id": "twitter_url",
+        "label": "Twitter url",
+        "info": "https:\/\/www.twitter.com\/shopify"
+      },
+      {
+        "type": "html",
+        "id": "linkedin_icon",
+        "label": "Linkedin icon svg code"
+      },
+      {
+        "type": "text",
+        "id": "linkedin_url",
+        "label": "Linkedin url",
+        "info": "https:\/\/www.linkedin.com\/shopify"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Icon",
+        "info": "Will be scaled down to 32 x 32px"
+      }
+    ]
+  },
+  {
+    "name": "Internationalisation",
+    "settings": [
+      {
+        "type": "checkbox",
+        "label": "Show markets switcher in header?",
+        "id": "markets_in_header",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Show markets switcher in footer?",
+        "id": "markets_in_footer",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Language Selector",
+        "id": "enable_language_selector",
+        "default": true
+      },
+      {
+        "type": "range",
+        "label": "Number of days to persist choices",
+        "id": "persist_days",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "default": 28
+      }
+    ]
+  },
+  {
+    "name": "Development",
+    "settings": [
+      {
+        "id": "storefront_access_token",
+        "type": "text",
+        "label": "Storefront Access Token",
+        "default": "10f3fc285cb0f3a57a4f876c363b4f14"
+      },
+      {
+        "id": "storefront_api_version",
+        "type": "text",
+        "label": "Storefront API Version",
+        "default": "2025-10"
+      },
+      {
+        "id": "boost_store_name",
+        "type": "text",
+        "label": "Boost Store Name",
+        "default": "furncare-uk.myshopify.com"
+      }
+    ]
+  },
+  {
+    "name": "Cart Upsell",
+    "settings": [
+      {
+        "id": "cart_upsell",
+        "type": "metaobject",
+        "label": "Cart Upsell",
+        "metaobject_type": "upsells"
+      }
+    ]
+  }
+]

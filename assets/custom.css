@@ -1,0 +1,21 @@
+.delivered-within {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.delivered-icon img {
+  width: 40px;
+  height: auto;
+}
+
+.delivered-text {
+  font-size: 18px;
+  font-family: inherit;
+  text-transform: lowercase;
+}
+
+.delivered-text::first-letter {
+    text-transform: capitalize;
+}

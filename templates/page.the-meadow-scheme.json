@@ -1,0 +1,497 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "hotspots_dbUyqe": {
+      "type": "hotspots",
+      "blocks": {
+        "hotspot_repnfH": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "suzani-teal",
+            "description": "",
+            "desktop_x": 94,
+            "desktop_y": 28,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_MHAFy3": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "l302-rectangular-cushion",
+            "description": "",
+            "desktop_x": 53,
+            "desktop_y": 57,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_AtwJX7": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "product-title-10",
+            "description": "",
+            "desktop_x": 64,
+            "desktop_y": 30,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_TgpLB8": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "product-title-11",
+            "description": "",
+            "desktop_x": 34,
+            "desktop_y": 29,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_ep4NJc": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "luna-table-lamp",
+            "description": "",
+            "desktop_x": 76,
+            "desktop_y": 48,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_imyUKP": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "luna-floor-lamp",
+            "description": "",
+            "desktop_x": 14,
+            "desktop_y": 38,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_ynM3Cx": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "linton-circular-side-table",
+            "description": "",
+            "desktop_x": 74,
+            "desktop_y": 59,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_bqDgyQ": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "product-title-9",
+            "description": "",
+            "desktop_x": 66,
+            "desktop_y": 53,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_PwW3be": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "livonia-oval-coffee-table",
+            "description": "",
+            "desktop_x": 52,
+            "desktop_y": 70,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_6XaegE": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "livonia-circular-side-table",
+            "description": "",
+            "desktop_x": 95,
+            "desktop_y": 61,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_i3MjUc": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "cambourne-high-back-chair-lismore-almond",
+            "description": "",
+            "desktop_x": 90,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_Qz7e4J": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "cambourne-medium-back-2-seater-sofa-alba-wheat",
+            "description": "",
+            "desktop_x": 44,
+            "desktop_y": 54,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_KAWcFn": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "livonia-small-traditional-circular-pedestal-table",
+            "description": "",
+            "desktop_x": 22,
+            "desktop_y": 52,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_bDmF8M": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "aurora-electric-rise-and-recliner-brookland-dove",
+            "description": "",
+            "desktop_x": 35,
+            "desktop_y": 47,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_qdBrMg": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "cambourne-medium-back-chair-ocean",
+            "description": "",
+            "desktop_x": 4,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_fbTwjG": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "cambourne-wingback-arabesque-teal",
+            "description": "",
+            "desktop_x": 62,
+            "desktop_y": 46,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "tab_M9TCzX": {
+          "type": "tab",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/LV_Communal_Scheme_Room_Image_Lounge-Dining_Scheme_2.jpg",
+            "image_desktop": "shopify://shop_images/LV_Communal_Scheme_Room_Image_Lounge-Dining_Scheme_2.jpg",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_repnfH",
+        "hotspot_MHAFy3",
+        "hotspot_AtwJX7",
+        "hotspot_TgpLB8",
+        "hotspot_ep4NJc",
+        "hotspot_imyUKP",
+        "hotspot_ynM3Cx",
+        "hotspot_bqDgyQ",
+        "hotspot_PwW3be",
+        "hotspot_6XaegE",
+        "hotspot_i3MjUc",
+        "hotspot_Qz7e4J",
+        "hotspot_KAWcFn",
+        "hotspot_bDmF8M",
+        "hotspot_qdBrMg",
+        "hotspot_fbTwjG",
+        "tab_M9TCzX"
+      ],
+      "name": "Hotspots",
+      "settings": {
+        "remove_top_padding": false,
+        "colour_scheme": "base-white-01"
+      }
+    },
+    "richtext_taQyjz": {
+      "type": "richtext",
+      "blocks": {
+        "heading_tAyhJB": {
+          "type": "heading",
+          "settings": {
+            "text": "Request <em>your </em>package quote.",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_xbGybT": {
+          "type": "tagline",
+          "settings": {
+            "content": "Enter your email to receive  a quotation for the Meadow room scheme.",
+            "tagline_style": "body-xs"
+          },
+          "blocks": {}
+        },
+        "button_LNa6y6": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_tAyhJB",
+        "tagline_xbGybT",
+        "button_LNa6y6"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 64,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "blocks_cxLWgM": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_X4xgpa": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"93f51c96-7941-4dbd-98cc-940d94ac55b8\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_X4xgpa"
+      ],
+      "name": "Form embed",
+      "settings": {}
+    },
+    "product_blocks_CTKjAE": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_zEmWpy": {
+          "type": "product_block",
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [
+              "cambourne-medium-back-chair-ocean",
+              "cambourne-high-back-chair-lismore-almond",
+              "cambourne-medium-back-2-seater-sofa-alba-wheat",
+              "cambourne-wingback-arabesque-teal",
+              "suzani-teal",
+              "aurora-electric-rise-and-recliner-brookland-dove",
+              "livonia-oval-coffee-table",
+              "livonia-circular-side-table",
+              "livonia-small-traditional-circular-pedestal-table",
+              "linton-circular-side-table",
+              "luna-floor-lamp",
+              "luna-table-lamp",
+              "product-title-10",
+              "product-title-11",
+              "product-title-9"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "duck-egg"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_zEmWpy"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Featured Products",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "image_text_9jRDPE": {
+      "type": "image-text",
+      "blocks": {
+        "images_GnPCXY": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/ChatGPT_Image_May_7_2026_11_44_12_AM.png"
+          }
+        },
+        "content_TyF3UE": {
+          "type": "content",
+          "settings": {
+            "title": "Design-Led in Every Detail",
+            "title_size": "xl",
+            "text": "Explore the full moodboard to see how each scheme comes together - from considered fabric pairings and contrast piping to coordinated accents, all curated for a cohesive, design-led finish and delivered within just 5 working days.",
+            "button_style": "primary",
+            "button_text": "Download the moodboards",
+            "button_url": "https://publuu.com/flip-book/link/2532705"
+          }
+        }
+      },
+      "block_order": [
+        "images_GnPCXY",
+        "content_TyF3UE"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "warm-stone",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "blocks_GAABFr": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_f3dNMq": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "medium",
+            "small_height": 30,
+            "medium_height": 60,
+            "large_height": 100,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_f3dNMq"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "richtext_DmVkUg": {
+      "type": "richtext",
+      "blocks": {
+        "heading_6GWdcX": {
+          "type": "heading",
+          "settings": {
+            "text": "Any Questions?",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_BBJyfM": {
+          "type": "tagline",
+          "settings": {
+            "content": "Get in touch with our expert team who are more than happy to assist.",
+            "tagline_style": "body-sm"
+          },
+          "blocks": {}
+        },
+        "button_fqAykz": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_6GWdcX",
+        "tagline_BBJyfM",
+        "button_fqAykz"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "blocks_zQrGGK": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_93e87q": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 40,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_93e87q"
+      ],
+      "name": "Form embed",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "hotspots_dbUyqe",
+    "richtext_taQyjz",
+    "blocks_cxLWgM",
+    "product_blocks_CTKjAE",
+    "image_text_9jRDPE",
+    "blocks_GAABFr",
+    "richtext_DmVkUg",
+    "blocks_zQrGGK"
+  ]
+}

@@ -1,0 +1,267 @@
+{%- liquid
+  render 'vite-tag' with '@sections/product.ts'
+-%}
+
+{% comment %} Render contact form drawer globally if HTML is defined {% endcomment %}
+{% if section.settings.contact_form_html != blank %}
+  {% comment %} Store drawer HTML to render globally {% endcomment %}
+  <script
+    type="text/template"
+    id="contact-form-drawer-template"
+    style="display: none;"
+  >
+    <uwp-drawer
+      modal-name="contact-form-drawer"
+      drawer-direction="right"
+      class="drawer"
+      aria-hidden="true"
+      role="region"
+      aria-label="Contact form drawer"
+      aria-roledescription="drawer"
+    >
+      <div class="modal__overlay" tabindex="-1" data-close-drawer></div>
+
+      <aside
+        class="drawer__container"
+        role="dialog"
+        aria-modal="true"
+        js-uwp-modal="modal"
+        aria-labelledby="drawerTitle"
+      >
+        <div class="drawer__header">
+          <div class="drawer__header-title-wrapper">
+            {% render 'icons', icon: 'chat' %}
+
+            <h2 id="drawerTitle" class="drawer__title body-lg body-lg--bold">
+              {{ 'product.actions.contact_us' | t }}
+            </h2>
+          </div>
+          <button
+            type="button"
+            class="drawer__close"
+            data-close-drawer
+            aria-label="{{ 'general.close' | t }}"
+          >
+            {% render 'icons', icon: 'close' %}
+          </button>
+        </div>
+
+        <div class="drawer__body">
+          <div class="drawer__description">
+            <p class="body-md">{{ 'product.actions.contact_description' | t }}</p>
+          </div>
+          <div class="contact-form-content" id="contact-form-placeholder">
+            {% comment %} Form will be moved here by JavaScript {% endcomment %}
+          </div>
+        </div>
+      </aside>
+    </uwp-drawer>
+  </script>
+
+  {% comment %} Render the form HTML directly on page (hidden) {% endcomment %}
+  <div style="display: none;">
+    {{ section.settings.contact_form_html }}
+  </div>
+{% endif %}
+
+{% render 'breadcrumbs', show_home: true, show_back_arrow: false %}
+
+<uwp-product
+  product="{{ product | json | escape }}"
+  role="region"
+  aria-label="Product"
+  aria-roledescription="region"
+>
+  <div class="product__wrapper">
+    <div class="product__media">
+      {% render 'product-gallery',
+        images: product.media,
+        show_thumbnails: section.settings.show_thumbnails,
+        zoom: section.settings.zoom,
+        autoplay: section.settings.autoplay,
+        autoplay_speed: section.settings.autoplay_speed,
+        arrows: section.settings.arrows,
+        enlarge: section.settings.enlarge,
+        section_id: section.id
+      %}
+    </div>
+
+    <div class="product__info">
+      {% render 'product-info',
+        product: product,
+        section_id: section.id,
+        section: section
+      %}
+    </div>
+
+    <div class="product__accordions">
+      {% comment %} Product Accordions - desktop: below gallery, mobile: below swatches {% endcomment %}
+      {% render 'product-accordions', product: product, section: section %}
+    </div>
+  </div>
+</uwp-product>
+
+{% schema %}
+{
+  "name": "Product",
+  "tag": "section",
+  "class": "product-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product Info Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sku",
+      "label": "Show SKU",
+      "default": true,
+      "info": "Display the product SKU"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vat_badge",
+      "label": "Show VAT badge",
+      "default": true,
+      "info": "Display the 'Including VAT' badge next to the price"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_free_sample_label",
+      "label": "Show free sample label",
+      "default": true,
+      "info": "Display the free sample label when the product price is 0"
+    },
+    {
+      "type": "header",
+      "content": "Contact Form Drawer Settings"
+    },
+    {
+      "type": "textarea",
+      "id": "contact_form_html",
+      "label": "Contact form HTML",
+      "info": "Paste the HTML for the contact form here"
+    },
+    {
+      "type": "header",
+      "content": "Lead time icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "lead_time_icon",
+      "label": "Delivery Icon"
+    },
+    {
+      "type": "text",
+      "id": "lead_time_text",
+      "label": "Shipping Text"
+    },
+    {
+      "type": "header",
+      "content": "Product Swatch Information"
+    },
+    {
+      "type": "richtext",
+      "id": "product_swatch_information",
+      "label": "Swatch Information Text",
+      "default": "<p>Experience the quality and texture of our fabrics before you decide. Order a free sample swatch today and find the perfect match for your space with confidence.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Product Gallery Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_thumbnails",
+      "label": "Show thumbnails",
+      "default": true,
+      "info": "Display thumbnail navigation"
+    },
+    {
+      "type": "checkbox",
+      "id": "zoom",
+      "label": "Enable zoom",
+      "default": true,
+      "info": "Allow zooming on product images"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "default": false,
+      "info": "Automatically cycle through images"
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay speed",
+      "default": 5,
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "sec",
+      "info": "Speed in seconds between slides"
+    },
+    {
+      "type": "checkbox",
+      "id": "arrows",
+      "label": "Show arrows",
+      "default": true,
+      "info": "Display navigation arrows"
+    },
+    {
+      "type": "checkbox",
+      "id": "enlarge",
+      "label": "Enable lightbox",
+      "default": true,
+      "info": "Allow full-screen image viewing"
+    },
+    {
+      "type": "header",
+      "content": "Product Actions"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_design_services",
+      "label": "Show design services button",
+      "default": true,
+      "info": "Display the design services action button"
+    },
+    {
+      "type": "text",
+      "id": "design_services_text",
+      "label": "Design services button text",
+      "default": "Interior design services",
+      "info": "Text displayed on the design services button"
+    },
+    {
+      "type": "url",
+      "id": "design_services_url",
+      "label": "Design services URL",
+      "info": "Link for the design services button"
+    },
+    {
+      "type": "header",
+      "content": "Product Accordions"
+    },
+    {
+      "type": "richtext",
+      "id": "sustainability_content",
+      "label": "Sustainability content",
+      "info": "Global content shown in all product pages"
+    },
+    {
+      "type": "richtext",
+      "id": "warranty_content",
+      "label": "Warranty content",
+      "info": "Global content shown in all product pages"
+    },
+    {
+      "type": "richtext",
+      "id": "shipping_returns_content",
+      "label": "Shipping & Returns content",
+      "info": "Global content shown in all product pages"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,74 @@
+<div class="line-item__item">
+  <div class="line-item__item__image-column">
+    <div class="line-item__item__image-container">
+      <a href="{{ item.product.url }}">
+        {%
+          render 'responsive-image' with
+          image: item.image,
+          max_width: '72px',
+          initial_size: '72x',
+          block_class: 'line-item__item-image'
+        %}
+      </a>
+    </div>
+  </div>
+
+  <div class="line-item__item__info-column">
+    <div class="line-item__item__info-container">
+      <div class="line-item__item__info">
+        <a href="{{ item.product.url }}" style="text-decoration: none;">
+          <p class="line-item__item__title">{{ item.product.title }}</p>
+        </a>
+        <p class="line-item__item__total-price hide-on-desktop">
+          {{ item.final_price | money }}
+        </p>
+
+        {% unless item.product.has_only_default_vartiant %}
+          <div class="line-item__item__options-list">
+            {% for option in item.options_with_values %}
+              <p class="line-item__item__option">
+                {{ option.name | capitalize }}: {{ option.value | capitalize }}
+              </p>
+            {% endfor %}
+          </div>
+        {% endunless %}
+
+        <span
+          data-id="{{ item.variant_id }}"
+          class="line-item__item__remove hide-on-mobile"
+        >
+          {{- 'cart.remove' | t -}}
+        </span>
+      </div>
+
+      <div class="line-item__item__line-container">
+        <p class="line-item__item__total-price hide-on-mobile">
+          {{ item.final_price | money }}
+        </p>
+        <div class="line-item__item__quantity-container">
+          <span class="line-item__item__decrement">-</span>
+          <input
+            data-id="{{ item.variant_id }}"
+            max="{{ item.variant.inventory_quantity }}"
+            type="text"
+            pattern="\d*"
+            class="line-item__item__quantity"
+            value="{{ item.quantity }}"
+          >
+          <span class="line-item__item__increment">+</span>
+        </div>
+        <span
+          data-id="{{ item.variant_id }}"
+          class="line-item__item__remove hide-on-desktop"
+        >
+          {{- 'cart.remove' | t -}}
+        </span>
+        <p
+          class="line-item__item__total-price hide-on-mobile"
+        >
+          {{ item.final_line_price | money }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

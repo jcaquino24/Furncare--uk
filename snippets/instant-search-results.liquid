@@ -1,0 +1,174 @@
+<aside
+  js-instant-search="results-parent"
+  class="instant-search-results colour-scheme--warm-stone"
+>
+  <button
+    type="button"
+    js-instant-search="close"
+    class="instant-search-results__close"
+    aria-label="{{ 'accessibility.close' | t }}"
+  >
+    {% render 'icons', icon: 'close' %}
+  </button>
+  {%- comment -%} NO RESULTS VIEW {%- endcomment -%}
+  <div
+    class="instant-search-results__container instant-search-results__container--no-results visually-hidden"
+    js-instant-search="no-results"
+  >
+    <div class="instant-search-results__no-results-content">
+      <p class="body-md--bold body-md">{{ 'search.no_results' | t }}</p>
+      <div class="body-md">
+        {{
+          'search.no_results_html'
+          | t:
+            terms: '"<span class="instant-search-results__no-results-text__terms"></span>"'
+        }}
+      </div>
+    </div>
+
+    <div class="instant-search-results__suggestions">
+      <div class="instant-search-results__title body-md--bold body-md">
+        {{ 'search.suggestions' | t }}
+      </div>
+      <div class="instant-search-results__results">
+        {% assign suggestions_from_settings = settings.search_suggestions
+          | split: ','
+        %}
+        {% for search in suggestions_from_settings %}
+          <a href="{{ request.origin }}/search?q={{ search | strip | url_encode }}"
+            class="instant-search-results__result button button--text"
+          >
+            {% render 'icons', icon: 'search' %}
+            {{ search }}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="instant-search-results__explore">
+      <div class="instant-search-results__title body-md--bold body-md">
+        {{ 'search.explore' | t }}
+      </div>
+      <div class="instant-search-results__results-explore">
+        {% for i in (1..2) %}
+          {% assign explore_image = 'search_explore_image' | append: i %}
+          {% assign explore_title = 'search_explore_title' | append: i %}
+          {% assign explore_url = 'search_explore_url' | append: i %}
+          <a
+            href="{{ settings[explore_url] }}"
+            class="instant-search-results__explore-card"
+          >
+            {{
+              settings[explore_image]
+              | image_url: width: 400, height: 360
+              | image_tag:
+                width: 200,
+                height: 180,
+                class: 'instant-search-results__explore-card-image'
+            }}
+            <div class="instant-search-results__explore-card-title button button--primary">
+              {{ settings[explore_title] }}
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} INITIAL / WAITING VIEW (popular searches before typing) {%- endcomment -%}
+  <div
+    class="instant-search-results__container instant-search-results__container--waiting-input visually-hidden"
+    js-instant-search="waiting-input"
+  >
+    <div class="instant-search-results__title body-md--bold body-md">
+      {{ 'search.popular_searches' | t }}
+    </div>
+    <div class="instant-search-results__results">
+      {% assign popular_searches_from_settings = settings.search_popular_searches
+        | split: ','
+      %}
+      {% for search in popular_searches_from_settings %}
+        <a
+          href="{{ request.origin }}/search?q={{ search | strip | url_encode }}"
+          class="instant-search-results__result button button--text"
+        >
+          {% render 'icons', icon: 'search' %}
+          {{ search }}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  {%- comment -%} HAS RESULTS VIEW {%- endcomment -%}
+  <div
+    class="instant-search-results__wrapper visually-hidden"
+    js-instant-search="has-results"
+  >
+    <div class="instant-search-results__container">
+      <!-- Suggestions/Pages/Articles -->
+      <div
+        class="instant-search-results__column"
+        js-instant-search="suggestions"
+      >
+        <div class="instant-search-results__title body-md--bold body-md">
+          {{ 'search.suggestions' | t }}
+        </div>
+        <div
+          class="instant-search-results__results"
+          data-icon-type="search"
+        >
+          {% assign suggestions_from_settings = settings.search_suggestions
+            | split: ','
+          %}
+          {% for suggestion in suggestions_from_settings %}
+            <a
+              href="{{ request.origin }}/search?q={{ suggestion | strip | url_encode }}"
+              class="instant-search-results__result button button--text"
+              data-suggestion-text="{{ suggestion | strip }}"
+            >
+              {% render 'icons', icon: 'search' %}
+              <span>{{ suggestion }}</span>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Collections -->
+      <div
+        class="instant-search-results__column"
+        js-instant-search="collections"
+      >
+        <div class="instant-search-results__title body-md--bold body-md">
+          {{ 'search.collections' | t }}
+        </div>
+        <div
+          class="instant-search-results__results"
+          data-icon-type="collections"
+        ></div>
+      </div>
+
+      <!-- Products -->
+      <div class="instant-search-results__column" js-instant-search="products">
+        <div class="instant-search-results__title body-md--bold body-md">
+          {{ 'search.products' | t }}
+        </div>
+        <div class="instant-search-results__instant-results instant-search-results__results product-grid--condensed">
+          {% render 'product-card',
+            is_loading: true,
+            product_card_style: 'condensed'
+          %}
+        </div>
+      </div>
+
+      <!-- View All -->
+      <div class="instant-search-results__view-all">
+        <button class="button button--underline button--underline-with-svg" js-instant-search="view-all">
+          <span class="instant-search-results__view-all-text">
+            {{- 'search.view_all_html' | t: terms: terms -}}
+          </span>
+          {% render 'icons', icon: 'arrow-right' %}
+        </button>
+      </div>
+    </div>
+  </div>
+</aside>

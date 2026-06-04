@@ -1,0 +1,45 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "customers-account",
+      "blocks": {
+        "yotpo_widget_j9hVNL": {
+          "type": "yotpo_widget",
+          "settings": {
+            "yotpo_widget_id": "394757"
+          }
+        },
+        "yotpo_widget_a86r4p": {
+          "type": "yotpo_widget",
+          "settings": {
+            "yotpo_widget_id": "394754"
+          }
+        },
+        "yotpo_widget_FcD8jU": {
+          "type": "yotpo_widget",
+          "settings": {
+            "yotpo_widget_id": "394755"
+          }
+        }
+      },
+      "block_order": [
+        "yotpo_widget_j9hVNL",
+        "yotpo_widget_a86r4p",
+        "yotpo_widget_FcD8jU"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

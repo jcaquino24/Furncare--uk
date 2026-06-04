@@ -1,0 +1,628 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "faqs_Lwg9Cg": {
+      "type": "faqs",
+      "blocks": {
+        "faq_zdCQx6": {
+          "type": "faq",
+          "settings": {
+            "question": "How can I place an order?",
+            "answer": "<p>You can place an order by any of the following methods:</p><ul><li>online</li><li>email to <a href=\"mailto:sales@furncare.co.uk\">sales@furncare.co.uk</a></li><li>call <a href=\"tel:01603664900\">01603 664 900</a></li><li>via our website’s online chat function</li></ul><p>Our advisors will be able to talk through your purchase and offer advice based on your requirements. Please advise when placing your order if you have a purchase order number and if there are any special delivery instructions i.e. difficult access, stairs etc.</p><p>Once your order has been placed, you will receive a confirmation email along with any additional information you need to know and our operations team will then be in contact to book your delivery date.</p>"
+          }
+        },
+        "faq_mW9d3H": {
+          "type": "faq",
+          "settings": {
+            "question": "What are your delivery terms and where do you deliver to?",
+            "answer": "<p>Please refer to </p>"
+          }
+        },
+        "faq_iVhRLj": {
+          "type": "faq",
+          "settings": {
+            "question": "What are my payment options?",
+            "answer": "<p>New customers:</p>"
+          }
+        },
+        "faq_DhwLYE": {
+          "type": "faq",
+          "settings": {
+            "question": "When will I receive my order?",
+            "answer": "<p>For in stock items</p>"
+          }
+        },
+        "faq_D6hfGm": {
+          "type": "faq",
+          "settings": {
+            "question": "What should I expect on the day of my delivery?",
+            "answer": "<p>We pride ourselves</p>"
+          }
+        },
+        "faq_YYzig7": {
+          "type": "faq",
+          "settings": {
+            "question": "Are my items covered under a guarantee?",
+            "answer": "<p>Our general guarantee terms are as below</p>"
+          }
+        },
+        "faq_FNAWrc": {
+          "type": "faq",
+          "settings": {
+            "question": "Are your furniture and soft furnishings fire retardant?",
+            "answer": "<p>All of our upholstery and textiles are fire retardant and wherever applicable all of our furniture is also Crib 5 FR.</p>"
+          }
+        },
+        "faq_hW9E4x": {
+          "type": "faq",
+          "settings": {
+            "question": "I have a project I'd like to discuss, will you visit my home?",
+            "answer": "<p>We'd love to hear more about your project!</p>"
+          }
+        },
+        "faq_k3HngJ": {
+          "type": "faq",
+          "settings": {
+            "question": "Is faux leather upholstery the best option for my home?",
+            "answer": "<p>There are a wide range of healthcare upholstery options and in many cases both textile and faux leather upholstery would be suitable. Our advisors are happy to recommend upholsteries based on your requirements and the type of care you provide. Please discuss this with us when placing your order if you would like any guidance.</p>"
+          }
+        },
+        "faq_HeftDM": {
+          "type": "faq",
+          "settings": {
+            "question": "What sectors do you supply to?",
+            "answer": "<p>We supply to elderly care, including dementia and nursing, supported living, learning and physical disability homes and also more challenging environments.</p><p>As some products aren’t suitable for certain sectors, you can navigate through our menus on the homepage to the sector you require and the products that we would recommend. Our team are also able to offer advice on the suitability of a product for your environment.</p>"
+          }
+        },
+        "faq_77ewXj": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I care for my products?",
+            "answer": "<p>To find out how to look after your products in the best way possible, please read our cleaning and laundering guides, which contain step by step processes and top tips when it comes to caring for your products.</p>"
+          }
+        },
+        "faq_iC36hH": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you have a showroom?",
+            "answer": "<p>Yes. Our showroom is available for visits subject to booking. Please call 01603 664900 or email sales@furncare.co.uk to arrange a viewing. Alternatively, we offer a sample van service where we can bring products to you.</p>"
+          }
+        },
+        "faq_LGQt4L": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you remove old furniture when you deliver?",
+            "answer": "<p>Our furniture removal service was introduced to provide a completely hassle-free service for our clients. As old furniture and furnishings are always disposed of responsibly (materials are recycled where possible), this service does come at a small extra cost per item. Get in touch with our team today to request a quotation for this service.</p>"
+          }
+        },
+        "faq_CqbGNm": {
+          "type": "faq",
+          "settings": {
+            "question": "My payment isn't going through online. What do I do?",
+            "answer": "<p>While it may seem obvious, please check you have the necessary funds in the account you are using. Check through the card details inputted for typos in the long card number, name on the card, expiry date or CCV number. If you are still having issues then please contact us, either through our web chat, email or give us a call.</p>"
+          }
+        },
+        "faq_jQitw7": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you measure up our windows for curtains or blinds?",
+            "answer": "<p>We will come out to your locations to measure up if you are dressing 6 windows or more. If you are dressing less than 6 windows then we would charge a callout fee.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_zdCQx6",
+        "faq_mW9d3H",
+        "faq_iVhRLj",
+        "faq_DhwLYE",
+        "faq_D6hfGm",
+        "faq_YYzig7",
+        "faq_FNAWrc",
+        "faq_hW9E4x",
+        "faq_k3HngJ",
+        "faq_HeftDM",
+        "faq_77ewXj",
+        "faq_iC36hH",
+        "faq_LGQt4L",
+        "faq_CqbGNm",
+        "faq_jQitw7"
+      ],
+      "disabled": true,
+      "name": "FAQs",
+      "settings": {
+        "faq_title": "Frequently Asked Questions",
+        "title_element": "h2",
+        "faq_text": "Scroll down for answers to our FAQs. If you can't find an answer to your question, give us a call on 01603 664900 or start a web chat and we'd be happy to help.",
+        "title_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "padding": "default"
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "blocks_YBCEMw": {
+      "type": "_blocks",
+      "name": "Image",
+      "settings": {}
+    },
+    "richtext_ppgrRb": {
+      "type": "richtext",
+      "blocks": {
+        "heading_FxDXBy": {
+          "type": "heading",
+          "settings": {
+            "text": "Hello, Carl!",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_eLJk6D": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "Congratulations on finding us! We're delighted to give you exclusive access to our new furniture ranges that are launching next month. Watch the below video to find out more...",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_FxDXBy",
+        "tagline_eLJk6D"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "image_video_banner_rymz8n": {
+      "type": "image-video-banner",
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 800,
+        "height_mobile": 300,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "video",
+        "video_mobile": "shopify://files/videos/Furncare Edit V6-1_380d84d1-144a-4f06-8683-81fdf8054b5d.mp4",
+        "show_controls": true,
+        "mute_video": true,
+        "autoplay_video": false,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "light",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_9YY97W": {
+      "type": "richtext",
+      "blocks": {
+        "heading_Vt6bA3": {
+          "type": "heading",
+          "settings": {
+            "text": "5 Styles, 13 Finishes, 1 Collection.",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_G94DD8": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "Truly bespoke bedrooms in 3 simple steps.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_Vt6bA3",
+        "tagline_G94DD8"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "image_text_blocks_ktBnWr": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "image_card_YdKMVW": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/B0A.jpg",
+            "image_mobile": "shopify://shop_images/B0A.jpg",
+            "title": "Galloway",
+            "subtitle": "",
+            "text": "<p>A Georgian inspired model for a traditional, elegant look.</p>",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_rnGB3p": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/B0B.jpg",
+            "image_mobile": "shopify://shop_images/B0B.jpg",
+            "title": "Abbott",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_QnhtGF": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-03-10_at_16.24.43.png",
+            "image_mobile": "shopify://shop_images/Screenshot_2026-03-10_at_16.24.43.png",
+            "title": "Tilbury",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_WzggzG": {
+          "type": "image_card",
+          "settings": {
+            "title": "Bronson",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_UNtNfH": {
+          "type": "image_card",
+          "settings": {
+            "title": "Ellington",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_YdKMVW",
+        "image_card_rnGB3p",
+        "image_card_QnhtGF",
+        "image_card_WzggzG",
+        "image_card_UNtNfH"
+      ],
+      "name": "Image text blocks",
+      "settings": {
+        "title": "Choose your design",
+        "section_padding": "--spacing-md",
+        "colour_scheme": "warm-stone",
+        "text_position": "over_image",
+        "mobile_layout": "swiper",
+        "enable_lightbox": false
+      }
+    },
+    "image_text_blocks_Njxr6K": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "image_card_BKNBgq": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_Ey6CnJ": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_RaBHrT": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_tBthPT": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_kaA8MY": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_zRXYAk": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_qBqT46": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_ikKjqE": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_Q7dVFV": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_daQbAC": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_dyw3ec": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/B0A.jpg",
+            "image_mobile": "shopify://shop_images/B0A.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_yWqyQp": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/B0B.jpg",
+            "image_mobile": "shopify://shop_images/B0B.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_C9qHt6": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-03-10_at_16.24.43.png",
+            "image_mobile": "shopify://shop_images/Screenshot_2026-03-10_at_16.24.43.png",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_BKNBgq",
+        "image_card_Ey6CnJ",
+        "image_card_RaBHrT",
+        "image_card_tBthPT",
+        "image_card_kaA8MY",
+        "image_card_zRXYAk",
+        "image_card_qBqT46",
+        "image_card_ikKjqE",
+        "image_card_Q7dVFV",
+        "image_card_daQbAC",
+        "image_card_dyw3ec",
+        "image_card_yWqyQp",
+        "image_card_C9qHt6"
+      ],
+      "name": "Image text blocks",
+      "settings": {
+        "title": "choose your finish",
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "warm-stone",
+        "text_position": "over_image",
+        "mobile_layout": "swiper",
+        "enable_lightbox": false
+      }
+    },
+    "image_text_blocks_RLihj8": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "image_card_YeJdXz": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_HwfLG6": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_YeJdXz",
+        "image_card_HwfLG6"
+      ],
+      "name": "Image text blocks",
+      "settings": {
+        "title": "finishing touches",
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "warm-stone",
+        "text_position": "over_image",
+        "mobile_layout": "swiper",
+        "enable_lightbox": false
+      }
+    },
+    "richtext_fxdPbE": {
+      "type": "richtext",
+      "blocks": {
+        "heading_pnWBUd": {
+          "type": "heading",
+          "settings": {
+            "text": "We'd love to bring you a sample.",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_pB7H8V": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "Please select a date from the options below for when we can meet at your studio with samples.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_pnWBUd",
+        "tagline_pB7H8V"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "blocks_mRjBap": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_txa47D": {
+          "type": "ai_gen_block_a8b1ae7",
+          "name": "Form embed",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"2a8b259a-597d-471e-9f59-65063bd5337e\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_txa47D"
+      ],
+      "name": "Rich text with form",
+      "settings": {}
+    }
+  },
+  "order": [
+    "faqs_Lwg9Cg",
+    "main",
+    "blocks_YBCEMw",
+    "richtext_ppgrRb",
+    "image_video_banner_rymz8n",
+    "richtext_9YY97W",
+    "image_text_blocks_ktBnWr",
+    "image_text_blocks_Njxr6K",
+    "image_text_blocks_RLihj8",
+    "richtext_fxdPbE",
+    "blocks_mRjBap"
+  ]
+}

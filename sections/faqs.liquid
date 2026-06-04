@@ -1,0 +1,168 @@
+{% capture content %}
+  {% for block in section.blocks %}
+    {% render 'accordion', title: block.settings.question, content: block.settings.answer, scheme: section.settings.colour_scheme %}
+  {% endfor %}
+{% endcapture %}
+
+{% if content != blank %}
+  <div class="faqs padding-block-{{ section.settings.padding }} colour-scheme--{{ section.settings.colour_scheme }}">
+    <div class="container container--small">
+    <div class="faqs__header" style="--text_align: {{ section.settings.title_alignment }};">
+      <{{ section.settings.title_element }} class="faqs__title title-xl">{{ section.settings.faq_title }}</{{ section.settings.title_element }}>
+      {% if section.settings.faq_text != blank %}
+        <div class="faqs__text rich_text_field body-lg">
+          {{ section.settings.faq_text }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="faqs__list">
+      {{ content }}
+    </div>
+  </div>
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "FAQs",
+  "settings": [
+    {
+      "type": "header",
+      "content": "FAQs"
+    },
+    {
+      "type": "text",
+      "id": "faq_title",
+      "label": "FAQ Title",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "select",
+      "id": "title_element",
+      "label": "Title Element",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "faq_text",
+      "label": "FAQ Text",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at lectus eu dolor luctus rhoncus ut quis odio. Etiam neque enim."
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "colour_scheme",
+      "label": "Colour scheme",
+      "default": "base-white-01",
+      "info": "Details of the colour schemes in use are found here [INSERT LINK]",
+      "options": [
+        {
+          "value": "base-white-01",
+          "label": "Base white 01"
+          
+        },
+        {
+          "value": "base-white-02",
+          "label": "Base white 02"
+        },
+        {
+          "value": "warm-stone",
+          "label": "Warm stone"
+        },
+        {
+          "value": "green-01",
+          "label": "Green 01"
+        },
+        {
+          "value": "green-02",
+          "label": "Green 02"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding",
+      "label": "Padding",
+      "options": [
+        {
+          "value": "narrow",
+          "label": "Narrow"
+        },
+        {
+          "value": "wide",
+          "label": "Wide"
+        },
+        {
+          "value": "default",
+          "label": "Default"
+        }
+      ],
+      "default": "default"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQs"
+    }
+  ]
+}
+{% endschema %}

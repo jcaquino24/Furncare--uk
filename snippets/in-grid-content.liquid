@@ -1,0 +1,49 @@
+{%- liquid
+  assign object = object | default: null
+-%}
+
+{% if object != blank %}
+  <div class="in-grid-content">
+    {% for block in object %}
+      <div class="in-grid-content__block" {{ block.shopify_attributes }}>
+        {% case block.type %}
+          {% when 'text' %}
+            {% if block.settings.heading != blank %}
+              <h3 class="in-grid-content__heading title-3">
+                {{ block.settings.heading }}
+              </h3>
+            {% endif %}
+            
+            {% if block.settings.text != blank %}
+              <div class="in-grid-content__text text-regular">
+                {{ block.settings.text }}
+              </div>
+            {% endif %}
+            
+          {% when 'image' %}
+            {% if block.settings.image != blank %}
+              <div class="in-grid-content__image">
+                {{
+                  block.settings.image
+                  | image_url: width: 600
+                  | image_tag: loading: 'lazy', class: 'in-grid-content__img'
+                }}
+              </div>
+            {% endif %}
+            
+          {% when 'button' %}
+            {% if block.settings.button_text != blank and block.settings.button_url != blank %}
+              <div class="in-grid-content__button">
+                <a
+                  href="{{ block.settings.button_url }}"
+                  class="btn btn--primary"
+                >
+                  {{ block.settings.button_text }}
+                </a>
+              </div>
+            {% endif %}
+        {% endcase %}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %} 

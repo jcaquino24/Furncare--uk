@@ -1,0 +1,487 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_video_banner_tUQhjn": {
+      "type": "image-video-banner",
+      "blocks": {
+        "title_WYCUQG": {
+          "type": "title",
+          "settings": {
+            "text": "Garden Furniture",
+            "title_element": "h1",
+            "title_size": "display",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "eyebrow_NfMeef": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "for later living and challenging environments",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_aVJxk3": {
+          "type": "button",
+          "settings": {
+            "text": "Enquire Today",
+            "button_url": "shopify://pages/contact-us",
+            "new_tab": true,
+            "button_style": "underline"
+          }
+        },
+        "card_qwApKG": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/26001_1.jpg",
+            "title": "Later Living",
+            "tagline": "",
+            "button_text": "Shop now",
+            "button_url": "shopify://collections/garden-furniture",
+            "button_style": "underline",
+            "new_tab": true,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_kfiPGh": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/admin-ajax-5_2.jpg",
+            "title": "Challenging Environments",
+            "tagline": "",
+            "button_text": "Shop now",
+            "button_url": "shopify://collections/challenging-environments-garden-furniture",
+            "button_style": "underline",
+            "new_tab": true,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "title_WYCUQG",
+        "eyebrow_NfMeef",
+        "button_aVJxk3",
+        "card_qwApKG",
+        "card_kfiPGh"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 800,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "video",
+        "video_desktop": "shopify://files/videos/Garden Furn 2026 Landing Page.mp4",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "content_blocks_QVU3xP": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_VN4Yw4": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/26001_1.jpg",
+            "text": "Rattan Furniture",
+            "link": "shopify://collections/rattan-garden-furniture",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_iFUwLb": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/EDETS800W_-_Eden_Square_Table_in_situ_2.png",
+            "text": "Wooden Furniture",
+            "link": "shopify://collections/wooden-garden-furniture",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_aAhJMJ": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/admin-ajax-5_2.jpg",
+            "text": "Benches",
+            "link": "shopify://collections/garden-benches",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_ymUfmN": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/parasoll.png",
+            "text": "Accessories",
+            "link": "shopify://collections/garden-accessories",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_VN4Yw4",
+        "tab1_iFUwLb",
+        "tab1_aAhJMJ",
+        "tab1_ymUfmN"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "",
+        "section_padding": "--spacing-2xl",
+        "tab1_title": "Collection 1",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "Collection 2",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    },
+    "richtext_gkEqTF": {
+      "type": "richtext",
+      "blocks": {
+        "heading_XyUT67": {
+          "type": "heading",
+          "name": "Heading",
+          "settings": {
+            "text": "Download the 2026 Garden Furniture Brochure Here:",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "button_inXHdJ": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "Download",
+            "url": "https://publuu.com/flip-book/link/3419335",
+            "new_tab": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_XyUT67",
+        "button_inXHdJ"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "green-01",
+        "enable_animation": false
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "content_blocks_Y9rfTG": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_LB74mt": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/28802-05-779-19576_3.jpg",
+            "text": "Durable",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_3pcy8f": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/KIT-106-RB-GR_SQ6.jpg",
+            "text": "Comfortable",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_JtekK3": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/KIT-106-RB-GR_SQ5.jpg",
+            "text": "Easy to Clean",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_LB74mt",
+        "tab1_3pcy8f",
+        "tab1_JtekK3"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "",
+        "section_padding": "--spacing-2xl",
+        "tab1_title": "Collection 1",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "Collection 2",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    },
+    "product_blocks_NVTciR": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_8Ut98d": {
+          "type": "product_block",
+          "settings": {
+            "title": "Our favourites",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [
+              "eden-armchair-1",
+              "eden-rectangular-table",
+              "holkham-2-seater-round-dining-set",
+              "florence-round-8-seater-bench",
+              "3-0m-parasol"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_8Ut98d"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "our top picks",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "richtext_88z9Tw": {
+      "type": "richtext",
+      "blocks": {
+        "heading_Bxn4qD": {
+          "type": "heading",
+          "settings": {
+            "text": "A well-designed space extends beyond the interior.",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_kghmNM": {
+          "type": "tagline",
+          "settings": {
+            "content": "Our garden furniture is designed to offer the same level of consideration outdoors - durable, comfortable, and designed to sit naturally within its environment.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_GnV7HT": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "Find out more",
+            "url": "shopify://blogs/news/dementia-friendly-garden-design-for-care-homes-choosing-the-right-outdoor-furniture",
+            "new_tab": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_Bxn4qD",
+        "tagline_kghmNM",
+        "button_GnV7HT"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "green-01",
+        "enable_animation": false
+      }
+    },
+    "blocks_Dipxg4": {
+      "type": "_blocks",
+      "name": "Image",
+      "settings": {}
+    },
+    "image_text_LchBaW": {
+      "type": "image-text",
+      "blocks": {
+        "images_agaX9H": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Untitled_77.jpg",
+            "image_two": "shopify://shop_images/EDETR1600W_-_Eden_Rectangular_Table_with_parasol.png"
+          }
+        },
+        "content_FRcXg6": {
+          "type": "content",
+          "settings": {
+            "title": "Considered for real environments",
+            "title_size": "display",
+            "text": "<h4>Built for Regular Use</h4>\nRobust construction and durable materials suited to environments where furniture is in constant use.\n\n<h4>Stable and Supportive</h4>\nDesigned to offer reassurance in use, with forms that feel secure, balanced, and easy to engage with.\n\n<h4>Weather-Resistant by Design</h4>\nMaterials selected to withstand outdoor conditions, maintaining both appearance and performance over time.\n\n<h4>Easy to Maintain</h4>\nPractical finishes that simplify cleaning and upkeep, supporting busy teams.\n\n<h4>Comfort That Lasts</h4>\nConsidered proportions and supportive seating that encourage residents to spend time outdoors.",
+            "button_style": "primary",
+            "button_text": "Enquire Now",
+            "button_url": "shopify://pages/contact-us"
+          }
+        }
+      },
+      "block_order": [
+        "images_agaX9H",
+        "content_FRcXg6"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "warm-stone",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "blocks_gzkyCP": {
+      "type": "_blocks",
+      "name": "Image with text overlay",
+      "settings": {}
+    },
+    "product_blocks_MD8bjD": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_fMUPNa": {
+          "type": "product_block",
+          "settings": {
+            "title": "Leaving soon!",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "austin-4-seater-dining-set",
+              "austin-3-seater-dining-set",
+              "avon-square-4-seater-dining-set",
+              "avon-circular-4-seater-dining-set"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_fMUPNa"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Leaving soon!",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "blocks_3pXGmt": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3e4b0ee_rLpd6A": {
+          "type": "ai_gen_block_3e4b0ee",
+          "settings": {
+            "spacing_size": "small"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3e4b0ee_rLpd6A"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "richtext_PPG4Ye": {
+      "type": "richtext",
+      "blocks": {
+        "heading_BFXAxz": {
+          "type": "heading",
+          "settings": {
+            "text": "Any Questions?",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_aVLFXn": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "Get in touch with our expert team who are more than happy to assist.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_BFXAxz",
+        "tagline_aVLFXn"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true
+      }
+    },
+    "blocks_wxNUjq": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_pWpyha": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_pWpyha"
+      ],
+      "name": "Form embed",
+      "settings": {}
+    }
+  },
+  "order": [
+    "image_video_banner_tUQhjn",
+    "content_blocks_QVU3xP",
+    "richtext_gkEqTF",
+    "main",
+    "content_blocks_Y9rfTG",
+    "product_blocks_NVTciR",
+    "richtext_88z9Tw",
+    "blocks_Dipxg4",
+    "image_text_LchBaW",
+    "blocks_gzkyCP",
+    "product_blocks_MD8bjD",
+    "blocks_3pXGmt",
+    "richtext_PPG4Ye",
+    "blocks_wxNUjq"
+  ]
+}

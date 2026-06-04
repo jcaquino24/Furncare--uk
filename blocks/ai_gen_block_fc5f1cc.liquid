@@ -1,0 +1,425 @@
+{% doc %}
+  @prompt
+    generate a quick add to cart block - so i can link it to a product and the user simply has to click it to add the product to basket. when the customer has clicked the button, a message pops up saying Added to cart successfully! or an error messaage, depending on the situation. this message overlays the screen, it doesnt come as another block in the page
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-quick-add-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-quick-add-button-{{ ai_gen_id }} {
+    width: 100%;
+    padding: {{ block.settings.button_padding }}px;
+    background-color: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.border_radius }}px;
+    font-size: {{ block.settings.font_size }}px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .ai-quick-add-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+  }
+
+  .ai-quick-add-button-{{ ai_gen_id }}:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .ai-quick-add-spinner-{{ ai_gen_id }} {
+    display: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid {{ block.settings.button_text_color }};
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: ai-quick-add-spin-{{ ai_gen_id }} 0.6s linear infinite;
+  }
+
+  .ai-quick-add-button-{{ ai_gen_id }}.loading .ai-quick-add-spinner-{{ ai_gen_id }} {
+    display: block;
+  }
+
+  .ai-quick-add-button-{{ ai_gen_id }}.loading .ai-quick-add-text-{{ ai_gen_id }} {
+    display: none;
+  }
+
+  @keyframes ai-quick-add-spin-{{ ai_gen_id }} {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .ai-quick-add-overlay-{{ ai_gen_id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .ai-quick-add-overlay-{{ ai_gen_id }}.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .ai-quick-add-notification-{{ ai_gen_id }} {
+    background-color: {{ block.settings.notification_bg_color }};
+    padding: 24px 32px;
+    border-radius: {{ block.settings.notification_border_radius }}px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    max-width: 90%;
+    width: 400px;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+  }
+
+  .ai-quick-add-overlay-{{ ai_gen_id }}.active .ai-quick-add-notification-{{ ai_gen_id }} {
+    transform: scale(1);
+  }
+
+  .ai-quick-add-notification-content-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ai-quick-add-notification-icon-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+  }
+
+  .ai-quick-add-notification-icon-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ai-quick-add-notification-message-{{ ai_gen_id }} {
+    color: {{ block.settings.notification_text_color }};
+    font-size: 16px;
+    font-weight: 500;
+    flex-grow: 1;
+  }
+
+  .ai-quick-add-notification-{{ ai_gen_id }}.success .ai-quick-add-notification-icon-{{ ai_gen_id }} {
+    color: {{ block.settings.success_color }};
+  }
+
+  .ai-quick-add-notification-{{ ai_gen_id }}.error .ai-quick-add-notification-icon-{{ ai_gen_id }} {
+    color: {{ block.settings.error_color }};
+  }
+{% endstyle %}
+
+<quick-add-to-cart-{{ ai_gen_id }}
+  class="ai-quick-add-{{ ai_gen_id }}"
+  data-product-id="{% if block.settings.product %}{{ block.settings.product.variants.first.id }}{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.product %}
+    <button
+      type="button"
+      class="ai-quick-add-button-{{ ai_gen_id }}"
+      aria-label="Add {{ block.settings.product.title }} to cart"
+    >
+      <span class="ai-quick-add-spinner-{{ ai_gen_id }}"></span>
+      <span class="ai-quick-add-text-{{ ai_gen_id }}">{{ block.settings.button_text }}</span>
+    </button>
+  {% else %}
+    <button
+      type="button"
+      class="ai-quick-add-button-{{ ai_gen_id }}"
+      disabled
+    >
+      <span class="ai-quick-add-text-{{ ai_gen_id }}">Select a product</span>
+    </button>
+  {% endif %}
+
+  <div class="ai-quick-add-overlay-{{ ai_gen_id }}">
+    <div class="ai-quick-add-notification-{{ ai_gen_id }}">
+      <div class="ai-quick-add-notification-content-{{ ai_gen_id }}">
+        <div class="ai-quick-add-notification-icon-{{ ai_gen_id }}">
+          <svg
+            class="ai-quick-add-success-icon-{{ ai_gen_id }}"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <svg
+            class="ai-quick-add-error-icon-{{ ai_gen_id }}"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="display: none;"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="15" y1="9" x2="9" y2="15"></line>
+            <line x1="9" y1="9" x2="15" y2="15"></line>
+          </svg>
+        </div>
+        <div class="ai-quick-add-notification-message-{{ ai_gen_id }}"></div>
+      </div>
+    </div>
+  </div>
+</quick-add-to-cart-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class QuickAddToCart{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.button = this.querySelector('.ai-quick-add-button-{{ ai_gen_id }}');
+        this.overlay = this.querySelector('.ai-quick-add-overlay-{{ ai_gen_id }}');
+        this.notification = this.querySelector('.ai-quick-add-notification-{{ ai_gen_id }}');
+        this.message = this.querySelector('.ai-quick-add-notification-message-{{ ai_gen_id }}');
+        this.successIcon = this.querySelector('.ai-quick-add-success-icon-{{ ai_gen_id }}');
+        this.errorIcon = this.querySelector('.ai-quick-add-error-icon-{{ ai_gen_id }}');
+        this.variantId = this.dataset.productId;
+      }
+
+      connectedCallback() {
+        if (this.button && this.variantId) {
+          this.button.addEventListener('click', this.handleAddToCart.bind(this));
+        }
+        if (this.overlay) {
+          this.overlay.addEventListener('click', this.handleOverlayClick.bind(this));
+        }
+      }
+
+      handleAddToCart() {
+        if (!this.variantId) return;
+
+        this.button.classList.add('loading');
+        this.button.disabled = true;
+
+        const formData = {
+          items: [{
+            id: this.variantId,
+            quantity: 1
+          }]
+        };
+
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to add to cart');
+          }
+          return response.json();
+        })
+        .then(data => {
+          this.showNotification('success', 'Added to cart successfully!');
+          this.updateCartCount();
+        })
+        .catch(error => {
+          this.showNotification('error', 'Failed to add to cart. Please try again.');
+        })
+        .finally(() => {
+          this.button.classList.remove('loading');
+          this.button.disabled = false;
+        });
+      }
+
+      showNotification(type, messageText) {
+        this.notification.classList.remove('success', 'error');
+        this.notification.classList.add(type);
+        this.message.textContent = messageText;
+
+        if (type === 'success') {
+          this.successIcon.style.display = 'block';
+          this.errorIcon.style.display = 'none';
+        } else {
+          this.successIcon.style.display = 'none';
+          this.errorIcon.style.display = 'block';
+        }
+
+        this.overlay.classList.add('active');
+
+        setTimeout(() => {
+          this.overlay.classList.remove('active');
+        }, 3000);
+      }
+
+      handleOverlayClick(event) {
+        if (event.target === this.overlay) {
+          this.overlay.classList.remove('active');
+        }
+      }
+
+      updateCartCount() {
+        fetch('/cart.js')
+          .then(response => response.json())
+          .then(cart => {
+            const cartCountElements = document.querySelectorAll('[data-cart-count]');
+            cartCountElements.forEach(element => {
+              element.textContent = cart.item_count;
+            });
+          });
+      }
+    }
+
+    customElements.define('quick-add-to-cart-{{ ai_gen_id }}', QuickAddToCart{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Quick add to cart",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Add to cart"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Hover background color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_padding",
+      "label": "Padding",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Notification"
+    },
+    {
+      "type": "color",
+      "id": "notification_bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "notification_text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "success_color",
+      "label": "Success icon color",
+      "default": "#008060"
+    },
+    {
+      "type": "color",
+      "id": "error_color",
+      "label": "Error icon color",
+      "default": "#D82C0D"
+    },
+    {
+      "type": "range",
+      "id": "notification_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quick add to cart"
+    }
+  ]
+}
+{% endschema %}

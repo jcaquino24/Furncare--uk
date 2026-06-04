@@ -1,0 +1,82 @@
+<script>
+  window.themeVars = window.themeVars || {};
+
+  // Localization liquid variables
+  window.themeVars.locale = {
+    country: {
+      code: {{ localization.country.iso_code | json }},
+      name: {{ localization.country | json }},
+    },
+    language: {{ localization.language | json }},
+    market: {
+      handle: {{ localization.market.handle | json }},
+      id: {{ localization.market.id | json }},
+    },
+  };
+
+  // Customer liquid variables
+  window.themeVars.customer = {
+    isLoggedIn: {% if customer %}true{% else %}false{% endif %},
+    id: {{ customer.id | default: 'null' | json }},
+    firstName: {{ customer.first_name | default: 'null' | json }},
+    lastName: {{ customer.last_name | default: 'null' | json }},
+    email: {{ customer.email | default: 'null' | json }},
+    phone: {{ customer.phone | default: 'null' | json }},
+    defaultAddress: {
+      id: {{ customer.default_address.id | default: 'null' | json }},
+      name: {{ customer.default_address.name | default: 'null' | json }},
+      first_name: {{ customer.default_address.first_name | default: 'null' | json }},
+      last_name: {{ customer.default_address.last_name | default: 'null' | json }},
+      company: {{ customer.default_address.company | default: 'null' | json }},
+      address1: {{ customer.default_address.address1 | default: 'null' | json }},
+      address2: {{ customer.default_address.address2 | default: 'null' | json }},
+      city: {{ customer.default_address.city | default: 'null' | json }},
+      province: {{ customer.default_address.province | default: 'null' | json }},
+      country: {{ customer.default_address.country | default: 'null' | json }},
+      zip: {{ customer.default_address.zip | default: 'null' | json }},
+      phone: {{ customer.default_address.phone | default: 'null' | json }}
+    },
+    acceptsMarketing: {{ customer.accepts_marketing | default: 'false' | json }},
+    tags: {{ customer.tags | default: 'null' | json }},
+    note: {{ customer.note | default: 'null' | json }},
+    totalSpent: {{ customer.total_spent | default: '0' | json }},
+    ordersCount: {{ customer.orders_count | default: '0' | json }},
+    lastOrderId: {{ customer.last_order_id | default: 'null' | json }},
+    verifiedEmail: {{ customer.verified_email | default: 'false' | json }},
+    createdAt: {{ customer.created_at | default: 'null' | json }},
+    updatedAt: {{ customer.updated_at | default: 'null' | json }}
+  };
+
+  // Check and clear sensitive information if the customer is not logged in
+  if (!window.themeVars.customer.isLoggedIn) {
+    const customerKeys = Object.keys(window.themeVars.customer);
+    for (const key of customerKeys) {
+      if (key !== 'isLoggedIn') {
+        window.themeVars.customer[key] = null;
+      }
+    }
+  }
+
+  // Icons liquid variables
+  {% render 'theme-variables-icons' %}
+
+  // Config/theme settings liquid variables
+  window.themeVars.config = {
+    storefrontAccessToken: {{ settings.storefront_access_token | json }},
+    storefrontApiVersion: {{ settings.storefront_api_version | json }},
+    boostStoreName: {{ settings.boost_store_name | json }},
+  };
+
+  // Translation Strings
+  {% render 'theme-variables-strings' %}
+
+  // Store liquid variables
+  window.themeVars.store = {
+    permanent_domain: {{ shop.permanent_domain | json }},
+    currency: {
+      symbol: {{ cart.currency.symbol | json }},
+      isoCode: {{ cart.currency.iso_code | json }}
+    },
+    template: {{ template.name | json }}
+  };
+</script>

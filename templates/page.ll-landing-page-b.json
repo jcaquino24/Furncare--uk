@@ -1,0 +1,429 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": true
+      }
+    },
+    "image_text_QGFYg4": {
+      "type": "image-text",
+      "blocks": {
+        "images_zLGb8j": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/DSC_2029.jpg",
+            "image_two": "shopify://shop_images/Team_Caring_9.jpg"
+          }
+        },
+        "content_6ANtMq": {
+          "type": "content",
+          "settings": {
+            "title": "Manufacturing care furniture that feels like <em>home.</em>",
+            "title_size": "display",
+            "text": "Everyone deserves to live in comfort and dignity, surrounded by spaces that feel safe and personal.\nFurncare furniture is created with that belief at its core - crafted to make care environments more than just functional, but truly homely.\n\nEach Furncare piece is crafted with attention to detail, using materials that stand up to daily use while offering warmth and familiarity. The result is furniture that supports residents’ independence, comfort, and wellbeing, while making life easier for the people who care for them every day.",
+            "button_style": "primary",
+            "button_text": "",
+            "button_url": "shopify://pages/contact-us"
+          }
+        }
+      },
+      "block_order": [
+        "images_zLGb8j",
+        "content_6ANtMq"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "warm-stone",
+        "section_padding": "--spacing-md"
+      }
+    },
+    "1775814653dedd3b0c": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_800d78e_RH8JAL": {
+          "type": "ai_gen_block_800d78e",
+          "settings": {
+            "accordion_heading": "Book a Consultation",
+            "default_open": false,
+            "desktop_width_percent": 100,
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "min_form_height": 200,
+            "heading_size": 32,
+            "heading_color": "#f9f7f0",
+            "header_background_color": "#243222",
+            "header_hover_color": "#c3c0b0",
+            "header_padding": 40,
+            "icon_size": 24,
+            "icon_color": "#f9f7f0",
+            "background_color": "#f9f7f0",
+            "content_padding": 25,
+            "border_width": 0,
+            "border_color": "#e0e0e0",
+            "border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_800d78e_RH8JAL"
+      ],
+      "settings": {}
+    },
+    "review_blocks_AJT339": {
+      "type": "review-blocks",
+      "blocks": {
+        "review_zYHwj3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "met our expectations and more",
+            "body": "I have recently purchased furniture for a care home where durability and is a key factor as well as being easy to clean, the furniture met our expectations and more and the sales rep Declan was a delight to work with. Big thumbs up from me and we will be coming back for more.",
+            "reviewer_name": "Jamie",
+            "meta": ""
+          }
+        },
+        "review_zDQnj7": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "excellent communication",
+            "body": "Furncare were a delight to deal with start to finish, offering site visits to previously completed projects, design support and excellent communication throughout. The physical fit out went well, and the aftercare has been second to none.",
+            "reviewer_name": "Gareth Rogers",
+            "meta": ""
+          }
+        },
+        "review_hhtPwH": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Amazing",
+            "body": "This is our second order with Furncare and there is a reason we picked them again. The customer service is fantastic. The delivery driver even built the furniture for us. Highly recommend",
+            "reviewer_name": "Elmbrook Court",
+            "meta": ""
+          }
+        },
+        "review_GnX8p6": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Great Furniture, Great Service!",
+            "body": "The quality of the furniture excellent, delivery times are fast. The products were unpacked, assembled in the rooms of our choosing in a professional and timely manner, with the packaging removed too.",
+            "reviewer_name": "Silver Birch Care",
+            "meta": ""
+          }
+        },
+        "review_NgEpzj": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Thank you!",
+            "body": "They delivered carefully and unpacked all the items and disposed of all the packaging. A very big thank you for moving an old piece of furniture for me. It’s that personal touch and helpfulness that makes all the difference.",
+            "reviewer_name": "Bill Woolliscroft",
+            "meta": ""
+          }
+        },
+        "review_cdLCMi": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "5/5 experience",
+            "body": "Ian and Ollie were great at supporting delivering the furniture in the home and assembling this straight away! Friendly, kind and considerate of residents in the home. Thankyou!",
+            "reviewer_name": "Ces",
+            "meta": ""
+          }
+        },
+        "review_qPxryt": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Furncare Have been amazing",
+            "body": "Furncare have been amazing in supporting us to furnish our 3-bed childrens home. The quality of the furniture is great and the communication between Declan and us has been amazing. I would highly recommend this company",
+            "reviewer_name": "Damini Rura",
+            "meta": ""
+          }
+        },
+        "review_jeUyLA": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Furncare came to the rescue!",
+            "body": "Furncare came to the rescue with an express delivery for bespoke furniture for one of our services! They assembled on delivery which was also a huge help and we're impressed with the quality of the furniture. Thanks Furncare, you never fail to assist when needed. We'll be ordering again soon :)",
+            "reviewer_name": "Emma",
+            "meta": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_zYHwj3",
+        "review_zDQnj7",
+        "review_hhtPwH",
+        "review_GnX8p6",
+        "review_NgEpzj",
+        "review_cdLCMi",
+        "review_qPxryt",
+        "review_jeUyLA"
+      ],
+      "name": "Review blocks",
+      "settings": {
+        "title": "What our clients think",
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "warm-stone",
+        "show_summary": true,
+        "summary_label": "Loved by over 10,000 customers",
+        "summary_title": "Excellent",
+        "summary_rating": 5,
+        "summary_text": "Based on 500 reviews",
+        "fallback_message": "No reviews available at this time."
+      }
+    },
+    "featured_blocks_YgAnW7": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_6Ch4dW": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_5_970d40d9-f1ee-4409-a17f-b317eefb53ef.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_kHPw4h": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/prime-life-logo.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_yK6ybV": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_1_bf3d4c38-2d38-460e-9767-d84c5ac0ad56.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_9Fk67b": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_7.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_na3QFU": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_3_cc54cde1-92f9-45ac-ad1b-30bddf4226f4.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_dqEtay": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_2_f3030b0a-2deb-49af-8ff3-18f506f2cff0.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_6Ch4dW",
+        "block_kHPw4h",
+        "block_yK6ybV",
+        "block_9Fk67b",
+        "block_na3QFU",
+        "block_dqEtay"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "",
+        "padding": "default",
+        "layout": "marquee",
+        "enable_lightbox": false
+      }
+    },
+    "richtext_844wCb": {
+      "type": "richtext",
+      "blocks": {
+        "heading_xDnC7k": {
+          "type": "heading",
+          "settings": {
+            "text": "Contemporary furniture solutions that balance innovation, practicality, and a warmth for later living environments.",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_G6dkzN": {
+          "type": "tagline",
+          "disabled": true,
+          "settings": {
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_gBQibY": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Shop Later Living Furniture & Furnishings",
+            "url": "shopify://collections/elderly-care-furniture",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_xDnC7k",
+        "tagline_G6dkzN",
+        "button_gBQibY"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "green-01",
+        "enable_animation": true
+      }
+    },
+    "image_text_xjAqkz": {
+      "type": "image-text",
+      "blocks": {
+        "content_6yK9UL": {
+          "type": "content",
+          "settings": {
+            "title": "Transforming spaces",
+            "title_size": "xl",
+            "text": "We design and create environments that enhance comfort, dignity, and well-being, transforming spaces to elevate lives through our distinctive, quality furniture and interiors.\n\nFrom single items to refurbishments and new build projects, we support our customers from concept to completion, delivering expertise, practicality, and impact in every care space we design, even down to the final finishing touches, such as curtains and lighting.",
+            "button_style": "primary",
+            "button_text": "",
+            "button_url": "shopify://blogs/news"
+          }
+        },
+        "images_FDCacP": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Livonia_Pedestal_Table_Lifestyle_95127a5a-5e82-455c-82ff-08c1a71cfa44.jpg",
+            "image_two": "shopify://shop_images/Ethan_Medium_Back_Chair_Lifestyle_ef9d8132-97de-42fb-866f-fb3611bd60b5.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "content_6yK9UL",
+        "images_FDCacP"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "image_text_Yqccjx": {
+      "type": "image-text",
+      "blocks": {
+        "images_Ba74kP": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Lounge_One_6_16207a7b-9552-4293-9da6-178419ec7488.jpg"
+          }
+        },
+        "content_QXB6M8": {
+          "type": "content",
+          "settings": {
+            "title": "Elevating lives",
+            "title_size": "xl",
+            "text": "Whether enhancing daily living for residents, solving challenges for care providers, or creating thoughtful, functional spaces, we stand beside our customers, reinforcing trust, innovation, and a deep understanding of specialist care needs.\n\n- We always put people first.\n\n- We listen, collaborate, and build trust.\n\n- We can then deliver thoughtful, practical, yet beautiful solutions.",
+            "button_style": "underline",
+            "button_text": "View our case studies",
+            "button_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/case-study"
+          }
+        }
+      },
+      "block_order": [
+        "images_Ba74kP",
+        "content_QXB6M8"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "richtext_GAKgWc": {
+      "type": "richtext",
+      "blocks": {
+        "heading_89kKRb": {
+          "type": "heading",
+          "name": "Heading",
+          "settings": {
+            "text": "Let's Transform Spaces Together.",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_89kKRb"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true
+      }
+    },
+    "blocks_TgDwab": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_TbQVTF": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_TbQVTF"
+      ],
+      "name": "Form embed",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "image_text_QGFYg4",
+    "1775814653dedd3b0c",
+    "review_blocks_AJT339",
+    "featured_blocks_YgAnW7",
+    "richtext_844wCb",
+    "image_text_xjAqkz",
+    "image_text_Yqccjx",
+    "richtext_GAKgWc",
+    "blocks_TgDwab"
+  ]
+}

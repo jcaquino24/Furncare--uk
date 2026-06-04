@@ -1,0 +1,781 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "faqs_Lwg9Cg": {
+      "type": "faqs",
+      "blocks": {
+        "faq_zdCQx6": {
+          "type": "faq",
+          "settings": {
+            "question": "How can I place an order?",
+            "answer": "<p>You can place an order by any of the following methods:</p><ul><li>online</li><li>email to <a href=\"mailto:sales@furncare.co.uk\">sales@furncare.co.uk</a></li><li>call <a href=\"tel:01603664900\">01603 664 900</a></li><li>via our website’s online chat function</li></ul><p>Our advisors will be able to talk through your purchase and offer advice based on your requirements. Please advise when placing your order if you have a purchase order number and if there are any special delivery instructions i.e. difficult access, stairs etc.</p><p>Once your order has been placed, you will receive a confirmation email along with any additional information you need to know and our operations team will then be in contact to book your delivery date.</p>"
+          }
+        },
+        "faq_mW9d3H": {
+          "type": "faq",
+          "settings": {
+            "question": "What are your delivery terms and where do you deliver to?",
+            "answer": "<p>Please refer to </p>"
+          }
+        },
+        "faq_iVhRLj": {
+          "type": "faq",
+          "settings": {
+            "question": "What are my payment options?",
+            "answer": "<p>New customers:</p>"
+          }
+        },
+        "faq_DhwLYE": {
+          "type": "faq",
+          "settings": {
+            "question": "When will I receive my order?",
+            "answer": "<p>For in stock items</p>"
+          }
+        },
+        "faq_D6hfGm": {
+          "type": "faq",
+          "settings": {
+            "question": "What should I expect on the day of my delivery?",
+            "answer": "<p>We pride ourselves</p>"
+          }
+        },
+        "faq_YYzig7": {
+          "type": "faq",
+          "settings": {
+            "question": "Are my items covered under a guarantee?",
+            "answer": "<p>Our general guarantee terms are as below</p>"
+          }
+        },
+        "faq_FNAWrc": {
+          "type": "faq",
+          "settings": {
+            "question": "Are your furniture and soft furnishings fire retardant?",
+            "answer": "<p>All of our upholstery and textiles are fire retardant and wherever applicable all of our furniture is also Crib 5 FR.</p>"
+          }
+        },
+        "faq_hW9E4x": {
+          "type": "faq",
+          "settings": {
+            "question": "I have a project I'd like to discuss, will you visit my home?",
+            "answer": "<p>We'd love to hear more about your project!</p>"
+          }
+        },
+        "faq_k3HngJ": {
+          "type": "faq",
+          "settings": {
+            "question": "Is faux leather upholstery the best option for my home?",
+            "answer": "<p>There are a wide range of healthcare upholstery options and in many cases both textile and faux leather upholstery would be suitable. Our advisors are happy to recommend upholsteries based on your requirements and the type of care you provide. Please discuss this with us when placing your order if you would like any guidance.</p>"
+          }
+        },
+        "faq_HeftDM": {
+          "type": "faq",
+          "settings": {
+            "question": "What sectors do you supply to?",
+            "answer": "<p>We supply to elderly care, including dementia and nursing, supported living, learning and physical disability homes and also more challenging environments.</p><p>As some products aren’t suitable for certain sectors, you can navigate through our menus on the homepage to the sector you require and the products that we would recommend. Our team are also able to offer advice on the suitability of a product for your environment.</p>"
+          }
+        },
+        "faq_77ewXj": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I care for my products?",
+            "answer": "<p>To find out how to look after your products in the best way possible, please read our cleaning and laundering guides, which contain step by step processes and top tips when it comes to caring for your products.</p>"
+          }
+        },
+        "faq_iC36hH": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you have a showroom?",
+            "answer": "<p>Yes. Our showroom is available for visits subject to booking. Please call 01603 664900 or email sales@furncare.co.uk to arrange a viewing. Alternatively, we offer a sample van service where we can bring products to you.</p>"
+          }
+        },
+        "faq_LGQt4L": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you remove old furniture when you deliver?",
+            "answer": "<p>Our furniture removal service was introduced to provide a completely hassle-free service for our clients. As old furniture and furnishings are always disposed of responsibly (materials are recycled where possible), this service does come at a small extra cost per item. Get in touch with our team today to request a quotation for this service.</p>"
+          }
+        },
+        "faq_CqbGNm": {
+          "type": "faq",
+          "settings": {
+            "question": "My payment isn't going through online. What do I do?",
+            "answer": "<p>While it may seem obvious, please check you have the necessary funds in the account you are using. Check through the card details inputted for typos in the long card number, name on the card, expiry date or CCV number. If you are still having issues then please contact us, either through our web chat, email or give us a call.</p>"
+          }
+        },
+        "faq_jQitw7": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you measure up our windows for curtains or blinds?",
+            "answer": "<p>We will come out to your locations to measure up if you are dressing 6 windows or more. If you are dressing less than 6 windows then we would charge a callout fee.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_zdCQx6",
+        "faq_mW9d3H",
+        "faq_iVhRLj",
+        "faq_DhwLYE",
+        "faq_D6hfGm",
+        "faq_YYzig7",
+        "faq_FNAWrc",
+        "faq_hW9E4x",
+        "faq_k3HngJ",
+        "faq_HeftDM",
+        "faq_77ewXj",
+        "faq_iC36hH",
+        "faq_LGQt4L",
+        "faq_CqbGNm",
+        "faq_jQitw7"
+      ],
+      "disabled": true,
+      "name": "FAQs",
+      "settings": {
+        "faq_title": "Frequently Asked Questions",
+        "title_element": "h2",
+        "faq_text": "Scroll down for answers to our FAQs. If you can't find an answer to your question, give us a call on 01603 664900 or start a web chat and we'd be happy to help.",
+        "title_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "padding": "default"
+      }
+    },
+    "richtext_AnApyw": {
+      "type": "richtext",
+      "blocks": {
+        "heading_HidmDR": {
+          "type": "heading",
+          "settings": {
+            "text": "The Signature Spaces",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_APRh8P": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "2 beautifully finished bedroom schemes for a more distinctive and elevated interior.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_HidmDR",
+        "tagline_APRh8P"
+      ],
+      "custom_css": [
+        ".richtext {padding-bottom: 0;}"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "content_blocks_FjmdzX": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_XiBggc": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_-_2026-05-06T112857.053.png",
+            "text": "The Indigo Scheme",
+            "richtext": "",
+            "richtext_color": "#f9f7f0",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "0.08em",
+            "link": "shopify://pages/lv-b701-bedroom-package",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_CyK9ig": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_-_2026-05-06T113015.455.png",
+            "text": "The Oatmeal Scheme",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "0.08em",
+            "link": "shopify://pages/liberta-vie-b702-package",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_XiBggc",
+        "tab1_CyK9ig"
+      ],
+      "custom_css": [
+        "uwp-content-blocks {padding-top: 0;}"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "",
+        "section_padding": "--spacing-md",
+        "tab1_title": "B901",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    },
+    "blocks_TMy8NT": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_76aztw": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "medium",
+            "small_height": 20,
+            "medium_height": 40,
+            "large_height": 95,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_76aztw"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "richtext_UjHtjf": {
+      "type": "richtext",
+      "blocks": {
+        "heading_hGQdqg": {
+          "type": "heading",
+          "settings": {
+            "text": "The Select Spaces",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_PFpJ4J": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "4 well-balanced bedroom schemes with enduring style and everyday comfort.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_hGQdqg",
+        "tagline_PFpJ4J"
+      ],
+      "custom_css": [
+        ".richtext {padding-bottom: 0;}"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "content_blocks_URgbfr": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_qynt9w": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Estila-B501-Room-Package.jpg",
+            "text": "The Peony Scheme",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/liberta-vie-b501-bedroom-package",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_Kqxw9B": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_-_2026-05-11T142704.224.png",
+            "text": "The Lime Scheme",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/liberta-vie-b502-bedroom-package",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_qynt9w",
+        "tab1_Kqxw9B"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "",
+        "section_padding": "--spacing-md",
+        "tab1_title": "B901",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    },
+    "content_blocks_TFDix6": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_raP9w4": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Estila_B503_Bedroom_Package_-_main_image.jpg",
+            "text": "The Ocean Scheme",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/liberta-vie-b503-bedroom-package",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_3akMWY": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Estila_B504_Bedroom_Package_-_main_image.jpg",
+            "text": "The Berry Scheme",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/liberta-vie-b504-bedroom-package",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_raP9w4",
+        "tab1_3akMWY"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "",
+        "section_padding": "--spacing-2xl",
+        "tab1_title": "B901",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    },
+    "blocks_RM6VeY": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_EWtRpw": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "medium",
+            "small_height": 20,
+            "medium_height": 40,
+            "large_height": 95,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_EWtRpw"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "richtext_9Q9tht": {
+      "type": "richtext",
+      "blocks": {
+        "heading_cdgx3e": {
+          "type": "heading",
+          "settings": {
+            "text": "The Staple Spaces",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_gfkamb": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "4 thoughtfully selected bedroom schemes designed for comfort and simplicity.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_cdgx3e",
+        "tagline_gfkamb"
+      ],
+      "custom_css": [
+        ".richtext {padding-bottom: 0;}"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "content_blocks_H4je3q": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_9x8iDb": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_-_2026-05-11T142040.995.png",
+            "text": "The Aegean Scheme",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/liberta-vie-b301-bedroom-package",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_rBUrXF": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Motivo_B302_Room_Package.jpg",
+            "text": "The Ochre Scheme",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/liberta-vie-b302-bedroom-package",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_9x8iDb",
+        "tab1_rBUrXF"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "",
+        "section_padding": "--spacing-md",
+        "tab1_title": "B901",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    },
+    "content_blocks_TTjXkA": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_6rF4U3": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_-_2026-05-11T142341.277.png",
+            "text": "The Azure Scheme",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/liberta-vie-b303-bedroom-package",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_nMiByM": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_-_2026-05-11T142514.141.png",
+            "text": "The Primrose Scheme",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/liberta-vie-b304-bedroom-package",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_6rF4U3",
+        "tab1_nMiByM"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "",
+        "section_padding": "--spacing-md",
+        "tab1_title": "B901",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    },
+    "blocks_ngqaUM": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_UJAHdd": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "medium",
+            "small_height": 20,
+            "medium_height": 40,
+            "large_height": 95,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_UJAHdd"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "blocks_CGpXRy": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_aqKaJx": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "medium",
+            "small_height": 20,
+            "medium_height": 40,
+            "large_height": 95,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_aqKaJx"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "richtext_4BwULC": {
+      "type": "richtext",
+      "blocks": {
+        "heading_MC9BzX": {
+          "type": "heading",
+          "settings": {
+            "text": "The Remini Spaces",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_LQPHCc": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "Curated in partnership with the University of Stirling; 4 calming dementia-focussed bedroom schemes thoughtfully curated for comfort, clarity and familiarity.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_MC9BzX",
+        "tagline_LQPHCc"
+      ],
+      "custom_css": [
+        ".richtext {padding-bottom: 0;}"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "content_blocks_X3HFdJ": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_9TjUh7": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Remini-B901-Olive-Bedroom-Package-main-image-with-logo_1.jpg",
+            "text": "The Olive Scheme",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/remini-b901-bedroom-package",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_i9xXQX": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Remini-B902-Marine-Bedroom-Package-main-image-with-logo_2094f4ba-72d4-4e0f-a04d-70d8f0e9f9e8.jpg",
+            "text": "The Stone Scheme",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/remini-b902-bedroom-package",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_9TjUh7",
+        "tab1_i9xXQX"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "",
+        "section_padding": "--spacing-md",
+        "tab1_title": "B901",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    },
+    "content_blocks_dXmHiD": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_G6wwmw": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/B903-Remini-Bedroom-Package-main-image-with-logo_149142cc-f387-4190-b7ae-418cc1898dc5.jpg",
+            "text": "The Sky Scheme",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/remini-b903-bedroom-package",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_3VFGix": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Remini-B904-Mulberry-Bedroom-Package-main-image-with-logo.jpg",
+            "text": "The Lavender Scheme",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/remini-b904-bedroom-package",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_G6wwmw",
+        "tab1_3VFGix"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "",
+        "section_padding": "--spacing-md",
+        "tab1_title": "B901",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faqs_Lwg9Cg",
+    "richtext_AnApyw",
+    "content_blocks_FjmdzX",
+    "blocks_TMy8NT",
+    "richtext_UjHtjf",
+    "content_blocks_URgbfr",
+    "content_blocks_TFDix6",
+    "blocks_RM6VeY",
+    "richtext_9Q9tht",
+    "content_blocks_H4je3q",
+    "content_blocks_TTjXkA",
+    "blocks_ngqaUM",
+    "richtext_4BwULC",
+    "content_blocks_X3HFdJ",
+    "content_blocks_dXmHiD",
+    "blocks_CGpXRy"
+  ]
+}

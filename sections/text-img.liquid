@@ -1,0 +1,29 @@
+<div
+  class="text-img"
+  style="
+    --background-color: {{ section.settings.background_color }};
+  "
+>
+  <div class="text-img__container container">
+    <div class="text-img__inner">
+      {% content_for 'blocks' %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Text - Img",
+  "tag": "section",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [{ "type": "_column" }]
+}
+{% endschema %}

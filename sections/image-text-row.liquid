@@ -1,0 +1,77 @@
+{% liquid
+  assign element = 'div'
+  if section.settings.layout == 'carousel'
+    assign element = 'swiper-container'
+    assign show_nav = true
+  endif
+%}
+<div class="image-text-row">
+  <div class="container">
+    {% render 'title-with-nav',
+      title: section.settings.title,
+      heading_level: 'h2',
+      heading_style: 'title-xs',
+      show_nav: show_nav
+    %}
+
+    <{{ element }}
+      {% if section.settings.layout == 'carousel' %}
+      space-between="20"
+      slides-per-view="auto"
+      navigation-prev-el="#swiper-button-prev-{{ section.id }}"
+      navigation-next-el="#swiper-button-next-{{ section.id }}"
+      {% else %}
+        class="image-text-row__grid image-text-row__grid--{{ section.settings.items_layout }}"
+      {% endif %}
+    >
+      {% content_for 'blocks' %}
+    </{{ element }}>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Image - Text Row",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Section Title"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "grid",
+          "label": "Grid"
+        },
+        {
+          "value": "carousel",
+          "label": "Carousel"
+        }
+      ],
+      "default": "carousel"
+    },
+    {
+      "type": "select",
+      "id": "items_layout",
+      "label": "Items layout",
+      "default": "vertical",
+      "options": [
+        {
+          "value": "vertical",
+          "label": "Vertical"
+        },
+        {
+          "value": "horizontal",
+          "label": "Horizontal"
+        }
+      ]
+    }
+  ],
+  "blocks": [{ "type": "_image-text" }]
+}
+{% endschema %}

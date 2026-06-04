@@ -1,0 +1,17 @@
+<article class="page-card product-card">
+  <a href="{{ page.url }}">
+    <div class="page-card__image product-card__image">
+      {{ page.metafields.custom.image | image_url: width: 642
+      | image_tag: width: 321,
+        class: 'page-card__image-element product-card__image-element',
+        alt: page.metafields.custom.image.alt,
+        loading: 'lazy'
+      }}
+    </div>
+    <div class="page-card__info product-card__info">
+      <h3 class="page-card__title product-card__title title-2xs">
+        {{ page.title }}
+      </h3>
+    </div>
+  </a>
+</article>

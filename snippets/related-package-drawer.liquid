@@ -1,0 +1,61 @@
+{%- doc -%}
+  Related Package Drawer
+
+  Renders a drawer displaying related package information including title, description, and products.
+
+  @param {metaobject} package - Related package metaobject with title, description, and products
+
+  @example
+  {% render 'related-package-drawer', package: product.metafields.custom.related_package %}
+{%- enddoc -%}
+
+{% capture drawer_content %}
+  <div class="drawer__header">
+    <div class="drawer__header-title-wrapper">
+      {% render 'icons', icon: 'collections' %}
+
+      <h2 class="drawer__title body-lg body-lg--bold">
+        {% if package.title != blank %}
+          {{ package.title }}
+        {% else %}
+          Related Package
+        {% endif %}
+      </h2>
+    </div>
+    <button 
+      type="button" 
+      class="drawer__close" 
+      data-close-drawer
+      aria-label="{{ 'general.close' | t }}"
+    >
+      {% render 'icons', icon: 'close' %}
+    </button>
+  </div>
+
+  <div class="drawer__body">
+    {% if package.description != blank %}
+      <div class="drawer__description">
+        {{ package.description }}
+      </div>
+    {% else %}
+      <p>No description available</p>
+    {% endif %}
+
+    {% if package.products != blank %}
+      <div class="drawer__products">
+        <div class="drawer__products-grid">
+          {% for product_ref in package.products.value %}
+            {% render 'product-card', product: product_ref, product_card_style: 'condensed' %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endcapture %}
+
+{%
+  render 'drawer',
+  modal_name: 'related-package-drawer',
+  drawer_direction: 'right',
+  content: drawer_content
+%}

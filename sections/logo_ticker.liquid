@@ -1,0 +1,124 @@
+{% liquid
+  assign remaining_blocks = 6 | minus: section.blocks.size
+%}
+{% capture marquee_content %}
+  {% for block in section.blocks %}
+    <div class="logo-ticker__marquee-item">
+      {% if block.settings.image != blank %}
+        {{ block.settings.image
+        | image_url: width:  480
+        | image_tag:
+          alt: block.settings.title,
+          class: "aspect-image"
+        }}
+      {% else %}
+        {% render 'placeholder-image' %}
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  {% if remaining_blocks > 0 %}
+    {% for i in (1..remaining_blocks) %}
+      {% assign block = section.blocks[forloop.index0] %}
+      <div class="logo-ticker__marquee-item">
+        {% if block.settings.image != blank %}
+          {{ block.settings.image
+          | image_url: width:  480
+          | image_tag:
+            alt: block.settings.title,
+            class: "aspect-image"
+          }}
+        {% else %}
+          {% render 'placeholder-image' %}
+        {% endif %}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endcapture %}
+<div
+  class="
+    logo-ticker
+    logo-ticker--{{ section.settings.direction }}
+    {% if section.settings.pause_on_hover %}logo-ticker--pause-on-hover{% endif %}
+  "
+  style="
+    --logo-ticker-speed: {{ section.settings.speed | times: 1000 }}ms;
+  "
+>
+  <h2 class="logo-ticker__title title-xs">{{ section.settings.title }}</h2>
+
+  <div class="logo-ticker__marquee">
+    <div class="logo-ticker__marquee-content">
+      {{ marquee_content }}
+    </div>
+
+    <div aria-hidden="true" class="logo-ticker__marquee-content">
+      {{ marquee_content }}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Logo Ticker",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Our trusted brands"
+      },
+      {
+        "type": "range",
+        "id": "speed",
+        "label": "Speed",
+        "default": 12,
+        "min": 8,
+        "max": 20,
+        "step": 1,
+        "unit": "sec",
+        "info": "Bigger numbers mean slower speed."
+      },
+      {
+        "type": "checkbox",
+        "id": "pause_on_hover",
+        "label": "Pause on hover",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "direction",
+        "label": "Direction",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "logo",
+        "name": "Logo",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

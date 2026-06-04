@@ -1,0 +1,123 @@
+{% comment %} NOTIFY ME WHEN BACK IN STOCK {% endcomment %}
+<div class="{{ base_class }}__notify-modal__container">
+  <div class="{{ base_class }}__notify-modal__wrapper">
+    <div class="{{ base_class }}__notify-modal__header">
+      <h4>Notify Me!</h4>
+      <button
+        class="{{ base_class }}__notify-modal__close"
+        onclick="toggleNotifyModal()"
+      >
+        {% render : 'icon', icon: 'close' %}
+      </button>
+    </div>
+    <div class="{{ base_class }}__notify-modal__body">
+      <h2 class="{{ base_class }}__notify-modal__title">{{ product.title }}</h2>
+      <h4 class="{{ base_class }}__notify-modal__vendor">
+        {{ product.vendor }}
+      </h4>
+      <p class="{{ base_class }}__notify-modal__text">
+        If a product comes back in stock we'll email you.
+      </p>
+      <p>Option:</p>
+      <select
+        name="Unavailable Variants"
+        id="UnavailableVariants"
+        class="{{ base_class }}__notify-modal__select"
+      >
+        {% for variant in product.variants %}
+          {% unless variant.available %}
+            <option value="{{ variant.id }}">
+              {% for option in variant.options %}
+                {{ option -}}
+                {%- unless forloop.last %} / {% endunless %}
+              {% endfor %}
+            </option>
+          {% endunless %}
+        {% endfor %}
+      </select>
+      <p>Email:</p>
+      <input
+        type="email"
+        name="email"
+        placeholder="Email Address"
+        class="{{ base_class }}__notify-modal__sign-up"
+      >
+
+      {% comment %}
+        To enable the below button and trigger Klaviyo Back in Stock onclick="subscribeToKlaviyo();" is required
+        Please make sure you fill in the klaviyo details in the correct variables
+      {% endcomment %}
+      <button
+        id="NotifyMeButton"
+        class="{{ base_class }}__notify-modal__button button accent-color-button"
+      >
+        Notify me when available
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const toggleNotifyModal = () => {
+      const notifyModal = document.querySelector('.{{ base_class }}__notify-modal__container');
+      notifyModal.classList.toggle('active');
+  }
+
+  const subscribeToKlaviyo = () => {
+      const email = document.querySelector('.{{ base_class }}__notify-modal__sign-up').value;
+      const variantID = document.querySelector('#UnavailableVariants').value;
+      const signUpNotify = document.querySelector('#SignUpNotify')?.checked;
+      const productID = {{ product.id }};
+      const klaviyoID = "XXXXXX"
+      const backInStockURL = 'https://a.klaviyo.com/onsite/components/back-in-stock/subscribe';
+      const newsletterURL = 'https://manage.kmail-lists.com/ajax/subscriptions/subscribe';
+      const listID = "XXXXXX";
+      const notifyMeButton = document.querySelector('#NotifyMeButton');
+
+      notifyMeButton.innerHTML = "Sending...";
+
+      fetch(backInStockURL, {
+          "headers": {
+              "accept": "application/json, text/plain, */*",
+              "content-type": "application/x-www-form-urlencoded;charset=UTF-8",
+          },
+          "body": new URLSearchParams({
+              "a": klaviyoID,
+              "email": email,
+              "platform": "shopify",
+              "variant": variantID, //replace with a valid variant ID
+              "product": productID, // ''      ''  '' ''   product ''
+          }),
+          "method": "POST",
+          })
+          .then(response => response.json())
+          .then(data => {
+              if (signUpNotify) {
+                  fetch(newsletterURL, {
+                      "headers": {
+                          "accept": "application/json, text/plain, */*",
+                          "content-type": "application/x-www-form-urlencoded;charset=UTF-8",
+                      },
+                      "body": new URLSearchParams({
+                          "g": listID,
+                          "email": email,
+                      }),
+                      "method": "POST",
+                      })
+                      .then(response => response.json())
+                      .then(data => {
+                          notifyMeButton.innerHTML = "Success!";
+                      })
+                      .catch(error => {
+                          notifyMeButton.innerHTML = "Error!";
+                      });
+              } else {
+                  notifyMeButton.innerHTML = "Success!";
+              }
+          })
+          .catch(err => {
+              console.error(err);
+              notifyMeButton.innerHTML = "Error!";
+      });
+  };
+</script>

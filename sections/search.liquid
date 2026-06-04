@@ -1,0 +1,229 @@
+{%- liquid
+  render 'vite-tag' with '@snippets/product-grid.ts'
+  render 'vite-tag' with '@snippets/filter-form.ts'
+  render 'vite-tag' with '@snippets/filter-toggle.ts'
+  render 'vite-tag' with '@snippets/load-more.ts'
+  render 'vite-tag' with '@snippets/product-count.ts'
+  render 'vite-tag' with '@snippets/sort-form.ts'
+  render 'vite-tag' with '@snippets/layout-switcher.ts'
+  render 'vite-tag' with '@snippets/search-count.ts'
+
+  assign is_compact_product_card = false
+
+  if template.suffix == 'compact'
+    assign is_compact_product_card = true
+  endif
+
+  assign has_active_filters = false
+
+  for filter in search.filters
+    if filter.active_values.size > 0
+      assign has_active_filters = true
+      break
+    endif
+  endfor
+
+-%}
+
+<div class="collection colour-scheme--light colour-scheme--base-white-01">
+  <div class="collection__container container">
+    <div class="collection__header collection__header--search">
+      <div class="collection__header-content collection__header-content--search">
+        <h1 class="collection__header-title collection__header-title--search title-md">
+          {%- if search.terms == blank -%}
+            {{ 'search.search' | t }}
+          {%- else -%}
+            <uwp-search-count
+              class="title-md"
+              data-section-id="{{ section.id }}"
+              role="region"
+              aria-label="Search count"
+              aria-roledescription="region"
+            >
+              {{
+                'search.results_for_with_count'
+                | t: count: search.results_count, terms: search.terms
+              }}
+            </uwp-search-count>
+          {%- endif -%}
+        </h1>
+      </div>
+    </div>
+
+    {%- if search.performed -%}
+      {%- if search.results_count == 0 and search.filters == empty -%}
+        <p role="status" class="collection__no-results body-md">
+          {{ 'search.no_results' | t: terms: search.terms }}
+        </p>
+      {%- else -%}
+        {%- paginate search.results by 12 -%}
+          <div class="collection__actions">
+            <uwp-filter-toggle
+              class="collection__filter-toggle"
+              role="region"
+              aria-label="Filter toggle"
+              aria-roledescription="region"
+            >
+              <button
+                class="collection__filter-trigger button button--secondary"
+                type="button"
+                aria-controls="filter-form"
+                js-filter-visibility="toggle"
+              >
+                <span class="hide-on-mobile body-md body-md--bold">
+                  {{ 'collection.filter' | t }}
+                </span>
+
+                <span class="hide-on-desktop body-md body-md--bold">
+                  {{ 'collection.filter_and_sort' | t }}
+                </span>
+
+                {%- render 'icons', icon: 'filter' -%}
+              </button>
+              <button
+                class="collection__filter-close button button--secondary"
+                type="button"
+                js-filter-visibility="close"
+              >
+                <span class="hide-on-mobile">
+                  {{ 'collection.filter' | t }}
+                </span>
+
+                <span class="hide-on-desktop">
+                  {{ 'collection.filter_and_sort' | t }}
+                </span>
+                {%- render 'icons', icon: 'close' -%}
+              </button>
+            </uwp-filter-toggle>
+
+            <uwp-product-count
+              class="collection__results-count body-md"
+              data-section-id="{{ section.id }}"
+              role="region"
+              aria-label="Product count"
+              aria-roledescription="region"
+            >
+              {{ 'search.results_count' | t: count: search.results_count }}
+            </uwp-product-count>
+
+            <div class="collection__sort-wrapper">
+              {%- render 'sort-form',
+                object: search,
+                class: 'hide-on-mobile'
+              -%}
+              {%- render 'layout-switcher', class: 'hide-on-desktop' -%}
+            </div>
+          </div>
+          <div class="collection__wrapper" id="collection__wrapper">
+            {% render 'filter-form',
+              object: search,
+              promo_block: section.settings.promo_block,
+              price_filter_vat_percent: section.settings.price_filter_vat_percent,
+              collection_catalog_max_price_cents: 0
+            %}
+
+            <uwp-product-grid
+              class="collection__body"
+              data-section-id="{{ section.id }}"
+              role="region"
+              aria-label="Product grid"
+              aria-roledescription="region"
+            >
+              <div class="collection__grid">
+                {%- for item in search.results -%}
+                  {%- case item.object_type -%}
+                    {%- when 'product' -%}
+                      {%- liquid
+                        assign loading = 'eager'
+                        assign preload = true
+
+                        if forloop.index > 8
+                          assign loading = 'lazy'
+                          assign preload = false
+                        endif
+                      -%}
+
+                      {%- render 'product-card',
+                        product: item,
+                        loading: loading,
+                        preload: preload
+                      -%}
+
+                    {%- when 'collection' -%}
+                      {%- render 'collection-card', collection: item -%}
+                    {%- when 'article' -%}
+                      {%- render 'article-card', article: item -%}
+                    {%- when 'page' -%}
+                      {%- render 'page-card', page: item -%}
+                  {%- endcase -%}
+                {%- endfor -%}
+              </div>
+
+              <uwp-load-more
+                class="collection__pagination"
+                data-section-id="{{ section.id }}"
+                role="region"
+                aria-label="Load more"
+                aria-roledescription="region"
+              >
+                <p class="body-md">
+                  {%- liquid
+                    assign to = paginate.page_size | times: paginate.current_page
+                    assign to = to | at_most: search.results_count
+                  -%}
+
+                  {{
+                    'search.items'
+                    | t: from: 1, to: to, count: search.results_count
+                  }}
+                </p>
+
+                {%- if paginate.next -%}
+                  <a
+                    class="button button--secondary"
+                    href="{{ paginate.next.url }}"
+                  >
+                    {{ 'collection.load_more' | t }}
+                  </a>
+                {%- endif -%}
+              </uwp-load-more>
+            </uwp-product-grid>
+          </div>
+        {%- endpaginate -%}
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</div>
+
+{% unless search.results_count == 0 %}
+  <style>
+    .content-blocks--search {
+      display: none;
+    }
+  </style>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Search",
+  "settings": [
+    {
+      "type": "metaobject",
+      "id": "promo_block",
+      "label": "Promo Block",
+      "metaobject_type": "promo_blocks"
+    },
+    {
+      "type": "range",
+      "id": "price_filter_vat_percent",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Price filter VAT",
+      "info": "Matches the slider to VAT-inclusive prices on product cards. Filter URL parameters stay ex-VAT for Shopify. Use 0 if card prices are ex-VAT.",
+      "default": 20
+    }
+  ]
+}
+{% endschema %}

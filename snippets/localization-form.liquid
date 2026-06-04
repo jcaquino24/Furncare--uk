@@ -1,0 +1,30 @@
+{%- form 'localization',
+  id: 'FooterLanguageFormNoScript',
+  class: 'localization-form'
+-%}
+  <div class="localization-form__select">
+    <h2 class="visually-hidden" id="FooterLanguageLabelNoScript">
+      {{ 'localization.language_label' | t }}
+    </h2>
+    <select
+      class="localization-selector link"
+      name="locale_code"
+      aria-labelledby="FooterLanguageLabelNoScript"
+    >
+      {%- for language in localization.available_languages -%}
+        <option
+          value="{{ language.iso_code }}"
+          lang="{{ language.iso_code }}"
+          {%- if language.iso_code == localization.language.iso_code %}
+            selected
+          {% endif %}
+        >
+          {{ language.endonym_name | capitalize }}
+        </option>
+      {%- endfor -%}
+    </select>
+  </div>
+  <button class="button button--secondary">
+    {{ 'localization.update_language' | t }}
+  </button>
+{%- endform -%}

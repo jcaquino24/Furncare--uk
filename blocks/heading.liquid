@@ -1,0 +1,101 @@
+{% liquid
+  assign heading_level = block.settings.heading_level | default: 'h2'
+  assign heading_style = block.settings.heading_style | default: 'title-xs'
+%}
+
+<{{heading_level}} class="{{ heading_style }} heading__text">
+  {{ block.settings.text }}
+</{{ heading_level }}>
+
+{% schema %}
+{
+  "name": "Heading",
+  "tag": null,
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_level",
+      "label": "Heading level",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "heading_style",
+      "label": "Heading style",
+      "default": "title-xs",
+      "options": [
+        {
+          "value": "title-2xs",
+          "label": "Title XXS"
+        },
+        {
+          "value": "title-xs",
+          "label": "Title XS"
+        },
+        {
+          "value": "title-sm",
+          "label": "Title SM"
+        },
+        {
+          "value": "title-md",
+          "label": "Title MD"
+        },
+        {
+          "value": "title-lg",
+          "label": "Title LG"
+        },
+        {
+          "value": "title-xl",
+          "label": "Title XL"
+        },
+        {
+          "value": "title-display",
+          "label": "Title Display"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Heading",
+      "settings": {
+        "text": "This is a title",
+        "heading_level": "h2",
+        "heading_style": "title-xs"
+      }
+    }
+  ]
+}
+{% endschema %}

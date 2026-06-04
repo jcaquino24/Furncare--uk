@@ -1,0 +1,262 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "settings": {}
+    },
+    "richtext_hLWh3Q": {
+      "type": "richtext",
+      "blocks": {
+        "heading_FpyQAy": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Need expert advice on furniture?",
+            "heading_level": "h1",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_zTP8pf": {
+          "type": "tagline",
+          "disabled": true,
+          "settings": {
+            "content": "Get in touch to discuss the furniture requirements for <em>your </em>care environment.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_x8ErWE": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "View here",
+            "url": "shopify://pages/ready-lounge-spaces",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_FpyQAy",
+        "tagline_zTP8pf",
+        "button_x8ErWE"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 41,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "blocks_mdCkbP": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_RjzwtH": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "medium",
+            "small_height": 80,
+            "medium_height": 110,
+            "large_height": 200,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_RjzwtH"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "richtext_TQbBcP": {
+      "type": "richtext",
+      "blocks": {
+        "heading_wC7D3E": {
+          "type": "heading",
+          "settings": {
+            "text": "Any Questions?",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_D8feUY": {
+          "type": "tagline",
+          "settings": {
+            "content": "Get in touch with our expert team who are more than happy to assist.",
+            "tagline_style": "body-xs"
+          },
+          "blocks": {}
+        },
+        "button_qzcxdp": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_wC7D3E",
+        "tagline_D8feUY",
+        "button_qzcxdp"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "product_blocks_hr4bkw": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_fJtzXF": {
+          "type": "product_block",
+          "settings": {
+            "title": "",
+            "handle": "",
+            "product_feed_source": "product_list",
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        },
+        "product_block_HdNPmE": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "5164-maxwell-small-sideboard-finish-grey-oak",
+              "alpha-extreme-270-double-wardrobe-finish-mountain-oak-cashmere",
+              "alpha-extreme-3-drawer-chest-finish-mountain-oak-cashmere",
+              "alpha-extreme-3-drawer-bedside-top-drawer-with-lock-finish-mountain-oak-cashmere"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": true,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_fJtzXF",
+        "product_block_HdNPmE"
+      ],
+      "disabled": true,
+      "name": "Product blocks",
+      "settings": {
+        "title": "Products featured in this case study",
+        "section_padding": "--spacing-4xl"
+      }
+    },
+    "17734008217d1e75ff": {
+      "type": "_blocks",
+      "blocks": {
+        "richtext_KnzTeq": {
+          "type": "richtext",
+          "name": "Rich Text",
+          "disabled": true,
+          "settings": {
+            "content": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "richtext_KnzTeq"
+      ],
+      "settings": {}
+    },
+    "17734008399d1dd4b6": {
+      "type": "apps",
+      "settings": {}
+    },
+    "blocks_qzKYrP": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_NtaXrE": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 65,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_NtaXrE"
+      ],
+      "name": "Form embed",
+      "settings": {}
+    },
+    "blocks_6QCHbm": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_MDq8nb": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "medium",
+            "small_height": 80,
+            "medium_height": 110,
+            "large_height": 200,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_MDq8nb"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "richtext_hLWh3Q",
+    "blocks_mdCkbP",
+    "richtext_TQbBcP",
+    "product_blocks_hr4bkw",
+    "17734008217d1e75ff",
+    "17734008399d1dd4b6",
+    "blocks_qzKYrP",
+    "blocks_6QCHbm"
+  ]
+}

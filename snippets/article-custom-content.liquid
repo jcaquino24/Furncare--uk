@@ -1,0 +1,55 @@
+{%- comment -%}
+  @description
+  Custom content snippet for article pages that fetches metaobjects from
+  custom.content_objects metafield and displays them as custom content.
+
+  @param {object} article - The article object to get metafields from
+{%- endcomment -%}
+
+{%- assign content_objects = article.metafields.custom.content_objects -%}
+
+{%- if content_objects -%}
+  <div class="article-custom-content">
+    {%- for object in content_objects.value -%}
+      {%- comment -%} Check if object has image and text fields (article_image_with_text) {%- endcomment -%}
+      {%- if object.image or object.title or object.description -%}
+        <div class="article-custom-content__item article-custom-content__item--image-text">
+          {%- if object.image -%}
+            <div class="article-custom-content__image">
+              {{ object.image | image_url: width: 800 | image_tag }}
+            </div>
+          {%- endif -%}
+
+          <div class="article-custom-content__content">
+            {%- if object.title -%}
+              <h2 class="article-custom-content__title">
+                {{ object.title }}
+              </h2>
+            {%- endif -%}
+
+            {%- if object.description -%}
+              <div class="article-custom-content__description">
+                {{ object.description | metafield_tag }}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+        {%- comment -%} Check if object has quote fields (article_quote) {%- endcomment -%}
+      {%- elsif object.quote or object.author -%}
+        <div class="article-custom-content__item article-custom-content__item--quote">
+          {%- if object.quote -%}
+            <blockquote class="article-custom-content__quote">
+              {{ object.quote | metafield_tag }}
+            </blockquote>
+          {%- endif -%}
+
+          {%- if object.author -%}
+            <cite class="article-custom-content__author">
+              {{ object.author | metafield_tag }}
+            </cite>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endif -%}

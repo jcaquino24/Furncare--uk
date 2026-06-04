@@ -1,0 +1,61 @@
+{% doc %}
+  Swiper nav buttons.
+
+  @param {string} [section_id] - The section id
+  @param {string} [direction] - The swiper direction ('horizontal' or 'vertical')
+  @param {string} [layout] - The buttons layout ('inline' or 'edges')
+  @param {string} [class] - The class for the swiper-nav container
+
+  @example
+  {% render 'swiper-nav', direction: 'horizontal', layout: 'inline' %}
+    {% render 'swiper-nav', direction: 'vertical', layout: 'edge' %}
+{% enddoc %}
+
+{% liquid
+  assign direction = direction | default: 'horizontal'
+  assign layout = layout | default: 'inline'
+%}
+
+{% if layout == 'inline' %}
+  <div class="swiper-nav {{ class }}">
+{% endif %}
+
+<button
+  id="swiper-button-prev-{{ section_id }}"
+  class="
+    button button--icon-only button--secondary
+    swiper-button-prev
+    {% if layout == 'edges' %}
+      swiper-button-prev--{{ direction }}-edges
+    {% endif %}
+    fade-on-hover
+  "
+  aria-label="Previous slide"
+>
+  {% capture icon_html %}
+    {% render 'icons', icon: 'arrow-left' | replace: '<svg', '<svg aria-hidden="true" tabindex="-1"' %}
+  {% endcapture %}
+  {{ icon_html | replace: '<svg', '<svg aria-hidden="true" tabindex="-1"' }}
+</button>
+
+<button
+  id="swiper-button-next-{{ section_id }}"
+  class="
+    button button--icon-only button--secondary
+    swiper-button-next
+    {% if layout == 'edges' %}
+      swiper-button-next--{{ direction }}-edges
+    {% endif %}
+    fade-on-hover
+  "
+  aria-label="Next slide"
+>
+  {% capture icon_html %}
+    {% render 'icons', icon: 'arrow-right' | replace: '<svg', '<svg aria-hidden="true" tabindex="-1"' %}
+  {% endcapture %}
+  {{ icon_html | replace: '<svg', '<svg aria-hidden="true" tabindex="-1"' }}
+</button>
+
+{% if layout == 'inline' %}
+  </div>
+{% endif %}

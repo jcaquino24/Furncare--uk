@@ -1,0 +1,79 @@
+{% doc %}
+  Reusable custom select snippet.
+
+  @param {string} id - ID of the input.
+  @param {string} class - Additional classes for the input.
+  @param {string} dropdown_class - Additional classes for the dropdown.
+  @param {string} attributes - Additional HTML attributes for the parent element.
+  @param {string} name - Name of the input.
+  @param {string} label - Input label.
+  @param {string} help_text - Help text for the input.
+  @param {object} options - Input options (captured in Liquid).
+  @param {string} error - Error message for the input.
+
+  @example
+  {% render 'input-select',
+    id: 'custom-select',
+    name: 'properties[country]',
+    options: country_options,
+  %}
+{% enddoc %}
+
+{%- liquid
+  render 'vite-tag' with '@snippets/input-select.ts'
+
+  if options == blank
+    continue
+  endif
+-%}
+
+<div class="input-select {{ class }}">
+  <div class="input-select__header">
+    <label
+      class="input-select__label eyebrow-xs eyebrow-xs--bold"
+      for="{{ id }}"
+    >
+      {{ label }}
+    </label>
+
+    {% if help_text %}
+      <span class="input-select__help body-xs">
+        {{ help_text }}
+      </span>
+    {% endif %}
+  </div>
+
+  <uwp-input-select
+    id="{{ id }}"
+    class="input-select__control body-sm {{ dropdown_class }}"
+    role="combobox"
+    aria-haspopup="listbox"
+    aria-expanded="false"
+    aria-controls="{{ id }}-listbox"
+    aria-labelledby="{{ id }}"
+    name="{{ name }}"
+    {{ attributes }}
+  >
+    <span js-input-select="value" class="input-select__value body-md">
+      {{ label }}
+    </span>
+
+    <div
+      id="{{ id }}-listbox"
+      js-input-select="options"
+      class="input-select__options"
+      role="listbox"
+      aria-label="{{ label }}"
+    >
+      {{ options }}
+    </div>
+
+    {% render 'icons', icon: 'chevron-down' %}
+  </uwp-input-select>
+
+  {% if error != blank %}
+    <div class="input-select__error">
+      {{ error }}
+    </div>
+  {% endif %}
+</div>
