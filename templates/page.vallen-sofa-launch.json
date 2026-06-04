@@ -104,79 +104,7 @@
     },
     "1779968161f5e3af07": {
       "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_90768fd_yF9YVz": {
-          "type": "ai_gen_block_90768fd",
-          "settings": {
-            "spacer_height": 135,
-            "spacer_height_mobile": 30,
-            "spacer_color": "#fffef8"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_90768fd_yF9YVz"
-      ],
       "settings": {}
-    },
-    "richtext_cfEUkM": {
-      "type": "richtext",
-      "blocks": {
-        "heading_KbCB86": {
-          "type": "heading",
-          "settings": {
-            "text": "Contemporary bedroom furniture, designed to deliver more for <em>your </em>budget.",
-            "heading_level": "h2",
-            "heading_style": "title-xl"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "heading_KbCB86"
-      ],
-      "name": "Rich Text",
-      "settings": {
-        "max_width_desktop": 100,
-        "section_padding": "--spacing-2xl",
-        "text_alignment": "center",
-        "colour_scheme": "base-white-02",
-        "enable_animation": false,
-        "optional_richtext": "",
-        "small_container": false
-      }
-    },
-    "image_text_Ahf7nk": {
-      "type": "image-text",
-      "blocks": {
-        "images_pqAJxr": {
-          "type": "images",
-          "settings": {
-            "image_one": "shopify://shop_images/Vallenfinalmockup_sunny_pm_bb20a884-719d-4188-8d78-1e138c3a8484.png"
-          }
-        },
-        "content_qHnp8Q": {
-          "type": "content",
-          "settings": {
-            "title": "The Practical Details",
-            "title_size": "xl",
-            "text": "<h4>Accessible price point</h4>\n\nA refined bedroom look without the premium price tag.\n\n<h4>Built for everyday use</h4>\n\nSolid 18mm construction and robust internal storage.\n\n<h4>Easy to maintain</h4>\n\nDurable melamine surfaces engineered to resist heat and moisture.\n\n\n<h4>3 year guarantee</h4>\n\nPeace of mind built into every piece.",
-            "button_style": "primary",
-            "button_text": "Enquire today",
-            "button_url": "shopify://pages/contact-us"
-          }
-        }
-      },
-      "block_order": [
-        "images_pqAJxr",
-        "content_qHnp8Q"
-      ],
-      "name": "Image - Text",
-      "settings": {
-        "colour_scheme": "base-white-02",
-        "section_padding": "--spacing-2xl"
-      }
     },
     "blocks_yVDnJ8": {
       "type": "_blocks",
@@ -186,7 +114,7 @@
           "settings": {
             "spacer_height": 135,
             "spacer_height_mobile": 30,
-            "spacer_color": "#fffef8"
+            "spacer_color": "#f9f7f0"
           },
           "blocks": {}
         }
@@ -194,6 +122,87 @@
       "block_order": [
         "ai_gen_block_90768fd_eQP8bm"
       ],
+      "settings": {}
+    },
+    "17805657938d839cee": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_60f34c9_RUmbVw": {
+          "type": "ai_gen_block_60f34c9",
+          "settings": {
+            "icon_width_percent": 10,
+            "vertical_alignment": "center",
+            "gap": 0,
+            "gap_mobile": 12,
+            "desktop_width_percent": 100,
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"359\" height=\"241\" viewbox=\"0 0 359 241\">\n  <path fill=\"#263622\" fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M201 117 L201 119 L204 124 L204 126 L206 130 L206 133 L207 134 L207 151 L206 152 L206 155 L205 156 L205 160 L208 160 L209 158 L209 155 L210 154 L210 148 L211 147 L211 138 L210 137 L210 132 L209 131 L209 128 L208 127 L207 122 L204 117 Z\n    M152 109 L151 110 L148 110 L142 113 L138 117 L138 118 L139 118 L144 123 L147 120 L153 117 L162 117 L164 118 L168 122 L168 127 L165 131 L161 133 L154 133 L154 140 L160 140 L161 141 L164 141 L166 142 L170 146 L170 150 L165 155 L163 155 L162 156 L153 156 L152 155 L148 154 L144 151 L141 152 L137 156 L140 159 L146 162 L148 162 L149 163 L152 163 L153 164 L163 164 L164 163 L167 163 L168 162 L172 161 L175 158 L176 158 L176 157 L179 153 L179 145 L177 141 L170 136 L175 132 L177 128 L177 126 L178 125 L178 122 L177 121 L177 118 L175 116 L175 115 L170 111 L166 110 L165 109 Z\n    M192 105 L192 108 L196 112 L199 112 L198 108 L195 105 Z\n    M133 55 L131 59 L131 67 L132 68 L132 74 L133 75 L133 81 L134 82 L134 86 L136 87 L137 86 L139 86 L143 84 L146 84 L147 83 L152 83 L153 82 L165 82 L166 83 L171 83 L172 84 L175 84 L176 85 L178 85 L182 87 L184 86 L184 82 L185 81 L185 75 L186 74 L186 68 L187 67 L187 59 L184 54 L180 52 L138 52 Z\n    M134 61 L135 59 L140 55 L178 55 L180 56 L184 61 L184 63 L183 64 L183 70 L182 71 L182 78 L181 79 L181 81 L180 82 L178 82 L177 81 L175 81 L174 80 L170 80 L169 79 L149 79 L148 80 L144 80 L143 81 L138 82 L136 78 L136 71 L135 70 L135 64 L134 63 Z\n    M123 32 L116 36 L113 39 L109 47 L109 60 L110 61 L110 68 L111 69 L111 75 L112 76 L112 82 L113 83 L113 89 L114 90 L114 97 L109 102 L109 103 L104 109 L99 119 L99 121 L97 125 L97 128 L96 129 L96 133 L95 134 L95 151 L96 152 L96 157 L97 158 L98 164 L100 167 L100 169 L103 175 L105 177 L107 181 L111 185 L111 186 L116 191 L117 191 L121 194 L124 194 L125 195 L194 195 L195 194 L197 194 L201 191 L202 191 L207 186 L207 185 L211 181 L211 180 L215 175 L218 169 L218 167 L220 164 L220 161 L222 157 L222 152 L223 151 L223 134 L222 133 L222 129 L221 128 L221 125 L220 124 L219 119 L212 106 L204 97 L204 90 L205 89 L205 83 L206 82 L206 76 L207 75 L207 68 L208 67 L208 61 L209 60 L209 47 L208 46 L208 44 L202 36 L195 32 L192 32 L191 31 L127 31 L126 32 Z\n    M125 35 L128 35 L129 34 L189 34 L190 35 L193 35 L197 37 L204 44 L205 46 L205 48 L206 49 L206 57 L205 58 L205 64 L204 65 L204 71 L203 72 L203 78 L202 79 L202 85 L201 86 L201 93 L200 94 L200 98 L209 108 L216 121 L216 123 L218 127 L218 131 L219 132 L219 137 L220 138 L220 147 L219 148 L219 154 L218 155 L217 162 L215 165 L215 167 L213 171 L211 173 L210 176 L207 179 L207 180 L197 190 L195 191 L192 191 L191 192 L127 192 L126 191 L123 191 L121 190 L111 180 L111 179 L108 176 L107 173 L105 171 L103 167 L103 165 L102 164 L102 162 L100 158 L100 155 L99 154 L99 147 L98 146 L98 139 L99 138 L99 132 L100 131 L100 127 L101 126 L102 121 L107 111 L113 104 L113 103 L118 98 L118 94 L117 93 L117 87 L116 86 L116 79 L115 78 L115 72 L114 71 L114 65 L113 64 L113 58 L112 57 L112 49 L113 48 L114 44 L121 37 Z\"></path>\n</svg>",
+            "icon_size": 84,
+            "icon_size_mobile": 36,
+            "icon_color": "#000000",
+            "heading": "",
+            "heading_size": 20,
+            "heading_size_mobile": 18,
+            "heading_weight": "600",
+            "heading_color": "#000000",
+            "heading_spacing": 8,
+            "text": "<p></p><p>Engineered to our highest strength standard,  Vallen is our strongest sofa yet. </p>",
+            "text_size": 24,
+            "text_size_mobile": 14,
+            "text_color": "#333333"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_60f34c9_RUmbVw"
+      ],
+      "settings": {}
+    },
+    "image_text_RxX7Vh": {
+      "type": "image-text",
+      "blocks": {
+        "images_TqMWeM": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Vallenfinalmockup_sunny_pm_bb20a884-719d-4188-8d78-1e138c3a8484.png"
+          }
+        },
+        "content_RiAe3H": {
+          "type": "content",
+          "settings": {
+            "title": "Image with Text",
+            "title_size": "xl",
+            "text": "Display an image alongside text content to highlight key information about your brand or products.",
+            "button_style": "primary",
+            "button_text": "Learn more",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_TqMWeM",
+        "content_RiAe3H"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "1780572786b61c2c20": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "1780569507b78d9d45": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "178056872348e200a2": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "1780568071ab0d636e": {
+      "type": "_blocks",
       "settings": {}
     },
     "product_blocks_CTKjAE": {
@@ -206,10 +215,9 @@
             "handle": "best-sellers",
             "product_feed_source": "product_list",
             "products": [
-              "essentials-bundle",
-              "essentials-2-drawer-bedside",
-              "essentials-3-drawer-chest",
-              "essentials-double-wardrobe"
+              "vallen-2-seater-sofa",
+              "vallen-3-seater-sofa",
+              "vallen-armchair"
             ],
             "collection": "",
             "seed_product": "",
@@ -369,64 +377,6 @@
       ],
       "settings": {}
     },
-    "richtext_Qqf7Wm": {
-      "type": "richtext",
-      "blocks": {
-        "heading_XHUFCR": {
-          "type": "heading",
-          "settings": {
-            "text": "A faster way to furnish",
-            "heading_level": "h2",
-            "heading_style": "title-display"
-          },
-          "blocks": {}
-        },
-        "tagline_jF7hMy": {
-          "type": "tagline",
-          "settings": {
-            "content": "For projects working to tighter timescales, the Essentials Range offers a straightforward, quick-delivery furniture option without overcomplicating the decision. If you’d like to see the finish, scale and quality before placing an </> order, simply fill out the form below and a member of our team will be in touch to arrange a convenient time for your Show Van visit - we’ll bring the range to you.",
-            "tagline_style": "body-lg"
-          },
-          "blocks": {}
-        },
-        "heading_aXVgaH": {
-          "type": "heading",
-          "name": "Heading",
-          "settings": {
-            "text": "",
-            "heading_level": "h2",
-            "heading_style": "title-xs"
-          },
-          "blocks": {}
-        },
-        "button_pTd4RG": {
-          "type": "button",
-          "settings": {
-            "style": "secondary",
-            "text": "Request a Show Van",
-            "url": "shopify://pages/show-van",
-            "new_tab": false
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "heading_XHUFCR",
-        "tagline_jF7hMy",
-        "heading_aXVgaH",
-        "button_pTd4RG"
-      ],
-      "name": "Rich Text",
-      "settings": {
-        "max_width_desktop": 63,
-        "section_padding": "--spacing-6xl",
-        "text_alignment": "center",
-        "colour_scheme": "green-01",
-        "enable_animation": true,
-        "optional_richtext": "",
-        "small_container": false
-      }
-    },
     "blocks_jFNdRE": {
       "type": "_blocks",
       "blocks": {
@@ -556,12 +506,15 @@
     "image_video_banner_RfGNUe",
     "blocks_hNh9mU",
     "1779968161f5e3af07",
-    "richtext_cfEUkM",
-    "image_text_Ahf7nk",
     "blocks_yVDnJ8",
+    "17805657938d839cee",
+    "image_text_RxX7Vh",
+    "1780572786b61c2c20",
+    "1780569507b78d9d45",
+    "178056872348e200a2",
+    "1780568071ab0d636e",
     "product_blocks_CTKjAE",
     "17800419587d38fd81",
-    "richtext_Qqf7Wm",
     "blocks_jFNdRE",
     "richtext_gkR3mA",
     "blocks_zQrGGK",

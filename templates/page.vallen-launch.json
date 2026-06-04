@@ -19,17 +19,6 @@
     "image_video_banner_RfGNUe": {
       "type": "image-video-banner",
       "blocks": {
-<<<<<<< HEAD
-=======
-        "eyebrow_YfqfTp": {
-          "type": "eyebrow",
-          "settings": {
-            "text": "BEDROOM FURNITURE FOR LATER LIVING",
-            "eyebrow_size": "sm",
-            "text_color": "#f9f7f0"
-          }
-        },
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
         "title_nmn8Bq": {
           "type": "title",
           "settings": {
@@ -39,7 +28,6 @@
             "text_color": "#f9f7f0"
           }
         },
-<<<<<<< HEAD
         "eyebrow_YfqfTp": {
           "type": "eyebrow",
           "settings": {
@@ -51,10 +39,6 @@
         "button_kiTM7t": {
           "type": "button",
           "disabled": true,
-=======
-        "button_kiTM7t": {
-          "type": "button",
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
           "settings": {
             "text": "Enquire today",
             "button_url": "shopify://pages/contact-us",
@@ -64,13 +48,8 @@
         }
       },
       "block_order": [
-<<<<<<< HEAD
         "title_nmn8Bq",
         "eyebrow_YfqfTp",
-=======
-        "eyebrow_YfqfTp",
-        "title_nmn8Bq",
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
         "button_kiTM7t"
       ],
       "name": "Image - Video Banner",
@@ -80,11 +59,7 @@
         "maintain_aspect_ratio": true,
         "add_header_offset": false,
         "media_type": "image",
-<<<<<<< HEAD
         "image_desktop": "shopify://shop_images/Untitled_design_10.png",
-=======
-        "image_desktop": "shopify://shop_images/ESSENTIALS_RENDER.jpg",
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
         "show_controls": false,
         "mute_video": false,
         "autoplay_video": false,
@@ -95,7 +70,6 @@
         "content_alignment": "center"
       }
     },
-<<<<<<< HEAD
     "blocks_VikV6k": {
       "type": "_blocks",
       "blocks": {
@@ -104,48 +78,6 @@
           "disabled": true,
           "settings": {
             "spacer_height": 40,
-=======
-    "blocks_hNh9mU": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_800d78e_3iQDjX": {
-          "type": "ai_gen_block_800d78e",
-          "settings": {
-            "accordion_heading": "Request a quote",
-            "default_open": false,
-            "desktop_width_percent": 100,
-            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"d13cb61a-817e-42e1-baa9-08d63b586063\" data-portal-id=\"145723791\"></div>",
-            "min_form_height": 350,
-            "heading_size": 32,
-            "heading_color": "#f9f7f0",
-            "header_background_color": "#c3c0b0",
-            "header_hover_color": "#243222",
-            "header_padding": 40,
-            "icon_size": 32,
-            "icon_color": "#f9f7f0",
-            "background_color": "#f9f7f0",
-            "content_padding": 50,
-            "border_width": 0,
-            "border_color": "#e0e0e0",
-            "border_radius": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_800d78e_3iQDjX"
-      ],
-      "name": "Form accordion",
-      "settings": {}
-    },
-    "1779968161f5e3af07": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_90768fd_yF9YVz": {
-          "type": "ai_gen_block_90768fd",
-          "settings": {
-            "spacer_height": 135,
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "spacer_height_mobile": 30,
             "spacer_color": "#fffef8"
           },
@@ -153,7 +85,6 @@
         }
       },
       "block_order": [
-<<<<<<< HEAD
         "ai_gen_block_90768fd_AMC4rh"
       ],
       "name": "Spacer",
@@ -248,27 +179,11 @@
           "settings": {
             "content": "___________________________________________",
             "tagline_style": "body-md"
-=======
-        "ai_gen_block_90768fd_yF9YVz"
-      ],
-      "settings": {}
-    },
-    "richtext_cfEUkM": {
-      "type": "richtext",
-      "blocks": {
-        "heading_KbCB86": {
-          "type": "heading",
-          "settings": {
-            "text": "Contemporary bedroom furniture, designed to deliver more for <em>your </em>budget.",
-            "heading_level": "h2",
-            "heading_style": "title-xl"
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
           },
           "blocks": {}
         }
       },
       "block_order": [
-<<<<<<< HEAD
         "tagline_MncNbi",
         "heading_Hp3HUy",
         "button_ANDGhF",
@@ -279,14 +194,6 @@
       "settings": {
         "max_width_desktop": 100,
         "section_padding": "--spacing-6xl",
-=======
-        "heading_KbCB86"
-      ],
-      "name": "Rich Text",
-      "settings": {
-        "max_width_desktop": 100,
-        "section_padding": "--spacing-2xl",
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
         "text_alignment": "center",
         "colour_scheme": "base-white-02",
         "enable_animation": false,
@@ -294,90 +201,6 @@
         "small_container": false
       }
     },
-<<<<<<< HEAD
-=======
-    "image_text_Ahf7nk": {
-      "type": "image-text",
-      "blocks": {
-        "images_pqAJxr": {
-          "type": "images",
-          "settings": {
-            "image_one": "shopify://shop_images/essentials_bundle_square_corners.png"
-          }
-        },
-        "content_qHnp8Q": {
-          "type": "content",
-          "settings": {
-            "title": "The Practical Details",
-            "title_size": "xl",
-            "text": "<h4>Accessible price point</h4>\n\nA refined bedroom look without the premium price tag.\n\n<h4>Built for everyday use</h4>\n\nSolid 18mm construction and robust internal storage.\n\n<h4>Easy to maintain</h4>\n\nDurable melamine surfaces engineered to resist heat and moisture.\n\n\n<h4>3 year guarantee</h4>\n\nPeace of mind built into every piece.",
-            "button_style": "primary",
-            "button_text": "Enquire today",
-            "button_url": "shopify://pages/contact-us"
-          }
-        }
-      },
-      "block_order": [
-        "images_pqAJxr",
-        "content_qHnp8Q"
-      ],
-      "name": "Image - Text",
-      "settings": {
-        "colour_scheme": "base-white-02",
-        "section_padding": "--spacing-2xl"
-      }
-    },
-    "blocks_yVDnJ8": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_90768fd_eQP8bm": {
-          "type": "ai_gen_block_90768fd",
-          "settings": {
-            "spacer_height": 135,
-            "spacer_height_mobile": 30,
-            "spacer_color": "#fffef8"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_90768fd_eQP8bm"
-      ],
-      "settings": {}
-    },
-    "product_blocks_CTKjAE": {
-      "type": "product-blocks",
-      "blocks": {
-        "product_block_zEmWpy": {
-          "type": "product_block",
-          "settings": {
-            "title": "Best Sellers",
-            "handle": "best-sellers",
-            "product_feed_source": "product_list",
-            "products": [
-              "essentials-bundle",
-              "essentials-2-drawer-bedside",
-              "essentials-3-drawer-chest",
-              "essentials-double-wardrobe"
-            ],
-            "collection": "",
-            "seed_product": "",
-            "use_current_product": false,
-            "recommendation_intent": "related",
-            "colour_scheme": "warm-stone"
-          }
-        }
-      },
-      "block_order": [
-        "product_block_zEmWpy"
-      ],
-      "name": "Product blocks",
-      "settings": {
-        "title": "browse the range",
-        "section_padding": "--spacing-4xl"
-      }
-    },
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
     "17800419587d38fd81": {
       "type": "_blocks",
       "blocks": {
@@ -488,7 +311,6 @@
             "show_icon": true,
             "icon_image": "shopify://shop_images/Untitled_-_29_May_2026_at_12.00.05_2.png",
             "button_text_color": "#f9f7f0",
-<<<<<<< HEAD
             "button_bg_color": "#c3c0b0",
             "button_hover_bg_color": "#243222",
             "button_font_family": "red_hat_display_n4",
@@ -725,19 +547,13 @@
             "show_icon": true,
             "icon_image": "shopify://shop_images/Untitled_-_29_May_2026_at_12.00.05_2.png",
             "button_text_color": "#f9f7f0",
-=======
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "button_bg_color": "#839488",
             "button_hover_bg_color": "#243222",
             "button_font_family": "red_hat_display_n4",
             "button_font_weight": "400",
             "button_font_style": "normal",
             "button_font_size": 21,
-<<<<<<< HEAD
             "button_border_radius": 0,
-=======
-            "button_border_radius": 8,
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "button_padding": 38,
             "desktop_width_percent": 100,
             "toast_success_message": "Successfully added to cart",
@@ -748,25 +564,13 @@
             "toast_font_family": "red_hat_display_n4",
             "toast_font_weight": "400",
             "toast_font_style": "normal",
-<<<<<<< HEAD
             "toast_border_radius": 0
-=======
-            "toast_border_radius": 8
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
           },
           "blocks": {}
         }
       },
       "block_order": [
-<<<<<<< HEAD
         "ai_gen_block_30cad42_8QmEnh"
-=======
-        "ai_gen_block_a0c6286_iL9N79",
-        "ai_gen_block_a0c6286_XhHqjD",
-        "ai_gen_block_fc5f1cc_DRXha7",
-        "ai_gen_block_a4d6361_zgCigc",
-        "ai_gen_block_30cad42_8DVYJ6"
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
       ],
       "settings": {}
     },
@@ -785,11 +589,7 @@
         "tagline_jF7hMy": {
           "type": "tagline",
           "settings": {
-<<<<<<< HEAD
             "content": "For projects working to tighter timescales, the Essentials Range offers a straightforward, quick-delivery furniture option without overcomplicating the decision. If you’d like to see the finish, scale and quality before placing an  order, simply fill out the form below and a member of our team will be in touch to arrange a convenient time for your Show Van visit - we’ll bring the range to you.",
-=======
-            "content": "For projects working to tighter timescales, the Essentials Range offers a straightforward, quick-delivery furniture option without overcomplicating the decision. If you’d like to see the finish, scale and quality before placing an </> order, simply fill out the form below and a member of our team will be in touch to arrange a convenient time for your Show Van visit - we’ll bring the range to you.",
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "tagline_style": "body-lg"
           },
           "blocks": {}
@@ -808,11 +608,7 @@
           "type": "button",
           "settings": {
             "style": "secondary",
-<<<<<<< HEAD
             "text": "Request a Show Van Visit",
-=======
-            "text": "Request a Show Van",
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
             "url": "shopify://pages/show-van",
             "new_tab": false
           },
@@ -963,7 +759,6 @@
   "order": [
     "main",
     "image_video_banner_RfGNUe",
-<<<<<<< HEAD
     "blocks_VikV6k",
     "1780414914cfdc77f0",
     "blocks_RAKnDn",
@@ -976,15 +771,6 @@
     "blocks_hNh9mU",
     "product_blocks_CTKjAE",
     "blocks_FEcEEw",
-=======
-    "blocks_hNh9mU",
-    "1779968161f5e3af07",
-    "richtext_cfEUkM",
-    "image_text_Ahf7nk",
-    "blocks_yVDnJ8",
-    "product_blocks_CTKjAE",
-    "17800419587d38fd81",
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
     "richtext_Qqf7Wm",
     "blocks_jFNdRE",
     "richtext_gkR3mA",

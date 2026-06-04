@@ -123,39 +123,6 @@
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-=======
-
-    <script>
-      function setMinicartUpsells() {
-        const minicart = document.querySelector('uwp-minicart');
-        if (minicart && window.shopifyCartUpsells) {
-          minicart.setAttribute('minicart-upsells', window.shopifyCartUpsells);
-        }
-      }
-
-      // Try immediately
-      setMinicartUpsells();
-
-      // Also try on DOMContentLoaded in case it hasn't fired yet
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', setMinicartUpsells);
-      }
-
-      // Poll for up to 2 seconds in case cart script runs after header script
-      let attempts = 0;
-      const pollInterval = setInterval(function() {
-        attempts++;
-        if (window.shopifyCartUpsells && attempts <= 20) {
-          setMinicartUpsells();
-          clearInterval(pollInterval);
-        }
-        if (attempts > 20) {
-          clearInterval(pollInterval);
-        }
-      }, 100);
-    </script>
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
   </div>
 
   <div class="container header__mobile-search hide-on-desktop">

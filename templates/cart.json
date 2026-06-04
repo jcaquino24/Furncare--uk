@@ -11,59 +11,10 @@
   "sections": {
     "main": {
       "type": "cart",
-<<<<<<< HEAD
       "settings": {}
-=======
-      "blocks": {
-        "upsell_block_DKqiYA": {
-          "type": "upsell_block",
-          "settings": {
-            "title": "",
-            "content": "Upgrade to an expert in-room setup and packaging removal.",
-            "trigger_tag": "Mattresses",
-            "products": [
-              "30kg-parasol-base",
-              "acorn-half-coffee-table"
-            ]
-          }
-        }
-      },
-      "block_order": [
-        "upsell_block_DKqiYA"
-      ],
-      "settings": {
-        "title": "Cart",
-        "enable_upsells": true,
-        "heading": "Complete your order",
-        "max_items": 8,
-        "products_per_slide_desktop": 1,
-        "products_per_slide_tablet": 1,
-        "products_per_slide_mobile": 1,
-        "slider_gap": 12,
-        "heading_font": "red_hat_display_n4",
-        "body_font": "red_hat_display_n4",
-        "panel_background": "#fffef8",
-        "card_background": "#ffffff",
-        "text_color": "#243222",
-        "card_border_color": "#e6e1d8",
-        "panel_padding": 12,
-        "card_padding": 12,
-        "card_radius": 4,
-        "card_border_width": 1,
-        "image_width": 104,
-        "heading_size": 16,
-        "title_size": 14,
-        "body_size": 13,
-        "button_style": "secondary"
-      }
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
     }
   },
   "order": [
     "main"
   ]
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> cc0d22e71d49054ace06604cf686a33feb5d842d
