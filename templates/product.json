@@ -63,7 +63,7 @@
             "batch_button_label": "Add selected to cart",
             "batch_toggle_label": "Add",
             "batch_toggle_position": "inline",
-            "batch_toggle_style": "button",
+            "batch_toggle_style": "checkbox",
             "preselect_products": false,
             "max_selectable_products": 0,
             "open_cart_drawer": true,
