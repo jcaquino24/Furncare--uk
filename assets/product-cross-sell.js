@@ -570,3 +570,58 @@
     initCrossSellBlocks(document);
   });
 })();
+
+
+
+
+
+(function () {
+
+  const originalFetch = window.fetch;
+
+  window.fetch = function (url, options) {
+
+    // ✅ detect main product add request
+    if (typeof url === 'string' && url.includes('/cart/add')) {
+
+      try {
+        if (options && options.body) {
+
+          let body = JSON.parse(options.body);
+
+          // ✅ Only modify if it's main product (not cross-sell)
+          if (!body.items && body.id) {
+
+            // ✅ collect cross-sell items
+            const block = document.querySelector('[data-cross-sell-block]');
+            if (block) {
+
+              const extraItems = collectSelectedBatchItems(block);
+
+              if (extraItems.length) {
+
+                // ✅ merge main + cross sell
+                body = {
+                  items: [
+                    {
+                      id: body.id,
+                      quantity: body.quantity || 1
+                    },
+                    ...extraItems
+                  ]
+                };
+
+                options.body = JSON.stringify(body);
+              }
+            }
+          }
+        }
+      } catch (e) {
+        console.warn('Cross-sell merge error:', e);
+      }
+    }
+
+    return originalFetch.apply(this, arguments);
+  };
+
+})();
