@@ -271,27 +271,47 @@
   }
 
  function setupBatchWithMainProductAdd(block) {
-
   if (block.getAttribute('data-cta-mode') !== 'batch') return;
   if (block.getAttribute('data-batch-behavior') !== 'with_main_product') return;
 
-  document.addEventListener('ajaxProduct:added', function (event) {
+  var form = document.querySelector('product-form form');
 
-    // ✅ Prevent recursion
-    if (event.detail && event.detail.crossSell) return;
+  if (!form || form.dataset.crossSellIntercept === 'true') return;
 
-    var items = collectSelectedBatchItems(block);
+  form.dataset.crossSellIntercept = 'true';
 
-    if (!items.length) return;
+  form.addEventListener('submit', function (event) {
 
-    // ✅ Add cross-sell AFTER main product
-    addItemsToCart(block, items, null, {
-      openDrawer: true,
-      emitAjaxEvent: false
-    });
+    var crossSellItems = collectSelectedBatchItems(block);
 
-  });
+    if (!crossSellItems.length) return;
 
+    // ✅ STOP THE ORIGINAL REQUEST
+    event.preventDefault();
+    event.stopImmediatePropagation();
+
+    // ✅ get main product data
+    var formData = new FormData(form);
+
+    var mainVariantId = parseInt(formData.get('id'), 10);
+    var mainQty = parseInt(formData.get('quantity') || '1', 10);
+
+    var items = [];
+
+    if (mainVariantId) {
+      items.push({
+        id: mainVariantId,
+        quantity: mainQty
+      });
+    }
+
+    // ✅ merge cross-sell
+    items = items.concat(crossSellItems);
+
+    // ✅ SINGLE REQUEST
+    addItemsToCart(block, items, event.submitter);
+
+  }, true); // ✅ CAPTURE MODE (CRITICAL)
 }
 
   function setupMainProductCrossSellOnly(block) {
