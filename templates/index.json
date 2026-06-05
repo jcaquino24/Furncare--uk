@@ -842,6 +842,10 @@
     "1779893029a43fff23": {
       "type": "_blocks",
       "settings": {}
+    },
+    "17806501859527b9db": {
+      "type": "_blocks",
+      "settings": {}
     }
   },
   "order": [
@@ -858,6 +862,7 @@
     "image_text_V4HwxM",
     "image_text_aYpUjc",
     "17760941991c9f024b",
-    "1779893029a43fff23"
+    "1779893029a43fff23",
+    "17806501859527b9db"
   ]
 }

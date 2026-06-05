@@ -58,7 +58,7 @@
         "maintain_aspect_ratio": true,
         "add_header_offset": false,
         "media_type": "image",
-        "image_desktop": "shopify://shop_images/VALLEN.png",
+        "image_desktop": "shopify://shop_images/VALLEN_OVERLAY_2.png",
         "show_controls": false,
         "mute_video": false,
         "autoplay_video": false,
