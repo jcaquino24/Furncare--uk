@@ -201,8 +201,8 @@
           "settings": {
             "image": "shopify://shop_images/Untitled_-_2026-05-06T112857.053.png",
             "text": "The Indigo Scheme",
-            "richtext": "",
-            "richtext_color": "#f9f7f0",
+            "richtext": "<p>HELLO</p>",
+            "richtext_color": "#ffffff",
             "richtext_font_size": "16px",
             "richtext_font_weight": "400",
             "richtext_text_transform": "none",
@@ -595,29 +595,6 @@
       "name": "Spacer",
       "settings": {}
     },
-    "blocks_CGpXRy": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_3260401_aqKaJx": {
-          "type": "ai_gen_block_3260401",
-          "settings": {
-            "spacing_size": "medium",
-            "small_height": 20,
-            "medium_height": 40,
-            "large_height": 95,
-            "small_height_mobile": 20,
-            "medium_height_mobile": 40,
-            "large_height_mobile": 60
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_3260401_aqKaJx"
-      ],
-      "name": "Spacer",
-      "settings": {}
-    },
     "richtext_4BwULC": {
       "type": "richtext",
       "blocks": {
@@ -757,6 +734,29 @@
         "tab2_handle": "collection-2",
         "tab2_colour_scheme": "warm-stone"
       }
+    },
+    "blocks_CGpXRy": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_aqKaJx": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "medium",
+            "small_height": 20,
+            "medium_height": 40,
+            "large_height": 95,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_aqKaJx"
+      ],
+      "name": "Spacer",
+      "settings": {}
     }
   },
   "order": [
