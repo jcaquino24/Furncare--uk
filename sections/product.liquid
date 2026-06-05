@@ -262,6 +262,81 @@
       "label": "Shipping & Returns content",
       "info": "Global content shown in all product pages"
     }
+  ],
+  
+"blocks": [
+    {
+      "type": "cross_sell",
+      "name": "Cross sell",
+      "settings": [
+        {
+          "type": "select",
+          "id": "product_source",
+          "label": "Products source",
+          "default": "manual",
+          "options": [
+            { "value": "manual", "label": "Selected products" },
+            { "value": "collection", "label": "Collection" },
+            { "value": "variants", "label": "Current product variants" }
+          ]
+        },
+        {
+          "type": "product_list",
+          "id": "cross_sell_products",
+          "label": "Products",
+          "limit": 20
+        },
+        {
+          "type": "collection",
+          "id": "cross_sell_collection",
+          "label": "Collection"
+        },
+        {
+          "type": "checkbox",
+          "id": "exclude_current_product",
+          "label": "Exclude current product",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "max_products",
+          "min": 1,
+          "max": 24,
+          "step": 1,
+          "label": "Max products",
+          "default": 8
+        },
+        {
+          "type": "range",
+          "id": "default_quantity",
+          "min": 1,
+          "max": 20,
+          "step": 1,
+          "label": "Default quantity",
+          "default": 1
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_unavailable_products",
+          "label": "Hide unavailable",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Layout"
+        },
+        {
+          "type": "select",
+          "id": "layout_mode",
+          "label": "Layout",
+          "default": "grid",
+          "options": [
+            { "value": "grid", "label": "Grid" },
+            { "value": "carousel", "label": "Carousel" }
+          ]
+        }
+      ]
+    }
   ]
 }
 {% endschema %}
