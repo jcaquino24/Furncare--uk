@@ -99,6 +99,55 @@
     --cross-sell-active-border-shadow-width: {{ active_border_shadow_width }}px;
     --cross-sell-image-padding: {{ image_ratio_padding }};
   "
+  {%- else -%}
+  style="
+    --cross-sell-bg: {{ block.settings.background_color }};
+    --cross-sell-border-color: {{ block.settings.border_color }};
+    --cross-sell-card-bg: {{ block.settings.card_background }};
+    --cross-sell-card-border: {{ block.settings.card_border_color }};
+    --cross-sell-heading-color: {{ block.settings.heading_color }};
+    --cross-sell-text-color: {{ block.settings.text_color }};
+    --cross-sell-price-color: {{ block.settings.price_color }};
+    --cross-sell-badge-bg: {{ block.settings.badge_bg }};
+    --cross-sell-badge-text: {{ block.settings.badge_text }};
+    --cross-sell-action-bg: {{ block.settings.action_bg }};
+    --cross-sell-action-text: {{ block.settings.action_text }};
+    --cross-sell-gap: {{ block.settings.card_gap }}px;
+    --cross-sell-cols-desktop: {{ block.settings.columns_desktop }};
+    --cross-sell-cols-mobile: {{ block.settings.columns_mobile }};
+    --cross-sell-padding: {{ block.settings.block_padding }}px;
+    --cross-sell-radius: {{ block.settings.block_radius }}px;
+    --cross-sell-card-radius: {{ block.settings.card_radius }}px;
+    --cross-sell-border-width: {{ block.settings.border_width }}px;
+    --cross-sell-card-border-width: {{ block.settings.card_border_width }}px;
+    --cross-sell-card-padding: {{ block.settings.card_padding }}px;
+    --cross-sell-heading-size: {{ block.settings.heading_size }}px;
+    --cross-sell-title-size: {{ block.settings.product_title_size }}px;
+    --cross-sell-price-size: {{ block.settings.price_size }}px;
+    --cross-sell-title-price-gap: {{ block.settings.title_price_gap }}px;
+    --cross-sell-image-width: {{ block.settings.image_width }}px;
+    --cross-sell-image-width-mobile: {{ block.settings.image_width_mobile }}px;
+    --cross-sell-button-height: {{ block.settings.button_height }}px;
+    --cross-sell-button-text-size: {{ block.settings.button_text_size }}px;
+    --cross-sell-button-padding-x: {{ block.settings.button_padding_x }}px;
+    --cross-sell-toggle-size: {{ block.settings.toggle_size }}px;
+    --cross-sell-toggle-text-size: {{ block.settings.toggle_text_size }}px;
+    --cross-sell-checkbox-control-width: {{ block.settings.checkbox_control_width }}px;
+    --cross-sell-checkbox-size: {{ block.settings.checkbox_size }}px;
+    --cross-sell-checkbox-radius: {{ block.settings.checkbox_radius }}px;
+    --cross-sell-content-gap: {{ block.settings.content_gap }}px;
+    --cross-sell-carousel-peek: {{ carousel_peek_px }}px;
+    --cross-sell-carousel-nav-offset: {{ block.settings.carousel_nav_offset }}px;
+    --cross-sell-carousel-nav-vertical-offset: {{ block.settings.carousel_nav_vertical_offset }}px;
+    --cross-sell-nav-btn-radius: {{ block.settings.carousel_nav_button_radius }}px;
+    --cross-sell-nav-btn-bg: {{ block.settings.carousel_nav_button_bg }};
+    --cross-sell-nav-btn-border: {{ block.settings.carousel_nav_button_border }};
+    --cross-sell-nav-btn-color: {{ block.settings.carousel_nav_button_icon }};
+    --cross-sell-active-border-color: {{ block.settings.active_border_color }};
+    --cross-sell-active-border-width: {{ block.settings.active_border_width }}px;
+    --cross-sell-active-border-shadow-width: {{ active_border_shadow_width }}px;
+    --cross-sell-image-padding: {{ image_ratio_padding }};
+  "
   {%- endif -%}
 >
   {%- if block.settings.show_divider -%}
@@ -110,7 +159,9 @@
       {%- if block.settings.heading != blank -%}
         <p class="product-cross-sell__heading">{{ block.settings.heading | escape }}</p>
       {%- endif -%}
-
+      {%- if block.settings.subheading != blank and cross_visual != 'dark_promo' -%}
+        <div class="product-cross-sell__subheading rte">{{ block.settings.subheading }}</div>
+      {%- endif -%}
     </div>
   {%- endif -%}
 
@@ -182,7 +233,7 @@
         {%- endif -%}
 
         {%- assign promo_desc = '' -%}
-        {%- if block.settings.show_product_description -%}
+        {%- if cross_visual == 'dark_promo' and block.settings.show_product_description -%}
           {%- assign promo_desc = card_product.description | strip_html | strip | truncate: 200 -%}
         {%- endif -%}
 
@@ -243,7 +294,7 @@
                 {%- endif -%}
               </div>
 
-              {%- if promo_desc != blank -%}
+              {%- if cross_visual == 'dark_promo' and promo_desc != blank -%}
                 <p class="product-cross-sell__promo-desc">{{ promo_desc | escape }}</p>
               {%- endif -%}
 
@@ -494,7 +545,7 @@
 .product-cross-sell__track {
   display: grid;
   gap: var(--cross-sell-gap, 10px);
-  grid-template-columns: repeat(var(--cross-sell-cols-desktop, 1), minmax(0, 1fr));
+  grid-template-columns: repeat(var(--cross-sell-cols-desktop, 2), minmax(0, 1fr));
 }
 
 .product-cross-sell--carousel .product-cross-sell__track {
@@ -735,8 +786,8 @@
 }
 
 .product-cross-sell__pick-label input:checked + span {
-  background: var(--cross-sell-action-bg, #243222);
-  border-color: var(--cross-sell-action-bg, #243222);
+  background: var(--cross-sell-action-bg, #1f3854);
+  border-color: var(--cross-sell-action-bg, #1f3854);
   color: var(--cross-sell-action-text, #fff);
 }
 
