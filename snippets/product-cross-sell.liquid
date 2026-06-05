@@ -110,9 +110,7 @@
       {%- if block.settings.heading != blank -%}
         <p class="product-cross-sell__heading">{{ block.settings.heading | escape }}</p>
       {%- endif -%}
-      {%- if block.settings.subheading != blank and cross_visual != 'dark_promo' -%}
-        <div class="product-cross-sell__subheading rte">{{ block.settings.subheading }}</div>
-      {%- endif -%}
+
     </div>
   {%- endif -%}
 
@@ -184,7 +182,7 @@
         {%- endif -%}
 
         {%- assign promo_desc = '' -%}
-        {%- if cross_visual == 'dark_promo' and block.settings.show_product_description -%}
+        {%- if block.settings.show_product_description -%}
           {%- assign promo_desc = card_product.description | strip_html | strip | truncate: 200 -%}
         {%- endif -%}
 
@@ -245,7 +243,7 @@
                 {%- endif -%}
               </div>
 
-              {%- if cross_visual == 'dark_promo' and promo_desc != blank -%}
+              {%- if promo_desc != blank -%}
                 <p class="product-cross-sell__promo-desc">{{ promo_desc | escape }}</p>
               {%- endif -%}
 
