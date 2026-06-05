@@ -112,33 +112,21 @@
         return response.json();
       })
       .then(function (payload) {
-  setStatus(block, 'Added to cart.', 'success');
-
-  // ✅ 1. Reload cart section FIRST
-  fetch('/?sections=minicart')
-    .then(function (res) {
-      return res.json();
-    })
-    .then(function (data) {
-      var container = document.querySelector('.minicart__main');
-
-      if (container && data.minicart) {
-        container.innerHTML = data.minicart;
-      }
-    })
-    .then(function () {
-
-      // ✅ 2. THEN open drawer AFTER update
-      var drawer = document.querySelector('.minicart__drawer');
-      if (drawer) {
-        drawer.classList.add('is-open');
-      }
-
-      document.body.classList.add('minicart-open');
-    });
-
-  finishRequest();
-})
+        setStatus(block, 'Added to cart.', 'success');
+        emitCartEvents(
+          payload,
+          triggerButton,
+          openDrawer,
+          requestOptions.emitPubSub !== false,
+          requestOptions.emitAjaxEvent
+        );
+        finishRequest();
+      })
+      .catch(function (error) {
+        var message = (error && error.description) || 'Unable to add items right now. Please try again.';
+        setStatus(block, message, 'error');
+        finishRequest();
+      });
   }
 
   function collectSelectedBatchItems(block) {
