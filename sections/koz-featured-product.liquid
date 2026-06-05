@@ -1,0 +1,193 @@
+{%- style -%}
+  .fp-{{ section.id }} {
+    padding: {{ section.settings.padding_v }}px 20px;
+    background-color: {{ section.settings.bg_color }};
+  }
+
+  .fp-container {
+    max-width: {{ section.settings.container_width }}px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+    background: {{ section.settings.card_bg }};
+    padding: 40px;
+    border-radius: 4px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .fp-container { grid-template-columns: 1fr 1fr; gap: 80px; padding: 60px; }
+  }
+
+  .fp-image-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* The soft glow effect from your image */
+  .fp-image-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 10%; left: 10%; right: 10%; bottom: 10%;
+    background: {{ section.settings.accent_color }};
+    filter: blur(60px);
+    opacity: 0.15;
+    z-index: -1;
+  }
+
+  .fp-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .fp-subheading {
+    color: {{ section.settings.accent_color }};
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .fp-title {
+    color: {{ section.settings.text_color }};
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin: 0 0 25px 0;
+    line-height: 1.1;
+  }
+
+  .fp-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+  }
+
+  .fp-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: {{ section.settings.text_color }};
+    opacity: 0.8;
+    margin-bottom: 12px;
+    font-size: 1rem;
+  }
+
+  .fp-feature-item svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: {{ section.settings.accent_color }};
+  }
+
+  .fp-price {
+    font-size: 2rem;
+    color: {{ section.settings.text_color }};
+    margin-bottom: 25px;
+    display: block;
+  }
+
+  .fp-atc-button {
+    background-color: {{ section.settings.accent_color }};
+    color: #000;
+    border: none;
+    padding: 15px 40px;
+    width: 100%;
+    max-width: 300px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    border-radius: 4px;
+  }
+
+  .fp-atc-button:hover { opacity: 0.9; }
+{%- endstyle -%}
+
+<section class="fp-{{ section.id }}">
+  <div class="fp-container">
+    
+    <div class="fp-image-wrapper">
+      {%- assign feat_prod = section.settings.product -%}
+      {%- if section.settings.custom_image != blank -%}
+        {{ section.settings.custom_image | image_url: width: 800 | image_tag }}
+      {%- elsif feat_prod != blank -%}
+        {{ feat_prod.featured_image | image_url: width: 800 | image_tag }}
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag }}
+      {%- endif -%}
+    </div>
+
+    <div class="fp-content">
+      <span class="fp-subheading">{{ section.settings.subheading }}</span>
+      <h2 class="fp-title">
+        {% if section.settings.title != blank %}{{ section.settings.title }}{% else %}{{ feat_prod.title }}{% endif %}
+      </h2>
+
+      <ul class="fp-features">
+        {%- for block in section.blocks -%}
+          <li class="fp-feature-item" {{ block.shopify_attributes }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            {{ block.settings.feature_text }}
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      <span class="fp-price">
+        {% if feat_prod != blank %}{{ feat_prod.price | money }}{% else %}$149.00{% endif %}
+      </span>
+
+      {%- if feat_prod != blank -%}
+        {%- form 'product', feat_prod -%}
+          <input type="hidden" name="id" value="{{ feat_prod.selected_or_first_available_variant.id }}">
+          <button type="submit" class="fp-atc-button">Add to Cart</button>
+        {%- endform -%}
+      {%- else -%}
+        <button class="fp-atc-button">Add to Cart</button>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Koz Featured Product",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Select Product" },
+    { "type": "image_picker", "id": "custom_image", "label": "Custom Image (Overrides Product)" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "FEATURED HARDWARE" },
+    { "type": "text", "id": "title", "label": "Title Override", "info": "Leave blank to use product name" },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "bg_color", "label": "Outer Background", "default": "#1a1a1a" },
+    { "type": "color", "id": "card_bg", "label": "Inner Card Background", "default": "#222222" },
+    { "type": "color", "id": "text_color", "label": "Text Color", "default": "#ffffff" },
+    { "type": "color", "id": "accent_color", "label": "Accent Color", "default": "#00c3e3" },
+    { "type": "header", "content": "Spacing" },
+    { "type": "range", "id": "padding_v", "label": "Vertical Padding", "min": 0, "max": 100, "step": 2, "default": 60 },
+    { "type": "number", "id": "container_width", "label": "Container Width", "default": 1100 }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Point",
+      "settings": [
+        { "type": "text", "id": "feature_text", "label": "Feature text", "default": "CNC Machined 6061-T6 Aluminum" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Koz Featured Product",
+      "blocks": [
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,443 @@
+{% comment %}
+  Custom Shopify Section: RST300 Stacked Layout
+  Designed for Shopify 2.0
+  Interactive: optional .glb URL (highest priority), then product 3D/video, section spin video, else static image.
+{% endcomment %}
+
+{%- liquid
+  assign koz_interactive = nil
+  assign koz_interactive_kind = nil
+  assign koz_model_url = section.settings.model_glb_url | strip
+
+  if koz_model_url != blank
+    assign koz_interactive_kind = 'url_model'
+  elsif product and section.settings.use_product_interactive_media
+    assign koz_interactive = product.media | where: 'media_type', 'model' | first
+    if koz_interactive != blank
+      assign koz_interactive_kind = 'model'
+    else
+      assign koz_interactive = product.media | where: 'media_type', 'video' | first
+      if koz_interactive != blank
+        assign koz_interactive_kind = 'product_video'
+      endif
+    endif
+  endif
+
+  if koz_interactive_kind == blank and section.settings.spin_video != blank
+    assign koz_interactive = section.settings.spin_video
+    assign koz_interactive_kind = 'section_video'
+  endif
+-%}
+
+{%- if koz_interactive_kind == 'model' or koz_interactive_kind == 'url_model' -%}
+  {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
+  <link
+    rel="stylesheet"
+    href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css"
+    media="print"
+    onload="this.media='all'"
+  >
+  <link
+    rel="stylesheet"
+    href="{{ 'component-model-viewer-ui.css' | asset_url }}"
+    media="print"
+    onload="this.media='all'"
+  >
+{%- endif -%}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;700&display=swap');
+
+  .rst-section-{{ section.id }} {
+    --accent-color: {{ section.settings.accent_color }};
+    --bg-color: {{ section.settings.background_color }};
+    --text-color: {{ section.settings.text_color }};
+    
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 90vh; /* Ensures the background image is highly visible */
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Full Bleed Background Image */
+  {% if section.settings.bg_image != blank %}
+  .rst-section-{{ section.id }}::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-image: url('{{ section.settings.bg_image | image_url: width: 2000 }}');
+    background-size: cover;
+    background-position: center right;
+    opacity: {{ section.settings.bg_opacity | divided_by: 100.0 }};
+    pointer-events: none;
+    z-index: 1;
+  }
+  {% endif %}
+
+  .rst-container {
+    width: 100%;
+    max-width: {{ section.settings.container_width }}px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-start; /* Keeps content strictly on the left */
+  }
+
+  /* The Stacked Wrapper */
+  .rst-content-stack {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px; 
+    width: 100%;
+  }
+
+  /* 1. Top Element: The Glass Viewer Box */
+  .rst-glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    aspect-ratio: 1.1 / 1; /* Slightly wider than a perfect square */
+    width: 100%;
+    max-width: 480px; /* Matches the proportion in the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px; /* Space between box and text */
+  }
+
+  .rst-glass-card:has(.rst-showcase-media) {
+    aspect-ratio: auto;
+    min-height: 280px;
+    padding: 16px 12px 56px;
+  }
+
+  .rst-main-image {
+    max-width: 60%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
+    margin-bottom: 20px;
+  }
+
+  .rst-showcase-media {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    margin-bottom: 12px;
+  }
+
+  .rst-showcase-media model-viewer {
+    width: 100%;
+    max-width: min(480px, 100%);
+    height: min(420px, 50vh);
+    min-height: 240px;
+    background: transparent;
+    --poster-color: transparent;
+  }
+
+  .rst-showcase-media video {
+    max-width: min(480px, 90%);
+    width: 100%;
+    height: auto;
+    max-height: min(420px, 45vh);
+    object-fit: contain;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
+  }
+
+  .rst-main-video {
+    max-width: min(480px, 90%) !important;
+    width: 100%;
+    height: auto;
+    max-height: min(420px, 45vh);
+    object-fit: contain;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
+  }
+
+  .rst-glass-card .deferred-media,
+  .rst-glass-card deferred-media {
+    width: 100%;
+    max-width: min(480px, 100%);
+  }
+
+  .rst-hint {
+    position: absolute;
+    bottom: 30px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .rst-hint svg { 
+    margin-bottom: 8px; 
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 6px;
+    padding: 4px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .rst-hint p {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  /* 2. Bottom Element: The Text Block */
+  .rst-text-block {
+    padding-left: 0; /* Ensures it aligns perfectly with the box above */
+  }
+
+  .rst-eyebrow {
+    color: var(--accent-color);
+    font-size: 11px;
+    letter-spacing: 4px;
+    display: block;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+
+  .rst-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 6vw, 64px);
+    line-height: 1;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .rst-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.6);
+    max-width: 480px;
+    margin: 0;
+  }
+
+  /* Mobile Adjustments */
+  @media (max-width: 768px) {
+    .rst-section-{{ section.id }} {
+      min-height: auto;
+      background-position: center;
+    }
+    .rst-container {
+      justify-content: center;
+    }
+    .rst-content-stack {
+      align-items: center;
+      text-align: center;
+    }
+    .rst-glass-card {
+      max-width: 100%;
+    }
+  }
+</style>
+
+<div class="rst-section-{{ section.id }}">
+  <div class="rst-container">
+    
+    <div class="rst-content-stack">
+      
+      <div class="rst-glass-card">
+        {%- if koz_interactive_kind == 'url_model' -%}
+          <div class="rst-showcase-media rst-showcase-media--model">
+            <model-viewer
+              src="{{ koz_model_url | escape }}"
+              alt="{{ section.settings.title | escape }}"
+              camera-controls
+              touch-action="pan-y"
+              interaction-prompt="none"
+              loading="eager"
+              class="rst-url-model-viewer"
+            ></model-viewer>
+          </div>
+        {%- elsif koz_interactive_kind == 'model' -%}
+          <div class="rst-showcase-media rst-showcase-media--model">
+            {{ koz_interactive | media_tag: image_size: '2048x', toggleable: true }}
+          </div>
+        {%- elsif koz_interactive_kind == 'product_video' -%}
+          <div class="rst-showcase-media">
+            <video
+              class="rst-main-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              {% if koz_interactive.preview_image %}
+                poster="{{ koz_interactive.preview_image | image_url: width: 1100 }}"
+              {% endif %}
+            >
+              {%- for source in koz_interactive.sources -%}
+                <source src="{{ source.url }}" type="{{ source.mime_type }}">
+              {%- endfor -%}
+            </video>
+          </div>
+        {%- elsif koz_interactive_kind == 'section_video' -%}
+          <div class="rst-showcase-media">
+            {{
+              koz_interactive
+              | video_tag:
+                class: 'rst-main-video',
+                image_size: '1100x',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: false
+            }}
+          </div>
+        {%- elsif section.settings.product_image != blank -%}
+          {{ section.settings.product_image | image_url: width: 600 | image_tag: class: 'rst-main-image', alt: section.settings.title }}
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'rst-main-image' }}
+        {%- endif -%}
+
+        <div class="rst-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 2v6h6M21.5 22v-6h-6"/><path d="M22 11.5A10 10 0 0 0 3.2 7.2M2 12.5a10 10 0 0 0 18.8 4.3"/></svg>
+          <p>{{ section.settings.hint_text }}</p>
+        </div>
+      </div>
+
+      <div class="rst-text-block">
+        <span class="rst-eyebrow">{{ section.settings.eyebrow }}</span>
+        <h2 class="rst-title">{{ section.settings.title }}</h2>
+        <div class="rst-description">{{ section.settings.description }}</div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{%- if koz_interactive_kind == 'url_model' -%}
+  <script type="module" src="{{ 'model-viewer.min.js' | asset_url }}"></script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Koz Product Showcase",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "url",
+      "id": "model_glb_url",
+      "label": "3D model file URL (.glb)",
+      "info": "Upload a .glb to Settings → Content → Files, then paste the copied link here. When set, this is shown first (overrides product media and spin video)."
+    },
+    {
+      "type": "checkbox",
+      "id": "use_product_interactive_media",
+      "label": "Use product 3D or video when available",
+      "default": true,
+      "info": "On product pages, uses the first 3D model, otherwise the first Shopify-hosted product video. Falls back to the spin video or static image."
+    },
+    {
+      "type": "video",
+      "id": "spin_video",
+      "label": "360° / spin video (optional)",
+      "info": "Used when the product has no 3D model or video, or on pages without a product. Plays in place of the static image."
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Featured Product Image (Inside Box)",
+      "info": "Shown when no 3D model, product video, or spin video is used."
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Full Background Image"
+    },
+    {
+      "type": "range",
+      "id": "bg_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Background Image Opacity",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "ENGINEERED FOR THE APEX"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "FIA FIXED BUCKET SEAT RST300"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Ultra-lightweight autoclaved carbon fiber shell with dual-density foam. The industry standard for FIA-approved circuit racing and GT endurance.</p>"
+    },
+    {
+      "type": "text",
+      "id": "hint_text",
+      "label": "Viewer Hint Text",
+      "default": "INTERACTIVE 360° FLYOVER"
+    },
+    {
+      "type": "header",
+      "content": "Design"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Base Background Color",
+      "default": "#050505"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Color (Eyebrow)",
+      "default": "#63a9c1"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "min": 800,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "label": "Max Container Width",
+      "default": 1200
+    }
+  ],
+  "presets": [
+    {
+      "name": "Koz Product Showcase"
+    }
+  ]
+}
+{% endschema %}

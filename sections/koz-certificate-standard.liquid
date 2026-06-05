@@ -1,0 +1,351 @@
+{% comment %}
+  Section: Certification Standards Layout
+  Layout: 3-column grid (Intro on left, 2 Feature Cards on right).
+{% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap');
+
+  .cert-section-{{ section.id }} {
+    background-color: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    font-family: 'Inter', sans-serif;
+    color: #e0e0e0;
+  }
+
+  .cert-container {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+  }
+
+  /* --- INTRO COLUMN --- */
+  .cert-intro-col {
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+  }
+
+  .cert-intro-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 4vw, 48px);
+    line-height: 1;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .cert-intro-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #a0a0a0;
+    margin: 0 0 30px 0;
+    font-weight: 300;
+  }
+
+  .cert-divider {
+    width: 60px;
+    height: 3px;
+    background-color: {{ section.settings.main_accent_color }};
+  }
+
+  /* --- CARD COLUMNS --- */
+  .cert-card {
+    background-color: #1a1a1a;
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-left: 3px solid var(--card-accent, #555);
+  }
+
+  .cert-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+  }
+
+  .cert-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--card-accent, #555);
+  }
+  
+  .cert-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  .cert-top-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #888;
+  }
+
+  .cert-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 15px 0;
+    letter-spacing: 0.5px;
+  }
+
+  .cert-card-text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #a0a0a0;
+    margin: 0 0 25px 0;
+    font-weight: 300;
+  }
+
+  /* Custom styling for the bullet lists inside the richtext editor */
+  .cert-card-bullets {
+    margin-top: auto; /* Pushes list to bottom if text lengths vary */
+  }
+
+  .cert-card-bullets ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .cert-card-bullets li {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #c0c0c0;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .cert-card-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--card-accent, #555);
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 990px) {
+    .cert-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .cert-intro-col {
+      padding-right: 0;
+      max-width: 600px;
+    }
+  }
+</style>
+
+<section class="cert-section-{{ section.id }}">
+  <div class="cert-container">
+    <div class="cert-grid">
+      
+      <div class="cert-intro-col">
+        <h2 class="cert-intro-title">{{ section.settings.heading | newline_to_br }}</h2>
+        <p class="cert-intro-text">{{ section.settings.text }}</p>
+        {% if section.settings.show_divider %}
+          <div class="cert-divider"></div>
+        {% endif %}
+      </div>
+
+      {% for block in section.blocks %}
+        <div class="cert-card" style="--card-accent: {{ block.settings.card_accent }};" {{ block.shopify_attributes }}>
+          
+          <div class="cert-card-header">
+            <div class="cert-icon">
+              {% if block.settings.custom_svg != blank %}
+                {{ block.settings.custom_svg }}
+              {% else %}
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              {% endif %}
+            </div>
+            
+            {% if block.settings.top_label != blank %}
+              <span class="cert-top-label">{{ block.settings.top_label }}</span>
+            {% endif %}
+          </div>
+
+          <h3 class="cert-card-title">{{ block.settings.title }}</h3>
+          
+          <p class="cert-card-text">{{ block.settings.card_text }}</p>
+          
+          <div class="cert-card-bullets">
+            {{ block.settings.bullet_list }}
+          </div>
+
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Koz Certificate Standards",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Intro Column Settings"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "CERTIFICATION\nSTANDARDS"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Description Text",
+      "default": "Understanding the difference between FIA competition standards and ADR street compliance is critical for every builder. We bridge the gap between pure motorsport performance and road-legal requirements."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_divider",
+      "label": "Show Bottom Divider Line",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Section Styling"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#050505"
+    },
+    {
+      "type": "color",
+      "id": "main_accent_color",
+      "label": "Main Accent Color (Divider)",
+      "default": "#00d2ff"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 1000,
+      "max": 1600,
+      "step": 50,
+      "unit": "px",
+      "label": "Max Container Width",
+      "default": 1300
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Feature Card",
+      "settings": [
+        {
+          "type": "color",
+          "id": "card_accent",
+          "label": "Card Accent Color (Border/Bullets/Icon)",
+          "default": "#00d2ff"
+        },
+        {
+          "type": "html",
+          "id": "custom_svg",
+          "label": "Custom Icon (SVG Code)",
+          "info": "Paste raw SVG code here. It will automatically take the accent color."
+        },
+        {
+          "type": "text",
+          "id": "top_label",
+          "label": "Top Right Label",
+          "info": "e.g., 'RULE 3/03 COMPLIANCE'. Leave blank to hide."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card Title",
+          "default": "FIA APPROVAL"
+        },
+        {
+          "type": "textarea",
+          "id": "card_text",
+          "label": "Card Description Text",
+          "default": "Explanation of this Explanation of this Explanation of this."
+        },
+        {
+          "type": "richtext",
+          "id": "bullet_list",
+          "label": "Bullet Points",
+          "info": "Use the bullet list formatting tool in this editor.",
+          "default": "<ul><li>Energy Absorbent Padding</li><li>5-Year Validated Lifespan</li><li>Hans Device Compatibility</li></ul>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Koz Certification Standards",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "title": "FIA APPROVAL",
+            "card_accent": "#00d2ff",
+            "bullet_list": "<ul><li>Energy Absorbent Padding</li><li>5-Year Validated Lifespan</li><li>Hans Device Compatibility</li></ul>"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "ADR COMPLIANCE",
+            "card_accent": "#888888",
+            "top_label": "RULE 3/03 COMPLIANCE",
+            "bullet_list": "<ul><li>Crash-Tested Rail Geometry</li><li>Specific Retractor Mounting</li><li>Flame Retardant Materials</li></ul>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
