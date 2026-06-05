@@ -28,7 +28,7 @@
             "default_quantity": 1,
             "hide_unavailable_products": true,
             "layout_mode": "grid",
-            "visual_style": "default",
+            "visual_style": "dark_promo",
             "show_product_description": true,
             "text_align": "left",
             "title_truncation": "one",
