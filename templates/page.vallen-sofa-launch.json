@@ -38,6 +38,7 @@
         },
         "button_kiTM7t": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "text": "Enquire today",
             "button_url": "shopify://pages/contact-us",
@@ -170,7 +171,7 @@
         "ai_gen_block_60f34c9_RUmbVw": {
           "type": "ai_gen_block_60f34c9",
           "settings": {
-            "icon_width_percent": 10,
+            "icon_width_percent": 15,
             "vertical_alignment": "center",
             "gap": 0,
             "gap_mobile": 12,
@@ -204,7 +205,7 @@
         "ai_gen_block_60f34c9_ym7Fnm": {
           "type": "ai_gen_block_60f34c9",
           "settings": {
-            "icon_width_percent": 10,
+            "icon_width_percent": 15,
             "vertical_alignment": "center",
             "gap": 0,
             "gap_mobile": 12,
@@ -238,7 +239,7 @@
         "ai_gen_block_60f34c9_QGrb3T": {
           "type": "ai_gen_block_60f34c9",
           "settings": {
-            "icon_width_percent": 10,
+            "icon_width_percent": 15,
             "vertical_alignment": "center",
             "gap": 0,
             "gap_mobile": 12,
@@ -272,7 +273,7 @@
         "ai_gen_block_60f34c9_dA8e98": {
           "type": "ai_gen_block_60f34c9",
           "settings": {
-            "icon_width_percent": 10,
+            "icon_width_percent": 15,
             "vertical_alignment": "center",
             "gap": 0,
             "gap_mobile": 12,
