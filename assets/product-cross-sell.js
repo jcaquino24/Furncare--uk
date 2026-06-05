@@ -21,14 +21,25 @@
     fetch('/?sections=minicart')
       .then(res => res.json())
       .then(data => {
-        var container = document.querySelector('.minicart__main');
+        var container = document.querySelector('[data-minicart-main]') || 
+                       document.querySelector('uwp-minicart [data-minicart]') ||
+                       document.querySelector('[role="complementary"][aria-label*="cart" i]');
         if (container && data.minicart) {
           container.innerHTML = data.minicart;
         }
       })
       .then(() => {
-        var drawer = document.querySelector('.minicart__drawer');
-        if (drawer) drawer.classList.add('is-open');
+        // Open the cart drawer by adding the class to body
+        document.body.classList.add('minicart-is-open');
+        
+        // Also try to trigger the uwp-minicart component's open method if it exists
+        var minicart = document.querySelector('uwp-minicart');
+        if (minicart && typeof minicart.openCart === 'function') {
+          minicart.openCart();
+        }
+      })
+      .catch(err => {
+        console.error('Error opening cart drawer:', err);
       });
   }
 
@@ -53,12 +64,18 @@
       },
       body: JSON.stringify({ items })
     })
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Failed to add items to cart: ' + res.status);
+        }
+        return res.json();
+      })
       .then(() => {
         setStatus(block, 'Added to cart.', 'success');
         openDrawerAndRefresh();
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error('Error adding to cart:', error);
         setStatus(block, 'Error adding to cart.', 'error');
       })
       .finally(() => {
@@ -183,12 +200,16 @@
     return originalFetch.apply(this, arguments)
       .then(function (response) {
 
-        // ✅ AFTER MAIN ADD → refresh + open drawer
-        if (typeof url === 'string' && url.includes('/cart/add')) {
+        // ✅ AFTER MAIN ADD → refresh + open drawer (only on success)
+        if (typeof url === 'string' && url.includes('/cart/add') && response.ok) {
           openDrawerAndRefresh();
         }
 
         return response;
+      })
+      .catch(function (error) {
+        console.error('Fetch error:', error);
+        throw error;
       });
 
   };
