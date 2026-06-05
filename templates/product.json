@@ -27,7 +27,7 @@
             "max_products": 8,
             "default_quantity": 1,
             "hide_unavailable_products": true,
-            "layout_mode": "carousel",
+            "layout_mode": "grid",
             "visual_style": "default",
             "show_product_description": true,
             "text_align": "left",
