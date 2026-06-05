@@ -17,7 +17,7 @@
           "settings": {
             "column_width": 1,
             "row_width": 1,
-            "heading": "<h2>Flat Monthly Fee</h2>",
+            "heading": "",
             "heading_custom": false,
             "heading_font": "josefin_sans_n4",
             "heading_size": 20,
@@ -25,7 +25,7 @@
             "heading_height": 150,
             "heading_align": "left",
             "heading_align_mobile": "left",
-            "text": "<p>Every month, the price stays the same - no guesswork, no surprise</p>",
+            "text": "",
             "text_custom": false,
             "text_font": "josefin_sans_n4",
             "text_size": 16,
@@ -55,6 +55,7 @@
             "button_align": "center",
             "button_align_mobile": "center",
             "button_style": "non_outline",
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_3_2026_10_03_05_PM.png",
             "image_position": "bottom",
             "image_position_mobile": "right",
             "image_width": 100,
@@ -389,7 +390,7 @@
         "feature_nDa6ca": {
           "type": "feature",
           "settings": {
-            "feature_text": "First Class"
+            "feature_text": "First class drawer"
           }
         },
         "feature_tg9f3t": {
@@ -469,7 +470,7 @@
       "type": "flexiable-content-image",
       "name": "Flexible Media & CTA",
       "settings": {
-        "center_content_mode": false,
+        "center_content_mode": true,
         "cta_max_width": 800,
         "custom_class": "",
         "heading_size": "h2",
@@ -477,9 +478,10 @@
         "section_bg_color": "#ffffff",
         "bg_image": "shopify://shop_images/ChatGPT_Image_Jun_3_2026_10_03_05_PM.png",
         "bg_overlay_opacity": 0,
-        "image_position": "left",
+        "image": "shopify://shop_images/G4559_1e6508ba-f2b0-4040-a784-793e534873d7.jpg",
+        "image_position": "right",
         "desktop_layout_invert": false,
-        "content_width": 50,
+        "content_width": 45,
         "heading": "Custom Section Heading",
         "color_heading": "#4a5486",
         "heading_font_size": 40,
@@ -543,7 +545,9 @@
         "padding_top": 40,
         "padding_bottom": 40,
         "padding_horizontal": 20,
+        "image_1": "shopify://shop_images/the_lounge_edit-2.jpg",
         "text_1": "",
+        "image_2": "shopify://shop_images/HEYNT380O-S.jpg",
         "text_2": "",
         "text_3": "",
         "text_4": ""
