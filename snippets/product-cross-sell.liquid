@@ -238,25 +238,35 @@
         <article class="product-cross-sell__item{% unless add_variant.available %} is-sold-out{% endunless %}" data-cross-sell-item data-variant-id="{{ add_variant.id }}">
           {%- if block.settings.show_image -%}
             <a href="{{ card_url }}" class="product-cross-sell__image-link" aria-label="{{ card_title | escape }}">
-              <div class="product-cross-sell__image-wrap" style="height:auto; padding:0;">
-               
-{% assign cross_sell_image = add_variant.image
-  | default: card_product.featured_image 
-  | default: card_product.images.first %}
+              <div class="product-cross-sell__image-wrap{% if block.settings.image_ratio == 'natural' %} is-natural{% endif %}">
+                {%- assign cross_sell_image = blank -%}
+                {%- if source_is_variants and add_variant.featured_media != blank -%}
+                  {%- assign cross_sell_image = add_variant.featured_media.preview_image -%}
+                {%- elsif source_is_variants and add_variant.image != blank -%}
+                  {%- assign cross_sell_image = add_variant.image -%}
+                {%- elsif card_product.featured_media != blank -%}
+                  {%- assign cross_sell_image = card_product.featured_media.preview_image -%}
+                {%- endif -%}
 
-{% if cross_sell_image %}
-  {{ cross_sell_image | image_url: width: 400 | image_tag:
-      loading: 'lazy',
-      alt: card_title,
-      class: 'product-cross-sell__img'
-  }}
-{% else %}
-  <div class="product-cross-sell__image-placeholder">
-    {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
-  </div>
-{% endif %}
-
-
+                {%- if cross_sell_image != blank -%}
+                  <img
+                    srcset="
+                      {%- if cross_sell_image.width >= 120 -%}{{ cross_sell_image | image_url: width: 120 }} 120w,{%- endif -%}
+                      {%- if cross_sell_image.width >= 180 -%}{{ cross_sell_image | image_url: width: 180 }} 180w,{%- endif -%}
+                      {%- if cross_sell_image.width >= 240 -%}{{ cross_sell_image | image_url: width: 240 }} 240w,{%- endif -%}
+                      {%- if cross_sell_image.width >= 360 -%}{{ cross_sell_image | image_url: width: 360 }} 360w,{%- endif -%}
+                      {{ cross_sell_image | image_url }} {{ cross_sell_image.width }}w
+                    "
+                    src="{{ cross_sell_image | image_url: width: 240 }}"
+                    sizes="(max-width: 749px) calc((100vw - 48px) / {{ block.settings.columns_mobile }}), calc((100vw - 80px) / {{ block.settings.columns_desktop }})"
+                    loading="lazy"
+                    width="{{ cross_sell_image.width }}"
+                    height="{{ cross_sell_image.height }}"
+                    alt="{{ cross_sell_image.alt | default: card_title | escape }}"
+                  >
+                {%- else -%}
+                  <div class="product-cross-sell__image-placeholder">{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+                {%- endif -%}
               </div>
             </a>
           {%- endif -%}
@@ -491,7 +501,7 @@
 
 
 <style>
-.product-cross-sell {
+  .product-cross-sell {
   position: relative;
   padding: var(--cross-sell-padding, 16px);
   background: var(--cross-sell-bg, #f8f8f8);
@@ -1365,6 +1375,5 @@
     justify-content: flex-start;
   }
 }
-
 
 </style>
