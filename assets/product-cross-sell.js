@@ -270,55 +270,39 @@
     });
   }
 
-  function setupBatchWithMainProductAdd(block) {
-    if (block.getAttribute('data-cta-mode') !== 'batch') {
-      return;
+ function setupBatchWithMainProductAdd(block) {
+  if (block.getAttribute('data-cta-mode') !== 'batch') return;
+  if (block.getAttribute('data-batch-behavior') !== 'with_main_product') return;
+
+  var productForm = document.querySelector('product-form form[data-type="add-to-cart-form"]');
+  if (!productForm) return;
+
+  productForm.addEventListener('submit', function (event) {
+
+    var items = collectSelectedBatchItems(block);
+
+    if (!items.length) return;
+
+    // ✅ Prevent default only if cross-sell selected
+    event.preventDefault();
+
+    var mainVariantInput = productForm.querySelector('[name="id"]');
+    var mainVariantId = mainVariantInput ? parseInt(mainVariantInput.value, 10) : null;
+
+    var mainQtyInput = productForm.querySelector('[name="quantity"]');
+    var mainQty = mainQtyInput ? parseInt(mainQtyInput.value, 10) : 1;
+
+    if (mainVariantId) {
+      items.unshift({
+        id: mainVariantId,
+        quantity: mainQty || 1
+      });
     }
-    if (block.getAttribute('data-batch-behavior') !== 'with_main_product') {
-      return;
-    }
-    if (block.getAttribute('data-main-add-cross-sell-only') === 'true') {
-      return;
-    }
-    if (typeof subscribe !== 'function' || typeof PUB_SUB_EVENTS === 'undefined') {
-      return;
-    }
-    if (document.documentElement.hasAttribute('data-cross-sell-main-cart-bridge')) {
-      return;
-    }
-    document.documentElement.setAttribute('data-cross-sell-main-cart-bridge', '');
-    subscribe(PUB_SUB_EVENTS.cartUpdate, function (event) {
-      if (!event || event.source !== 'product-form') {
-        return;
-      }
-      var blocks = document.querySelectorAll(
-        '[data-cross-sell-block][data-cta-mode="batch"][data-batch-behavior="with_main_product"]:not([data-main-add-cross-sell-only="true"])'
-      );
-      var i;
-      for (i = 0; i < blocks.length; i += 1) {
-        var bl = blocks[i];
-        if (!document.body.contains(bl)) {
-          continue;
-        }
-        var blockSection = closestParent(bl, 'product-info');
-        if (!blockSection) {
-          continue;
-        }
-        if (!blockSection.querySelector('product-form form[data-type="add-to-cart-form"]')) {
-          continue;
-        }
-        var items = collectSelectedBatchItems(bl);
-        if (!items.length) {
-          continue;
-        }
-        addItemsToCart(bl, items, null, {
-          openDrawer: false,
-          emitAjaxEvent: false,
-          emitPubSub: true,
-        });
-      }
-    });
-  }
+
+    addItemsToCart(block, items, event.submitter);
+  });
+}
+``
 
   function setupMainProductCrossSellOnly(block) {
     if (block.getAttribute('data-cta-mode') !== 'batch') {
