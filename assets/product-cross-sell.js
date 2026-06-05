@@ -106,6 +106,10 @@
       });
     });
 
+    if (items.length > 0) {
+      console.log('✅ Collected cross-sell items:', items);
+    }
+
     return items;
   }
 
@@ -166,34 +170,60 @@
         if (options && options.body) {
 
           let body = JSON.parse(options.body);
+          console.log('📦 Cart add request:', body);
 
-          // only for main product adds
-          if (!body.items && body.id) {
+          // Handle main product adds (single product or already array format)
+          let mainProduct = null;
+          let isArrayFormat = Array.isArray(body.items);
+          
+          if (isArrayFormat && body.items && body.items.length > 0) {
+            // Already in items array format from form submit
+            mainProduct = body.items[0];
+            console.log('📋 Array format detected, main product:', mainProduct);
+          } else if (!body.items && body.id) {
+            // Single product object format
+            mainProduct = {
+              id: body.id,
+              quantity: body.quantity || 1
+            };
+            console.log('📋 Single product format, main product:', mainProduct);
+          }
 
-            const block = document.querySelector('[data-cross-sell-block]');
+          // If we found a main product, try to merge cross-sells
+          if (mainProduct) {
+            // Find the closest cross-sell block (could be in product form or nearby)
+            let block = document.querySelector('[data-cross-sell-block][data-batch-add-behavior="with_main_product"]') ||
+                       document.querySelector('[data-cross-sell-block]');
+
             if (block) {
+              console.log('✅ Found cross-sell block');
+              const batchBehavior = block.getAttribute('data-batch-behavior');
+              console.log('📍 Batch behavior:', batchBehavior);
 
               const extraItems = collectSelectedBatchItems(block);
 
-              if (extraItems.length) {
+              if (extraItems.length > 0) {
+                console.log('🎯 Merging', extraItems.length, 'cross-sell items with main product');
 
                 body = {
-                  items: [
-                    {
-                      id: body.id,
-                      quantity: body.quantity || 1
-                    },
-                    ...extraItems
-                  ]
+                  items: [mainProduct, ...extraItems]
                 };
 
+                console.log('✨ Final cart request with merged items:', body);
+
                 options.body = JSON.stringify(body);
+              } else {
+                console.log('ℹ️ No selected cross-sell items to merge');
               }
+            } else {
+              console.log('⚠️ No cross-sell block found on page');
             }
+          } else {
+            console.log('⚠️ Could not identify main product from request');
           }
         }
       } catch (e) {
-        console.warn('Cross-sell merge error:', e);
+        console.error('❌ Cross-sell merge error:', e);
       }
     }
 
@@ -201,14 +231,20 @@
       .then(function (response) {
 
         // ✅ AFTER MAIN ADD → refresh + open drawer (only on success)
-        if (typeof url === 'string' && url.includes('/cart/add') && response.ok) {
-          openDrawerAndRefresh();
+        if (typeof url === 'string' && url.includes('/cart/add')) {
+          console.log('📨 Cart add response status:', response.status);
+          if (response.ok) {
+            console.log('✅ Cart add successful, opening drawer');
+            openDrawerAndRefresh();
+          } else {
+            console.error('❌ Cart add failed with status:', response.status);
+          }
         }
 
         return response;
       })
       .catch(function (error) {
-        console.error('Fetch error:', error);
+        console.error('❌ Fetch error:', error);
         throw error;
       });
 
