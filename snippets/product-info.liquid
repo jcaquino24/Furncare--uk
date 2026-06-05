@@ -100,7 +100,13 @@
   </div>
 {% endif %}
 
-{% render 'product-cross-sell', product: product, block: block, section: section.id %}
+{%- for block in section.blocks -%}
+{%- case block.type -%}
+{%- when 'cross_sell' %}
+{% render 'product-cross-sell', product: product, block: block, section: section.id %} %}
+{%- endcase -%}
+{%- endfor -%}
+
   {% comment %} End of lead time code {% endcomment %}
 
   {% comment %} Product Form {% endcomment %}
