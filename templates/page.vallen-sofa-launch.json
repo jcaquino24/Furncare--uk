@@ -38,10 +38,9 @@
         },
         "button_kiTM7t": {
           "type": "button",
-          "disabled": true,
           "settings": {
             "text": "Enquire today",
-            "button_url": "shopify://pages/contact-us",
+            "button_url": "https://2erd73.share-eu1.hsforms.com/20Ty2GoF-QuG6qQjWO1hgYw",
             "new_tab": true,
             "button_style": "underline"
           }
