@@ -1,0 +1,500 @@
+{%- liquid
+  assign source_is_variants = false
+  assign source_products = block.settings.cross_sell_products
+  if block.settings.product_source == 'collection' and block.settings.cross_sell_collection != blank
+    assign source_products = block.settings.cross_sell_collection.products
+  elsif block.settings.product_source == 'variants'
+    assign source_products = product.variants
+    assign source_is_variants = true
+  endif
+
+  assign max_products = block.settings.max_products
+  if max_products < 1
+    assign max_products = 1
+  endif
+
+  assign default_qty = block.settings.default_quantity
+  if default_qty < 1
+    assign default_qty = 1
+  endif
+
+  assign image_ratio_padding = '100%'
+  case block.settings.image_ratio
+    when 'landscape'
+      assign image_ratio_padding = '75%'
+    when 'portrait'
+      assign image_ratio_padding = '125%'
+    when 'natural'
+      assign image_ratio_padding = '0'
+  endcase
+
+  assign carousel_peek_px = 0
+  if block.settings.carousel_peek_enable
+    assign carousel_peek_px = block.settings.carousel_peek_px
+  endif
+
+  assign rendered_items = 0
+  assign batch_toggle_label = block.settings.batch_toggle_label | default: 'Add'
+  assign preselect_enabled = false
+  assign active_border_shadow_width = block.settings.active_border_width | minus: block.settings.card_border_width
+  if active_border_shadow_width < 0
+    assign active_border_shadow_width = 0
+  endif
+  if block.settings.preselect_products == true or block.settings.preselect_products == 'true'
+    assign preselect_enabled = true
+  endif
+
+  assign cross_visual = block.settings.visual_style | default: 'default'
+-%}
+
+<div
+  class="product-cross-sell product-cross-sell--{{ block.settings.layout_mode }} product-cross-sell--{{ block.settings.text_align }} product-cross-sell--truncate-{{ block.settings.title_truncation }} product-cross-sell--carousel-nav-{{ block.settings.carousel_nav_position }} product-cross-sell--card-{{ block.settings.card_layout }} product-cross-sell--content-{{ block.settings.card_content_alignment }} product-cross-sell--title-price-{{ block.settings.title_price_layout }} product-cross-sell--toggle-{{ block.settings.batch_toggle_position }} product-cross-sell--toggle-style-{{ block.settings.batch_toggle_style }} product-cross-sell--active-border-{{ block.settings.active_border_enable }} product-cross-sell--nav-hover-{{ block.settings.carousel_nav_show_on_hover }} product-cross-sell--nav-desktop-{{ block.settings.carousel_nav_desktop_visibility }} product-cross-sell--nav-mobile-{{ block.settings.carousel_nav_mobile_visibility }} product-cross-sell--scrollbar-{{ block.settings.carousel_scrollbar_show }} product-cross-sell--nav-circular-{{ block.settings.carousel_nav_buttons_circular }}{% if cross_visual == 'dark_promo' %} product-cross-sell--visual-dark-promo{% endif %}"
+  {{ block.shopify_attributes }}
+  data-cross-sell-block
+  data-layout="{{ block.settings.layout_mode }}"
+  data-visual-style="{{ cross_visual }}"
+  data-cta-mode="{{ block.settings.cta_mode }}"
+  data-batch-behavior="{{ block.settings.batch_add_behavior }}"
+  data-main-add-cross-sell-only="{{ block.settings.main_add_cross_sell_only }}"
+  data-preselect-enabled="{{ preselect_enabled }}"
+  data-selection-limit="{{ block.settings.max_selectable_products }}"
+  data-open-drawer="{{ block.settings.open_cart_drawer }}"
+  {%- if cross_visual == 'dark_promo' -%}
+  style="
+    --cross-sell-gap: {{ block.settings.card_gap }}px;
+    --cross-sell-cols-desktop: {{ block.settings.columns_desktop }};
+    --cross-sell-cols-mobile: {{ block.settings.columns_mobile }};
+    --cross-sell-padding: {{ block.settings.block_padding }}px;
+    --cross-sell-radius: {{ block.settings.block_radius }}px;
+    --cross-sell-card-radius: {{ block.settings.card_radius }}px;
+    --cross-sell-border-width: {{ block.settings.border_width }}px;
+    --cross-sell-card-border-width: {{ block.settings.card_border_width }}px;
+    --cross-sell-card-padding: {{ block.settings.card_padding }}px;
+    --cross-sell-heading-size: {{ block.settings.heading_size }}px;
+    --cross-sell-title-size: {{ block.settings.product_title_size }}px;
+    --cross-sell-price-size: {{ block.settings.price_size }}px;
+    --cross-sell-title-price-gap: {{ block.settings.title_price_gap }}px;
+    --cross-sell-image-width: {{ block.settings.image_width }}px;
+    --cross-sell-image-width-mobile: {{ block.settings.image_width_mobile }}px;
+    --cross-sell-button-height: {{ block.settings.button_height }}px;
+    --cross-sell-button-text-size: {{ block.settings.button_text_size }}px;
+    --cross-sell-button-padding-x: {{ block.settings.button_padding_x }}px;
+    --cross-sell-toggle-size: {{ block.settings.toggle_size }}px;
+    --cross-sell-toggle-text-size: {{ block.settings.toggle_text_size }}px;
+    --cross-sell-checkbox-control-width: {{ block.settings.checkbox_control_width }}px;
+    --cross-sell-checkbox-size: {{ block.settings.checkbox_size }}px;
+    --cross-sell-checkbox-radius: {{ block.settings.checkbox_radius }}px;
+    --cross-sell-content-gap: {{ block.settings.content_gap }}px;
+    --cross-sell-carousel-peek: {{ carousel_peek_px }}px;
+    --cross-sell-carousel-nav-offset: {{ block.settings.carousel_nav_offset }}px;
+    --cross-sell-carousel-nav-vertical-offset: {{ block.settings.carousel_nav_vertical_offset }}px;
+    --cross-sell-nav-btn-radius: {{ block.settings.carousel_nav_button_radius }}px;
+    --cross-sell-nav-btn-bg: {{ block.settings.carousel_nav_button_bg }};
+    --cross-sell-nav-btn-border: {{ block.settings.carousel_nav_button_border }};
+    --cross-sell-nav-btn-color: {{ block.settings.carousel_nav_button_icon }};
+    --cross-sell-active-border-color: {{ block.settings.active_border_color }};
+    --cross-sell-active-border-width: {{ block.settings.active_border_width }}px;
+    --cross-sell-active-border-shadow-width: {{ active_border_shadow_width }}px;
+    --cross-sell-image-padding: {{ image_ratio_padding }};
+  "
+  {%- else -%}
+  style="
+    --cross-sell-bg: {{ block.settings.background_color }};
+    --cross-sell-border-color: {{ block.settings.border_color }};
+    --cross-sell-card-bg: {{ block.settings.card_background }};
+    --cross-sell-card-border: {{ block.settings.card_border_color }};
+    --cross-sell-heading-color: {{ block.settings.heading_color }};
+    --cross-sell-text-color: {{ block.settings.text_color }};
+    --cross-sell-price-color: {{ block.settings.price_color }};
+    --cross-sell-badge-bg: {{ block.settings.badge_bg }};
+    --cross-sell-badge-text: {{ block.settings.badge_text }};
+    --cross-sell-action-bg: {{ block.settings.action_bg }};
+    --cross-sell-action-text: {{ block.settings.action_text }};
+    --cross-sell-gap: {{ block.settings.card_gap }}px;
+    --cross-sell-cols-desktop: {{ block.settings.columns_desktop }};
+    --cross-sell-cols-mobile: {{ block.settings.columns_mobile }};
+    --cross-sell-padding: {{ block.settings.block_padding }}px;
+    --cross-sell-radius: {{ block.settings.block_radius }}px;
+    --cross-sell-card-radius: {{ block.settings.card_radius }}px;
+    --cross-sell-border-width: {{ block.settings.border_width }}px;
+    --cross-sell-card-border-width: {{ block.settings.card_border_width }}px;
+    --cross-sell-card-padding: {{ block.settings.card_padding }}px;
+    --cross-sell-heading-size: {{ block.settings.heading_size }}px;
+    --cross-sell-title-size: {{ block.settings.product_title_size }}px;
+    --cross-sell-price-size: {{ block.settings.price_size }}px;
+    --cross-sell-title-price-gap: {{ block.settings.title_price_gap }}px;
+    --cross-sell-image-width: {{ block.settings.image_width }}px;
+    --cross-sell-image-width-mobile: {{ block.settings.image_width_mobile }}px;
+    --cross-sell-button-height: {{ block.settings.button_height }}px;
+    --cross-sell-button-text-size: {{ block.settings.button_text_size }}px;
+    --cross-sell-button-padding-x: {{ block.settings.button_padding_x }}px;
+    --cross-sell-toggle-size: {{ block.settings.toggle_size }}px;
+    --cross-sell-toggle-text-size: {{ block.settings.toggle_text_size }}px;
+    --cross-sell-checkbox-control-width: {{ block.settings.checkbox_control_width }}px;
+    --cross-sell-checkbox-size: {{ block.settings.checkbox_size }}px;
+    --cross-sell-checkbox-radius: {{ block.settings.checkbox_radius }}px;
+    --cross-sell-content-gap: {{ block.settings.content_gap }}px;
+    --cross-sell-carousel-peek: {{ carousel_peek_px }}px;
+    --cross-sell-carousel-nav-offset: {{ block.settings.carousel_nav_offset }}px;
+    --cross-sell-carousel-nav-vertical-offset: {{ block.settings.carousel_nav_vertical_offset }}px;
+    --cross-sell-nav-btn-radius: {{ block.settings.carousel_nav_button_radius }}px;
+    --cross-sell-nav-btn-bg: {{ block.settings.carousel_nav_button_bg }};
+    --cross-sell-nav-btn-border: {{ block.settings.carousel_nav_button_border }};
+    --cross-sell-nav-btn-color: {{ block.settings.carousel_nav_button_icon }};
+    --cross-sell-active-border-color: {{ block.settings.active_border_color }};
+    --cross-sell-active-border-width: {{ block.settings.active_border_width }}px;
+    --cross-sell-active-border-shadow-width: {{ active_border_shadow_width }}px;
+    --cross-sell-image-padding: {{ image_ratio_padding }};
+  "
+  {%- endif -%}
+>
+  {%- if block.settings.show_divider -%}
+    <div class="product-cross-sell__divider"></div>
+  {%- endif -%}
+
+  {%- if block.settings.heading != blank or block.settings.subheading != blank -%}
+    <div class="product-cross-sell__header">
+      {%- if block.settings.heading != blank -%}
+        <p class="product-cross-sell__heading">{{ block.settings.heading | escape }}</p>
+      {%- endif -%}
+      {%- if block.settings.subheading != blank and cross_visual != 'dark_promo' -%}
+        <div class="product-cross-sell__subheading rte">{{ block.settings.subheading }}</div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div class="product-cross-sell__viewport">
+    <div class="product-cross-sell__track" data-cross-sell-track>
+      {%- for cross_sell_product in source_products -%}
+        {%- if rendered_items >= max_products -%}
+          {%- break -%}
+        {%- endif -%}
+
+        {%- if cross_sell_product == blank -%}
+          {%- continue -%}
+        {%- endif -%}
+
+        {%- assign card_product = cross_sell_product -%}
+        {%- assign card_url = cross_sell_product.url -%}
+        {%- assign card_title = cross_sell_product.title -%}
+        {%- assign card_vendor = cross_sell_product.vendor -%}
+        {%- assign price_varies = cross_sell_product.price_varies -%}
+
+        {%- if source_is_variants -%}
+          {%- assign add_variant = cross_sell_product -%}
+          {%- assign card_product = product -%}
+          {%- assign card_url = product.url | append: '?variant=' | append: add_variant.id -%}
+          {%- assign card_vendor = product.vendor -%}
+          {%- assign price_varies = false -%}
+          {%- if add_variant.title != blank and add_variant.title != 'Default Title' -%}
+            {%- assign card_title = add_variant.title -%}
+          {%- else -%}
+            {%- assign card_title = product.title -%}
+          {%- endif -%}
+        {%- else -%}
+          {%- if block.settings.exclude_current_product and card_product.id == product.id -%}
+            {%- continue -%}
+          {%- endif -%}
+
+          {%- assign add_variant = card_product.selected_or_first_available_variant -%}
+          {%- if add_variant == blank -%}
+            {%- assign add_variant = card_product.variants.first -%}
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- if add_variant == blank -%}
+          {%- continue -%}
+        {%- endif -%}
+
+        {%- if block.settings.hide_unavailable_products and add_variant.available != true -%}
+          {%- continue -%}
+        {%- endif -%}
+
+        {%- assign rendered_items = rendered_items | plus: 1 -%}
+
+        {%- assign primary_price = add_variant.price -%}
+        {%- if price_varies -%}
+          {%- assign primary_price = card_product.price_min -%}
+        {%- endif -%}
+
+        {%- assign has_discount = false -%}
+        {%- assign savings_amount = 0 -%}
+        {%- assign savings_percent = 0 -%}
+        {%- assign cross_sell_checked = false -%}
+        {%- if preselect_enabled and add_variant.available -%}
+          {%- assign cross_sell_checked = true -%}
+        {%- endif -%}
+        {%- if add_variant.compare_at_price > add_variant.price -%}
+          {%- assign has_discount = true -%}
+          {%- assign savings_amount = add_variant.compare_at_price | minus: add_variant.price -%}
+          {%- assign savings_percent = savings_amount | times: 100.0 | divided_by: add_variant.compare_at_price | round -%}
+        {%- endif -%}
+
+        {%- assign promo_desc = '' -%}
+        {%- if cross_visual == 'dark_promo' and block.settings.show_product_description -%}
+          {%- assign promo_desc = card_product.description | strip_html | strip | truncate: 200 -%}
+        {%- endif -%}
+
+        <article class="product-cross-sell__item{% unless add_variant.available %} is-sold-out{% endunless %}" data-cross-sell-item data-variant-id="{{ add_variant.id }}">
+          {%- if block.settings.show_image -%}
+            <a href="{{ card_url }}" class="product-cross-sell__image-link" aria-label="{{ card_title | escape }}">
+              <div class="product-cross-sell__image-wrap{% if block.settings.image_ratio == 'natural' %} is-natural{% endif %}">
+                {%- assign cross_sell_image = blank -%}
+                {%- if source_is_variants and add_variant.featured_media != blank -%}
+                  {%- assign cross_sell_image = add_variant.featured_media.preview_image -%}
+                {%- elsif source_is_variants and add_variant.image != blank -%}
+                  {%- assign cross_sell_image = add_variant.image -%}
+                {%- elsif card_product.featured_media != blank -%}
+                  {%- assign cross_sell_image = card_product.featured_media.preview_image -%}
+                {%- endif -%}
+
+                {%- if cross_sell_image != blank -%}
+                  <img
+                    srcset="
+                      {%- if cross_sell_image.width >= 120 -%}{{ cross_sell_image | image_url: width: 120 }} 120w,{%- endif -%}
+                      {%- if cross_sell_image.width >= 180 -%}{{ cross_sell_image | image_url: width: 180 }} 180w,{%- endif -%}
+                      {%- if cross_sell_image.width >= 240 -%}{{ cross_sell_image | image_url: width: 240 }} 240w,{%- endif -%}
+                      {%- if cross_sell_image.width >= 360 -%}{{ cross_sell_image | image_url: width: 360 }} 360w,{%- endif -%}
+                      {{ cross_sell_image | image_url }} {{ cross_sell_image.width }}w
+                    "
+                    src="{{ cross_sell_image | image_url: width: 240 }}"
+                    sizes="(max-width: 749px) calc((100vw - 48px) / {{ block.settings.columns_mobile }}), calc((100vw - 80px) / {{ block.settings.columns_desktop }})"
+                    loading="lazy"
+                    width="{{ cross_sell_image.width }}"
+                    height="{{ cross_sell_image.height }}"
+                    alt="{{ cross_sell_image.alt | default: card_title | escape }}"
+                  >
+                {%- else -%}
+                  <div class="product-cross-sell__image-placeholder">{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+                {%- endif -%}
+              </div>
+            </a>
+          {%- endif -%}
+
+          <div class="product-cross-sell__content">
+            <div class="product-cross-sell__meta">
+              <div class="product-cross-sell__title-wrap">
+                <h3 class="product-cross-sell__title">
+                  <a href="{{ card_url }}">{{ card_title }}</a>
+                </h3>
+
+                {%- if block.settings.cta_mode == 'batch' and block.settings.batch_toggle_position == 'inline' and cross_visual != 'dark_promo' -%}
+                  <label class="product-cross-sell__pick-label" for="CrossSellPick-{{ section_id }}-{{ block.id }}-{{ forloop.index }}">
+                    <input
+                      id="CrossSellPick-{{ section_id }}-{{ block.id }}-{{ forloop.index }}"
+                      type="checkbox"
+                      data-cross-sell-select
+                      aria-label="Select {{ card_title | escape }}"
+                      {% if cross_sell_checked %}checked{% endif %}
+                      {% unless add_variant.available %}disabled{% endunless %}>
+                    <span{% if block.settings.batch_toggle_style == 'checkbox' %} aria-hidden="true"{% endif %}>{% unless block.settings.batch_toggle_style == 'checkbox' %}{{ batch_toggle_label }}{% endunless %}</span>
+                  </label>
+                {%- endif -%}
+              </div>
+
+              {%- if cross_visual == 'dark_promo' and promo_desc != blank -%}
+                <p class="product-cross-sell__promo-desc">{{ promo_desc | escape }}</p>
+              {%- endif -%}
+
+              {%- if block.settings.cta_mode == 'batch' and block.settings.batch_toggle_position != 'inline' and block.settings.batch_toggle_position != 'below_price' and block.settings.batch_toggle_position != 'bottom_full' and cross_visual != 'dark_promo' -%}
+                <label class="product-cross-sell__pick-label product-cross-sell__pick-label--floating" for="CrossSellPick-{{ section_id }}-{{ block.id }}-{{ forloop.index }}">
+                  <input
+                    id="CrossSellPick-{{ section_id }}-{{ block.id }}-{{ forloop.index }}"
+                    type="checkbox"
+                    data-cross-sell-select
+                    aria-label="Select {{ card_title | escape }}"
+                    {% if cross_sell_checked %}checked{% endif %}
+                    {% unless add_variant.available %}disabled{% endunless %}>
+                  <span{% if block.settings.batch_toggle_style == 'checkbox' %} aria-hidden="true"{% endif %}>{% unless block.settings.batch_toggle_style == 'checkbox' %}{{ batch_toggle_label }}{% endunless %}</span>
+                </label>
+              {%- endif -%}
+
+              {%- if block.settings.show_vendor and card_vendor != blank -%}
+                <p class="product-cross-sell__vendor">{{ card_vendor }}</p>
+              {%- endif -%}
+
+              {%- if block.settings.show_price -%}
+                <span class="product-cross-sell__meta-spacer" aria-hidden="true"></span>
+                <div class="product-cross-sell__price-row">
+                  <span class="product-cross-sell__price{% if has_discount %} is-sale{% endif %}">
+                    {%- if price_varies and block.settings.show_from_label -%}
+                      <span class="product-cross-sell__from">From</span>
+                    {%- endif -%}
+                    {{ primary_price | money }}
+                  </span>
+
+                  {%- if block.settings.show_compare_price and has_discount -%}
+                    <span class="product-cross-sell__compare-price">{{ add_variant.compare_at_price | money }}</span>
+                  {%- endif -%}
+
+                  {%- if block.settings.show_discount_badge and has_discount -%}
+                    <span class="product-cross-sell__badge">
+                      {%- if block.settings.discount_badge_type == 'amount' -%}
+                        Save {{ savings_amount | money }}
+                      {%- else -%}
+                        -{{ savings_percent }}%
+                      {%- endif -%}
+                    </span>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+
+              {%- if block.settings.cta_mode == 'batch' and block.settings.batch_toggle_position == 'below_price' and cross_visual != 'dark_promo' -%}
+                <label class="product-cross-sell__pick-label product-cross-sell__pick-label--below-price" for="CrossSellPick-{{ section_id }}-{{ block.id }}-{{ forloop.index }}">
+                  <input
+                    id="CrossSellPick-{{ section_id }}-{{ block.id }}-{{ forloop.index }}"
+                    type="checkbox"
+                    data-cross-sell-select
+                    aria-label="Select {{ card_title | escape }}"
+                    {% if cross_sell_checked %}checked{% endif %}
+                    {% unless add_variant.available %}disabled{% endunless %}>
+                  <span{% if block.settings.batch_toggle_style == 'checkbox' %} aria-hidden="true"{% endif %}>{% unless block.settings.batch_toggle_style == 'checkbox' %}{{ batch_toggle_label }}{% endunless %}</span>
+                </label>
+              {%- endif -%}
+            </div>
+
+            {%- if block.settings.cta_mode != 'none' and block.settings.enable_quantity_selector != true -%}
+              <input type="hidden" value="{{ default_qty }}" data-cross-sell-qty>
+            {%- endif -%}
+
+            {%- assign show_actions_row = false -%}
+            {%- if cross_visual == 'dark_promo' and block.settings.cta_mode == 'batch' -%}
+              {%- assign show_actions_row = true -%}
+            {%- endif -%}
+            {%- if block.settings.cta_mode != 'none' and block.settings.enable_quantity_selector -%}
+              {%- assign show_actions_row = true -%}
+            {%- endif -%}
+            {%- if block.settings.cta_mode == 'individual' -%}
+              {%- assign show_actions_row = true -%}
+            {%- endif -%}
+            {%- if block.settings.show_view_link -%}
+              {%- assign show_actions_row = true -%}
+            {%- endif -%}
+
+            {%- if show_actions_row -%}
+              <div class="product-cross-sell__actions{% if cross_visual == 'dark_promo' %} product-cross-sell__actions--promo{% endif %}">
+                {%- if block.settings.cta_mode != 'none' and block.settings.enable_quantity_selector -%}
+                  {%- if cross_visual == 'dark_promo' -%}
+                    <div class="product-cross-sell__qty-stepper" data-cross-sell-stepper>
+                      <button type="button" class="product-cross-sell__qty-step-btn" data-cross-sell-qty-minus aria-label="Decrease quantity">−</button>
+                      <label class="visually-hidden" for="CrossSellQty-{{ section_id }}-{{ block.id }}-{{ forloop.index }}">Quantity for {{ card_title }}</label>
+                      <input
+                        id="CrossSellQty-{{ section_id }}-{{ block.id }}-{{ forloop.index }}"
+                        class="product-cross-sell__qty-input product-cross-sell__qty-input--stepper"
+                        type="number"
+                        min="1"
+                        max="20"
+                        value="{{ default_qty }}"
+                        data-cross-sell-qty
+                        {% unless add_variant.available %}disabled{% endunless %}>
+                      <button type="button" class="product-cross-sell__qty-step-btn" data-cross-sell-qty-plus aria-label="Increase quantity">+</button>
+                    </div>
+                  {%- else -%}
+                    <label class="visually-hidden" for="CrossSellQty-{{ section_id }}-{{ block.id }}-{{ forloop.index }}">Quantity for {{ card_title }}</label>
+                    <input
+                      id="CrossSellQty-{{ section_id }}-{{ block.id }}-{{ forloop.index }}"
+                      class="product-cross-sell__qty-input"
+                      type="number"
+                      min="1"
+                      max="20"
+                      value="{{ default_qty }}"
+                      data-cross-sell-qty
+                      {% unless add_variant.available %}disabled{% endunless %}>
+                  {%- endif -%}
+                {%- endif -%}
+
+                {%- if cross_visual == 'dark_promo' and block.settings.cta_mode == 'batch' -%}
+                  <label class="product-cross-sell__pick-label product-cross-sell__pick-label--promo-add" for="CrossSellPickPromo-{{ section_id }}-{{ block.id }}-{{ forloop.index }}">
+                    <input
+                      id="CrossSellPickPromo-{{ section_id }}-{{ block.id }}-{{ forloop.index }}"
+                      type="checkbox"
+                      data-cross-sell-select
+                      aria-label="Select {{ card_title | escape }}"
+                      {% if cross_sell_checked %}checked{% endif %}
+                      {% unless add_variant.available %}disabled{% endunless %}>
+                    <span>{{ batch_toggle_label | escape }}</span>
+                  </label>
+                {%- endif -%}
+
+                {%- if block.settings.cta_mode == 'individual' -%}
+                  <button
+                    type="button"
+                    class="product-cross-sell__single-btn"
+                    data-cross-sell-single-add
+                    {% unless add_variant.available %}disabled{% endunless %}>
+                    {%- if add_variant.available -%}
+                      {{ block.settings.individual_button_label }}
+                    {%- else -%}
+                      Sold out
+                    {%- endif -%}
+                  </button>
+                {%- endif -%}
+
+                {%- if block.settings.show_view_link -%}
+                  <a href="{{ card_url }}" class="product-cross-sell__view-link">{{ block.settings.view_link_label }}</a>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </div>
+
+          {%- if block.settings.cta_mode == 'batch' and block.settings.batch_toggle_position == 'bottom_full' and cross_visual != 'dark_promo' -%}
+            <label class="product-cross-sell__pick-label product-cross-sell__pick-label--bottom-full" for="CrossSellPick-{{ section_id }}-{{ block.id }}-{{ forloop.index }}">
+              <input
+                id="CrossSellPick-{{ section_id }}-{{ block.id }}-{{ forloop.index }}"
+                type="checkbox"
+                data-cross-sell-select
+                aria-label="Select {{ card_title | escape }}"
+                {% if cross_sell_checked %}checked{% endif %}
+                {% unless add_variant.available %}disabled{% endunless %}>
+              <span{% if block.settings.batch_toggle_style == 'checkbox' %} aria-hidden="true"{% endif %}>{% unless block.settings.batch_toggle_style == 'checkbox' %}{{ batch_toggle_label }}{% endunless %}</span>
+            </label>
+          {%- endif -%}
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  {%- liquid
+    assign show_cross_sell_nav = false
+    if rendered_items > 1 and block.settings.layout_mode == 'carousel'
+      assign show_cross_sell_nav = true
+    elsif cross_visual == 'dark_promo' and rendered_items > 1
+      assign show_cross_sell_nav = true
+    endif
+  -%}
+  {%- if show_cross_sell_nav -%}
+    <div class="product-cross-sell__nav" data-cross-sell-nav>
+      <button type="button" class="product-cross-sell__nav-btn product-cross-sell__nav-btn--prev" data-cross-sell-prev aria-label="Previous products">
+        <svg class="product-cross-sell__nav-icon" width="20" height="20" viewBox="0 0 640 640" fill="none" aria-hidden="true" focusable="false">
+          <path d="M569.4 337L586.4 320L569.4 303L401.4 135L384.4 118L350.5 151.9L367.5 168.9L494.5 295.9H64.4V343.9H494.5L367.5 470.9L350.5 487.9L384.4 521.8L401.4 504.8L569.4 336.8V337Z" fill="currentColor"/>
+        </svg>
+      </button>
+      <button type="button" class="product-cross-sell__nav-btn product-cross-sell__nav-btn--next" data-cross-sell-next aria-label="Next products">
+        <svg class="product-cross-sell__nav-icon" width="20" height="20" viewBox="0 0 640 640" fill="none" aria-hidden="true" focusable="false">
+          <path d="M569.4 337L586.4 320L569.4 303L401.4 135L384.4 118L350.5 151.9L367.5 168.9L494.5 295.9H64.4V343.9H494.5L367.5 470.9L350.5 487.9L384.4 521.8L401.4 504.8L569.4 336.8V337Z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  {%- endif -%}
+
+  {%- if block.settings.cta_mode == 'batch' and rendered_items > 0 and block.settings.show_batch_button and block.settings.batch_add_behavior == 'button' -%}
+    <div class="product-cross-sell__batch">
+      <button type="button" class="product-cross-sell__batch-btn" data-cross-sell-add-selected>
+        {{ block.settings.batch_button_label }}
+      </button>
+      <p class="product-cross-sell__status" data-cross-sell-status aria-live="polite"></p>
+    </div>
+  {%- elsif block.settings.cta_mode == 'batch' and rendered_items > 0 and block.settings.batch_add_behavior == 'with_main_product' -%}
+    <div class="product-cross-sell__batch product-cross-sell__batch--status-only">
+      <p class="product-cross-sell__status" data-cross-sell-status aria-live="polite"></p>
+    </div>
+  {%- endif -%}
+
+  {%- if rendered_items == 0 -%}
+    {%- if source_is_variants -%}
+      <p class="product-cross-sell__empty">No variants available to display in this block.</p>
+    {%- else -%}
+      <p class="product-cross-sell__empty">Add products in this block to display your cross-sells.</p>
+    {%- endif -%}
+  {%- endif -%}
+</div>
