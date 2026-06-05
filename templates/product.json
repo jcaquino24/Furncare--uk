@@ -15,7 +15,7 @@
         "cross_sell_h7YhAw": {
           "type": "cross_sell",
           "settings": {
-            "product_source": "manual",
+            "product_source": "variants",
             "cross_sell_products": [
               "acorn-set",
               "15kg-square-parasol-base",
@@ -27,7 +27,7 @@
             "max_products": 8,
             "default_quantity": 1,
             "hide_unavailable_products": true,
-            "layout_mode": "grid",
+            "layout_mode": "carousel",
             "visual_style": "default",
             "show_product_description": true,
             "text_align": "left",
