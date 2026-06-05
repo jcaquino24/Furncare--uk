@@ -11,6 +11,26 @@
   "sections": {
     "main": {
       "type": "product",
+      "blocks": {
+        "cross_sell_h7YhAw": {
+          "type": "cross_sell",
+          "settings": {
+            "product_source": "collection",
+            "cross_sell_products": [
+              "acorn-set"
+            ],
+            "cross_sell_collection": "challenging-environments-bedroom-sets",
+            "exclude_current_product": true,
+            "max_products": 8,
+            "default_quantity": 1,
+            "hide_unavailable_products": false,
+            "layout_mode": "grid"
+          }
+        }
+      },
+      "block_order": [
+        "cross_sell_h7YhAw"
+      ],
       "settings": {
         "show_sku": true,
         "show_vat_badge": true,
