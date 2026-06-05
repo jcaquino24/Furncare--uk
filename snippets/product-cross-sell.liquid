@@ -240,21 +240,22 @@
             <a href="{{ card_url }}" class="product-cross-sell__image-link" aria-label="{{ card_title | escape }}">
               <div class="product-cross-sell__image-wrap{% if block.settings.image_ratio == 'natural' %} is-natural{% endif %}">
                
-               {% assign cross_sell_media = blank %}
+           {% assign cross_sell_image = add_variant.image
+  | default: card_product.featured_image 
+  | default: card_product.images.first %}
 
-{% if source_is_variants %}
-  {% assign cross_sell_media = add_variant.featured_media %}
-{% else %}
-  {% assign cross_sell_media = card_product.featured_media %}
-{% endif %}
-
-{% if cross_sell_media == blank %}
-  {% assign cross_sell_media = card_product.media.first %}
-{% endif %}
-
-
-                {% if cross_sell_media %}
-  {% render 'product-media', media: cross_sell_media %}
+{% if cross_sell_image %}
+  <img
+    src="{{ cross_sell_image | image_url: width: 400 }}"
+    srcset="
+      {{ cross_sell_image | image_url: width: 200 }} 200w,
+      {{ cross_sell_image | image_url: width: 300 }} 300w,
+      {{ cross_sell_image | image_url: width: 400 }} 400w
+    "
+    sizes="(max-width: 749px) 100vw, 300px"
+    loading="lazy"
+    alt="{{ card_title | escape }}"
+  >
 {% else %}
   <div class="product-cross-sell__image-placeholder">
     {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
