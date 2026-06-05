@@ -265,7 +265,7 @@
   ],
   
 "blocks": [
-    {
+{
       "type": "cross_sell",
       "name": "Cross sell",
       "settings": [
@@ -275,9 +275,18 @@
           "label": "Products source",
           "default": "manual",
           "options": [
-            { "value": "manual", "label": "Selected products" },
-            { "value": "collection", "label": "Collection" },
-            { "value": "variants", "label": "Current product variants" }
+            {
+              "value": "manual",
+              "label": "Selected products"
+            },
+            {
+              "value": "collection",
+              "label": "Collection"
+            },
+            {
+              "value": "variants",
+              "label": "Current product variants"
+            }
           ]
         },
         {
@@ -294,7 +303,7 @@
         {
           "type": "checkbox",
           "id": "exclude_current_product",
-          "label": "Exclude current product",
+          "label": "Exclude current product (manual/collection)",
           "default": true
         },
         {
@@ -331,9 +340,836 @@
           "label": "Layout",
           "default": "grid",
           "options": [
-            { "value": "grid", "label": "Grid" },
-            { "value": "carousel", "label": "Carousel" }
+            {
+              "value": "grid",
+              "label": "Grid"
+            },
+            {
+              "value": "carousel",
+              "label": "Carousel"
+            }
           ]
+        },
+        {
+          "type": "select",
+          "id": "visual_style",
+          "label": "Visual style",
+          "default": "default",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default"
+            },
+            {
+              "value": "dark_promo",
+              "label": "Dark highlight (slider when multiple)"
+            }
+          ],
+          "info": "Dark highlight uses a compact promo layout, stepped quantity controls, optional short description from each product, and a horizontal slider when more than one cross-sell is shown."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_product_description",
+          "label": "Show product description",
+          "default": true,
+          "info": "Dark highlight style only. Shows a short excerpt from each cross-sell product description.",
+          "visible_if": "{{ block.settings.visual_style == 'dark_promo' }}"
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "label": "Header alignment",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "title_truncation",
+          "label": "Title truncation",
+          "default": "three",
+          "options": [
+            {
+              "value": "one",
+              "label": "1 line"
+            },
+            {
+              "value": "two",
+              "label": "2 lines"
+            },
+            {
+              "value": "three",
+              "label": "3 lines"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "carousel_nav_position",
+          "label": "Carousel navigation",
+          "default": "bottom",
+          "options": [
+            {
+              "value": "overlay",
+              "label": "Overlay"
+            },
+            {
+              "value": "bottom",
+              "label": "Below"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "carousel_peek_enable",
+          "label": "Carousel peek",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "carousel_peek_px",
+          "min": 0,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "label": "Peek width",
+          "default": 24
+        },
+        {
+          "type": "checkbox",
+          "id": "carousel_scrollbar_show",
+          "label": "Show carousel scrollbar",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "carousel_nav_show_on_hover",
+          "label": "Nav buttons on hover only (desktop)",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "carousel_nav_desktop_visibility",
+          "label": "Nav buttons desktop",
+          "default": "show",
+          "options": [
+            {
+              "value": "show",
+              "label": "Show"
+            },
+            {
+              "value": "hide",
+              "label": "Hide"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "carousel_nav_mobile_visibility",
+          "label": "Nav buttons mobile",
+          "default": "show",
+          "options": [
+            {
+              "value": "show",
+              "label": "Show"
+            },
+            {
+              "value": "hide",
+              "label": "Hide"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "carousel_nav_buttons_circular",
+          "label": "Circular nav buttons",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "carousel_nav_offset",
+          "min": 0,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Carousel nav horizontal offset",
+          "default": 8
+        },
+        {
+          "type": "range",
+          "id": "carousel_nav_vertical_offset",
+          "min": -40,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Carousel nav vertical offset",
+          "default": 6
+        },
+        {
+          "type": "range",
+          "id": "carousel_nav_button_radius",
+          "min": 0,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "label": "Nav button radius",
+          "default": 8
+        },
+        {
+          "type": "color",
+          "id": "carousel_nav_button_bg",
+          "label": "Nav button background",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "carousel_nav_button_border",
+          "label": "Nav button border",
+          "default": "#d9dde3"
+        },
+        {
+          "type": "color",
+          "id": "carousel_nav_button_icon",
+          "label": "Nav button icon",
+          "default": "#243a53"
+        },
+        {
+          "type": "range",
+          "id": "columns_desktop",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "label": "Columns desktop",
+          "default": 2
+        },
+        {
+          "type": "range",
+          "id": "columns_mobile",
+          "min": 1,
+          "max": 3,
+          "step": 1,
+          "label": "Columns mobile",
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "card_gap",
+          "min": 0,
+          "max": 32,
+          "step": 1,
+          "unit": "px",
+          "label": "Card gap",
+          "default": 10
+        },
+        {
+          "type": "select",
+          "id": "card_layout",
+          "label": "Card layout",
+          "default": "horizontal",
+          "options": [
+            {
+              "value": "horizontal",
+              "label": "Horizontal"
+            },
+            {
+              "value": "vertical",
+              "label": "Vertical"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "card_content_alignment",
+          "label": "Card content align",
+          "default": "center",
+          "options": [
+            {
+              "value": "top",
+              "label": "Top"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "bottom",
+              "label": "Bottom"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "title_price_layout",
+          "label": "Title / price layout",
+          "default": "space_between",
+          "options": [
+            {
+              "value": "stacked",
+              "label": "Stacked"
+            },
+            {
+              "value": "space_between",
+              "label": "Space between"
+            }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "title_price_gap",
+          "min": 4,
+          "max": 32,
+          "step": 1,
+          "unit": "px",
+          "label": "Title / price spacing",
+          "default": 12
+        },
+        {
+          "type": "checkbox",
+          "id": "show_divider",
+          "label": "Show top divider",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subheading",
+          "label": "Subheading"
+        },
+        {
+          "type": "header",
+          "content": "Cart & CTA"
+        },
+        {
+          "type": "select",
+          "id": "cta_mode",
+          "label": "CTA mode",
+          "default": "batch",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "batch",
+              "label": "Batch selection"
+            },
+            {
+              "value": "individual",
+              "label": "Individual add"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "batch_add_behavior",
+          "label": "Batch add behavior",
+          "info": "Separate button: only the block’s “Add selected” button adds checked cross-sells. With main add to cart: the product’s main Add to cart also adds checked cross-sells (after the main line is added).",
+          "default": "button",
+          "options": [
+            {
+              "value": "button",
+              "label": "Separate button"
+            },
+            {
+              "value": "with_main_product",
+              "label": "With main add to cart"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "main_add_cross_sell_only",
+          "label": "Main button adds cross-sells only",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_batch_button",
+          "label": "Show batch add button",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "batch_button_label",
+          "label": "Batch button label",
+          "default": "Add selected to cart"
+        },
+        {
+          "type": "text",
+          "id": "batch_toggle_label",
+          "label": "Batch toggle label",
+          "default": "Add"
+        },
+        {
+          "type": "select",
+          "id": "batch_toggle_position",
+          "label": "Batch toggle position",
+          "default": "inline",
+          "options": [
+            {
+              "value": "inline",
+              "label": "Inline title"
+            },
+            {
+              "value": "top",
+              "label": "Floating top"
+            },
+            {
+              "value": "middle",
+              "label": "Floating middle"
+            },
+            {
+              "value": "bottom",
+              "label": "Floating bottom"
+            },
+            {
+              "value": "below_price",
+              "label": "Below price"
+            },
+            {
+              "value": "bottom_full",
+              "label": "Bottom full width"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "batch_toggle_style",
+          "label": "Batch toggle style",
+          "default": "button",
+          "options": [
+            {
+              "value": "button",
+              "label": "Button"
+            },
+            {
+              "value": "checkbox",
+              "label": "Checkbox"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "preselect_products",
+          "label": "Preselect products",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "max_selectable_products",
+          "min": 0,
+          "max": 24,
+          "step": 1,
+          "label": "Max selectable (0 = unlimited)",
+          "default": 0
+        },
+        {
+          "type": "checkbox",
+          "id": "open_cart_drawer",
+          "label": "Open cart drawer after add",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_quantity_selector",
+          "label": "Show quantity selector",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "individual_button_label",
+          "label": "Individual button label",
+          "default": "Add"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_view_link",
+          "label": "Show view link",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "view_link_label",
+          "label": "View link label",
+          "default": "View"
+        },
+        {
+          "type": "header",
+          "content": "Product card"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_image",
+          "label": "Show image",
+          "default": true
+        },
+        {
+          "type": "select",
+          "id": "image_ratio",
+          "label": "Image ratio",
+          "default": "square",
+          "options": [
+            {
+              "value": "square",
+              "label": "Square"
+            },
+            {
+              "value": "landscape",
+              "label": "Landscape"
+            },
+            {
+              "value": "portrait",
+              "label": "Portrait"
+            },
+            {
+              "value": "natural",
+              "label": "Natural"
+            }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 48,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "label": "Image width desktop",
+          "default": 72
+        },
+        {
+          "type": "range",
+          "id": "image_width_mobile",
+          "min": 48,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "label": "Image width mobile",
+          "default": 64
+        },
+        {
+          "type": "checkbox",
+          "id": "show_vendor",
+          "label": "Show vendor",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_price",
+          "label": "Show price",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_compare_price",
+          "label": "Show compare-at price",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_from_label",
+          "label": "Show “From” when price varies",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_discount_badge",
+          "label": "Show discount badge",
+          "default": true
+        },
+        {
+          "type": "select",
+          "id": "discount_badge_type",
+          "label": "Discount badge type",
+          "default": "percent",
+          "options": [
+            {
+              "value": "amount",
+              "label": "Amount"
+            },
+            {
+              "value": "percent",
+              "label": "Percent"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "active_border_enable",
+          "label": "Highlight selected border",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "active_border_width",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "unit": "px",
+          "label": "Active border width",
+          "default": 2
+        },
+        {
+          "type": "color",
+          "id": "active_border_color",
+          "label": "Active border color",
+          "default": "#243a53"
+        },
+        {
+          "type": "header",
+          "content": "Colors & spacing"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background",
+          "default": "#f8f8f8"
+        },
+        {
+          "type": "color",
+          "id": "border_color",
+          "label": "Border",
+          "default": "#d9dde3"
+        },
+        {
+          "type": "color",
+          "id": "card_background",
+          "label": "Card background",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "card_border_color",
+          "label": "Card border",
+          "default": "#d9dde3"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Heading",
+          "default": "#243a53"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text",
+          "default": "#243a53"
+        },
+        {
+          "type": "color",
+          "id": "price_color",
+          "label": "Price",
+          "default": "#243a53"
+        },
+        {
+          "type": "color",
+          "id": "badge_bg",
+          "label": "Badge background",
+          "default": "#1f3854"
+        },
+        {
+          "type": "color",
+          "id": "badge_text",
+          "label": "Badge text",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "action_bg",
+          "label": "Button background",
+          "default": "#1f3854"
+        },
+        {
+          "type": "color",
+          "id": "action_text",
+          "label": "Button text",
+          "default": "#ffffff"
+        },
+        {
+          "type": "range",
+          "id": "block_padding",
+          "min": 0,
+          "max": 48,
+          "step": 2,
+          "unit": "px",
+          "label": "Block padding",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "block_radius",
+          "min": 0,
+          "max": 32,
+          "step": 1,
+          "unit": "px",
+          "label": "Block radius",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "card_radius",
+          "min": 0,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "label": "Card radius",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "border_width",
+          "min": 0,
+          "max": 6,
+          "step": 1,
+          "unit": "px",
+          "label": "Block border width",
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "card_padding",
+          "min": 4,
+          "max": 28,
+          "step": 1,
+          "unit": "px",
+          "label": "Card padding",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "heading_size",
+          "min": 14,
+          "max": 32,
+          "step": 1,
+          "unit": "px",
+          "label": "Heading size",
+          "default": 18
+        },
+        {
+          "type": "range",
+          "id": "product_title_size",
+          "min": 11,
+          "max": 22,
+          "step": 1,
+          "unit": "px",
+          "label": "Product title size",
+          "default": 14
+        },
+        {
+          "type": "range",
+          "id": "price_size",
+          "min": 12,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "label": "Price size",
+          "default": 15
+        },
+        {
+          "type": "range",
+          "id": "button_height",
+          "min": 28,
+          "max": 56,
+          "step": 1,
+          "unit": "px",
+          "label": "Button height",
+          "default": 38
+        },
+        {
+          "type": "range",
+          "id": "button_text_size",
+          "min": 11,
+          "max": 18,
+          "step": 1,
+          "unit": "px",
+          "label": "Button text size",
+          "default": 13
+        },
+        {
+          "type": "range",
+          "id": "button_padding_x",
+          "min": 8,
+          "max": 28,
+          "step": 1,
+          "unit": "px",
+          "label": "Button horizontal padding",
+          "default": 12
+        },
+        {
+          "type": "range",
+          "id": "toggle_size",
+          "min": 28,
+          "max": 56,
+          "step": 1,
+          "unit": "px",
+          "label": "Toggle min width",
+          "default": 32
+        },
+        {
+          "type": "range",
+          "id": "toggle_text_size",
+          "min": 11,
+          "max": 16,
+          "step": 1,
+          "unit": "px",
+          "label": "Toggle text size",
+          "default": 13
+        },
+        {
+          "type": "range",
+          "id": "checkbox_control_width",
+          "min": 28,
+          "max": 56,
+          "step": 1,
+          "unit": "px",
+          "label": "Checkbox control width",
+          "default": 32
+        },
+        {
+          "type": "range",
+          "id": "checkbox_size",
+          "min": 14,
+          "max": 28,
+          "step": 1,
+          "unit": "px",
+          "label": "Checkbox size",
+          "default": 18
+        },
+        {
+          "type": "range",
+          "id": "checkbox_radius",
+          "min": 0,
+          "max": 12,
+          "step": 1,
+          "unit": "px",
+          "label": "Checkbox radius",
+          "default": 4
+        },
+        {
+          "type": "range",
+          "id": "content_gap",
+          "min": 4,
+          "max": 28,
+          "step": 1,
+          "unit": "px",
+          "label": "Content gap",
+          "default": 12
         }
       ]
     }
