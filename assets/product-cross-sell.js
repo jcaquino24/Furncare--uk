@@ -57,15 +57,11 @@
     }
 
     if (openDrawer) {
-  var drawer = document.querySelector('.minicart__drawer');
-
-  if (drawer) {
-    drawer.classList.add('is-open');
-  }
-
-  // Optional overlay/body handling (common)
-  document.body.classList.add('minicart-open');
-}
+      var drawer = document.querySelector('cart-drawer');
+      if (drawer && typeof drawer.open === 'function') {
+        drawer.open(triggerButton || undefined);
+      }
+    }
   }
 
   function addItemsToCart(block, items, triggerButton, options) {
