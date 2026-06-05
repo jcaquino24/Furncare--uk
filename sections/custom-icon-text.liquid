@@ -205,13 +205,13 @@
     { "type": "range", "id": "img_max_height", "min": 50, "max": 400, "step": 10, "unit": "px", "label": "Image Max Height", "default": 200 },
 
     { "type": "header", "content": "Subheading" },
-    { "type": "text", "id": "subheading", "label": "Text", "default": "BRACES FOR THE FEET" },
+    { "type": "text", "id": "subheading", "label": "Text" },
     { "type": "color", "id": "sub_color", "label": "Color", "default": "#8e94a7" },
     { "type": "range", "id": "sub_size", "min": 10, "max": 30, "step": 1, "unit": "px", "label": "Font Size", "default": 14 },
     { "type": "select", "id": "sub_weight", "label": "Weight", "options": [ {"value": "400", "label": "Normal"}, {"value": "700", "label": "Bold"} ], "default": "400" },
 
     { "type": "header", "content": "Main Heading" },
-    { "type": "text", "id": "title", "label": "Text", "default": "Why the Good Feet system works" },
+    { "type": "text", "id": "title", "label": "Text" },
     { "type": "color", "id": "head_color", "label": "Color", "default": "#4a5486" },
     { "type": "range", "id": "head_size", "min": 20, "max": 60, "step": 2, "unit": "px", "label": "Font Size", "default": 36 },
     { "type": "select", "id": "head_weight", "label": "Weight", "options": [ {"value": "400", "label": "Normal"}, {"value": "700", "label": "Bold"} ], "default": "700" },
@@ -236,18 +236,18 @@
       "settings": [
         { "type": "video", "id": "video", "label": "Icon Video", "info": "Priority media. Uses 'Cover' full-column settings." },
         { "type": "image_picker", "id": "image", "label": "Icon Image", "info": "Uses 'Contain' centered settings." },
-        { "type": "text", "id": "title", "label": "Title", "default": "Strengthen" },
+        { "type": "text", "id": "title", "label": "Title" },
         { "type": "richtext", "id": "text", "label": "Text" }
       ]
     }
   ],
   "presets": [
     { 
-      "name": "Good Feet System", 
+      "name": "Icon and text", 
       "blocks": [ 
-        { "type": "column", "settings": { "title": "Strengthen" } }, 
-        { "type": "column", "settings": { "title": "Maintain" } }, 
-        { "type": "column", "settings": { "title": "Relax" } } 
+        { "type": "column", "settings": { "title": "Title 1" } }, 
+        { "type": "column", "settings": { "title": "Title 2" } }, 
+        { "type": "column", "settings": { "title": "Title 3" } } 
       ] 
     }
   ]
