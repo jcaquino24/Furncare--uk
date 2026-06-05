@@ -240,39 +240,26 @@
             <a href="{{ card_url }}" class="product-cross-sell__image-link" aria-label="{{ card_title | escape }}">
               <div class="product-cross-sell__image-wrap{% if block.settings.image_ratio == 'natural' %} is-natural{% endif %}">
                
-                {% assign cross_sell_image = blank %}
+               {% assign cross_sell_media = blank %}
 
-                  {% if source_is_variants %}
-                    {% if add_variant.image != blank %}
-                      {% assign cross_sell_image = add_variant.image %}
-                    {% elsif product.featured_image != blank %}
-                      {% assign cross_sell_image = product.featured_image %}
-                    {% endif %}
-                  {% else %}
-                    {% if card_product.featured_image != blank %}
-                      {% assign cross_sell_image = card_product.featured_image %}
-                    {% endif %}
-                  {% endif %}
+{% if source_is_variants %}
+  {% assign cross_sell_media = add_variant.featured_media %}
+{% else %}
+  {% assign cross_sell_media = card_product.featured_media %}
+{% endif %}
 
-                {%- if cross_sell_image != blank -%}
-                  <img
-                    srcset="
-                      {%- if cross_sell_image.width >= 120 -%}{{ cross_sell_image | image_url: width: 120 }} 120w,{%- endif -%}
-                      {%- if cross_sell_image.width >= 180 -%}{{ cross_sell_image | image_url: width: 180 }} 180w,{%- endif -%}
-                      {%- if cross_sell_image.width >= 240 -%}{{ cross_sell_image | image_url: width: 240 }} 240w,{%- endif -%}
-                      {%- if cross_sell_image.width >= 360 -%}{{ cross_sell_image | image_url: width: 360 }} 360w,{%- endif -%}
-                      {{ cross_sell_image | image_url }} {{ cross_sell_image.width }}w
-                    "
-                    src="{{ cross_sell_image | image_url: width: 240 }}"
-                    sizes="(max-width: 749px) calc((100vw - 48px) / {{ block.settings.columns_mobile }}), calc((100vw - 80px) / {{ block.settings.columns_desktop }})"
-                    loading="lazy"
-                    width="{{ cross_sell_image.width }}"
-                    height="{{ cross_sell_image.height }}"
-                    alt="{{ cross_sell_image.alt | default: card_title | escape }}"
-                  >
-                {%- else -%}
-                  <div class="product-cross-sell__image-placeholder">{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}</div>
-                {%- endif -%}
+{% if cross_sell_media == blank %}
+  {% assign cross_sell_media = card_product.media.first %}
+{% endif %}
+
+
+                {% if cross_sell_media %}
+  {% render 'product-media', media: cross_sell_media %}
+{% else %}
+  <div class="product-cross-sell__image-placeholder">
+    {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+  </div>
+{% endif %}
               </div>
             </a>
           {%- endif -%}
