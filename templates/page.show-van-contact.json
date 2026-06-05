@@ -9,6 +9,46 @@
  */
 {
   "sections": {
+    "image_video_banner_7QP6UR": {
+      "type": "image-video-banner",
+      "disabled": true,
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": true,
+        "add_header_offset": false,
+        "media_type": "video",
+        "video_desktop": "shopify://files/videos/Show Van Video_16_9.mp4",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "light",
+        "content_position": "center-center",
+        "content_alignment": "left"
+      }
+    },
+    "blocks_t4FKcR": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_N4rtQW": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 80,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#f9f7f0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_N4rtQW"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
     "main": {
       "type": "contact",
       "blocks": {
@@ -45,9 +85,31 @@
         "show_social_icons": true,
         "hubspot_form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"9c0ef082-9c0d-452b-9478-94defc93d5d7\" data-portal-id=\"145723791\"></div>"
       }
+    },
+    "blocks_GfgPQJ": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_W46JKG": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 80,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#f9f7f0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_W46JKG"
+      ],
+      "name": "Spacer",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "image_video_banner_7QP6UR",
+    "blocks_t4FKcR",
+    "main",
+    "blocks_GfgPQJ"
   ]
 }
