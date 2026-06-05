@@ -532,6 +532,23 @@
         "padding_right_mobile": 0
       }
     },
+    "custom_column_showcase_Qmzj3z": {
+      "type": "custom-column-showcase",
+      "name": "custom Column showcase",
+      "settings": {
+        "max_width": 1400,
+        "row_height": 350,
+        "grid_gap": 10,
+        "bg_color": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_horizontal": 20,
+        "text_1": "",
+        "text_2": "",
+        "text_3": "",
+        "text_4": ""
+      }
+    },
     "image_video_banner_XGAaBn": {
       "type": "image-video-banner",
       "blocks": {
@@ -1372,6 +1389,7 @@
     "custom_featured_product_RUTtwF",
     "certificate_standard_etWBLQ",
     "flexiable_content_image_eFAF9h",
+    "custom_column_showcase_Qmzj3z",
     "image_video_banner_XGAaBn",
     "featured_blocks_M7Nrnn",
     "content_blocks_fLpHR3",
