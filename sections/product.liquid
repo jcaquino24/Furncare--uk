@@ -1,7 +1,7 @@
 {%- liquid
   render 'vite-tag' with '@sections/product.ts'
 -%}
-
+  
 {% comment %} Render contact form drawer globally if HTML is defined {% endcomment %}
 {% if section.settings.contact_form_html != blank %}
   {% comment %} Store drawer HTML to render globally {% endcomment %}

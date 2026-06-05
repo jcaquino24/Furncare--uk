@@ -239,14 +239,20 @@
           {%- if block.settings.show_image -%}
             <a href="{{ card_url }}" class="product-cross-sell__image-link" aria-label="{{ card_title | escape }}">
               <div class="product-cross-sell__image-wrap{% if block.settings.image_ratio == 'natural' %} is-natural{% endif %}">
-                {%- assign cross_sell_image = blank -%}
-                {%- if source_is_variants and add_variant.featured_media != blank -%}
-                  {%- assign cross_sell_image = add_variant.featured_media.preview_image -%}
-                {%- elsif source_is_variants and add_variant.image != blank -%}
-                  {%- assign cross_sell_image = add_variant.image -%}
-                {%- elsif card_product.featured_media != blank -%}
-                  {%- assign cross_sell_image = card_product.featured_media.preview_image -%}
-                {%- endif -%}
+               
+                {% assign cross_sell_image = blank %}
+
+                  {% if source_is_variants %}
+                    {% if add_variant.image != blank %}
+                      {% assign cross_sell_image = add_variant.image %}
+                    {% elsif product.featured_image != blank %}
+                      {% assign cross_sell_image = product.featured_image %}
+                    {% endif %}
+                  {% else %}
+                    {% if card_product.featured_image != blank %}
+                      {% assign cross_sell_image = card_product.featured_image %}
+                    {% endif %}
+                  {% endif %}
 
                 {%- if cross_sell_image != blank -%}
                   <img
