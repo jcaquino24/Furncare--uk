@@ -238,29 +238,17 @@
         <article class="product-cross-sell__item{% unless add_variant.available %} is-sold-out{% endunless %}" data-cross-sell-item data-variant-id="{{ add_variant.id }}">
           {%- if block.settings.show_image -%}
             <a href="{{ card_url }}" class="product-cross-sell__image-link" aria-label="{{ card_title | escape }}">
-              <div class="product-cross-sell__image-wrap{% if block.settings.image_ratio == 'natural' %} is-natural{% endif %}">
+              <div class="product-cross-sell__image-wrap" style="height:auto; padding:0;">
                
-           {% assign cross_sell_image = add_variant.image
+          {% assign cross_sell_image = add_variant.image
   | default: card_product.featured_image 
   | default: card_product.images.first %}
 
 {% if cross_sell_image %}
-  <img
-    src="{{ cross_sell_image | image_url: width: 400 }}"
-    srcset="
-      {{ cross_sell_image | image_url: width: 200 }} 200w,
-      {{ cross_sell_image | image_url: width: 300 }} 300w,
-      {{ cross_sell_image | image_url: width: 400 }} 400w
-    "
-    sizes="(max-width: 749px) 100vw, 300px"
-    loading="lazy"
-    alt="{{ card_title | escape }}"
-  >
-{% else %}
-  <div class="product-cross-sell__image-placeholder">
-    {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
-  </div>
+  {{ cross_sell_image | image_url: width: 400 }}
 {% endif %}
+
+
               </div>
             </a>
           {%- endif -%}
