@@ -56,7 +56,7 @@
             "show_divider": false,
             "heading": "",
             "subheading": "",
-            "cta_mode": "batch",
+            "cta_mode": "individual",
             "batch_add_behavior": "button",
             "main_add_cross_sell_only": false,
             "show_batch_button": true,
