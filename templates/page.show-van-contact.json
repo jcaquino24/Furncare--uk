@@ -11,6 +11,7 @@
   "sections": {
     "image_video_banner_7QP6UR": {
       "type": "image-video-banner",
+      "disabled": true,
       "name": "Image - Video Banner",
       "settings": {
         "height_desktop": 540,
