@@ -11,7 +11,6 @@
   "sections": {
     "image_video_banner_7QP6UR": {
       "type": "image-video-banner",
-      "disabled": true,
       "name": "Image - Video Banner",
       "settings": {
         "height_desktop": 540,
@@ -20,7 +19,7 @@
         "add_header_offset": false,
         "media_type": "video",
         "video_desktop": "shopify://files/videos/Show Van Video_16_9_WEBSITE_NO_QR_CODE.mp4",
-        "show_controls": false,
+        "show_controls": true,
         "mute_video": true,
         "autoplay_video": true,
         "show_overlay": false,
