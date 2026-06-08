@@ -9,6 +9,91 @@
  */
 {
   "sections": {
+    "image_video_banner_XGAaBn": {
+      "type": "image-video-banner",
+      "blocks": {
+        "button_Fd4JPd": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "/",
+            "new_tab": false,
+            "button_style": "underline"
+          }
+        },
+        "title_mY98gr": {
+          "type": "title",
+          "settings": {
+            "text": "Transforming <em>Spaces</em>, Elevating <em>Lives</em>",
+            "title_element": "h1",
+            "title_size": "display",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "eyebrow_mUTnQz": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "FURNITURE FOR LATER LIVING  & CHALLENGING ENVIRONMENTS",
+            "eyebrow_size": "md",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "card_rxRzbP": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Elderly_Care.jpg",
+            "title": "Elderly Care",
+            "tagline": "",
+            "button_text": "Shop now",
+            "button_url": "shopify://collections/cabinet-furniture",
+            "button_style": "underline",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_TD7x4w": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Challenging_Environment.jpg",
+            "title": "Challenging Environments",
+            "tagline": "",
+            "button_text": "Shop now",
+            "button_url": "shopify://collections/cabinet-furniture",
+            "button_style": "underline",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "button_Fd4JPd",
+        "title_mY98gr",
+        "eyebrow_mUTnQz",
+        "card_rxRzbP",
+        "card_TD7x4w"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 800,
+        "height_mobile": 620,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": true,
+        "media_type": "video",
+        "image_desktop": "shopify://shop_images/Lounge_Roomset_Lifestyle.jpg",
+        "video_desktop": "shopify://files/videos/My Movie 12.mp4",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) 83%)",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
     "custom_dynamic_grid_Kpa3yD": {
       "type": "custom-dynamic-grid",
       "blocks": {
@@ -553,91 +638,6 @@
         "text_2": "First Drawer",
         "text_3": "",
         "text_4": ""
-      }
-    },
-    "image_video_banner_XGAaBn": {
-      "type": "image-video-banner",
-      "blocks": {
-        "button_Fd4JPd": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "text": "Button",
-            "button_url": "/",
-            "new_tab": false,
-            "button_style": "underline"
-          }
-        },
-        "title_mY98gr": {
-          "type": "title",
-          "settings": {
-            "text": "Transforming <em>Spaces</em>, Elevating <em>Lives</em>",
-            "title_element": "h1",
-            "title_size": "display",
-            "text_color": "#f9f7f0"
-          }
-        },
-        "eyebrow_mUTnQz": {
-          "type": "eyebrow",
-          "settings": {
-            "text": "FURNITURE FOR LATER LIVING  & CHALLENGING ENVIRONMENTS",
-            "eyebrow_size": "md",
-            "text_color": "#f9f7f0"
-          }
-        },
-        "card_rxRzbP": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Elderly_Care.jpg",
-            "title": "Elderly Care",
-            "tagline": "",
-            "button_text": "Shop now",
-            "button_url": "shopify://collections/cabinet-furniture",
-            "button_style": "underline",
-            "new_tab": false,
-            "card_style": "base-white-01"
-          }
-        },
-        "card_TD7x4w": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Challenging_Environment.jpg",
-            "title": "Challenging Environments",
-            "tagline": "",
-            "button_text": "Shop now",
-            "button_url": "shopify://collections/cabinet-furniture",
-            "button_style": "underline",
-            "new_tab": false,
-            "card_style": "base-white-01"
-          }
-        }
-      },
-      "block_order": [
-        "button_Fd4JPd",
-        "title_mY98gr",
-        "eyebrow_mUTnQz",
-        "card_rxRzbP",
-        "card_TD7x4w"
-      ],
-      "name": "Image - Video Banner",
-      "settings": {
-        "height_desktop": 800,
-        "height_mobile": 620,
-        "maintain_aspect_ratio": false,
-        "add_header_offset": true,
-        "media_type": "video",
-        "image_desktop": "shopify://shop_images/Lounge_Roomset_Lifestyle.jpg",
-        "video_desktop": "shopify://files/videos/My Movie 12.mp4",
-        "show_controls": false,
-        "mute_video": true,
-        "autoplay_video": true,
-        "show_overlay": true,
-        "overlay_background": "linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) 83%)",
-        "colour_scheme": "dark",
-        "content_position": "center-center",
-        "content_alignment": "center"
       }
     },
     "featured_blocks_M7Nrnn": {
@@ -1391,12 +1391,12 @@
     }
   },
   "order": [
+    "image_video_banner_XGAaBn",
     "custom_dynamic_grid_Kpa3yD",
     "custom_featured_product_RUTtwF",
     "certificate_standard_etWBLQ",
     "flexiable_content_image_eFAF9h",
     "custom_column_showcase_Qmzj3z",
-    "image_video_banner_XGAaBn",
     "featured_blocks_M7Nrnn",
     "content_blocks_fLpHR3",
     "review_blocks_TFrKC6",
