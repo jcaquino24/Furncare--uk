@@ -407,7 +407,7 @@
             "desktop_width_percent": 100,
             "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"d13cb61a-817e-42e1-baa9-08d63b586063\" data-portal-id=\"145723791\"></div>",
             "min_form_height": 350,
-            "heading_size": 28,
+            "heading_size": 22,
             "heading_color": "#f9f7f0",
             "header_background_color": "#c3c0b0",
             "header_hover_color": "#243222",
