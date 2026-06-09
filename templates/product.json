@@ -138,8 +138,7 @@
         "sustainability_content": "",
         "warranty_content": "",
         "shipping_returns_content": "",
-        "security_grading_title": "",
-        "security_grading": "<p><strong>1: Low</strong></p><p>Functional design<br/><br/>Standard contract durability<br/><br/>Smooth, safe finishes<br/><br/>For low-risk users<br/><br/>Safe, non-institutional feel</p><p></p><p><strong>2: Moderate</strong></p><p>Tamper-resistant security fixings<br/><br/>Anti-ligature design where needed<br/><br/>Enhanced strength and durability<br/><br/>Robust for moderate wear<br/><br/>Safer detailing with reduced sharp edges<br/><br/>Safe, non-institutional feel</p><p></p><p></p><p><strong>3: High</strong></p><p>Weighted to prevent lifting or misuse<br/><br/>Minimal accessible fixings & removable parts<br/><br/>Reduced concealment points<br/><br/>Fully anti-ligature design<br/><br/>Reinforced for maximum durability<br/><br/>Supports safety in demanding environments</p>"
+        "security_grading_title": "Security Grading"
       }
     },
     "product_blocks_tncMV6": {
