@@ -9,6 +9,62 @@
  */
 {
   "sections": {
+    "blocks_8cC49R": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_zzPAXk": {
+          "type": "ai_gen_block_90768fd",
+          "disabled": true,
+          "settings": {
+            "spacer_height": 50,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#f9f7f0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_zzPAXk"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "richtext_bJfPm8": {
+      "type": "richtext",
+      "blocks": {
+        "heading_pqwQjQ": {
+          "type": "heading",
+          "settings": {
+            "text": "The Show Van Experience",
+            "heading_level": "h1",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_HhXiQz": {
+          "type": "tagline",
+          "settings": {
+            "content": "BOOK YOURS TODAY",
+            "tagline_style": "body-xs"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_pqwQjQ",
+        "tagline_HhXiQz"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
     "image_video_banner_7QP6UR": {
       "type": "image-video-banner",
       "name": "Image - Video Banner",
@@ -106,6 +162,8 @@
     }
   },
   "order": [
+    "blocks_8cC49R",
+    "richtext_bJfPm8",
     "image_video_banner_7QP6UR",
     "blocks_t4FKcR",
     "main",
