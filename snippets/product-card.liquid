@@ -204,7 +204,7 @@
       {% comment %} Title {% endcomment %}
       {% if show_title %}
         <div class="product-card__title {{ title_class }}">
-          <a class="{{ title_class }}" href="{{ product.url }}">
+          <a class="{{ title_class }}" href="{{ product.url | split: '?' | first }}">
             {{- product.title | split: '|' | first -}}
           </a>
         </div>
