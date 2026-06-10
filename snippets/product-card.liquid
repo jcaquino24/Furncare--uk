@@ -97,7 +97,7 @@
       {% else %}
         <a
           aria-label="Visit {{ product.title }}"
-          href="{{ product.url }}"
+          href="{{ product.url | split: '?' | first }}"
           class="product-card__button button button--primary"
         >
           {{- button_text -}} {% render 'icons', icon: 'cart' %}
@@ -121,7 +121,7 @@
       {% comment %} Alternate Image - shown on hover {% endcomment %}
       {% if product.images.size > 1 %}
         <div class="product-card__alternate-image product-card__image">
-          <a href="{{ product.url }}">
+          <a href="{{ product.url | split: '?' | first }}">
             {{
               product.images[1]
               | image_url: width: 1284
@@ -139,7 +139,7 @@
       {% comment %} Image {% endcomment %}
       {% if product.featured_image != blank %}
         <div class="product-card__original-image product-card__image">
-          <a href="{{ product.url }}">
+          <a href="{{ product.url | split: '?' | first }}">
             {% if product.featured_image %}
               {{
                 product.featured_image
