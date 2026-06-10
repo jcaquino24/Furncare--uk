@@ -152,21 +152,7 @@
     <!-- end olark code -->
 
 
-    <script>
-function cleanUrls() {
-  document.querySelectorAll('a[href*="pr_"], a[href*="_pos"], a[href*="_sid"]').forEach(link => {
-    try {
-      const url = new URL(link.href);
-      link.href = url.pathname;
-    } catch(e){}
-  });
-}
 
-document.addEventListener("DOMContentLoaded", cleanUrls);
-
-const observer = new MutationObserver(cleanUrls);
-observer.observe(document.body, { childList: true, subtree: true });
-</script>
 
   </body>
 </html>
