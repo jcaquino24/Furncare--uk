@@ -434,9 +434,9 @@
             "handle": "best-sellers",
             "product_feed_source": "product_list",
             "products": [
-              "vallen-3-seater-sofa",
+              "vallen-armchair",
               "vallen-2-seater-sofa",
-              "vallen-armchair"
+              "vallen-3-seater-sofa"
             ],
             "collection": "",
             "seed_product": "",
