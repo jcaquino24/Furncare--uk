@@ -81,7 +81,7 @@
             "desktop_width_percent": 100,
             "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"d13cb61a-817e-42e1-baa9-08d63b586063\" data-portal-id=\"145723791\"></div>",
             "min_form_height": 350,
-            "heading_size": 32,
+            "heading_size": 24,
             "heading_color": "#f9f7f0",
             "header_background_color": "#c3c0b0",
             "header_hover_color": "#243222",
@@ -107,13 +107,72 @@
       "type": "_blocks",
       "settings": {}
     },
+    "richtext_yUHENi": {
+      "type": "richtext",
+      "blocks": {
+        "heading_NWEETQ": {
+          "type": "heading",
+          "settings": {
+            "text": "Strength beneath the surface",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_TmR48D": {
+          "type": "tagline",
+          "settings": {
+            "content": "Beneath its softer appearance is a strength-led build: a robust, weighty frame, concealed construction, anti-tamper detailing and no removable components. Every element is designed to help the range withstand demanding daily use and support safer, more secure spaces.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "tagline_jHQjk3": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "Our strongest sofa yet - designed for the places that need it most.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_apbPHM": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_NWEETQ",
+        "tagline_TmR48D",
+        "tagline_jHQjk3",
+        "button_apbPHM"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 73,
+        "section_padding": "--spacing-6xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
     "blocks_yVDnJ8": {
       "type": "_blocks",
       "blocks": {
         "ai_gen_block_90768fd_eQP8bm": {
           "type": "ai_gen_block_90768fd",
+          "disabled": true,
           "settings": {
-            "spacer_height": 135,
+            "spacer_height": 70,
             "spacer_height_mobile": 30,
             "spacer_color": "#f9f7f0"
           },
@@ -558,6 +617,7 @@
     "image_video_banner_RfGNUe",
     "blocks_hNh9mU",
     "1779968161f5e3af07",
+    "richtext_yUHENi",
     "blocks_yVDnJ8",
     "image_text_RxX7Vh",
     "17805657938d839cee",
