@@ -153,58 +153,73 @@
 
 <script>
 function cleanUrlObject(url) {
-  // Remove ALL Shopify tracking params
-  [
+  const paramsToRemove = [
     '_pos',
     '_sid',
+    '_ss',
     'pr_prod_strat',
     'pr_rec_id',
     'pr_rec_pid',
     'pr_ref_pid',
     'pr_seq'
-  ].forEach(param => url.searchParams.delete(param));
+  ];
+
+  paramsToRemove.forEach(p => url.searchParams.delete(p));
 
   return url.pathname + (url.search ? url.search : '');
 }
 
-function cleanLinks() {
-  document.querySelectorAll('a[href]').forEach(link => {
-    try {
-      const url = new URL(link.href);
-      link.href = cleanUrlObject(url);
-    } catch(e) {}
-  });
-}
-
+// ✅ Clean current page (VERY IMPORTANT for _ss)
 function cleanCurrentUrl() {
   try {
     const url = new URL(window.location.href);
     const clean = cleanUrlObject(url);
 
-    // Replace URL without reloading page
     if (window.location.pathname + window.location.search !== clean) {
       window.history.replaceState({}, '', clean);
     }
   } catch(e) {}
 }
 
-// Run on load
+// ✅ Clean links in DOM
+function cleanLinks() {
+  document.querySelectorAll('a[href]').forEach(link => {
+    try {
+      const url = new URL(link.href, window.location.origin);
+      link.href = cleanUrlObject(url);
+    } catch(e) {}
+  });
+}
+
+// ✅ INTERCEPT clicks BEFORE Shopify adds params
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[href]');
+  if (!link) return;
+
+  try {
+    const url = new URL(link.href, window.location.origin);
+
+    if (url.pathname.includes('/products/')) {
+      e.preventDefault();
+      window.location.href = cleanUrlObject(url);
+    }
+
+  } catch(e) {}
+}, true);
+
+// ✅ Run on load
 document.addEventListener("DOMContentLoaded", () => {
   cleanLinks();
   cleanCurrentUrl();
 });
 
-// Watch for dynamic content (Shopify sections, recommendations)
-const observer = new MutationObserver(() => {
-  cleanLinks();
-});
+// ✅ Watch dynamic content
+const observer = new MutationObserver(cleanLinks);
+observer.observe(document.body, { childList: true, subtree: true });
 
-observer.observe(document.body, {
-  childList: true,
-  subtree: true
-});
+// ✅ Also clean after navigation (SPA-like behavior)
+window.addEventListener('popstate', cleanCurrentUrl);
 </script>
-
 
 
   </body>
