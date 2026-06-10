@@ -157,6 +157,7 @@ function cleanUrlObject(url) {
     '_pos',
     '_sid',
     '_ss',
+    'fid', // ✅ THIS is your missing one
     'pr_prod_strat',
     'pr_rec_id',
     'pr_rec_pid',
@@ -169,7 +170,7 @@ function cleanUrlObject(url) {
   return url.pathname + (url.search ? url.search : '');
 }
 
-// ✅ Clean current page (VERY IMPORTANT for _ss)
+// ✅ Clean current URL
 function cleanCurrentUrl() {
   try {
     const url = new URL(window.location.href);
@@ -181,7 +182,7 @@ function cleanCurrentUrl() {
   } catch(e) {}
 }
 
-// ✅ Clean links in DOM
+// ✅ Clean links
 function cleanLinks() {
   document.querySelectorAll('a[href]').forEach(link => {
     try {
@@ -191,7 +192,7 @@ function cleanLinks() {
   });
 }
 
-// ✅ INTERCEPT clicks BEFORE Shopify adds params
+// ✅ CLICK INTERCEPT (critical for fid + _ss + pr_*)
 document.addEventListener('click', function(e) {
   const link = e.target.closest('a[href]');
   if (!link) return;
@@ -207,19 +208,23 @@ document.addEventListener('click', function(e) {
   } catch(e) {}
 }, true);
 
-// ✅ Run on load
+// ✅ Init
 document.addEventListener("DOMContentLoaded", () => {
   cleanLinks();
   cleanCurrentUrl();
 });
 
-// ✅ Watch dynamic content
+// ✅ Observe dynamic Shopify content
 const observer = new MutationObserver(cleanLinks);
-observer.observe(document.body, { childList: true, subtree: true });
+observer.observe(document.body, {
+  childList: true,
+  subtree: true
+});
 
-// ✅ Also clean after navigation (SPA-like behavior)
+// ✅ Handle back/forward
 window.addEventListener('popstate', cleanCurrentUrl);
 </script>
+
 
 
   </body>
