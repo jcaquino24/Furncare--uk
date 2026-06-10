@@ -47,7 +47,7 @@
           {% if product.id != current_product.id and count < limit %}
             {% assign count = count | plus: 1 %}
             <div class="product-card">
-              <a href="{{ product.url }}">
+              <a href="{{ product.url | split: '?' | first }}">
                 <div class="image-wrapper">
                   <img
                     src="{{ product.featured_image | image_url: width: 500 }}"

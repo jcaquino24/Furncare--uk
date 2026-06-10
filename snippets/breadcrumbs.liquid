@@ -63,7 +63,7 @@
 
           <a
             class="breadcrumbs__link eyebrow-2xs"
-            href="{{ product.url }}"
+            href="{{ product.url | split: '?' | first }}"
             aria-current="page"
           >
             {{- product.title | split: '|' | first -}}
