@@ -151,6 +151,59 @@
     </script>
     <!-- end olark code -->
 
+<script>
+function cleanUrlObject(url) {
+  // Remove ALL Shopify tracking params
+  [
+    '_pos',
+    '_sid',
+    'pr_prod_strat',
+    'pr_rec_id',
+    'pr_rec_pid',
+    'pr_ref_pid',
+    'pr_seq'
+  ].forEach(param => url.searchParams.delete(param));
+
+  return url.pathname + (url.search ? url.search : '');
+}
+
+function cleanLinks() {
+  document.querySelectorAll('a[href]').forEach(link => {
+    try {
+      const url = new URL(link.href);
+      link.href = cleanUrlObject(url);
+    } catch(e) {}
+  });
+}
+
+function cleanCurrentUrl() {
+  try {
+    const url = new URL(window.location.href);
+    const clean = cleanUrlObject(url);
+
+    // Replace URL without reloading page
+    if (window.location.pathname + window.location.search !== clean) {
+      window.history.replaceState({}, '', clean);
+    }
+  } catch(e) {}
+}
+
+// Run on load
+document.addEventListener("DOMContentLoaded", () => {
+  cleanLinks();
+  cleanCurrentUrl();
+});
+
+// Watch for dynamic content (Shopify sections, recommendations)
+const observer = new MutationObserver(() => {
+  cleanLinks();
+});
+
+observer.observe(document.body, {
+  childList: true,
+  subtree: true
+});
+</script>
 
 
 
