@@ -163,5 +163,20 @@
         content: section.settings.shipping_returns_content
       %}
     {% endif %}
+
+
+    
+    {% if section.settings.security_grading_title != blank %}  
+    {% assign title = section.settings.security_grading_title %}
+    {% capture security_grading %}
+      {% render 'security-grading' %}
+    {% endcapture %}
+    {% render 'accordion',
+            title: title,
+            content: security_grading
+          %}
+      {% endif %}
+      
+    
   </div>
 {% endif %}
