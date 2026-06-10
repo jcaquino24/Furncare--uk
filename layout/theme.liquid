@@ -1,7 +1,3 @@
-{%- comment %}<locksmith:2d0d>{% endcomment -%}
-  {%- include 'locksmith' -%}
-{%- comment %}</locksmith:2d0d>{% endcomment -%}
-
 <!doctype html>
 <html lang="{{ shop.locale }}">
   <head>
@@ -13,15 +9,11 @@
     })(window, document, "clarity", "script", "wxmb2evbaq");
 </script>
 
-    {{ locksmith_initializations }}
     {% comment %} Meta information {% endcomment %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {%- comment %}<locksmith:a311>{% endcomment -%}
-      {%- capture var %}{% render 'locksmith-variables', variable: 'transparent', hiding_scope: 'resource' %}{% endcapture %}{% if var == 'true' %}<meta name="description" content="{{ page_description }}">{% endif -%}
-      {%- comment %}original: <meta name="description" content="{{ page_description }}">{%- endcomment %}
-    {%- comment %}</locksmith:a311>{% endcomment -%}
+    <meta name="description" content="{{ page_description }}">
 
     {%- liquid
       render 'vite-tag' with 'critical.css', preload_stylesheet: true
