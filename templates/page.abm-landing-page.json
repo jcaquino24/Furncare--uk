@@ -554,28 +554,46 @@
         "image_card_YeJdXz": {
           "type": "image_card",
           "settings": {
-            "title": "",
+            "image": "shopify://shop_images/image_56.png",
+            "image_mobile": "shopify://shop_images/image_56.png",
+            "title": "Core Handles",
             "subtitle": "",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_wX9mtV": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/image_57.png",
+            "image_mobile": "shopify://shop_images/image_57.png",
+            "title": "Contour Handles",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         },
         "image_card_HwfLG6": {
           "type": "image_card",
           "settings": {
-            "title": "",
+            "image": "shopify://shop_images/image_58.png",
+            "image_mobile": "shopify://shop_images/image_58.png",
+            "title": "Crosshatch Handles",
             "subtitle": "",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         }
       },
       "block_order": [
         "image_card_YeJdXz",
+        "image_card_wX9mtV",
         "image_card_HwfLG6"
       ],
       "name": "Image text blocks",
