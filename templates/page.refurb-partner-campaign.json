@@ -16,6 +16,60 @@
         "show_title": false
       }
     },
+    "image_video_banner_HFMhkr": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_gqmwjQ": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "your next refurb partner",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_DqmDFe": {
+          "type": "title",
+          "settings": {
+            "text": "Designed for Comfort, Built for <em>Care</em>.",
+            "title_element": "h2",
+            "title_size": "display",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_AktYKr": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_gqmwjQ",
+        "title_DqmDFe",
+        "button_AktYKr"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": true,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/P1044835_1.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(180deg, rgba(249, 247, 240, 0.7) 19%, rgba(195, 192, 176, 0) 67%)",
+        "colour_scheme": "light",
+        "content_position": "left-center",
+        "content_alignment": "center"
+      }
+    },
     "17805657938d839cee": {
       "type": "_blocks",
       "blocks": {
@@ -476,6 +530,7 @@
   },
   "order": [
     "main",
+    "image_video_banner_HFMhkr",
     "17805657938d839cee",
     "content_blocks_RjALWy",
     "richtext_gkR3mA",
