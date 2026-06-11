@@ -73,6 +73,14 @@
       "localization-ui": {
         "type": "localization-ui",
         "settings": {}
+      },
+      "customers-register": {
+        "type": "customers-register",
+        "settings": {}
+      },
+      "customers-login": {
+        "type": "customers-login",
+        "settings": {}
       }
     },
     "content_for_index": [],
@@ -89,6 +97,11 @@
       },
       "2567389343055140935": {
         "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
+        "disabled": false,
+        "settings": {}
+      },
+      "14082181514032464150": {
+        "type": "shopify://apps/o-request-a-quote/blocks/omgrfq_script/5f4ac0e6-8a57-4f3d-853e-0194eab86273",
         "disabled": false,
         "settings": {}
       }
