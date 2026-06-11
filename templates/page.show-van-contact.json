@@ -32,6 +32,14 @@
     "richtext_bJfPm8": {
       "type": "richtext",
       "blocks": {
+        "tagline_HhXiQz": {
+          "type": "tagline",
+          "settings": {
+            "content": "BOOK YOURS TODAY",
+            "tagline_style": "body-xs"
+          },
+          "blocks": {}
+        },
         "heading_pqwQjQ": {
           "type": "heading",
           "settings": {
@@ -40,19 +48,11 @@
             "heading_style": "title-display"
           },
           "blocks": {}
-        },
-        "tagline_HhXiQz": {
-          "type": "tagline",
-          "settings": {
-            "content": "BOOK YOURS TODAY",
-            "tagline_style": "body-xs"
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "heading_pqwQjQ",
-        "tagline_HhXiQz"
+        "tagline_HhXiQz",
+        "heading_pqwQjQ"
       ],
       "name": "Rich Text",
       "settings": {
