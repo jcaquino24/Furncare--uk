@@ -16,205 +16,6 @@
         "show_title": false
       }
     },
-    "image_video_banner_RfGNUe": {
-      "type": "image-video-banner",
-      "blocks": {
-        "title_nmn8Bq": {
-          "type": "title",
-          "settings": {
-            "text": "The Vallen Range",
-            "title_element": "h1",
-            "title_size": "display",
-            "text_color": "#f9f7f0"
-          }
-        },
-        "eyebrow_YfqfTp": {
-          "type": "eyebrow",
-          "settings": {
-            "text": "CONTRACT LOUNGE FURNITURE FOR CHALLENGING ENVIRONMENTS",
-            "eyebrow_size": "sm",
-            "text_color": "#f9f7f0"
-          }
-        },
-        "button_kiTM7t": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "text": "Enquire today",
-            "button_url": "https://2erd73.share-eu1.hsforms.com/20Ty2GoF-QuG6qQjWO1hgYw",
-            "new_tab": true,
-            "button_style": "underline"
-          }
-        }
-      },
-      "block_order": [
-        "title_nmn8Bq",
-        "eyebrow_YfqfTp",
-        "button_kiTM7t"
-      ],
-      "name": "Image - Video Banner",
-      "settings": {
-        "height_desktop": 800,
-        "height_mobile": 650,
-        "maintain_aspect_ratio": true,
-        "add_header_offset": true,
-        "media_type": "image",
-        "image_desktop": "shopify://shop_images/vallen_render_1_-3.jpg",
-        "show_controls": false,
-        "mute_video": false,
-        "autoplay_video": false,
-        "show_overlay": true,
-        "overlay_background": "linear-gradient(180deg, rgba(195, 192, 176, 0.3) 15%, rgba(249, 247, 240, 0.05) 100%)",
-        "colour_scheme": "dark",
-        "content_position": "center-center",
-        "content_alignment": "center"
-      }
-    },
-    "blocks_hNh9mU": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_800d78e_3iQDjX": {
-          "type": "ai_gen_block_800d78e",
-          "settings": {
-            "accordion_heading": "Request your quote",
-            "default_open": false,
-            "desktop_width_percent": 100,
-            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"d13cb61a-817e-42e1-baa9-08d63b586063\" data-portal-id=\"145723791\"></div>",
-            "min_form_height": 350,
-            "heading_size": 24,
-            "heading_color": "#f9f7f0",
-            "header_background_color": "#c3c0b0",
-            "header_hover_color": "#243222",
-            "header_padding": 40,
-            "icon_size": 32,
-            "icon_color": "#f9f7f0",
-            "background_color": "#f9f7f0",
-            "content_padding": 50,
-            "border_width": 0,
-            "border_color": "#e0e0e0",
-            "border_radius": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_800d78e_3iQDjX"
-      ],
-      "name": "Form accordion",
-      "settings": {}
-    },
-    "1779968161f5e3af07": {
-      "type": "_blocks",
-      "settings": {}
-    },
-    "richtext_yUHENi": {
-      "type": "richtext",
-      "blocks": {
-        "heading_NWEETQ": {
-          "type": "heading",
-          "settings": {
-            "text": "Strength beneath the surface",
-            "heading_level": "h2",
-            "heading_style": "title-lg"
-          },
-          "blocks": {}
-        },
-        "tagline_TmR48D": {
-          "type": "tagline",
-          "settings": {
-            "content": "Beneath its softer appearance is a strength-led build: a robust, weighty frame, concealed construction, anti-tamper detailing and no removable components. Every element is designed to help the range withstand demanding daily use and support safer, more secure spaces.",
-            "tagline_style": "body-md"
-          },
-          "blocks": {}
-        },
-        "tagline_jHQjk3": {
-          "type": "tagline",
-          "name": "Tagline",
-          "settings": {
-            "content": "Our strongest sofa yet - designed for the places that need it most.",
-            "tagline_style": "body-md"
-          },
-          "blocks": {}
-        },
-        "button_apbPHM": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "style": "primary",
-            "text": "Button",
-            "url": "#",
-            "new_tab": false
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "heading_NWEETQ",
-        "tagline_TmR48D",
-        "tagline_jHQjk3",
-        "button_apbPHM"
-      ],
-      "name": "Rich Text",
-      "settings": {
-        "max_width_desktop": 73,
-        "section_padding": "--spacing-6xl",
-        "text_alignment": "center",
-        "colour_scheme": "base-white-01",
-        "enable_animation": false,
-        "optional_richtext": "",
-        "small_container": false
-      }
-    },
-    "blocks_yVDnJ8": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_90768fd_eQP8bm": {
-          "type": "ai_gen_block_90768fd",
-          "disabled": true,
-          "settings": {
-            "spacer_height": 70,
-            "spacer_height_mobile": 30,
-            "spacer_color": "#f9f7f0"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_90768fd_eQP8bm"
-      ],
-      "settings": {}
-    },
-    "image_text_RxX7Vh": {
-      "type": "image-text",
-      "blocks": {
-        "images_TqMWeM": {
-          "type": "images",
-          "settings": {
-            "image_one": "shopify://shop_images/Vallenfinalmockup_sunny_pm_bb20a884-719d-4188-8d78-1e138c3a8484.png"
-          }
-        },
-        "content_RiAe3H": {
-          "type": "content",
-          "settings": {
-            "title": "A softer shape, for safer spaces",
-            "title_size": "xl",
-            "text": "Vallen’s rounded arms and smooth, enclosed profile create a calm, contemporary look while helping to reduce grip points and concealment areas.\n<br>\n<br>\nThe softened silhouette gives the range a more homely feel, while the enclosed construction supports safer use in demanding environments. From resident lounges to high-pressure care settings, Vallen is the seating range that feels comfortable and considered, while still supporting safer everyday use.\n<br>\n<br>\nIt is a practical choice for spaces that need furniture to feel welcoming, while still performing under everyday pressure.\n<br>\n<br>",
-            "button_style": "primary",
-            "button_text": "Not quite for you? View our full range",
-            "button_url": "shopify://collections/challenging-environments-seating"
-          }
-        }
-      },
-      "block_order": [
-        "images_TqMWeM",
-        "content_RiAe3H"
-      ],
-      "name": "Image - Text",
-      "settings": {
-        "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
-      }
-    },
     "17805657938d839cee": {
       "type": "_blocks",
       "blocks": {
@@ -375,141 +176,186 @@
         "ai_gen_block_60f34c9_dA8e98",
         "ai_gen_block_90768fd_CzBqdM"
       ],
+      "disabled": true,
       "settings": {}
     },
-    "richtext_hH4LDa": {
-      "type": "richtext",
+    "content_blocks_RjALWy": {
+      "type": "content-blocks",
       "blocks": {
-        "heading_43bVGr": {
-          "type": "heading",
+        "tab1_HEGfHe": {
+          "type": "tab1",
           "settings": {
-            "text": "Made to order, finished <em>your </em>way",
-            "heading_level": "h2",
-            "heading_style": "title-lg"
-          },
-          "blocks": {}
+            "image": "shopify://shop_images/P1049441_49028ced-c4c6-4c8f-96c8-25e8b20f2cee.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
         },
-        "tagline_4qc468": {
-          "type": "tagline",
+        "tab1_9PDiTg": {
+          "type": "tab1",
           "settings": {
-            "content": "Vallen Extreme is made to order in your choice of upholstery, allowing you to tailor the range to suit your environment, residents and interior scheme. Choose from a wide selection of healthcare fabrics and colourways to create a finish that feels considered, practical and cohesive.",
-            "tagline_style": "body-lg"
-          },
-          "blocks": {}
+            "image": "shopify://shop_images/P1049349-2.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
         },
-        "button_xBdxig": {
-          "type": "button",
+        "tab1_9TLUEp": {
+          "type": "tab1",
           "settings": {
-            "style": "secondary",
-            "text": "View our upholstery fabrics",
-            "url": "shopify://collections/upholstery-fabrics",
-            "new_tab": false
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "heading_43bVGr",
-        "tagline_4qc468",
-        "button_xBdxig"
-      ],
-      "name": "Rich Text",
-      "settings": {
-        "max_width_desktop": 56,
-        "section_padding": "--spacing-6xl",
-        "text_alignment": "center",
-        "colour_scheme": "green-01",
-        "enable_animation": false,
-        "optional_richtext": "",
-        "small_container": false
-      }
-    },
-    "product_blocks_CTKjAE": {
-      "type": "product-blocks",
-      "blocks": {
-        "product_block_zEmWpy": {
-          "type": "product_block",
+            "image": "shopify://shop_images/P1049337_384ff689-5472-4e14-a5ce-7d8890a9abca.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_wG7V48": {
+          "type": "tab1",
           "settings": {
-            "title": "Best Sellers",
-            "handle": "best-sellers",
-            "product_feed_source": "product_list",
-            "products": [
-              "vallen-armchair",
-              "vallen-2-seater-sofa",
-              "vallen-3-seater-sofa"
-            ],
-            "collection": "",
-            "seed_product": "",
-            "use_current_product": false,
-            "recommendation_intent": "related",
-            "colour_scheme": "warm-stone"
+            "image": "shopify://shop_images/P1049425_11dde404-7c32-43c3-b994-bc6e4d5d66f5.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_dn9fXd": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Furncare_GoogleBusiness_8.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_FdBb8U": {
+          "type": "tab2",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_7_5b204bde-da16-4d57-8e57-384bfb7574c5.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_ahXNKb": {
+          "type": "tab2",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_18_f89e957a-59d1-4b6e-8289-5e795ab0eaf4.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_yAidx7": {
+          "type": "tab2",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_6_0e2d50dc-732d-4c01-955e-483aa2ded4a4.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_nV8rLQ": {
+          "type": "tab2",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_30.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_TgyX3R": {
+          "type": "tab2",
+          "settings": {
+            "image": "shopify://shop_images/Team_Reception_4_75cc0731-169a-4662-be14-a5baa9d4586a.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
           }
         }
       },
       "block_order": [
-        "product_block_zEmWpy"
+        "tab1_HEGfHe",
+        "tab1_9PDiTg",
+        "tab1_9TLUEp",
+        "tab1_wG7V48",
+        "tab1_dn9fXd",
+        "tab2_FdBb8U",
+        "tab2_ahXNKb",
+        "tab2_yAidx7",
+        "tab2_nV8rLQ",
+        "tab2_TgyX3R"
       ],
-      "name": "Product blocks",
+      "name": "Content blocks",
       "settings": {
-        "title": "browse the range",
-        "section_padding": "--spacing-4xl"
+        "title": "CASE STUDIES",
+        "section_padding": "--spacing-4xl",
+        "tab1_title": "Old Malton",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "Ashton Meadows",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
       }
-    },
-    "blocks_aENLC3": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_800d78e_X9Px4Q": {
-          "type": "ai_gen_block_800d78e",
-          "settings": {
-            "accordion_heading": "Ready to order? Request your quote today",
-            "default_open": false,
-            "desktop_width_percent": 100,
-            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"d13cb61a-817e-42e1-baa9-08d63b586063\" data-portal-id=\"145723791\"></div>",
-            "min_form_height": 350,
-            "heading_size": 22,
-            "heading_color": "#f9f7f0",
-            "header_background_color": "#c3c0b0",
-            "header_hover_color": "#243222",
-            "header_padding": 40,
-            "icon_size": 32,
-            "icon_color": "#f9f7f0",
-            "background_color": "#f9f7f0",
-            "content_padding": 50,
-            "border_width": 0,
-            "border_color": "#e0e0e0",
-            "border_radius": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_800d78e_X9Px4Q"
-      ],
-      "name": "Form accordion",
-      "settings": {}
-    },
-    "blocks_jFNdRE": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_3260401_Aq7dfJ": {
-          "type": "ai_gen_block_3260401",
-          "settings": {
-            "spacing_size": "medium",
-            "small_height": 30,
-            "medium_height": 60,
-            "large_height": 100,
-            "small_height_mobile": 20,
-            "medium_height_mobile": 40,
-            "large_height_mobile": 60
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_3260401_Aq7dfJ"
-      ],
-      "name": "Spacer",
-      "settings": {}
     },
     "richtext_gkR3mA": {
       "type": "richtext",
@@ -614,17 +460,8 @@
   },
   "order": [
     "main",
-    "image_video_banner_RfGNUe",
-    "blocks_hNh9mU",
-    "1779968161f5e3af07",
-    "richtext_yUHENi",
-    "blocks_yVDnJ8",
-    "image_text_RxX7Vh",
     "17805657938d839cee",
-    "richtext_hH4LDa",
-    "product_blocks_CTKjAE",
-    "blocks_aENLC3",
-    "blocks_jFNdRE",
+    "content_blocks_RjALWy",
     "richtext_gkR3mA",
     "blocks_zQrGGK",
     "blocks_N4QKeR",
