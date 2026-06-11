@@ -300,6 +300,17 @@
             "lightbox_caption": ""
           }
         },
+        "image_card_zhJH3W": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_rnGB3p": {
           "type": "image_card",
           "settings": {
@@ -355,6 +366,7 @@
       },
       "block_order": [
         "image_card_YdKMVW",
+        "image_card_zhJH3W",
         "image_card_rnGB3p",
         "image_card_QnhtGF",
         "image_card_WzggzG",
