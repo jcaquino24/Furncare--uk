@@ -331,6 +331,21 @@
             "link": "",
             "gradient_overlay": "dark"
           }
+        },
+        "tab2_npyDzc": {
+          "type": "tab2",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_13_7c1e3b3a-61fb-46a3-8431-c303d6d699ad.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
         }
       },
       "block_order": [
@@ -343,7 +358,8 @@
         "tab2_ahXNKb",
         "tab2_yAidx7",
         "tab2_nV8rLQ",
-        "tab2_TgyX3R"
+        "tab2_TgyX3R",
+        "tab2_npyDzc"
       ],
       "name": "Content blocks",
       "settings": {
