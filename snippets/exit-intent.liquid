@@ -1,0 +1,110 @@
+<div id="exit-intent-popup" style="display:none;">
+  <div class="exit-popup-overlay"></div>
+  <div class="exit-popup-content">
+    <button id="exit-close">&times;</button>
+    
+    <h2>Wait! Before you go 👀</h2>
+    <p>Get 10% off your first order</p>
+
+    <form id="exit-form">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Get Discount</button>
+    </form>
+  </div>
+</div>
+
+<style>
+    #exit-intent-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.exit-popup-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.exit-popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+#exit-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.exit-popup-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.exit-popup-content button {
+  width: 100%;
+  padding: 10px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+</style>
+
+
+<script>
+(function() {
+  let shown = localStorage.getItem('exitPopupShown');
+
+  if (shown) return;
+
+  function showPopup() {
+    document.getElementById('exit-intent-popup').style.display = 'block';
+    localStorage.setItem('exitPopupShown', 'true');
+  }
+
+  document.addEventListener('mouseleave', function(e) {
+    if (e.clientY < 0) {
+      showPopup();
+    }
+  });
+
+  document.getElementById('exit-close').addEventListener('click', function() {
+    document.getElementById('exit-intent-popup').style.display = 'none';
+  });
+
+  document.querySelector('.exit-popup-overlay').addEventListener('click', function() {
+    document.getElementById('exit-intent-popup').style.display = 'none';
+  });
+
+  document.getElementById('exit-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const email = this.querySelector('input').value;
+    console.log('Captured email:', email);
+
+    alert("Thanks! Check your email for the discount 🎉");
+
+    document.getElementById('exit-intent-popup').style.display = 'none';
+  });
+})();
+</script>
