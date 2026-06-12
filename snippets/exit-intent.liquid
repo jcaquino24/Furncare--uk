@@ -83,10 +83,16 @@
   }
 
   document.addEventListener('mouseleave', function(e) {
-    if (e.clientY < 0) {
-      showPopup();
-    }
-  });
+  const windowWidth = window.innerWidth;
+
+  // Define top-right zone (e.g., last 25% of screen width)
+  const isTopEdge = e.clientY < 0;
+  const isRightSide = e.clientX > windowWidth * 0.75;
+
+  if (isTopEdge && isRightSide) {
+    showPopup();
+  }
+});
 
   document.getElementById('exit-close').addEventListener('click', function() {
     document.getElementById('exit-intent-popup').style.display = 'none';
