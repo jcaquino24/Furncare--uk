@@ -101,11 +101,13 @@
 
     <div class="{{ base_class }}__button__wrapper">
       <div class="{{ base_class }}__quantity">
+
         {% render 'quantity-selector',
           id: 'product-quantity',
           value: 1,
           step: 1,
           min: 1,
+          max: 10,
           variant: product.selected_or_first_available_variant
         %}
       </div>
@@ -120,7 +122,9 @@
           type="submit"
           class="{{ base_class }}__atc-button button button--primary button--full-width button--md"
           id="atcButton"
+          style="display:inline-block"
           data-add-to-cart
+        
         >
           <span>
             {{ 'product.add_to_cart' | t }} -
