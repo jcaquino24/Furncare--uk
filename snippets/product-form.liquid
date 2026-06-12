@@ -123,6 +123,7 @@
           class="{{ base_class }}__atc-button button button--primary button--full-width button--md"
           id="atcButton"
           data-add-to-cart
+
         >
           <span>
             {{ 'product.add_to_cart' | t }} -
@@ -130,7 +131,7 @@
             {% render 'icons', icon: 'cart' %}
           </span>
         </button>
-      {% endif %}
+
         {% if show_notify_modal %}
           <button
             onclick="toggleNotifyModal()"
@@ -143,7 +144,6 @@
           </button>
         {% endif %}
 
-      {% if product.available %}
       {% else %}
         {% if show_notify_modal %}
           <button
