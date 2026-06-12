@@ -161,6 +161,9 @@
 
 
 
+    {% if template != 'cart' and template != 'checkout' %}
+      {% render 'exit-intent' %}
+    {%endif %}
 
 
   </body>
