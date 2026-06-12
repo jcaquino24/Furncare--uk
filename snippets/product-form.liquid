@@ -122,7 +122,6 @@
           type="submit"
           class="{{ base_class }}__atc-button button button--primary button--full-width button--md"
           id="atcButton"
-          style="display:inline-block"
           data-add-to-cart
         
         >
@@ -132,7 +131,7 @@
             {% render 'icons', icon: 'cart' %}
           </span>
         </button>
-
+      </div>
         {% if show_notify_modal %}
           <button
             onclick="toggleNotifyModal()"
