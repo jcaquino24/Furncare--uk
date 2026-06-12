@@ -82,19 +82,11 @@
     localStorage.setItem('exitPopupShown', 'true');
   }
 
-  document.addEventListener('mouseout', function(e) {
-  // Only trigger if leaving the window
-  if (!e.relatedTarget && !e.toElement) {
-    const windowWidth = window.innerWidth;
-
-    const isTopEdge = e.clientY <= 10; // allow small buffer
-    const isRightSide = e.clientX >= windowWidth - 150;
-
-    if (isTopEdge && isRightSide) {
+  document.addEventListener('mouseleave', function(e) {
+    if (e.clientY < 0) {
       showPopup();
     }
-  }
-});
+  });
 
   document.getElementById('exit-close').addEventListener('click', function() {
     document.getElementById('exit-intent-popup').style.display = 'none';
