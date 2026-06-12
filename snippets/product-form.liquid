@@ -118,7 +118,18 @@
       {% endcomment %}
 
       {% if product.available %}
-
+        <button
+          type="submit"
+          class="{{ base_class }}__atc-button button button--primary button--full-width button--md"
+          id="atcButton"
+          data-add-to-cart
+        >
+          <span>
+            {{ 'product.add_to_cart' | t }} -
+            {{ product.selected_or_first_available_variant.price | money }}
+            {% render 'icons', icon: 'cart' %}
+          </span>
+        </button>
 
         {% if show_notify_modal %}
           <button
