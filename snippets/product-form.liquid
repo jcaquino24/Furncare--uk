@@ -130,7 +130,7 @@
             {% render 'icons', icon: 'cart' %}
           </span>
         </button>
-
+      {% endif %}
         {% if show_notify_modal %}
           <button
             onclick="toggleNotifyModal()"
@@ -143,6 +143,7 @@
           </button>
         {% endif %}
 
+      {% if product.available %}
       {% else %}
         {% if show_notify_modal %}
           <button
