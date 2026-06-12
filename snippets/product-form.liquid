@@ -118,18 +118,14 @@
 
       {% if product.available %}
         <button
-          type="submit"
-          class="{{ base_class }}__atc-button button button--primary button--full-width button--md"
-          id="atcButton"
-          data-add-to-cart
-
-        >
-          <span>
-            {{ 'product.add_to_cart' | t }} -
-            {{ product.selected_or_first_available_variant.price | money }}
-            {% render 'icons', icon: 'cart' %}
-          </span>
-        </button>
+            onclick="toggleNotifyModal()"
+            type="button"
+            id="alternativeButton"
+            class="{{ base_class }}__preorder-button button button--full-width button--secondary"
+            style="display: none;"
+          >
+            <span>{{ 'product.notify_me' | t }}</span>
+          </button>
 
         {% if show_notify_modal %}
           <button
