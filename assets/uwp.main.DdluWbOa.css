@@ -4369,6 +4369,7 @@ uwp-product .product__preorder-button:disabled {
 uwp-product .product__atc-button span {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--spacing-3xs);
 }
 uwp-product .metafield-rich_text_field > p,
