@@ -167,7 +167,7 @@
         {% endif %}
       {% endif %}
     </div>
-
+    <div id="quote-button-container"></div>
     <div
       class="{{ base_class }}__inventory-error body-sm body-sm--bold"
       id="inventory-error"
@@ -188,7 +188,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   function moveQuoteButton() {
     const quoteBtn = document.querySelector('.omgrfq-button');
-    const target = document.querySelector('.product__button__wrapper');
+    const target = document.querySelector('#quote-button-container');
 
     if (quoteBtn && target && !quoteBtn.classList.contains('moved')) {
       target.insertAdjacentElement('afterend', quoteBtn);
