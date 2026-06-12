@@ -107,6 +107,7 @@
           value: 1,
           step: 1,
           min: 1,
+          max: 10,
           variant: product.selected_or_first_available_variant
         %}
       </div>
@@ -118,14 +119,16 @@
 
       {% if product.available %}
         <button
-            onclick="toggleNotifyModal()"
-            type="button"
-            id="alternativeButton"
-            class="{{ base_class }}__preorder-button button button--full-width button--secondary"
-            style="display: none;"
-          >
-            <span>{{ 'product.notify_me' | t }}</span>
-          </button>
+          type="submit"
+          class="{{ base_class }}__atc-button button button--primary button--full-width button--md"
+          id="atcButton"
+          data-add-to-cart
+
+        >
+          <span>
+            HELLO
+          </span>
+        </button>
 
         {% if show_notify_modal %}
           <button
