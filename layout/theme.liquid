@@ -197,6 +197,8 @@ document.addEventListener('click', function(e) {
   const link = e.target.closest('a[href]');
   if (!link) return;
 
+  if (!link.href.startsWith('http') && !link.href.startsWith('/')) return;
+
   try {
     const url = new URL(link.href, window.location.origin);
 
