@@ -164,7 +164,7 @@
         "heading_FxDXBy": {
           "type": "heading",
           "settings": {
-            "text": "Hello, Georgina!",
+            "text": "Hello, Julie!",
             "heading_level": "h2",
             "heading_style": "title-display"
           },
@@ -174,7 +174,7 @@
           "type": "tagline",
           "name": "Tagline",
           "settings": {
-            "content": "Congratulations on finding us! We hope you and the team at Park Grove enjoy the cake. Whilst you do, pop the kettle on and watch the below video to find out more about us...",
+            "content": "Congratulations on finding us! We hope you and the team at Catalyst enjoy the cake. Whilst you do, pop the kettle on and watch the below video to find out more about us...",
             "tagline_style": "body-lg"
           },
           "blocks": {}
@@ -232,7 +232,7 @@
         "images_aHJkED": {
           "type": "images",
           "settings": {
-            "image_one": "shopify://shop_images/Untitled-1_4d22b130-96a9-49e0-b4d0-0f13854625ee.png"
+            "image_one": "shopify://shop_images/Catalyst-Interiors-Logo-Small_1.jpg"
           }
         }
       },
