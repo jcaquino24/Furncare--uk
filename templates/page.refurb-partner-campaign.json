@@ -400,6 +400,20 @@
             "link": "",
             "gradient_overlay": "dark"
           }
+        },
+        "tab1_n7Ype6": {
+          "type": "tab1",
+          "settings": {
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
         }
       },
       "block_order": [
@@ -413,7 +427,8 @@
         "tab2_yAidx7",
         "tab2_nV8rLQ",
         "tab2_TgyX3R",
-        "tab2_npyDzc"
+        "tab2_npyDzc",
+        "tab1_n7Ype6"
       ],
       "name": "Content blocks",
       "settings": {
