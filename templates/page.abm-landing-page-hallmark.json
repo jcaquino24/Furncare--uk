@@ -517,7 +517,7 @@
         "colour_scheme": "warm-stone",
         "text_position": "under_image",
         "mobile_layout": "swiper",
-        "enable_lightbox": false
+        "enable_lightbox": true
       }
     },
     "image_text_blocks_VPzjaJ": {
