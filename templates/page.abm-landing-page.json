@@ -286,6 +286,19 @@
     "image_text_blocks_ktBnWr": {
       "type": "image-text-blocks",
       "blocks": {
+        "image_card_UNtNfH": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Ellington_CU.jpg",
+            "image_mobile": "shopify://shop_images/Ellington_CU_ed7f63fc-d95e-4b0c-a758-d54a6a52b997.jpg",
+            "title": "Ellington",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_YdKMVW": {
           "type": "image_card",
           "settings": {
@@ -338,27 +351,14 @@
             "show_gradient": true,
             "lightbox_caption": ""
           }
-        },
-        "image_card_UNtNfH": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Ellington_CU.jpg",
-            "image_mobile": "shopify://shop_images/Ellington_CU_ed7f63fc-d95e-4b0c-a758-d54a6a52b997.jpg",
-            "title": "Ellington",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
         }
       },
       "block_order": [
+        "image_card_UNtNfH",
         "image_card_YdKMVW",
         "image_card_rnGB3p",
         "image_card_QnhtGF",
-        "image_card_WzggzG",
-        "image_card_UNtNfH"
+        "image_card_WzggzG"
       ],
       "name": "Image text blocks",
       "settings": {
