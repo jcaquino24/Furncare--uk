@@ -363,7 +363,7 @@
       "name": "Image text blocks",
       "settings": {
         "title": "THE STYLES",
-        "section_padding": "--spacing-md",
+        "section_padding": "--spacing-4xl",
         "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
@@ -477,7 +477,7 @@
       "name": "Image text blocks",
       "settings": {
         "title": "the wood finishes",
-        "section_padding": "--spacing-2xl",
+        "section_padding": "--spacing-4xl",
         "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
@@ -649,7 +649,7 @@
       "name": "Image text blocks",
       "settings": {
         "title": "the finishing touches",
-        "section_padding": "--spacing-2xl",
+        "section_padding": "--spacing-4xl",
         "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
