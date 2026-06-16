@@ -29,6 +29,26 @@
       "name": "Spacer",
       "settings": {}
     },
+    "video_form_QiyU8e": {
+      "type": "video-form",
+      "name": "Video & Form",
+      "settings": {
+        "bg_color": "#f9f6f0",
+        "max_width": 1250,
+        "subtitle": "BOOK YOURS TODAY",
+        "title": "The Show Van Experience",
+        "description": "<p>Our Show Van service allows you and your residents to see, touch and test samples of our furniture without leaving your care facility. Whether it’s assessing comfort, exploring finishes, or ensuring suitability for specific care needs, our mobile showroom brings the experience directly to you - saving time, reducing disruption, and supporting confident, informed choices.</p>",
+        "phone": "01603 561433",
+        "email": "sales@furncare.co.uk",
+        "facebook_url": "https://facebook.com",
+        "instagram_url": "https://instagram.com",
+        "linkedin_url": "https://linkedin.com",
+        "video_hosted": "shopify://files/videos/Show Van Video_16_9_WEBSITE_NO_QR_CODE.mp4",
+        "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"9c0ef082-9c0d-452b-9478-94defc93d5d7\" data-portal-id=\"145723791\"></div>",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "richtext_bJfPm8": {
       "type": "richtext",
       "blocks": {
@@ -54,6 +74,7 @@
         "tagline_HhXiQz",
         "heading_pqwQjQ"
       ],
+      "disabled": true,
       "name": "Rich Text",
       "settings": {
         "max_width_desktop": 100,
@@ -67,6 +88,7 @@
     },
     "image_video_banner_7QP6UR": {
       "type": "image-video-banner",
+      "disabled": true,
       "name": "Image - Video Banner",
       "settings": {
         "height_desktop": 540,
@@ -101,6 +123,7 @@
       "block_order": [
         "ai_gen_block_90768fd_N4rtQW"
       ],
+      "disabled": true,
       "name": "Spacer",
       "settings": {}
     },
@@ -129,6 +152,7 @@
       "block_order": [
         "forms_inline_LYdNT4"
       ],
+      "disabled": true,
       "settings": {
         "title": "We'd love to visit",
         "intro_text": "<p>Our Show Van service allows you and your residents to see, touch and test samples of our furniture without leaving your care facility. Whether it’s assessing comfort, exploring finishes, or ensuring suitability for specific care needs, our mobile showroom brings the experience directly to you - saving time, reducing disruption, and supporting confident, informed choices.</p><p></p><p></p><p>To book a visit, simply fill out the form on the right and a member of our team will be in touch to arrange a convenient time for your Show Van visit.</p>",
@@ -163,6 +187,7 @@
   },
   "order": [
     "blocks_8cC49R",
+    "video_form_QiyU8e",
     "richtext_bJfPm8",
     "image_video_banner_7QP6UR",
     "blocks_t4FKcR",
