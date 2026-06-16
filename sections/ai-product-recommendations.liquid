@@ -33,45 +33,63 @@
 </section>
 
 <script>
+    
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("recommendations-{{ section.id }}");
-
-  // Detect current product (if on product page)
-  const productId = {{ product.id | default: 'null' }};
   const limit = {{ section.settings.limit }};
 
-  let url = "";
+  let productId = {{ product.id | json }};
 
-  // If on product page → use related recommendations
-  if (productId) {
-    url = `/recommendations/products.json?product_id=${productId}&limit=${limit}`;
-  } else {
-    // fallback (homepage etc.)
-    url = `/products.json?limit=${limit}`;
+  // ✅ If NOT on product page → use a fallback product
+  if (!productId) {
+    console.warn("No product context → using fallback");
+    
+    fetch(`/products.json?limit=${limit}`)
+      .then(res => res.json())
+      .then(data => renderProducts(data.products));
+    return;
   }
 
-  fetch(url)
+  // ✅ Use Shopify AI recommendations
+  fetch(`/recommendations/products.json?product_id=${productId}&limit=${limit}`)
     .then(res => res.json())
     .then(data => {
-      const products = data.products || [];
+      if (!data.products.length) {
+        console.warn("No recommendations → fallback triggered");
 
-      products.forEach(p => {
-        const html = `
-          <div class="product-card">
-            <{p.url}
-              <img src="${p.images[0]?.src || ''   <h3>${p.title}</h3>
-              <p>$${(p.variants[0].price)}</p>
-            </a>
-          </div>
-        `;
-        container.innerHTML += html;
-      });
+        return fetch(`/products.json?limit=${limit}`)
+          .then(res => res.json())
+          .then(data => renderProducts(data.products));
+      }
+
+      renderProducts(data.products);
     })
-    .catch(err => {
-      console.error("Recommendation error:", err);
+    .catch(() => {
+      console.warn("Error → fallback triggered");
+
+      fetch(`/products.json?limit=${limit}`)
+        .then(res => res.json())
+        .then(data => renderProducts(data.products));
     });
+
+  function renderProducts(products) {
+    if (!products || !products.length) {
+      container.innerHTML = "<p>No recommendations found.</p>";
+      return;
+    }
+
+    container.innerHTML = products.map(p => `
+      <div class="product-card">
+        <a href="${p       <img src="${p.images?.[0]?.src ||  <h3>${p.title}</h3>
+          <p>$${(p.variants?.[0]?.price || '0.00')}</p>
+        </a>
+      </div>
+    `).join("");
+  }
 });
+
 </script>
+
 
 <style>
 .ai-recommendations {
