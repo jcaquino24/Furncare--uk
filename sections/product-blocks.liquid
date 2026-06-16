@@ -131,6 +131,7 @@
 <uwp-content-blocks
   class="content-blocks product-blocks colour-scheme--{{ section.blocks[0].settings.colour_scheme }} {% if show_nav %}content-blocks--has-swiper{% endif %}"
   style="--section-padding: var({{ section.settings.section_padding }});"
+  data-current-product-id="{{ product.id }}"
   {% if block1_rec_url != blank %}
     data-block1-rec-url="{{ block1_rec_url }}"
   {% endif %}
@@ -178,10 +179,8 @@
             {% elsif block.settings.seed_product %}
               {% assign loop_product_id = block.settings.seed_product.id %}
             {% endif %}
-            {% if loop_product_id
-              and recommendations.performed
-              and recommendations.products_count > 0
-            %}
+            
+            {% if loop_product_id and recommendations.performed and recommendations.products_count > 0 %}
               {% assign block_products = recommendations.products %}
             {% else %}
               {% assign block_products = '' %}
@@ -205,6 +204,11 @@
             js-content-blocks="tab-content"
             data-tab="{{ tab_name }}"
           >
+            {% assign main_product_id = false %}
+            {% if product %}
+              {% assign main_product_id = product.id %}
+            {% endif %}
+
             {% if block_products.count > 0 and block_products.count > 4 %}
               <swiper-container
                 class="content-blocks__swiper"
@@ -224,11 +228,6 @@
                 aria-label="Product carousel"
                 aria-roledescription="carousel"
               >
-                {% assign main_product_id = false %}
-                {% if product %}
-                  {% assign main_product_id = product.id %}
-                {% endif %}
-
                 {% if block.settings.product_feed_source == 'recommendations' %}
                   {% assign rendered_ids = ',' %}
                   {% for rec_item in recommendations.products limit: 8 %}
@@ -265,11 +264,6 @@
               {% endif %}
             {% elsif block_products.count > 0 %}
               <div class="content-blocks__grid">
-                {% assign main_product_id = false %}
-                {% if product %}
-                  {% assign main_product_id = product.id %}
-                {% endif %}
-
                 {% if block.settings.product_feed_source == 'recommendations' %}
                   {% assign rendered_ids = ',' %}
                   {% for rec_item in recommendations.products %}
