@@ -17,18 +17,7 @@
           <div class="custom-recommendations__card" data-rec-product-id="{{ recommendation.id }}">
             
             <a href="{{ recommendation.url }}" class="custom-recommendations__link">
-              <div class="custom-recommendations__image-wrapper">
-                {%- if recommendation.featured_image -%}
-                  <img 
-                    src="{{ recommendation.featured_image | image_url: width: 500 }}" 
-                    alt="{{ recommendation.title | escape }}" 
-                    loading="lazy" 
-                    class="custom-recommendations__image"
-                  >
-                {%- else -%}
-                  {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
-                {%- endif -%}
-              </div>
+           {% render 'product-card', product: rec_item %}
               <div class="custom-recommendations__info">
                 <span class="custom-recommendations__title">{{ recommendation.title }}</span>
                 <span class="custom-recommendations__price">{{ recommendation.price | money }}</span>

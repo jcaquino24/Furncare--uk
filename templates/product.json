@@ -141,11 +141,13 @@
         "security_grading_title": "Security Grading"
       }
     },
-    "ai_product_recommendations_ttz3bb": {
+    "ai_product_recommendations_FjkdYa": {
       "type": "ai-product-recommendations",
-      "name": "AI Recommendations",
+      "name": "Custom Recommendations",
       "settings": {
-        "title": "Recommended For You"
+        "heading": "You may also like",
+        "products_to_show": 4,
+        "intent": "related"
       }
     },
     "product_blocks_tncMV6": {
@@ -194,7 +196,7 @@
   },
   "order": [
     "main",
-    "ai_product_recommendations_ttz3bb",
+    "ai_product_recommendations_FjkdYa",
     "product_blocks_tncMV6"
   ]
 }
