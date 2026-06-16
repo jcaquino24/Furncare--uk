@@ -1,0 +1,832 @@
+{{ 'furncare-about.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'furncare-about.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign reveal_class = ''
+  if section.settings.enable_reveal
+    assign reveal_class = ' fa-reveal'
+  endif
+-%}
+{%- capture furncare_selector -%}#FurncareAboutPathways-{{ section.id }}{%- endcapture -%}
+{% style %}
+  {% render 'furncare-about-style-vars', selector: furncare_selector, section_settings: section.settings %}
+  {{ furncare_selector }} {
+    --fa-pathway-min-height: {{ section.settings.pathway_min_height }}px;
+  }
+{% endstyle %}
+
+<section id="FurncareAboutPathways-{{ section.id }}" class="fa-page-section fa-pad">
+  <div class="fa-wrap">
+    <div class="fa-section-header fa-content-box{{ reveal_class }}">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="fa-section-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="fa-heading-md">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+    </div>
+
+    <div class="fa-pathways-grid">
+      {%- for block in section.blocks -%}
+        <a class="fa-pathway-card{{ reveal_class }}" href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}>
+          <span>
+            {%- if block.settings.title != blank -%}
+              <span class="fa-pathway-title">{{ block.settings.title | escape }}</span>
+            {%- endif -%}
+            {%- if block.settings.copy != blank -%}
+              <span class="fa-pathway-copy">{{ block.settings.copy }}</span>
+            {%- endif -%}
+          </span>
+          <svg class="fa-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Furncare pathways",
+  "tag": "section",
+  "class": "section-furncare-about-pathways",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Project pathways"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Tell us what you're planning."
+    },
+    {
+      "type": "header",
+      "content": "Layout and spacing"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background gradient (optional)"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#fafaf9"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Content max width",
+      "min": 720,
+      "max": 1600,
+      "step": 20,
+      "default": 1280,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "gutter_desktop",
+      "label": "Side gutter desktop",
+      "min": 12,
+      "max": 80,
+      "step": 2,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "gutter_mobile",
+      "label": "Side gutter mobile",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding desktop",
+      "min": 0,
+      "max": 220,
+      "step": 4,
+      "default": 96,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding desktop",
+      "min": 0,
+      "max": 220,
+      "step": 4,
+      "default": 96,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_mobile",
+      "label": "Top padding mobile",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 72,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom padding mobile",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 72,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_gap",
+      "label": "Header to content gap desktop",
+      "min": 16,
+      "max": 100,
+      "step": 2,
+      "default": 48,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_gap_mobile",
+      "label": "Header to content gap mobile",
+      "min": 12,
+      "max": 72,
+      "step": 2,
+      "default": 36,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_max_width",
+      "label": "Header max width",
+      "min": 420,
+      "max": 1200,
+      "step": 20,
+      "default": 780,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Text content max width",
+      "min": 420,
+      "max": 1200,
+      "step": 20,
+      "default": 960,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "section_border_color",
+      "label": "Section border color",
+      "default": "#e7e5e4"
+    },
+    {
+      "type": "range",
+      "id": "border_top_width",
+      "label": "Top border width",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "border_bottom_width",
+      "label": "Bottom border width",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size desktop",
+      "min": 24,
+      "max": 120,
+      "step": 1,
+      "default": 52,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size mobile",
+      "min": 22,
+      "max": 72,
+      "step": 1,
+      "default": 36,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_weight",
+      "label": "Heading weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "heading_line_height",
+      "label": "Heading line height",
+      "min": 80,
+      "max": 140,
+      "step": 1,
+      "default": 100,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "heading_letter_spacing",
+      "label": "Heading letter spacing",
+      "min": -8,
+      "max": 4,
+      "step": 1,
+      "default": -3,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_max_width",
+      "label": "Heading max width",
+      "min": 420,
+      "max": 1400,
+      "step": 20,
+      "default": 1100,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "copy_size_desktop",
+      "label": "Body copy size desktop",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "copy_size_mobile",
+      "label": "Body copy size mobile",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "copy_weight",
+      "label": "Body copy weight",
+      "min": 300,
+      "max": 700,
+      "step": 100,
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "copy_line_height",
+      "label": "Body copy line height",
+      "min": 120,
+      "max": 220,
+      "step": 5,
+      "default": 170,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "copy_max_width",
+      "label": "Body copy max width",
+      "min": 360,
+      "max": 1000,
+      "step": 20,
+      "default": 760,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "copy_margin_top",
+      "label": "Space above body copy",
+      "min": 0,
+      "max": 64,
+      "step": 2,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Eyebrow size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_weight",
+      "label": "Eyebrow weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_letter_spacing",
+      "label": "Eyebrow letter spacing",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 22,
+      "unit": "%"
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_transform",
+      "label": "Eyebrow text transform",
+      "default": "uppercase",
+      "options": [
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "capitalize",
+          "label": "Capitalize"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_margin_bottom",
+      "label": "Space below eyebrow",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Text colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Base text color",
+      "default": "#0c0a09"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#0c0a09"
+    },
+    {
+      "type": "color",
+      "id": "copy_color",
+      "label": "Body copy color",
+      "default": "#57534e"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow color",
+      "default": "#78716c"
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_reveal",
+      "label": "Enable reveal animation",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "reveal_distance",
+      "label": "Reveal distance",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "reveal_duration",
+      "label": "Reveal duration",
+      "min": 200,
+      "max": 1400,
+      "step": 20,
+      "default": 760,
+      "unit": "ms"
+    },
+    {
+      "type": "header",
+      "content": "Cards / blocks"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_heading_color",
+      "label": "Card heading color",
+      "default": "#0c0a09"
+    },
+    {
+      "type": "color",
+      "id": "card_copy_color",
+      "label": "Card copy color",
+      "default": "#57534e"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card border color",
+      "default": "#e7e5e4"
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "label": "Card border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "default": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Card corner radius",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Card padding desktop",
+      "min": 12,
+      "max": 72,
+      "step": 2,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_padding_mobile",
+      "label": "Card padding mobile",
+      "min": 12,
+      "max": 56,
+      "step": 2,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_shadow_opacity",
+      "label": "Card shadow strength",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 6,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "card_hover_shadow_opacity",
+      "label": "Card hover shadow strength",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 14,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "card_hover_lift",
+      "label": "Card hover lift",
+      "min": 0,
+      "max": 16,
+      "step": 1,
+      "default": 4,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "label": "Card title size",
+      "min": 14,
+      "max": 40,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_title_weight",
+      "label": "Card title weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "card_copy_size",
+      "label": "Card copy size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_copy_line_height",
+      "label": "Card copy line height",
+      "min": 120,
+      "max": 220,
+      "step": 5,
+      "default": 170,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "card_copy_margin_top",
+      "label": "Card copy top spacing",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid gap",
+      "min": 8,
+      "max": 56,
+      "step": 2,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "Cards per row desktop",
+      "default": "2",
+      "options": [
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "columns_tablet",
+      "label": "Cards per row tablet",
+      "default": "2",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Cards per row mobile",
+      "default": "1",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Icons"
+    },
+    {
+      "type": "color",
+      "id": "icon_background",
+      "label": "Icon background",
+      "default": "#f5f5f4"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#292524"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon container size",
+      "min": 32,
+      "max": 96,
+      "step": 2,
+      "default": 48,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_svg_size",
+      "label": "Icon SVG size",
+      "min": 16,
+      "max": 48,
+      "step": 1,
+      "default": 23,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_radius",
+      "label": "Icon corner radius",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_margin_bottom",
+      "label": "Space below icon",
+      "min": 0,
+      "max": 64,
+      "step": 2,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_hover_scale",
+      "label": "Icon hover scale",
+      "min": 100,
+      "max": 130,
+      "step": 1,
+      "default": 108,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Pathway sizing"
+    },
+    {
+      "type": "range",
+      "id": "pathway_min_height",
+      "label": "Card minimum height",
+      "min": 80,
+      "max": 240,
+      "step": 4,
+      "default": 152,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pathway",
+      "name": "Pathway",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "New-build care home"
+        },
+        {
+          "type": "textarea",
+          "id": "copy",
+          "label": "Copy",
+          "default": "Explore how Furncare can support this type of project."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Furncare pathways advanced",
+      "blocks": [
+        {
+          "type": "pathway",
+          "settings": {
+            "title": "New-build care home",
+            "copy": "Explore how Furncare can support this type of project."
+          }
+        },
+        {
+          "type": "pathway",
+          "settings": {
+            "title": "Refurbishment project",
+            "copy": "Explore how Furncare can support this type of project."
+          }
+        },
+        {
+          "type": "pathway",
+          "settings": {
+            "title": "Multi-site rollout",
+            "copy": "Explore how Furncare can support this type of project."
+          }
+        },
+        {
+          "type": "pathway",
+          "settings": {
+            "title": "Urgent furniture requirement",
+            "copy": "Explore how Furncare can support this type of project."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
