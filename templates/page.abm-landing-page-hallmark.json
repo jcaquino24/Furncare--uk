@@ -385,135 +385,12 @@
     "image_text_blocks_Njxr6K": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_BKNBgq": {
+        "image_card_JjTRmg": {
           "type": "image_card",
           "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_Ey6CnJ": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_RaBHrT": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_tBthPT": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_kaA8MY": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_zRXYAk": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_qBqT46": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_ikKjqE": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_Q7dVFV": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_daQbAC": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_dyw3ec": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/B0A.jpg",
-            "image_mobile": "shopify://shop_images/B0A.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_yWqyQp": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/B0B.jpg",
-            "image_mobile": "shopify://shop_images/B0B.jpg",
-            "title": "",
+            "image": "shopify://shop_images/Untitled_-_June_16_2026_at_11.36.56.png",
+            "image_mobile": "shopify://shop_images/Untitled_-_June_16_2026_at_11.36.56.png",
+            "title": "Colour Wood Grains",
             "subtitle": "",
             "text": "",
             "block_colour_scheme": "light-mode",
@@ -524,8 +401,8 @@
         "image_card_C9qHt6": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-03-10_at_16.24.43.png",
-            "image_mobile": "shopify://shop_images/Screenshot_2026-03-10_at_16.24.43.png",
+            "image": "shopify://shop_images/Untitled_-_June_16_2026_at_11.36.56_1.png",
+            "image_mobile": "shopify://shop_images/Untitled_-_June_16_2026_at_11.36.56_1.png",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -536,18 +413,7 @@
         }
       },
       "block_order": [
-        "image_card_BKNBgq",
-        "image_card_Ey6CnJ",
-        "image_card_RaBHrT",
-        "image_card_tBthPT",
-        "image_card_kaA8MY",
-        "image_card_zRXYAk",
-        "image_card_qBqT46",
-        "image_card_ikKjqE",
-        "image_card_Q7dVFV",
-        "image_card_daQbAC",
-        "image_card_dyw3ec",
-        "image_card_yWqyQp",
+        "image_card_JjTRmg",
         "image_card_C9qHt6"
       ],
       "name": "Image text blocks",
