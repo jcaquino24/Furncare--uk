@@ -60,7 +60,7 @@
       <div class="show-van-media-col">
         <div class="video-wrapper">
           {%- if section.settings.video_hosted != blank -%}
-            {{ section.settings.video_hosted | video_tag: controls: true, autoplay: false, loop: true, class: 'native-video' }}
+            {{ section.settings.video_hosted | video_tag: controls: true, autoplay: true, loop: true, class: 'native-video' }}
           {%- elsif section.settings.external_video_url != blank -%}
             {%- if section.settings.external_video_url.type == 'youtube' -%}
               <iframe src="https://www.youtube.com/embed/{{ section.settings.external_video_url.id }}" frameborder="0" allowfullscreen></iframe>
