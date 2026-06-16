@@ -91,7 +91,8 @@
         >
 
           <!-- ✅ SWIPER if many products -->
-          {% if block_products and block_products.size > 4 %}
+          {% if block_products != blank and block_products.size > 4 %}
+
 
             <swiper-container
               class="content-blocks__swiper"
@@ -142,7 +143,7 @@
 
             </swiper-container>
 
-          {% elsif block_products and block_products.size > 0 %}
+          {% elsif block_products != blank and block_products.size > 0 %}
 
             <!-- ✅ GRID layout -->
             <div class="content-blocks__grid">
