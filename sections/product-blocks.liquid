@@ -131,7 +131,6 @@
 <uwp-content-blocks
   class="content-blocks product-blocks colour-scheme--{{ section.blocks[0].settings.colour_scheme }} {% if show_nav %}content-blocks--has-swiper{% endif %}"
   style="--section-padding: var({{ section.settings.section_padding }});"
-  data-current-product-id="{{ product.id }}"
   {% if block1_rec_url != blank %}
     data-block1-rec-url="{{ block1_rec_url }}"
   {% endif %}
@@ -173,14 +172,16 @@
               {% assign block_products = product.collections[0].products %}
             {% endif %}
           {% when 'recommendations' %}
-            {% assign loop_product_id = false %}
+            {% assign product_id = false %}
             {% if block.settings.use_current_product and product %}
-              {% assign loop_product_id = product.id %}
+              {% assign product_id = product.id %}
             {% elsif block.settings.seed_product %}
-              {% assign loop_product_id = block.settings.seed_product.id %}
+              {% assign product_id = block.settings.seed_product.id %}
             {% endif %}
-            
-            {% if loop_product_id and recommendations.performed and recommendations.products_count > 0 %}
+            {% if product_id
+              and recommendations.performed
+              and recommendations.products_count > 0
+            %}
               {% assign block_products = recommendations.products %}
             {% else %}
               {% assign block_products = '' %}
@@ -204,11 +205,6 @@
             js-content-blocks="tab-content"
             data-tab="{{ tab_name }}"
           >
-            {% assign main_product_id = false %}
-            {% if product %}
-              {% assign main_product_id = product.id %}
-            {% endif %}
-
             {% if block_products.count > 0 and block_products.count > 4 %}
               <swiper-container
                 class="content-blocks__swiper"
@@ -228,11 +224,16 @@
                 aria-label="Product carousel"
                 aria-roledescription="carousel"
               >
+                {% assign main_product_id = false %}
+                {% if product %}
+                  {% assign main_product_id = product.id %}
+                {% endif %}
+
                 {% if block.settings.product_feed_source == 'recommendations' %}
                   {% assign rendered_ids = ',' %}
                   {% for rec_item in recommendations.products limit: 8 %}
                     {% assign id_token = ',' | append: rec_item.id | append: ',' %}
-                    {% unless rendered_ids contains id_token or rec_item.id == main_product_id %}
+                    {% unless rendered_ids contains id_token or rec_item.id == product_id %}
                       <swiper-slide class="content-blocks__slide">
                         {% render 'product-card', product: rec_item %}
                       </swiper-slide>
@@ -268,7 +269,7 @@
                   {% assign rendered_ids = ',' %}
                   {% for rec_item in recommendations.products %}
                     {% assign id_token = ',' | append: rec_item.id | append: ',' %}
-                    {% unless rendered_ids contains id_token or rec_item.id == main_product_id %}
+                    {% unless rendered_ids contains id_token or rec_item.id == product_id %}
                       {% render 'product-card', product: rec_item %}
                       {% assign rendered_ids = rendered_ids | append: rec_item.id | append: ',' %}
                     {% endunless %}
@@ -472,22 +473,3 @@
   ]
 }
 {% endschema %}
-
-
-<script>
-  // Clean up any duplicate cards injected by the Shopify Recommendations API
-const currentProductId = this.getAttribute('data-current-product-id');
-
-if (currentProductId) {
-  // Assuming your product card snippet renders a container with data-product-id="{{ product.id }}"
-  const duplicateCards = this.querySelectorAll(`[data-product-id="${currentProductId}"]`);
-  duplicateCards.forEach(card => {
-    const slide = card.closest('swiper-slide');
-    if (slide) {
-      slide.remove(); // Removes the entire slide so there isn't an empty gap in the carousel
-    } else {
-      card.remove(); // Removes it from the grid layout
-    }
-  });
-}
-</script>
