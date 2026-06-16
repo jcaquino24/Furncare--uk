@@ -242,7 +242,7 @@
       ],
       "name": "Image - Text",
       "settings": {
-        "colour_scheme": "base-white-01",
+        "colour_scheme": "warm-stone",
         "section_padding": "--spacing-2xl"
       }
     },
