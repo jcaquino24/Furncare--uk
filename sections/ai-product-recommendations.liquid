@@ -17,7 +17,7 @@
           <div class="custom-recommendations__card" data-rec-product-id="{{ recommendation.id }}">
             
             <a href="{{ recommendation.url }}" class="custom-recommendations__link">
-           {% render 'product-card', product: rec_item %}
+           {% render 'product-card', product: recommendation %}
               <div class="custom-recommendations__info">
                 <span class="custom-recommendations__title">{{ recommendation.title }}</span>
                 <span class="custom-recommendations__price">{{ recommendation.price | money }}</span>
