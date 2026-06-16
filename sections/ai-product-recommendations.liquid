@@ -1,0 +1,131 @@
+{% schema %}
+{
+  "name": "AI Recommendations",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Recommended For You"
+    },
+    {
+      "type": "collection",
+      "id": "source_collection",
+      "label": "Product Source Collection"
+    },
+    {
+      "type": "range",
+      "id": "max_products",
+      "label": "Max Products",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "AI Recommendations"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="ai-recommendations">
+  <h2>{{ section.settings.title }}</h2>
+
+  <div id="ai-recommendations-grid" class="grid"></div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const products = {{ collections[section.settings.source_collection].products | json }};
+  const maxProducts = {{ section.settings.max_products }};
+  
+  // Simulated "user behavior" (replace with real signals if needed)
+  const userPreferences = {
+    tags: ["featured", "bestseller"],
+    maxPrice: 200
+  };
+
+  function scoreProduct(product) {
+    let score = 0;
+
+    // tag matching
+    if (product.tags) {
+      product.tags.forEach(tag => {
+        if (userPreferences.tags.includes(tag.toLowerCase())) {
+          score += 2;
+        }
+      });
+    }
+
+    // price preference
+    if (product.price / 100 <= userPreferences.maxPrice) {
+      score += 1;
+    }
+
+    // simple boost for available products
+    if (product.available) {
+      score += 1;
+    }
+
+    return score;
+  }
+
+  const rankedProducts = products
+    .map(p => ({ product: p, score: scoreProduct(p) }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, maxProducts);
+
+  const container = document.getElementById("ai-recommendations-grid");
+
+  rankedProducts.forEach(item => {
+    const p = item.product;
+
+    const html = `
+      <div class="product-card">
+        <a href="${        <img src="${p.featured_image}" alt="${pitle}</h3>
+          <p>$${(p.price / 100).toFixed(2)}</p>
+        </a>
+      </div>
+    `;
+
+    container.innerHTML += html;
+  });
+});
+</script>
+
+<style>
+.ai-recommendations {
+  padding: 40px 20px;
+}
+
+.ai-recommendations h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ai-recommendations .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.product-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+</style>
