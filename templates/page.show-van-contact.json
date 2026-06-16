@@ -34,7 +34,7 @@
       "name": "Video & Form",
       "settings": {
         "bg_color": "#f9f6f0",
-        "max_width": 1250,
+        "max_width": 2600,
         "subtitle": "BOOK YOURS TODAY",
         "title": "The Show Van Experience",
         "description": "<p>Our Show Van service allows you and your residents to see, touch and test samples of our furniture without leaving your care facility. Whether it’s assessing comfort, exploring finishes, or ensuring suitability for specific care needs, our mobile showroom brings the experience directly to you - saving time, reducing disruption, and supporting confident, informed choices.</p>",
@@ -44,6 +44,7 @@
         "instagram_url": "https://instagram.com",
         "linkedin_url": "https://linkedin.com",
         "video_hosted": "shopify://files/videos/Show Van Video_16_9_WEBSITE_NO_QR_CODE.mp4",
+        "external_video_url": "",
         "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"9c0ef082-9c0d-452b-9478-94defc93d5d7\" data-portal-id=\"145723791\"></div>",
         "padding_top": 40,
         "padding_bottom": 40
