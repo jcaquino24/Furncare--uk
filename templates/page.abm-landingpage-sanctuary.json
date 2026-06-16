@@ -164,7 +164,7 @@
         "heading_FxDXBy": {
           "type": "heading",
           "settings": {
-            "text": "Hello, Georgina!",
+            "text": "Hello, Louise!",
             "heading_level": "h2",
             "heading_style": "title-display"
           },
@@ -174,7 +174,7 @@
           "type": "tagline",
           "name": "Tagline",
           "settings": {
-            "content": "Congratulations on finding us! We hope you and the team at Park Grove enjoy the cake. Whilst you do, pop the kettle on and watch the below video to find out more about us...",
+            "content": "Congratulations on finding us! We hope you and the team at Sanctuary Care Homes enjoy the cake. Whilst you do, pop the kettle on and watch the below video to find out more about us...",
             "tagline_style": "body-lg"
           },
           "blocks": {}
