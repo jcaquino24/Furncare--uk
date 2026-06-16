@@ -515,7 +515,7 @@
         "title": "the wood finishes",
         "section_padding": "--spacing-2xl",
         "colour_scheme": "warm-stone",
-        "text_position": "over_image",
+        "text_position": "under_image",
         "mobile_layout": "swiper",
         "enable_lightbox": false
       }
