@@ -252,7 +252,7 @@
         "heading_Vt6bA3": {
           "type": "heading",
           "settings": {
-            "text": "5 Styles, 13 Finishes.",
+            "text": "Here's your <em>exclusive</em> preview of our upcoming range...",
             "heading_level": "h2",
             "heading_style": "title-display"
           },
@@ -262,8 +262,8 @@
           "type": "tagline",
           "name": "Tagline",
           "settings": {
-            "content": "We're delighted to give you exclusive access to our new furniture ranges that are launching next month, allowing you to create truly bespoke bedrooms for care spaces.",
-            "tagline_style": "body-lg"
+            "content": "We're delighted to give you exclusive access to our new bedroom furniture ranges that are launching next month, allowing you to create truly bespoke bedrooms for care spaces.",
+            "tagline_style": "body-xl"
           },
           "blocks": {}
         }
@@ -274,7 +274,7 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "max_width_desktop": 100,
+        "max_width_desktop": 64,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
