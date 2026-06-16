@@ -388,8 +388,8 @@
         "image_card_C9qHt6": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Untitled_-_June_16_2026_at_11.36.56_1.png",
-            "image_mobile": "shopify://shop_images/Untitled_-_June_16_2026_at_11.36.56_1.png",
+            "image": "shopify://shop_images/Arbor_Oak_L.jpg",
+            "image_mobile": "shopify://shop_images/Arbor_Oak_L.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -414,24 +414,6 @@
     },
     "image_text_blocks_VPzjaJ": {
       "type": "image-text-blocks",
-      "blocks": {
-        "image_card_KATDQ9": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Untitled_-_June_16_2026_at_11.36.56_1.png",
-            "image_mobile": "shopify://shop_images/Untitled_-_June_16_2026_at_11.36.56_1.png",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_card_KATDQ9"
-      ],
       "name": "Image text blocks",
       "settings": {
         "title": "the colour finishes",
