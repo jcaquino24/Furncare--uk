@@ -172,13 +172,13 @@
               {% assign block_products = product.collections[0].products %}
             {% endif %}
           {% when 'recommendations' %}
-            {% assign product_id = false %}
-            {% if block.settings.use_current_product and product %}
-              {% assign product_id = product.id %}
-            {% elsif block.settings.seed_product %}
-              {% assign product_id = block.settings.seed_product.id %}
-            {% endif %}
-            {% if product_id
+            {% assign loop_product_id = false %}
+            if block.settings.use_current_product and product
+              {% assign loop_product_id = product.id %}
+            elsif block.settings.seed_product
+              {% assign loop_product_id = block.settings.seed_product.id %}
+            endif
+            {% if loop_product_id
               and recommendations.performed
               and recommendations.products_count > 0
             %}
@@ -233,7 +233,7 @@
                   {% assign rendered_ids = ',' %}
                   {% for rec_item in recommendations.products limit: 8 %}
                     {% assign id_token = ',' | append: rec_item.id | append: ',' %}
-                    {% unless rendered_ids contains id_token or rec_item.id == product_id %}
+                    {% unless rendered_ids contains id_token or rec_item.id == main_product_id %}
                       <swiper-slide class="content-blocks__slide">
                         {% render 'product-card', product: rec_item %}
                       </swiper-slide>
@@ -265,11 +265,16 @@
               {% endif %}
             {% elsif block_products.count > 0 %}
               <div class="content-blocks__grid">
+                {% assign main_product_id = false %}
+                {% if product %}
+                  {% assign main_product_id = product.id %}
+                {% endif %}
+
                 {% if block.settings.product_feed_source == 'recommendations' %}
                   {% assign rendered_ids = ',' %}
                   {% for rec_item in recommendations.products %}
                     {% assign id_token = ',' | append: rec_item.id | append: ',' %}
-                    {% unless rendered_ids contains id_token or rec_item.id == product_id %}
+                    {% unless rendered_ids contains id_token or rec_item.id == main_product_id %}
                       {% render 'product-card', product: rec_item %}
                       {% assign rendered_ids = rendered_ids | append: rec_item.id | append: ',' %}
                     {% endunless %}
