@@ -381,8 +381,8 @@
             "title": "Arbor Oak",
             "subtitle": "",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         },
@@ -394,8 +394,8 @@
             "title": "Moorland Char",
             "subtitle": "",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         },
@@ -407,8 +407,8 @@
             "title": "Moorland Cinder",
             "subtitle": "",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         },
@@ -420,8 +420,8 @@
             "title": "Moorland Oak",
             "subtitle": "",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         },
@@ -433,8 +433,8 @@
             "title": "Nera Oak",
             "subtitle": "",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         },
@@ -446,8 +446,8 @@
             "title": "Northern Wenge",
             "subtitle": "",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         },
@@ -459,8 +459,8 @@
             "title": "Sable Walnut",
             "subtitle": "",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         }
