@@ -173,11 +173,11 @@
             {% endif %}
           {% when 'recommendations' %}
             {% assign loop_product_id = false %}
-            if block.settings.use_current_product and product
+            {% if block.settings.use_current_product and product %}
               {% assign loop_product_id = product.id %}
-            elsif block.settings.seed_product
+            {% elsif block.settings.seed_product %}
               {% assign loop_product_id = block.settings.seed_product.id %}
-            endif
+            {% endif %}
             {% if loop_product_id
               and recommendations.performed
               and recommendations.products_count > 0
