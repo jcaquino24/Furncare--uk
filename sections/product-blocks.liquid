@@ -1,10 +1,64 @@
 {% liquid
-  assign fallback_section_id = section.id | default: 'product-blocks'
+  # Get products for each block based on their feed source
+  assign tab1_products = ''
+  assign tab2_products = ''
 
-  if fallback_section_id == blank
+  # Tab 1 products
+  case section.blocks[0].settings.product_feed_source
+    when 'product_list'
+      assign tab1_products = section.blocks[0].settings.products
+    when 'collection'
+      if section.blocks[0].settings.collection != blank
+        assign tab1_products = section.blocks[0].settings.collection.products
+      elsif section.blocks[0].settings.use_current_product and product and product.collections.size > 0
+        assign tab1_products = product.collections[0].products
+      endif
+    when 'recommendations'
+      assign product_id = false
+      if section.blocks[0].settings.use_current_product and product
+        assign product_id = product.id
+      elsif section.blocks[0].settings.seed_product
+        assign product_id = section.blocks[0].settings.seed_product.id
+      endif
+      if product_id and recommendations.performed and recommendations.products_count > 0
+        assign tab1_products = recommendations.products
+      else
+        assign tab1_products = ''
+      endif
+  endcase
+
+  # Tab 2 products
+  case section.blocks[1].settings.product_feed_source
+    when 'product_list'
+      assign tab2_products = section.blocks[1].settings.products
+    when 'collection'
+      if section.blocks[1].settings.collection != blank
+        assign tab2_products = section.blocks[1].settings.collection.products
+      elsif section.blocks[1].settings.use_current_product and product and product.collections.size > 0
+        assign tab2_products = product.collections[0].products
+      endif
+    when 'recommendations'
+      assign product_id = false
+      if section.blocks[1].settings.use_current_product and product
+        assign product_id = product.id
+      elsif section.blocks[1].settings.seed_product
+        assign product_id = section.blocks[1].settings.seed_product.id
+      endif
+      if product_id and recommendations.performed and recommendations.products_count > 0
+        assign tab2_products = recommendations.products
+      else
+        assign tab2_products = ''
+      endif
+  endcase
+
+  assign has_tabs = false
+
+  assign fallback_section_id = section.id | default: 'product-blocks'
+  if fallback_section_id == blank or fallback_section_id == empty
     assign fallback_section_id = 'product-blocks'
   endif
 
+  # Check if we should show tabs - be more lenient
   assign has_tabs = false
   if section.blocks.size >= 2 and section.blocks[0].settings.title != blank and section.blocks[1].settings.title != blank
     assign has_tabs = true
@@ -21,9 +75,8 @@
       {% if forloop.first %}
         {% assign button_class = 'is-active' %}
       {% endif %}
-
-      {% assign attributes = 'js-content-blocks="tab-trigger" data-tab="' | append: tab_name | append: '"' %}
-
+      
+      {% assign attributes = 'js-content-blocks="tab-trigger" data-tab="' | append: tab_name | append: '" data-colour-scheme="' | append: block.settings.colour_scheme | append: '"' %}
       {% render 'button',
         class: button_class,
         label: block.settings.title,
@@ -34,148 +87,215 @@
   {% endif %}
 {% endcapture %}
 
+{% assign show_nav = false %}
+
+{% if tab1_products.count > 4 or tab2_products.count > 4 %}
+  {% assign show_nav = true %}
+{% endif %}
+
+{% assign title_classes = 'title-with-nav__nav' %}
+{% if show_nav and tabs_html != blank %}
+  {% assign title_classes = 'hide-on-mobile title-with-nav__nav' %}
+{% endif %}
+
+{% liquid
+  # Build recommendation URLs for each block if needed
+  assign block1_rec_url = ''
+  assign block2_rec_url = ''
+
+  if section.blocks[0].settings.product_feed_source == 'recommendations'
+    assign product_id_1 = false
+    if section.blocks[0].settings.use_current_product and product
+      assign product_id_1 = product.id
+    elsif section.blocks[0].settings.seed_product
+      assign product_id_1 = section.blocks[0].settings.seed_product.id
+    endif
+    if product_id_1
+      assign block1_rec_url = '/recommendations/products.json?product_id=' | append: product_id_1 | append: '&limit=8&intent=' | append: section.blocks[0].settings.recommendation_intent
+    endif
+  endif
+
+  if section.blocks[1].settings.product_feed_source == 'recommendations'
+    assign product_id_2 = false
+    if section.blocks[1].settings.use_current_product and product
+      assign product_id_2 = product.id
+    elsif section.blocks[1].settings.seed_product
+      assign product_id_2 = section.blocks[1].settings.seed_product.id
+    endif
+    if product_id_2
+      assign block2_rec_url = '/recommendations/products.json?product_id=' | append: product_id_2 | append: '&limit=8&intent=' | append: section.blocks[1].settings.recommendation_intent
+    endif
+  endif
+%}
+
 <uwp-content-blocks
-  class="content-blocks product-blocks"
+  class="content-blocks product-blocks colour-scheme--{{ section.blocks[0].settings.colour_scheme }} {% if show_nav %}content-blocks--has-swiper{% endif %}"
   style="--section-padding: var({{ section.settings.section_padding }});"
+  {% if block1_rec_url != blank %}
+    data-block1-rec-url="{{ block1_rec_url }}"
+  {% endif %}
+  {% if block2_rec_url != blank %}
+    data-block2-rec-url="{{ block2_rec_url }}"
+  {% endif %}
+  role="region"
+  aria-label="Product blocks"
+  aria-roledescription="region"
 >
   <div class="container">
-
     <div class="content-blocks__header">
       {% render 'title-with-nav',
         title: section.settings.title,
         heading_level: 'h2',
+        heading_style: 'eyebrow-sm',
         tabs: tabs_html,
-        show_nav: true,
+        show_nav: show_nav,
+        nav_class: title_classes,
         section_id: fallback_section_id
       %}
     </div>
 
     <div class="content-blocks__content">
-
       {% for block in section.blocks %}
         {% assign tab_name = 'tab' | append: forloop.index %}
         {% assign tab_classes = 'content-blocks__tab' %}
+        {% assign slides_per_view = '2' %}
 
-        {% if forloop.first %}
-          {% assign tab_classes = tab_classes | append: ' is-active' %}
-        {% endif %}
-
-        <!-- ✅ FIX 1: Correct product_id per block -->
-        {% assign local_product_id = false %}
-        {% if block.settings.use_current_product and product %}
-          {% assign local_product_id = product.id %}
-        {% elsif block.settings.seed_product %}
-          {% assign local_product_id = block.settings.seed_product.id %}
-        {% endif %}
-
-        <!-- ✅ FIX 2: Get products properly -->
-        {% assign block_products = blank %}
-
+        {% comment %} Determine product source based on feed type {% endcomment %}
+        {% assign block_products = '' %}
         {% case block.settings.product_feed_source %}
           {% when 'product_list' %}
             {% assign block_products = block.settings.products %}
-
           {% when 'collection' %}
             {% if block.settings.collection != blank %}
               {% assign block_products = block.settings.collection.products %}
+            {% elsif block.settings.use_current_product and product and product.collections.size > 0 %}
+              {% assign block_products = product.collections[0].products %}
             {% endif %}
-
           {% when 'recommendations' %}
-            {% assign block_products = recommendations.products %}
+            {% assign product_id = false %}
+            {% if block.settings.use_current_product and product %}
+              {% assign product_id = product.id %}
+            {% elsif block.settings.seed_product %}
+              {% assign product_id = block.settings.seed_product.id %}
+            {% endif %}
+            {% if product_id
+              and recommendations.performed
+              and recommendations.products_count > 0
+            %}
+              {% assign block_products = recommendations.products %}
+            {% else %}
+              {% assign block_products = '' %}
+            {% endif %}
         {% endcase %}
 
-        <div
-          class="{{ tab_classes }}"
-          js-content-blocks="tab-content"
-          data-tab="{{ tab_name }}"
-        >
+        {% if forloop.first %}
+          {% assign tab_classes = tab_classes | append: ' is-active' %}
+        {% elsif forloop.index == 2 and has_tabs == false %}
+          {% assign tab_classes = tab_classes | append: ' is-active' %}
+        {% endif %}
 
-          <!-- ✅ SWIPER if many products -->
-          {% if block_products != blank and block_products.size > 4 %}
+        {% if forloop.index == 2 %}
+          {% assign slides_per_view = '1.75' %}
+        {% endif %}
 
-
-            <swiper-container
-              class="content-blocks__swiper"
-              slides-per-view="2"
-              space-between="12"
-              breakpoints='{"768":{"slidesPerView":4,"spaceBetween":20}}'
-            >
-
-              <!-- ✅ FIX 3: STRONG duplicate filter -->
-              {% assign rendered_ids = '' %}
-              {% assign count = 0 %}
-
-              {% for item in block_products %}
-
-                {% assign id_str = item.id | append: '' %}
-
-                {% unless rendered_ids contains id_str or item.id == local_product_id %}
-
-                  <swiper-slide class="content-blocks__slide">
-                    {% render 'product-card', product: item %}
-                  </swiper-slide>
-
-                  {% assign rendered_ids = rendered_ids | append: id_str | append: ',' %}
-                  {% assign count = count | plus: 1 %}
-                {% endunless %}
-
-                {% if count >= 8 %}
-                  {% break %}
+        {% comment %} Always render tabs for debugging {% endcomment %}
+        {% if block.settings.title != blank %}
+          <div
+            class="{{ tab_classes }}"
+            js-content-blocks="tab-content"
+            data-tab="{{ tab_name }}"
+          >
+            {% if block_products.count > 0 and block_products.count > 4 %}
+              <swiper-container
+                class="content-blocks__swiper"
+                slides-per-view="{{ slides_per_view }}"
+                space-between="12"
+                breakpoints='
+                  {
+                    "768": {
+                      "spaceBetween": 20,
+                      "slidesPerView": 4
+                    }
+                  }
+                '
+                navigation-prev-el="#swiper-button-prev-{{ fallback_section_id }}-{{ tab_name }}"
+                navigation-next-el="#swiper-button-next-{{ fallback_section_id }}-{{ tab_name }}"
+                role="region"
+                aria-label="Product carousel"
+                aria-roledescription="carousel"
+              >
+                {% assign main_product_id = false %}
+                {% if product %}
+                  {% assign main_product_id = product.id %}
                 {% endif %}
 
-              {% endfor %}
-
-              <!-- ✅ FIX 4: fallback if recommendations are bad -->
-              {% if count < 4 %}
-                {% for p in collections['all'].products %}
-                  {% unless rendered_ids contains p.id or p.id == local_product_id %}
-                    <swiper-slide class="content-blocks__slide">
-                      {% render 'product-card', product: p %}
-                    </swiper-slide>
-                  {% endunless %}
-
-                  {% assign count = count | plus: 1 %}
-                  {% if count >= 8 %}
-                    {% break %}
-                  {% endif %}
-                {% endfor %}
+                {% if block.settings.product_feed_source == 'recommendations' %}
+                  {% assign rendered_ids = ',' %}
+                  {% for rec_item in recommendations.products limit: 8 %}
+                    {% assign id_token = ',' | append: rec_item.id | append: ',' %}
+                    {% unless rendered_ids contains id_token or rec_item.id == product_id %}
+                      <swiper-slide class="content-blocks__slide">
+                        {% render 'product-card', product: rec_item %}
+                      </swiper-slide>
+                      {% assign rendered_ids = rendered_ids | append: rec_item.id | append: ',' %}
+                    {% endunless %}
+                  {% endfor %}
+                {% else %}
+                  {% assign rendered_ids = ',' %}
+                  {% for p_item in block_products limit: 8 %}
+                    {% assign id_token = ',' | append: p_item.id | append: ',' %}
+                    {% unless rendered_ids contains id_token or p_item.id == main_product_id %}
+                      <swiper-slide class="content-blocks__slide">
+                        {% render 'product-card', product: p_item %}
+                      </swiper-slide>
+                      {% assign rendered_ids = rendered_ids | append: p_item.id | append: ',' %}
+                    {% endunless %}
+                  {% endfor %}
+                {% endif %}
+              </swiper-container>
+              {% if tabs_html != blank %}
+                {% assign section_id_with_tab = fallback_section_id
+                  | append: '-'
+                  | append: tab_name
+                %}
+                {% render 'swiper-nav',
+                  class: 'hide-on-desktop content-blocks__swiper-nav',
+                  section_id: section_id_with_tab
+                %}
               {% endif %}
-
-            </swiper-container>
-
-          {% elsif block_products != blank and block_products.size > 0 %}
-
-            <!-- ✅ GRID layout -->
-            <div class="content-blocks__grid">
-
-              {% assign rendered_ids = '' %}
-
-              {% for item in block_products %}
-                {% assign id_str = item.id | append: '' %}
-
-                {% unless rendered_ids contains id_str or item.id == local_product_id %}
-                  {% render 'product-card', product: item %}
-                  {% assign rendered_ids = rendered_ids | append: id_str | append: ',' %}
-                {% endunless %}
-              {% endfor %}
-
-            </div>
-
-          {% else %}
-
-            <!-- ✅ loading state -->
-            <div class="content-blocks__grid">
-              {% for i in (1..8) %}
-                {% render 'product-card', is_loading: true %}
-              {% endfor %}
-            </div>
-
-          {% endif %}
-
-        </div>
-
+            {% elsif block_products.count > 0 %}
+              <div class="content-blocks__grid">
+                {% if block.settings.product_feed_source == 'recommendations' %}
+                  {% assign rendered_ids = ',' %}
+                  {% for rec_item in recommendations.products %}
+                    {% assign id_token = ',' | append: rec_item.id | append: ',' %}
+                    {% unless rendered_ids contains id_token or rec_item.id == product_id %}
+                      {% render 'product-card', product: rec_item %}
+                      {% assign rendered_ids = rendered_ids | append: rec_item.id | append: ',' %}
+                    {% endunless %}
+                  {% endfor %}
+                {% else %}
+                  {% assign rendered_ids = ',' %}
+                  {% for p_item in block_products %}
+                    {% assign id_token = ',' | append: p_item.id | append: ',' %}
+                    {% unless rendered_ids contains id_token or p_item.id == main_product_id %}
+                      {% render 'product-card', product: p_item %}
+                      {% assign rendered_ids = rendered_ids | append: p_item.id | append: ',' %}
+                    {% endunless %}
+                  {% endfor %}
+                {% endif %}
+              </div>
+            {% else %}
+              {% comment %} Show loading placeholders for recommendations {% endcomment %}
+              <div class="content-blocks__grid">
+                {% for i in (1..8) %}
+                  {% render 'product-card', is_loading: true %}
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
       {% endfor %}
-
     </div>
   </div>
 </uwp-content-blocks>
@@ -185,12 +305,33 @@
   "name": "Product blocks",
   "tag": "section",
   "max_blocks": 2,
+
   "settings": [
     {
       "type": "text",
       "id": "title",
       "label": "Title",
       "default": "Featured Products"
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section padding",
+      "default": "--spacing-2xl",
+      "options": [
+        {
+          "value": "--spacing-md",
+          "label": "Narrow"
+        },
+        {
+          "value": "--spacing-2xl",
+          "label": "Default"
+        },
+        {
+          "value": "--spacing-4xl",
+          "label": "Wide"
+        }
+      ]
     }
   ],
   "blocks": [
@@ -198,29 +339,134 @@
       "type": "product_block",
       "name": "Product block",
       "settings": [
-        { "type": "text", "id": "title", "label": "Title" },
-
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "handle",
+          "label": "Handle"
+        },
         {
           "type": "select",
           "id": "product_feed_source",
-          "label": "Product source",
+          "label": "Product feed source",
           "default": "product_list",
           "options": [
-            { "value": "product_list", "label": "Manual" },
-            { "value": "collection", "label": "Collection" },
-            { "value": "recommendations", "label": "Recommendations" }
+            {
+              "value": "product_list",
+              "label": "Product list"
+            },
+            {
+              "value": "collection",
+              "label": "Collection"
+            },
+            {
+              "value": "recommendations",
+              "label": "Recommendations"
+            }
           ]
         },
-
-        { "type": "product_list", "id": "products", "label": "Products" },
-        { "type": "collection", "id": "collection", "label": "Collection" },
-        { "type": "product", "id": "seed_product", "label": "Seed product" },
-
+        {
+          "type": "product_list",
+          "id": "products",
+          "label": "Products",
+          "limit": 20,
+          "info": "Used when Product feed source is set to 'Product list'"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection",
+          "info": "First 8 products from this collection will be used"
+        },
+        {
+          "type": "product",
+          "id": "seed_product",
+          "label": "Seed product",
+          "info": "Product to base recommendations on"
+        },
         {
           "type": "checkbox",
           "id": "use_current_product",
-          "label": "Use current product",
-          "default": true
+          "label": "Use current product as seed",
+          "default": false,
+          "info": "Only works on product pages"
+        },
+
+        {
+          "type": "select",
+          "id": "recommendation_intent",
+          "label": "Recommendation type",
+          "default": "related",
+          "options": [
+            {
+              "value": "related",
+              "label": "Similar products (You may also like)"
+            },
+            {
+              "value": "complementary",
+              "label": "Complementary products (Pair it with)"
+            }
+          ],
+          "info": "Type of product recommendations to show"
+        },
+        {
+          "type": "select",
+          "id": "colour_scheme",
+          "label": "Colour scheme",
+          "default": "base-white-01",
+          "options": [
+            {
+              "value": "base-white-01",
+              "label": "Base white 01"
+            },
+            {
+              "value": "base-white-02",
+              "label": "Base white 02"
+            },
+            {
+              "value": "warm-stone",
+              "label": "Warm stone"
+            },
+            {
+              "value": "duck-egg",
+              "label": "Duck Egg"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product blocks",
+      "settings": {
+        "title": "Featured Products",
+        "section_padding": "--spacing-2xl"
+      },
+      "blocks": [
+        {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        },
+        {
+          "type": "product_block",
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
         }
       ]
     }
