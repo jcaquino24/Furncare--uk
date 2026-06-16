@@ -61,8 +61,8 @@
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": false,
-        "optional_richtext": "",
-        "small_container": false
+        "optional_richtext": "<p>Our Show Van service allows you and your residents to see, touch and test samples of our furniture without leaving your care facility. Whether it’s assessing comfort, exploring finishes, or ensuring suitability for specific care needs, our mobile showroom brings the experience directly to you - saving time, reducing disruption, and supporting confident, informed choices.</p>",
+        "small_container": true
       }
     },
     "image_video_banner_7QP6UR": {
