@@ -232,7 +232,7 @@
         "images_aHJkED": {
           "type": "images",
           "settings": {
-            "image_one": "shopify://shop_images/Catalyst-Interiors-Logo-Small_1.jpg"
+            "image_one": "shopify://shop_images/Remove_background_project_-_June_16_2026_at_11.12.09_1.png"
           }
         }
       },
@@ -242,7 +242,7 @@
       ],
       "name": "Image - Text",
       "settings": {
-        "colour_scheme": "base-white-01",
+        "colour_scheme": "warm-stone",
         "section_padding": "--spacing-2xl"
       }
     },
