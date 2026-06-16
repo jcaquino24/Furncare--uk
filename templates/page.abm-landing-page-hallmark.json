@@ -385,25 +385,12 @@
     "image_text_blocks_Njxr6K": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_C9qHt6": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Arbor_Oak_L.jpg",
-            "image_mobile": "shopify://shop_images/Arbor_Oak_L.jpg",
-            "title": "Arbor Oak",
-            "subtitle": "L",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_z3XRag": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Arbor_Oak.jpg",
             "image_mobile": "shopify://shop_images/Arbor_Oak.jpg",
-            "title": "",
+            "title": "Arbor Oak",
             "subtitle": "",
             "text": "",
             "block_colour_scheme": "light-mode",
@@ -512,7 +499,6 @@
         }
       },
       "block_order": [
-        "image_card_C9qHt6",
         "image_card_z3XRag",
         "image_card_7cG6nw",
         "image_card_FmLgBA",
