@@ -161,10 +161,10 @@
         "eyebrow_letter_spacing": 40,
         "eyebrow_transform": "uppercase",
         "eyebrow_margin_bottom": 20,
-        "text_color": "#0c0a09",
-        "heading_color": "#0c0a09",
-        "copy_color": "#57534e",
-        "eyebrow_color": "#78716c",
+        "text_color": "#243222",
+        "heading_color": "#243222",
+        "copy_color": "#243222",
+        "eyebrow_color": "#243222",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760,
@@ -174,6 +174,37 @@
         "panel_radius": 32,
         "panel_padding": 40,
         "panel_shadow_opacity": 6
+      }
+    },
+    "image_text_KacAb9": {
+      "type": "image-text",
+      "blocks": {
+        "images_bXQ7Jz": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/StaffMeeting2026_Unedited-005.jpg"
+          }
+        },
+        "content_GFYVgY": {
+          "type": "content",
+          "settings": {
+            "title": "A team that cares.",
+            "title_size": "xl",
+            "text": "Behind everything we do is a dedicated team of people who care about delivering the best support, service, and experience possible. With a mix of expertise, passion, and a hands-on approach, our team works together to make a real difference every day.",
+            "button_style": "primary",
+            "button_text": "Meet the team",
+            "button_url": "shopify://pages/our-people"
+          }
+        }
+      },
+      "block_order": [
+        "images_bXQ7Jz",
+        "content_GFYVgY"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-md"
       }
     },
     "audience": {
@@ -832,6 +863,7 @@
   "order": [
     "hero",
     "statement",
+    "image_text_KacAb9",
     "audience",
     "process",
     "proposition",
