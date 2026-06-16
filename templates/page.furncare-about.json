@@ -188,11 +188,11 @@
         "content_GFYVgY": {
           "type": "content",
           "settings": {
-            "title": "A team that cares.",
-            "title_size": "xl",
+            "title": "A team that <em>cares</em>.",
+            "title_size": "display",
             "text": "Behind everything we do is a dedicated team of people who care about delivering the best support, service, and experience possible. With a mix of expertise, passion, and a hands-on approach, our team works together to make a real difference every day.",
             "button_style": "primary",
-            "button_text": "Meet the team",
+            "button_text": "Meet our team",
             "button_url": "shopify://pages/our-people"
           }
         }
