@@ -91,6 +91,11 @@
         "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
         "disabled": false,
         "settings": {}
+      },
+      "16556818989376849476": {
+        "type": "shopify://apps/password-lock-pages/blocks/password_protection/4dc6a6fa-3301-49ba-95e6-03c694327386",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
