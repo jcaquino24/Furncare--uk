@@ -242,7 +242,7 @@
       ],
       "name": "Image - Text",
       "settings": {
-        "colour_scheme": "warm-stone",
+        "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl"
       }
     },
@@ -277,7 +277,7 @@
         "max_width_desktop": 64,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
-        "colour_scheme": "base-white-01",
+        "colour_scheme": "green-02",
         "enable_animation": true,
         "optional_richtext": "",
         "small_container": false
@@ -364,7 +364,7 @@
       "settings": {
         "title": "THE STYLES",
         "section_padding": "--spacing-md",
-        "colour_scheme": "warm-stone",
+        "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
         "enable_lightbox": false
@@ -478,7 +478,7 @@
       "settings": {
         "title": "the wood finishes",
         "section_padding": "--spacing-2xl",
-        "colour_scheme": "warm-stone",
+        "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
         "enable_lightbox": true
@@ -592,7 +592,7 @@
       "settings": {
         "title": "the colour finishes",
         "section_padding": "--spacing-2xl",
-        "colour_scheme": "warm-stone",
+        "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
         "enable_lightbox": false
@@ -650,7 +650,7 @@
       "settings": {
         "title": "the finishing touches",
         "section_padding": "--spacing-2xl",
-        "colour_scheme": "warm-stone",
+        "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
         "enable_lightbox": false
@@ -687,7 +687,7 @@
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
-        "colour_scheme": "base-white-02",
+        "colour_scheme": "warm-stone",
         "enable_animation": true,
         "optional_richtext": "",
         "small_container": false
