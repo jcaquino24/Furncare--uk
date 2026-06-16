@@ -1,31 +1,26 @@
 {% schema %}
 {
-  "name": "AI Recommendations",
+  "name": "AI Recommendations (Auto)",
   "settings": [
     {
       "type": "text",
       "id": "title",
-      "label": "Section Title",
-      "default": "Recommended For You"
-    },
-    {
-      "type": "collection",
-      "id": "source_collection",
-      "label": "Product Source Collection"
+      "label": "Heading",
+      "default": "You May Also Like"
     },
     {
       "type": "range",
-      "id": "max_products",
-      "label": "Max Products",
+      "id": "limit",
+      "label": "Number of products",
       "min": 2,
-      "max": 12,
+      "max": 10,
       "step": 1,
       "default": 4
     }
   ],
   "presets": [
     {
-      "name": "AI Recommendations"
+      "name": "AI Recommendations Auto"
     }
   ]
 }
@@ -34,65 +29,47 @@
 <section class="ai-recommendations">
   <h2>{{ section.settings.title }}</h2>
 
-  <div id="ai-recommendations-grid" class="grid"></div>
+  <div id="recommendations-{{ section.id }}" class="grid"></div>
 </section>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const products = {{ collections[section.settings.source_collection].products | json }};
-  const maxProducts = {{ section.settings.max_products }};
-  
-  // Simulated "user behavior" (replace with real signals if needed)
-  const userPreferences = {
-    tags: ["featured", "bestseller"],
-    maxPrice: 200
-  };
+  const container = document.getElementById("recommendations-{{ section.id }}");
 
-  function scoreProduct(product) {
-    let score = 0;
+  // Detect current product (if on product page)
+  const productId = {{ product.id | default: 'null' }};
+  const limit = {{ section.settings.limit }};
 
-    // tag matching
-    if (product.tags) {
-      product.tags.forEach(tag => {
-        if (userPreferences.tags.includes(tag.toLowerCase())) {
-          score += 2;
-        }
-      });
-    }
+  let url = "";
 
-    // price preference
-    if (product.price / 100 <= userPreferences.maxPrice) {
-      score += 1;
-    }
-
-    // simple boost for available products
-    if (product.available) {
-      score += 1;
-    }
-
-    return score;
+  // If on product page → use related recommendations
+  if (productId) {
+    url = `/recommendations/products.json?product_id=${productId}&limit=${limit}`;
+  } else {
+    // fallback (homepage etc.)
+    url = `/products.json?limit=${limit}`;
   }
 
-  const rankedProducts = products
-    .map(p => ({ product: p, score: scoreProduct(p) }))
-    .sort((a, b) => b.score - a.score)
-    .slice(0, maxProducts);
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      const products = data.products || [];
 
-  const container = document.getElementById("ai-recommendations-grid");
-
-  rankedProducts.forEach(item => {
-    const p = item.product;
-
-    const html = `
-      <div class="product-card">
-        <a href="${        <img src="${p.featured_image}" alt="${pitle}</h3>
-          <p>$${(p.price / 100).toFixed(2)}</p>
-        </a>
-      </div>
-    `;
-
-    container.innerHTML += html;
-  });
+      products.forEach(p => {
+        const html = `
+          <div class="product-card">
+            <{p.url}
+              <img src="${p.images[0]?.src || ''   <h3>${p.title}</h3>
+              <p>$${(p.variants[0].price)}</p>
+            </a>
+          </div>
+        `;
+        container.innerHTML += html;
+      });
+    })
+    .catch(err => {
+      console.error("Recommendation error:", err);
+    });
 });
 </script>
 
@@ -106,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   margin-bottom: 20px;
 }
 
-.ai-recommendations .grid {
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
@@ -120,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 
 .product-card img {
-  max-width: 100%;
+  width: 100%;
   border-radius: 8px;
 }
 
