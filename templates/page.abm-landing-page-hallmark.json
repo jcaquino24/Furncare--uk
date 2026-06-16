@@ -300,17 +300,6 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_zhJH3W": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_rnGB3p": {
           "type": "image_card",
           "settings": {
@@ -366,7 +355,6 @@
       },
       "block_order": [
         "image_card_YdKMVW",
-        "image_card_zhJH3W",
         "image_card_rnGB3p",
         "image_card_QnhtGF",
         "image_card_WzggzG",
@@ -401,7 +389,9 @@
         "image_card_7cG6nw": {
           "type": "image_card",
           "settings": {
-            "title": "",
+            "image": "shopify://shop_images/Moorland_Char.jpg",
+            "image_mobile": "shopify://shop_images/Moorland_Char.jpg",
+            "title": "Moorland Char",
             "subtitle": "",
             "text": "",
             "block_colour_scheme": "light-mode",
@@ -412,7 +402,9 @@
         "image_card_FmLgBA": {
           "type": "image_card",
           "settings": {
-            "title": "",
+            "image": "shopify://shop_images/Moorland_Cinder.jpg",
+            "image_mobile": "shopify://shop_images/Moorland_Cinder.jpg",
+            "title": "Moorland Cinder",
             "subtitle": "",
             "text": "",
             "block_colour_scheme": "light-mode",
@@ -423,7 +415,9 @@
         "image_card_LDVnmh": {
           "type": "image_card",
           "settings": {
-            "title": "",
+            "image": "shopify://shop_images/Moorland_Oak.jpg",
+            "image_mobile": "shopify://shop_images/Moorland_Oak.jpg",
+            "title": "Moorland Oak",
             "subtitle": "",
             "text": "",
             "block_colour_scheme": "light-mode",
@@ -434,7 +428,9 @@
         "image_card_CATMiz": {
           "type": "image_card",
           "settings": {
-            "title": "",
+            "image": "shopify://shop_images/Nera_Oak.jpg",
+            "image_mobile": "shopify://shop_images/Nera_Oak.jpg",
+            "title": "Nera Oak",
             "subtitle": "",
             "text": "",
             "block_colour_scheme": "light-mode",
@@ -445,7 +441,9 @@
         "image_card_jgUrbh": {
           "type": "image_card",
           "settings": {
-            "title": "",
+            "image": "shopify://shop_images/Northen_Wenge.jpg",
+            "image_mobile": "shopify://shop_images/Northen_Wenge.jpg",
+            "title": "Northern Wenge",
             "subtitle": "",
             "text": "",
             "block_colour_scheme": "light-mode",
@@ -456,40 +454,9 @@
         "image_card_UPtXLX": {
           "type": "image_card",
           "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_MbC338": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_fEqCc8": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_CmAdNt": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
+            "image": "shopify://shop_images/Sable_Walnut.jpg",
+            "image_mobile": "shopify://shop_images/Sable_Walnut.jpg",
+            "title": "Sable Walnut",
             "subtitle": "",
             "text": "",
             "block_colour_scheme": "light-mode",
@@ -505,10 +472,7 @@
         "image_card_LDVnmh",
         "image_card_CATMiz",
         "image_card_jgUrbh",
-        "image_card_UPtXLX",
-        "image_card_MbC338",
-        "image_card_fEqCc8",
-        "image_card_CmAdNt"
+        "image_card_UPtXLX"
       ],
       "name": "Image text blocks",
       "settings": {
