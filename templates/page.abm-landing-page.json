@@ -496,6 +496,120 @@
         "enable_lightbox": true
       }
     },
+    "image_text_blocks_PdaHjR": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "image_card_Y4cAGx": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Bracken_Sage.jpg",
+            "image_mobile": "shopify://shop_images/Bracken_Sage.jpg",
+            "title": "Bracken Sage",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_zfkbkY": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Brushed_Cashmere.jpg",
+            "image_mobile": "shopify://shop_images/Brushed_Cashmere.jpg",
+            "title": "Brushed Cashmere",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_LwBVcH": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Coastal_Blue.jpg",
+            "image_mobile": "shopify://shop_images/Coastal_Blue.jpg",
+            "title": "Coastal Blue",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_Pm3ga6": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Coastal_Storm.jpg",
+            "image_mobile": "shopify://shop_images/Coastal_Storm.jpg",
+            "title": "Coastal Storm",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_GRBqn6": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Minx.jpg",
+            "image_mobile": "shopify://shop_images/Minx.jpg",
+            "title": "Mink",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_DLem3j": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Nordic_Slate.jpg",
+            "image_mobile": "shopify://shop_images/Nordic_Slate.jpg",
+            "title": "Nordic Slate",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_ATQFE3": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Porcelain.jpg",
+            "image_mobile": "shopify://shop_images/Porcelain.jpg",
+            "title": "Porcelain",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_Y4cAGx",
+        "image_card_zfkbkY",
+        "image_card_LwBVcH",
+        "image_card_Pm3ga6",
+        "image_card_GRBqn6",
+        "image_card_DLem3j",
+        "image_card_ATQFE3"
+      ],
+      "name": "Image text blocks",
+      "settings": {
+        "title": "the colour finishes",
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "warm-stone",
+        "text_position": "over_image",
+        "mobile_layout": "swiper",
+        "enable_lightbox": false
+      }
+    },
     "image_text_blocks_RLihj8": {
       "type": "image-text-blocks",
       "blocks": {
@@ -624,6 +738,7 @@
     "richtext_9YY97W",
     "image_text_blocks_ktBnWr",
     "image_text_blocks_VMwqaR",
+    "image_text_blocks_PdaHjR",
     "image_text_blocks_RLihj8",
     "richtext_fxdPbE",
     "blocks_mRjBap"
