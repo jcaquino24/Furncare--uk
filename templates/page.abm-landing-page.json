@@ -289,8 +289,8 @@
         "image_card_YdKMVW": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Galloway_3DR_L.jpg",
-            "image_mobile": "shopify://shop_images/Galloway_close_mock_up_sunny.png",
+            "image": "shopify://shop_images/Galloway_CU.jpg",
+            "image_mobile": "shopify://shop_images/Galloway_CU.jpg",
             "title": "Galloway",
             "subtitle": "",
             "text": "<p>A Georgian inspired model for a traditional, elegant look.</p>",
@@ -303,8 +303,8 @@
         "image_card_rnGB3p": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Abbott_5de1ee9e-695c-4a6c-9911-da8ad6320859.png",
-            "image_mobile": "shopify://shop_images/Abbott.png",
+            "image": "shopify://shop_images/Abbott_CU.jpg",
+            "image_mobile": "shopify://shop_images/Abbott_CU.jpg",
             "title": "Abbott",
             "subtitle": "",
             "text": "",
@@ -316,8 +316,8 @@
         "image_card_QnhtGF": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Tilbury.png",
-            "image_mobile": "shopify://shop_images/Tilbury_0a20a59b-2ad7-4ddd-b793-a7ca6b072a0b.png",
+            "image": "shopify://shop_images/Tilbury_CU.jpg",
+            "image_mobile": "shopify://shop_images/Tilbury_CU_975ca1f3-8fbe-4461-9b9f-e5793529d249.jpg",
             "title": "Tilbury",
             "subtitle": "",
             "text": "",
@@ -329,8 +329,8 @@
         "image_card_WzggzG": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Bronson.png",
-            "image_mobile": "shopify://shop_images/Bronson_2bba57f2-8f10-40b1-aa2d-8b8cd30a919e.png",
+            "image": "shopify://shop_images/Bronson_CU.jpg",
+            "image_mobile": "shopify://shop_images/Bronson_CU_b7e8a291-4ca0-4499-a6ae-7b6d9b87f440.jpg",
             "title": "Bronson",
             "subtitle": "",
             "text": "",
@@ -342,8 +342,8 @@
         "image_card_UNtNfH": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Ellington.png",
-            "image_mobile": "shopify://shop_images/Ellington_da814b8b-811d-481e-a3e3-6f9c716a943f.png",
+            "image": "shopify://shop_images/Ellington_CU.jpg",
+            "image_mobile": "shopify://shop_images/Ellington_CU_ed7f63fc-d95e-4b0c-a758-d54a6a52b997.jpg",
             "title": "Ellington",
             "subtitle": "",
             "text": "",
