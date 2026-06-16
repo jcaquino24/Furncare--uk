@@ -382,182 +382,118 @@
         "enable_lightbox": false
       }
     },
-    "image_text_blocks_Njxr6K": {
+    "image_text_blocks_93Pn93": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_BKNBgq": {
+        "image_card_CPmFWN": {
           "type": "image_card",
           "settings": {
-            "title": "",
+            "image": "shopify://shop_images/Arbor_Oak.jpg",
+            "image_mobile": "shopify://shop_images/Arbor_Oak.jpg",
+            "title": "Arbor Oak",
             "subtitle": "",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         },
-        "image_card_Ey6CnJ": {
+        "image_card_XiyjTj": {
           "type": "image_card",
           "settings": {
-            "title": "",
+            "image": "shopify://shop_images/Moorland_Char.jpg",
+            "image_mobile": "shopify://shop_images/Moorland_Char.jpg",
+            "title": "Moorland Char",
             "subtitle": "",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         },
-        "image_card_RaBHrT": {
+        "image_card_Rtq4aB": {
           "type": "image_card",
           "settings": {
-            "title": "",
+            "image": "shopify://shop_images/Moorland_Cinder.jpg",
+            "image_mobile": "shopify://shop_images/Moorland_Cinder.jpg",
+            "title": "Moorland Cinder",
             "subtitle": "",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         },
-        "image_card_tBthPT": {
+        "image_card_rUURUW": {
           "type": "image_card",
           "settings": {
-            "title": "",
+            "image": "shopify://shop_images/Moorland_Oak.jpg",
+            "image_mobile": "shopify://shop_images/Moorland_Oak.jpg",
+            "title": "Moorland Oak",
             "subtitle": "",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         },
-        "image_card_kaA8MY": {
+        "image_card_Vc9CF9": {
           "type": "image_card",
           "settings": {
-            "title": "",
+            "image": "shopify://shop_images/Nera_Oak.jpg",
+            "image_mobile": "shopify://shop_images/Nera_Oak.jpg",
+            "title": "Nera Oak",
             "subtitle": "",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         },
-        "image_card_zRXYAk": {
+        "image_card_gLCLR7": {
           "type": "image_card",
           "settings": {
-            "title": "",
+            "image": "shopify://shop_images/Northen_Wenge.jpg",
+            "image_mobile": "shopify://shop_images/Northen_Wenge.jpg",
+            "title": "Northern Wenge",
             "subtitle": "",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         },
-        "image_card_qBqT46": {
+        "image_card_UCEBtt": {
           "type": "image_card",
           "settings": {
-            "title": "",
+            "image": "shopify://shop_images/Sable_Walnut.jpg",
+            "image_mobile": "shopify://shop_images/Sable_Walnut.jpg",
+            "title": "Sable Walnut",
             "subtitle": "",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_ikKjqE": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_Q7dVFV": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_daQbAC": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_dyw3ec": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/B0A.jpg",
-            "image_mobile": "shopify://shop_images/B0A.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_yWqyQp": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/B0B.jpg",
-            "image_mobile": "shopify://shop_images/B0B.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_C9qHt6": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-03-10_at_16.24.43.png",
-            "image_mobile": "shopify://shop_images/Screenshot_2026-03-10_at_16.24.43.png",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         }
       },
       "block_order": [
-        "image_card_BKNBgq",
-        "image_card_Ey6CnJ",
-        "image_card_RaBHrT",
-        "image_card_tBthPT",
-        "image_card_kaA8MY",
-        "image_card_zRXYAk",
-        "image_card_qBqT46",
-        "image_card_ikKjqE",
-        "image_card_Q7dVFV",
-        "image_card_daQbAC",
-        "image_card_dyw3ec",
-        "image_card_yWqyQp",
-        "image_card_C9qHt6"
+        "image_card_CPmFWN",
+        "image_card_XiyjTj",
+        "image_card_Rtq4aB",
+        "image_card_rUURUW",
+        "image_card_Vc9CF9",
+        "image_card_gLCLR7",
+        "image_card_UCEBtt"
       ],
       "name": "Image text blocks",
       "settings": {
-        "title": "the finishes",
+        "title": "the wood finishes",
         "section_padding": "--spacing-2xl",
         "colour_scheme": "warm-stone",
         "text_position": "over_image",
         "mobile_layout": "swiper",
-        "enable_lightbox": false
+        "enable_lightbox": true
       }
     },
     "image_text_blocks_RLihj8": {
@@ -611,6 +547,120 @@
       "name": "Image text blocks",
       "settings": {
         "title": "the finishing touches",
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "warm-stone",
+        "text_position": "over_image",
+        "mobile_layout": "swiper",
+        "enable_lightbox": false
+      }
+    },
+    "image_text_blocks_RqJ8KP": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "image_card_AzhrfH": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Bracken_Sage.jpg",
+            "image_mobile": "shopify://shop_images/Bracken_Sage.jpg",
+            "title": "Bracken Sage",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_U7niaP": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Brushed_Cashmere.jpg",
+            "image_mobile": "shopify://shop_images/Brushed_Cashmere.jpg",
+            "title": "Brushed Cashmere",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_Kqtxjt": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Coastal_Blue.jpg",
+            "image_mobile": "shopify://shop_images/Coastal_Blue.jpg",
+            "title": "Coastal Blue",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_6PWBar": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Coastal_Storm.jpg",
+            "image_mobile": "shopify://shop_images/Coastal_Storm.jpg",
+            "title": "Coastal Storm",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_jBTT7L": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Minx.jpg",
+            "image_mobile": "shopify://shop_images/Minx.jpg",
+            "title": "Mink",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_YT8pxx": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Nordic_Slate.jpg",
+            "image_mobile": "shopify://shop_images/Nordic_Slate.jpg",
+            "title": "Nordic Slate",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_QnHfmC": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Porcelain.jpg",
+            "image_mobile": "shopify://shop_images/Porcelain.jpg",
+            "title": "Porcelain",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_AzhrfH",
+        "image_card_U7niaP",
+        "image_card_Kqtxjt",
+        "image_card_6PWBar",
+        "image_card_jBTT7L",
+        "image_card_YT8pxx",
+        "image_card_QnHfmC"
+      ],
+      "name": "Image text blocks",
+      "settings": {
+        "title": "the colour finishes",
         "section_padding": "--spacing-2xl",
         "colour_scheme": "warm-stone",
         "text_position": "over_image",
@@ -687,8 +737,9 @@
     "image_text_AnXHqr",
     "richtext_9YY97W",
     "image_text_blocks_ktBnWr",
-    "image_text_blocks_Njxr6K",
+    "image_text_blocks_93Pn93",
     "image_text_blocks_RLihj8",
+    "image_text_blocks_RqJ8KP",
     "richtext_fxdPbE",
     "blocks_mRjBap"
   ]
