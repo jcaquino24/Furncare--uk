@@ -204,7 +204,7 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-md"
+        "section_padding": "--spacing-2xl"
       }
     },
     "audience": {
