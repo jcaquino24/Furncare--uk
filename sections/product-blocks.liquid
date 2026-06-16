@@ -55,7 +55,7 @@
 
   assign fallback_section_id = section.id | default: 'product-blocks'
   if fallback_section_id == blank or fallback_section_id == empty
-  
+    assign fallback_section_id = 'product-blocks'
   endif
 
   # Check if we should show tabs - be more lenient
