@@ -783,6 +783,26 @@
         "pathway_min_height": 152
       }
     },
+    "image_video_banner_gfwFXG": {
+      "type": "image-video-banner",
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 800,
+        "height_mobile": 300,
+        "maintain_aspect_ratio": true,
+        "add_header_offset": false,
+        "media_type": "video",
+        "video_desktop": "shopify://files/videos/Furncare Brand Film.mp4",
+        "show_controls": true,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "light",
+        "content_position": "center-center",
+        "content_alignment": "left"
+      }
+    },
     "final_cta": {
       "type": "furncare-about-final-cta",
       "settings": {
@@ -872,6 +892,7 @@
     "proposition",
     "proof",
     "pathways",
+    "image_video_banner_gfwFXG",
     "final_cta"
   ]
 }
