@@ -129,6 +129,9 @@
       </details>
 
       {%- for filter in [request.page_type].filters -%}
+        
+  {% unless filter.label == "Fabric Type" and (collection.handle == "find-your-perfect-curtain-fabric" or collection.handle == "upholstery-fabrics") %}
+
         {%- if filter.type == 'price_range' -%}
           {%- liquid
             if template.name == 'search'
@@ -381,6 +384,9 @@
             </div>
           </details>
         {%- endif -%}
+
+  {% endunless %}
+
       {%- endfor -%}
 
       {% if promo_block != blank %}
