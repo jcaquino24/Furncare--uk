@@ -473,7 +473,7 @@
         "header_max_width": 780,
         "content_max_width": 960,
         "text_alignment": "left",
-        "section_border_color": "#F9F7F0",
+        "section_border_color": "#f9f7f0",
         "border_top_width": 0,
         "border_bottom_width": 0,
         "heading_size_desktop": 48,
@@ -675,7 +675,7 @@
           "settings": {
             "title": "New-build care home",
             "copy": "Explore how Furncare can support this type of project.",
-            "link": ""
+            "link": "shopify://pages/new-build-projects"
           }
         },
         "pathway_2": {
