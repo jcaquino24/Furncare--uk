@@ -17,7 +17,7 @@
   style="--section-padding: var({{ section.settings.section_padding }});"
 >
   <div class="container">
-    <div class="image-text__grid fa-content-box{{ reveal_class }}">
+    <div class="image-text__grid {{ reveal_class }}">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'images' %}
