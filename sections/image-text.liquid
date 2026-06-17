@@ -7,7 +7,9 @@
     assign reveal_class = ' fa-reveal'
   endif
 -%}
-
+{% style %}
+  {% render 'furncare-about-style-vars', selector: furncare_selector, section_settings: section.settings %}
+{% endstyle %}
 {%- liquid
   assign colour_scheme = section.settings.colour_scheme
 -%}
