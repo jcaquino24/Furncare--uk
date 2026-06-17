@@ -30,7 +30,7 @@
         "min_height": 100,
         "min_height_mobile": 80,
         "content_vertical_position": "center",
-        "enable_parallax": true,
+        "enable_parallax": false,
         "overlay_color": "#243222",
         "overlay_color_2": "#243222",
         "overlay_opacity": 20,
