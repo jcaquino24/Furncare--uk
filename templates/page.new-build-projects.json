@@ -124,33 +124,19 @@
         "article_J3nrN4": {
           "type": "article",
           "settings": {
-            "article": ""
+            "article": "news/ashton-meadows"
           }
         },
         "article_y3fUY9": {
           "type": "article",
           "settings": {
-            "article": ""
-          }
-        },
-        "article_pNhgxc": {
-          "type": "article",
-          "settings": {
-            "article": ""
-          }
-        },
-        "article_A8kzyM": {
-          "type": "article",
-          "settings": {
-            "article": ""
+            "article": "news/old-malton"
           }
         }
       },
       "block_order": [
         "article_J3nrN4",
-        "article_y3fUY9",
-        "article_pNhgxc",
-        "article_A8kzyM"
+        "article_y3fUY9"
       ],
       "name": "Blog article row",
       "settings": {
