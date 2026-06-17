@@ -14,7 +14,7 @@
 {%- liquid
   assign colour_scheme = section.settings.colour_scheme
 -%}
-
+<section id="FurncareAbouttext-{{ section.id }}">
 <div
   class="image-text colour-scheme--{{ colour_scheme }}"
   style="--section-padding: var({{ section.settings.section_padding }});"
@@ -98,7 +98,7 @@
     </div>
   </div>
 </div>
-
+</section>
 {% schema %}
 {
   "name": "Image - Text",
