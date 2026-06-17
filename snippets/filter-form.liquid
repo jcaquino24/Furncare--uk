@@ -130,7 +130,11 @@
 
       {%- for filter in [request.page_type].filters -%}
         
-  {% unless filter.label == "Fabric Type" and (collection.handle == "find-your-perfect-curtain-fabric" or collection.handle == "upholstery-fabrics") %}
+ 
+{% if filter.label != "Fabric Type"
+  or collection.handle != "find-your-perfect-curtain-fabric"
+  and collection.handle != "upholstery-fabrics" %}
+
 
         {%- if filter.type == 'price_range' -%}
           {%- liquid
@@ -385,7 +389,7 @@
           </details>
         {%- endif -%}
 
-  {% endunless %}
+      {% endif %}
 
       {%- endfor -%}
 
