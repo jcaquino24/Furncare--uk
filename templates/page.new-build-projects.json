@@ -118,6 +118,49 @@
         "secondary_button_hover_border": "#f9f7f0"
       }
     },
+    "blog_article_row_4iJ6Ye": {
+      "type": "blog-article-row",
+      "blocks": {
+        "article_J3nrN4": {
+          "type": "article",
+          "settings": {
+            "article": ""
+          }
+        },
+        "article_y3fUY9": {
+          "type": "article",
+          "settings": {
+            "article": ""
+          }
+        },
+        "article_pNhgxc": {
+          "type": "article",
+          "settings": {
+            "article": ""
+          }
+        },
+        "article_A8kzyM": {
+          "type": "article",
+          "settings": {
+            "article": ""
+          }
+        }
+      },
+      "block_order": [
+        "article_J3nrN4",
+        "article_y3fUY9",
+        "article_pNhgxc",
+        "article_A8kzyM"
+      ],
+      "name": "Blog article row",
+      "settings": {
+        "title": "NEW BUILD CASE STUDIES",
+        "section_padding": "--spacing-2xl",
+        "show_badges": true,
+        "show_video_indicator": false,
+        "background_colour_scheme": "base-white-01"
+      }
+    },
     "audience": {
       "type": "furncare-about-audience",
       "blocks": {
@@ -560,6 +603,7 @@
   },
   "order": [
     "hero",
+    "blog_article_row_4iJ6Ye",
     "audience",
     "process",
     "proof",
