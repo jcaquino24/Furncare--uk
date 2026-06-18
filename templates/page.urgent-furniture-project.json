@@ -118,6 +118,58 @@
         "secondary_button_hover_border": "#f9f7f0"
       }
     },
+    "product_blocks_bUgmqL": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_y6CUNJ": {
+          "type": "product_block",
+          "settings": {
+            "title": "Stock New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "cambourne-high-back-chair-juniper",
+              "cambourne-medium-back-2-seater-sofa-alba-wheat",
+              "somerton-bedroom-furniture-bundle",
+              "lingwood-tub-chair-1"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        },
+        "product_block_xk9cQi": {
+          "type": "product_block",
+          "settings": {
+            "title": "Stock Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [
+              "karsson-bedroom-furniture-bundle",
+              "alice-highback-chair-with-wings-kilda-graphite",
+              "kalmar-chair-with-arms-aston-espresso",
+              "fenton-overbed-table-nera-oak"
+            ],
+            "collection": "best-sellers",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_y6CUNJ",
+        "product_block_xk9cQi"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Shop Now",
+        "section_padding": "--spacing-2xl"
+      }
+    },
     "blog_article_row_4iJ6Ye": {
       "type": "blog-article-row",
       "blocks": {
@@ -608,6 +660,7 @@
   },
   "order": [
     "hero",
+    "product_blocks_bUgmqL",
     "blog_article_row_4iJ6Ye",
     "audience",
     "process",
