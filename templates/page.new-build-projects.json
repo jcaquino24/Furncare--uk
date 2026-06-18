@@ -262,6 +262,78 @@
         "background_colour_scheme": "warm-stone"
       }
     },
+    "faqs_WTbyFt": {
+      "type": "faqs",
+      "blocks": {
+        "faq_LEwFFA": {
+          "type": "faq",
+          "settings": {
+            "question": "When should we start thinking about furniture for a new-build care facility?",
+            "answer": "<p>The earlier the better. Involving Furncare during the planning or specification stage can help you make more confident decisions around room layouts, furniture choices, finishes, budgets and project timelines.</p>"
+          }
+        },
+        "faq_XRN9fG": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you help before we know exactly what furniture we need?",
+            "answer": "<p>Yes. Many new-build projects begin with an outline brief, floor plans or simply just a vision. Our team can help you understand what may be needed across bedrooms, lounges, dining areas, communal spaces and other key areas of the home.</p>"
+          }
+        },
+        "faq_NyG9mB": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you work with our interior designer?",
+            "answer": "<p>Yes. We regularly support wider project teams by helping with furniture selection, specification details, product guidance and practical considerations for care environments.</p>"
+          }
+        },
+        "faq_6GPRtf": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you provide options for different budgets?",
+            "answer": "<p>Yes. Every project has different priorities, so we can help you explore suitable furniture options based on your budget, timescale, room requirements and overall design direction.</p>"
+          }
+        },
+        "faq_dQiNJW": {
+          "type": "faq",
+          "settings": {
+            "question": "What information should we share when we enquire?",
+            "answer": "<p>Helpful details include your project location, expected opening date, number of bedrooms, key spaces to furnish, budget stage and whether you already have plans, drawings or a furniture schedule. Don’t worry if you don’t have everything ready - we can still help guide the next step.</p>"
+          }
+        },
+        "faq_Gkr7Lh": {
+          "type": "faq",
+          "settings": {
+            "question": "What happens after we submit a new-build enquiry?",
+            "answer": "<p>Our team will review your project details and get in touch to understand what stage you’re at, what support you need and how we can help with suitable furniture options, specification guidance or next steps.</p>"
+          }
+        },
+        "faq_HKmzpn": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you support future furniture needs after the home opens?",
+            "answer": "<p>Yes. We can continue to support your home with replacement furniture, additional requirements and future updates as your needs change over time.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_LEwFFA",
+        "faq_XRN9fG",
+        "faq_NyG9mB",
+        "faq_6GPRtf",
+        "faq_dQiNJW",
+        "faq_Gkr7Lh",
+        "faq_HKmzpn"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "faq_title": "Frequently Asked Questions",
+        "title_element": "h2",
+        "faq_text": "",
+        "title_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "padding": "default"
+      }
+    },
     "process": {
       "type": "furncare-about-process",
       "blocks": {
@@ -594,6 +666,7 @@
     "hero",
     "audience",
     "blog_article_row_4iJ6Ye",
+    "faqs_WTbyFt",
     "process",
     "proof",
     "final_cta"
