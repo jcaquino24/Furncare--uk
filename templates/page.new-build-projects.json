@@ -688,6 +688,18 @@
             "lightbox_caption": ""
           }
         },
+        "image_card_6wBhQ4": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Corridor_28.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_Vp6yGp": {
           "type": "image_card",
           "settings": {
@@ -748,18 +760,6 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_6wBhQ4": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Corridor_28.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_xhRRgC": {
           "type": "image_card",
           "settings": {
@@ -776,12 +776,12 @@
       "block_order": [
         "image_card_MJNDNr",
         "image_card_3hxWtj",
+        "image_card_6wBhQ4",
         "image_card_Vp6yGp",
         "image_card_aRiKKc",
         "image_card_EBDKE4",
         "image_card_jcHi9e",
         "image_card_TGM8zi",
-        "image_card_6wBhQ4",
         "image_card_xhRRgC"
       ],
       "name": "Image text blocks",
