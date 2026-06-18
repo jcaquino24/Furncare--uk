@@ -777,7 +777,7 @@
         "section_padding": "--spacing-2xl",
         "colour_scheme": "base-white-01",
         "text_position": "over_image",
-        "mobile_layout": "grid",
+        "mobile_layout": "swiper",
         "enable_lightbox": false
       }
     }
