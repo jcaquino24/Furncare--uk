@@ -494,7 +494,7 @@
         "eyebrow": "Project pathways",
         "heading": "Tell us what you're planning.",
         "background_gradient": "",
-        "background_color": "#f9f7f0",
+        "background_color": "#F9F7F0",
         "max_width": 1280,
         "gutter_desktop": 24,
         "gutter_mobile": 16,
@@ -967,8 +967,8 @@
     "audience",
     "process",
     "pathways",
-    "proposition",
     "proof",
+    "proposition",
     "furncare_about_pathways_RVaAzR",
     "image_video_banner_gfwFXG",
     "final_cta"
