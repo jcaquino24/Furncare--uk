@@ -186,11 +186,11 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "max_width_desktop": 100,
-        "section_padding": "--spacing-2xl",
+        "max_width_desktop": 73,
+        "section_padding": "--spacing-6xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
-        "enable_animation": false,
+        "enable_animation": true,
         "optional_richtext": "",
         "small_container": false
       }
@@ -206,8 +206,8 @@
         "media_type": "video",
         "video_mobile": "shopify://files/videos/Furncare Edit V6-1_380d84d1-144a-4f06-8683-81fdf8054b5d.mp4",
         "show_controls": true,
-        "mute_video": true,
-        "autoplay_video": false,
+        "mute_video": false,
+        "autoplay_video": true,
         "show_overlay": false,
         "overlay_background": "",
         "colour_scheme": "light",
@@ -249,137 +249,125 @@
         "reveal_duration": 760
       }
     },
-    "richtext_9YY97W": {
+    "richtext_FQeYHf": {
       "type": "richtext",
       "blocks": {
-        "heading_Vt6bA3": {
+        "heading_V98tcR": {
           "type": "heading",
           "settings": {
-            "text": "5 Styles, 13 Finishes.",
+            "text": "Here's your <em>exclusive</em> preview of our upcoming range...",
             "heading_level": "h2",
             "heading_style": "title-display"
           },
           "blocks": {}
         },
-        "tagline_G94DD8": {
+        "tagline_EXfDfN": {
           "type": "tagline",
           "name": "Tagline",
           "settings": {
-            "content": "We're delighted to give you exclusive access to our new furniture ranges that are launching next month, allowing you to create truly bespoke bedrooms for care spaces.",
-            "tagline_style": "body-lg"
+            "content": "We're delighted to give you exclusive access to our new bedroom furniture ranges that are launching next month, allowing you to create truly bespoke bedrooms for care spaces.",
+            "tagline_style": "body-xl"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "heading_Vt6bA3",
-        "tagline_G94DD8"
+        "heading_V98tcR",
+        "tagline_EXfDfN"
       ],
       "name": "Rich Text",
       "settings": {
-        "max_width_desktop": 100,
+        "max_width_desktop": 64,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
-        "colour_scheme": "base-white-01",
+        "colour_scheme": "green-02",
         "enable_animation": true,
         "optional_richtext": "",
         "small_container": false
       }
     },
-    "image_text_blocks_ktBnWr": {
+    "image_text_blocks_9pjMW8": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_YdKMVW": {
+        "image_card_TWfHgM": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Galloway_cb03bba7-3c60-4822-b570-f3e1a3ffddc3.png",
-            "image_mobile": "shopify://shop_images/Galloway_e32465c3-b0d0-42b8-94e4-17f8b6fe5f96.png",
+            "image": "shopify://shop_images/Elington.png",
+            "image_mobile": "shopify://shop_images/Elington.png",
+            "title": "Ellington",
+            "subtitle": "",
+            "text": "<p>Sleek front with fluted side detailing.</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_j8U9kM": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Tilbryy.png",
+            "image_mobile": "shopify://shop_images/Tilbryy.png",
+            "title": "Tilbury",
+            "subtitle": "",
+            "text": "<p>Soft rounded inset panel detailing.</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_gAN4Gd": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Abbottt.png",
+            "image_mobile": "shopify://shop_images/Abbottt.png",
+            "title": "Abbott",
+            "subtitle": "",
+            "text": "<p>Framed shaker-style drawer fronts.</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_yMmDPT": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Bronsno.png",
+            "image_mobile": "shopify://shop_images/Bronsno.png",
+            "title": "Bronson",
+            "subtitle": "",
+            "text": "<p>Clean, flat-front contemporary design.</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_PDYfjj": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Gallkoway.png",
+            "image_mobile": "shopify://shop_images/Gallkoway.png",
             "title": "Galloway",
             "subtitle": "",
-            "text": "<p>A Georgian inspired model for a traditional, elegant look.</p>",
+            "text": "<p>Traditional raised-panel drawer design.</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": true,
             "lightbox_image": "shopify://shop_images/Galloway_542f340d-6eb6-4a59-b8df-ae0b47448fe1.png",
             "lightbox_caption": ""
           }
-        },
-        "image_card_zhJH3W": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_rnGB3p": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Abbott_5de1ee9e-695c-4a6c-9911-da8ad6320859.png",
-            "image_mobile": "shopify://shop_images/Abbott.png",
-            "title": "Abbott",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_QnhtGF": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Tilbury.png",
-            "image_mobile": "shopify://shop_images/Tilbury_0a20a59b-2ad7-4ddd-b793-a7ca6b072a0b.png",
-            "title": "Tilbury",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_WzggzG": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Bronson.png",
-            "image_mobile": "shopify://shop_images/Bronson_2bba57f2-8f10-40b1-aa2d-8b8cd30a919e.png",
-            "title": "Bronson",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_UNtNfH": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Ellington.png",
-            "image_mobile": "shopify://shop_images/Ellington_da814b8b-811d-481e-a3e3-6f9c716a943f.png",
-            "title": "Ellington",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
         }
       },
       "block_order": [
-        "image_card_YdKMVW",
-        "image_card_zhJH3W",
-        "image_card_rnGB3p",
-        "image_card_QnhtGF",
-        "image_card_WzggzG",
-        "image_card_UNtNfH"
+        "image_card_TWfHgM",
+        "image_card_j8U9kM",
+        "image_card_gAN4Gd",
+        "image_card_yMmDPT",
+        "image_card_PDYfjj"
       ],
       "name": "Image text blocks",
       "settings": {
         "title": "THE STYLES",
-        "section_padding": "--spacing-md",
-        "colour_scheme": "warm-stone",
+        "section_padding": "--spacing-4xl",
+        "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
         "enable_lightbox": false
@@ -493,7 +481,7 @@
       "settings": {
         "title": "the wood finishes",
         "section_padding": "--spacing-2xl",
-        "colour_scheme": "warm-stone",
+        "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
         "enable_lightbox": true
@@ -607,20 +595,20 @@
       "settings": {
         "title": "the colour finishes",
         "section_padding": "--spacing-2xl",
-        "colour_scheme": "warm-stone",
+        "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
         "enable_lightbox": false
       }
     },
-    "image_text_blocks_RLihj8": {
+    "image_text_blocks_arz76P": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_YeJdXz": {
+        "image_card_HPBwnw": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/image_56.png",
-            "image_mobile": "shopify://shop_images/image_56.png",
+            "image": "shopify://shop_images/Bronson_CU_e94cd062-ed6e-4d2b-af25-d183c0daddbc.jpg",
+            "image_mobile": "shopify://shop_images/Bronson_CU_e94cd062-ed6e-4d2b-af25-d183c0daddbc.jpg",
             "title": "Core Handles",
             "subtitle": "",
             "text": "",
@@ -629,11 +617,11 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_wX9mtV": {
+        "image_card_qDzReH": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/image_57.png",
-            "image_mobile": "shopify://shop_images/image_57.png",
+            "image": "shopify://shop_images/Ellington_CU.jpg",
+            "image_mobile": "shopify://shop_images/Ellington_CU.jpg",
             "title": "Contour Handles",
             "subtitle": "",
             "text": "",
@@ -642,11 +630,11 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_HwfLG6": {
+        "image_card_TFfhrN": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/image_58.png",
-            "image_mobile": "shopify://shop_images/image_58.png",
+            "image": "shopify://shop_images/Abbott_CU.jpg",
+            "image_mobile": "shopify://shop_images/Abbott_CU.jpg",
             "title": "Crosshatch Handles",
             "subtitle": "",
             "text": "",
@@ -657,52 +645,52 @@
         }
       },
       "block_order": [
-        "image_card_YeJdXz",
-        "image_card_wX9mtV",
-        "image_card_HwfLG6"
+        "image_card_HPBwnw",
+        "image_card_qDzReH",
+        "image_card_TFfhrN"
       ],
       "name": "Image text blocks",
       "settings": {
         "title": "the finishing touches",
-        "section_padding": "--spacing-2xl",
-        "colour_scheme": "warm-stone",
+        "section_padding": "--spacing-4xl",
+        "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
         "enable_lightbox": false
       }
     },
-    "richtext_fxdPbE": {
+    "richtext_tCMDMc": {
       "type": "richtext",
       "blocks": {
-        "heading_pnWBUd": {
+        "heading_DTNmG9": {
           "type": "heading",
           "settings": {
-            "text": "Worth a chat?",
+            "text": "We'd love to bring you a sample of this new collection",
             "heading_level": "h2",
             "heading_style": "title-display"
           },
           "blocks": {}
         },
-        "tagline_pB7H8V": {
+        "tagline_BPBN6T": {
           "type": "tagline",
           "name": "Tagline",
           "settings": {
-            "content": "We'd love to bring you a sample of these new pieces. Please select a date from the options below for when we can meet at your studio with samples.",
+            "content": "Please select a date from the options below that works for you, and we will be in touch to confirm a specific time!",
             "tagline_style": "body-lg"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "heading_pnWBUd",
-        "tagline_pB7H8V"
+        "heading_DTNmG9",
+        "tagline_BPBN6T"
       ],
       "name": "Rich Text",
       "settings": {
         "max_width_desktop": 100,
-        "section_padding": "--spacing-2xl",
+        "section_padding": "--spacing-4xl",
         "text_alignment": "center",
-        "colour_scheme": "base-white-02",
+        "colour_scheme": "warm-stone",
         "enable_animation": true,
         "optional_richtext": "",
         "small_container": false
@@ -738,12 +726,12 @@
     "richtext_ppgrRb",
     "image_video_banner_rymz8n",
     "image_text_AnXHqr",
-    "richtext_9YY97W",
-    "image_text_blocks_ktBnWr",
+    "richtext_FQeYHf",
+    "image_text_blocks_9pjMW8",
     "image_text_blocks_93Pn93",
     "image_text_blocks_RqJ8KP",
-    "image_text_blocks_RLihj8",
-    "richtext_fxdPbE",
+    "image_text_blocks_arz76P",
+    "richtext_tCMDMc",
     "blocks_mRjBap"
   ]
 }
