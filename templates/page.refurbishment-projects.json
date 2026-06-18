@@ -12,9 +12,9 @@
     "hero": {
       "type": "furncare-about-hero",
       "settings": {
-        "eyebrow": "New Build Projects",
-        "heading": "Concept to completion furniture planning for new build care facilities",
-        "copy": "A new care home is a chance to shape every detail from the start. We work with interior designers, developers and project teams to create furniture schemes that feel warm, practical and carefully considered - supporting resident comfort, operational needs and the overall vision for the home.",
+        "eyebrow": "Refurbishment Projects",
+        "heading": "Refresh your care home with practical, considered furniture support",
+        "copy": "Refresh your space with furniture that works beautifully in real care environments. From single-room updates to larger phased refurbishments, we’ll help you choose contemporary, comfortable and durable pieces that make a visible difference without unnecessary disruption.",
         "primary_label": "Start a project",
         "primary_link": "shopify://pages/contact-us",
         "secondary_label": "",
@@ -124,23 +124,37 @@
         "article_J3nrN4": {
           "type": "article",
           "settings": {
-            "article": "news/ashton-meadows"
+            "article": "news/dementia-and-nursing-care-at-letcombe-regis"
           }
         },
         "article_y3fUY9": {
           "type": "article",
           "settings": {
-            "article": "news/old-malton"
+            "article": "news/the-chestnuts-care-home-transformed-with-stylish-new-extension"
+          }
+        },
+        "article_kc9wXR": {
+          "type": "article",
+          "settings": {
+            "article": "news/furncare-project-team-shines-at-chapel-view-care-home"
+          }
+        },
+        "article_TMp69Q": {
+          "type": "article",
+          "settings": {
+            "article": "news/stowlangtoft-hall"
           }
         }
       },
       "block_order": [
         "article_J3nrN4",
-        "article_y3fUY9"
+        "article_y3fUY9",
+        "article_kc9wXR",
+        "article_TMp69Q"
       ],
       "name": "Blog article row",
       "settings": {
-        "title": "NEW BUILD CASE STUDIES",
+        "title": "REFURBISHMENT CASE STUDIES",
         "section_padding": "--spacing-2xl",
         "show_badges": true,
         "show_video_indicator": false,
