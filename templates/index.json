@@ -843,28 +843,6 @@
         "reveal_distance": 32,
         "reveal_duration": 760
       }
-    },
-    "178179186332bf007a": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_ed0e5ef_XgMNP3": {
-          "type": "ai_gen_block_ed0e5ef",
-          "settings": {
-            "image_width": 400,
-            "image_height": 300,
-            "image_gap": 24,
-            "vertical_padding": 40,
-            "border_radius": 0,
-            "scroll_speed": 40,
-            "background_color": "#ffffff"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_ed0e5ef_XgMNP3"
-      ],
-      "settings": {}
     }
   },
   "order": [
@@ -879,7 +857,6 @@
     "richtext_DiEacU",
     "image_text_cqfzwp",
     "image_text_V4HwxM",
-    "image_text_aYpUjc",
-    "178179186332bf007a"
+    "image_text_aYpUjc"
   ]
 }
