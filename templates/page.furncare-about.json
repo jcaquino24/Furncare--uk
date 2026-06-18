@@ -176,122 +176,6 @@
         "panel_shadow_opacity": 6
       }
     },
-    "pathways": {
-      "type": "furncare-about-pathways",
-      "blocks": {
-        "pathway_1": {
-          "type": "pathway",
-          "settings": {
-            "title": "New-build care home",
-            "copy": "Explore how Furncare can support this type of project.",
-            "link": "shopify://pages/new-build-projects"
-          }
-        },
-        "pathway_2": {
-          "type": "pathway",
-          "settings": {
-            "title": "Refurbishment project",
-            "copy": "Explore how Furncare can support this type of project.",
-            "link": ""
-          }
-        },
-        "pathway_3": {
-          "type": "pathway",
-          "settings": {
-            "title": "Multi-site rollout",
-            "copy": "Explore how Furncare can support this type of project.",
-            "link": ""
-          }
-        },
-        "pathway_4": {
-          "type": "pathway",
-          "settings": {
-            "title": "Urgent furniture requirement",
-            "copy": "Explore how Furncare can support this type of project.",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "pathway_1",
-        "pathway_2",
-        "pathway_3",
-        "pathway_4"
-      ],
-      "settings": {
-        "eyebrow": "Project pathways",
-        "heading": "Tell us what you're planning.",
-        "background_gradient": "",
-        "background_color": "#f9f7f0",
-        "max_width": 1280,
-        "gutter_desktop": 24,
-        "gutter_mobile": 16,
-        "padding_top": 96,
-        "padding_bottom": 96,
-        "padding_mobile": 72,
-        "padding_bottom_mobile": 72,
-        "section_gap": 48,
-        "section_gap_mobile": 36,
-        "header_max_width": 780,
-        "content_max_width": 960,
-        "text_alignment": "left",
-        "section_border_color": "#f9f7f0",
-        "border_top_width": 0,
-        "border_bottom_width": 0,
-        "heading_size_desktop": 48,
-        "heading_size_mobile": 32,
-        "heading_weight": 500,
-        "heading_line_height": 100,
-        "heading_letter_spacing": 0,
-        "heading_max_width": 1100,
-        "copy_size_desktop": 18,
-        "copy_size_mobile": 16,
-        "copy_weight": 400,
-        "copy_line_height": 170,
-        "copy_max_width": 760,
-        "copy_margin_top": 28,
-        "eyebrow_size": 14,
-        "eyebrow_weight": 400,
-        "eyebrow_letter_spacing": 40,
-        "eyebrow_transform": "uppercase",
-        "eyebrow_margin_bottom": 20,
-        "text_color": "#243222",
-        "heading_color": "#243222",
-        "copy_color": "#243222",
-        "eyebrow_color": "#243222",
-        "enable_reveal": true,
-        "reveal_distance": 32,
-        "reveal_duration": 760,
-        "card_background": "#c3c0b0",
-        "card_heading_color": "#243222",
-        "card_copy_color": "#243222",
-        "card_border_color": "#e7e5e4",
-        "card_border_width": 1,
-        "card_radius": 32,
-        "card_padding": 28,
-        "card_padding_mobile": 24,
-        "card_shadow_opacity": 6,
-        "card_hover_shadow_opacity": 14,
-        "card_hover_lift": 4,
-        "card_title_size": 20,
-        "card_title_weight": 700,
-        "card_copy_size": 15,
-        "card_copy_line_height": 170,
-        "card_copy_margin_top": 16,
-        "grid_gap": 20,
-        "columns_desktop": "2",
-        "columns_tablet": "2",
-        "columns_mobile": "1",
-        "icon_background": "#f5f5f4",
-        "icon_color": "#292524",
-        "icon_size": 48,
-        "icon_svg_size": 23,
-        "icon_radius": 16,
-        "icon_margin_bottom": 32,
-        "icon_hover_scale": 108,
-        "pathway_min_height": 152
-      }
-    },
     "image_text_KacAb9": {
       "type": "image-text",
       "blocks": {
@@ -562,6 +446,122 @@
         "card_copy_size": 16,
         "card_copy_line_height": 170,
         "process_card_blur": 16
+      }
+    },
+    "pathways": {
+      "type": "furncare-about-pathways",
+      "blocks": {
+        "pathway_1": {
+          "type": "pathway",
+          "settings": {
+            "title": "New-build care home",
+            "copy": "Explore how Furncare can support this type of project.",
+            "link": "shopify://pages/new-build-projects"
+          }
+        },
+        "pathway_2": {
+          "type": "pathway",
+          "settings": {
+            "title": "Refurbishment project",
+            "copy": "Explore how Furncare can support this type of project.",
+            "link": "shopify://pages/refurbishment-projects"
+          }
+        },
+        "pathway_3": {
+          "type": "pathway",
+          "settings": {
+            "title": "Multi-site rollout",
+            "copy": "Explore how Furncare can support this type of project.",
+            "link": "shopify://pages/multi-site-projects"
+          }
+        },
+        "pathway_4": {
+          "type": "pathway",
+          "settings": {
+            "title": "Urgent furniture requirement",
+            "copy": "Explore how Furncare can support this type of project.",
+            "link": "shopify://pages/urgent-furniture-projects"
+          }
+        }
+      },
+      "block_order": [
+        "pathway_1",
+        "pathway_2",
+        "pathway_3",
+        "pathway_4"
+      ],
+      "settings": {
+        "eyebrow": "Project pathways",
+        "heading": "Tell us what you're planning.",
+        "background_gradient": "",
+        "background_color": "#f9f7f0",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#f9f7f0",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 32,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 14,
+        "eyebrow_weight": 400,
+        "eyebrow_letter_spacing": 40,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 20,
+        "text_color": "#243222",
+        "heading_color": "#243222",
+        "copy_color": "#243222",
+        "eyebrow_color": "#243222",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "card_background": "#c3c0b0",
+        "card_heading_color": "#243222",
+        "card_copy_color": "#243222",
+        "card_border_color": "#e7e5e4",
+        "card_border_width": 1,
+        "card_radius": 32,
+        "card_padding": 28,
+        "card_padding_mobile": 24,
+        "card_shadow_opacity": 6,
+        "card_hover_shadow_opacity": 14,
+        "card_hover_lift": 4,
+        "card_title_size": 20,
+        "card_title_weight": 700,
+        "card_copy_size": 15,
+        "card_copy_line_height": 170,
+        "card_copy_margin_top": 16,
+        "grid_gap": 20,
+        "columns_desktop": "2",
+        "columns_tablet": "2",
+        "columns_mobile": "1",
+        "icon_background": "#f5f5f4",
+        "icon_color": "#292524",
+        "icon_size": 48,
+        "icon_svg_size": 23,
+        "icon_radius": 16,
+        "icon_margin_bottom": 32,
+        "icon_hover_scale": 108,
+        "pathway_min_height": 152
       }
     },
     "proposition": {
