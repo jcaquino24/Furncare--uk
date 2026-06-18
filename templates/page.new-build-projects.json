@@ -660,6 +660,134 @@
         "secondary_button_hover_color": "#243222",
         "secondary_button_hover_border": "#f9f7f0"
       }
+    },
+    "image_text_blocks_PiMyDi": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "image_card_MJNDNr": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_7_b264746f-d24e-4ad9-8fc7-7eac1e2a1f95.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_3hxWtj": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Furncare_GoogleBusiness_8.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_Vp6yGp": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Bedrooms_7_897770f1-b15f-4e4d-8701-81116150c553.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_aRiKKc": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_7_f25d4a1e-7a19-4cc9-aadb-1b84f0a76fa4.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_EBDKE4": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_jcHi9e": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_TGM8zi": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_6wBhQ4": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_xhRRgC": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_MJNDNr",
+        "image_card_3hxWtj",
+        "image_card_Vp6yGp",
+        "image_card_aRiKKc",
+        "image_card_EBDKE4",
+        "image_card_jcHi9e",
+        "image_card_TGM8zi",
+        "image_card_6wBhQ4",
+        "image_card_xhRRgC"
+      ],
+      "name": "Image text blocks",
+      "settings": {
+        "title": "Content Gallery",
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "base-white-01",
+        "text_position": "over_image",
+        "mobile_layout": "swiper",
+        "enable_lightbox": false
+      }
     }
   },
   "order": [
@@ -669,6 +797,7 @@
     "faqs_WTbyFt",
     "process",
     "proof",
-    "final_cta"
+    "final_cta",
+    "image_text_blocks_PiMyDi"
   ]
 }
