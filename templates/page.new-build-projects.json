@@ -695,6 +695,35 @@
         "colour_scheme": "base-white-01",
         "padding": "default"
       }
+    },
+    "image_text_8aKCNF": {
+      "type": "image-text",
+      "blocks": {
+        "images_RJVj76": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Media_8f41335c-b1d4-4197-a347-1beb1256acb5.jpg"
+          }
+        },
+        "images_wyNbcH": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Team_Presentation_3.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "images_RJVj76",
+        "images_wyNbcH"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-md",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
+      }
     }
   },
   "order": [
@@ -705,6 +734,7 @@
     "proof",
     "final_cta",
     "blocks_GifaU8",
-    "faqs_WTbyFt"
+    "faqs_WTbyFt",
+    "image_text_8aKCNF"
   ]
 }
