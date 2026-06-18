@@ -207,7 +207,7 @@
         "video_mobile": "shopify://files/videos/Furncare Edit V6-1_380d84d1-144a-4f06-8683-81fdf8054b5d.mp4",
         "show_controls": true,
         "mute_video": true,
-        "autoplay_video": false,
+        "autoplay_video": true,
         "show_overlay": false,
         "overlay_background": "",
         "colour_scheme": "light",
