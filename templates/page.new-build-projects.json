@@ -9,40 +9,6 @@
  */
 {
   "sections": {
-    "1781788779c16f49e3": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_c6181a4_7DX9An": {
-          "type": "ai_gen_block_c6181a4",
-          "settings": {
-            "before_image": "shopify://shop_images/image_59.jpg",
-            "after_image": "shopify://shop_images/Bedrooms_7_897770f1-b15f-4e4d-8701-81116150c553.jpg",
-            "aspect_ratio": 60,
-            "desktop_width_percent": 85,
-            "border_radius": 0,
-            "initial_position": 55,
-            "divider_width": 2,
-            "divider_color": "#F9F7F0",
-            "handle_size": 50,
-            "handle_color": "#F9F7F0",
-            "handle_icon_color": "#F9F7F0",
-            "show_labels": true,
-            "before_label": "Before",
-            "after_label": "After",
-            "label_font_size": 14,
-            "label_position_top": 5,
-            "label_offset": 50,
-            "label_bg_color": "#243222",
-            "label_text_color": "#F9F7F0"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_c6181a4_7DX9An"
-      ],
-      "settings": {}
-    },
     "hero": {
       "type": "furncare-about-hero",
       "settings": {
@@ -697,7 +663,6 @@
     }
   },
   "order": [
-    "1781788779c16f49e3",
     "hero",
     "audience",
     "blog_article_row_4iJ6Ye",
