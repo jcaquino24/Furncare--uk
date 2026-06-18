@@ -9,7 +9,15 @@
   {%- if recommendations.performed and recommendations.products_count > 0 -%}
     <div class="custom-recommendations__inner">
       {%- if section.settings.heading != blank -%}
-        <h2 class="custom-recommendations__heading">{{ section.settings.heading | escape }}</h2>
+        {% render 'title-with-nav',
+        title: section.settings,
+        heading_level: 'h2',
+        heading_style: 'eyebrow-sm',
+        tabs: tabs_html,
+        show_nav: show_nav,
+        nav_class: title_classes,
+        section_id: fallback_section_id
+      %}
       {%- endif -%}
       
       <div class="custom-recommendations__grid">
