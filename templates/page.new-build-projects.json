@@ -781,7 +781,7 @@
       ],
       "name": "Image text blocks",
       "settings": {
-        "title": "Content Gallery",
+        "title": "",
         "section_padding": "--spacing-2xl",
         "colour_scheme": "base-white-01",
         "text_position": "over_image",
