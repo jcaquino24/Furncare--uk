@@ -715,6 +715,7 @@
         "image_card_EBDKE4": {
           "type": "image_card",
           "settings": {
+            "image": "shopify://shop_images/Lounge_One_30.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -726,6 +727,7 @@
         "image_card_jcHi9e": {
           "type": "image_card",
           "settings": {
+            "image": "shopify://shop_images/P1090921-2-HDR.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -737,6 +739,7 @@
         "image_card_TGM8zi": {
           "type": "image_card",
           "settings": {
+            "image": "shopify://shop_images/P1044676.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -748,6 +751,7 @@
         "image_card_6wBhQ4": {
           "type": "image_card",
           "settings": {
+            "image": "shopify://shop_images/Corridor_28.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -759,6 +763,7 @@
         "image_card_xhRRgC": {
           "type": "image_card",
           "settings": {
+            "image": "shopify://shop_images/P1044763.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
