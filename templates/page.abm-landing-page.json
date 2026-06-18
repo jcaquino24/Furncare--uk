@@ -335,7 +335,7 @@
             "image_mobile": "shopify://shop_images/Bronsno.png",
             "title": "Bronson",
             "subtitle": "",
-            "text": "",
+            "text": "<p>Clean, flat-front contemporary design.</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": true,
             "lightbox_caption": ""
