@@ -174,7 +174,7 @@
           "type": "tagline",
           "name": "Tagline",
           "settings": {
-            "content": "Congratulations on finding us! We hope you and the team enjoy the cake. Whilst you do, pop the kettle on and watch the below video to find out more about us...",
+            "content": "Congratulations on finding us! We hope you enjoy the cake. Whilst you do, pop the kettle on and watch the below video to find out more about us...",
             "tagline_style": "body-lg"
           },
           "blocks": {}
@@ -223,7 +223,7 @@
           "settings": {
             "title": "Tailored to Hiedi Lazenby",
             "title_size": "xl",
-            "text": "This private preview has been created for the Hiedi Lazenby Design team - a first look at how Furncare could support your upcoming bedroom schemes with considered furniture, flexible finishes and samples brought directly to your studio.",
+            "text": "This private preview has been created for Hiedi Lazenby Design - a first look at how Furncare could support your upcoming bedroom schemes with considered furniture, flexible finishes and samples brought directly to your studio.",
             "button_style": "primary",
             "button_text": "",
             "button_url": ""
@@ -243,7 +243,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "warm-stone",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "richtext_9YY97W": {
