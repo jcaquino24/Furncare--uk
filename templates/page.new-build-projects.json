@@ -671,7 +671,7 @@
             "image_height": 400,
             "image_gap": 24,
             "vertical_padding": 40,
-            "border_radius": 0,
+            "border_radius": 6,
             "scroll_speed": 100,
             "background_color": "#F9F7F0",
             "image_1": "shopify://shop_images/P1044763.jpg",
