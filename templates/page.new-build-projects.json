@@ -595,7 +595,7 @@
         "ai_gen_block_9e99ca3_ngkbfp": {
           "type": "ai_gen_block_9e99ca3",
           "settings": {
-            "layout": "form_left",
+            "layout": "form_right",
             "mobile_layout": "content_first",
             "container_width": 1200,
             "column_gap": 60,
