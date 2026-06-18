@@ -164,7 +164,7 @@
         "eyebrow": "tailored support for you",
         "heading": "For every stage of the new build project",
         "background_gradient": "",
-        "background_color": "#F9F7F0",
+        "background_color": "#f9f7f0",
         "max_width": 1280,
         "gutter_desktop": 24,
         "gutter_mobile": 16,
@@ -205,8 +205,8 @@
         "reveal_distance": 32,
         "reveal_duration": 760,
         "card_background": "#243222",
-        "card_heading_color": "#C3C0B0",
-        "card_copy_color": "#C3C0B0",
+        "card_heading_color": "#c3c0b0",
+        "card_copy_color": "#c3c0b0",
         "card_border_color": "#243222",
         "card_border_width": 1,
         "card_radius": 32,
@@ -224,7 +224,7 @@
         "columns_desktop": "4",
         "columns_tablet": "2",
         "columns_mobile": "1",
-        "icon_background": "#C3C0B0",
+        "icon_background": "#c3c0b0",
         "icon_color": "#243222",
         "icon_size": 48,
         "icon_svg_size": 23,
@@ -588,6 +588,52 @@
         "secondary_button_hover_color": "#243222",
         "secondary_button_hover_border": "#f9f7f0"
       }
+    },
+    "blocks_VYeGkN": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_9e99ca3_ngkbfp": {
+          "type": "ai_gen_block_9e99ca3",
+          "settings": {
+            "layout": "form_left",
+            "mobile_layout": "content_first",
+            "container_width": 1200,
+            "column_gap": 60,
+            "section_padding_top": 60,
+            "section_padding_bottom": 60,
+            "embed_url": "",
+            "embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"4b643ffe-2b73-47b6-96c2-c0694276b3e6\" data-portal-id=\"145723791\"></div>",
+            "form_min_height": 500,
+            "form_background_color": "#F9F7F0",
+            "form_border_radius": 8,
+            "heading": "<p>Get in touch</p>",
+            "heading_font": "red_hat_display_n4",
+            "heading_size": 40,
+            "heading_color": "#000000",
+            "heading_spacing": 24,
+            "body_text": "<p>We'd love to hear from you. Fill out the form and our team will get back to you within 24 hours.</p>",
+            "body_size": 16,
+            "body_color": "#666666",
+            "body_spacing": 32,
+            "button_label": "",
+            "button_link": "",
+            "button_font_size": 16,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "button_background_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_hover_background_color": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "button_border_radius": 4
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_9e99ca3_ngkbfp"
+      ],
+      "name": "Form and text",
+      "settings": {}
     }
   },
   "order": [
@@ -596,6 +642,7 @@
     "blog_article_row_4iJ6Ye",
     "process",
     "proof",
-    "final_cta"
+    "final_cta",
+    "blocks_VYeGkN"
   ]
 }
