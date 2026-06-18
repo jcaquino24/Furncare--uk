@@ -168,7 +168,7 @@
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760,
-        "panel_background": "#ffffff",
+        "panel_background": "#C3C0B0",
         "panel_border_color": "#e7e5e4",
         "panel_border_width": 0,
         "panel_radius": 32,
