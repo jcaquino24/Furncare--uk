@@ -1,5 +1,5 @@
 <div 
-  class="custom-recommendations" 
+  class="custom-recommendations container" 
   data-base-url="{{ routes.product_recommendations_url }}" 
   data-product-id="{{ product.id }}" 
   data-section-id="{{ section.id }}"
@@ -7,7 +7,7 @@
   data-intent="{{ section.settings.intent }}"
 >
   {%- if recommendations.performed and recommendations.products_count > 0 -%}
-    <div class="custom-recommendations__inner">
+    <div class="content-blocks__header">
       {%- if section.settings.heading != blank -%}
         <h2 class="eyebrow-sm">{{ section.settings.heading | escape }}</h2>
       {%- endif -%}
