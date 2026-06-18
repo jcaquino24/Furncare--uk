@@ -624,6 +624,65 @@
       "name": "Image marquee",
       "settings": {}
     },
+    "furncare_about_statement_NBFndQ": {
+      "type": "furncare-about-statement",
+      "name": "Furncare statement advanced",
+      "settings": {
+        "eyebrow": "for moments that matter most",
+        "heading": "We're here for you",
+        "copy": "<p>Large-scale care projects demand more than products on a page. They need considered specification, dependable lead times, practical sector knowledge and a team that understands how care environments really work.</p>",
+        "second_copy": "<p>That's where Furncare comes in.</p>",
+        "column_layout": "balanced",
+        "vertical_alignment": "end",
+        "background_gradient": "",
+        "background_color": "#F9F7F0",
+        "max_width": 1220,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 32,
+        "padding_bottom": 0,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#e7e5e4",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 56,
+        "heading_size_mobile": 40,
+        "heading_weight": 400,
+        "heading_line_height": 100,
+        "heading_letter_spacing": -3,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 13,
+        "eyebrow_weight": 700,
+        "eyebrow_letter_spacing": 22,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 16,
+        "text_color": "#0c0a09",
+        "heading_color": "#0c0a09",
+        "copy_color": "#57534e",
+        "eyebrow_color": "#78716c",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "panel_background": "#ffffff",
+        "panel_border_color": "#e7e5e4",
+        "panel_border_width": 0,
+        "panel_radius": 32,
+        "panel_padding": 40,
+        "panel_shadow_opacity": 6
+      }
+    },
     "image_text_8aKCNF": {
       "type": "image-text",
       "blocks": {
@@ -722,7 +781,7 @@
         "faq_text": "",
         "title_alignment": "center",
         "colour_scheme": "base-white-01",
-        "padding": "default"
+        "padding": "wide"
       }
     }
   },
@@ -734,6 +793,7 @@
     "proof",
     "final_cta",
     "blocks_GifaU8",
+    "furncare_about_statement_NBFndQ",
     "image_text_8aKCNF",
     "faqs_WTbyFt"
   ]
