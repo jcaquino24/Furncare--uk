@@ -26,7 +26,7 @@
         "background_image": "shopify://shop_images/Lounge_One_7_f25d4a1e-7a19-4cc9-aadb-1b84f0a76fa4.jpg",
         "fallback_image_url": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2200&q=80",
         "background_position": "center center",
-        "background_size": "contain",
+        "background_size": "cover",
         "min_height": 100,
         "min_height_mobile": 80,
         "content_vertical_position": "center",
