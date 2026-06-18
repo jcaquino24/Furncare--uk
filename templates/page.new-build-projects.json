@@ -189,6 +189,7 @@
         "audience_3",
         "audience_4"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "Who we support",
         "heading": "Built around the teams delivering care environments.",
@@ -322,6 +323,7 @@
         "step_4",
         "step_5"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "A smoother route from brief to installation",
         "heading": "The Furncare Way.",
@@ -427,6 +429,7 @@
         "stat_3",
         "stat_4"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "Why project teams choose Furncare",
         "heading": "Confidence at every stage of the scheme.",
@@ -509,6 +512,7 @@
     },
     "final_cta": {
       "type": "furncare-about-final-cta",
+      "disabled": true,
       "settings": {
         "eyebrow": "Start the conversation",
         "heading": "Planning a care-sector furniture project? Let's make it easier.",
