@@ -302,20 +302,6 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_YdKMVW": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Gallkoway.png",
-            "image_mobile": "shopify://shop_images/Gallkoway.png",
-            "title": "Galloway",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_image": "shopify://shop_images/Galloway_542f340d-6eb6-4a59-b8df-ae0b47448fe1.png",
-            "lightbox_caption": ""
-          }
-        },
         "image_card_QnhtGF": {
           "type": "image_card",
           "settings": {
@@ -354,14 +340,28 @@
             "show_gradient": true,
             "lightbox_caption": ""
           }
+        },
+        "image_card_YdKMVW": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Gallkoway.png",
+            "image_mobile": "shopify://shop_images/Gallkoway.png",
+            "title": "Galloway",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_image": "shopify://shop_images/Galloway_542f340d-6eb6-4a59-b8df-ae0b47448fe1.png",
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
         "image_card_UNtNfH",
-        "image_card_YdKMVW",
         "image_card_QnhtGF",
         "image_card_rnGB3p",
-        "image_card_WzggzG"
+        "image_card_WzggzG",
+        "image_card_YdKMVW"
       ],
       "name": "Image text blocks",
       "settings": {
