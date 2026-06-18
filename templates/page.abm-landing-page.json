@@ -243,7 +243,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "richtext_9YY97W": {
@@ -289,8 +292,8 @@
         "image_card_UNtNfH": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Ellington_CU.jpg",
-            "image_mobile": "shopify://shop_images/Ellington_CU_ed7f63fc-d95e-4b0c-a758-d54a6a52b997.jpg",
+            "image": "shopify://shop_images/Ellingrton.png",
+            "image_mobile": "shopify://shop_images/Ellingrton.png",
             "title": "Ellington",
             "subtitle": "",
             "text": "",
