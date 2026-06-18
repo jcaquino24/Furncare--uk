@@ -296,7 +296,7 @@
             "image_mobile": "shopify://shop_images/Elington.png",
             "title": "Ellington",
             "subtitle": "",
-            "text": "",
+            "text": "<p>Sleek front with fluted side detailing.</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": true,
             "lightbox_caption": ""
@@ -309,7 +309,7 @@
             "image_mobile": "shopify://shop_images/Tilbryy.png",
             "title": "Tilbury",
             "subtitle": "",
-            "text": "",
+            "text": "<p>Soft rounded inset panel detailing.</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": true,
             "lightbox_caption": ""
@@ -322,7 +322,7 @@
             "image_mobile": "shopify://shop_images/Abbottt.png",
             "title": "Abbott",
             "subtitle": "",
-            "text": "",
+            "text": "<p>Framed shaker-style drawer fronts.</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": true,
             "lightbox_caption": ""
@@ -348,7 +348,7 @@
             "image_mobile": "shopify://shop_images/Gallkoway.png",
             "title": "Galloway",
             "subtitle": "",
-            "text": "",
+            "text": "<p>Traditional raised-panel drawer design.</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": true,
             "lightbox_image": "shopify://shop_images/Galloway_542f340d-6eb6-4a59-b8df-ae0b47448fe1.png",
