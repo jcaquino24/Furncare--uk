@@ -604,11 +604,11 @@
     "image_text_blocks_RLihj8": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_YeJdXz": {
+        "image_card_wX9mtV": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/image_56.png",
-            "image_mobile": "shopify://shop_images/image_56.png",
+            "image": "shopify://shop_images/Bronson_CU_e94cd062-ed6e-4d2b-af25-d183c0daddbc.jpg",
+            "image_mobile": "shopify://shop_images/Bronson_CU_e94cd062-ed6e-4d2b-af25-d183c0daddbc.jpg",
             "title": "Core Handles",
             "subtitle": "",
             "text": "",
@@ -617,11 +617,11 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_wX9mtV": {
+        "image_card_YeJdXz": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/image_57.png",
-            "image_mobile": "shopify://shop_images/image_57.png",
+            "image": "shopify://shop_images/Ellington_CU.jpg",
+            "image_mobile": "shopify://shop_images/Ellington_CU.jpg",
             "title": "Contour Handles",
             "subtitle": "",
             "text": "",
@@ -633,8 +633,8 @@
         "image_card_HwfLG6": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/image_58.png",
-            "image_mobile": "shopify://shop_images/image_58.png",
+            "image": "shopify://shop_images/Abbott_CU.jpg",
+            "image_mobile": "shopify://shop_images/Abbott_CU.jpg",
             "title": "Crosshatch Handles",
             "subtitle": "",
             "text": "",
@@ -645,8 +645,8 @@
         }
       },
       "block_order": [
-        "image_card_YeJdXz",
         "image_card_wX9mtV",
+        "image_card_YeJdXz",
         "image_card_HwfLG6"
       ],
       "name": "Image text blocks",
@@ -665,7 +665,7 @@
         "heading_pnWBUd": {
           "type": "heading",
           "settings": {
-            "text": "Worth a chat?",
+            "text": "We'd love to bring you a sample of this new collection",
             "heading_level": "h2",
             "heading_style": "title-display"
           },
@@ -675,7 +675,7 @@
           "type": "tagline",
           "name": "Tagline",
           "settings": {
-            "content": "We'd love to bring you a sample of these new pieces. Please select a date from the options below for when we can meet at your studio with samples.",
+            "content": "Please select a date from the options below that works for you, and we will be in touch to confirm a specific time!",
             "tagline_style": "body-lg"
           },
           "blocks": {}
@@ -688,7 +688,7 @@
       "name": "Rich Text",
       "settings": {
         "max_width_desktop": 100,
-        "section_padding": "--spacing-2xl",
+        "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
         "enable_animation": true,
