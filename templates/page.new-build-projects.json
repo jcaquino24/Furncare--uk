@@ -118,68 +118,39 @@
         "secondary_button_hover_border": "#f9f7f0"
       }
     },
-    "blog_article_row_4iJ6Ye": {
-      "type": "blog-article-row",
-      "blocks": {
-        "article_J3nrN4": {
-          "type": "article",
-          "settings": {
-            "article": "news/ashton-meadows"
-          }
-        },
-        "article_y3fUY9": {
-          "type": "article",
-          "settings": {
-            "article": "news/old-malton"
-          }
-        }
-      },
-      "block_order": [
-        "article_J3nrN4",
-        "article_y3fUY9"
-      ],
-      "name": "Blog article row",
-      "settings": {
-        "title": "NEW BUILD CASE STUDIES",
-        "section_padding": "--spacing-2xl",
-        "show_badges": true,
-        "show_video_indicator": false,
-        "background_colour_scheme": "base-white-01"
-      }
-    },
     "audience": {
       "type": "furncare-about-audience",
       "blocks": {
         "audience_1": {
           "type": "card",
           "settings": {
-            "icon": "users",
-            "title": "Home managers",
-            "copy": "Furniture schemes that support residents, staff, compliance, durability and long-term use."
+            "icon": "clipboard",
+            "title": "Early planning",
+            "copy": "You’re shaping the vision, layout and requirements for a new care home and need guidance on furniture options, finishes and practical considerations."
           }
         },
         "audience_2": {
           "type": "card",
           "settings": {
             "icon": "sofa",
-            "title": "Interior designers",
-            "copy": "Design-led ranges, fabrics, finishes and practical product guidance for care-sector interiors."
+            "title": "Specification stage",
+            "copy": "You’re ready to define the furniture scheme room by room, balancing comfort, durability, compliance and the overall design direction."
           }
         },
         "audience_3": {
           "type": "card",
           "settings": {
-            "icon": "clipboard",
-            "title": "Procurement teams",
-            "copy": "Reliable information, clear communication, delivery planning and value-conscious solutions."
+            "icon": "check",
+            "title": "Procurement and ordering",
+            "copy": "You need clear product choices, costs and timelines to help keep the project moving smoothly towards opening."
           }
         },
         "audience_4": {
           "type": "card",
           "settings": {
             "icon": "truck",
-            "title": "Project managers",
-            "copy": "Support with phasing, lead times, logistics and coordination from order to installation."
+            "title": "Installation planning",
+            "copy": "You’re finalising your Furncare furniture order and need clear guidance on timings, delivery coordination and how everything will come together on site."
           }
         }
       },
@@ -189,12 +160,11 @@
         "audience_3",
         "audience_4"
       ],
-      "disabled": true,
       "settings": {
-        "eyebrow": "Who we support",
-        "heading": "Built around the teams delivering care environments.",
+        "eyebrow": "tailored support for you",
+        "heading": "For every stage of the new build project",
         "background_gradient": "",
-        "background_color": "#c3c0b0",
+        "background_color": "#F9F7F0",
         "max_width": 1280,
         "gutter_desktop": 24,
         "gutter_mobile": 16,
@@ -234,10 +204,10 @@
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760,
-        "card_background": "#f9f7f0",
-        "card_heading_color": "#243222",
-        "card_copy_color": "#243222",
-        "card_border_color": "#f9f7f0",
+        "card_background": "#243222",
+        "card_heading_color": "#C3C0B0",
+        "card_copy_color": "#C3C0B0",
+        "card_border_color": "#243222",
         "card_border_width": 1,
         "card_radius": 32,
         "card_padding": 28,
@@ -254,13 +224,42 @@
         "columns_desktop": "4",
         "columns_tablet": "2",
         "columns_mobile": "1",
-        "icon_background": "#f9f7f0",
+        "icon_background": "#C3C0B0",
         "icon_color": "#243222",
         "icon_size": 48,
         "icon_svg_size": 23,
         "icon_radius": 16,
         "icon_margin_bottom": 32,
         "icon_hover_scale": 108
+      }
+    },
+    "blog_article_row_4iJ6Ye": {
+      "type": "blog-article-row",
+      "blocks": {
+        "article_J3nrN4": {
+          "type": "article",
+          "settings": {
+            "article": "news/ashton-meadows"
+          }
+        },
+        "article_y3fUY9": {
+          "type": "article",
+          "settings": {
+            "article": "news/old-malton"
+          }
+        }
+      },
+      "block_order": [
+        "article_J3nrN4",
+        "article_y3fUY9"
+      ],
+      "name": "Blog article row",
+      "settings": {
+        "title": "NEW BUILD CASE STUDIES",
+        "section_padding": "--spacing-2xl",
+        "show_badges": true,
+        "show_video_indicator": false,
+        "background_colour_scheme": "warm-stone"
       }
     },
     "process": {
@@ -593,8 +592,8 @@
   },
   "order": [
     "hero",
-    "blog_article_row_4iJ6Ye",
     "audience",
+    "blog_article_row_4iJ6Ye",
     "process",
     "proof",
     "final_cta"
