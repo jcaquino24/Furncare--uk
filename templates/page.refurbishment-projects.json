@@ -33,7 +33,7 @@
         "enable_parallax": false,
         "overlay_color": "#243222",
         "overlay_color_2": "#243222",
-        "overlay_opacity": 50,
+        "overlay_opacity": 33,
         "overlay_angle": 120,
         "radial_color": "#f9f7f0",
         "radial_opacity": 18,
