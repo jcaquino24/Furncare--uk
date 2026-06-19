@@ -121,6 +121,14 @@
     "audience": {
       "type": "furncare-about-audience",
       "blocks": {
+        "card_xFDLgx": {
+          "type": "card",
+          "settings": {
+            "icon": "users",
+            "title": "Care operators",
+            "copy": "Furniture schemes that support residents, staff, compliance, durability and long-term use."
+          }
+        },
         "audience_1": {
           "type": "card",
           "settings": {
@@ -144,21 +152,13 @@
             "title": "Procurement and ordering",
             "copy": "You need clear product choices, costs and timelines to help keep the project moving smoothly towards opening."
           }
-        },
-        "audience_4": {
-          "type": "card",
-          "settings": {
-            "icon": "truck",
-            "title": "Installation",
-            "copy": "You’re finalising your Furncare furniture order and need clear guidance on timings, delivery coordination and how everything will come together on site."
-          }
         }
       },
       "block_order": [
+        "card_xFDLgx",
         "audience_1",
         "audience_2",
-        "audience_3",
-        "audience_4"
+        "audience_3"
       ],
       "settings": {
         "eyebrow": "tailored support for you",
@@ -706,7 +706,7 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-md",
+        "section_padding": "--spacing-4xl",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
