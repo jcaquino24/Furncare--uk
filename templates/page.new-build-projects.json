@@ -913,7 +913,7 @@
             "embed_url": "",
             "embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"4b643ffe-2b73-47b6-96c2-c0694276b3e6\" data-portal-id=\"145723791\"></div>",
             "form_min_height": 500,
-            "form_background_color": "#C3C0B0",
+            "form_background_color": "#F9F7F0",
             "form_border_radius": 8,
             "heading": "<h1>Let us know what you're planning</h1>",
             "heading_font": "red_hat_display_n4",
