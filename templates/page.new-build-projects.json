@@ -897,6 +897,52 @@
         "stat_label_margin_top": 12,
         "stat_copy_margin_top": 12
       }
+    },
+    "blocks_MnUNR4": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_9e99ca3_WgVjJK": {
+          "type": "ai_gen_block_9e99ca3",
+          "settings": {
+            "layout": "form_left",
+            "mobile_layout": "content_first",
+            "container_width": 1200,
+            "column_gap": 60,
+            "section_padding_top": 60,
+            "section_padding_bottom": 60,
+            "embed_url": "",
+            "embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"4b643ffe-2b73-47b6-96c2-c0694276b3e6\" data-portal-id=\"145723791\"></div>",
+            "form_min_height": 500,
+            "form_background_color": "#f8f8f8",
+            "form_border_radius": 8,
+            "heading": "<p>Get in touch</p>",
+            "heading_font": "red_hat_display_n4",
+            "heading_size": 40,
+            "heading_color": "#000000",
+            "heading_spacing": 24,
+            "body_text": "<p>We'd love to hear from you. Fill out the form and our team will get back to you within 24 hours.</p>",
+            "body_size": 16,
+            "body_color": "#666666",
+            "body_spacing": 32,
+            "button_label": "",
+            "button_link": "",
+            "button_font_size": 16,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "button_background_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_hover_background_color": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "button_border_radius": 4
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_9e99ca3_WgVjJK"
+      ],
+      "name": "Form and text",
+      "settings": {}
     }
   },
   "order": [
@@ -910,6 +956,7 @@
     "furncare_about_statement_NBFndQ",
     "image_text_8aKCNF",
     "faqs_WTbyFt",
-    "furncare_about_proof_nPhngd"
+    "furncare_about_proof_nPhngd",
+    "blocks_MnUNR4"
   ]
 }
