@@ -904,8 +904,8 @@
         "ai_gen_block_9e99ca3_WgVjJK": {
           "type": "ai_gen_block_9e99ca3",
           "settings": {
-            "layout": "form_right",
-            "mobile_layout": "form_first",
+            "layout": "form_left",
+            "mobile_layout": "content_first",
             "container_width": 1600,
             "column_gap": 60,
             "section_padding_top": 60,
