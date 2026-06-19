@@ -275,26 +275,30 @@
       "type": "cross_sell",
       "name": "Cross sell",
       "settings": [
-        {
-          "type": "select",
-          "id": "product_source",
-          "label": "Products source",
-          "default": "manual",
-          "options": [
-            {
-              "value": "manual",
-              "label": "Selected products"
-            },
-            {
-              "value": "collection",
-              "label": "Collection"
-            },
-            {
-              "value": "variants",
-              "label": "Current product variants"
-            }
-          ]
-        },
+        
+{
+  "type": "select",
+  "id": "product_source",
+  "label": "Products source",
+  "options": [
+    { "value": "manual", "label": "Selected products" },
+    { "value": "collection", "label": "Collection" },
+    { "value": "collection_map", "label": "Based on product collection" }
+  ],
+  "default": "manual"
+},
+{
+  "type": "collection",
+  "id": "target_collection",
+  "label": "Trigger collection",
+  "info": "Show this block when product belongs to this collection"
+},
+{
+  "type": "product_list",
+  "id": "collection_upsell_products",
+  "label": "Collection Upsell products",
+  "limit": 20
+},
         {
           "type": "product_list",
           "id": "cross_sell_products",
