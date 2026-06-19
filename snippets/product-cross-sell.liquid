@@ -70,7 +70,7 @@ endif
 
   assign cross_visual = block.settings.visual_style | default: 'default'
 -%}
-
+{% if show_block %}
 <div
   class="product-cross-sell product-cross-sell--{{ block.settings.layout_mode }} product-cross-sell--{{ block.settings.text_align }} product-cross-sell--truncate-{{ block.settings.title_truncation }} product-cross-sell--carousel-nav-{{ block.settings.carousel_nav_position }} product-cross-sell--card-{{ block.settings.card_layout }} product-cross-sell--content-{{ block.settings.card_content_alignment }} product-cross-sell--title-price-{{ block.settings.title_price_layout }} product-cross-sell--toggle-{{ block.settings.batch_toggle_position }} product-cross-sell--toggle-style-{{ block.settings.batch_toggle_style }} product-cross-sell--active-border-{{ block.settings.active_border_enable }} product-cross-sell--nav-hover-{{ block.settings.carousel_nav_show_on_hover }} product-cross-sell--nav-desktop-{{ block.settings.carousel_nav_desktop_visibility }} product-cross-sell--nav-mobile-{{ block.settings.carousel_nav_mobile_visibility }} product-cross-sell--scrollbar-{{ block.settings.carousel_scrollbar_show }} product-cross-sell--nav-circular-{{ block.settings.carousel_nav_buttons_circular }}{% if cross_visual == 'dark_promo' %} product-cross-sell--visual-dark-promo{% endif %}"
   {{ block.shopify_attributes }}
@@ -1401,3 +1401,5 @@ endif
 }
 
 </style>
+
+{% endif %}
