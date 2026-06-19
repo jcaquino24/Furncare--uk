@@ -843,6 +843,10 @@
         "reveal_distance": 32,
         "reveal_duration": 760
       }
+    },
+    "1781866559cff4eafb": {
+      "type": "_blocks",
+      "settings": {}
     }
   },
   "order": [
@@ -857,6 +861,7 @@
     "richtext_DiEacU",
     "image_text_cqfzwp",
     "image_text_V4HwxM",
-    "image_text_aYpUjc"
+    "image_text_aYpUjc",
+    "1781866559cff4eafb"
   ]
 }
