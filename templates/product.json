@@ -15,7 +15,14 @@
         "cross_sell_h7YhAw": {
           "type": "cross_sell",
           "settings": {
-            "product_source": "manual",
+            "product_source": "collection_map",
+            "target_collection": "elderly-care-tables",
+            "collection_upsell_products": [
+              "15kg-parasol-base",
+              "3-0m-parasol",
+              "30kg-parasol-base",
+              "admonere-bedroom-furniture-bundle"
+            ],
             "cross_sell_products": [
               "acorn-set",
               "15kg-square-parasol-base",
