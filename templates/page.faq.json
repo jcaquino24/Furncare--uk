@@ -153,7 +153,7 @@
       "name": "FAQs",
       "settings": {
         "faq_title": "Frequently Asked Questions",
-        "title_element": "h4",
+        "title_element": "h1",
         "faq_text": "If you can't find an answer to your question, give us a call on <a href=\"tel:01603 664900\" title=\"tel:01603 664900\">01603 664900</a> or start a web chat and we'd be happy to help.",
         "title_alignment": "center",
         "colour_scheme": "warm-stone",
