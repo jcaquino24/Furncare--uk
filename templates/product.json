@@ -16,6 +16,9 @@
           "type": "cross_sell",
           "settings": {
             "product_source": "collection_map",
+            "trigger_products": [],
+            "trigger_tags": "",
+            "rule_upsell_products": [],
             "target_collection": "upholstery-fabrics",
             "collection_upsell_products": [
               "accent-ice",
@@ -119,6 +122,15 @@
           "type": "cross_sell",
           "settings": {
             "product_source": "collection_map",
+            "trigger_products": [
+              "15kg-parasol-base"
+            ],
+            "trigger_tags": "",
+            "rule_upsell_products": [
+              "acorn-set",
+              "adeline-high-back-chair",
+              "adeline-wingback-chair"
+            ],
             "target_collection": "elderly-care-tables",
             "collection_upsell_products": [
               "15kg-parasol-base",
