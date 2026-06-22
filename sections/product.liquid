@@ -276,6 +276,7 @@
       "name": "Cross sell",
       "settings": [
         
+
 {
   "type": "select",
   "id": "product_source",
@@ -283,9 +284,27 @@
   "options": [
     { "value": "manual", "label": "Selected products" },
     { "value": "collection", "label": "Collection" },
-    { "value": "collection_map", "label": "Based on product collection" }
+    { "value": "rules", "label": "Based on product rules" }
   ],
   "default": "manual"
+},
+{
+  "type": "product_list",
+  "id": "trigger_products",
+  "label": "Show when these products are viewed",
+  "limit": 20
+},
+{
+  "type": "text",
+  "id": "trigger_tags",
+  "label": "Or match product tags (comma separated)",
+  "info": "Example: summer, upsell, premium"
+},
+{
+  "type": "product_list",
+  "id": "rule_upsell_products",
+  "label": "Upsell products",
+  "limit": 20
 },
 {
   "type": "collection",
