@@ -121,9 +121,9 @@
         "cross_sell_h7YhAw": {
           "type": "cross_sell",
           "settings": {
-            "product_source": "collection_map",
+            "product_source": "rules",
             "trigger_products": [
-              "15kg-parasol-base"
+              "30kg-parasol-base"
             ],
             "trigger_tags": "",
             "rule_upsell_products": [
