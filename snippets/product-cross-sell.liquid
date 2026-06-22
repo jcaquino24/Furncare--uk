@@ -29,6 +29,39 @@ elsif block.settings.product_source == 'collection_map'
   if show_block
     assign source_products = block.settings.collection_upsell_products
   endif
+
+  
+elsif block.settings.product_source == 'rules'
+  assign show_block = false
+
+  # 1. Check specific products
+  if block.settings.trigger_products != blank
+    for trigger_product in block.settings.trigger_products
+      if trigger_product.id == product.id
+        assign show_block = true
+        break
+      endif
+    endfor
+  endif
+
+  # 2. Check tags (only if not already matched)
+  if show_block == false and block.settings.trigger_tags != blank
+    assign trigger_tags = block.settings.trigger_tags | downcase | split: ','
+
+    for tag in product.tags
+      assign tag_clean = tag | strip | downcase
+      if trigger_tags contains tag_clean
+        assign show_block = true
+        break
+      endif
+    endfor
+  endif
+
+  # 3. Assign upsell products
+  if show_block
+    assign source_products = block.settings.rule_upsell_products
+  endif
+
 endif
 
 
