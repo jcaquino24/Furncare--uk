@@ -1,0 +1,262 @@
+<section
+  class="fc-case-section" 
+  style="
+    background: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="fc-container">
+
+    <div class="fc-section-head">
+      <h2 style="font-size: {{ section.settings.heading_size }}px;">
+        {{ section.settings.heading }}
+      </h2>
+      <p style="font-size: {{ section.settings.subheading_size }}px;">
+        {{ section.settings.subheading }}
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="fc-tabs">
+      {% for block in section.blocks %}
+        <button 
+          class="fc-tab {% if forloop.first %}active{% endif %}" 
+          data-case="{{ block.id }}"
+          style="
+            border-radius: {{ section.settings.tab_radius }}px;
+          "
+        >
+          {{ block.settings.tab_label }}
+        </button>
+      {% endfor %}
+    </div>
+
+    <div class="fc-case-grid">
+
+      <!-- LEFT -->
+      <div>
+        {% for block in section.blocks %}
+          <div class="fc-case-content {% if forloop.first %}active{% endif %}" id="case-{{ block.id }}">
+            <small>{{ block.settings.kicker }}</small>
+            <h3 style="font-size: {{ section.settings.title_size }}px;">
+              {{ block.settings.title }}
+            </h3>
+            <p>{{ block.settings.copy }}</p>
+
+            <div class="fc-metrics">
+              {% for i in (1..4) %}
+                {% assign m = 'metric_' | append: i %}
+                {% assign l = 'metric_label_' | append: i %}
+                {% if block.settings[m] != blank %}
+                  <div class="fc-metric">
+                    <b>{{ block.settings[m] }}</b>
+                    <span>{{ block.settings[l] }}</span>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- RIGHT -->
+      <div>
+        {% for block in section.blocks %}
+          <div class="fc-case-gallery-inner {% if forloop.first %}active{% endif %}" id="gallery-{{ block.id }}">
+
+            {% if block.settings.image %}
+              <img 
+                src="{{ block.settings.image | img_url: '900x' }}" 
+                alt=""
+                style="border-radius: {{ section.settings.card_radius }}px;"
+              >
+            {% endif %}
+
+            <div class="fc-quote">
+              <p>{{ block.settings.quote }}</p>
+              <span>{{ block.settings.source }}</span>
+            </div>
+
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.fc-container {
+  max-width: {{ section.settings.container_width }}px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.fc-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.fc-tab {
+  padding: 10px 16px;
+  border: 1px solid {{ section.settings.tab_border }};
+  background: {{ section.settings.tab_bg }};
+  color: {{ section.settings.tab_text }};
+  cursor: pointer;
+}
+
+.fc-tab.active {
+  background: {{ section.settings.tab_active_bg }};
+  color: {{ section.settings.tab_active_text }};
+}
+
+.fc-case-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: {{ section.settings.grid_gap }}px;
+}
+
+.fc-case-content,
+.fc-case-gallery-inner {
+  display: none;
+}
+
+.fc-case-content.active,
+.fc-case-gallery-inner.active {
+  display: block;
+}
+
+.fc-metrics {
+  display: grid;
+  grid-template-columns: repeat({{ section.settings.metrics_columns }}, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.fc-metric {
+  padding: 14px;
+  background: {{ section.settings.metric_bg }};
+  border-radius: {{ section.settings.metric_radius }}px;
+}
+
+.fc-case-gallery img {
+  width: 100%;
+}
+
+.fc-quote {
+  margin-top: 12px;
+  padding: 16px;
+  background: {{ section.settings.quote_bg }};
+  color: {{ section.settings.quote_text }};
+  border-radius: {{ section.settings.card_radius }}px;
+}
+
+@media (max-width: 768px) {
+  .fc-case-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<script>
+document.querySelectorAll('.fc-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+
+    const id = btn.dataset.case;
+
+    document.querySelectorAll('.fc-tab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+
+    document.querySelectorAll('.fc-case-content').forEach(c=>{
+      c.classList.remove('active');
+    });
+    document.querySelector('#case-' + id).classList.add('active');
+
+    document.querySelectorAll('.fc-case-gallery-inner').forEach(g=>{
+      g.classList.remove('active');
+    });
+    document.querySelector('#gallery-' + id).classList.add('active');
+
+  });
+});
+</script>
+{% schema %}
+{
+  "name": "Furncare Case Studies",
+  "settings": [
+
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Case studies" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading" },
+
+    { "type": "range", "id": "heading_size", "min": 20, "max": 80, "step": 2, "default": 40, "label": "Heading Size" },
+    { "type": "range", "id": "subheading_size", "min": 12, "max": 30, "step": 1, "default": 16, "label": "Subheading Size" },
+    { "type": "range", "id": "title_size", "min": 18, "max": 50, "step": 2, "default": 28, "label": "Case Title Size" },
+
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#ffffff" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#111111" },
+
+    { "type": "range", "id": "padding_top", "min": 0, "max": 150, "step": 5, "default": 60, "label": "Top Padding" },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 150, "step": 5, "default": 60, "label": "Bottom Padding" },
+
+    { "type": "range", "id": "container_width", "min": 800, "max": 1600, "step": 20, "default": 1200, "label": "Container Width" },
+    { "type": "range", "id": "grid_gap", "min": 10, "max": 60, "step": 2, "default": 30, "label": "Grid Gap" },
+
+    { "type": "color", "id": "tab_bg", "label": "Tab Background", "default": "#f5f5f5" },
+    { "type": "color", "id": "tab_text", "label": "Tab Text", "default": "#333" },
+    { "type": "color", "id": "tab_active_bg", "label": "Active Tab Background", "default": "#000000" },
+    { "type": "color", "id": "tab_active_text", "label": "Active Tab Text", "default": "#ffffff" },
+    { "type": "color", "id": "tab_border", "label": "Tab Border", "default": "#dddddd" },
+    { "type": "range", "id": "tab_radius", "min": 0, "max": 40, "step": 2, "default": 20, "label": "Tab Radius" },
+
+    { "type": "color", "id": "metric_bg", "label": "Metric Background", "default": "#f5f5f5" },
+    { "type": "range", "id": "metric_radius", "min": 0, "max": 40, "step": 2, "default": 10, "label": "Metric Radius" },
+    { "type": "range", "id": "metrics_columns", "min": 1, "max": 4, "step": 1, "default": 2, "label": "Metrics Columns" },
+
+    { "type": "color", "id": "quote_bg", "label": "Quote Background", "default": "#111111" },
+    { "type": "color", "id": "quote_text", "label": "Quote Text", "default": "#ffffff" },
+
+    { "type": "range", "id": "card_radius", "min": 0, "max": 40, "step": 2, "default": 16, "label": "Card Radius" }
+
+  ],
+  "blocks": [
+    {
+      "type": "case",
+      "name": "Case Study",
+      "settings": [
+
+        { "type": "text", "id": "tab_label", "label": "Tab Label" },
+        { "type": "text", "id": "kicker", "label": "Kicker" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "copy", "label": "Copy" },
+
+        { "type": "text", "id": "metric_1", "label": "Metric 1" },
+        { "type": "text", "id": "metric_label_1", "label": "Metric 1 Label" },
+
+        { "type": "text", "id": "metric_2", "label": "Metric 2" },
+        { "type": "text", "id": "metric_label_2", "label": "Metric 2 Label" },
+
+        { "type": "text", "id": "metric_3", "label": "Metric 3" },
+        { "type": "text", "id": "metric_label_3", "label": "Metric 3 Label" },
+
+        { "type": "text", "id": "metric_4", "label": "Metric 4" },
+        { "type": "text", "id": "metric_label_4", "label": "Metric 4 Label" },
+
+        { "type": "image_picker", "id": "image", "label": "Image" },
+
+        { "type": "textarea", "id": "quote", "label": "Quote" },
+        { "type": "text", "id": "source", "label": "Quote Source" }
+
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Furncare Case Studies"
+    }
+  ]
+}
+{% endschema %}
