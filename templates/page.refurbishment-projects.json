@@ -860,7 +860,7 @@
       "name": "Video & Form",
       "settings": {
         "bg_color": "#f9f6f0",
-        "max_width": 1250,
+        "max_width": 1950,
         "subtitle": "",
         "title": "Old Malton",
         "description": "<p>______</p>",
@@ -871,7 +871,7 @@
         "linkedin_url": "",
         "video_hosted": "shopify://files/videos/Old Malton Case Study.mp4",
         "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
-        "padding_top": 20,
+        "padding_top": 50,
         "padding_bottom": 110
       }
     }
