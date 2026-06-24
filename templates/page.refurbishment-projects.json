@@ -118,6 +118,81 @@
         "secondary_button_hover_border": "#f9f7f0"
       }
     },
+    "furncare_case_study_eU7UHK": {
+      "type": "furncare-case-study",
+      "blocks": {
+        "case_x33G3z": {
+          "type": "case",
+          "settings": {
+            "tab_label": "The Chestnuts",
+            "kicker": "CASE STUDY",
+            "title": "The Chestnuts",
+            "copy": "The Furncare team including Sheldon Southall, Declan Turner, Arnie Goodenough and Jade Eaglen have all contributed to The Chestnuts success story since receiving the first order in 2016. The latest chapter started in the Spring of 2024 when Declan and Arnie met with Arnas and deputy manager Stacey at the home. A few days later, Arnie returned with Furncare Project Design Manager Jade to discuss the brief, identify the interior themes and preferred fabrics.",
+            "metric_1": "",
+            "metric_label_1": "",
+            "metric_2": "",
+            "metric_label_2": "",
+            "metric_3": "",
+            "metric_label_3": "",
+            "metric_4": "",
+            "metric_label_4": "",
+            "image": "shopify://shop_images/Lounge_12_of_53.jpg",
+            "quote": "“You’ve managed to really understand what we are after and have transformed our thoughts into something really special.”",
+            "source": "Arnas Mauremootoo, Owner"
+          }
+        },
+        "case_9Ejkmw": {
+          "type": "case",
+          "settings": {
+            "tab_label": "Letcombe Regis",
+            "kicker": "CASE STUDIES",
+            "title": "Letcombe Regis",
+            "copy": "The beautiful interiors throughout have been sensitively designed and furnished to create a warm, luxurious and comfortable environment for residents. The upholstery colours and designs pair seamlessly with the furniture shapes and designs, transforming the spaces into a luxurious, opulent and homely environment.",
+            "metric_1": "",
+            "metric_label_1": "",
+            "metric_2": "",
+            "metric_label_2": "",
+            "metric_3": "",
+            "metric_label_3": "",
+            "metric_4": "",
+            "metric_label_4": "",
+            "image": "shopify://shop_images/Untitled_-_June_18_2026_at_08.20.35_1_5dc2ba04-6c4f-4e88-91e8-e33cfd868774.png",
+            "quote": "",
+            "source": ""
+          }
+        }
+      },
+      "block_order": [
+        "case_x33G3z",
+        "case_9Ejkmw"
+      ],
+      "name": "Furncare Case Studies",
+      "settings": {
+        "heading": "Case Studies",
+        "subheading": "",
+        "heading_size": 54,
+        "subheading_size": 14,
+        "title_size": 32,
+        "bg_color": "#F9F7F0",
+        "text_color": "#111111",
+        "padding_top": 70,
+        "padding_bottom": 150,
+        "container_width": 1200,
+        "grid_gap": 36,
+        "tab_bg": "#C3C0B0",
+        "tab_text": "#333",
+        "tab_active_bg": "#839488",
+        "tab_active_text": "#262520",
+        "tab_border": "#F9F7F0",
+        "tab_radius": 16,
+        "metric_bg": "#f5f5f5",
+        "metric_radius": 10,
+        "metrics_columns": 2,
+        "quote_bg": "#C3C0B0",
+        "quote_text": "#262252",
+        "card_radius": 24
+      }
+    },
     "blog_article_row_4iJ6Ye": {
       "type": "blog-article-row",
       "blocks": {
@@ -607,6 +682,7 @@
   },
   "order": [
     "hero",
+    "furncare_case_study_eU7UHK",
     "blog_article_row_4iJ6Ye",
     "audience",
     "process",
