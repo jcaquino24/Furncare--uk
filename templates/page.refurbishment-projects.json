@@ -304,7 +304,7 @@
         "metric_bg": "#f5f5f5",
         "metric_radius": 10,
         "metrics_columns": 2,
-        "quote_bg": "#c3c0b0",
+        "quote_bg": "#F9F7F0",
         "quote_text": "#262252",
         "card_radius": 24
       }
@@ -795,6 +795,85 @@
         "secondary_button_hover_color": "#243222",
         "secondary_button_hover_border": "#f9f7f0"
       }
+    },
+    "furncare_about_statement_3bEUrW": {
+      "type": "furncare-about-statement",
+      "name": "Furncare statement advanced",
+      "settings": {
+        "eyebrow": "More than furniture supply",
+        "heading": "A partner in the project.",
+        "copy": "<p>Large-scale care projects demand more than products on a page. They need considered specification, dependable lead times, practical sector knowledge and a team that understands how care environments really work.</p>",
+        "second_copy": "<p>That's where Furncare comes in.</p>",
+        "column_layout": "balanced",
+        "vertical_alignment": "center",
+        "background_gradient": "",
+        "background_color": "#fafaf9",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#e7e5e4",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 64,
+        "heading_size_mobile": 40,
+        "heading_weight": 700,
+        "heading_line_height": 100,
+        "heading_letter_spacing": -3,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 13,
+        "eyebrow_weight": 700,
+        "eyebrow_letter_spacing": 22,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 16,
+        "text_color": "#0c0a09",
+        "heading_color": "#0c0a09",
+        "copy_color": "#57534e",
+        "eyebrow_color": "#78716c",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "panel_background": "#ffffff",
+        "panel_border_color": "#e7e5e4",
+        "panel_border_width": 0,
+        "panel_radius": 32,
+        "panel_padding": 40,
+        "panel_shadow_opacity": 6
+      }
+    },
+    "video_form_4xcrPg": {
+      "type": "video-form",
+      "name": "Video & Form",
+      "settings": {
+        "bg_color": "#f9f6f0",
+        "max_width": 1250,
+        "subtitle": "",
+        "title": "Old Malton",
+        "description": "<p>______</p>",
+        "phone": "",
+        "email": "",
+        "facebook_url": "",
+        "instagram_url": "",
+        "linkedin_url": "",
+        "video_hosted": "shopify://files/videos/Old Malton Case Study.mp4",
+        "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+        "padding_top": 20,
+        "padding_bottom": 110
+      }
     }
   },
   "order": [
@@ -805,6 +884,8 @@
     "audience",
     "process",
     "proof",
-    "final_cta"
+    "final_cta",
+    "furncare_about_statement_3bEUrW",
+    "video_form_4xcrPg"
   ]
 }
