@@ -18,19 +18,19 @@
         "primary_label": "Plan a refurbishment",
         "primary_link": "shopify://pages/contact-us",
         "secondary_label": "Discuss your new build project",
-        "secondary_link": "https://www.furncare.co.uk/blogs/news/tagged/case-study",
+        "secondary_link": "shopify://pages/contact-us",
         "show_rotator": false,
         "animated_prefix": "",
         "animated_words": "",
         "animated_suffix": "",
         "background_image": "shopify://shop_images/Lounge_Two_5.jpg",
         "fallback_image_url": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2200&q=80",
-        "background_position": "center center",
+        "background_position": "bottom center",
         "background_size": "cover",
         "min_height": 100,
         "min_height_mobile": 80,
         "content_vertical_position": "center",
-        "enable_parallax": false,
+        "enable_parallax": true,
         "overlay_color": "#243222",
         "overlay_color_2": "#243222",
         "overlay_opacity": 0,
@@ -118,54 +118,176 @@
         "secondary_button_hover_border": "#f9f7f0"
       }
     },
-    "furncare_about_audience_iV9TrC": {
-      "type": "furncare-about-audience",
+    "furncare_case_study_XnUtHr": {
+      "type": "furncare-case-study",
       "blocks": {
-        "card_UbGCNc": {
-          "type": "card",
+        "case_RrqegD": {
+          "type": "case",
           "settings": {
-            "icon": "users",
-            "title": "Practical project support",
-            "copy": "Make confident decisions around furniture, finishes, layouts and timelines, with guidance shaped by care-sector experience."
+            "tab_label": "For Interior Designers",
+            "kicker": "CASE STUDY",
+            "title": "The Chestnuts",
+            "copy": "For interior designers, Furncare acts as the care-specialist furniture partner who can help translate creative schemes into durable, resident-friendly spaces with a consistent, considered finish.",
+            "metric_1": "Bespoke furniture options, fabrics and finishing touches that carry one consistent design across bedrooms, lounges and shared spaces.",
+            "metric_label_1": "",
+            "metric_2": "Support with samples, finishes and room-by-room coordination, helping every detail feel considered and aligned.",
+            "metric_label_2": "",
+            "metric_3": "Care-sector practicality without compromising warmth, colour, personality or the overall scheme.",
+            "metric_label_3": "",
+            "metric_4": "",
+            "metric_label_4": "",
+            "image": "shopify://shop_images/P1049441_76d5ef38-a341-4e10-84b6-bf8e6f5305a6.jpg",
+            "quote": "",
+            "source": ""
           }
         },
-        "card_ezqN7r": {
-          "type": "card",
+        "case_hMhd8q": {
+          "type": "case",
           "settings": {
-            "icon": "sofa",
-            "title": "Seamless interiors",
-            "copy": "Introduce new furniture and finishes that sit naturally alongside your current scheme, giving spaces a refreshed, cohesive feel."
-          }
-        },
-        "card_AmdbMy": {
-          "type": "card",
-          "settings": {
-            "icon": "clipboard",
-            "title": "Design-led solutions",
-            "copy": "Choose from coordinated fabrics, finishes and furniture options that bring warmth, style and practicality into your care environment."
-          }
-        },
-        "card_hent3W": {
-          "type": "card",
-          "settings": {
-            "icon": "truck",
-            "title": "Quick delivery",
-            "copy": "Need your refurbishment in a short space of time? Our quick delivery range helps you refresh spaces without unnecessary delays."
+            "tab_label": "Letcombe Regis",
+            "kicker": "CASE STUDIES",
+            "title": "Letcombe Regis",
+            "copy": "TESTING",
+            "metric_1": "",
+            "metric_label_1": "",
+            "metric_2": "",
+            "metric_label_2": "",
+            "metric_3": "",
+            "metric_label_3": "",
+            "metric_4": "",
+            "metric_label_4": "",
+            "image": "shopify://shop_images/Untitled_-_June_18_2026_at_08.20.35_1_5dc2ba04-6c4f-4e88-91e8-e33cfd868774.png",
+            "quote": "",
+            "source": ""
           }
         }
       },
       "block_order": [
-        "card_UbGCNc",
-        "card_ezqN7r",
-        "card_AmdbMy",
-        "card_hent3W"
+        "case_RrqegD",
+        "case_hMhd8q"
+      ],
+      "name": "Furncare Case Studies",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_size": 54,
+        "subheading_size": 14,
+        "title_size": 32,
+        "bg_color": "#f9f7f0",
+        "text_color": "#111111",
+        "padding_top": 70,
+        "padding_bottom": 60,
+        "container_width": 1320,
+        "grid_gap": 26,
+        "tab_bg": "#c3c0b0",
+        "tab_text": "#333",
+        "tab_active_bg": "#839488",
+        "tab_active_text": "#262520",
+        "tab_border": "#f9f7f0",
+        "tab_radius": 16,
+        "metric_bg": "#C3C0B0",
+        "metric_radius": 30,
+        "metrics_columns": 1,
+        "quote_bg": "#f9f7f0",
+        "quote_text": "#262252",
+        "card_radius": 24
+      }
+    },
+    "richtext_brGyXC": {
+      "type": "richtext",
+      "blocks": {
+        "heading_4qKEXp": {
+          "type": "heading",
+          "settings": {
+            "text": "We design furniture and interiors that are practical, safe, and welcoming. Our focus is creating spaces that support both residents and caregivers.",
+            "heading_level": "h2",
+            "heading_style": "title-xs"
+          },
+          "blocks": {}
+        },
+        "tagline_TJ4D3e": {
+          "type": "tagline",
+          "settings": {
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_Bf3fPK": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_4qKEXp",
+        "tagline_TJ4D3e",
+        "button_Bf3fPK"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "furncare_about_audience_UMQdPg": {
+      "type": "furncare-about-audience",
+      "blocks": {
+        "card_7yCDzJ": {
+          "type": "card",
+          "settings": {
+            "icon": "users",
+            "title": "Specification from the start",
+            "copy": "Make furniture decisions early, with support around layouts, finishes, fabrics and practical care requirements from the beginning of your project."
+          }
+        },
+        "card_ByUftT": {
+          "type": "card",
+          "settings": {
+            "icon": "sofa",
+            "title": "Complete coordination",
+            "copy": "Create a cohesive furniture scheme across bedrooms, lounges, dining spaces and shared areas, with pieces selected to feel calm, consistent and beautifully considered."
+          }
+        },
+        "card_P6BcN4": {
+          "type": "card",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Care-ready design choices",
+            "copy": "Choose furniture, fabrics and finishes that bring quality and comfort, while standing up to everyday care environment demands."
+          }
+        },
+        "card_3xptrW": {
+          "type": "card",
+          "settings": {
+            "icon": "truck",
+            "title": "White glove delivery",
+            "copy": "Our in-house delivery team gives you complete flexibility around timings,  with every piece delivered, unpacked, assembled and placed throughout the home, ready for open day."
+          }
+        }
+      },
+      "block_order": [
+        "card_7yCDzJ",
+        "card_ByUftT",
+        "card_P6BcN4",
+        "card_3xptrW"
       ],
       "name": "Furncare audience advanced",
       "settings": {
-        "eyebrow": "tailored refurbishment support",
-        "heading": "Refresh your existing spaces with confidence.",
+        "eyebrow": "NEW BUILD FURNITURE SUPPORT",
+        "heading": "Bring your new care spaces to life.",
         "background_gradient": "",
-        "background_color": "#f9f7f0",
+        "background_color": "#c3c0b0",
         "max_width": 1280,
         "gutter_desktop": 24,
         "gutter_mobile": 16,
@@ -181,7 +303,7 @@
         "section_border_color": "#f9f7f0",
         "border_top_width": 0,
         "border_bottom_width": 0,
-        "heading_size_desktop": 50,
+        "heading_size_desktop": 52,
         "heading_size_mobile": 36,
         "heading_weight": 400,
         "heading_line_height": 100,
@@ -205,10 +327,10 @@
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760,
-        "card_background": "#c3c0b0",
+        "card_background": "#f9f7f0",
         "card_heading_color": "#0c0a09",
         "card_copy_color": "#262520",
-        "card_border_color": "#e7e5e4",
+        "card_border_color": "#f9f7f0",
         "card_border_width": 1,
         "card_radius": 32,
         "card_padding": 28,
@@ -225,7 +347,7 @@
         "columns_desktop": "4",
         "columns_tablet": "2",
         "columns_mobile": "1",
-        "icon_background": "#839488",
+        "icon_background": "#c3c0b0",
         "icon_color": "#292524",
         "icon_size": 48,
         "icon_svg_size": 23,
@@ -234,11 +356,80 @@
         "icon_hover_scale": 108
       }
     },
+    "video_form_4xcrPg": {
+      "type": "video-form",
+      "name": "Video & Form",
+      "settings": {
+        "bg_color": "#f9f6f0",
+        "max_width": 2550,
+        "subtitle": "",
+        "title": "Manor Park",
+        "description": "<p>As one of our largest transformations, </p>",
+        "phone": "",
+        "email": "",
+        "facebook_url": "",
+        "instagram_url": "",
+        "linkedin_url": "",
+        "video_hosted": "shopify://files/videos/Old Malton Case Study.mp4",
+        "external_video_url": "",
+        "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+        "padding_top": 85,
+        "padding_bottom": 110
+      }
+    },
+    "richtext_kj7PnM": {
+      "type": "richtext",
+      "blocks": {
+        "heading_H9pqAU": {
+          "type": "heading",
+          "settings": {
+            "text": "We design furniture and interiors that are practical, safe, and welcoming. Our focus is creating spaces that support both residents and caregivers.",
+            "heading_level": "h2",
+            "heading_style": "title-xs"
+          },
+          "blocks": {}
+        },
+        "tagline_W8ACai": {
+          "type": "tagline",
+          "settings": {
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_tfwVNp": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_H9pqAU",
+        "tagline_W8ACai",
+        "button_tfwVNp"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "green-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
     "furncare_case_study_eU7UHK": {
       "type": "furncare-case-study",
       "blocks": {
         "case_EjVMfq": {
           "type": "case",
+          "disabled": true,
           "settings": {
             "tab_label": "Old Malton",
             "kicker": "CASE STUDY",
@@ -330,101 +521,54 @@
         "card_radius": 24
       }
     },
-    "richtext_kj7PnM": {
-      "type": "richtext",
-      "blocks": {
-        "heading_H9pqAU": {
-          "type": "heading",
-          "settings": {
-            "text": "We design furniture and interiors that are practical, safe, and welcoming. Our focus is creating spaces that support both residents and caregivers.",
-            "heading_level": "h2",
-            "heading_style": "title-xs"
-          },
-          "blocks": {}
-        },
-        "tagline_W8ACai": {
-          "type": "tagline",
-          "settings": {
-            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "tagline_style": "body-md"
-          },
-          "blocks": {}
-        },
-        "button_tfwVNp": {
-          "type": "button",
-          "settings": {
-            "style": "primary",
-            "text": "Button",
-            "url": "#",
-            "new_tab": false
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "heading_H9pqAU",
-        "tagline_W8ACai",
-        "button_tfwVNp"
-      ],
-      "name": "Rich Text",
-      "settings": {
-        "max_width_desktop": 100,
-        "section_padding": "--spacing-4xl",
-        "text_alignment": "center",
-        "colour_scheme": "green-01",
-        "enable_animation": false,
-        "optional_richtext": "",
-        "small_container": false
-      }
-    },
-    "furncare_about_audience_UMQdPg": {
+    "furncare_about_audience_iV9TrC": {
       "type": "furncare-about-audience",
       "blocks": {
-        "card_7yCDzJ": {
+        "card_UbGCNc": {
           "type": "card",
           "settings": {
             "icon": "users",
-            "title": "Specification from the start",
-            "copy": "Make furniture decisions early, with support around layouts, finishes, fabrics and practical care requirements from the beginning of your project."
+            "title": "Practical project support",
+            "copy": "Make confident decisions around furniture, finishes, layouts and timelines, with guidance shaped by care-sector experience."
           }
         },
-        "card_ByUftT": {
+        "card_ezqN7r": {
           "type": "card",
           "settings": {
             "icon": "sofa",
-            "title": "Complete coordination",
-            "copy": "Create a cohesive furniture scheme across bedrooms, lounges, dining spaces and shared areas, with pieces selected to feel calm, consistent and beautifully considered."
+            "title": "Seamless interiors",
+            "copy": "Introduce new furniture and finishes that sit naturally alongside your current scheme, giving spaces a refreshed, cohesive feel."
           }
         },
-        "card_P6BcN4": {
+        "card_AmdbMy": {
           "type": "card",
           "settings": {
             "icon": "clipboard",
-            "title": "Care-ready design choices",
-            "copy": "Choose furniture, fabrics and finishes that bring quality and comfort, while standing up to everyday care environment demands."
+            "title": "Design-led solutions",
+            "copy": "Choose from coordinated fabrics, finishes and furniture options that bring warmth, style and practicality into your care environment."
           }
         },
-        "card_3xptrW": {
+        "card_hent3W": {
           "type": "card",
           "settings": {
             "icon": "truck",
-            "title": "White glove delivery",
-            "copy": "Our in-house delivery team gives you complete flexibility around timings,  with every piece delivered, unpacked, assembled and placed throughout the home, ready for open day."
+            "title": "Quick delivery",
+            "copy": "Need your refurbishment in a short space of time? Our quick delivery range helps you refresh spaces without unnecessary delays."
           }
         }
       },
       "block_order": [
-        "card_7yCDzJ",
-        "card_ByUftT",
-        "card_P6BcN4",
-        "card_3xptrW"
+        "card_UbGCNc",
+        "card_ezqN7r",
+        "card_AmdbMy",
+        "card_hent3W"
       ],
       "name": "Furncare audience advanced",
       "settings": {
-        "eyebrow": "NEW BUILD FURNITURE SUPPORT",
-        "heading": "Bring your new care spaces to life.",
+        "eyebrow": "tailored refurbishment support",
+        "heading": "Refresh your existing spaces with confidence.",
         "background_gradient": "",
-        "background_color": "#C3C0B0",
+        "background_color": "#f9f7f0",
         "max_width": 1280,
         "gutter_desktop": 24,
         "gutter_mobile": 16,
@@ -440,7 +584,7 @@
         "section_border_color": "#f9f7f0",
         "border_top_width": 0,
         "border_bottom_width": 0,
-        "heading_size_desktop": 52,
+        "heading_size_desktop": 50,
         "heading_size_mobile": 36,
         "heading_weight": 400,
         "heading_line_height": 100,
@@ -464,10 +608,10 @@
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760,
-        "card_background": "#F9F7F0",
+        "card_background": "#c3c0b0",
         "card_heading_color": "#0c0a09",
         "card_copy_color": "#262520",
-        "card_border_color": "#F9F7F0",
+        "card_border_color": "#e7e5e4",
         "card_border_width": 1,
         "card_radius": 32,
         "card_padding": 28,
@@ -484,7 +628,7 @@
         "columns_desktop": "4",
         "columns_tablet": "2",
         "columns_mobile": "1",
-        "icon_background": "#C3C0B0",
+        "icon_background": "#839488",
         "icon_color": "#292524",
         "icon_size": 48,
         "icon_svg_size": 23,
@@ -1138,42 +1282,23 @@
         "right_icon_background": "#2f3f2c",
         "right_icon_color": "#f9f7f0"
       }
-    },
-    "video_form_4xcrPg": {
-      "type": "video-form",
-      "name": "Video & Form",
-      "settings": {
-        "bg_color": "#f9f6f0",
-        "max_width": 2550,
-        "subtitle": "",
-        "title": "Manor Park",
-        "description": "<p>As one of our largest transformations, </p>",
-        "phone": "",
-        "email": "",
-        "facebook_url": "",
-        "instagram_url": "",
-        "linkedin_url": "",
-        "video_hosted": "shopify://files/videos/Old Malton Case Study.mp4",
-        "external_video_url": "",
-        "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
-        "padding_top": 85,
-        "padding_bottom": 110
-      }
     }
   },
   "order": [
     "hero",
-    "furncare_about_audience_iV9TrC",
-    "furncare_case_study_eU7UHK",
-    "richtext_kj7PnM",
+    "furncare_case_study_XnUtHr",
+    "richtext_brGyXC",
     "furncare_about_audience_UMQdPg",
+    "video_form_4xcrPg",
+    "richtext_kj7PnM",
+    "furncare_case_study_eU7UHK",
+    "furncare_about_audience_iV9TrC",
     "blog_article_row_4iJ6Ye",
     "audience",
     "proof",
     "final_cta",
     "furncare_about_statement_3bEUrW",
     "process",
-    "furncare_about_proposition_wjtH7D",
-    "video_form_4xcrPg"
+    "furncare_about_proposition_wjtH7D"
   ]
 }
