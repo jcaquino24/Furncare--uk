@@ -150,7 +150,7 @@
           "settings": {
             "icon": "truck",
             "title": "Quick delivery",
-            "copy": "Need your refurbishment in a short space of time? Our quick delivery range has you covered."
+            "copy": "Need your refurbishment in a short space of time? Our quick delivery range helps you refresh spaces without unnecessary delays."
           }
         }
       },
@@ -175,7 +175,7 @@
         "padding_bottom_mobile": 72,
         "section_gap": 48,
         "section_gap_mobile": 36,
-        "header_max_width": 780,
+        "header_max_width": 1200,
         "content_max_width": 960,
         "text_alignment": "left",
         "section_border_color": "#f9f7f0",
@@ -183,9 +183,9 @@
         "border_bottom_width": 0,
         "heading_size_desktop": 52,
         "heading_size_mobile": 36,
-        "heading_weight": 700,
+        "heading_weight": 400,
         "heading_line_height": 100,
-        "heading_letter_spacing": -3,
+        "heading_letter_spacing": 0,
         "heading_max_width": 1100,
         "copy_size_desktop": 18,
         "copy_size_mobile": 16,
@@ -243,7 +243,7 @@
             "tab_label": "The Chestnuts",
             "kicker": "CASE STUDY",
             "title": "The Chestnuts",
-            "copy": "The Furncare team including Sheldon Southall, Declan Turner, Arnie Goodenough and Jade Eaglen have all contributed to The Chestnuts success story since receiving the first order in 2016. The latest chapter started in the Spring of 2024 when Declan and Arnie met with Arnas and deputy manager Stacey at the home. A few days later, Arnie returned with Furncare Project Design Manager Jade to discuss the brief, identify the interior themes and preferred fabrics.",
+            "copy": "TESTING",
             "metric_1": "",
             "metric_label_1": "",
             "metric_2": "",
@@ -263,7 +263,7 @@
             "tab_label": "Letcombe Regis",
             "kicker": "CASE STUDIES",
             "title": "Letcombe Regis",
-            "copy": "The beautiful interiors throughout have been sensitively designed and furnished to create a warm, luxurious and comfortable environment for residents. The upholstery colours and designs pair seamlessly with the furniture shapes and designs, transforming the spaces into a luxurious, opulent and homely environment.",
+            "copy": "TESTING",
             "metric_1": "",
             "metric_label_1": "",
             "metric_2": "",
@@ -292,7 +292,7 @@
         "bg_color": "#f9f7f0",
         "text_color": "#111111",
         "padding_top": 70,
-        "padding_bottom": 150,
+        "padding_bottom": 60,
         "container_width": 1320,
         "grid_gap": 26,
         "tab_bg": "#c3c0b0",
@@ -307,6 +307,53 @@
         "quote_bg": "#F9F7F0",
         "quote_text": "#262252",
         "card_radius": 24
+      }
+    },
+    "richtext_kj7PnM": {
+      "type": "richtext",
+      "blocks": {
+        "heading_H9pqAU": {
+          "type": "heading",
+          "settings": {
+            "text": "We design furniture and interiors that are practical, safe, and welcoming. Our focus is creating spaces that support both residents and caregivers.",
+            "heading_level": "h2",
+            "heading_style": "title-xs"
+          },
+          "blocks": {}
+        },
+        "tagline_W8ACai": {
+          "type": "tagline",
+          "settings": {
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_tfwVNp": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_H9pqAU",
+        "tagline_W8ACai",
+        "button_tfwVNp"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "green-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
       }
     },
     "blog_article_row_4iJ6Ye": {
@@ -467,130 +514,6 @@
         "icon_radius": 16,
         "icon_margin_bottom": 32,
         "icon_hover_scale": 108
-      }
-    },
-    "process": {
-      "type": "furncare-about-process",
-      "blocks": {
-        "step_KnYBgP": {
-          "type": "step",
-          "settings": {
-            "number": "01",
-            "title": "Understand",
-            "copy": "We get to grips with the project scope, users, timelines and budgets."
-          }
-        },
-        "step_1": {
-          "type": "step",
-          "settings": {
-            "number": "01",
-            "title": "Assess",
-            "copy": "We visit the site to review the space, take key measurements and identify any practical considerations."
-          }
-        },
-        "step_2": {
-          "type": "step",
-          "settings": {
-            "number": "02",
-            "title": "Specify",
-            "copy": "We help shape the right furniture selections across rooms, schemes and finishes."
-          }
-        },
-        "step_3": {
-          "type": "step",
-          "settings": {
-            "number": "03",
-            "title": "Coordinate",
-            "copy": "We support the project with clear communication, product information and delivery planning."
-          }
-        },
-        "step_4": {
-          "type": "step",
-          "settings": {
-            "number": "04",
-            "title": "Deliver",
-            "copy": "We keep furniture supply aligned with project timelines and operational needs."
-          }
-        },
-        "step_5": {
-          "type": "step",
-          "settings": {
-            "number": "05",
-            "title": "Support",
-            "copy": "We remain on hand for future phases, replacements and ongoing requirements."
-          }
-        }
-      },
-      "block_order": [
-        "step_KnYBgP",
-        "step_1",
-        "step_2",
-        "step_3",
-        "step_4",
-        "step_5"
-      ],
-      "disabled": true,
-      "settings": {
-        "eyebrow": "A smoother route from brief to installation",
-        "heading": "The Furncare Way.",
-        "background_gradient": "",
-        "background_color": "#243222",
-        "max_width": 1280,
-        "gutter_desktop": 24,
-        "gutter_mobile": 16,
-        "padding_top": 96,
-        "padding_bottom": 96,
-        "padding_mobile": 72,
-        "padding_bottom_mobile": 72,
-        "section_gap": 48,
-        "section_gap_mobile": 36,
-        "header_max_width": 780,
-        "content_max_width": 960,
-        "text_alignment": "left",
-        "section_border_color": "#e7e5e4",
-        "border_top_width": 0,
-        "border_bottom_width": 0,
-        "heading_size_desktop": 48,
-        "heading_size_mobile": 32,
-        "heading_weight": 500,
-        "heading_line_height": 100,
-        "heading_letter_spacing": 0,
-        "heading_max_width": 1100,
-        "copy_size_desktop": 18,
-        "copy_size_mobile": 16,
-        "copy_weight": 400,
-        "copy_line_height": 170,
-        "copy_max_width": 760,
-        "copy_margin_top": 28,
-        "eyebrow_size": 14,
-        "eyebrow_weight": 400,
-        "eyebrow_letter_spacing": 40,
-        "eyebrow_transform": "uppercase",
-        "eyebrow_margin_bottom": 20,
-        "text_color": "#c3c0b0",
-        "heading_color": "#c3c0b0",
-        "copy_color": "#c3c0b0",
-        "eyebrow_color": "#c3c0b0",
-        "enable_reveal": true,
-        "reveal_distance": 32,
-        "reveal_duration": 760,
-        "process_card_background": "#c3c0b0",
-        "process_card_border": "#c3c0b0",
-        "process_number_color": "#243222",
-        "process_title_color": "#243222",
-        "process_copy_color": "#243222",
-        "process_line_color": "#f9f7f0",
-        "card_border_width": 1,
-        "card_radius": 32,
-        "card_padding": 32,
-        "card_padding_mobile": 24,
-        "grid_gap": 20,
-        "process_number_size": 13,
-        "process_title_size": 28,
-        "card_title_weight": 700,
-        "card_copy_size": 16,
-        "card_copy_line_height": 170,
-        "process_card_blur": 16
       }
     },
     "proof": {
@@ -798,6 +721,7 @@
     },
     "furncare_about_statement_3bEUrW": {
       "type": "furncare-about-statement",
+      "disabled": true,
       "name": "Furncare statement advanced",
       "settings": {
         "eyebrow": "More than just furniture",
@@ -855,15 +779,239 @@
         "panel_shadow_opacity": 6
       }
     },
+    "process": {
+      "type": "furncare-about-process",
+      "blocks": {
+        "step_KnYBgP": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "title": "Understand",
+            "copy": "We get to grips with the project scope, users, timelines and budgets."
+          }
+        },
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "title": "Assess",
+            "copy": "We visit the site to review the space, take key measurements and identify any practical considerations."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "title": "Specify",
+            "copy": "We help shape the right furniture selections across rooms, schemes and finishes."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "title": "Coordinate",
+            "copy": "We support the project with clear communication, product information and delivery planning."
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "number": "04",
+            "title": "Deliver",
+            "copy": "We keep furniture supply aligned with project timelines and operational needs."
+          }
+        },
+        "step_5": {
+          "type": "step",
+          "settings": {
+            "number": "05",
+            "title": "Support",
+            "copy": "We remain on hand for future phases, replacements and ongoing requirements."
+          }
+        }
+      },
+      "block_order": [
+        "step_KnYBgP",
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4",
+        "step_5"
+      ],
+      "disabled": true,
+      "settings": {
+        "eyebrow": "A smoother route from brief to installation",
+        "heading": "The Furncare Way.",
+        "background_gradient": "",
+        "background_color": "#243222",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#e7e5e4",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 32,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 14,
+        "eyebrow_weight": 400,
+        "eyebrow_letter_spacing": 40,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 20,
+        "text_color": "#c3c0b0",
+        "heading_color": "#c3c0b0",
+        "copy_color": "#c3c0b0",
+        "eyebrow_color": "#c3c0b0",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "process_card_background": "#c3c0b0",
+        "process_card_border": "#c3c0b0",
+        "process_number_color": "#243222",
+        "process_title_color": "#243222",
+        "process_copy_color": "#243222",
+        "process_line_color": "#f9f7f0",
+        "card_border_width": 1,
+        "card_radius": 32,
+        "card_padding": 32,
+        "card_padding_mobile": 24,
+        "grid_gap": 20,
+        "process_number_size": 13,
+        "process_title_size": 28,
+        "card_title_weight": 700,
+        "card_copy_size": 16,
+        "card_copy_line_height": 170,
+        "process_card_blur": 16
+      }
+    },
+    "furncare_about_proposition_wjtH7D": {
+      "type": "furncare-about-proposition",
+      "disabled": true,
+      "name": "Furncare proposition advanced",
+      "settings": {
+        "eyebrow": "The balance",
+        "heading": "Designed for care.  Ready to refresh.",
+        "left_icon": "heart",
+        "left_title": "Designed for care",
+        "left_copy": "Warm, practical and durable furniture that helps care spaces feel comfortable, considered and welcoming.",
+        "right_icon": "check",
+        "right_title": "Ready to refresh",
+        "right_copy": "Quality furniture, coordinated finishes and dependable supply for teams renewing care interiors with confidence.",
+        "background_gradient": "",
+        "background_color": "#F9F7F0",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#F9F7F0",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 25,
+        "heading_size_mobile": 40,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 13,
+        "eyebrow_weight": 700,
+        "eyebrow_letter_spacing": 22,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 16,
+        "text_color": "#262520",
+        "heading_color": "#0c0a09",
+        "copy_color": "#57534e",
+        "eyebrow_color": "#78716c",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "card_background": "#F9F7F0",
+        "card_heading_color": "#262520",
+        "card_copy_color": "#57534e",
+        "card_border_color": "#F9F7F0",
+        "card_border_width": 1,
+        "card_radius": 32,
+        "card_padding": 28,
+        "card_padding_mobile": 24,
+        "card_shadow_opacity": 6,
+        "card_hover_shadow_opacity": 14,
+        "card_hover_lift": 4,
+        "card_title_size": 20,
+        "card_title_weight": 500,
+        "card_copy_size": 15,
+        "card_copy_line_height": 170,
+        "card_copy_margin_top": 20,
+        "grid_gap": 20,
+        "columns_desktop": "2",
+        "columns_tablet": "2",
+        "columns_mobile": "2",
+        "icon_background": "#F9F7F0",
+        "icon_color": "#292524",
+        "icon_size": 48,
+        "icon_svg_size": 23,
+        "icon_radius": 16,
+        "icon_margin_bottom": 32,
+        "icon_hover_scale": 108,
+        "panel_title_size": 40,
+        "panel_title_margin_top": 28,
+        "panel_copy_margin_top": 20,
+        "panel_padding": 48,
+        "left_panel_bg": "#C3C0B0",
+        "left_panel_text": "#0c0a09",
+        "left_title_color": "#0c0a09",
+        "left_copy_color": "#57534e",
+        "left_icon_background": "#CDCBC0",
+        "left_icon_color": "#292524",
+        "right_panel_bg": "#243222",
+        "right_panel_text": "#F9F7F0",
+        "right_title_color": "#F9F7F0",
+        "right_copy_color": "#d6d3d1",
+        "right_icon_background": "#2F3F2C",
+        "right_icon_color": "#F9F7F0"
+      }
+    },
     "video_form_4xcrPg": {
       "type": "video-form",
+      "disabled": true,
       "name": "Video & Form",
       "settings": {
         "bg_color": "#f9f6f0",
         "max_width": 2550,
         "subtitle": "",
-        "title": "Old Malton",
-        "description": "<p>______</p>",
+        "title": "Manor Park",
+        "description": "<p>As one of our largest transformations, </p>",
         "phone": "",
         "email": "",
         "facebook_url": "",
@@ -880,12 +1028,14 @@
     "hero",
     "furncare_about_audience_iV9TrC",
     "furncare_case_study_eU7UHK",
+    "richtext_kj7PnM",
     "blog_article_row_4iJ6Ye",
     "audience",
-    "process",
     "proof",
     "final_cta",
     "furncare_about_statement_3bEUrW",
+    "process",
+    "furncare_about_proposition_wjtH7D",
     "video_form_4xcrPg"
   ]
 }
