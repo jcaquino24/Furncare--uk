@@ -125,15 +125,15 @@
           "type": "case",
           "settings": {
             "tab_label": "For Interior Designers",
-            "kicker": "CASE STUDY",
-            "title": "The Chestnuts",
+            "kicker": "",
+            "title": "Your scheme, made care-ready.",
             "copy": "For interior designers, Furncare acts as the care-specialist furniture partner who can help translate creative schemes into durable, resident-friendly spaces with a consistent, considered finish.",
-            "metric_1": "Bespoke furniture options, fabrics and finishing touches that carry one consistent design across bedrooms, lounges and shared spaces.",
-            "metric_label_1": "",
-            "metric_2": "Support with samples, finishes and room-by-room coordination, helping every detail feel considered and aligned.",
-            "metric_label_2": "",
-            "metric_3": "Care-sector practicality without compromising warmth, colour, personality or the overall scheme.",
-            "metric_label_3": "",
+            "metric_1": "ㅤ",
+            "metric_label_1": "Bespoke furniture options, fabrics and finishing touches that carry one consistent design across bedrooms, lounges and shared spaces.",
+            "metric_2": "ㅤ",
+            "metric_label_2": "Support with samples, finishes and room-by-room coordination, helping every detail feel considered and aligned.",
+            "metric_3": "ㅤ",
+            "metric_label_3": "Care-sector practicality without compromising warmth, colour, personality or the overall scheme.",
             "metric_4": "",
             "metric_label_4": "",
             "image": "shopify://shop_images/P1049441_76d5ef38-a341-4e10-84b6-bf8e6f5305a6.jpg",
@@ -144,18 +144,18 @@
         "case_hMhd8q": {
           "type": "case",
           "settings": {
-            "tab_label": "Letcombe Regis",
-            "kicker": "CASE STUDIES",
+            "tab_label": "For Managers",
+            "kicker": "",
             "title": "Letcombe Regis",
             "copy": "TESTING",
-            "metric_1": "",
-            "metric_label_1": "",
+            "metric_1": "ㅤ",
+            "metric_label_1": "ㅤ",
             "metric_2": "",
-            "metric_label_2": "",
+            "metric_label_2": "ㅤ",
             "metric_3": "",
-            "metric_label_3": "",
+            "metric_label_3": "ㅤ",
             "metric_4": "",
-            "metric_label_4": "",
+            "metric_label_4": "ㅤ",
             "image": "shopify://shop_images/Untitled_-_June_18_2026_at_08.20.35_1_5dc2ba04-6c4f-4e88-91e8-e33cfd868774.png",
             "quote": "",
             "source": ""
@@ -165,6 +165,11 @@
       "block_order": [
         "case_RrqegD",
         "case_hMhd8q"
+      ],
+      "custom_css": [
+        ".icon-text {display: flex; align-items: flex-start; gap: 8px;}",
+        ".tick-icon {width: 14px; height: 14px; flex: 0 0 14px; margin-top: 3px; color: #25241f; display: block;}",
+        ".icon-text p {margin: 0;}"
       ],
       "name": "Furncare Case Studies",
       "settings": {
@@ -177,8 +182,8 @@
         "text_color": "#111111",
         "padding_top": 70,
         "padding_bottom": 60,
-        "container_width": 1320,
-        "grid_gap": 26,
+        "container_width": 1360,
+        "grid_gap": 42,
         "tab_bg": "#c3c0b0",
         "tab_text": "#333",
         "tab_active_bg": "#839488",
@@ -186,11 +191,11 @@
         "tab_border": "#f9f7f0",
         "tab_radius": 16,
         "metric_bg": "#C3C0B0",
-        "metric_radius": 30,
+        "metric_radius": 40,
         "metrics_columns": 1,
-        "quote_bg": "#f9f7f0",
+        "quote_bg": "#F9F7F0",
         "quote_text": "#262252",
-        "card_radius": 24
+        "card_radius": 10
       }
     },
     "richtext_brGyXC": {
@@ -199,7 +204,7 @@
         "heading_4qKEXp": {
           "type": "heading",
           "settings": {
-            "text": "We design furniture and interiors that are practical, safe, and welcoming. Our focus is creating spaces that support both residents and caregivers.",
+            "text": "newbuild",
             "heading_level": "h2",
             "heading_style": "title-xs"
           },
@@ -208,26 +213,15 @@
         "tagline_TJ4D3e": {
           "type": "tagline",
           "settings": {
-            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "content": "_________________",
             "tagline_style": "body-md"
-          },
-          "blocks": {}
-        },
-        "button_Bf3fPK": {
-          "type": "button",
-          "settings": {
-            "style": "primary",
-            "text": "Button",
-            "url": "#",
-            "new_tab": false
           },
           "blocks": {}
         }
       },
       "block_order": [
         "heading_4qKEXp",
-        "tagline_TJ4D3e",
-        "button_Bf3fPK"
+        "tagline_TJ4D3e"
       ],
       "name": "Rich Text",
       "settings": {
@@ -383,7 +377,7 @@
         "heading_H9pqAU": {
           "type": "heading",
           "settings": {
-            "text": "We design furniture and interiors that are practical, safe, and welcoming. Our focus is creating spaces that support both residents and caregivers.",
+            "text": "refurb",
             "heading_level": "h2",
             "heading_style": "title-xs"
           },
@@ -392,26 +386,15 @@
         "tagline_W8ACai": {
           "type": "tagline",
           "settings": {
-            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "content": "_______________________",
             "tagline_style": "body-md"
-          },
-          "blocks": {}
-        },
-        "button_tfwVNp": {
-          "type": "button",
-          "settings": {
-            "style": "primary",
-            "text": "Button",
-            "url": "#",
-            "new_tab": false
           },
           "blocks": {}
         }
       },
       "block_order": [
         "heading_H9pqAU",
-        "tagline_W8ACai",
-        "button_tfwVNp"
+        "tagline_W8ACai"
       ],
       "name": "Rich Text",
       "settings": {
