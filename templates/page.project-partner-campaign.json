@@ -121,6 +121,26 @@
     "furncare_case_study_XnUtHr": {
       "type": "furncare-case-study",
       "blocks": {
+        "case_hMhd8q": {
+          "type": "case",
+          "settings": {
+            "tab_label": "For Managers",
+            "kicker": "",
+            "title": "Make refurbishment choices with confidence.",
+            "copy": "For care managers, Furncare brings furniture options, samples and finishes directly to site, helping you make informed decisions with residents, staff and the space itself in mind.",
+            "metric_1": "ㅤ",
+            "metric_label_1": "ㅤ",
+            "metric_2": "",
+            "metric_label_2": "ㅤ",
+            "metric_3": "",
+            "metric_label_3": "ㅤ",
+            "metric_4": "",
+            "metric_label_4": "ㅤ",
+            "image": "shopify://shop_images/Untitled_-_June_18_2026_at_08.20.35_1_5dc2ba04-6c4f-4e88-91e8-e33cfd868774.png",
+            "quote": "",
+            "source": ""
+          }
+        },
         "case_RrqegD": {
           "type": "case",
           "settings": {
@@ -140,31 +160,11 @@
             "quote": "",
             "source": ""
           }
-        },
-        "case_hMhd8q": {
-          "type": "case",
-          "settings": {
-            "tab_label": "For Managers",
-            "kicker": "",
-            "title": "Letcombe Regis",
-            "copy": "TESTING",
-            "metric_1": "ㅤ",
-            "metric_label_1": "ㅤ",
-            "metric_2": "",
-            "metric_label_2": "ㅤ",
-            "metric_3": "",
-            "metric_label_3": "ㅤ",
-            "metric_4": "",
-            "metric_label_4": "ㅤ",
-            "image": "shopify://shop_images/Untitled_-_June_18_2026_at_08.20.35_1_5dc2ba04-6c4f-4e88-91e8-e33cfd868774.png",
-            "quote": "",
-            "source": ""
-          }
         }
       },
       "block_order": [
-        "case_RrqegD",
-        "case_hMhd8q"
+        "case_hMhd8q",
+        "case_RrqegD"
       ],
       "custom_css": [
         ".icon-text {display: flex; align-items: flex-start; gap: 8px;}",
@@ -198,6 +198,65 @@
         "card_radius": 10
       }
     },
+    "furncare_about_statement_3bEUrW": {
+      "type": "furncare-about-statement",
+      "name": "Furncare statement advanced",
+      "settings": {
+        "eyebrow": "More than just furniture",
+        "heading": "A partner in the project.",
+        "copy": "<p>Large-scale care projects demand more than products on a page. They need considered specification, dependable lead times, practical sector knowledge and a team that understands how care environments really work.</p>",
+        "second_copy": "<p>That's where Furncare comes in.</p>",
+        "column_layout": "balanced",
+        "vertical_alignment": "center",
+        "background_gradient": "",
+        "background_color": "#F9F7F0",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#CDCBC0",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 64,
+        "heading_size_mobile": 40,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 13,
+        "eyebrow_weight": 700,
+        "eyebrow_letter_spacing": 22,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 16,
+        "text_color": "#C3C0B0",
+        "heading_color": "#243222",
+        "copy_color": "#CDCBC0",
+        "eyebrow_color": "#78716c",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "panel_background": "#C3C0B0",
+        "panel_border_color": "#e7e5e4",
+        "panel_border_width": 0,
+        "panel_radius": 32,
+        "panel_padding": 40,
+        "panel_shadow_opacity": 6
+      }
+    },
     "richtext_brGyXC": {
       "type": "richtext",
       "blocks": {
@@ -223,6 +282,7 @@
         "heading_4qKEXp",
         "tagline_TJ4D3e"
       ],
+      "disabled": true,
       "name": "Rich Text",
       "settings": {
         "max_width_desktop": 100,
@@ -293,7 +353,7 @@
         "section_gap_mobile": 36,
         "header_max_width": 1200,
         "content_max_width": 960,
-        "text_alignment": "left",
+        "text_alignment": "center",
         "section_border_color": "#f9f7f0",
         "border_top_width": 0,
         "border_bottom_width": 0,
@@ -352,13 +412,14 @@
     },
     "video_form_4xcrPg": {
       "type": "video-form",
+      "custom_css": [],
       "name": "Video & Form",
       "settings": {
         "bg_color": "#f9f6f0",
-        "max_width": 2550,
+        "max_width": 2600,
         "subtitle": "",
         "title": "Manor Park",
-        "description": "<p>As one of our largest transformations, </p>",
+        "description": "<p>One of our largest newbuild transformations, Manor Park was delivered from design support through to a complete, resident-ready fit-out.</p><p>Across 80 bedrooms and shared spaces, our team placed 5,500 items within a 10-day installation window, creating warm, practical interiors for everyday care.</p><p>Inspired by this project? Send us a message using the form below.</p>",
         "phone": "",
         "email": "",
         "facebook_url": "",
@@ -367,8 +428,8 @@
         "video_hosted": "shopify://files/videos/Old Malton Case Study.mp4",
         "external_video_url": "",
         "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
-        "padding_top": 85,
-        "padding_bottom": 110
+        "padding_top": 70,
+        "padding_bottom": 60
       }
     },
     "richtext_kj7PnM": {
@@ -377,17 +438,17 @@
         "heading_H9pqAU": {
           "type": "heading",
           "settings": {
-            "text": "refurb",
+            "text": "Tailored Refurbishment Support",
             "heading_level": "h2",
-            "heading_style": "title-xs"
+            "heading_style": "title-xl"
           },
           "blocks": {}
         },
         "tagline_W8ACai": {
           "type": "tagline",
           "settings": {
-            "content": "_______________________",
-            "tagline_style": "body-md"
+            "content": "From phased room updates to full home refreshes, we're here to help you bring your care spaces up to standard with furniture, soft furnishings and installation planned around your  schedule.",
+            "tagline_style": "body-sm"
           },
           "blocks": {}
         }
@@ -398,8 +459,8 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "max_width_desktop": 100,
-        "section_padding": "--spacing-4xl",
+        "max_width_desktop": 49,
+        "section_padding": "--spacing-6xl",
         "text_alignment": "center",
         "colour_scheme": "green-01",
         "enable_animation": false,
@@ -481,9 +542,9 @@
       "settings": {
         "heading": "Case Studies",
         "subheading": "",
-        "heading_size": 54,
-        "subheading_size": 14,
-        "title_size": 32,
+        "heading_size": 36,
+        "subheading_size": 12,
+        "title_size": 26,
         "bg_color": "#f9f7f0",
         "text_color": "#111111",
         "padding_top": 70,
@@ -548,7 +609,7 @@
       ],
       "name": "Furncare audience advanced",
       "settings": {
-        "eyebrow": "tailored refurbishment support",
+        "eyebrow": "REFURBISHMENT, MADE SIMPLER",
         "heading": "Refresh your existing spaces with confidence.",
         "background_gradient": "",
         "background_color": "#f9f7f0",
@@ -905,7 +966,6 @@
     },
     "final_cta": {
       "type": "furncare-about-final-cta",
-      "disabled": true,
       "settings": {
         "eyebrow": "Start the conversation",
         "heading": "Planning a care-sector furniture project? Let's make it easier.",
@@ -948,7 +1008,7 @@
         "eyebrow_letter_spacing": 40,
         "eyebrow_transform": "uppercase",
         "eyebrow_margin_bottom": 20,
-        "text_color": "#f9f7f0",
+        "text_color": "#F9F7F0",
         "heading_color": "#c3c0b0",
         "copy_color": "#c3c0b0",
         "eyebrow_color": "#c3c0b0",
@@ -968,12 +1028,12 @@
         "button_hover_lift": 1,
         "button_hover_shadow_opacity": 12,
         "buttons_full_width_mobile": true,
-        "primary_button_bg": "#f9f7f0",
+        "primary_button_bg": "#F9F7F0",
         "primary_button_color": "#243222",
-        "primary_button_border": "#ffffff",
-        "primary_button_hover_bg": "#f9f7f0",
-        "primary_button_hover_color": "#0c0a09",
-        "primary_button_hover_border": "#e7e5e4",
+        "primary_button_border": "#F9F7F0",
+        "primary_button_hover_bg": "#839488",
+        "primary_button_hover_color": "#F9F7F0",
+        "primary_button_hover_border": "#839488",
         "secondary_button_bg": "#f9f7f0",
         "secondary_button_bg_opacity": 12,
         "secondary_button_color": "#f9f7f0",
@@ -981,66 +1041,6 @@
         "secondary_button_hover_bg": "#f9f7f0",
         "secondary_button_hover_color": "#243222",
         "secondary_button_hover_border": "#f9f7f0"
-      }
-    },
-    "furncare_about_statement_3bEUrW": {
-      "type": "furncare-about-statement",
-      "disabled": true,
-      "name": "Furncare statement advanced",
-      "settings": {
-        "eyebrow": "More than just furniture",
-        "heading": "A partner in the project.",
-        "copy": "<p>Large-scale care projects demand more than products on a page. They need considered specification, dependable lead times, practical sector knowledge and a team that understands how care environments really work.</p>",
-        "second_copy": "<p>That's where Furncare comes in.</p>",
-        "column_layout": "balanced",
-        "vertical_alignment": "center",
-        "background_gradient": "",
-        "background_color": "#c3c0b0",
-        "max_width": 1280,
-        "gutter_desktop": 24,
-        "gutter_mobile": 16,
-        "padding_top": 96,
-        "padding_bottom": 96,
-        "padding_mobile": 72,
-        "padding_bottom_mobile": 72,
-        "section_gap": 48,
-        "section_gap_mobile": 36,
-        "header_max_width": 780,
-        "content_max_width": 960,
-        "text_alignment": "left",
-        "section_border_color": "#f9f7f0",
-        "border_top_width": 0,
-        "border_bottom_width": 0,
-        "heading_size_desktop": 64,
-        "heading_size_mobile": 40,
-        "heading_weight": 500,
-        "heading_line_height": 100,
-        "heading_letter_spacing": 0,
-        "heading_max_width": 1100,
-        "copy_size_desktop": 18,
-        "copy_size_mobile": 16,
-        "copy_weight": 400,
-        "copy_line_height": 170,
-        "copy_max_width": 760,
-        "copy_margin_top": 28,
-        "eyebrow_size": 13,
-        "eyebrow_weight": 700,
-        "eyebrow_letter_spacing": 22,
-        "eyebrow_transform": "uppercase",
-        "eyebrow_margin_bottom": 16,
-        "text_color": "#0c0a09",
-        "heading_color": "#0c0a09",
-        "copy_color": "#57534e",
-        "eyebrow_color": "#78716c",
-        "enable_reveal": true,
-        "reveal_distance": 32,
-        "reveal_duration": 760,
-        "panel_background": "#f9f7f0",
-        "panel_border_color": "#e7e5e4",
-        "panel_border_width": 0,
-        "panel_radius": 32,
-        "panel_padding": 40,
-        "panel_shadow_opacity": 6
       }
     },
     "process": {
@@ -1270,6 +1270,7 @@
   "order": [
     "hero",
     "furncare_case_study_XnUtHr",
+    "furncare_about_statement_3bEUrW",
     "richtext_brGyXC",
     "furncare_about_audience_UMQdPg",
     "video_form_4xcrPg",
@@ -1280,7 +1281,6 @@
     "audience",
     "proof",
     "final_cta",
-    "furncare_about_statement_3bEUrW",
     "process",
     "furncare_about_proposition_wjtH7D"
   ]
