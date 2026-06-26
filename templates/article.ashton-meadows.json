@@ -72,7 +72,7 @@
         "tagline_LFtXUT": {
           "type": "tagline",
           "settings": {
-            "content": "Furncare have just completed the installation of one of their largest ever single site projects. Working closely with the executive team at <a href=\"https://www.ashtonmeadows.co.uk/\">Ashton Meadows Nursing Home</a> in Kingston during construction, the prestigious 68 bedroom development is now in the final stages of preparation before opening.",
+            "content": "Furncare have just completed the installation of one of their largest ever single site projects. Working closely with the executive team at <a href=\"https://www.ashtonmeadows.co.uk/\">Ashton Meadows Nursing Home</a> in Kingston during construction, the prestigious 68 bedroom development has now opened.",
             "tagline_style": "body-lg"
           },
           "blocks": {}
@@ -97,7 +97,9 @@
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
-        "enable_animation": false
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
       }
     },
     "featured_blocks_QcyUqa": {
@@ -552,7 +554,9 @@
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
-        "enable_animation": false
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
       }
     },
     "image_text_Rr8iJJ": {
@@ -583,7 +587,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "richtext_EW6cqY": {
@@ -617,7 +624,9 @@
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
-        "enable_animation": false
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
       }
     },
     "image_text_ACHkic": {
@@ -648,7 +657,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "richtext_znBbzx": {
@@ -694,7 +706,9 @@
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
-        "enable_animation": false
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
       }
     },
     "richtext_TJAtU7": {
@@ -718,7 +732,9 @@
         "section_padding": "--spacing-6xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
-        "enable_animation": false
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
       }
     },
     "image_video_banner_xWTgmR": {
