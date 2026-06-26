@@ -121,33 +121,13 @@
     "furncare_case_study_XnUtHr": {
       "type": "furncare-case-study",
       "blocks": {
-        "case_hMhd8q": {
-          "type": "case",
-          "settings": {
-            "tab_label": "For Managers",
-            "kicker": "",
-            "title": "Make refurbishment choices with confidence.",
-            "copy": "For care managers, Furncare brings furniture options, samples and finishes directly to site, helping you make informed decisions with residents, staff and the space itself in mind.",
-            "metric_1": "ㅤ",
-            "metric_label_1": "ㅤ",
-            "metric_2": "",
-            "metric_label_2": "ㅤ",
-            "metric_3": "",
-            "metric_label_3": "ㅤ",
-            "metric_4": "",
-            "metric_label_4": "ㅤ",
-            "image": "shopify://shop_images/Untitled_-_June_18_2026_at_08.20.35_1_5dc2ba04-6c4f-4e88-91e8-e33cfd868774.png",
-            "quote": "",
-            "source": ""
-          }
-        },
         "case_RrqegD": {
           "type": "case",
           "settings": {
             "tab_label": "For Interior Designers",
             "kicker": "",
             "title": "Your scheme, made care-ready.",
-            "copy": "For interior designers, Furncare acts as the care-specialist furniture partner who can help translate creative schemes into durable, resident-friendly spaces with a consistent, considered finish.",
+            "copy": "From bespoke furniture to fabric and finish options, we're to help you carry your scheme through the full care environment, keeping each space consistent while making sure every piece works for daily use.",
             "metric_1": "ㅤ",
             "metric_label_1": "Bespoke furniture options, fabrics and finishing touches that carry one consistent design across bedrooms, lounges and shared spaces.",
             "metric_2": "ㅤ",
@@ -160,11 +140,52 @@
             "quote": "",
             "source": ""
           }
+        },
+        "case_hMhd8q": {
+          "type": "case",
+          "settings": {
+            "tab_label": "For Managers",
+            "kicker": "",
+            "title": "Make refurbishment choices with confidence.",
+            "copy": "See furniture, samples and finishes in your own care environment, making it easier to choose what works best for your residents, staff and space.",
+            "metric_1": "ㅤ",
+            "metric_label_1": "Mobile showroom and sample visits bring fabrics, finishes and furniture options directly to your care home.",
+            "metric_2": "ㅤ",
+            "metric_label_2": "Resident comfort, suitability, maintenance and everyday use can be considered before decisions are made.",
+            "metric_3": "ㅤ",
+            "metric_label_3": "Helpful for phased refurbishments, urgent upgrades and ongoing refreshes where time and disruption matter.",
+            "metric_4": "",
+            "metric_label_4": "ㅤ",
+            "image": "shopify://shop_images/Untitled_-_June_18_2026_at_08.20.35_1_5dc2ba04-6c4f-4e88-91e8-e33cfd868774.png",
+            "quote": "",
+            "source": ""
+          }
+        },
+        "case_VUiE4k": {
+          "type": "case",
+          "settings": {
+            "tab_label": "For Operators",
+            "kicker": "",
+            "title": "Minimal disruption, maximum transformation.",
+            "copy": "Whether you’re opening a new home, refurbishing existing spaces or planning a phased upgrade, we are here to help you bring your care environment together from first brief to the final product placement.",
+            "metric_1": "ㅤ",
+            "metric_label_1": "Furniture, curtains, soft furnishings, artwork and accessories brought together through one specialist partner.",
+            "metric_2": "ㅤ",
+            "metric_label_2": "Support with product selection, finishes, layouts and costings to help keep projects moving.",
+            "metric_3": "ㅤ",
+            "metric_label_3": "White-glove delivery, placement, assembly and packaging removal, ready for residents, staff and visitors.",
+            "metric_4": "",
+            "metric_label_4": "",
+            "image": "shopify://shop_images/Lounge_One_1.jpg",
+            "quote": "",
+            "source": ""
+          }
         }
       },
       "block_order": [
+        "case_RrqegD",
         "case_hMhd8q",
-        "case_RrqegD"
+        "case_VUiE4k"
       ],
       "custom_css": [
         ".icon-text {display: flex; align-items: flex-start; gap: 8px;}",
