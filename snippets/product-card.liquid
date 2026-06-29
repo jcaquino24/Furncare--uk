@@ -85,53 +85,25 @@
 {% capture button_content %}
   {% comment %} Button {% endcomment %}
   {% if show_button %}
-   {% assign first_variant = product.selected_or_first_available_variant %}
-
-{% if product.available %}
-  {% if product.variants.size == 1 %}
-
-   
-{% assign first_variant = product.selected_or_first_available_variant %}
-
-{%- form 'product',
-  product,
-  class: 'ProductForm product-card__form',
-  data-productForm: 'true'
--%}
-
-  <input type="hidden" name="id" value="{{ first_variant.id }}">
-  <input type="hidden" name="quantity" value="1">
-
-  <button
-    type="submit"
-    class="product-card__button button button--primary"
-    data-add-to-cart
-  >
-    Quick Buy
-  </button>
-
-{%- endform -%}
-
-  {% elsif quickshop_enabled %}
-
-    <!-- ✅ QUICK SHOP (fallback for variants) -->
-    <button
-      aria-label="Open Quickshop for {{ product.title }}"
-      data-quickshop="{{ product.handle }}"
-      class="product-card__button button button--primary"
-    >
-      {{ quickshop_button_text }}
-    </button>
-
-  {% else %}
-
-    <!-- ✅ FALLBACK: VIEW PRODUCT -->
-    {{ product.url | split: '?' | first }}
-      {{ button_text }}
-    </a>
-
-  {% endif %}
-{% endif %}
+    {% if product.available %}
+      {% if quickshop_enabled %}
+        <button
+          aria-label="Open Quickshop for {{ product.title }}"
+          data-quickshop="{{ product.handle }}"
+          class="product-card__button button button--primary"
+        >
+          {{- quickshop_button_text -}}
+        </button>
+      {% else %}
+        <a
+          aria-label="Visit {{ product.title }}"
+          href="{{ product.url | split: '?' | first }}"
+          class="product-card__button button button--primary"
+        >
+          {{- button_text -}} {% render 'icons', icon: 'cart' %}
+        </a>
+      {% endif %}
+    {% endif %}
   {% endif %}
 {% endcapture %}
 
