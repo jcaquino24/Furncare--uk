@@ -86,14 +86,26 @@
   {% comment %} Button {% endcomment %}
   {% if show_button %}
     {% if product.available %}
-      {% if quickshop_enabled %}
-        <button
-          aria-label="Open Quickshop for {{ product.title }}"
-          data-quickshop="{{ product.handle }}"
-          class="product-card__button button button--primary"
-        >
-          {{- quickshop_button_text -}}
-        </button>
+      {% assign first_variant = product.selected_or_first_available_variant %}
+
+{%- form 'product',
+  product,
+  class: 'ProductForm product-card__form',
+  data-productForm: 'true'
+-%}
+
+  <input type="hidden" name="id" value="{{ first_variant.id }}">
+  <input type="hidden" name="quantity" value="1">
+
+  <button
+    type="submit"
+    class="product-card__button button button--primary"
+    data-add-to-cart
+  >
+    Quick Buy
+  </button>
+
+{%- endform -%}
       {% else %}
         <a
           aria-label="Visit {{ product.title }}"
@@ -102,7 +114,7 @@
         >
           {{- button_text -}} {% render 'icons', icon: 'cart' %}
         </a>
-      {% endif %}
+
     {% endif %}
   {% endif %}
 {% endcapture %}
