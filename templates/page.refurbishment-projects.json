@@ -234,128 +234,6 @@
         "icon_hover_scale": 108
       }
     },
-    "furncare_case_study_eU7UHK": {
-      "type": "furncare-case-study",
-      "blocks": {
-        "case_x33G3z": {
-          "type": "case",
-          "settings": {
-            "tab_label": "The Chestnuts",
-            "kicker": "CASE STUDY",
-            "title": "The Chestnuts",
-            "copy": "TESTING",
-            "metric_1": "",
-            "metric_label_1": "",
-            "metric_2": "",
-            "metric_label_2": "",
-            "metric_3": "",
-            "metric_label_3": "",
-            "metric_4": "",
-            "metric_label_4": "",
-            "image": "shopify://shop_images/Lounge_12_of_53.jpg",
-            "quote": "“You’ve managed to really understand what we are after and have transformed our thoughts into something really special.”",
-            "source": "Arnas Mauremootoo, Owner"
-          }
-        },
-        "case_9Ejkmw": {
-          "type": "case",
-          "settings": {
-            "tab_label": "Letcombe Regis",
-            "kicker": "CASE STUDIES",
-            "title": "Letcombe Regis",
-            "copy": "TESTING",
-            "metric_1": "",
-            "metric_label_1": "",
-            "metric_2": "",
-            "metric_label_2": "",
-            "metric_3": "",
-            "metric_label_3": "",
-            "metric_4": "",
-            "metric_label_4": "",
-            "image": "shopify://shop_images/Untitled_-_June_18_2026_at_08.20.35_1_5dc2ba04-6c4f-4e88-91e8-e33cfd868774.png",
-            "quote": "",
-            "source": ""
-          }
-        }
-      },
-      "block_order": [
-        "case_x33G3z",
-        "case_9Ejkmw"
-      ],
-      "name": "Furncare Case Studies",
-      "settings": {
-        "heading": "Case Studies",
-        "subheading": "",
-        "heading_size": 54,
-        "subheading_size": 14,
-        "title_size": 32,
-        "bg_color": "#f9f7f0",
-        "text_color": "#111111",
-        "padding_top": 70,
-        "padding_bottom": 60,
-        "container_width": 1320,
-        "grid_gap": 26,
-        "tab_bg": "#c3c0b0",
-        "tab_text": "#333",
-        "tab_active_bg": "#839488",
-        "tab_active_text": "#262520",
-        "tab_border": "#f9f7f0",
-        "tab_radius": 16,
-        "metric_bg": "#f5f5f5",
-        "metric_radius": 10,
-        "metrics_columns": 2,
-        "quote_bg": "#F9F7F0",
-        "quote_text": "#262252",
-        "card_radius": 24
-      }
-    },
-    "richtext_kj7PnM": {
-      "type": "richtext",
-      "blocks": {
-        "heading_H9pqAU": {
-          "type": "heading",
-          "settings": {
-            "text": "We design furniture and interiors that are practical, safe, and welcoming. Our focus is creating spaces that support both residents and caregivers.",
-            "heading_level": "h2",
-            "heading_style": "title-xs"
-          },
-          "blocks": {}
-        },
-        "tagline_W8ACai": {
-          "type": "tagline",
-          "settings": {
-            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "tagline_style": "body-md"
-          },
-          "blocks": {}
-        },
-        "button_tfwVNp": {
-          "type": "button",
-          "settings": {
-            "style": "primary",
-            "text": "Button",
-            "url": "#",
-            "new_tab": false
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "heading_H9pqAU",
-        "tagline_W8ACai",
-        "button_tfwVNp"
-      ],
-      "name": "Rich Text",
-      "settings": {
-        "max_width_desktop": 100,
-        "section_padding": "--spacing-4xl",
-        "text_alignment": "center",
-        "colour_scheme": "green-01",
-        "enable_animation": false,
-        "optional_richtext": "",
-        "small_container": false
-      }
-    },
     "blog_article_row_4iJ6Ye": {
       "type": "blog-article-row",
       "blocks": {
@@ -731,7 +609,7 @@
         "column_layout": "balanced",
         "vertical_alignment": "center",
         "background_gradient": "",
-        "background_color": "#C3C0B0",
+        "background_color": "#c3c0b0",
         "max_width": 1280,
         "gutter_desktop": 24,
         "gutter_mobile": 16,
@@ -744,7 +622,7 @@
         "header_max_width": 780,
         "content_max_width": 960,
         "text_alignment": "left",
-        "section_border_color": "#F9F7F0",
+        "section_border_color": "#f9f7f0",
         "border_top_width": 0,
         "border_bottom_width": 0,
         "heading_size_desktop": 64,
@@ -771,7 +649,7 @@
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760,
-        "panel_background": "#F9F7F0",
+        "panel_background": "#f9f7f0",
         "panel_border_color": "#e7e5e4",
         "panel_border_width": 0,
         "panel_radius": 32,
@@ -917,7 +795,7 @@
         "right_title": "Ready to refresh",
         "right_copy": "Quality furniture, coordinated finishes and dependable supply for teams renewing care interiors with confidence.",
         "background_gradient": "",
-        "background_color": "#F9F7F0",
+        "background_color": "#f9f7f0",
         "max_width": 1280,
         "gutter_desktop": 24,
         "gutter_mobile": 16,
@@ -930,7 +808,7 @@
         "header_max_width": 780,
         "content_max_width": 960,
         "text_alignment": "left",
-        "section_border_color": "#F9F7F0",
+        "section_border_color": "#f9f7f0",
         "border_top_width": 0,
         "border_bottom_width": 0,
         "heading_size_desktop": 25,
@@ -957,10 +835,10 @@
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760,
-        "card_background": "#F9F7F0",
+        "card_background": "#f9f7f0",
         "card_heading_color": "#262520",
         "card_copy_color": "#57534e",
-        "card_border_color": "#F9F7F0",
+        "card_border_color": "#f9f7f0",
         "card_border_width": 1,
         "card_radius": 32,
         "card_padding": 28,
@@ -977,7 +855,7 @@
         "columns_desktop": "2",
         "columns_tablet": "2",
         "columns_mobile": "2",
-        "icon_background": "#F9F7F0",
+        "icon_background": "#f9f7f0",
         "icon_color": "#292524",
         "icon_size": 48,
         "icon_svg_size": 23,
@@ -988,18 +866,18 @@
         "panel_title_margin_top": 28,
         "panel_copy_margin_top": 20,
         "panel_padding": 48,
-        "left_panel_bg": "#C3C0B0",
+        "left_panel_bg": "#c3c0b0",
         "left_panel_text": "#0c0a09",
         "left_title_color": "#0c0a09",
         "left_copy_color": "#57534e",
-        "left_icon_background": "#CDCBC0",
+        "left_icon_background": "#cdcbc0",
         "left_icon_color": "#292524",
         "right_panel_bg": "#243222",
-        "right_panel_text": "#F9F7F0",
-        "right_title_color": "#F9F7F0",
+        "right_panel_text": "#f9f7f0",
+        "right_title_color": "#f9f7f0",
         "right_copy_color": "#d6d3d1",
-        "right_icon_background": "#2F3F2C",
-        "right_icon_color": "#F9F7F0"
+        "right_icon_background": "#2f3f2c",
+        "right_icon_color": "#f9f7f0"
       }
     },
     "video_form_4xcrPg": {
@@ -1018,6 +896,7 @@
         "instagram_url": "",
         "linkedin_url": "",
         "video_hosted": "shopify://files/videos/Old Malton Case Study.mp4",
+        "external_video_url": "",
         "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
         "padding_top": 85,
         "padding_bottom": 110
@@ -1027,8 +906,6 @@
   "order": [
     "hero",
     "furncare_about_audience_iV9TrC",
-    "furncare_case_study_eU7UHK",
-    "richtext_kj7PnM",
     "blog_article_row_4iJ6Ye",
     "audience",
     "proof",
