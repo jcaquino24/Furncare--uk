@@ -1,14 +1,3 @@
-{%- comment -%}
-  Furncare SEO structured data snippet for Shopify.
-  Install: create snippets/furncare-seo-schema.liquid, paste this file, then add
-  {% render 'furncare-seo-schema' %}
-  before </head> in layout/theme.liquid.
-
-  Notes:
-  - Do not add SearchAction: Google deprecated the sitelinks search box visual result.
-  - Do not add review/aggregateRating unless the rating is visible on the same page and eligible.
-  - Keep product price, availability, images, SKU and descriptions synced from Shopify data.
-{%- endcomment -%}
 
 {%- assign org_id = shop.url | append: '/#organization' -%}
 {%- assign website_id = shop.url | append: '/#website' -%}
