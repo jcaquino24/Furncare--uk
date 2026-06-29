@@ -97,16 +97,16 @@
   <input type="hidden" name="id" value="{{ first_variant.id }}">
   <input type="hidden" name="quantity" value="1">
 
-  <button
+  <a
     type="submit"
     class="product-card__button button button--primary"
     data-add-to-cart
   >
     Quick Buy
-  </button>
+  </a>
 
 {%- endform -%}
-      {% else %}
+      
         <a
           aria-label="Visit {{ product.title }}"
           href="{{ product.url | split: '?' | first }}"
