@@ -90,18 +90,20 @@
 {% if product.available %}
   {% if product.variants.size == 1 %}
 
-    <form action="/cart/add" method="post">
-      <input type="hidden" name="id" value="{{ first_variant.id }}">
-      <input type="hidden" name="quantity" value="1">
+   
+<form method="post" action="/cart/add" class="product-form">
+  <input type="hidden" name="id" value="{{ first_variant.id }}">
+  <input type="hidden" name="quantity" value="1">
 
-      <button
-        type="submit"
-        class="product-card__button button button--primary"
-        aria-label="Add {{ product.title }} to cart"
-      >
-        Quick Buy
-      </button>
-    </form>
+  <button
+    type="submit"
+    class="product-card__button button button--primary"
+    data-add-to-cart
+  >
+    Quick Buy
+  </button>
+</form>
+
   {% elsif quickshop_enabled %}
 
     <!-- ✅ QUICK SHOP (fallback for variants) -->
