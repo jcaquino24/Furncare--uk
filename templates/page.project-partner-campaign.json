@@ -461,7 +461,7 @@
           "settings": {
             "text": "Tailored Refurbishment Support",
             "heading_level": "h2",
-            "heading_style": "title-xl"
+            "heading_style": "title-display"
           },
           "blocks": {}
         },
@@ -492,54 +492,13 @@
     "furncare_case_study_eU7UHK": {
       "type": "furncare-case-study",
       "blocks": {
-        "case_EjVMfq": {
-          "type": "case",
-          "disabled": true,
-          "settings": {
-            "tab_label": "Old Malton",
-            "kicker": "CASE STUDY",
-            "title": "Old Malton",
-            "copy": "Manor Park Care Home was handed over as a blank canvas - a modern new-build designed to provide high-quality residential care. Our role was to transform that empty structure into a warm, practical, and fully functioning home from day one.",
-            "metric_1": "",
-            "metric_label_1": "",
-            "metric_2": "",
-            "metric_label_2": "",
-            "metric_3": "",
-            "metric_label_3": "",
-            "metric_4": "",
-            "metric_label_4": "",
-            "image": "shopify://shop_images/Furncare_GoogleBusiness_8_9df87aca-dd20-443d-a60e-0ca2c4a55d72.jpg",
-            "quote": "",
-            "source": ""
-          }
-        },
-        "case_x33G3z": {
-          "type": "case",
-          "settings": {
-            "tab_label": "The Chestnuts",
-            "kicker": "CASE STUDY",
-            "title": "The Chestnuts",
-            "copy": "TESTING",
-            "metric_1": "",
-            "metric_label_1": "",
-            "metric_2": "",
-            "metric_label_2": "",
-            "metric_3": "",
-            "metric_label_3": "",
-            "metric_4": "",
-            "metric_label_4": "",
-            "image": "shopify://shop_images/Lounge_12_of_53.jpg",
-            "quote": "“You’ve managed to really understand what we are after and have transformed our thoughts into something really special.”",
-            "source": "Arnas Mauremootoo, Owner"
-          }
-        },
         "case_9Ejkmw": {
           "type": "case",
           "settings": {
             "tab_label": "Letcombe Regis",
             "kicker": "CASE STUDIES",
             "title": "Letcombe Regis",
-            "copy": "TESTING",
+            "copy": "Letcombe Regis brings together dementia, nursing and respite care within Bupa’s Richmond Villages setting in the Oxfordshire countryside. Designed by Vogue Living, the home includes private ensuite bedrooms alongside premium shared spaces such as a swimming pool, gym, restaurant, licensed bar, library, lounges and accessible grounds. <br>\n<br>\nFurncare supplied furniture and upholstery across the scheme, with pieces chosen to sit naturally within Vogue Living’s warm, opulent interior style. The upholstery colours were carefully paired with the furniture shapes and finishes, helping each bedroom, lounge and shared area feel coordinated, comfortable and in keeping with the premium feel of Richmond Villages Letcombe Regis.",
             "metric_1": "",
             "metric_label_1": "",
             "metric_2": "",
@@ -552,12 +511,31 @@
             "quote": "",
             "source": ""
           }
+        },
+        "case_x33G3z": {
+          "type": "case",
+          "settings": {
+            "tab_label": "The Chestnuts",
+            "kicker": "CASE STUDY",
+            "title": "The Chestnuts",
+            "copy": "The Chestnuts’ latest extension added eleven new bedrooms, a luxury lounge and dining room, and a spacious new reception area, continuing a relationship with Furncare that first began back in 2016. For this phase, the team worked closely with owner Arnas Mauremootoo and deputy manager Stacey to shape the interior themes, fabrics and finishes, using the Liberta Vie Grandios and Remini ranges alongside Karsson cabinetry. With calm neutral upholstery, rust-toned accents and a carefully scheduled installation to align with building works, the finished spaces feel warm, coordinated and ready for residents to settle into.",
+            "metric_1": "",
+            "metric_label_1": "",
+            "metric_2": "",
+            "metric_label_2": "",
+            "metric_3": "",
+            "metric_label_3": "",
+            "metric_4": "",
+            "metric_label_4": "",
+            "image": "shopify://shop_images/Lounge_12_of_53.jpg",
+            "quote": "“You’ve managed to really understand what we are after and have transformed our thoughts into something really special.”",
+            "source": "Arnas Mauremootoo, Owner"
+          }
         }
       },
       "block_order": [
-        "case_EjVMfq",
-        "case_x33G3z",
-        "case_9Ejkmw"
+        "case_9Ejkmw",
+        "case_x33G3z"
       ],
       "name": "Furncare Case Studies",
       "settings": {
@@ -996,7 +974,7 @@
         "secondary_label": "Request a brochure",
         "secondary_link": "shopify://pages/brochure-request",
         "background_gradient": "",
-        "background_color": "#243222",
+        "background_color": "#F9F7F0",
         "max_width": 1280,
         "gutter_desktop": 24,
         "gutter_mobile": 16,
@@ -1030,8 +1008,8 @@
         "eyebrow_transform": "uppercase",
         "eyebrow_margin_bottom": 20,
         "text_color": "#F9F7F0",
-        "heading_color": "#c3c0b0",
-        "copy_color": "#c3c0b0",
+        "heading_color": "#243222",
+        "copy_color": "#243222",
         "eyebrow_color": "#c3c0b0",
         "enable_reveal": true,
         "reveal_distance": 32,
@@ -1049,16 +1027,16 @@
         "button_hover_lift": 1,
         "button_hover_shadow_opacity": 12,
         "buttons_full_width_mobile": true,
-        "primary_button_bg": "#F9F7F0",
+        "primary_button_bg": "#C3C0B0",
         "primary_button_color": "#243222",
         "primary_button_border": "#F9F7F0",
         "primary_button_hover_bg": "#839488",
         "primary_button_hover_color": "#F9F7F0",
         "primary_button_hover_border": "#839488",
-        "secondary_button_bg": "#f9f7f0",
-        "secondary_button_bg_opacity": 12,
-        "secondary_button_color": "#f9f7f0",
-        "secondary_button_border": "#f9f7f0",
+        "secondary_button_bg": "#F9F7F0",
+        "secondary_button_bg_opacity": 36,
+        "secondary_button_color": "#839488",
+        "secondary_button_border": "#839488",
         "secondary_button_hover_bg": "#f9f7f0",
         "secondary_button_hover_color": "#243222",
         "secondary_button_hover_border": "#f9f7f0"
