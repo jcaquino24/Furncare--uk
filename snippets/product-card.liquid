@@ -89,9 +89,6 @@
 
 {% if product.available %}
   {% if product.variants.size == 1 %}
-
-    <!-- ✅ QUICK BUY (Add to Cart) -->
-    /cart/add
       <input type="hidden" name="id" value="{{ first_variant.id }}">
       <button
         type="submit"
