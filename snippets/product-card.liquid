@@ -91,9 +91,8 @@
   {% if product.variants.size == 1 %}
 
    
-<form method="post" action="/cart/add" class="product-form">
-  <input type="hidden" name="id" value="{{ first_variant.id }}">
-  <input type="hidden" name="quantity" value="1">
+
+
 
   <button
     type="submit"
@@ -102,7 +101,7 @@
   >
     Quick Buy
   </button>
-</form>
+
 
   {% elsif quickshop_enabled %}
 
