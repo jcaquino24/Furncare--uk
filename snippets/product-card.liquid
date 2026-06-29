@@ -117,17 +117,16 @@
           {{- button_text -}} {% render 'icons', icon: 'cart' %}
         </a>
 </div>      
-      <a
+      
+
+      {%else %}
+<a
           aria-label="Visit {{ product.title }}"
           href="{{ product.url | split: '?' | first }}"
           class="product-card__button button button--primary"
         >
           {{- button_text -}} {% render 'icons', icon: 'cart' %}
         </a>
-    
-
-      {%else %}
-
     {% endif %}
   {% endif %}
 {% endcapture %}
