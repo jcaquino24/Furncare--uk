@@ -87,7 +87,7 @@
   {% if show_button %}
     {% if product.available %}
       {% assign first_variant = product.selected_or_first_available_variant %}
-
+<div class="button_container">
 {%- form 'product',
   product,
   class: 'ProductForm product-card__form',
@@ -114,6 +114,17 @@
         >
           {{- button_text -}} {% render 'icons', icon: 'cart' %}
         </a>
+      </div>
+      <a
+          aria-label="Visit {{ product.title }}"
+          href="{{ product.url | split: '?' | first }}"
+          class="product-card__button button button--primary"
+        >
+          {{- button_text -}} {% render 'icons', icon: 'cart' %}
+        </a>
+      </div>
+
+      {%else %}
 
     {% endif %}
   {% endif %}
