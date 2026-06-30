@@ -89,7 +89,7 @@
   {% if show_button %}
     {% if product.available %}
 
-      {% if product.metafields.custom.is_bespoke_product.value == true %}
+      {% if product.metafields.custom.is_bespoke_product.value == false %}
       
 
 <div class="button_container">
@@ -121,7 +121,7 @@
           {{- button_text -}}
         </a>
 </div>      
-    {% endif %}  
+     
 
       {%else %}
 <a
@@ -131,7 +131,7 @@
         >
           {{- button_text -}} {% render 'icons', icon: 'cart' %}
         </a>
-        
+        {% endif %} 
     {% endif %}
   {% endif %}
 {% endcapture %}
