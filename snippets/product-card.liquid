@@ -82,26 +82,12 @@
   endcomment
 %}
 
-  {% liquid
-     assign hubspot_form = product.metafields.custom.hubspot_form
-    assign has_hubspot_form = false
-    assign is_bespoke = false
 
-    if product.metafields.custom.hubspot_form != blank
-      assign has_hubspot_form = true
-    endif
-
-    if product.metafields.custom.is_bespoke_product.value == true
-      assign is_bespoke = true
-    endif
-
-    
-  %}
 
 {% capture button_content %}
   {% comment %} Button {% endcomment %}
   {% if show_button %}
-    {% if product.available and hubspot_form != blank %}
+    {% if product.available and product.metafields.custom.is_bespoke_product.value == true %}
       {% assign first_variant = product.selected_or_first_available_variant %}
 
 <div class="button_container">
