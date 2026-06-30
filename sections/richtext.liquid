@@ -238,31 +238,21 @@
 <script>
 
   document.querySelectorAll('[data-collapsible]').forEach((container) => {
-  const parent = container.parentElement;
-  const toggle = parent?.querySelector('[data-toggle]') as HTMLButtonElement;
+  const toggle = container.parentElement?.querySelector('[data-toggle]') as HTMLButtonElement;
 
   if (!toggle) return;
 
   let isCollapsed = true;
 
-  const update = () => {
-    container.setAttribute('data-collapsed', isCollapsed ? 'true' : 'false');
-    toggle.textContent = isCollapsed ? 'See more' : 'See less';
-  };
-
-  // ✅ initial state
-  update();
+  // Initial state
+  container.setAttribute('data-collapsed', 'true');
 
   toggle.addEventListener('click', () => {
     isCollapsed = !isCollapsed;
-    update();
-  });
 
-  // ✅ hide button if content is short
-  requestAnimationFrame(() => {
-    if (container.scrollHeight <= container.clientHeight) {
-      toggle.style.display = 'none';
-    }
+    container.setAttribute('data-collapsed', isCollapsed ? 'true' : 'false');
+
+    toggle.textContent = isCollapsed ? 'See more' : 'See less';
   });
 });
 </script>
