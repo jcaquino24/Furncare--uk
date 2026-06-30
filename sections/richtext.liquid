@@ -236,26 +236,36 @@
 {% endschema %}
 
 <script>
-
-  document.querySelectorAll('[data-collapsible]').forEach((container) => {
-  const toggle = container.parentElement?.querySelector('[data-toggle]') as HTMLButtonElement;
+document.querySelectorAll('[data-collapsible]').forEach((container) => {
+  const parent = container.parentElement;
+  const toggle = parent?.querySelector('[data-toggle]');
 
   if (!toggle) return;
 
   let isCollapsed = true;
 
-  // Initial state
-  container.setAttribute('data-collapsed', 'true');
+  const update = () => {
+    container.setAttribute('data-collapsed', isCollapsed ? 'true' : 'false');
+    toggle.textContent = isCollapsed ? 'See more' : 'See less';
+  };
+
+  // initial state
+  update();
 
   toggle.addEventListener('click', () => {
     isCollapsed = !isCollapsed;
+    update();
+  });
 
-    container.setAttribute('data-collapsed', isCollapsed ? 'true' : 'false');
-
-    toggle.textContent = isCollapsed ? 'See more' : 'See less';
+  // hide button if content is short
+  requestAnimationFrame(() => {
+    if (container.scrollHeight <= container.clientHeight) {
+      toggle.style.display = 'none';
+    }
   });
 });
 </script>
+
 
 <style>
 
