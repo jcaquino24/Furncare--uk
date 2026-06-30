@@ -90,9 +90,9 @@
 {% capture button_content %}
   {% comment %} Button {% endcomment %}
   {% if show_button %}
-    {% if product.available %}
+    {% if product.available and hubspot_form == blank %}
 
-      {% if hubspot_form == blank %}
+
       
 
 <div class="button_container">
@@ -134,7 +134,7 @@
         >
           {{- button_text -}} {% render 'icons', icon: 'cart' %}
         </a>
-        {% endif %} 
+       
     {% endif %}
   {% endif %}
 {% endcapture %}
