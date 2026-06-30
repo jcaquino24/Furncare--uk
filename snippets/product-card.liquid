@@ -80,29 +80,61 @@
   endif
   comment
   endcomment
+
+
+   assign hubspot_form = product.metafields.custom.hubspot_form
 %}
 
+
+{% assign first_variant = product.selected_or_first_available_variant %}
 {% capture button_content %}
   {% comment %} Button {% endcomment %}
   {% if show_button %}
-    {% if product.available %}
-      {% if quickshop_enabled %}
-        <button
-          aria-label="Open Quickshop for {{ product.title }}"
-          data-quickshop="{{ product.handle }}"
+    {% if product.available and hubspot_form == blank %}
+
+
+      
+
+<div class="button_container">
+
+{%- form 'product',
+  product,
+  class: 'ProductForm product-card__form',
+  data-productForm: 'true'
+-%}
+
+  <input type="hidden" name="id" value="{{ first_variant.id }}">
+  <input type="hidden" name="quantity" value="1">
+
+  <button
+    type="submit"
+    class="product-card__button button button--primary"
+    data-add-to-cart
+  >
+    Buy Now {% render 'icons', icon: 'cart' %}
+  </button>
+
+{%- endform -%}
+      
+        <a
+          aria-label="Visit {{ product.title }}"
+          href="{{ product.url | split: '?' | first }}"
           class="product-card__button button button--primary"
         >
-          {{- quickshop_button_text -}}
-        </button>
-      {% else %}
-        <a
+          {{- button_text -}}
+        </a>
+</div>      
+     
+
+      {%else %}
+<a
           aria-label="Visit {{ product.title }}"
           href="{{ product.url | split: '?' | first }}"
           class="product-card__button button button--primary"
         >
           {{- button_text -}} {% render 'icons', icon: 'cart' %}
         </a>
-      {% endif %}
+       
     {% endif %}
   {% endif %}
 {% endcapture %}
