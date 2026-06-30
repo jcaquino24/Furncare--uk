@@ -31,3 +31,22 @@
     width: 100%;
   }
 }
+
+ .richtext__collapse {
+  overflow: visible;
+  transition: max-height 0.4s ease;
+}
+
+.richtext__collapse[data-collapsed="true"] {
+  overflow: hidden;
+  max-height: var(--collapsed-height);
+}
+
+.richtext__toggle {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+}
