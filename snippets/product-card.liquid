@@ -87,7 +87,7 @@
 {% capture button_content %}
   {% comment %} Button {% endcomment %}
   {% if show_button %}
-    {% if product.available and product.metafields.custom.is_bespoke_product.value == true %}
+    {% if product.available or hubspot_form != blank %}
       {% assign first_variant = product.selected_or_first_available_variant %}
 
 <div class="button_container">
