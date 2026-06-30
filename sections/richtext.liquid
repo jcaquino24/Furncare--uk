@@ -52,12 +52,13 @@
       {% if block_content != blank or optional_content != blank %}
   <div class="richtext__inner">
     <div
-      class="richtext__collapse"
-      {% if section.settings.enable_see_more %}
-        style="--collapsed-height: {{ section.settings.see_more_max_height }}px;"
-        data-collapsible
-      {% endif %}
-    >
+  class="richtext__collapse"
+  {% if section.settings.enable_see_more %}
+    style="--collapsed-height: {{ section.settings.see_more_max_height }}px;"
+    data-collapsible
+    data-collapsed="true"
+  {% endif %}
+>
       {{ block_content }}
       {{ optional_content }}
     </div>
@@ -233,3 +234,35 @@
   ]
 }
 {% endschema %}
+
+<script>
+
+  document.querySelectorAll('[data-collapsible]').forEach((container) => {
+  const parent = container.parentElement;
+  const toggle = parent?.querySelector('[data-toggle]') as HTMLButtonElement;
+
+  if (!toggle) return;
+
+  let isCollapsed = true;
+
+  const update = () => {
+    container.setAttribute('data-collapsed', isCollapsed ? 'true' : 'false');
+    toggle.textContent = isCollapsed ? 'See more' : 'See less';
+  };
+
+  // ✅ initial state
+  update();
+
+  toggle.addEventListener('click', () => {
+    isCollapsed = !isCollapsed;
+    update();
+  });
+
+  // ✅ hide button if content is short
+  requestAnimationFrame(() => {
+    if (container.scrollHeight <= container.clientHeight) {
+      toggle.style.display = 'none';
+    }
+  });
+});
+</script>
