@@ -49,12 +49,26 @@
           aria-roledescription="region"
         >
       {% endif %}
-      {% if block_content != blank %}
-        {{ block_content }}
+      {% if block_content != blank or optional_content != blank %}
+  <div class="richtext__inner">
+    <div
+      class="richtext__collapse"
+      {% if section.settings.enable_see_more %}
+        style="--collapsed-height: {{ section.settings.see_more_max_height }}px;"
+        data-collapsible
       {% endif %}
-      {% if optional_content != blank %}
-        {{ optional_content }}
-      {% endif %}
+    >
+      {{ block_content }}
+      {{ optional_content }}
+    </div>
+
+    {% if section.settings.enable_see_more %}
+      <button class="richtext__toggle" data-toggle>
+        See more
+      </button>
+    {% endif %}
+  </div>
+{% endif %}
       {% if section.settings.enable_animation %}
         </uwp-text-animation>
       {% endif %}
