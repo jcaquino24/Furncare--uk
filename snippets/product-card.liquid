@@ -80,6 +80,9 @@
   endif
   comment
   endcomment
+
+
+   assign hubspot_form = product.metafields.custom.hubspot_form
 %}
 
 
@@ -89,7 +92,7 @@
   {% if show_button %}
     {% if product.available %}
 
-      {% if product.metafields.custom.is_bespoke_product.value == false %}
+      {% if hubspot_form != blank %}
       
 
 <div class="button_container">
