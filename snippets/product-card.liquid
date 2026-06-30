@@ -82,13 +82,29 @@
   endcomment
 %}
 
+  {% liquid
+     assign hubspot_form = product.metafields.custom.hubspot_form
+    assign has_hubspot_form = false
+    assign is_bespoke = false
 
+    if product.metafields.custom.hubspot_form != blank
+      assign has_hubspot_form = true
+    endif
 
+    if product.metafields.custom.is_bespoke_product.value == true
+      assign is_bespoke = true
+    endif
+
+    
+  %}
+{% assign first_variant = product.selected_or_first_available_variant %}
 {% capture button_content %}
   {% comment %} Button {% endcomment %}
   {% if show_button %}
-    {% if product.available and hubspot_form != blank %}
-      {% assign first_variant = product.selected_or_first_available_variant %}
+    {% if product.available %}
+
+      {% if hubspot_form != blank %}
+      
 
 <div class="button_container">
 
@@ -119,9 +135,9 @@
           {{- button_text -}}
         </a>
 </div>      
-      
+    {% endif %}  
 
-{% else %}
+      {%else %}
 <a
           aria-label="Visit {{ product.title }}"
           href="{{ product.url | split: '?' | first }}"
@@ -129,7 +145,7 @@
         >
           {{- button_text -}} {% render 'icons', icon: 'cart' %}
         </a>
-
+        
     {% endif %}
   {% endif %}
 {% endcapture %}
