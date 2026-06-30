@@ -28,7 +28,9 @@
         "colour_scheme": "warm-stone",
         "enable_animation": false,
         "optional_richtext": "{{ collection.metafields.custom.collection_richtext | metafield_tag }}",
-        "small_container": true
+        "small_container": true,
+        "enable_see_more": true,
+        "see_more_max_height": 300
       }
     },
     "faqs_MgjtQz": {
