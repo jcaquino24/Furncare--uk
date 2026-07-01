@@ -74,12 +74,14 @@
       <!-- IMAGE -->
       <div class="fc-image">
 
-        {% if block.settings.image %}
-          <img 
-            src="{{ block.settings.image | img_url: '900x' }}" 
-            style="border-radius: {{ section.settings.card_radius }}px;"
-          >
-        {% endif %}
+        <div class="fc-image-inner">
+          {% if block.settings.image %}
+            <img 
+              src="{{ block.settings.image | img_url: '900x' }}" 
+              alt="{{ block.settings.title | escape }}"
+            >
+          {% endif %}
+        </div>
 
         <div class="fc-quote">
           <p style="font-size: {{ section.settings.quote_size }}px;">
@@ -161,6 +163,11 @@
   padding: {{ section.settings.image_padding }}px;
 }
 
+.fc-image-inner img {
+  width: 100%;
+  display: block;
+  border-radius: {{ section.settings.card_radius }}px;
+}
 .fc-case-row img {
   width: 100%;
   display: block;
@@ -258,7 +265,7 @@ document.querySelectorAll('.fc-tab').forEach(btn => {
     { "type": "color", "id": "quote_text", "label": "Quote Text", "default": "#ffffff" },
 
     { "type": "range", "id": "card_radius", "min": 0, "max": 40, "step": 2, "default": 16, "label": "Card Radius" },
-    { "type": "range", "id": "text_padding", "min": 0, "max": 80, "step": 4, "default": 20, "label": "Text Padding" },
+    { "type": "range", "id": "text_padding", "min": 0, "max": 80, "step": 4, "default": 0, "label": "Text Padding" },
     { "type": "range", "id": "image_padding", "min": 0, "max": 80, "step": 4, "default": 0, "label": "Image Padding" },
     { "type": "range", "id": "body_size", "min": 12, "max": 24, "step": 1, "default": 15, "label": "Body Text Size" },
     { "type": "range", "id": "metric_size", "min": 14, "max": 30, "step": 1, "default": 20, "label": "Metric Number Size" },
