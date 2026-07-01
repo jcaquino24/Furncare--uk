@@ -128,17 +128,20 @@
             "kicker": "",
             "title": "Your scheme, made care-ready.",
             "copy": "From bespoke furniture to fabric and finish options, we're to help you carry your scheme through the full care environment, keeping each space consistent while making sure every piece works for daily use.",
-            "metric_1": "ㅤ",
-            "metric_label_1": "Bespoke furniture options, fabrics and finishing touches that carry one consistent design across bedrooms, lounges and shared spaces.",
-            "metric_2": "ㅤ",
-            "metric_label_2": "Support with samples, finishes and room-by-room coordination, helping every detail feel considered and aligned.",
-            "metric_3": "ㅤ",
-            "metric_label_3": "Care-sector practicality without compromising warmth, colour, personality or the overall scheme.",
+            "metric_1": "Bespoke furniture options, fabrics and finishing touches that carry one consistent design across bedrooms, lounges and shared spaces.",
+            "metric_label_1": "",
+            "metric_2": "Support with samples, finishes and room-by-room coordination, helping every detail feel considered and aligned.",
+            "metric_label_2": "",
+            "metric_3": "Care-sector practicality without compromising warmth, colour, personality or the overall scheme.",
+            "metric_label_3": "",
             "metric_4": "",
             "metric_label_4": "",
             "image": "shopify://shop_images/P1049441_76d5ef38-a341-4e10-84b6-bf8e6f5305a6.jpg",
             "quote": "",
-            "source": ""
+            "source": "",
+            "metrics_layout": "1fr",
+            "metric_bg": "",
+            "reverse_layout": false
           }
         },
         "case_hMhd8q": {
@@ -158,7 +161,10 @@
             "metric_label_4": "ㅤ",
             "image": "shopify://shop_images/Untitled_-_June_18_2026_at_08.20.35_1_5dc2ba04-6c4f-4e88-91e8-e33cfd868774.png",
             "quote": "",
-            "source": ""
+            "source": "",
+            "metrics_layout": "repeat(2, 1fr)",
+            "metric_bg": "",
+            "reverse_layout": false
           }
         },
         "case_VUiE4k": {
@@ -178,7 +184,10 @@
             "metric_label_4": "",
             "image": "shopify://shop_images/Lounge_One_1.jpg",
             "quote": "",
-            "source": ""
+            "source": "",
+            "metrics_layout": "repeat(2, 1fr)",
+            "metric_bg": "",
+            "reverse_layout": false
           }
         }
       },
@@ -194,6 +203,9 @@
       ],
       "name": "Furncare Case Studies",
       "settings": {
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
         "heading": "",
         "subheading": "",
         "heading_size": 54,
@@ -216,7 +228,13 @@
         "metrics_columns": 1,
         "quote_bg": "#f9f7f0",
         "quote_text": "#262252",
-        "card_radius": 10
+        "card_radius": 10,
+        "text_padding": 0,
+        "image_padding": 0,
+        "body_size": 15,
+        "metric_size": 14,
+        "metric_label_size": 12,
+        "quote_size": 16
       }
     },
     "furncare_about_statement_3bEUrW": {
@@ -312,7 +330,9 @@
         "colour_scheme": "base-white-01",
         "enable_animation": false,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "furncare_about_audience_UMQdPg": {
@@ -486,7 +506,9 @@
         "colour_scheme": "green-01",
         "enable_animation": false,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "furncare_case_study_eU7UHK": {
@@ -509,7 +531,10 @@
             "metric_label_4": "",
             "image": "shopify://shop_images/Untitled_-_June_18_2026_at_08.20.35_1_5dc2ba04-6c4f-4e88-91e8-e33cfd868774.png",
             "quote": "",
-            "source": ""
+            "source": "",
+            "metrics_layout": "repeat(2, 1fr)",
+            "metric_bg": "",
+            "reverse_layout": false
           }
         },
         "case_x33G3z": {
@@ -529,7 +554,10 @@
             "metric_label_4": "",
             "image": "shopify://shop_images/Lounge_12_of_53.jpg",
             "quote": "“You’ve managed to really understand what we are after and have transformed our thoughts into something really special.”",
-            "source": "Arnas Mauremootoo, Owner"
+            "source": "Arnas Mauremootoo, Owner",
+            "metrics_layout": "repeat(2, 1fr)",
+            "metric_bg": "",
+            "reverse_layout": false
           }
         }
       },
@@ -539,6 +567,9 @@
       ],
       "name": "Furncare Case Studies",
       "settings": {
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
         "heading": "Case Studies",
         "subheading": "",
         "heading_size": 36,
@@ -561,7 +592,13 @@
         "metrics_columns": 2,
         "quote_bg": "#f9f7f0",
         "quote_text": "#262252",
-        "card_radius": 24
+        "card_radius": 24,
+        "text_padding": 0,
+        "image_padding": 0,
+        "body_size": 15,
+        "metric_size": 20,
+        "metric_label_size": 12,
+        "quote_size": 16
       }
     },
     "furncare_about_audience_iV9TrC": {

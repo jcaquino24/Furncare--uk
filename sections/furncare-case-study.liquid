@@ -71,10 +71,10 @@
             {% if block.settings[m] != blank %}
               <div class="fc-metric"
      style="background: {{ block.settings.metric_bg | default: section.settings.metric_bg }};">
-                <b style="font-size: {{ section.settings.metric_size }}px;">
+                <b style="font-size: {{ section.settings.metric_size }}px; color:{{ block.settings.metric_text | default: section.settings.metric_text }};">
                   {{ block.settings[m] }}
                 </b>
-                <span style="font-size: {{ section.settings.metric_label_size }}px;">
+                <span style="font-size: {{ section.settings.metric_label_size }}px; color:{{ block.settings.metric_text | default: section.settings.metric_text }};">
                   {{ block.settings[l] }}
                 </span>
               </div>
@@ -290,6 +290,7 @@ document.querySelectorAll('.fc-tab').forEach(btn => {
     { "type": "range", "id": "tab_radius", "min": 0, "max": 40, "step": 2, "default": 20, "label": "Tab Radius" },
 
     { "type": "color", "id": "metric_bg", "label": "Metric Background", "default": "#f5f5f5" },
+    { "type": "color", "id": "metric_text", "label": "Metric Text", "default": "#f5f5f5" },
     { "type": "range", "id": "metric_radius", "min": 0, "max": 40, "step": 2, "default": 10, "label": "Metric Radius" },
     { "type": "range", "id": "metrics_columns", "min": 1, "max": 4, "step": 1, "default": 2, "label": "Metrics Columns" },
 
@@ -347,6 +348,11 @@ document.querySelectorAll('.fc-tab').forEach(btn => {
           "type": "color",
           "id": "metric_bg",
           "label": "Metric Background (Override)"
+        },
+        {
+          "type": "color",
+          "id": "metric_text",
+          "label": "Metric Text (Override)"
         },
         {
           "type": "checkbox",
