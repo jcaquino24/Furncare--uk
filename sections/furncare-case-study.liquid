@@ -59,7 +59,8 @@
             {% assign m = 'metric_' | append: i %}
             {% assign l = 'metric_label_' | append: i %}
             {% if block.settings[m] != blank %}
-              <div class="fc-metric" style="background: {{ section.settings.metric_bg }};">
+              <div class="fc-metric"
+     style="background: {{ block.settings.metric_bg | default: section.settings.metric_bg }};">
                 <b style="font-size: {{ section.settings.metric_size }}px;">
                   {{ block.settings[m] }}
                 </b>
@@ -300,6 +301,11 @@ document.querySelectorAll('.fc-tab').forEach(btn => {
             { "value": "repeat(2, 1fr)", "label": "2 Columns" },
             { "value": "repeat(3, 1fr)", "label": "3 Columns" }
           ]
+        },
+        {
+          "type": "color",
+          "id": "metric_bg",
+          "label": "Metric Background (Override)"
         },
         {
           "type": "checkbox",
