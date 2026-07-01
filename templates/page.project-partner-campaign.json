@@ -233,7 +233,7 @@
         "quote_bg": "#f9f7f0",
         "quote_text": "#262252",
         "card_radius": 10,
-        "text_padding": 16,
+        "text_padding": 12,
         "image_padding": 0,
         "body_size": 15,
         "metric_size": 14,
