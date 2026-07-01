@@ -41,7 +41,7 @@
       --section-padding: var({{ section.settings.section_padding }});
     "
   >
-    <div class="container {% if section.settings.small_container %}container--small{% endif %}">
+    <div id="{{ section.settings.id_anchor }}" class="container {% if section.settings.small_container %}container--small{% endif %}">
       {% if section.settings.enable_animation %}
         <uwp-text-animation
           role="region"
@@ -83,6 +83,11 @@
   "name": "Rich Text",
   "tag": "section",
   "settings": [
+    {
+      "type": "text",
+      "id": "id_anchor",
+      "label": "ID Anchor",
+    },
     {
       "type": "range",
       "id": "max_width_desktop",
