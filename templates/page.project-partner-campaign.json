@@ -217,7 +217,7 @@
         "tab_active_text": "#262520",
         "tab_border": "#f9f7f0",
         "tab_radius": 16,
-        "metric_bg": "#C3B0B0",
+        "metric_bg": "#222222",
         "metric_radius": 40,
         "metrics_columns": 1,
         "quote_bg": "#F9F0F0",
