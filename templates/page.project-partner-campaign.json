@@ -140,7 +140,7 @@
             "quote": "",
             "source": "",
             "metrics_layout": "1fr",
-            "metric_bg": "#C3C0B0",
+            "metric_bg": "#c3c0b0",
             "metric_text": "",
             "reverse_layout": true
           }
@@ -541,7 +541,7 @@
             "metrics_layout": "repeat(2, 1fr)",
             "metric_bg": "",
             "metric_text": "",
-            "reverse_layout": false
+            "reverse_layout": true
           }
         },
         "case_x33G3z": {
@@ -565,7 +565,7 @@
             "metrics_layout": "repeat(2, 1fr)",
             "metric_bg": "",
             "metric_text": "",
-            "reverse_layout": false
+            "reverse_layout": true
           }
         }
       },
