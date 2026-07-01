@@ -59,7 +59,7 @@
             {% assign m = 'metric_' | append: i %}
             {% assign l = 'metric_label_' | append: i %}
             {% if block.settings[m] != blank %}
-              <div class="fc-metric">
+              <div class="fc-metric" style="background: {{ section.settings.metric_bg }};">
                 <b style="font-size: {{ section.settings.metric_size }}px;">
                   {{ block.settings[m] }}
                 </b>
@@ -197,7 +197,6 @@
 
 .fc-metric {
   padding: 14px;
-  background: {{ section.settings.metric_bg }};
   border-radius: {{ section.settings.metric_radius }}px;
 }
 </style>
