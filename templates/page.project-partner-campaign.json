@@ -16,7 +16,7 @@
         "heading": "Shape your care home with practical, considered furniture support",
         "copy": "Every care home project needs furniture that feels considered, yet crafted for care environments. Whether you’re planning a new space, updating key rooms or working through a larger phased project, we’ll help you choose contemporary and comfortable pieces that support the people who live and work there.",
         "primary_label": "Plan a refurbishment",
-        "primary_link": "shopify://pages/contact-us",
+        "primary_link": "#refurbishment",
         "secondary_label": "Discuss your new build project",
         "secondary_link": "shopify://pages/contact-us",
         "show_rotator": false,
@@ -227,7 +227,7 @@
         "tab_border": "#f9f7f0",
         "tab_radius": 16,
         "metric_bg": "#c3b0b0",
-        "metric_text": "#FFFFFF",
+        "metric_text": "#ffffff",
         "metric_radius": 40,
         "metrics_columns": 1,
         "quote_bg": "#f9f0f0",
@@ -328,6 +328,7 @@
       "disabled": true,
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
@@ -504,6 +505,7 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 49,
         "section_padding": "--spacing-6xl",
         "text_alignment": "center",
