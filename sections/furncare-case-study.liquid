@@ -53,7 +53,8 @@
           {{ block.settings.copy }}
         </p>
 
-        <div class="fc-metrics">
+        <div class="fc-metrics"
+     style="grid-template-columns: {{ block.settings.metrics_layout }};">
           {% for i in (1..4) %}
             {% assign m = 'metric_' | append: i %}
             {% assign l = 'metric_label_' | append: i %}
@@ -190,7 +191,6 @@
 
 .fc-metrics {
   display: grid;
-  grid-template-columns: repeat({{ section.settings.metrics_columns }}, 1fr);
   gap: 12px;
   margin-top: 20px;
 }
@@ -291,6 +291,17 @@ document.querySelectorAll('.fc-tab').forEach(btn => {
 
         { "type": "textarea", "id": "quote", "label": "Quote" },
         { "type": "text", "id": "source", "label": "Quote Source" },
+        {
+          "type": "select",
+          "id": "metrics_layout",
+          "label": "Metrics Layout",
+          "default": "repeat(2, 1fr)",
+          "options": [
+            { "value": "1fr", "label": "1 Column" },
+            { "value": "repeat(2, 1fr)", "label": "2 Columns" },
+            { "value": "repeat(3, 1fr)", "label": "3 Columns" }
+          ]
+        },
         {
           "type": "checkbox",
           "id": "reverse_layout",
