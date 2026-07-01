@@ -1,3 +1,13 @@
+{{ 'furncare-about.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'furncare-about.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign reveal_class = ''
+  if section.settings.enable_reveal
+    assign reveal_class = ' fa-reveal'
+  endif
+-%}
+
 <section
   class="fc-case-section" 
   style="
@@ -9,7 +19,7 @@
 >
   <div class="fc-container">
 
-    <div class="fc-section-head">
+    <div class="fc-section-head{{ reveal_class }}">
       <h2 style="font-size: {{ section.settings.heading_size }}px;">
         {{ section.settings.heading }}
       </h2>
@@ -19,7 +29,7 @@
     </div>
 
     <!-- Tabs -->
-    <div class="fc-tabs">
+    <div class="fc-tabs{{ reveal_class }}">
       {% for block in section.blocks %}
         <button 
           class="fc-tab {% if forloop.first %}active{% endif %}" 
@@ -33,57 +43,72 @@
       {% endfor %}
     </div>
 
-    <div class="fc-case-grid">
+    <div class="fc-case-grid{{ reveal_class }}">
 
-      <!-- LEFT -->
-      <div>
-        {% for block in section.blocks %}
-          <div class="fc-case-content {% if forloop.first %}active{% endif %}" id="case-{{ block.id }}">
-            <small>{{ block.settings.kicker }}</small>
-            <h3 style="font-size: {{ section.settings.title_size }}px;">
-              {{ block.settings.title }}
-            </h3>
-            <p>{{ block.settings.copy }}</p>
+  {% for block in section.blocks %}
+    <div 
+      class="fc-case-row {% if block.settings.reverse_layout %}reverse{% endif %} {% if forloop.first %}active{% endif %}" 
+      id="row-{{ block.id }}"
+    >
 
-            <div class="fc-metrics">
-              {% for i in (1..4) %}
-                {% assign m = 'metric_' | append: i %}
-                {% assign l = 'metric_label_' | append: i %}
-                {% if block.settings[m] != blank %}
-                  <div class="fc-metric">
-                    <b>{{ block.settings[m] }}</b>
-                    <span>{{ block.settings[l] }}</span>
-                  </div>
-                {% endif %}
-              {% endfor %}
-            </div>
-          </div>
-        {% endfor %}
+      <!-- TEXT -->
+      <div class="fc-text" style="padding: {{ section.settings.text_padding }}px;">
+        <small>{{ block.settings.kicker }}</small>
+
+        <h3 style="font-size: {{ section.settings.title_size }}px;">
+          {{ block.settings.title }}
+        </h3>
+
+        <p style="font-size: {{ section.settings.body_size }}px;">
+          {{ block.settings.copy }}
+        </p>
+
+        <div class="fc-metrics"
+     style="grid-template-columns: {{ block.settings.metrics_layout }};">
+          {% for i in (1..4) %}
+            {% assign m = 'metric_' | append: i %}
+            {% assign l = 'metric_label_' | append: i %}
+            {% if block.settings[m] != blank %}
+              <div class="fc-metric"
+     style="background: {{ block.settings.metric_bg | default: section.settings.metric_bg }};">
+                <b style="font-size: {{ section.settings.metric_size }}px;">
+                  {{ block.settings[m] }}
+                </b>
+                <span style="font-size: {{ section.settings.metric_label_size }}px;">
+                  {{ block.settings[l] }}
+                </span>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
 
-      <!-- RIGHT -->
-      <div>
-        {% for block in section.blocks %}
-          <div class="fc-case-gallery-inner {% if forloop.first %}active{% endif %}" id="gallery-{{ block.id }}">
+      <!-- IMAGE -->
+      <div class="fc-image" style="padding: {{ section.settings.image_padding }}px;">
 
-            {% if block.settings.image %}
-              <img 
-                src="{{ block.settings.image | img_url: '900x' }}" 
-                alt=""
-                style="border-radius: {{ section.settings.card_radius }}px;"
-              >
-            {% endif %}
+        <div class="fc-image-inner">
+          {% if block.settings.image %}
+            <img 
+              src="{{ block.settings.image | img_url: '900x' }}" 
+              alt="{{ block.settings.title | escape }}"
+            >
+          {% endif %}
+        </div>
 
-            <div class="fc-quote">
-              <p>{{ block.settings.quote }}</p>
-              <span>{{ block.settings.source }}</span>
-            </div>
+        <div class="fc-quote">
+          <p style="font-size: {{ section.settings.quote_size }}px;">
+            {{ block.settings.quote }}
+          </p>
+          <span>{{ block.settings.source }}</span>
+        </div>
 
-          </div>
-        {% endfor %}
       </div>
 
     </div>
+  {% endfor %}
+
+</div>
+
   </div>
 </section>
 
@@ -114,37 +139,49 @@
   color: {{ section.settings.tab_active_text }};
 }
 
+
 .fc-case-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: {{ section.settings.grid_gap }}px;
 }
 
-.fc-case-content,
-.fc-case-gallery-inner {
+.fc-case-row {
   display: none;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: {{ section.settings.grid_gap }}px;
 }
 
-.fc-case-content.active,
-.fc-case-gallery-inner.active {
+.fc-case-row.active {
+  display: grid;
+}
+
+.fc-case-row.reverse {
+  direction: rtl;
+}
+
+.fc-case-row.reverse .fc-text,
+.fc-case-row.reverse .fc-image {
+  direction: ltr;
+}
+
+.fc-image-inner img {
+  width: 100%;
+  display: block;
+  border-radius: {{ section.settings.card_radius }}px;
+}
+.fc-case-row img {
+  width: 100%;
   display: block;
 }
 
-.fc-metrics {
-  display: grid;
-  grid-template-columns: repeat({{ section.settings.metrics_columns }}, 1fr);
-  gap: 12px;
-  margin-top: 20px;
+.fc-metric b {
+  display: block;
 }
 
-.fc-metric {
-  padding: 14px;
-  background: {{ section.settings.metric_bg }};
-  border-radius: {{ section.settings.metric_radius }}px;
-}
-
-.fc-case-gallery img {
-  width: 100%;
+.fc-metric span {
+  opacity: 0.7;
 }
 
 .fc-quote {
@@ -156,9 +193,22 @@
 }
 
 @media (max-width: 768px) {
-  .fc-case-grid {
+  .fc-case-row,
+  .fc-case-row.reverse {
     grid-template-columns: 1fr;
+    direction: ltr;
   }
+}
+
+.fc-metrics {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.fc-metric {
+  padding: 14px;
+  border-radius: {{ section.settings.metric_radius }}px;
 }
 </style>
 
@@ -168,18 +218,14 @@ document.querySelectorAll('.fc-tab').forEach(btn => {
 
     const id = btn.dataset.case;
 
-    document.querySelectorAll('.fc-tab').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.fc-tab').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
-    document.querySelectorAll('.fc-case-content').forEach(c=>{
-      c.classList.remove('active');
+    document.querySelectorAll('.fc-case-row').forEach(row => {
+      row.classList.remove('active');
     });
-    document.querySelector('#case-' + id).classList.add('active');
 
-    document.querySelectorAll('.fc-case-gallery-inner').forEach(g=>{
-      g.classList.remove('active');
-    });
-    document.querySelector('#gallery-' + id).classList.add('active');
+    document.querySelector('#row-' + id).classList.add('active');
 
   });
 });
@@ -188,6 +234,37 @@ document.querySelectorAll('.fc-tab').forEach(btn => {
 {
   "name": "Furncare Case Studies",
   "settings": [
+
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_reveal",
+      "label": "Enable reveal animation",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "reveal_distance",
+      "label": "Reveal distance",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "reveal_duration",
+      "label": "Reveal duration",
+      "min": 200,
+      "max": 1400,
+      "step": 20,
+      "default": 760,
+      "unit": "ms"
+    },
 
     { "type": "text", "id": "heading", "label": "Heading", "default": "Case studies" },
     { "type": "textarea", "id": "subheading", "label": "Subheading" },
@@ -219,7 +296,13 @@ document.querySelectorAll('.fc-tab').forEach(btn => {
     { "type": "color", "id": "quote_bg", "label": "Quote Background", "default": "#111111" },
     { "type": "color", "id": "quote_text", "label": "Quote Text", "default": "#ffffff" },
 
-    { "type": "range", "id": "card_radius", "min": 0, "max": 40, "step": 2, "default": 16, "label": "Card Radius" }
+    { "type": "range", "id": "card_radius", "min": 0, "max": 40, "step": 2, "default": 16, "label": "Card Radius" },
+    { "type": "range", "id": "text_padding", "min": 0, "max": 80, "step": 4, "default": 0, "label": "Text Padding" },
+    { "type": "range", "id": "image_padding", "min": 0, "max": 80, "step": 4, "default": 0, "label": "Image Padding" },
+    { "type": "range", "id": "body_size", "min": 12, "max": 24, "step": 1, "default": 15, "label": "Body Text Size" },
+    { "type": "range", "id": "metric_size", "min": 14, "max": 30, "step": 1, "default": 20, "label": "Metric Number Size" },
+    { "type": "range", "id": "metric_label_size", "min": 10, "max": 18, "step": 1, "default": 12, "label": "Metric Label Size" },
+    { "type": "range", "id": "quote_size", "min": 12, "max": 24, "step": 1, "default": 16, "label": "Quote Size" }
 
   ],
   "blocks": [
@@ -248,7 +331,30 @@ document.querySelectorAll('.fc-tab').forEach(btn => {
         { "type": "image_picker", "id": "image", "label": "Image" },
 
         { "type": "textarea", "id": "quote", "label": "Quote" },
-        { "type": "text", "id": "source", "label": "Quote Source" }
+        { "type": "text", "id": "source", "label": "Quote Source" },
+        {
+          "type": "select",
+          "id": "metrics_layout",
+          "label": "Metrics Layout",
+          "default": "repeat(2, 1fr)",
+          "options": [
+            { "value": "1fr", "label": "1 Column" },
+            { "value": "repeat(2, 1fr)", "label": "2 Columns" },
+            { "value": "repeat(3, 1fr)", "label": "3 Columns" }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "metric_bg",
+          "label": "Metric Background (Override)"
+        },
+        {
+          "type": "checkbox",
+          "id": "reverse_layout",
+          "label": "Swap Content & Image",
+          "default": false
+        }
+        
 
       ]
     }
