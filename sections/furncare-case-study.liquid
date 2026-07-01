@@ -71,7 +71,7 @@
             {% if block.settings[m] != blank %}
               <div class="fc-metric"
      style="background: {{ block.settings.metric_bg | default: section.settings.metric_bg }};">
-                <b style="font-size: {{ section.settings.metric_size }}px; color={{ block.settings.metric_text | default: section.settings.metric_text }};">
+                <b style="font-size: {{ section.settings.metric_size }}px; color:{{ block.settings.metric_text | default: section.settings.metric_text }};">
                   {{ block.settings[m] }}
                 </b>
                 <span style="font-size: {{ section.settings.metric_label_size }}px;">
