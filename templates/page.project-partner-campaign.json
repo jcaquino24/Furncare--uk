@@ -140,6 +140,7 @@
             "quote": "",
             "source": "",
             "metrics_layout": "1fr",
+            "metric_bg": "",
             "reverse_layout": false
           }
         },
@@ -162,6 +163,7 @@
             "quote": "",
             "source": "",
             "metrics_layout": "repeat(2, 1fr)",
+            "metric_bg": "",
             "reverse_layout": false
           }
         },
@@ -184,6 +186,7 @@
             "quote": "",
             "source": "",
             "metrics_layout": "repeat(2, 1fr)",
+            "metric_bg": "",
             "reverse_layout": false
           }
         }
@@ -200,12 +203,15 @@
       ],
       "name": "Furncare Case Studies",
       "settings": {
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
         "heading": "",
         "subheading": "",
         "heading_size": 54,
         "subheading_size": 14,
         "title_size": 32,
-        "bg_color": "#F0F1F9",
+        "bg_color": "#F9F0F0",
         "text_color": "#111111",
         "padding_top": 70,
         "padding_bottom": 60,
@@ -217,10 +223,10 @@
         "tab_active_text": "#262520",
         "tab_border": "#f9f7f0",
         "tab_radius": 16,
-        "metric_bg": "#222222",
+        "metric_bg": "#C3B0B0",
         "metric_radius": 40,
         "metrics_columns": 1,
-        "quote_bg": "#F9F0F0",
+        "quote_bg": "#f9f0f0",
         "quote_text": "#262252",
         "card_radius": 10,
         "text_padding": 0,
@@ -527,6 +533,7 @@
             "quote": "",
             "source": "",
             "metrics_layout": "repeat(2, 1fr)",
+            "metric_bg": "",
             "reverse_layout": false
           }
         },
@@ -549,6 +556,7 @@
             "quote": "“You’ve managed to really understand what we are after and have transformed our thoughts into something really special.”",
             "source": "Arnas Mauremootoo, Owner",
             "metrics_layout": "repeat(2, 1fr)",
+            "metric_bg": "",
             "reverse_layout": false
           }
         }
@@ -559,6 +567,9 @@
       ],
       "name": "Furncare Case Studies",
       "settings": {
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
         "heading": "Case Studies",
         "subheading": "",
         "heading_size": 36,
