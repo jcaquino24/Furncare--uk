@@ -18,7 +18,7 @@
         "primary_label": "Plan a refurbishment",
         "primary_link": "#refurbishment",
         "secondary_label": "Discuss your new build project",
-        "secondary_link": "shopify://pages/contact-us",
+        "secondary_link": "",
         "show_rotator": false,
         "animated_prefix": "",
         "animated_words": "",
