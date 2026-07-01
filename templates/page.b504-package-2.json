@@ -115,6 +115,7 @@
         },
         "hotspot_w4UamA": {
           "type": "hotspot",
+          "disabled": true,
           "settings": {
             "tab": "1",
             "product": "estila-b504-chair-cushion",
@@ -141,10 +142,10 @@
           "type": "hotspot",
           "settings": {
             "tab": "1",
-            "product": "linton-circular-coffee-table",
+            "product": "linton-circular-side-table-nera-oak",
             "description": "",
-            "desktop_x": 35,
-            "desktop_y": 55,
+            "desktop_x": 36,
+            "desktop_y": 57,
             "mobile_x": 50,
             "mobile_y": 50
           }
@@ -163,6 +164,7 @@
         },
         "hotspot_HK4R9L": {
           "type": "hotspot",
+          "disabled": true,
           "settings": {
             "tab": "1",
             "product": "estila-b504-bed-runner",
@@ -197,18 +199,6 @@
             "mobile_y": 50
           }
         },
-        "hotspot_q46ckF": {
-          "type": "hotspot",
-          "settings": {
-            "tab": "1",
-            "product": "estila-b504-framed-picture",
-            "description": "",
-            "desktop_x": 80,
-            "desktop_y": 23,
-            "mobile_x": 50,
-            "mobile_y": 50
-          }
-        },
         "hotspot_PU7L99": {
           "type": "hotspot",
           "settings": {
@@ -235,7 +225,6 @@
         "hotspot_HK4R9L",
         "hotspot_CkYe3F",
         "hotspot_7qNhjA",
-        "hotspot_q46ckF",
         "hotspot_PU7L99"
       ],
       "name": "Hotspots",
@@ -262,7 +251,7 @@
               "dawson-3-drawer-chest",
               "dawson-3-drawer-bedside-table",
               "grandios-framed-mirror",
-              "linton-circular-coffee-table",
+              "linton-circular-side-table-nera-oak",
               "estila-b504-bed-runner",
               "estila-b504-chair-cushion",
               "estila-b504-framed-picture"

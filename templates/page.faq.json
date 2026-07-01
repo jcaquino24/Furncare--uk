@@ -195,7 +195,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-02",
-        "section_padding": "--spacing-4xl"
+        "section_padding": "--spacing-4xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     }
   },

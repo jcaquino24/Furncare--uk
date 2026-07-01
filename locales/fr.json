@@ -264,12 +264,6 @@
     "next": "Nex slide",
     "previous": "Previous slide"
   },
-  "locksmith": {
-    "forms": {
-      "submit_button_text": "Continue",
-      "loading_text": "One moment..."
-    }
-  },
   "pagefly": {
     "products": {
       "product": {

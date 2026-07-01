@@ -346,11 +346,7 @@
     }
   },
   "upsells": {
-    "add_for_price_text": "Add for {{ price }}",
-    "region_label": "Cart upsell product",
-    "slider_label": "Cart upsell products",
-    "previous_slide": "Previous upsell products",
-    "next_slide": "Next upsell products"
+    "add_for_price_text": "Add for {{ price }}"
   },
   "localization": {
     "language_label": "Language",
@@ -404,12 +400,6 @@
       "step_one": {
         "heading": "Log in or Sign Up"
       }
-    }
-  },
-  "locksmith": {
-    "forms": {
-      "submit_button_text": "Continue",
-      "loading_text": "One moment..."
     }
   },
   "pagefly": {

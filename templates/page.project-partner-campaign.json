@@ -1,0 +1,1286 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "furncare-about-hero",
+      "settings": {
+        "eyebrow": "your project partner",
+        "heading": "Shape your care home with practical, considered furniture support",
+        "copy": "Every care home project needs furniture that feels considered, yet crafted for care environments. Whether you’re planning a new space, updating key rooms or working through a larger phased project, we’ll help you choose contemporary and comfortable pieces that support the people who live and work there.",
+        "primary_label": "Plan a refurbishment",
+        "primary_link": "shopify://pages/contact-us",
+        "secondary_label": "Discuss your new build project",
+        "secondary_link": "shopify://pages/contact-us",
+        "show_rotator": false,
+        "animated_prefix": "",
+        "animated_words": "",
+        "animated_suffix": "",
+        "background_image": "shopify://shop_images/Lounge_Two_5.jpg",
+        "fallback_image_url": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2200&q=80",
+        "background_position": "bottom center",
+        "background_size": "cover",
+        "min_height": 100,
+        "min_height_mobile": 80,
+        "content_vertical_position": "center",
+        "enable_parallax": true,
+        "overlay_color": "#243222",
+        "overlay_color_2": "#243222",
+        "overlay_opacity": 0,
+        "overlay_angle": 0,
+        "radial_color": "#f9f7f0",
+        "radial_opacity": 18,
+        "radial_x": 10,
+        "radial_y": 10,
+        "radial_size": 20,
+        "rotator_line_color": "#e7e5e4",
+        "rotator_background": "#ffffff",
+        "rotator_text_color": "#ffffff",
+        "rotator_font_size": 16,
+        "rotator_min_width": 90,
+        "rotator_height": 34,
+        "rotator_radius": 1000,
+        "rotator_padding_x": 16,
+        "rotator_margin_top": 36,
+        "background_gradient": "",
+        "background_color": "#243222",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#e7e5e4",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 32,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 20,
+        "eyebrow_size": 14,
+        "eyebrow_weight": 400,
+        "eyebrow_letter_spacing": 40,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 20,
+        "text_color": "#f9f7f0",
+        "heading_color": "#f9f7f0",
+        "copy_color": "#f9f7f0",
+        "eyebrow_color": "#f9f7f0",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "button_radius": 900,
+        "button_padding_x": 24,
+        "button_padding_y": 14,
+        "button_min_height": 54,
+        "button_font_size": 16,
+        "button_weight": 700,
+        "button_text_transform": "none",
+        "button_gap": 12,
+        "button_margin_top": 32,
+        "button_border_width": 1,
+        "button_hover_lift": 1,
+        "button_hover_shadow_opacity": 12,
+        "buttons_full_width_mobile": true,
+        "primary_button_bg": "#f9f7f0",
+        "primary_button_color": "#243222",
+        "primary_button_border": "#f9f7f0",
+        "primary_button_hover_bg": "#f9f7f0",
+        "primary_button_hover_color": "#243222",
+        "primary_button_hover_border": "#f9f7f0",
+        "secondary_button_bg": "#f9f7f0",
+        "secondary_button_bg_opacity": 0,
+        "secondary_button_color": "#ffffff",
+        "secondary_button_border": "#f9f7f0",
+        "secondary_button_hover_bg": "#f9f7f0",
+        "secondary_button_hover_color": "#243222",
+        "secondary_button_hover_border": "#f9f7f0"
+      }
+    },
+    "furncare_case_study_XnUtHr": {
+      "type": "furncare-case-study",
+      "blocks": {
+        "case_RrqegD": {
+          "type": "case",
+          "settings": {
+            "tab_label": "For Interior Designers",
+            "kicker": "",
+            "title": "Your scheme, made care-ready.",
+            "copy": "From bespoke furniture to fabric and finish options, we're to help you carry your scheme through the full care environment, keeping each space consistent while making sure every piece works for daily use.",
+            "metric_1": "ㅤ",
+            "metric_label_1": "Bespoke furniture options, fabrics and finishing touches that carry one consistent design across bedrooms, lounges and shared spaces.",
+            "metric_2": "ㅤ",
+            "metric_label_2": "Support with samples, finishes and room-by-room coordination, helping every detail feel considered and aligned.",
+            "metric_3": "ㅤ",
+            "metric_label_3": "Care-sector practicality without compromising warmth, colour, personality or the overall scheme.",
+            "metric_4": "",
+            "metric_label_4": "",
+            "image": "shopify://shop_images/P1049441_76d5ef38-a341-4e10-84b6-bf8e6f5305a6.jpg",
+            "quote": "",
+            "source": ""
+          }
+        },
+        "case_hMhd8q": {
+          "type": "case",
+          "settings": {
+            "tab_label": "For Managers",
+            "kicker": "",
+            "title": "Make refurbishment choices with confidence.",
+            "copy": "See furniture, samples and finishes in your own care environment, making it easier to choose what works best for your residents, staff and space.",
+            "metric_1": "ㅤ",
+            "metric_label_1": "Mobile showroom and sample visits bring fabrics, finishes and furniture options directly to your care home.",
+            "metric_2": "ㅤ",
+            "metric_label_2": "Resident comfort, suitability, maintenance and everyday use can be considered before decisions are made.",
+            "metric_3": "ㅤ",
+            "metric_label_3": "Helpful for phased refurbishments, urgent upgrades and ongoing refreshes where time and disruption matter.",
+            "metric_4": "",
+            "metric_label_4": "ㅤ",
+            "image": "shopify://shop_images/Untitled_-_June_18_2026_at_08.20.35_1_5dc2ba04-6c4f-4e88-91e8-e33cfd868774.png",
+            "quote": "",
+            "source": ""
+          }
+        },
+        "case_VUiE4k": {
+          "type": "case",
+          "settings": {
+            "tab_label": "For Operators",
+            "kicker": "",
+            "title": "Minimal disruption, maximum transformation.",
+            "copy": "Whether you’re opening a new home, refurbishing existing spaces or planning a phased upgrade, we are here to help you bring your care environment together from first brief to the final product placement.",
+            "metric_1": "ㅤ",
+            "metric_label_1": "Furniture, curtains, soft furnishings, artwork and accessories brought together through one specialist partner.",
+            "metric_2": "ㅤ",
+            "metric_label_2": "Support with product selection, finishes, layouts and costings to help keep projects moving.",
+            "metric_3": "ㅤ",
+            "metric_label_3": "White-glove delivery, placement, assembly and packaging removal, ready for residents, staff and visitors.",
+            "metric_4": "",
+            "metric_label_4": "",
+            "image": "shopify://shop_images/Lounge_One_1.jpg",
+            "quote": "",
+            "source": ""
+          }
+        }
+      },
+      "block_order": [
+        "case_RrqegD",
+        "case_hMhd8q",
+        "case_VUiE4k"
+      ],
+      "custom_css": [
+        ".icon-text {display: flex; align-items: flex-start; gap: 8px;}",
+        ".tick-icon {width: 14px; height: 14px; flex: 0 0 14px; margin-top: 3px; color: #25241f; display: block;}",
+        ".icon-text p {margin: 0;}"
+      ],
+      "name": "Furncare Case Studies",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "heading_size": 54,
+        "subheading_size": 14,
+        "title_size": 32,
+        "bg_color": "#f9f7f0",
+        "text_color": "#111111",
+        "padding_top": 70,
+        "padding_bottom": 60,
+        "container_width": 1360,
+        "grid_gap": 42,
+        "tab_bg": "#c3c0b0",
+        "tab_text": "#333",
+        "tab_active_bg": "#839488",
+        "tab_active_text": "#262520",
+        "tab_border": "#f9f7f0",
+        "tab_radius": 16,
+        "metric_bg": "#c3c0b0",
+        "metric_radius": 40,
+        "metrics_columns": 1,
+        "quote_bg": "#f9f7f0",
+        "quote_text": "#262252",
+        "card_radius": 10
+      }
+    },
+    "furncare_about_statement_3bEUrW": {
+      "type": "furncare-about-statement",
+      "name": "Furncare statement advanced",
+      "settings": {
+        "eyebrow": "More than just furniture",
+        "heading": "A partner in the project.",
+        "copy": "<p>Whether it’s a new build, refurbishment or full fit-out, every detail needs to work together. Furniture, finishes, delivery and installation all have to support the programme, not slow it down.</p>",
+        "second_copy": "<p>That's where we come in.</p>",
+        "column_layout": "balanced",
+        "vertical_alignment": "center",
+        "background_gradient": "",
+        "background_color": "#f9f7f0",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#cdcbc0",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 64,
+        "heading_size_mobile": 40,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 13,
+        "eyebrow_weight": 700,
+        "eyebrow_letter_spacing": 22,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 16,
+        "text_color": "#c3c0b0",
+        "heading_color": "#243222",
+        "copy_color": "#cdcbc0",
+        "eyebrow_color": "#78716c",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "panel_background": "#c3c0b0",
+        "panel_border_color": "#e7e5e4",
+        "panel_border_width": 0,
+        "panel_radius": 32,
+        "panel_padding": 40,
+        "panel_shadow_opacity": 6
+      }
+    },
+    "richtext_brGyXC": {
+      "type": "richtext",
+      "blocks": {
+        "heading_4qKEXp": {
+          "type": "heading",
+          "settings": {
+            "text": "newbuild",
+            "heading_level": "h2",
+            "heading_style": "title-xs"
+          },
+          "blocks": {}
+        },
+        "tagline_TJ4D3e": {
+          "type": "tagline",
+          "settings": {
+            "content": "_________________",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_4qKEXp",
+        "tagline_TJ4D3e"
+      ],
+      "disabled": true,
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "furncare_about_audience_UMQdPg": {
+      "type": "furncare-about-audience",
+      "blocks": {
+        "card_7yCDzJ": {
+          "type": "card",
+          "settings": {
+            "icon": "users",
+            "title": "Specification from the start",
+            "copy": "Make furniture decisions early, with support around layouts, finishes, fabrics and practical care requirements from the beginning of your project."
+          }
+        },
+        "card_ByUftT": {
+          "type": "card",
+          "settings": {
+            "icon": "sofa",
+            "title": "Complete coordination",
+            "copy": "Create a cohesive furniture scheme across bedrooms, lounges, dining spaces and shared areas, with pieces selected to feel calm, consistent and beautifully considered."
+          }
+        },
+        "card_P6BcN4": {
+          "type": "card",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Care-ready design choices",
+            "copy": "Choose furniture, fabrics and finishes that bring quality and comfort, while standing up to everyday care environment demands."
+          }
+        },
+        "card_3xptrW": {
+          "type": "card",
+          "settings": {
+            "icon": "truck",
+            "title": "White glove delivery",
+            "copy": "Our in-house delivery team gives you complete flexibility around timings,  with every piece delivered, unpacked, assembled and placed throughout the home, ready for open day."
+          }
+        }
+      },
+      "block_order": [
+        "card_7yCDzJ",
+        "card_ByUftT",
+        "card_P6BcN4",
+        "card_3xptrW"
+      ],
+      "name": "Furncare audience advanced",
+      "settings": {
+        "eyebrow": "NEW BUILD FURNITURE SUPPORT",
+        "heading": "Bring your new care spaces to life.",
+        "background_gradient": "",
+        "background_color": "#c3c0b0",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 1200,
+        "content_max_width": 960,
+        "text_alignment": "center",
+        "section_border_color": "#f9f7f0",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 52,
+        "heading_size_mobile": 36,
+        "heading_weight": 400,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 13,
+        "eyebrow_weight": 700,
+        "eyebrow_letter_spacing": 22,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 16,
+        "text_color": "#0c0a09",
+        "heading_color": "#0c0a09",
+        "copy_color": "#57534e",
+        "eyebrow_color": "#78716c",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "card_background": "#f9f7f0",
+        "card_heading_color": "#0c0a09",
+        "card_copy_color": "#262520",
+        "card_border_color": "#f9f7f0",
+        "card_border_width": 1,
+        "card_radius": 32,
+        "card_padding": 28,
+        "card_padding_mobile": 24,
+        "card_shadow_opacity": 6,
+        "card_hover_shadow_opacity": 14,
+        "card_hover_lift": 4,
+        "card_title_size": 20,
+        "card_title_weight": 700,
+        "card_copy_size": 15,
+        "card_copy_line_height": 170,
+        "card_copy_margin_top": 16,
+        "grid_gap": 20,
+        "columns_desktop": "4",
+        "columns_tablet": "2",
+        "columns_mobile": "1",
+        "icon_background": "#c3c0b0",
+        "icon_color": "#292524",
+        "icon_size": 48,
+        "icon_svg_size": 23,
+        "icon_radius": 16,
+        "icon_margin_bottom": 32,
+        "icon_hover_scale": 108
+      }
+    },
+    "video_form_4xcrPg": {
+      "type": "video-form",
+      "custom_css": [],
+      "name": "Video & Form",
+      "settings": {
+        "bg_color": "#f9f6f0",
+        "max_width": 2600,
+        "subtitle": "",
+        "title": "Manor Park",
+        "description": "<p>One of our largest newbuild transformations, Manor Park was delivered from design support through to a complete, resident-ready fit-out.</p><p>Across 80 bedrooms and shared spaces, our team placed 5,500 items within a 10-day installation window, creating warm, practical interiors for everyday care.</p><p>Inspired by this project? Send us a message using the form below.</p>",
+        "phone": "",
+        "email": "",
+        "facebook_url": "",
+        "instagram_url": "",
+        "linkedin_url": "",
+        "video_hosted": "shopify://files/videos/Old Malton Case Study.mp4",
+        "external_video_url": "",
+        "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+        "padding_top": 70,
+        "padding_bottom": 60
+      }
+    },
+    "richtext_kj7PnM": {
+      "type": "richtext",
+      "blocks": {
+        "heading_H9pqAU": {
+          "type": "heading",
+          "settings": {
+            "text": "Tailored Refurbishment Support",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_W8ACai": {
+          "type": "tagline",
+          "settings": {
+            "content": "From phased room updates to full home refreshes, we're here to help you bring your care spaces up to standard with furniture, soft furnishings and installation planned around your  schedule.",
+            "tagline_style": "body-sm"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_H9pqAU",
+        "tagline_W8ACai"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 49,
+        "section_padding": "--spacing-6xl",
+        "text_alignment": "center",
+        "colour_scheme": "green-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "furncare_case_study_eU7UHK": {
+      "type": "furncare-case-study",
+      "blocks": {
+        "case_9Ejkmw": {
+          "type": "case",
+          "settings": {
+            "tab_label": "Letcombe Regis",
+            "kicker": "CASE STUDIES",
+            "title": "Letcombe Regis",
+            "copy": "Letcombe Regis brings together dementia, nursing and respite care within Bupa’s Richmond Villages setting in the Oxfordshire countryside. Designed by Vogue Living, the home includes private ensuite bedrooms alongside premium shared spaces such as a swimming pool, gym, restaurant, licensed bar, library, lounges and accessible grounds. <br>\n<br>\nFurncare supplied furniture and upholstery across the scheme, with pieces chosen to sit naturally within Vogue Living’s warm, opulent interior style. The upholstery colours were carefully paired with the furniture shapes and finishes, helping each bedroom, lounge and shared area feel coordinated, comfortable and in keeping with the premium feel of Richmond Villages Letcombe Regis.",
+            "metric_1": "",
+            "metric_label_1": "",
+            "metric_2": "",
+            "metric_label_2": "",
+            "metric_3": "",
+            "metric_label_3": "",
+            "metric_4": "",
+            "metric_label_4": "",
+            "image": "shopify://shop_images/Untitled_-_June_18_2026_at_08.20.35_1_5dc2ba04-6c4f-4e88-91e8-e33cfd868774.png",
+            "quote": "",
+            "source": ""
+          }
+        },
+        "case_x33G3z": {
+          "type": "case",
+          "settings": {
+            "tab_label": "The Chestnuts",
+            "kicker": "CASE STUDY",
+            "title": "The Chestnuts",
+            "copy": "The Chestnuts’ latest extension added eleven new bedrooms, a luxury lounge and dining room, and a spacious new reception area, continuing a relationship with Furncare that first began back in 2016. For this phase, the team worked closely with owner Arnas Mauremootoo and deputy manager Stacey to shape the interior themes, fabrics and finishes, using the Liberta Vie Grandios and Remini ranges alongside Karsson cabinetry. With calm neutral upholstery, rust-toned accents and a carefully scheduled installation to align with building works, the finished spaces feel warm, coordinated and ready for residents to settle into.",
+            "metric_1": "",
+            "metric_label_1": "",
+            "metric_2": "",
+            "metric_label_2": "",
+            "metric_3": "",
+            "metric_label_3": "",
+            "metric_4": "",
+            "metric_label_4": "",
+            "image": "shopify://shop_images/Lounge_12_of_53.jpg",
+            "quote": "“You’ve managed to really understand what we are after and have transformed our thoughts into something really special.”",
+            "source": "Arnas Mauremootoo, Owner"
+          }
+        }
+      },
+      "block_order": [
+        "case_9Ejkmw",
+        "case_x33G3z"
+      ],
+      "name": "Furncare Case Studies",
+      "settings": {
+        "heading": "Case Studies",
+        "subheading": "",
+        "heading_size": 36,
+        "subheading_size": 12,
+        "title_size": 26,
+        "bg_color": "#f9f7f0",
+        "text_color": "#111111",
+        "padding_top": 70,
+        "padding_bottom": 60,
+        "container_width": 1320,
+        "grid_gap": 26,
+        "tab_bg": "#c3c0b0",
+        "tab_text": "#333",
+        "tab_active_bg": "#839488",
+        "tab_active_text": "#262520",
+        "tab_border": "#f9f7f0",
+        "tab_radius": 16,
+        "metric_bg": "#f5f5f5",
+        "metric_radius": 10,
+        "metrics_columns": 2,
+        "quote_bg": "#f9f7f0",
+        "quote_text": "#262252",
+        "card_radius": 24
+      }
+    },
+    "furncare_about_audience_iV9TrC": {
+      "type": "furncare-about-audience",
+      "blocks": {
+        "card_UbGCNc": {
+          "type": "card",
+          "settings": {
+            "icon": "users",
+            "title": "Practical project support",
+            "copy": "Make confident decisions around furniture, finishes, layouts and timelines, with guidance shaped by care-sector experience."
+          }
+        },
+        "card_ezqN7r": {
+          "type": "card",
+          "settings": {
+            "icon": "sofa",
+            "title": "Seamless interiors",
+            "copy": "Introduce new furniture and finishes that sit naturally alongside your current scheme, giving spaces a refreshed, cohesive feel."
+          }
+        },
+        "card_AmdbMy": {
+          "type": "card",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Design-led solutions",
+            "copy": "Choose from coordinated fabrics, finishes and furniture options that bring warmth, style and practicality into your care environment."
+          }
+        },
+        "card_hent3W": {
+          "type": "card",
+          "settings": {
+            "icon": "truck",
+            "title": "Quick delivery",
+            "copy": "Need your refurbishment in a short space of time? Our quick delivery range helps you refresh spaces without unnecessary delays."
+          }
+        }
+      },
+      "block_order": [
+        "card_UbGCNc",
+        "card_ezqN7r",
+        "card_AmdbMy",
+        "card_hent3W"
+      ],
+      "name": "Furncare audience advanced",
+      "settings": {
+        "eyebrow": "REFURBISHMENT, MADE SIMPLER",
+        "heading": "Refresh your existing spaces with confidence.",
+        "background_gradient": "",
+        "background_color": "#f9f7f0",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 1200,
+        "content_max_width": 960,
+        "text_alignment": "right",
+        "section_border_color": "#f9f7f0",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 50,
+        "heading_size_mobile": 36,
+        "heading_weight": 400,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 13,
+        "eyebrow_weight": 700,
+        "eyebrow_letter_spacing": 22,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 16,
+        "text_color": "#0c0a09",
+        "heading_color": "#0c0a09",
+        "copy_color": "#57534e",
+        "eyebrow_color": "#78716c",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "card_background": "#c3c0b0",
+        "card_heading_color": "#0c0a09",
+        "card_copy_color": "#262520",
+        "card_border_color": "#e7e5e4",
+        "card_border_width": 1,
+        "card_radius": 32,
+        "card_padding": 28,
+        "card_padding_mobile": 24,
+        "card_shadow_opacity": 6,
+        "card_hover_shadow_opacity": 14,
+        "card_hover_lift": 4,
+        "card_title_size": 20,
+        "card_title_weight": 700,
+        "card_copy_size": 15,
+        "card_copy_line_height": 170,
+        "card_copy_margin_top": 16,
+        "grid_gap": 20,
+        "columns_desktop": "4",
+        "columns_tablet": "2",
+        "columns_mobile": "1",
+        "icon_background": "#839488",
+        "icon_color": "#292524",
+        "icon_size": 48,
+        "icon_svg_size": 23,
+        "icon_radius": 16,
+        "icon_margin_bottom": 32,
+        "icon_hover_scale": 108
+      }
+    },
+    "blog_article_row_4iJ6Ye": {
+      "type": "blog-article-row",
+      "blocks": {
+        "article_J3nrN4": {
+          "type": "article",
+          "settings": {
+            "article": "news/dementia-and-nursing-care-at-letcombe-regis"
+          }
+        },
+        "article_y3fUY9": {
+          "type": "article",
+          "settings": {
+            "article": "news/the-chestnuts-care-home-transformed-with-stylish-new-extension"
+          }
+        },
+        "article_kc9wXR": {
+          "type": "article",
+          "settings": {
+            "article": "news/furncare-project-team-shines-at-chapel-view-care-home"
+          }
+        },
+        "article_TMp69Q": {
+          "type": "article",
+          "settings": {
+            "article": "news/stowlangtoft-hall"
+          }
+        }
+      },
+      "block_order": [
+        "article_J3nrN4",
+        "article_y3fUY9",
+        "article_kc9wXR",
+        "article_TMp69Q"
+      ],
+      "disabled": true,
+      "name": "Blog article row",
+      "settings": {
+        "title": "REFURBISHMENT CASE STUDIES",
+        "section_padding": "--spacing-2xl",
+        "show_badges": true,
+        "show_video_indicator": false,
+        "background_colour_scheme": "base-white-01"
+      }
+    },
+    "audience": {
+      "type": "furncare-about-audience",
+      "blocks": {
+        "audience_1": {
+          "type": "card",
+          "settings": {
+            "icon": "users",
+            "title": "Home managers",
+            "copy": "Furniture schemes that support residents, staff, compliance, durability and long-term use."
+          }
+        },
+        "audience_2": {
+          "type": "card",
+          "settings": {
+            "icon": "sofa",
+            "title": "Interior designers",
+            "copy": "Design-led ranges, fabrics, finishes and practical product guidance for care-sector interiors."
+          }
+        },
+        "audience_3": {
+          "type": "card",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Procurement teams",
+            "copy": "Reliable information, clear communication, delivery planning and value-conscious solutions."
+          }
+        },
+        "audience_4": {
+          "type": "card",
+          "settings": {
+            "icon": "truck",
+            "title": "Project managers",
+            "copy": "Support with phasing, lead times, logistics and coordination from order to installation."
+          }
+        }
+      },
+      "block_order": [
+        "audience_1",
+        "audience_2",
+        "audience_3",
+        "audience_4"
+      ],
+      "disabled": true,
+      "settings": {
+        "eyebrow": "Who we support",
+        "heading": "Built around the teams delivering care environments.",
+        "background_gradient": "",
+        "background_color": "#c3c0b0",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#e7e5e4",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 32,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 14,
+        "eyebrow_weight": 400,
+        "eyebrow_letter_spacing": 40,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 20,
+        "text_color": "#243222",
+        "heading_color": "#243222",
+        "copy_color": "#243222",
+        "eyebrow_color": "#243222",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "card_background": "#f9f7f0",
+        "card_heading_color": "#243222",
+        "card_copy_color": "#243222",
+        "card_border_color": "#f9f7f0",
+        "card_border_width": 1,
+        "card_radius": 32,
+        "card_padding": 28,
+        "card_padding_mobile": 24,
+        "card_shadow_opacity": 6,
+        "card_hover_shadow_opacity": 14,
+        "card_hover_lift": 4,
+        "card_title_size": 20,
+        "card_title_weight": 700,
+        "card_copy_size": 15,
+        "card_copy_line_height": 170,
+        "card_copy_margin_top": 16,
+        "grid_gap": 20,
+        "columns_desktop": "4",
+        "columns_tablet": "2",
+        "columns_mobile": "1",
+        "icon_background": "#f9f7f0",
+        "icon_color": "#243222",
+        "icon_size": 48,
+        "icon_svg_size": 23,
+        "icon_radius": 16,
+        "icon_margin_bottom": 32,
+        "icon_hover_scale": 108
+      }
+    },
+    "proof": {
+      "type": "furncare-about-proof",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "20+",
+            "label": "Years",
+            "copy": "Supporting care environments with specialist furniture knowledge."
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "UK",
+            "label": "Wide",
+            "copy": "Project support and delivery across care-sector locations."
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "5-Day",
+            "label": "Options",
+            "copy": "Quick-delivery ranges available for time-sensitive requirements."
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "number": "2",
+            "label": "Core sectors",
+            "copy": "Elderly Care/Later Living and Challenging Environments expertise."
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3",
+        "stat_4"
+      ],
+      "disabled": true,
+      "settings": {
+        "eyebrow": "Why project teams choose Furncare",
+        "heading": "Confidence at every stage of the scheme.",
+        "background_gradient": "",
+        "background_color": "#c3c0b0",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#f9f7f0",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 32,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 14,
+        "eyebrow_weight": 400,
+        "eyebrow_letter_spacing": 40,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 20,
+        "text_color": "#243222",
+        "heading_color": "#243222",
+        "copy_color": "#243222",
+        "eyebrow_color": "#243222",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "card_background": "#f9f7f0",
+        "card_heading_color": "#0c0a09",
+        "card_copy_color": "#57534e",
+        "card_border_color": "#f9f7f0",
+        "card_border_width": 1,
+        "card_radius": 32,
+        "card_padding": 28,
+        "card_padding_mobile": 24,
+        "card_shadow_opacity": 6,
+        "card_hover_shadow_opacity": 14,
+        "card_hover_lift": 4,
+        "card_title_size": 20,
+        "card_title_weight": 700,
+        "card_copy_size": 15,
+        "card_copy_line_height": 170,
+        "card_copy_margin_top": 16,
+        "grid_gap": 20,
+        "columns_desktop": "4",
+        "columns_tablet": "2",
+        "columns_mobile": "1",
+        "icon_background": "#f9f7f0",
+        "icon_color": "#243222",
+        "icon_size": 48,
+        "icon_svg_size": 23,
+        "icon_radius": 16,
+        "icon_margin_bottom": 32,
+        "icon_hover_scale": 108,
+        "stat_number_color": "#243222",
+        "stat_label_color": "#243222",
+        "stat_number_size": 48,
+        "stat_number_weight": 700,
+        "stat_label_size": 16,
+        "stat_label_margin_top": 12,
+        "stat_copy_margin_top": 12
+      }
+    },
+    "final_cta": {
+      "type": "furncare-about-final-cta",
+      "settings": {
+        "eyebrow": "Start the conversation",
+        "heading": "Planning a care-sector furniture project? Let's make it easier.",
+        "copy": "Bring Furncare in early and we'll help you shape a furniture scheme that works for your space, your users, your timeline and your budget.",
+        "primary_label": "Start a project",
+        "primary_link": "shopify://pages/contact-us",
+        "secondary_label": "Request a brochure",
+        "secondary_link": "shopify://pages/brochure-request",
+        "background_gradient": "",
+        "background_color": "#f9f7f0",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "center",
+        "section_border_color": "#243222",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 32,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 14,
+        "eyebrow_weight": 400,
+        "eyebrow_letter_spacing": 40,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 20,
+        "text_color": "#f9f7f0",
+        "heading_color": "#243222",
+        "copy_color": "#243222",
+        "eyebrow_color": "#243222",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "button_radius": 900,
+        "button_padding_x": 24,
+        "button_padding_y": 14,
+        "button_min_height": 54,
+        "button_font_size": 16,
+        "button_weight": 700,
+        "button_text_transform": "none",
+        "button_gap": 12,
+        "button_margin_top": 32,
+        "button_border_width": 1,
+        "button_hover_lift": 1,
+        "button_hover_shadow_opacity": 12,
+        "buttons_full_width_mobile": true,
+        "primary_button_bg": "#c3c0b0",
+        "primary_button_color": "#243222",
+        "primary_button_border": "#f9f7f0",
+        "primary_button_hover_bg": "#839488",
+        "primary_button_hover_color": "#f9f7f0",
+        "primary_button_hover_border": "#839488",
+        "secondary_button_bg": "#f9f7f0",
+        "secondary_button_bg_opacity": 36,
+        "secondary_button_color": "#839488",
+        "secondary_button_border": "#839488",
+        "secondary_button_hover_bg": "#f9f7f0",
+        "secondary_button_hover_color": "#243222",
+        "secondary_button_hover_border": "#f9f7f0"
+      }
+    },
+    "process": {
+      "type": "furncare-about-process",
+      "blocks": {
+        "step_KnYBgP": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "title": "Understand",
+            "copy": "We get to grips with the project scope, users, timelines and budgets."
+          }
+        },
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "title": "Assess",
+            "copy": "We visit the site to review the space, take key measurements and identify any practical considerations."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "title": "Specify",
+            "copy": "We help shape the right furniture selections across rooms, schemes and finishes."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "title": "Coordinate",
+            "copy": "We support the project with clear communication, product information and delivery planning."
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "number": "04",
+            "title": "Deliver",
+            "copy": "We keep furniture supply aligned with project timelines and operational needs."
+          }
+        },
+        "step_5": {
+          "type": "step",
+          "settings": {
+            "number": "05",
+            "title": "Support",
+            "copy": "We remain on hand for future phases, replacements and ongoing requirements."
+          }
+        }
+      },
+      "block_order": [
+        "step_KnYBgP",
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4",
+        "step_5"
+      ],
+      "disabled": true,
+      "settings": {
+        "eyebrow": "A smoother route from brief to installation",
+        "heading": "The Furncare Way.",
+        "background_gradient": "",
+        "background_color": "#243222",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#e7e5e4",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 32,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 14,
+        "eyebrow_weight": 400,
+        "eyebrow_letter_spacing": 40,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 20,
+        "text_color": "#c3c0b0",
+        "heading_color": "#c3c0b0",
+        "copy_color": "#c3c0b0",
+        "eyebrow_color": "#c3c0b0",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "process_card_background": "#c3c0b0",
+        "process_card_border": "#c3c0b0",
+        "process_number_color": "#243222",
+        "process_title_color": "#243222",
+        "process_copy_color": "#243222",
+        "process_line_color": "#f9f7f0",
+        "card_border_width": 1,
+        "card_radius": 32,
+        "card_padding": 32,
+        "card_padding_mobile": 24,
+        "grid_gap": 20,
+        "process_number_size": 13,
+        "process_title_size": 28,
+        "card_title_weight": 700,
+        "card_copy_size": 16,
+        "card_copy_line_height": 170,
+        "process_card_blur": 16
+      }
+    },
+    "furncare_about_proposition_wjtH7D": {
+      "type": "furncare-about-proposition",
+      "disabled": true,
+      "name": "Furncare proposition advanced",
+      "settings": {
+        "eyebrow": "The balance",
+        "heading": "Designed for care.  Ready to refresh.",
+        "left_icon": "heart",
+        "left_title": "Designed for care",
+        "left_copy": "Warm, practical and durable furniture that helps care spaces feel comfortable, considered and welcoming.",
+        "right_icon": "check",
+        "right_title": "Ready to refresh",
+        "right_copy": "Quality furniture, coordinated finishes and dependable supply for teams renewing care interiors with confidence.",
+        "background_gradient": "",
+        "background_color": "#f9f7f0",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#f9f7f0",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 25,
+        "heading_size_mobile": 40,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 13,
+        "eyebrow_weight": 700,
+        "eyebrow_letter_spacing": 22,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 16,
+        "text_color": "#262520",
+        "heading_color": "#0c0a09",
+        "copy_color": "#57534e",
+        "eyebrow_color": "#78716c",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "card_background": "#f9f7f0",
+        "card_heading_color": "#262520",
+        "card_copy_color": "#57534e",
+        "card_border_color": "#f9f7f0",
+        "card_border_width": 1,
+        "card_radius": 32,
+        "card_padding": 28,
+        "card_padding_mobile": 24,
+        "card_shadow_opacity": 6,
+        "card_hover_shadow_opacity": 14,
+        "card_hover_lift": 4,
+        "card_title_size": 20,
+        "card_title_weight": 500,
+        "card_copy_size": 15,
+        "card_copy_line_height": 170,
+        "card_copy_margin_top": 20,
+        "grid_gap": 20,
+        "columns_desktop": "2",
+        "columns_tablet": "2",
+        "columns_mobile": "2",
+        "icon_background": "#f9f7f0",
+        "icon_color": "#292524",
+        "icon_size": 48,
+        "icon_svg_size": 23,
+        "icon_radius": 16,
+        "icon_margin_bottom": 32,
+        "icon_hover_scale": 108,
+        "panel_title_size": 40,
+        "panel_title_margin_top": 28,
+        "panel_copy_margin_top": 20,
+        "panel_padding": 48,
+        "left_panel_bg": "#c3c0b0",
+        "left_panel_text": "#0c0a09",
+        "left_title_color": "#0c0a09",
+        "left_copy_color": "#57534e",
+        "left_icon_background": "#cdcbc0",
+        "left_icon_color": "#292524",
+        "right_panel_bg": "#243222",
+        "right_panel_text": "#f9f7f0",
+        "right_title_color": "#f9f7f0",
+        "right_copy_color": "#d6d3d1",
+        "right_icon_background": "#2f3f2c",
+        "right_icon_color": "#f9f7f0"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "furncare_case_study_XnUtHr",
+    "furncare_about_statement_3bEUrW",
+    "richtext_brGyXC",
+    "furncare_about_audience_UMQdPg",
+    "video_form_4xcrPg",
+    "richtext_kj7PnM",
+    "furncare_case_study_eU7UHK",
+    "furncare_about_audience_iV9TrC",
+    "blog_article_row_4iJ6Ye",
+    "audience",
+    "proof",
+    "final_cta",
+    "process",
+    "furncare_about_proposition_wjtH7D"
+  ]
+}

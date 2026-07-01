@@ -1,0 +1,557 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "image_video_banner_HFMhkr": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_gqmwjQ": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "your next refurb partner",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_DqmDFe": {
+          "type": "title",
+          "settings": {
+            "text": "Designed for Comfort, Built for <em>Care</em>.",
+            "title_element": "h2",
+            "title_size": "display",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_AktYKr": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_gqmwjQ",
+        "title_DqmDFe",
+        "button_AktYKr"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": true,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/P1044835_1.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(180deg, rgba(249, 247, 240, 0.7) 19%, rgba(195, 192, 176, 0) 67%)",
+        "colour_scheme": "light",
+        "content_position": "left-center",
+        "content_alignment": "center"
+      }
+    },
+    "17805657938d839cee": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_4DkKF8": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 50,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#f9f7f0"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_60f34c9_RUmbVw": {
+          "type": "ai_gen_block_60f34c9",
+          "settings": {
+            "icon_width_percent": 20,
+            "vertical_alignment": "center",
+            "gap": 0,
+            "gap_mobile": 12,
+            "desktop_width_percent": 100,
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"195\" height=\"205\" viewbox=\"0 0 195 205\">\n  <path fill=\"#263622\" fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M146 151 L149 157 L151 159 L154 166 L153 167 L136 167 L131 174 L131 175 L129 177 L129 178 L127 180 L127 181 L125 183 L122 179 L120 174 L118 172 L115 166 L116 165 L118 166 L120 165 L122 165 L125 162 L127 157 L129 155 L141 155 L143 154 L145 151 Z M47 151 L48 151 L49 153 L52 155 L64 155 L67 159 L68 162 L71 165 L73 165 L74 166 L77 165 L78 166 L75 172 L73 174 L71 179 L68 183 L66 181 L66 180 L64 178 L64 177 L62 175 L62 174 L57 167 L40 167 L39 166 L39 164 L41 162 L43 157 L45 155 Z M83 66 L82 90 L88 91 L92 89 L99 89 L105 94 L106 99 L105 102 L100 106 L91 106 L84 102 L80 107 L89 112 L102 112 L108 109 L112 104 L113 93 L111 89 L104 84 L89 85 L88 84 L89 73 L111 72 L111 66 Z M89 39 L105 39 L126 48 L141 64 L148 84 L147 103 L140 119 L128 132 L116 139 L106 142 L87 142 L77 139 L65 132 L53 119 L45 98 L46 78 L54 61 L70 46 Z M89 35 L67 43 L51 58 L43 75 L41 97 L49 120 L61 134 L79 144 L106 146 L125 139 L139 127 L150 107 L152 85 L145 63 L129 45 L113 37 Z M96 16 L105 23 L120 20 L127 30 L139 30 L143 41 L157 48 L156 58 L167 68 L163 80 L171 91 L163 102 L167 114 L156 123 L157 134 L145 138 L140 151 L126 152 L119 162 L106 158 L98 165 L87 158 L74 162 L67 152 L53 151 L49 139 L36 134 L36 121 L26 114 L29 99 L22 91 L29 82 L26 68 L37 58 L36 48 L47 44 L54 30 L66 30 L73 20 L88 23 Z M72 16 L63 27 L52 26 L47 38 L33 45 L33 57 L22 67 L26 79 L19 88 L26 102 L22 115 L33 124 L33 137 L46 142 L33 169 L55 171 L69 189 L85 162 L94 169 L108 162 L126 189 L138 171 L160 169 L147 142 L160 137 L160 124 L171 115 L167 103 L174 94 L167 79 L171 66 L160 57 L160 45 L148 40 L141 26 L130 27 L121 16 L107 19 L98 12 L86 19 Z\"></path>\n</svg>",
+            "icon_size": 60,
+            "icon_size_mobile": 36,
+            "icon_color": "#000000",
+            "heading": "",
+            "heading_size": 20,
+            "heading_size_mobile": 18,
+            "heading_weight": "600",
+            "heading_color": "#000000",
+            "heading_spacing": 8,
+            "text": "<p>Peace of mind with a 5 year guarantee</p>",
+            "text_size": 24,
+            "text_size_mobile": 14,
+            "text_color": "#333333"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_90768fd_7x3cYa": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 25,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#f9f7f0"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_60f34c9_ym7Fnm": {
+          "type": "ai_gen_block_60f34c9",
+          "settings": {
+            "icon_width_percent": 20,
+            "vertical_alignment": "center",
+            "gap": 0,
+            "gap_mobile": 12,
+            "desktop_width_percent": 100,
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"195\" height=\"175\" viewbox=\"0 0 195 175\">\n  <path fill=\"#263622\" fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M34 164 L35 167 L188 166 L188 164 Z M186 154 L185 155 L185 157 L186 158 L187 158 L188 157 L188 155 L187 154 Z M160 154 L158 154 L157 155 L157 157 L158 158 L159 158 L161 156 L161 155 Z M131 154 L130 155 L130 157 L131 158 L132 158 L133 157 L133 155 L132 154 Z M103 154 L103 155 L102 156 L104 158 L105 158 L106 157 L106 155 L105 154 Z M76 154 L75 155 L75 157 L76 158 L77 158 L78 157 L78 155 L77 154 Z M49 154 L48 155 L48 157 L49 158 L50 158 L51 157 L51 155 L50 154 Z M174 143 L172 143 L171 144 L171 146 L172 146 L173 147 L174 146 Z M119 143 L117 143 L116 144 L116 146 L117 146 L118 147 L120 145 L119 144 Z M89 143 L89 146 L92 146 L92 144 L91 143 Z M64 143 L62 143 L61 144 L61 145 L63 147 L65 145 L65 144 Z M37 143 L35 143 L34 144 L34 146 L35 146 L36 147 L37 146 Z M121 109 L121 117 L122 118 L122 120 L123 121 L123 123 L125 125 L125 126 L130 131 L131 131 L133 133 L135 133 L136 134 L138 134 L139 135 L144 135 L145 136 L146 135 L147 135 L147 132 L142 132 L141 131 L138 131 L137 130 L134 129 L127 122 L127 121 L125 118 L125 115 L124 114 L124 109 Z M49 72 L49 79 L50 80 L50 82 L51 83 L51 84 L53 86 L53 87 L57 91 L58 91 L61 93 L63 93 L64 94 L71 94 L71 91 L67 91 L66 90 L64 90 L63 89 L62 89 L61 88 L60 88 L55 83 L55 82 L53 79 L53 76 L52 75 L52 72 Z M145 40 L148 42 L169 77 L176 92 L179 105 L178 119 L173 130 L164 139 L151 144 L140 144 L127 139 L119 132 L112 117 L112 102 L115 91 L124 73 Z M188 134 L176 132 L182 118 L181 96 L170 71 L145 32 L111 91 L108 115 L115 132 L113 134 L34 134 L34 137 L119 137 L133 146 L149 148 L163 144 L172 137 L187 137 Z M70 16 L93 55 L96 64 L97 74 L94 86 L84 97 L77 100 L67 101 L55 97 L46 88 L42 77 L42 69 L45 57 L52 43 Z M69 9 L44 50 L39 65 L39 80 L44 92 L53 100 L63 104 L76 104 L88 99 L96 90 L100 80 L100 65 L97 55 L89 39 L71 9 Z\"></path>\n</svg>",
+            "icon_size": 52,
+            "icon_size_mobile": 36,
+            "icon_color": "#000000",
+            "heading": "",
+            "heading_size": 20,
+            "heading_size_mobile": 18,
+            "heading_weight": "600",
+            "heading_color": "#000000",
+            "heading_spacing": 8,
+            "text": "<p>Water and stain resistant upholstery, designed to stay looking better for longer.</p><p></p>",
+            "text_size": 24,
+            "text_size_mobile": 14,
+            "text_color": "#333333"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_90768fd_Ba4Kyy": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 25,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#f9f7f0"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_60f34c9_QGrb3T": {
+          "type": "ai_gen_block_60f34c9",
+          "settings": {
+            "icon_width_percent": 20,
+            "vertical_alignment": "center",
+            "gap": 0,
+            "gap_mobile": 12,
+            "desktop_width_percent": 100,
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"220\" height=\"180\" viewbox=\"0 0 220 180\">\n  <path fill=\"#263622\" fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M89 141 L90 140 L91 141 L90 142 Z M130 113 L146 129 L146 130 L145 131 L145 132 L136 141 L135 141 L133 143 L132 143 L131 144 L130 143 L130 141 L131 140 L131 138 L132 137 L132 122 L131 121 L131 118 L129 115 L129 114 Z M108 90 L117 100 L118 104 L125 115 L125 117 L128 123 L128 136 L127 139 L120 147 L115 149 L105 148 L100 145 L94 138 L91 129 L91 120 L92 119 L92 111 L94 107 L100 113 L103 113 L104 112 L104 98 L106 92 Z M115 80 L116 81 L115 82 L115 88 L114 89 L113 89 L110 86 L110 84 L114 80 Z M92 74 L104 87 L101 93 L100 102 L98 104 L94 100 L90 101 L88 110 L88 116 L87 117 L87 131 L90 139 L88 141 L79 132 L74 123 L72 117 L71 106 L72 105 L72 94 L76 79 L78 78 L80 82 L86 88 L88 88 L89 87 L89 77 Z M57 40 L87 69 L84 78 L78 69 L75 71 L68 92 L68 119 L78 138 L95 150 L118 153 L135 147 L150 133 L163 146 L160 150 L131 165 L103 167 L74 157 L54 140 L41 118 L36 88 L42 62 Z M117 38 L118 57 L135 85 L138 99 L143 97 L148 86 L150 86 L153 109 L149 124 L120 96 L119 84 L122 75 L121 72 L116 73 L106 82 L92 68 L100 53 Z M66 31 L91 18 L116 15 L139 20 L165 37 L182 62 L188 88 L183 118 L167 143 L152 128 L157 113 L157 100 L149 70 L145 69 L145 81 L141 89 L122 55 L121 44 L127 30 L120 31 L106 40 L88 64 L61 37 Z M48 27 L54 36 L38 60 L32 97 L37 120 L55 148 L70 160 L101 171 L133 169 L152 161 L166 150 L175 156 L176 152 L170 146 L187 120 L192 85 L187 63 L174 40 L153 22 L118 11 L86 15 L57 33 Z\"></path>\n</svg>",
+            "icon_size": 56,
+            "icon_size_mobile": 36,
+            "icon_color": "#000000",
+            "heading": "",
+            "heading_size": 20,
+            "heading_size_mobile": 18,
+            "heading_weight": "600",
+            "heading_color": "#000000",
+            "heading_spacing": 8,
+            "text": "<p>Built to support demanding interiors, Vallen combines lasting comfort with fire retardant upholstery.</p><p></p>",
+            "text_size": 24,
+            "text_size_mobile": 14,
+            "text_color": "#333333"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_90768fd_mahVBW": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 10,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#f9f7f0"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_60f34c9_dA8e98": {
+          "type": "ai_gen_block_60f34c9",
+          "settings": {
+            "icon_width_percent": 20,
+            "vertical_alignment": "center",
+            "gap": 0,
+            "gap_mobile": 12,
+            "desktop_width_percent": 100,
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"359\" height=\"241\" viewbox=\"0 0 359 241\">\n  <path fill=\"#263622\" fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M201 117 L201 119 L204 124 L204 126 L206 130 L206 133 L207 134 L207 151 L206 152 L206 155 L205 156 L205 160 L208 160 L209 158 L209 155 L210 154 L210 148 L211 147 L211 138 L210 137 L210 132 L209 131 L209 128 L208 127 L207 122 L204 117 Z\n    M152 109 L151 110 L148 110 L142 113 L138 117 L138 118 L139 118 L144 123 L147 120 L153 117 L162 117 L164 118 L168 122 L168 127 L165 131 L161 133 L154 133 L154 140 L160 140 L161 141 L164 141 L166 142 L170 146 L170 150 L165 155 L163 155 L162 156 L153 156 L152 155 L148 154 L144 151 L141 152 L137 156 L140 159 L146 162 L148 162 L149 163 L152 163 L153 164 L163 164 L164 163 L167 163 L168 162 L172 161 L175 158 L176 158 L176 157 L179 153 L179 145 L177 141 L170 136 L175 132 L177 128 L177 126 L178 125 L178 122 L177 121 L177 118 L175 116 L175 115 L170 111 L166 110 L165 109 Z\n    M192 105 L192 108 L196 112 L199 112 L198 108 L195 105 Z\n    M133 55 L131 59 L131 67 L132 68 L132 74 L133 75 L133 81 L134 82 L134 86 L136 87 L137 86 L139 86 L143 84 L146 84 L147 83 L152 83 L153 82 L165 82 L166 83 L171 83 L172 84 L175 84 L176 85 L178 85 L182 87 L184 86 L184 82 L185 81 L185 75 L186 74 L186 68 L187 67 L187 59 L184 54 L180 52 L138 52 Z\n    M134 61 L135 59 L140 55 L178 55 L180 56 L184 61 L184 63 L183 64 L183 70 L182 71 L182 78 L181 79 L181 81 L180 82 L178 82 L177 81 L175 81 L174 80 L170 80 L169 79 L149 79 L148 80 L144 80 L143 81 L138 82 L136 78 L136 71 L135 70 L135 64 L134 63 Z\n    M123 32 L116 36 L113 39 L109 47 L109 60 L110 61 L110 68 L111 69 L111 75 L112 76 L112 82 L113 83 L113 89 L114 90 L114 97 L109 102 L109 103 L104 109 L99 119 L99 121 L97 125 L97 128 L96 129 L96 133 L95 134 L95 151 L96 152 L96 157 L97 158 L98 164 L100 167 L100 169 L103 175 L105 177 L107 181 L111 185 L111 186 L116 191 L117 191 L121 194 L124 194 L125 195 L194 195 L195 194 L197 194 L201 191 L202 191 L207 186 L207 185 L211 181 L211 180 L215 175 L218 169 L218 167 L220 164 L220 161 L222 157 L222 152 L223 151 L223 134 L222 133 L222 129 L221 128 L221 125 L220 124 L219 119 L212 106 L204 97 L204 90 L205 89 L205 83 L206 82 L206 76 L207 75 L207 68 L208 67 L208 61 L209 60 L209 47 L208 46 L208 44 L202 36 L195 32 L192 32 L191 31 L127 31 L126 32 Z\n    M125 35 L128 35 L129 34 L189 34 L190 35 L193 35 L197 37 L204 44 L205 46 L205 48 L206 49 L206 57 L205 58 L205 64 L204 65 L204 71 L203 72 L203 78 L202 79 L202 85 L201 86 L201 93 L200 94 L200 98 L209 108 L216 121 L216 123 L218 127 L218 131 L219 132 L219 137 L220 138 L220 147 L219 148 L219 154 L218 155 L217 162 L215 165 L215 167 L213 171 L211 173 L210 176 L207 179 L207 180 L197 190 L195 191 L192 191 L191 192 L127 192 L126 191 L123 191 L121 190 L111 180 L111 179 L108 176 L107 173 L105 171 L103 167 L103 165 L102 164 L102 162 L100 158 L100 155 L99 154 L99 147 L98 146 L98 139 L99 138 L99 132 L100 131 L100 127 L101 126 L102 121 L107 111 L113 104 L113 103 L118 98 L118 94 L117 93 L117 87 L116 86 L116 79 L115 78 L115 72 L114 71 L114 65 L113 64 L113 58 L112 57 L112 49 L113 48 L114 44 L121 37 Z\"></path>\n</svg>",
+            "icon_size": 84,
+            "icon_size_mobile": 36,
+            "icon_color": "#000000",
+            "heading": "",
+            "heading_size": 20,
+            "heading_size_mobile": 18,
+            "heading_weight": "600",
+            "heading_color": "#000000",
+            "heading_spacing": 8,
+            "text": "<p></p><p>Engineered to our highest strength standard,  Vallen is our strongest sofa yet. </p>",
+            "text_size": 24,
+            "text_size_mobile": 14,
+            "text_color": "#333333"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_90768fd_CzBqdM": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 100,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#f9f7f0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_4DkKF8",
+        "ai_gen_block_60f34c9_RUmbVw",
+        "ai_gen_block_90768fd_7x3cYa",
+        "ai_gen_block_60f34c9_ym7Fnm",
+        "ai_gen_block_90768fd_Ba4Kyy",
+        "ai_gen_block_60f34c9_QGrb3T",
+        "ai_gen_block_90768fd_mahVBW",
+        "ai_gen_block_60f34c9_dA8e98",
+        "ai_gen_block_90768fd_CzBqdM"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "content_blocks_RjALWy": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_HEGfHe": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/P1049441_49028ced-c4c6-4c8f-96c8-25e8b20f2cee.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_9PDiTg": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/P1049349-2.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_9TLUEp": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/P1049337_384ff689-5472-4e14-a5ce-7d8890a9abca.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_wG7V48": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/P1049425_11dde404-7c32-43c3-b994-bc6e4d5d66f5.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_dn9fXd": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Furncare_GoogleBusiness_8.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_FdBb8U": {
+          "type": "tab2",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_7_5b204bde-da16-4d57-8e57-384bfb7574c5.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_ahXNKb": {
+          "type": "tab2",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_18_f89e957a-59d1-4b6e-8289-5e795ab0eaf4.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_yAidx7": {
+          "type": "tab2",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_6_0e2d50dc-732d-4c01-955e-483aa2ded4a4.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_nV8rLQ": {
+          "type": "tab2",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_30.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_TgyX3R": {
+          "type": "tab2",
+          "settings": {
+            "image": "shopify://shop_images/Team_Reception_4_75cc0731-169a-4662-be14-a5baa9d4586a.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab2_npyDzc": {
+          "type": "tab2",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_13_7c1e3b3a-61fb-46a3-8431-c303d6d699ad.jpg",
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_n7Ype6": {
+          "type": "tab1",
+          "settings": {
+            "text": "",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_HEGfHe",
+        "tab1_9PDiTg",
+        "tab1_9TLUEp",
+        "tab1_wG7V48",
+        "tab1_dn9fXd",
+        "tab2_FdBb8U",
+        "tab2_ahXNKb",
+        "tab2_yAidx7",
+        "tab2_nV8rLQ",
+        "tab2_TgyX3R",
+        "tab2_npyDzc",
+        "tab1_n7Ype6"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "CASE STUDIES",
+        "section_padding": "--spacing-4xl",
+        "tab1_title": "Old Malton",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "Ashton Meadows",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    },
+    "richtext_gkR3mA": {
+      "type": "richtext",
+      "blocks": {
+        "heading_MHemby": {
+          "type": "heading",
+          "settings": {
+            "text": "Any Questions?",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_AfH4Yn": {
+          "type": "tagline",
+          "settings": {
+            "content": "Get in touch with our expert team who are more than happy to assist.",
+            "tagline_style": "body-sm"
+          },
+          "blocks": {}
+        },
+        "button_TQFYtd": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_MHemby",
+        "tagline_AfH4Yn",
+        "button_TQFYtd"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "blocks_zQrGGK": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_93e87q": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 40,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_93e87q"
+      ],
+      "name": "Form embed",
+      "settings": {}
+    },
+    "blocks_N4QKeR": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_niXn4a": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "medium",
+            "small_height": 30,
+            "medium_height": 60,
+            "large_height": 100,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_niXn4a"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "1780042802c7123f4c": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "17800432390c4eb2b4": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "image_video_banner_HFMhkr",
+    "17805657938d839cee",
+    "content_blocks_RjALWy",
+    "richtext_gkR3mA",
+    "blocks_zQrGGK",
+    "blocks_N4QKeR",
+    "1780042802c7123f4c",
+    "17800432390c4eb2b4"
+  ]
+}

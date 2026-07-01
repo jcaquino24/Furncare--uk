@@ -1,13 +1,26 @@
+{{ 'furncare-about.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'furncare-about.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign reveal_class = ''
+  if section.settings.enable_reveal
+    assign reveal_class = ' fa-reveal'
+  endif
+-%}
+{%- capture furncare_selector -%}#FurncareAboutHero-{{ section.id }}{%- endcapture -%}
+{% style %}
+  {% render 'furncare-about-style-vars', selector: furncare_selector, section_settings: section.settings %}
+{% endstyle %}
 {%- liquid
   assign colour_scheme = section.settings.colour_scheme
 -%}
-
+<section id="FurncareAbouttext-{{ section.id }}">
 <div
   class="image-text colour-scheme--{{ colour_scheme }}"
   style="--section-padding: var({{ section.settings.section_padding }});"
 >
   <div class="container">
-    <div class="image-text__grid">
+    <div class="image-text__grid {{ reveal_class }}">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'images' %}
@@ -85,7 +98,7 @@
     </div>
   </div>
 </div>
-
+</section>
 {% schema %}
 {
   "name": "Image - Text",
@@ -147,6 +160,36 @@
           "label": "Wide"
         }
       ]
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_reveal",
+      "label": "Enable reveal animation",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "reveal_distance",
+      "label": "Reveal distance",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "reveal_duration",
+      "label": "Reveal duration",
+      "min": 200,
+      "max": 1400,
+      "step": 20,
+      "default": 760,
+      "unit": "ms"
     }
   ],
   "blocks": [

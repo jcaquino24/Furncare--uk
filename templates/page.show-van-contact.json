@@ -9,6 +9,125 @@
  */
 {
   "sections": {
+    "blocks_8cC49R": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_zzPAXk": {
+          "type": "ai_gen_block_90768fd",
+          "disabled": true,
+          "settings": {
+            "spacer_height": 50,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#f9f7f0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_zzPAXk"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "video_form_QiyU8e": {
+      "type": "video-form",
+      "name": "Video & Form",
+      "settings": {
+        "bg_color": "#f9f6f0",
+        "max_width": 2600,
+        "subtitle": "BOOK YOURS TODAY",
+        "title": "The Show Van Experience",
+        "description": "<p>Our Show Van service allows you and your residents to see, touch and test samples of our furniture without leaving your care facility. Whether it’s assessing comfort, exploring finishes, or ensuring suitability for specific care needs, our mobile showroom brings the experience directly to you - saving time, reducing disruption, and supporting confident, informed choices.</p>",
+        "phone": "01603 664900",
+        "email": "sales@furncare.co.uk",
+        "facebook_url": "https://www.facebook.com/furncare/",
+        "instagram_url": "https://www.instagram.com/furncareltd",
+        "linkedin_url": "https://www.linkedin.com/company/furncare",
+        "video_hosted": "shopify://files/videos/Show Van Video_16_9_WEBSITE_NO_QR_CODE.mp4",
+        "external_video_url": "",
+        "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"9c0ef082-9c0d-452b-9478-94defc93d5d7\" data-portal-id=\"145723791\"></div>",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "richtext_bJfPm8": {
+      "type": "richtext",
+      "blocks": {
+        "tagline_HhXiQz": {
+          "type": "tagline",
+          "settings": {
+            "content": "BOOK YOURS TODAY",
+            "tagline_style": "body-xs"
+          },
+          "blocks": {}
+        },
+        "heading_pqwQjQ": {
+          "type": "heading",
+          "settings": {
+            "text": "The Show Van Experience",
+            "heading_level": "h1",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "tagline_HhXiQz",
+        "heading_pqwQjQ"
+      ],
+      "disabled": true,
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "<p>Our Show Van service allows you and your residents to see, touch and test samples of our furniture without leaving your care facility. Whether it’s assessing comfort, exploring finishes, or ensuring suitability for specific care needs, our mobile showroom brings the experience directly to you - saving time, reducing disruption, and supporting confident, informed choices.</p>",
+        "small_container": true
+      }
+    },
+    "image_video_banner_7QP6UR": {
+      "type": "image-video-banner",
+      "disabled": true,
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": true,
+        "add_header_offset": false,
+        "media_type": "video",
+        "video_desktop": "shopify://files/videos/Show Van Video_16_9_WEBSITE_NO_QR_CODE.mp4",
+        "show_controls": true,
+        "mute_video": false,
+        "autoplay_video": false,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "light",
+        "content_position": "center-center",
+        "content_alignment": "left"
+      }
+    },
+    "blocks_t4FKcR": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_N4rtQW": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 80,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#f9f7f0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_N4rtQW"
+      ],
+      "disabled": true,
+      "name": "Spacer",
+      "settings": {}
+    },
     "main": {
       "type": "contact",
       "blocks": {
@@ -34,6 +153,7 @@
       "block_order": [
         "forms_inline_LYdNT4"
       ],
+      "disabled": true,
       "settings": {
         "title": "We'd love to visit",
         "intro_text": "<p>Our Show Van service allows you and your residents to see, touch and test samples of our furniture without leaving your care facility. Whether it’s assessing comfort, exploring finishes, or ensuring suitability for specific care needs, our mobile showroom brings the experience directly to you - saving time, reducing disruption, and supporting confident, informed choices.</p><p></p><p></p><p>To book a visit, simply fill out the form on the right and a member of our team will be in touch to arrange a convenient time for your Show Van visit.</p>",
@@ -45,9 +165,34 @@
         "show_social_icons": true,
         "hubspot_form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"9c0ef082-9c0d-452b-9478-94defc93d5d7\" data-portal-id=\"145723791\"></div>"
       }
+    },
+    "blocks_GfgPQJ": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_W46JKG": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 80,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#f9f7f0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_W46JKG"
+      ],
+      "name": "Spacer",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "blocks_8cC49R",
+    "video_form_QiyU8e",
+    "richtext_bJfPm8",
+    "image_video_banner_7QP6UR",
+    "blocks_t4FKcR",
+    "main",
+    "blocks_GfgPQJ"
   ]
 }

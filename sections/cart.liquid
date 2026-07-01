@@ -54,12 +54,14 @@
               </span>
               <span class="cart-form__summary-row-value eyebrow-2xs">{{ 'cart.shipping_calculated_at_checkout' | t }}</span>
             </div>
+            {% comment %}
             <div class="cart-form__summary-row">
               <span class="cart-form__summary-row-label eyebrow-2xs">
                 <strong>{{ 'cart.estimated_delivery' | t }}:</strong>
               </span>
               <span class="cart-form__summary-row-value eyebrow-2xs">{{ 'cart.estimated_delivery_value' | t }}</span>
             </div>
+            {% endcomment %}
           </div>
           
           
@@ -85,267 +87,24 @@
             {% endfor %}
           </div>
 
+          {% liquid
+            assign upsell_in_cart = false
+            assign upsell_product_obj = settings.cart_upsell.product
+            if upsell_product_obj != blank and upsell_product_obj.value
+              assign upsell_product_obj = upsell_product_obj.value
+            endif
+            if upsell_product_obj and upsell_product_obj.id
+              for line_item in cart.items
+                if line_item.product and line_item.product.id == upsell_product_obj.id
+                  assign upsell_in_cart = true
+                endif
+              endfor
+            endif
+          %}
+
           <div class="cart-form__upsells hide-in-minicart">
-            {% if section.settings.enable_upsells %}
-              {% liquid
-                assign desktop_gap_count = section.settings.products_per_slide_desktop | minus: 1
-                assign tablet_gap_count = section.settings.products_per_slide_tablet | minus: 1
-                assign mobile_gap_count = section.settings.products_per_slide_mobile | minus: 1
-                assign desktop_gap_total = section.settings.slider_gap | times: desktop_gap_count
-                assign tablet_gap_total = section.settings.slider_gap | times: tablet_gap_count
-                assign mobile_gap_total = section.settings.slider_gap | times: mobile_gap_count
-              %}
-
-              {% capture upsell_slides_content %}
-                {% render 'cart-upsell-generator',
-                  cart: cart,
-                  upsell_blocks: section.blocks,
-                  max_items: section.settings.max_items,
-                  button_style: section.settings.button_style
-                %}
-              {% endcapture %}
-              {% assign upsell_slides_content = upsell_slides_content | strip %}
-
-              {% assign upsell_count = upsell_slides_content | scan: 'cart-upsell-slider__slide' | size %}
-
-              {% if upsell_slides_content != blank %}
-                <style>
-                  {% if section.settings.heading_font != blank %}
-                    {% unless section.settings.heading_font.system? %}
-                      {{ section.settings.heading_font | font_face: font_display: 'swap' }}
-                    {% endunless %}
-                  {% endif %}
-                  {% if section.settings.body_font != blank %}
-                    {% unless section.settings.body_font.system? %}
-                      {{ section.settings.body_font | font_face: font_display: 'swap' }}
-                    {% endunless %}
-                  {% endif %}
-
-                  #CartUpsells-{{ section.id }} {
-                    --cart-upsell-panel-bg: {{ section.settings.panel_background }};
-                    --cart-upsell-card-bg: {{ section.settings.card_background }};
-                    --cart-upsell-text-color: {{ section.settings.text_color }};
-                    --cart-upsell-card-border: {{ section.settings.card_border_color }};
-                    --cart-upsell-panel-padding: {{ section.settings.panel_padding }}px;
-                    --cart-upsell-card-padding: {{ section.settings.card_padding }}px;
-                    --cart-upsell-card-radius: {{ section.settings.card_radius }}px;
-                    --cart-upsell-card-border-width: {{ section.settings.card_border_width }}px;
-                    --cart-upsell-image-width: {{ section.settings.image_width }}px;
-                    --cart-upsell-heading-size: {{ section.settings.heading_size }}px;
-                    --cart-upsell-title-size: {{ section.settings.title_size }}px;
-                    --cart-upsell-body-size: {{ section.settings.body_size }}px;
-                    --cart-upsell-gap: {{ section.settings.slider_gap }}px;
-                    --cart-upsell-slide-basis-desktop: calc((100% - {{ desktop_gap_total }}px) / {{ section.settings.products_per_slide_desktop }});
-                    --cart-upsell-slide-basis-tablet: calc((100% - {{ tablet_gap_total }}px) / {{ section.settings.products_per_slide_tablet }});
-                    --cart-upsell-slide-basis-mobile: calc((100% - {{ mobile_gap_total }}px) / {{ section.settings.products_per_slide_mobile }});
-                    --cart-upsell-slide-basis: var(--cart-upsell-slide-basis-desktop);
-                    {% if section.settings.heading_font != blank %}
-                      --cart-upsell-heading-font-family: {{ section.settings.heading_font.family }}, {{ section.settings.heading_font.fallback_families }};
-                      --cart-upsell-heading-font-style: {{ section.settings.heading_font.style }};
-                    {% endif %}
-                    {% if section.settings.body_font != blank %}
-                      --cart-upsell-body-font-family: {{ section.settings.body_font.family }}, {{ section.settings.body_font.fallback_families }};
-                      --cart-upsell-body-font-style: {{ section.settings.body_font.style }};
-                    {% endif %}
-                  }
-
-                  .cart-upsell-slider {
-                    display: block;
-                    color: var(--cart-upsell-text-color);
-                    background: var(--cart-upsell-panel-bg);
-                    border-radius: var(--radius-sm, 4px);
-                    padding: var(--cart-upsell-panel-padding);
-                    overflow: hidden;
-                  }
-
-                  .cart-upsell-slider__header {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    gap: var(--spacing-2xs, 12px);
-                    margin-block-end: var(--spacing-2xs, 12px);
-                  }
-
-                  .cart-upsell-slider__heading {
-                    color: inherit;
-                    font-family: var(--cart-upsell-heading-font-family, inherit);
-                    font-size: var(--cart-upsell-heading-size);
-                    font-style: var(--cart-upsell-heading-font-style, normal);
-                    font-weight: 700;
-                    line-height: 1.2;
-                    margin: 0;
-                  }
-
-                  .cart-upsell-slider__controls {
-                    display: none;
-                    align-items: center;
-                    gap: var(--spacing-4xs, 4px);
-                    flex: 0 0 auto;
-                  }
-
-                  .cart-upsell-slider.is-scrollable .cart-upsell-slider__controls {
-                    display: flex;
-                  }
-
-                  .cart-upsell-slider__button {
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 32px;
-                    height: 32px;
-                    color: currentColor;
-                    background: transparent;
-                    border: 1px solid currentColor;
-                    border-radius: var(--radius-sm, 4px);
-                    cursor: pointer;
-                  }
-
-                  .cart-upsell-slider__button:disabled {
-                    cursor: default;
-                    opacity: 0.35;
-                  }
-
-                  .cart-upsell-slider__button svg {
-                    width: 18px;
-                    height: 18px;
-                  }
-
-                  .cart-upsell-slider__viewport {
-                    overflow-x: auto;
-                    overscroll-behavior-x: contain;
-                    scroll-behavior: smooth;
-                    scroll-snap-type: x mandatory;
-                    scrollbar-width: none;
-                  }
-
-                  .cart-upsell-slider__viewport::-webkit-scrollbar {
-                    display: none;
-                  }
-
-                  .cart-upsell-slider__track {
-                    display: flex;
-                    gap: var(--cart-upsell-gap);
-                  }
-
-                  .cart-upsell-slider__rule {
-                    display: contents;
-                  }
-
-                  .cart-upsell-slider__slide {
-                    flex: 0 0 var(--cart-upsell-slide-basis);
-                    min-width: 0;
-                    scroll-snap-align: start;
-                  }
-
-                  .cart-upsell-slider--count-1 .cart-upsell-slider__slide {
-                    flex-basis: 100%;
-                  }
-
-                  .cart-upsell-slider .upsell-block {
-                    height: 100%;
-                    color: var(--cart-upsell-text-color);
-                    background: var(--cart-upsell-card-bg);
-                    border: var(--cart-upsell-card-border-width) solid var(--cart-upsell-card-border);
-                    border-radius: var(--cart-upsell-card-radius);
-                    padding: var(--cart-upsell-card-padding);
-                  }
-
-                  .cart-upsell-slider .upsell-block:not(:has(.upsell-block__image)) {
-                    grid-template-columns: 1fr;
-                    grid-template-areas: "content" "button";
-                  }
-
-                  .cart-upsell-slider .upsell-block__image {
-                    width: var(--cart-upsell-image-width);
-                    max-width: var(--cart-upsell-image-width);
-                    aspect-ratio: 1;
-                    overflow: hidden;
-                    border-radius: calc(var(--cart-upsell-card-radius) / 2);
-                  }
-
-                  .cart-upsell-slider .upsell-block__image-element {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    display: block;
-                  }
-
-                  .cart-upsell-slider .upsell-block__content,
-                  .cart-upsell-slider .upsell-block__content-button-wrapper,
-                  .cart-upsell-slider .upsell-block__content-button {
-                    font-family: var(--cart-upsell-body-font-family, inherit);
-                    font-style: var(--cart-upsell-body-font-style, normal);
-                  }
-
-                  .cart-upsell-slider .upsell-block__title,
-                  .cart-upsell-slider .upsell-block__price,
-                  .cart-upsell-slider .price__item {
-                    color: inherit;
-                    font-size: var(--cart-upsell-title-size);
-                    line-height: 1.25;
-                  }
-
-                  .cart-upsell-slider .upsell-block__content-text {
-                    color: inherit;
-                    font-size: var(--cart-upsell-body-size);
-                    line-height: 1.4;
-                  }
-
-                  @media (width < 990px) {
-                    .cart-upsell-slider {
-                      --cart-upsell-slide-basis: var(--cart-upsell-slide-basis-tablet);
-                    }
-                  }
-
-                  @media (width < 768px) {
-                    .cart-upsell-slider {
-                      --cart-upsell-slide-basis: var(--cart-upsell-slide-basis-mobile);
-                    }
-
-                    .cart-upsell-slider__button {
-                      width: 30px;
-                      height: 30px;
-                    }
-                  }
-                </style>
-                <uwp-cart-upsell-slider
-                  id="CartUpsells-{{ section.id }}"
-                  class="cart-upsell-slider{% if upsell_count == 1 %} cart-upsell-slider--count-1{% endif %}"
-                  data-count="{{ upsell_count }}"
-                  aria-label="{{ 'upsells.slider_label' | t | escape }}"
-                >
-                  {% if section.settings.heading != blank or upsell_count > section.settings.products_per_slide_desktop %}
-                    <div class="cart-upsell-slider__header">
-                      {% if section.settings.heading != blank %}
-                        <h3 class="cart-upsell-slider__heading">{{ section.settings.heading }}</h3>
-                      {% endif %}
-                      <div class="cart-upsell-slider__controls">
-                        <button
-                          type="button"
-                          class="cart-upsell-slider__button cart-upsell-slider__button--previous"
-                          aria-label="{{ 'upsells.previous_slide' | t | escape }}"
-                          data-cart-upsell-previous
-                        >
-                          {% render 'icons', icon: 'chevron-left' %}
-                        </button>
-                        <button
-                          type="button"
-                          class="cart-upsell-slider__button cart-upsell-slider__button--next"
-                          aria-label="{{ 'upsells.next_slide' | t | escape }}"
-                          data-cart-upsell-next
-                        >
-                          {% render 'icons', icon: 'chevron-right' %}
-                        </button>
-                      </div>
-                    </div>
-                  {% endif %}
-                  <div class="cart-upsell-slider__viewport" data-cart-upsell-viewport>
-                    <div class="cart-upsell-slider__track">
-                      {{ upsell_slides_content }}
-                    </div>
-                  </div>
-                </uwp-cart-upsell-slider>
-              {% endif %}
+            {% if settings.cart_upsell != blank and upsell_in_cart == false %}
+              {% render 'upsell-block', title: settings.cart_upsell.title, content: settings.cart_upsell.content, image: settings.cart_upsell.image, upsell_product: settings.cart_upsell.product %}
             {% endif %}
           </div>
         </div>
@@ -353,98 +112,6 @@
     {% endif %}
   </form>
 </div>
-
-<script>
-  function setupCartUpsells() {
-    const upsellsEl = document.querySelector('.cart-form__upsells');
-    if (upsellsEl) {
-      const upsellsHtml = upsellsEl.innerHTML;
-      window.shopifyCartUpsells = upsellsHtml;
-
-      // Immediately set the attribute on minicart if it exists on this page
-      const minicart = document.querySelector('uwp-minicart');
-      if (minicart) {
-        minicart.setAttribute('minicart-upsells', upsellsHtml);
-      }
-    }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupCartUpsells);
-  } else {
-    setupCartUpsells();
-  }
-</script>
-
-{% javascript %}
-  class CartUpsellSlider extends HTMLElement {
-    connectedCallback() {
-      this.viewport = this.querySelector('[data-cart-upsell-viewport]');
-      this.previousButton = this.querySelector('[data-cart-upsell-previous]');
-      this.nextButton = this.querySelector('[data-cart-upsell-next]');
-      this.handlePrevious = this.scrollPrevious.bind(this);
-      this.handleNext = this.scrollNext.bind(this);
-      this.handleUpdate = this.update.bind(this);
-
-      if (!this.viewport) return;
-
-      this.previousButton?.addEventListener('click', this.handlePrevious);
-      this.nextButton?.addEventListener('click', this.handleNext);
-      this.viewport.addEventListener('scroll', this.handleUpdate, { passive: true });
-      window.addEventListener('resize', this.handleUpdate);
-
-      if ('ResizeObserver' in window) {
-        this.resizeObserver = new ResizeObserver(this.handleUpdate);
-        this.resizeObserver.observe(this.viewport);
-      }
-
-      requestAnimationFrame(this.handleUpdate);
-    }
-
-    disconnectedCallback() {
-      this.previousButton?.removeEventListener('click', this.handlePrevious);
-      this.nextButton?.removeEventListener('click', this.handleNext);
-      this.viewport?.removeEventListener('scroll', this.handleUpdate);
-      window.removeEventListener('resize', this.handleUpdate);
-      this.resizeObserver?.disconnect();
-    }
-
-    scrollPrevious() {
-      this.scrollByDirection(-1);
-    }
-
-    scrollNext() {
-      this.scrollByDirection(1);
-    }
-
-    scrollByDirection(direction) {
-      if (!this.viewport) return;
-      this.viewport.scrollBy({
-        left: this.viewport.clientWidth * direction,
-        behavior: 'smooth'
-      });
-    }
-
-    update() {
-      if (!this.viewport) return;
-      const maxScroll = this.viewport.scrollWidth - this.viewport.clientWidth;
-      const isScrollable = maxScroll > 2;
-      this.classList.toggle('is-scrollable', isScrollable);
-
-      if (this.previousButton) {
-        this.previousButton.disabled = !isScrollable || this.viewport.scrollLeft <= 2;
-      }
-
-      if (this.nextButton) {
-        this.nextButton.disabled = !isScrollable || this.viewport.scrollLeft >= maxScroll - 2;
-      }
-    }
-  }
-
-  if (!customElements.get('uwp-cart-upsell-slider')) {
-    customElements.define('uwp-cart-upsell-slider', CartUpsellSlider);
-  }
-{% endjavascript %}
 
 {% schema %}
 {
@@ -455,204 +122,6 @@
       "id": "title",
       "label": "Title",
       "default": "Cart"
-    },
-    {
-      "type": "header",
-      "content": "Upsells"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_upsells",
-      "label": "Enable cart upsells",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Complete your order"
-    },
-    {
-      "type": "range",
-      "id": "max_items",
-      "label": "Maximum upsell products",
-      "min": 1,
-      "max": 20,
-      "step": 1,
-      "default": 8
-    },
-    {
-      "type": "range",
-      "id": "products_per_slide_desktop",
-      "label": "Products per slide desktop",
-      "min": 1,
-      "max": 4,
-      "step": 1,
-      "default": 1
-    },
-    {
-      "type": "range",
-      "id": "products_per_slide_tablet",
-      "label": "Products per slide tablet",
-      "min": 1,
-      "max": 3,
-      "step": 1,
-      "default": 1
-    },
-    {
-      "type": "range",
-      "id": "products_per_slide_mobile",
-      "label": "Products per slide mobile",
-      "min": 1,
-      "max": 3,
-      "step": 1,
-      "default": 1
-    },
-    {
-      "type": "range",
-      "id": "slider_gap",
-      "label": "Slider gap",
-      "min": 0,
-      "max": 32,
-      "step": 1,
-      "unit": "px",
-      "default": 12
-    },
-    {
-      "type": "header",
-      "content": "Upsell style"
-    },
-    {
-      "type": "font_picker",
-      "id": "heading_font",
-      "label": "Heading font",
-      "default": "red_hat_display_n4"
-    },
-    {
-      "type": "font_picker",
-      "id": "body_font",
-      "label": "Card font",
-      "default": "red_hat_display_n4"
-    },
-    {
-      "type": "color",
-      "id": "panel_background",
-      "label": "Panel background",
-      "default": "#fffef8"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card background",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#243222"
-    },
-    {
-      "type": "color",
-      "id": "card_border_color",
-      "label": "Card border color",
-      "default": "#e6e1d8"
-    },
-    {
-      "type": "range",
-      "id": "panel_padding",
-      "label": "Panel padding",
-      "min": 0,
-      "max": 48,
-      "step": 2,
-      "unit": "px",
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "card_padding",
-      "label": "Card padding",
-      "min": 0,
-      "max": 48,
-      "step": 2,
-      "unit": "px",
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "card_radius",
-      "label": "Card border radius",
-      "min": 0,
-      "max": 24,
-      "step": 1,
-      "unit": "px",
-      "default": 4
-    },
-    {
-      "type": "range",
-      "id": "card_border_width",
-      "label": "Card border width",
-      "min": 0,
-      "max": 4,
-      "step": 1,
-      "unit": "px",
-      "default": 1
-    },
-    {
-      "type": "range",
-      "id": "image_width",
-      "label": "Image width",
-      "min": 64,
-      "max": 160,
-      "step": 4,
-      "unit": "px",
-      "default": 104
-    },
-    {
-      "type": "range",
-      "id": "heading_size",
-      "label": "Heading size",
-      "min": 12,
-      "max": 28,
-      "step": 1,
-      "unit": "px",
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "title_size",
-      "label": "Product title size",
-      "min": 12,
-      "max": 24,
-      "step": 1,
-      "unit": "px",
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "body_size",
-      "label": "Card text size",
-      "min": 11,
-      "max": 20,
-      "step": 1,
-      "unit": "px",
-      "default": 13
-    },
-    {
-      "type": "select",
-      "id": "button_style",
-      "label": "Button style",
-      "options": [
-        {
-          "value": "secondary",
-          "label": "Secondary"
-        },
-        {
-          "value": "primary",
-          "label": "Primary"
-        }
-      ],
-      "default": "secondary"
     }
   ],
   "blocks": [
@@ -680,8 +149,8 @@
         {
           "type": "text",
           "id": "title",
-          "label": "Card title override",
-          "info": "Leave blank to use each product title."
+          "label": "Title",
+          "default": "White Glove Delivery Service"
         },
         {
           "type": "textarea",
@@ -690,16 +159,14 @@
           "default": "Upgrade to an expert in-room setup and packaging removal."
         },
         {
-          "type": "text",
-          "id": "trigger_tag",
-          "label": "Trigger product tag",
-          "info": "Show these upsells when a cart product has this exact tag, for example upsell:bedroom."
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
         },
         {
-          "type": "product_list",
-          "id": "products",
-          "label": "Upsell products",
-          "limit": 20
+          "type": "product",
+          "id": "product",
+          "label": "Product"
         }
       ]
     }

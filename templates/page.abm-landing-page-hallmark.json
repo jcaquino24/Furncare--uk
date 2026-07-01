@@ -164,7 +164,7 @@
         "heading_FxDXBy": {
           "type": "heading",
           "settings": {
-            "text": "Hello, Georgina!",
+            "text": "Hello, Hannah!",
             "heading_level": "h2",
             "heading_style": "title-display"
           },
@@ -174,7 +174,7 @@
           "type": "tagline",
           "name": "Tagline",
           "settings": {
-            "content": "Congratulations on finding us! We hope you and the team at Park Grove enjoy the cake. Whilst you do, pop the kettle on and watch the below video to find out more about us...",
+            "content": "Congratulations on finding us! We hope you and the team at Hallmark Care Homes enjoy the cake. Whilst you do, pop the kettle on and watch the below video to find out more about us...",
             "tagline_style": "body-lg"
           },
           "blocks": {}
@@ -221,9 +221,9 @@
         "content_yKNCUE": {
           "type": "content",
           "settings": {
-            "title": "Tailored to Park Grove",
-            "title_size": "display",
-            "text": "This private preview has been created for the Park Grove Design team - a first look at how Furncare could support your upcoming bedroom schemes with considered furniture, flexible finishes and samples brought directly to your studio.",
+            "title": "Tailored to Hallmark Care Homes",
+            "title_size": "xl",
+            "text": "This private preview has been created for the Hallmark Care Homes design team - a first look at how Furncare could support your upcoming bedroom schemes with considered furniture, flexible finishes and samples brought directly to your studio.",
             "button_style": "primary",
             "button_text": "",
             "button_url": ""
@@ -232,7 +232,7 @@
         "images_aHJkED": {
           "type": "images",
           "settings": {
-            "image_one": "shopify://shop_images/Untitled-1_4d22b130-96a9-49e0-b4d0-0f13854625ee.png"
+            "image_one": "shopify://shop_images/Remove_background_project_-_June_16_2026_at_11.12.09_9.png"
           }
         }
       },
@@ -242,17 +242,17 @@
       ],
       "name": "Image - Text",
       "settings": {
-        "colour_scheme": "base-white-01",
+        "colour_scheme": "warm-stone",
         "section_padding": "--spacing-2xl",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
       }
     },
-    "richtext_9YY97W": {
+    "richtext_6JAdBU": {
       "type": "richtext",
       "blocks": {
-        "heading_Vt6bA3": {
+        "heading_Mq4wai": {
           "type": "heading",
           "settings": {
             "text": "Here's your <em>exclusive</em> preview of our upcoming range...",
@@ -261,7 +261,7 @@
           },
           "blocks": {}
         },
-        "tagline_G94DD8": {
+        "tagline_Q6JUDE": {
           "type": "tagline",
           "name": "Tagline",
           "settings": {
@@ -272,8 +272,8 @@
         }
       },
       "block_order": [
-        "heading_Vt6bA3",
-        "tagline_G94DD8"
+        "heading_Mq4wai",
+        "tagline_Q6JUDE"
       ],
       "name": "Rich Text",
       "settings": {
@@ -286,10 +286,10 @@
         "small_container": false
       }
     },
-    "image_text_blocks_ktBnWr": {
+    "image_text_blocks_63C3pj": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_UNtNfH": {
+        "image_card_AQnm4f": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Elington.png",
@@ -302,7 +302,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_QnhtGF": {
+        "image_card_BjbB37": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Tilbryy.png",
@@ -315,7 +315,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_rnGB3p": {
+        "image_card_iTRwNr": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Abbottt.png",
@@ -328,7 +328,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_WzggzG": {
+        "image_card_FhaaKN": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Bronsno.png",
@@ -341,7 +341,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_YdKMVW": {
+        "image_card_3ijE8t": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Gallkoway.png",
@@ -357,11 +357,11 @@
         }
       },
       "block_order": [
-        "image_card_UNtNfH",
-        "image_card_QnhtGF",
-        "image_card_rnGB3p",
-        "image_card_WzggzG",
-        "image_card_YdKMVW"
+        "image_card_AQnm4f",
+        "image_card_BjbB37",
+        "image_card_iTRwNr",
+        "image_card_FhaaKN",
+        "image_card_3ijE8t"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -373,10 +373,10 @@
         "enable_lightbox": false
       }
     },
-    "image_text_blocks_VMwqaR": {
+    "image_text_blocks_Njxr6K": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_hpaUDc": {
+        "image_card_z3XRag": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Arbor_Oak.jpg",
@@ -389,7 +389,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_PrgYLq": {
+        "image_card_7cG6nw": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Moorland_Char.jpg",
@@ -402,7 +402,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_KdU8hA": {
+        "image_card_FmLgBA": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Moorland_Cinder.jpg",
@@ -415,7 +415,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_6awCrq": {
+        "image_card_LDVnmh": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Moorland_Oak.jpg",
@@ -428,7 +428,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_6ewCR3": {
+        "image_card_CATMiz": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Nera_Oak.jpg",
@@ -441,7 +441,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_N9gxeU": {
+        "image_card_jgUrbh": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Northen_Wenge.jpg",
@@ -454,7 +454,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_TdGabt": {
+        "image_card_UPtXLX": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Sable_Walnut.jpg",
@@ -469,28 +469,28 @@
         }
       },
       "block_order": [
-        "image_card_hpaUDc",
-        "image_card_PrgYLq",
-        "image_card_KdU8hA",
-        "image_card_6awCrq",
-        "image_card_6ewCR3",
-        "image_card_N9gxeU",
-        "image_card_TdGabt"
+        "image_card_z3XRag",
+        "image_card_7cG6nw",
+        "image_card_FmLgBA",
+        "image_card_LDVnmh",
+        "image_card_CATMiz",
+        "image_card_jgUrbh",
+        "image_card_UPtXLX"
       ],
       "name": "Image text blocks",
       "settings": {
         "title": "the wood finishes",
-        "section_padding": "--spacing-4xl",
+        "section_padding": "--spacing-2xl",
         "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
         "enable_lightbox": true
       }
     },
-    "image_text_blocks_PdaHjR": {
+    "image_text_blocks_VPzjaJ": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_Y4cAGx": {
+        "image_card_xpyGYx": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Bracken_Sage.jpg",
@@ -503,7 +503,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_zfkbkY": {
+        "image_card_ww7FaT": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Brushed_Cashmere.jpg",
@@ -516,7 +516,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_LwBVcH": {
+        "image_card_i3nGWJ": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Coastal_Blue.jpg",
@@ -529,7 +529,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_Pm3ga6": {
+        "image_card_gzKyAf": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Coastal_Storm.jpg",
@@ -542,7 +542,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_GRBqn6": {
+        "image_card_mD8Md8": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Minx.jpg",
@@ -555,7 +555,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_DLem3j": {
+        "image_card_4pRH9m": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Nordic_Slate.jpg",
@@ -568,7 +568,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_ATQFE3": {
+        "image_card_gWtqWF": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Porcelain.jpg",
@@ -583,13 +583,13 @@
         }
       },
       "block_order": [
-        "image_card_Y4cAGx",
-        "image_card_zfkbkY",
-        "image_card_LwBVcH",
-        "image_card_Pm3ga6",
-        "image_card_GRBqn6",
-        "image_card_DLem3j",
-        "image_card_ATQFE3"
+        "image_card_xpyGYx",
+        "image_card_ww7FaT",
+        "image_card_i3nGWJ",
+        "image_card_gzKyAf",
+        "image_card_mD8Md8",
+        "image_card_4pRH9m",
+        "image_card_gWtqWF"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -601,10 +601,10 @@
         "enable_lightbox": false
       }
     },
-    "image_text_blocks_RLihj8": {
+    "image_text_blocks_cyrmw6": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_wX9mtV": {
+        "image_card_KKDbDz": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Bronson_CU_e94cd062-ed6e-4d2b-af25-d183c0daddbc.jpg",
@@ -617,7 +617,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_YeJdXz": {
+        "image_card_9LJtpk": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Ellington_CU.jpg",
@@ -630,7 +630,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_HwfLG6": {
+        "image_card_dkmmck": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Abbott_CU.jpg",
@@ -645,9 +645,9 @@
         }
       },
       "block_order": [
-        "image_card_wX9mtV",
-        "image_card_YeJdXz",
-        "image_card_HwfLG6"
+        "image_card_KKDbDz",
+        "image_card_9LJtpk",
+        "image_card_dkmmck"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -659,10 +659,10 @@
         "enable_lightbox": false
       }
     },
-    "richtext_fxdPbE": {
+    "richtext_DnAcpV": {
       "type": "richtext",
       "blocks": {
-        "heading_pnWBUd": {
+        "heading_Ajy6zt": {
           "type": "heading",
           "settings": {
             "text": "We'd love to bring you a sample of this new collection",
@@ -671,7 +671,7 @@
           },
           "blocks": {}
         },
-        "tagline_pB7H8V": {
+        "tagline_WAjjNf": {
           "type": "tagline",
           "name": "Tagline",
           "settings": {
@@ -682,8 +682,8 @@
         }
       },
       "block_order": [
-        "heading_pnWBUd",
-        "tagline_pB7H8V"
+        "heading_Ajy6zt",
+        "tagline_WAjjNf"
       ],
       "name": "Rich Text",
       "settings": {
@@ -726,12 +726,12 @@
     "richtext_ppgrRb",
     "image_video_banner_rymz8n",
     "image_text_AnXHqr",
-    "richtext_9YY97W",
-    "image_text_blocks_ktBnWr",
-    "image_text_blocks_VMwqaR",
-    "image_text_blocks_PdaHjR",
-    "image_text_blocks_RLihj8",
-    "richtext_fxdPbE",
+    "richtext_6JAdBU",
+    "image_text_blocks_63C3pj",
+    "image_text_blocks_Njxr6K",
+    "image_text_blocks_VPzjaJ",
+    "image_text_blocks_cyrmw6",
+    "richtext_DnAcpV",
     "blocks_mRjBap"
   ]
 }

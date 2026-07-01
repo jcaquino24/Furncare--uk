@@ -19,6 +19,14 @@
     "image_video_banner_RfGNUe": {
       "type": "image-video-banner",
       "blocks": {
+        "eyebrow_YfqfTp": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "BEDROOM FURNITURE FOR LATER LIVING",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
         "title_nmn8Bq": {
           "type": "title",
           "settings": {
@@ -28,17 +36,8 @@
             "text_color": "#f9f7f0"
           }
         },
-        "eyebrow_YfqfTp": {
-          "type": "eyebrow",
-          "settings": {
-            "text": "BEDROOM FURNITURE FOR LATER LIVING",
-            "eyebrow_size": "sm",
-            "text_color": "#f9f7f0"
-          }
-        },
         "button_kiTM7t": {
           "type": "button",
-          "disabled": true,
           "settings": {
             "text": "Enquire today",
             "button_url": "shopify://pages/contact-us",
@@ -48,8 +47,8 @@
         }
       },
       "block_order": [
-        "title_nmn8Bq",
         "eyebrow_YfqfTp",
+        "title_nmn8Bq",
         "button_kiTM7t"
       ],
       "name": "Image - Video Banner",
@@ -68,137 +67,6 @@
         "colour_scheme": "dark",
         "content_position": "center-center",
         "content_alignment": "center"
-      }
-    },
-    "blocks_VikV6k": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_90768fd_AMC4rh": {
-          "type": "ai_gen_block_90768fd",
-          "disabled": true,
-          "settings": {
-            "spacer_height": 40,
-            "spacer_height_mobile": 30,
-            "spacer_color": "#fffef8"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_90768fd_AMC4rh"
-      ],
-      "name": "Spacer",
-      "settings": {}
-    },
-    "1780414914cfdc77f0": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_85ed5ac_yHUgtH": {
-          "type": "ai_gen_block_85ed5ac",
-          "settings": {
-            "eyebrow_text": "BEDROOM FURNITURE FOR LATER LIVING",
-            "eyebrow_font": "red_hat_display_n4",
-            "eyebrow_font_size": 14,
-            "eyebrow_color": "#666666",
-            "eyebrow_letter_spacing": 2.5,
-            "eyebrow_text_transform": "uppercase",
-            "eyebrow_spacing": 20,
-            "title_text": "The Essentials Range",
-            "title_font_size": 64,
-            "title_color": "#000000",
-            "title_letter_spacing": 0,
-            "title_line_height": 1.2,
-            "background_color": "#fffef8",
-            "padding_vertical": 100,
-            "padding_horizontal": 0,
-            "text_alignment": "center",
-            "desktop_width_percent": 100
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_85ed5ac_yHUgtH"
-      ],
-      "disabled": true,
-      "settings": {}
-    },
-    "blocks_RAKnDn": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_90768fd_YpUk3f": {
-          "type": "ai_gen_block_90768fd",
-          "settings": {
-            "spacer_height": 40,
-            "spacer_height_mobile": 30,
-            "spacer_color": "#fffef8"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_90768fd_YpUk3f"
-      ],
-      "disabled": true,
-      "name": "Spacer",
-      "settings": {}
-    },
-    "richtext_tK6igQ": {
-      "type": "richtext",
-      "blocks": {
-        "tagline_MncNbi": {
-          "type": "tagline",
-          "settings": {
-            "content": "BEDROOM FURNITURE FOR LATER LIVING",
-            "tagline_style": "body-md"
-          },
-          "blocks": {}
-        },
-        "heading_Hp3HUy": {
-          "type": "heading",
-          "settings": {
-            "text": "The Essentials Range",
-            "heading_level": "h1",
-            "heading_style": "title-display"
-          },
-          "blocks": {}
-        },
-        "button_ANDGhF": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "style": "primary",
-            "text": "Button",
-            "url": "#",
-            "new_tab": false
-          },
-          "blocks": {}
-        },
-        "tagline_r848gF": {
-          "type": "tagline",
-          "settings": {
-            "content": "___________________________________________",
-            "tagline_style": "body-md"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "tagline_MncNbi",
-        "heading_Hp3HUy",
-        "button_ANDGhF",
-        "tagline_r848gF"
-      ],
-      "disabled": true,
-      "name": "Rich Text",
-      "settings": {
-        "max_width_desktop": 100,
-        "section_padding": "--spacing-6xl",
-        "text_alignment": "center",
-        "colour_scheme": "base-white-02",
-        "enable_animation": false,
-        "optional_richtext": "",
-        "small_container": false
       }
     },
     "17800419587d38fd81": {
@@ -340,7 +208,6 @@
         "ai_gen_block_a4d6361_zgCigc",
         "ai_gen_block_30cad42_8DVYJ6"
       ],
-      "disabled": true,
       "settings": {}
     },
     "1779968161f5e3af07": {
@@ -348,11 +215,10 @@
       "blocks": {
         "ai_gen_block_90768fd_yF9YVz": {
           "type": "ai_gen_block_90768fd",
-          "disabled": true,
           "settings": {
-            "spacer_height": 10,
+            "spacer_height": 135,
             "spacer_height_mobile": 30,
-            "spacer_color": "#c3c0b0"
+            "spacer_color": "#fffef8"
           },
           "blocks": {}
         }
@@ -360,7 +226,6 @@
       "block_order": [
         "ai_gen_block_90768fd_yF9YVz"
       ],
-      "disabled": true,
       "settings": {}
     },
     "richtext_cfEUkM": {
@@ -371,7 +236,7 @@
           "settings": {
             "text": "Contemporary bedroom furniture, designed to deliver more for <em>your </em>budget.",
             "heading_level": "h2",
-            "heading_style": "title-lg"
+            "heading_style": "title-xl"
           },
           "blocks": {}
         }
@@ -382,9 +247,9 @@
       "name": "Rich Text",
       "settings": {
         "max_width_desktop": 100,
-        "section_padding": "--spacing-4xl",
+        "section_padding": "--spacing-2xl",
         "text_alignment": "center",
-        "colour_scheme": "warm-stone",
+        "colour_scheme": "base-white-02",
         "enable_animation": false,
         "optional_richtext": "",
         "small_container": false
@@ -404,34 +269,21 @@
           "settings": {
             "title": "The Practical Details",
             "title_size": "xl",
-            "text": "<h4>Accessible price point</h4>\n\nA refined bedroom look without the premium price tag.\n\n<h4>Built for everyday use</h4>\n\nSolid 18mm construction and robust internal storage.\n\n<h3>Easy to maintain</h3>\n\nDurable melamine surfaces engineered to resist heat and moisture.\n\n\n<h4>3 year guarantee</h4>\n\nPeace of mind built into every piece.",
+            "text": "<h4>Accessible price point</h4>\n\nA refined bedroom look without the premium price tag.\n\n<h4>Built for everyday use</h4>\n\nSolid 18mm construction and robust internal storage.\n\n<h4>Easy to maintain</h4>\n\nDurable melamine surfaces engineered to resist heat and moisture.\n\n\n<h4>3 year guarantee</h4>\n\nPeace of mind built into every piece.",
             "button_style": "primary",
-            "button_text": "Ready to order?",
-            "button_url": "shopify://products/essentials-bundle"
-          }
-        },
-        "content_3id8Fz": {
-          "type": "content",
-          "disabled": true,
-          "settings": {
-            "title": "",
-            "title_size": "xl",
-            "text": "",
-            "button_style": "primary",
-            "button_text": "More about us",
-            "button_url": ""
+            "button_text": "Enquire today",
+            "button_url": "shopify://pages/contact-us"
           }
         }
       },
       "block_order": [
         "images_pqAJxr",
-        "content_qHnp8Q",
-        "content_3id8Fz"
+        "content_qHnp8Q"
       ],
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-02",
-        "section_padding": "--spacing-4xl"
+        "section_padding": "--spacing-2xl"
       }
     },
     "richtext_6Gf4kd": {
@@ -464,7 +316,7 @@
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
-        "colour_scheme": "warm-stone",
+        "colour_scheme": "base-white-01",
         "enable_animation": false,
         "optional_richtext": "",
         "small_container": false
@@ -475,7 +327,6 @@
       "blocks": {
         "ai_gen_block_800d78e_3iQDjX": {
           "type": "ai_gen_block_800d78e",
-          "disabled": true,
           "settings": {
             "accordion_heading": "Request your quote",
             "default_open": false,
@@ -523,7 +374,7 @@
             "seed_product": "",
             "use_current_product": false,
             "recommendation_intent": "related",
-            "colour_scheme": "base-white-01"
+            "colour_scheme": "warm-stone"
           }
         }
       },
@@ -543,11 +394,11 @@
           "type": "ai_gen_block_30cad42",
           "settings": {
             "product": "essentials-bundle",
-            "button_text": "Click here to add your bundle to cart",
+            "button_text": "Click here to add to cart",
             "show_icon": true,
             "icon_image": "shopify://shop_images/Untitled_-_29_May_2026_at_12.00.05_2.png",
             "button_text_color": "#f9f7f0",
-            "button_bg_color": "#839488",
+            "button_bg_color": "#c3c0b0",
             "button_hover_bg_color": "#243222",
             "button_font_family": "red_hat_display_n4",
             "button_font_weight": "400",
@@ -608,7 +459,7 @@
           "type": "button",
           "settings": {
             "style": "secondary",
-            "text": "Request a Show Van Visit",
+            "text": "Request a Show Van",
             "url": "shopify://pages/show-van",
             "new_tab": false
           },
@@ -759,10 +610,6 @@
   "order": [
     "main",
     "image_video_banner_RfGNUe",
-    "blocks_VikV6k",
-    "1780414914cfdc77f0",
-    "blocks_RAKnDn",
-    "richtext_tK6igQ",
     "17800419587d38fd81",
     "1779968161f5e3af07",
     "richtext_cfEUkM",

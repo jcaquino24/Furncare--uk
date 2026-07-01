@@ -85,11 +85,14 @@
     
     {% if section.settings.lead_time_icon != blank %}
       <div>
-        <img 
-          src="{{ section.settings.lead_time_icon | image_url: width: 40 }}" 
+
+        <img src="{{ section.settings.lead_time_icon | image_url: width: 40 }}" 
           alt="Delivery Icon" 
           loading="lazy"
+          width=""
+          height="" 
         >
+
       </div>
     {% endif %}
 

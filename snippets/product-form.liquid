@@ -76,14 +76,6 @@
     data-productForm: 'true'
   -%}
     {%- comment -%} Hidden input for variant ID - required for add to cart {%- endcomment -%}
-
-    
-<input
-  type="hidden"
-  name="properties[_upsell_tags]"
-  value="{{ product.tags | join: ',' | downcase }}"
->
-
     <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 
     {% if show_data_sheet %}

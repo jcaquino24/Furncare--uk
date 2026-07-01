@@ -148,7 +148,9 @@
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
-        "enable_animation": false
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
       }
     },
     "featured_blocks_QcyUqa": {
@@ -365,7 +367,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "richtext_EW6cqY": {
@@ -411,7 +416,9 @@
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
-        "enable_animation": false
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
       }
     },
     "image_text_Rr8iJJ": {
@@ -442,7 +449,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-4xl"
+        "section_padding": "--spacing-4xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "image_text_EcgCq3": {
@@ -473,7 +483,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "image_text_WEHwQN": {
@@ -504,7 +517,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "1771411269a964c16b": {
@@ -583,7 +599,9 @@
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
-        "enable_animation": false
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
       }
     },
     "image_video_banner_xWTgmR": {
@@ -713,7 +731,9 @@
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
-        "enable_animation": false
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
       }
     },
     "richtext_THLLqm": {
@@ -759,7 +779,9 @@
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
-        "enable_animation": false
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false
       }
     }
   },
