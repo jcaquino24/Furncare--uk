@@ -141,6 +141,7 @@
             "source": "",
             "metrics_layout": "1fr",
             "metric_bg": "",
+            "metric_text": "",
             "reverse_layout": false
           }
         },
@@ -164,6 +165,7 @@
             "source": "",
             "metrics_layout": "repeat(2, 1fr)",
             "metric_bg": "",
+            "metric_text": "",
             "reverse_layout": false
           }
         },
@@ -187,6 +189,7 @@
             "source": "",
             "metrics_layout": "repeat(2, 1fr)",
             "metric_bg": "",
+            "metric_text": "",
             "reverse_layout": false
           }
         }
@@ -224,6 +227,7 @@
         "tab_border": "#f9f7f0",
         "tab_radius": 16,
         "metric_bg": "#c3c0b0",
+        "metric_text": "#f5f5f5",
         "metric_radius": 40,
         "metrics_columns": 1,
         "quote_bg": "#f9f7f0",
@@ -324,6 +328,7 @@
       "disabled": true,
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
@@ -500,6 +505,7 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "refurbishment",
         "max_width_desktop": 49,
         "section_padding": "--spacing-6xl",
         "text_alignment": "center",
@@ -534,6 +540,7 @@
             "source": "",
             "metrics_layout": "repeat(2, 1fr)",
             "metric_bg": "",
+            "metric_text": "",
             "reverse_layout": false
           }
         },
@@ -557,6 +564,7 @@
             "source": "Arnas Mauremootoo, Owner",
             "metrics_layout": "repeat(2, 1fr)",
             "metric_bg": "",
+            "metric_text": "",
             "reverse_layout": false
           }
         }
@@ -588,6 +596,7 @@
         "tab_border": "#f9f7f0",
         "tab_radius": 16,
         "metric_bg": "#f5f5f5",
+        "metric_text": "#f5f5f5",
         "metric_radius": 10,
         "metrics_columns": 2,
         "quote_bg": "#f9f7f0",
