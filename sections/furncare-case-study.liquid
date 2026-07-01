@@ -74,7 +74,7 @@
                 <b style="font-size: {{ section.settings.metric_size }}px; color:{{ block.settings.metric_text | default: section.settings.metric_text }};">
                   {{ block.settings[m] }}
                 </b>
-                <span style="font-size: {{ section.settings.metric_label_size }}px;">
+                <span style="font-size: {{ section.settings.metric_label_size }}px; color:{{ block.settings.metric_text | default: section.settings.metric_text }};">
                   {{ block.settings[l] }}
                 </span>
               </div>

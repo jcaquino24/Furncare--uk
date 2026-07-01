@@ -141,6 +141,7 @@
             "source": "",
             "metrics_layout": "1fr",
             "metric_bg": "",
+            "metric_text": "",
             "reverse_layout": false
           }
         },
@@ -164,6 +165,7 @@
             "source": "",
             "metrics_layout": "repeat(2, 1fr)",
             "metric_bg": "",
+            "metric_text": "",
             "reverse_layout": false
           }
         },
@@ -187,6 +189,7 @@
             "source": "",
             "metrics_layout": "repeat(2, 1fr)",
             "metric_bg": "",
+            "metric_text": "",
             "reverse_layout": false
           }
         }
@@ -211,7 +214,7 @@
         "heading_size": 54,
         "subheading_size": 14,
         "title_size": 32,
-        "bg_color": "#F9F0F0",
+        "bg_color": "#f9f0f0",
         "text_color": "#111111",
         "padding_top": 70,
         "padding_bottom": 60,
@@ -223,7 +226,8 @@
         "tab_active_text": "#262520",
         "tab_border": "#f9f7f0",
         "tab_radius": 16,
-        "metric_bg": "#C3B0B0",
+        "metric_bg": "#c3b0b0",
+        "metric_text": "#FFFFFF",
         "metric_radius": 40,
         "metrics_columns": 1,
         "quote_bg": "#f9f0f0",
@@ -534,6 +538,7 @@
             "source": "",
             "metrics_layout": "repeat(2, 1fr)",
             "metric_bg": "",
+            "metric_text": "",
             "reverse_layout": false
           }
         },
@@ -557,6 +562,7 @@
             "source": "Arnas Mauremootoo, Owner",
             "metrics_layout": "repeat(2, 1fr)",
             "metric_bg": "",
+            "metric_text": "",
             "reverse_layout": false
           }
         }
@@ -588,6 +594,7 @@
         "tab_border": "#f9f7f0",
         "tab_radius": 16,
         "metric_bg": "#f5f5f5",
+        "metric_text": "#f5f5f5",
         "metric_radius": 10,
         "metrics_columns": 2,
         "quote_bg": "#f9f7f0",
