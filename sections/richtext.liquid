@@ -32,7 +32,7 @@
   {% endif %}
 {% endcapture %}
 {% if block_content != blank or optional_content != blank %}
-  <div
+  <div id="{{ section.settings.id_anchor }}"
     class="richtext colour-scheme--{{ section.settings.colour_scheme }}"
     style="
       --max-width-desktop: {{ section.settings.max_width_desktop }}%;
