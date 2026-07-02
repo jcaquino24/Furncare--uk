@@ -17,6 +17,7 @@
         "copy": "Every care home project needs furniture that feels considered, yet crafted for care environments. Whether you’re planning a new space, updating key rooms or working through a larger phased project, we’ll help you choose contemporary and comfortable pieces that support the people who live and work there.",
         "primary_label": "Plan a refurbishment",
         "primary_link": "#refurbishment",
+        "scroll_target": "refurbishment",
         "secondary_label": "Discuss your new build project",
         "secondary_link": "",
         "show_rotator": false,
