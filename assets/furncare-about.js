@@ -135,13 +135,18 @@ document.querySelectorAll('[data-scroll-to]').forEach(button => {
   button.addEventListener('click', function(e) {
     e.preventDefault();
 
-    const targetId = this.dataset.scrollTo;
-    const target = document.getElementById(targetId);
+    const target = document.getElementById(this.dataset.scrollTo);
 
     if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+      const headerOffset = 120; // adjust
+      const offsetTop =
+        target.getBoundingClientRect().top +
+        window.pageYOffset -
+        headerOffset;
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
       });
     }
   });
