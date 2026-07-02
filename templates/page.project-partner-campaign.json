@@ -386,6 +386,7 @@
       ],
       "name": "Furncare audience advanced",
       "settings": {
+        "id_anchor": "new-build",
         "eyebrow": "NEW BUILD FURNITURE SUPPORT",
         "heading": "Bring your new care spaces to life.",
         "background_gradient": "",
@@ -656,6 +657,7 @@
       ],
       "name": "Furncare audience advanced",
       "settings": {
+        "id_anchor": "",
         "eyebrow": "REFURBISHMENT, MADE SIMPLER",
         "heading": "Refresh your existing spaces with confidence.",
         "background_gradient": "",
@@ -816,6 +818,7 @@
       ],
       "disabled": true,
       "settings": {
+        "id_anchor": "",
         "eyebrow": "Who we support",
         "heading": "Built around the teams delivering care environments.",
         "background_gradient": "",
