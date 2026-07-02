@@ -38,7 +38,7 @@
         {%- if section.settings.primary_label != blank or section.settings.secondary_label != blank -%}
           <div class="fa-buttons">
             {%- if section.settings.primary_label != blank -%}
-              <a class="fa-button fa-button--primary" {%- if section.settings.scroll_target == blank  -%}href="{{ section.settings.primary_link }}"{%- endif -%}>
+              <a class="fa-button fa-button--primary" {%- if section.settings.scroll_target == blank  -%}href="{{ section.settings.primary_link }}"{%- endif -%} data-scroll-to="{{ section.settings.scroll_target }}">
                 {{ section.settings.primary_label | escape }}
                 <svg class="fa-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a>
