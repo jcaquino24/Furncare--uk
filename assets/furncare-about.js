@@ -129,3 +129,20 @@
     window.FurncareAboutPageInit(event.target);
   });
 })();
+
+
+document.querySelectorAll('[data-scroll-to]').forEach(button => {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const targetId = this.dataset.scrollTo;
+    const target = document.getElementById(targetId);
+
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
