@@ -45,7 +45,7 @@
             {%- endif -%}
 
             {%- if section.settings.secondary_label != blank -%}
-              <a class="fa-button fa-button--secondary" href="{{ section.settings.secondary_link }}">
+              <a class="fa-button fa-button--secondary" {%- if section.settings.secondary_scroll_target == blank  -%} href="{{ section.settings.secondary_link }}"{%- endif -%} data-scroll-to="{{ section.settings.secondary_scroll_target }}">
                 {{ section.settings.secondary_label | escape }}
               </a>
             {%- endif -%}
@@ -131,6 +131,11 @@
       "type": "url",
       "id": "secondary_link",
       "label": "Secondary button link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_scroll_target",
+      "label": "Scroll to Target"
     },
     {
       "type": "header",
