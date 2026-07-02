@@ -93,6 +93,10 @@
         </a>
       </div>
     </div>
+
+    <div class="account__quotes-section">
+      {% render 'customers-account-quotes' %}
+    </div>
   </div>
 
   {% assign yotpo_blocks = section.blocks | where: "type", "yotpo_widget" %}

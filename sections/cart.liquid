@@ -69,6 +69,10 @@
             {{ 'cart.checkout' | t }} {% render 'icons', icon: 'lock' %}
           </a>
 
+          <a href="/pages/quote-request" class="button button--secondary button--full-width cart-form__quote-request">
+            Request a quote for this cart
+          </a>
+
           <a href="{{ routes.cart_url }}" class="button button--underline button--underline-with-svg button--full-width hide-on-cart cart-form__view-cart">
             {{ 'cart.view_cart' | t }} {% render 'icons', icon: 'arrow-right' %}
           </a>
