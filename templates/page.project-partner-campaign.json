@@ -505,7 +505,7 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "id_anchor": "#refurbishment",
+        "id_anchor": "refurbishment",
         "max_width_desktop": 49,
         "section_padding": "--spacing-6xl",
         "text_alignment": "center",
