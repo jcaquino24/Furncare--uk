@@ -17,8 +17,10 @@
         "copy": "Every care home project needs furniture that feels considered, yet crafted for care environments. Whether you’re planning a new space, updating key rooms or working through a larger phased project, we’ll help you choose contemporary and comfortable pieces that support the people who live and work there.",
         "primary_label": "Plan a refurbishment",
         "primary_link": "shopify://pages/contact-us",
+        "scroll_target": "refurbishment",
         "secondary_label": "Discuss your new build project",
         "secondary_link": "shopify://pages/contact-us",
+        "secondary_scroll_target": "new-build",
         "show_rotator": false,
         "animated_prefix": "",
         "animated_words": "",
@@ -384,6 +386,7 @@
       ],
       "name": "Furncare audience advanced",
       "settings": {
+        "id_anchor": "new-build",
         "eyebrow": "NEW BUILD FURNITURE SUPPORT",
         "heading": "Bring your new care spaces to life.",
         "background_gradient": "",
@@ -654,6 +657,7 @@
       ],
       "name": "Furncare audience advanced",
       "settings": {
+        "id_anchor": "",
         "eyebrow": "REFURBISHMENT, MADE SIMPLER",
         "heading": "Refresh your existing spaces with confidence.",
         "background_gradient": "",
@@ -814,6 +818,7 @@
       ],
       "disabled": true,
       "settings": {
+        "id_anchor": "",
         "eyebrow": "Who we support",
         "heading": "Built around the teams delivering care environments.",
         "background_gradient": "",
