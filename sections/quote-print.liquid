@@ -5,9 +5,14 @@
       <p class="quote-print__intro">
         This page shows the current cart items for printing. It includes the product image, title, quantity and price only.
       </p>
-      <button id="quote-print-button" class="button button--primary button--full-width quote-print__button" type="button">
-        Print this quote
-      </button>
+      <div class="quote-print__actions">
+        <button id="quote-print-button" class="button button--primary button--full-width quote-print__button" type="button">
+          Print this quote
+        </button>
+        <button id="quote-email-button" class="button button--secondary button--full-width quote-print__button" type="button">
+          Email this quote to me
+        </button>
+      </div>
     </div>
 
     <div id="quote-print-items" class="quote-print__items">
@@ -19,7 +24,8 @@
 <script>
   window.quotePrintSettings = {
     locale: "{{ shop.locale | replace: '_', '-' }}",
-    currency: "{{ shop.currency }}"
+    currency: "{{ shop.currency }}",
+    customerEmail: "{{ customer.email | default: '' }}"
   };
 </script>
 <script src="{{ 'quote-print.js' | asset_url }}" defer></script>

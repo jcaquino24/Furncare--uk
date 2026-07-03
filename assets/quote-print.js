@@ -51,6 +51,34 @@
       </div>`;
   }
 
+  function buildMailtoLink(cart) {
+    const email = settings.customerEmail || '';
+    const subject = encodeURIComponent('Furncare quote basket');
+    const lines = ['Quote basket details:', ''];
+
+    cart.items.forEach((item, index) => {
+      const title = item.product_title || item.title;
+      const options = (item.options_with_values || [])
+        .filter((option) => option.value && option.value !== 'Default Title')
+        .map((option) => `${option.name}: ${option.value}`)
+        .join(', ');
+
+      lines.push(`${index + 1}. ${title}`);
+      if (options) lines.push(`   ${options}`);
+      lines.push(`   Quantity: ${item.quantity}`);
+      lines.push(`   Line total: ${formatMoney(item.line_price)}`);
+      lines.push('');
+    });
+
+    lines.push(`Total: ${formatMoney(cart.total_price)}`);
+    const body = encodeURIComponent(lines.join('\n'));
+    return `mailto:${email}?subject=${subject}&body=${body}`;
+  }
+
+  function setEmailButton(cart) {
+    window.currentQuoteCart = cart;
+  }
+
   function init() {
     const container = document.getElementById('quote-print-items');
     const printButton = document.getElementById('quote-print-button');
@@ -60,6 +88,7 @@
       .then((response) => response.json())
       .then((cart) => {
         container.innerHTML = renderCartItems(cart);
+        setEmailButton(cart);
       })
       .catch(() => {
         container.innerHTML = '<p class="quote-print__empty">Unable to load cart items. Please refresh.</p>';
@@ -68,6 +97,15 @@
     printButton.addEventListener('click', function () {
       window.print();
     });
+
+    const emailButton = document.getElementById('quote-email-button');
+    if (emailButton) {
+      emailButton.addEventListener('click', function () {
+        const cart = window.currentQuoteCart;
+        if (!cart) return;
+        window.location.href = buildMailtoLink(cart);
+      });
+    }
   }
 
   document.addEventListener('DOMContentLoaded', init);
