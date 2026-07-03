@@ -269,3 +269,24 @@
     align-items: flex-start;
   }
 }
+@media print {
+  .quote-print__button,
+  .footer,
+  .footer__sub,
+  .site-footer,
+  .site-footer-wrapper,
+  .footer-section,
+  .page-footer,
+  .header,
+  .site-header {
+    display: none !important;
+  }
+
+  .quote-print {
+    padding: 0;
+  }
+
+  .quote-print__summary {
+    border: none;
+  }
+}
