@@ -286,6 +286,32 @@
     display: none !important;
   }
 
+  .header__top-bar .header__support-links,
+  .header__top-bar .header__mobile-menu-wrapper,
+  .header__bottom-bar,
+  .header__actions,
+  .header__bottom-bar .header__action,
+  .header__bottom-bar .input-search,
+  .header__bottom-bar uwp-minicart {
+    display: none !important;
+  }
+
+  .header__logo {
+    display: block !important;
+    margin: 0 auto 16px !important;
+  }
+
+  .header__top-bar {
+    justify-content: center !important;
+    padding-bottom: 0 !important;
+  }
+
+  .header {
+    background: transparent !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
   .quote-print {
     position: relative;
     padding: 24px !important;
