@@ -177,3 +177,95 @@
     grid-template-columns: 1fr 420px;
   }
 }
+
+.quote-print {
+  padding: 60px 0;
+}
+
+.quote-print__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.quote-print__header {
+  margin-bottom: 32px;
+}
+
+.quote-print__title,
+.quote-print__intro {
+  margin-bottom: 18px;
+}
+
+.quote-print__button {
+  max-width: 260px;
+  margin-bottom: 32px;
+}
+
+.quote-print__summary {
+  border: 1px solid #e1e1e1;
+  background: #fafafa;
+  padding: 24px;
+}
+
+.quote-print__summary-row {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.quote-print__summary-row--header {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.quote-print__product {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.quote-print__product-image {
+  width: 90px;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid #d4d4d4;
+  background: #fff;
+}
+
+.quote-print__options,
+.quote-print__option {
+  display: block;
+  color: #555;
+  font-size: 0.95rem;
+  margin-top: 6px;
+}
+
+.quote-print__summary-total {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr;
+  gap: 16px;
+  padding-top: 20px;
+  font-weight: 700;
+}
+
+.quote-print__empty {
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .quote-print__summary-row,
+  .quote-print__summary-total {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .quote-print__product {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
