@@ -21,11 +21,6 @@
 
     return `
       <div class="quote-print__summary">
-        <div class="quote-print__summary-row quote-print__summary-row--header">
-          <span>Product</span>
-          <span>Quantity</span>
-          <span>Line total</span>
-        </div>
         ${cart.items.map((item) => {
           const imageUrl = item.image || item.featured_image || '';
           const title = item.product_title || item.title;
