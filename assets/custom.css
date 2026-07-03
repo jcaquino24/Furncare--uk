@@ -282,31 +282,14 @@
   .site-footer,
   .site-footer-wrapper,
   .footer-section,
-  .page-footer,
-  .header,
-  .site-header,
-  .banner,
-  .shopify-section--header,
-  .shopify-section--footer {
+  .page-footer {
     display: none !important;
   }
 
-  body * {
-    visibility: hidden;
-  }
-
-  .quote-print,
-  .quote-print * {
-    visibility: visible;
-  }
-
   .quote-print {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
+    position: relative;
     padding: 24px !important;
-    background: transparent !important;
+    background: #fff !important;
   }
 
   .quote-print__summary {
