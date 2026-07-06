@@ -105,6 +105,7 @@
   </div>
 {% endif %}
 
+{% if section.settings.show_call_to_action %}
 {%- for block in section.blocks -%}
 {%- case block.type -%}
 {%- when 'cross_sell' %}
@@ -120,7 +121,7 @@
   {% comment %} USPs {% endcomment %}
   {% render 'product-usp', product: product %}
 
-  {% if section.settings.show_call_to_action %}
+  
     {% comment %} Action Buttons {% endcomment %}
     <uwp-product-actions
       role="region"
