@@ -18,6 +18,10 @@
   assign hubspot_form = product.metafields.custom.hubspot_form
   assign swatch_collections = product.metafields.custom.swatch_collections.value
   assign data_sheet = product.metafields.custom.data_sheet
+  assign show_call_to_action = true
+  if section and section.settings.show_call_to_action != blank
+    assign show_call_to_action = section.settings.show_call_to_action
+  endif
 
   # Show data sheet download if product has one
   assign show_data_sheet = false
@@ -91,74 +95,75 @@
       </div>
     {% endif %}
 
-    <div class="{{ base_class }}__button__wrapper">
-      <div class="{{ base_class }}__quantity">
+    {% if show_call_to_action %}
+      <div class="{{ base_class }}__button__wrapper">
+        <div class="{{ base_class }}__quantity">
+          {% render 'quantity-selector',
+            id: 'product-quantity',
+            value: 1,
+            step: 1,
+            min: 1,
+            max: 10,
+            variant: product.selected_or_first_available_variant
+          %}
+        </div>
 
-        {% render 'quantity-selector',
-          id: 'product-quantity',
-          value: 1,
-          step: 1,
-          min: 1,
-          max: 10,
-          variant: product.selected_or_first_available_variant
-        %}
-      </div>
+        {% comment %}
+          If product is completely sold out show either notify me modal toggle CTA or sold out CTA depending on product tags
+          If product has sold out variants then we need to toggle the notify me modal CTA when a sold out swatch is selected
+        {% endcomment %}
 
-      {% comment %}
-        If product is completely sold out show either notify me modal toggle CTA or sold out CTA depending on product tags
-        If product has sold out variants then we need to toggle the notify me modal CTA when a sold out swatch is selected
-      {% endcomment %}
-
-      {% if product.available %}
-        <button
-          type="submit"
-          class="{{ base_class }}__atc-button button button--primary button--full-width button--md"
-          id="atcButton"
-          data-add-to-cart
-        >
-          <span>
-            {{ 'product.add_to_cart' | t }} -
-            {{ product.selected_or_first_available_variant.price | money }}
-            {% render 'icons', icon: 'cart' %}
-          </span>
-        </button>
-
-        {% if show_notify_modal %}
+        {% if product.available %}
           <button
-            onclick="toggleNotifyModal()"
-            type="button"
-            id="alternativeButton"
-            class="{{ base_class }}__preorder-button button button--full-width button--secondary"
-            style="display: none;"
+            type="submit"
+            class="{{ base_class }}__atc-button button button--primary button--full-width button--md"
+            id="atcButton"
+            data-add-to-cart
           >
-            <span>{{ 'product.notify_me' | t }}</span>
+            <span>
+              {{ 'product.add_to_cart' | t }} -
+              {{ product.selected_or_first_available_variant.price | money }}
+              {% render 'icons', icon: 'cart' %}
+            </span>
           </button>
-        {% endif %}
 
-      {% else %}
-        {% if show_notify_modal %}
-          <button
-            onclick="toggleNotifyModal()"
-            type="button"
-            id="alternativeButton"
-            class="{{ base_class }}__preorder-button button button--full-width button--secondary"
-            style="display: inline-block;"
-          >
-            <span>{{ 'product.notify_me' | t }}</span>
-          </button>
+          {% if show_notify_modal %}
+            <button
+              onclick="toggleNotifyModal()"
+              type="button"
+              id="alternativeButton"
+              class="{{ base_class }}__preorder-button button button--full-width button--secondary"
+              style="display: none;"
+            >
+              <span>{{ 'product.notify_me' | t }}</span>
+            </button>
+          {% endif %}
+
         {% else %}
-          <button
-            type="button"
-            id="alternativeButton"
-            class="{{ base_class }}__preorder-button button button--full-width button--secondary"
-            style="display:inline-block"
-            disabled
-          >
-            <span>{{ 'product.sold_out' | t }}</span>
-          </button>
+          {% if show_notify_modal %}
+            <button
+              onclick="toggleNotifyModal()"
+              type="button"
+              id="alternativeButton"
+              class="{{ base_class }}__preorder-button button button--full-width button--secondary"
+              style="display: inline-block;"
+            >
+              <span>{{ 'product.notify_me' | t }}</span>
+            </button>
+          {% else %}
+            <button
+              type="button"
+              id="alternativeButton"
+              class="{{ base_class }}__preorder-button button button--full-width button--secondary"
+              style="display:inline-block"
+              disabled
+            >
+              <span>{{ 'product.sold_out' | t }}</span>
+            </button>
+          {% endif %}
         {% endif %}
-      {% endif %}
-    </div>
+      </div>
+    {% endif %}
     <div id="quote-button-container"></div>
     <div
       class="{{ base_class }}__inventory-error body-sm body-sm--bold"
