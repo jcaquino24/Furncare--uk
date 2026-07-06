@@ -34,14 +34,16 @@
 
   {% comment %} Price {% endcomment %}
   {%- assign has_swatch_collections = product.metafields.custom.swatch_collections.value -%}
-  {% render 'price',
-    product: product,
-    use_variant: true,
-    show_compare_at_price: true,
-    show_vat_badge: section.settings.show_vat_badge,
-    show_free_sample_label: section.settings.show_free_sample_label,
-    force_from_price: has_swatch_collections
-  %}
+  {% if section.settings.show_price %}
+    {% render 'price',
+      product: product,
+      use_variant: true,
+      show_compare_at_price: true,
+      show_vat_badge: section.settings.show_vat_badge,
+      show_free_sample_label: section.settings.show_free_sample_label,
+      force_from_price: has_swatch_collections
+    %}
+  {% endif %}
 
   {% comment %} Description {% endcomment %}
   {% if product.description != blank %}
@@ -77,7 +79,8 @@
       {{ section.settings.product_swatch_information }}
     </div>
   {% endif %}
-
+  
+{% if section.settings.show_call_to_action %}
   {% comment %} Lead time {% endcomment %}
 
   {% if product.metafields.custom.delivered_within.value != blank %}
@@ -103,21 +106,30 @@
   </div>
 {% endif %}
 
-  
+
+{%- for block in section.blocks -%}
+{%- case block.type -%}
+{%- when 'cross_sell' %}
+{% render 'product-cross-sell', product: product, block: block, section: section.id %}
+{%- endcase -%}
+{%- endfor -%}
+
   {% comment %} End of lead time code {% endcomment %}
 
   {% comment %} Product Form {% endcomment %}
-  {% render 'product-form', product: product, section_id: section_id %}
+  {% render 'product-form', product: product, section_id: section_id, section: section %}
 
   {% comment %} USPs {% endcomment %}
   {% render 'product-usp', product: product %}
 
-  {% comment %} Action Buttons {% endcomment %}
-  <uwp-product-actions
-    role="region"
-    aria-label="Product actions"
-    aria-roledescription="region"
-  >
-    {% render 'product-actions', product: product, section: section %}
-  </uwp-product-actions>
+  
+    {% comment %} Action Buttons {% endcomment %}
+    <uwp-product-actions
+      role="region"
+      aria-label="Product actions"
+      aria-roledescription="region"
+    >
+      {% render 'product-actions', product: product, section: section %}
+    </uwp-product-actions>
+  {% endif %}
 </div>
