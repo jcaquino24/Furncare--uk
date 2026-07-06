@@ -79,7 +79,8 @@
       {{ section.settings.product_swatch_information }}
     </div>
   {% endif %}
-
+  
+{% if section.settings.show_call_to_action %}
   {% comment %} Lead time {% endcomment %}
 
   {% if product.metafields.custom.delivered_within.value != blank %}
@@ -105,7 +106,7 @@
   </div>
 {% endif %}
 
-{% if section.settings.show_call_to_action %}
+
 {%- for block in section.blocks -%}
 {%- case block.type -%}
 {%- when 'cross_sell' %}
