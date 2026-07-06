@@ -19,8 +19,11 @@
   assign swatch_collections = product.metafields.custom.swatch_collections.value
   assign data_sheet = product.metafields.custom.data_sheet
   assign show_call_to_action = true
-  if section and section.settings.show_call_to_action != blank
+  if section
     assign show_call_to_action = section.settings.show_call_to_action
+    if show_call_to_action == blank
+      assign show_call_to_action = true
+    endif
   endif
 
   # Show data sheet download if product has one
