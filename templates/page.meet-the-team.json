@@ -55,13 +55,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 45,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": false,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "image_text_blocks_tqpDa9": {
@@ -153,7 +156,7 @@
             "image": "shopify://shop_images/Candace_Turner_B_W_for_web.jpg",
             "image_mobile": "shopify://shop_images/Candace_Turner_B_W_for_web.jpg",
             "title": "Candace Turner",
-            "subtitle": "Marketing Executive",
+            "subtitle": "Content & Digital Marketing Executive",
             "text": "",
             "block_colour_scheme": "dark-mode",
             "show_gradient": true,
@@ -483,7 +486,7 @@
           "settings": {
             "image": "shopify://shop_images/Molly_Tinker.jpg",
             "title": "Molly Tinker",
-            "subtitle": "Marketing Coordinator",
+            "subtitle": "Brand & Marketing Projects Coordinator",
             "text": "",
             "block_colour_scheme": "dark-mode",
             "show_gradient": true,
