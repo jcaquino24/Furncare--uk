@@ -113,12 +113,12 @@
 {% render 'product-cross-sell', product: product, block: block, section: section.id %}
 {%- endcase -%}
 {%- endfor -%}
-{% endif %}
+
   {% comment %} End of lead time code {% endcomment %}
 
   {% comment %} Product Form {% endcomment %}
   {% render 'product-form', product: product, section_id: section_id, section: section %}
-
+{% endif %}
   {% comment %} USPs {% endcomment %}
   {% render 'product-usp', product: product %}
 
