@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "exit_intent_popup_U77VBL": {
+      "type": "exit-intent-popup",
+      "name": "Exit intent popup",
+      "settings": {
+        "admin_label": "Exit intent popup section",
+        "heading": "Wait! Before you go 👀",
+        "description": "Get 10% off your first order when you join our newsletter.",
+        "email_placeholder": "Enter your email",
+        "button_label": "Get Discount",
+        "success_message": "Thanks! Check your email for the discount 🎉"
+      }
+    },
     "image_video_banner_XGAaBn": {
       "type": "image-video-banner",
       "blocks": {
@@ -34,7 +46,7 @@
         "eyebrow_mUTnQz": {
           "type": "eyebrow",
           "settings": {
-            "text": "Contemporary interiors for care communities",
+            "text": "FURNITURE FOR LATER LIVING  & CHALLENGING ENVIRONMENTS",
             "eyebrow_size": "md",
             "text_color": "#f9f7f0"
           }
@@ -551,76 +563,6 @@
         "padding_bottom": 80
       }
     },
-    "flexiable_content_image_eFAF9h": {
-      "type": "flexiable-content-image",
-      "name": "Flexible Media & CTA",
-      "settings": {
-        "center_content_mode": false,
-        "cta_max_width": 800,
-        "custom_class": "",
-        "heading_size": "h2",
-        "button_style_secondary": false,
-        "section_bg_color": "#ffffff",
-        "bg_image": "shopify://shop_images/ChatGPT_Image_Jun_3_2026_10_03_05_PM.png",
-        "bg_video": "shopify://files/videos/Our Story.mp4",
-        "bg_overlay_opacity": 0,
-        "video_url": "",
-        "image": "shopify://shop_images/G4559_1e6508ba-f2b0-4040-a784-793e534873d7.jpg",
-        "image_position": "right",
-        "desktop_layout_invert": false,
-        "content_width": 45,
-        "heading": "Custom Section Heading",
-        "color_heading": "#4a5486",
-        "heading_font_size": 40,
-        "heading_weight": "700",
-        "subheading": "",
-        "color_subheading": "#8e94a7",
-        "subheading_size": 14,
-        "subheading_weight": "600",
-        "text": "",
-        "color_text": "#7a7a7a",
-        "text_size": 18,
-        "text_weight": "400",
-        "content_alignment": "left",
-        "stack_gap_tablet": 32,
-        "heading_font_size_mobile": 28,
-        "color_heading_mobile": "#4a5486",
-        "heading_weight_mobile": "700",
-        "subheading_size_mobile": 12,
-        "color_subheading_mobile": "#8e94a7",
-        "subheading_weight_mobile": "600",
-        "text_size_mobile": 16,
-        "color_text_mobile": "#7a7a7a",
-        "text_weight_mobile": "400",
-        "content_gap_mobile": 16,
-        "content_alignment_mobile": "center",
-        "button_margin_top_mobile": 24,
-        "button_bg_color_mobile": "#4a5486",
-        "button_text_color_mobile": "#ffffff",
-        "button_secondary_text_color_mobile": "#4a5486",
-        "button_secondary_border_color_mobile": "#e5e8f0",
-        "button_label": "Get the system",
-        "button_link": "",
-        "show_button_arrow": true,
-        "button_label_2": "Book a Call",
-        "button_link_2": "",
-        "show_button_arrow_2": false,
-        "button_bg_color": "#4a5486",
-        "button_text_color": "#ffffff",
-        "button_secondary_text_color": "#4a5486",
-        "button_secondary_border_color": "#e5e8f0",
-        "button_margin_top": 30,
-        "content_gap": 20,
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "padding_left": 0,
-        "padding_right": 0,
-        "padding_top_mobile": 60,
-        "padding_bottom_mobile": 60,
-        "padding_left_mobile": 0,
-        "padding_right_mobile": 0
-      }
-    },
     "custom_column_showcase_Qmzj3z": {
       "type": "custom-column-showcase",
       "name": "custom Column showcase",
@@ -1135,13 +1077,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-6xl",
         "text_alignment": "center",
         "colour_scheme": "green-01",
         "enable_animation": true,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "blog_article_row_8MhRNW": {
@@ -1272,13 +1217,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": true,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "image_text_cqfzwp": {
@@ -1390,17 +1338,73 @@
         "reveal_duration": 760
       }
     },
-    "1781866559cff4eafb": {
+    "17760941991c9f024b": {
       "type": "_blocks",
-      "settings": {}
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "1779893029a43fff23": {
+      "type": "_blocks",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
+    "exit_intent_popup_U77VBL",
     "image_video_banner_XGAaBn",
     "custom_dynamic_grid_Kpa3yD",
     "custom_featured_product_RUTtwF",
     "certificate_standard_etWBLQ",
-    "flexiable_content_image_eFAF9h",
     "custom_column_showcase_Qmzj3z",
     "featured_blocks_M7Nrnn",
     "content_blocks_fLpHR3",
@@ -1413,6 +1417,7 @@
     "image_text_cqfzwp",
     "image_text_V4HwxM",
     "image_text_aYpUjc",
-    "1781866559cff4eafb"
+    "17760941991c9f024b",
+    "1779893029a43fff23"
   ]
 }
