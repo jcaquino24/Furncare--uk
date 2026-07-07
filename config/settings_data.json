@@ -96,6 +96,11 @@
         "type": "shopify://apps/password-lock-pages/blocks/password_protection/4dc6a6fa-3301-49ba-95e6-03c694327386",
         "disabled": false,
         "settings": {}
+      },
+      "14082181514032464150": {
+        "type": "shopify://apps/o-request-a-quote/blocks/omgrfq_script/5f4ac0e6-8a57-4f3d-853e-0194eab86273",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
