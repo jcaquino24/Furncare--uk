@@ -8,7 +8,7 @@
     {{ section.settings.admin_label }}
   </div>
 
-  <div id="exit-intent-popup-{{ section.id }}" class="exit-intent-popup" style="display:none;">
+  <div id="exit-intent-popup-{{ section.id }}" class="exit-intent-popup">
     <div class="exit-intent-popup__overlay" data-exit-intent-close></div>
     <div class="exit-intent-popup__panel" role="dialog" aria-modal="true" aria-labelledby="exit-intent-title-{{ section.id }}">
       <button type="button" class="exit-intent-popup__close" aria-label="Close popup" data-exit-intent-close>&times;</button>
@@ -172,7 +172,7 @@
   }
 
   function handleMouseLeave(event) {
-    if (event.clientY < 0) {
+    if (event.clientY <= 0 || event.clientY < 50 && event.clientX > 0 && event.clientX < window.innerWidth) {
       showPopup();
     }
   }
