@@ -1,0 +1,251 @@
+{% comment %}
+  Exit intent popup section.
+  Add this section to a page and it will show a popup when the cursor leaves the browser window from the top.
+{% endcomment %}
+
+<section class="exit-intent-popup-section" {{ section.shopify_attributes }}>
+  <div class="exit-intent-popup-section__placeholder">
+    {{ section.settings.admin_label }}
+  </div>
+
+  <div id="exit-intent-popup-{{ section.id }}" class="exit-intent-popup" style="display:none;">
+    <div class="exit-intent-popup__overlay" data-exit-intent-close></div>
+    <div class="exit-intent-popup__panel" role="dialog" aria-modal="true" aria-labelledby="exit-intent-title-{{ section.id }}">
+      <button type="button" class="exit-intent-popup__close" aria-label="Close popup" data-exit-intent-close>&times;</button>
+      <div class="exit-intent-popup__content">
+        <h2 id="exit-intent-title-{{ section.id }}">{{ section.settings.heading }}</h2>
+        <p>{{ section.settings.description }}</p>
+        <form id="exit-intent-form-{{ section.id }}" class="exit-intent-popup__form">
+          <input
+            type="email"
+            name="email"
+            placeholder="{{ section.settings.email_placeholder }}"
+            aria-label="Email address"
+            required
+          />
+          <button type="submit">{{ section.settings.button_label }}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .exit-intent-popup-section {
+    position: relative;
+  }
+
+  .exit-intent-popup-section__placeholder {
+    padding: 1rem;
+    border: 1px dashed rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    text-align: center;
+    color: #333;
+    background: rgba(255, 255, 255, 0.92);
+    font-size: 0.95rem;
+  }
+
+  .exit-intent-popup {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .exit-intent-popup.is-open {
+    display: flex;
+  }
+
+  .exit-intent-popup__overlay {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+  }
+
+  .exit-intent-popup__panel {
+    position: relative;
+    width: min(100%, 420px);
+    margin: 1rem;
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .exit-intent-popup__close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 50%;
+    background: transparent;
+    color: #111;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .exit-intent-popup__content {
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+  }
+
+  .exit-intent-popup__content h2 {
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+    line-height: 1.1;
+  }
+
+  .exit-intent-popup__content p {
+    margin: 0 0 1.75rem;
+    color: #4f4f4f;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .exit-intent-popup__form {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .exit-intent-popup__form input {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    font-size: 1rem;
+  }
+
+  .exit-intent-popup__form button {
+    padding: 0.95rem 1rem;
+    border: none;
+    border-radius: 12px;
+    background: #111;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  @media (max-width: 580px) {
+    .exit-intent-popup__panel {
+      border-radius: 18px;
+    }
+    .exit-intent-popup__content {
+      padding: 2rem 1.25rem 1.5rem;
+    }
+  }
+</style>
+
+<script>
+(function() {
+  if (window.exitIntentPopupInitialized) return;
+  window.exitIntentPopupInitialized = true;
+
+  var form = document.getElementById('exit-intent-form-{{ section.id }}');
+  var popup = document.getElementById('exit-intent-popup-{{ section.id }}');
+  var closeElements = popup ? popup.querySelectorAll('[data-exit-intent-close]') : [];
+
+  if (!popup || !form) {
+    return;
+  }
+
+  var storageKey = 'exitIntentPopupShown';
+  var shown = localStorage.getItem(storageKey);
+
+  if (shown) {
+    return;
+  }
+
+  function showPopup() {
+    popup.classList.add('is-open');
+    localStorage.setItem(storageKey, 'true');
+  }
+
+  function hidePopup() {
+    popup.classList.remove('is-open');
+  }
+
+  function handleMouseLeave(event) {
+    if (event.clientY < 0) {
+      showPopup();
+    }
+  }
+
+  document.addEventListener('mouseleave', handleMouseLeave);
+
+  closeElements.forEach(function(button) {
+    button.addEventListener('click', hidePopup);
+  });
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    var email = form.querySelector('input[type="email"]').value;
+
+    if (email) {
+      console.log('Exit intent email captured:', email);
+      if (typeof alert === 'function') {
+        alert('{{ section.settings.success_message | escape }}');
+      }
+    }
+
+    hidePopup();
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Exit Intent Popup",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "admin_label",
+      "label": "Editor label",
+      "default": "Exit intent popup section"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Popup heading",
+      "default": "Wait! Before you go 👀"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Popup description",
+      "default": "Get 10% off your first order when you join our newsletter."
+    },
+    {
+      "type": "text",
+      "id": "email_placeholder",
+      "label": "Email placeholder",
+      "default": "Enter your email"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Get Discount"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thanks! Check your email for the discount 🎉"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Exit intent popup",
+      "category": "Popups"
+    }
+  ]
+}
+{% endschema %}
