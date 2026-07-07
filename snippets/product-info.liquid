@@ -113,7 +113,7 @@
 {% render 'product-cross-sell', product: product, block: block, section: section.id %}
 {%- endcase -%}
 {%- endfor -%}
-
+{% endif %}
   {% comment %} End of lead time code {% endcomment %}
 
   {% comment %} Product Form {% endcomment %}
@@ -131,5 +131,5 @@
     >
       {% render 'product-actions', product: product, section: section %}
     </uwp-product-actions>
-  {% endif %}
+  
 </div>
