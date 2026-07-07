@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "exit_intent_popup_8dBT63": {
+      "type": "exit-intent-popup",
+      "name": "Exit intent popup",
+      "settings": {
+        "admin_label": "Exit intent popup section",
+        "heading": "Wait! Before you go 👀",
+        "description": "Get 10% off your first order when you join our newsletter.",
+        "email_placeholder": "Enter your email",
+        "button_label": "Get Discount",
+        "success_message": "Thanks! Check your email for the discount 🎉"
+      }
+    },
     "main": {
       "type": "product",
       "blocks": {
@@ -243,6 +255,8 @@
         "show_sku": true,
         "show_vat_badge": true,
         "show_free_sample_label": true,
+        "show_price": true,
+        "show_call_to_action": true,
         "contact_form_html": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
         "lead_time_icon": "shopify://shop_images/dark-delivery-icon.svg",
         "lead_time_text": "Delivered",
@@ -316,6 +330,7 @@
     }
   },
   "order": [
+    "exit_intent_popup_8dBT63",
     "main",
     "ai_product_recommendations_FjkdYa",
     "product_blocks_tncMV6"
