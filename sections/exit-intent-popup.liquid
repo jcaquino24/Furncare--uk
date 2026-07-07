@@ -155,16 +155,24 @@
     return;
   }
 
-  var storageKey = 'exitIntentPopupShown';
+  var storageKey = 'exitIntentPopupTimestamp';
   var shown = localStorage.getItem(storageKey);
+  var now = Date.now();
 
   if (shown) {
-    return;
+    var shownAt = parseInt(shown, 10);
+    if (!isNaN(shownAt) && now - shownAt < 10000) {
+      return;
+    }
   }
 
   function showPopup() {
     popup.classList.add('is-open');
-    localStorage.setItem(storageKey, 'true');
+    try {
+      localStorage.setItem(storageKey, String(Date.now()));
+    } catch (e) {
+      // ignore storage errors
+    }
   }
 
   function hidePopup() {
