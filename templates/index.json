@@ -9,18 +9,6 @@
  */
 {
   "sections": {
-    "exit_intent_popup_U77VBL": {
-      "type": "exit-intent-popup",
-      "name": "Exit intent popup",
-      "settings": {
-        "admin_label": "Exit intent popup section",
-        "heading": "Wait! Before you go 👀",
-        "description": "Get 10% off your first order when you join our newsletter.",
-        "email_placeholder": "Enter your email",
-        "button_label": "Get Discount",
-        "success_message": "Thanks! Check your email for the discount 🎉"
-      }
-    },
     "image_video_banner_XGAaBn": {
       "type": "image-video-banner",
       "blocks": {
@@ -1400,7 +1388,6 @@
     }
   },
   "order": [
-    "exit_intent_popup_U77VBL",
     "image_video_banner_XGAaBn",
     "custom_dynamic_grid_Kpa3yD",
     "custom_featured_product_RUTtwF",
