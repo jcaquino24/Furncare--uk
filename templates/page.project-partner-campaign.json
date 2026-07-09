@@ -570,11 +570,36 @@
             "metric_text": "",
             "reverse_layout": true
           }
+        },
+        "case_ARWMyd": {
+          "type": "case",
+          "settings": {
+            "tab_label": "Chapel View",
+            "kicker": "CASE STUDIES",
+            "title": "Chapel View",
+            "copy": "Chapel View in South Yorkshire was refurbished for Wood Care Group, a longstanding Furncare customer and family-run care provider. Although not a dedicated dementia unit, the home plays an important role alongside nearby Riverside and Field View, offering support and respite care in a refreshed, welcoming environment. The brief called for interiors with confidence and character, taking inspiration from bold wall coverings and balancing them with warm, practical finishes.\n<br>\n<br>\nWe worked closely with Wood Care Group from the initial site visit through to floorplans, room layouts, moodboards and costings. Bespoke faux leather upholstery was used throughout to create a more tactile, organic feel, while details such as Mountain Oak and Mussel-finished dining room cabinetry helped give each space its own identity. Our team supplied and installed furniture, seating, curtains, blinds and soft furnishings across the lounges, dining room, cinema and ‘Pub’, coordinating delivery around the construction team so the refurbishment could be completed on schedule without closing areas of the home.",
+            "metric_1": "",
+            "metric_label_1": "",
+            "metric_2": "",
+            "metric_label_2": "",
+            "metric_3": "",
+            "metric_label_3": "",
+            "metric_4": "",
+            "metric_label_4": "",
+            "image": "shopify://shop_images/Dining_Room_-_Chapel_View_42_of_60.jpg",
+            "quote": "",
+            "source": "",
+            "metrics_layout": "repeat(2, 1fr)",
+            "metric_bg": "",
+            "metric_text": "",
+            "reverse_layout": true
+          }
         }
       },
       "block_order": [
         "case_9Ejkmw",
-        "case_x33G3z"
+        "case_x33G3z",
+        "case_ARWMyd"
       ],
       "name": "Furncare Case Studies",
       "settings": {
