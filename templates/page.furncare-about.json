@@ -583,7 +583,7 @@
           "settings": {
             "number": "7000+",
             "label": "Deliveries every year",
-            "copy": ""
+            "copy": "Delivering furniture to care environments across the UK, every working day."
           }
         },
         "stat_1": {
@@ -598,8 +598,8 @@
           "type": "stat",
           "settings": {
             "number": "Norfolk",
-            "label": "Wide",
-            "copy": ""
+            "label": "Manufacturing facilities",
+            "copy": "Designing and manufacturing specialist furniture from our Norfolk hubs."
           }
         },
         "stat_3": {
@@ -615,7 +615,7 @@
           "settings": {
             "number": "600+",
             "label": "Care providers",
-            "copy": ""
+            "copy": "Trusted by care providers nationwide to support spaces for residents, staff and visitors."
           }
         }
       },
