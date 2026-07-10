@@ -232,7 +232,7 @@
         "tab_radius": 16,
         "metric_bg": "#c3c0b0",
         "metric_text": "#262520",
-        "metric_radius": 40,
+        "metric_radius": 22,
         "metrics_columns": 1,
         "quote_bg": "#f9f7f0",
         "quote_text": "#262252",
@@ -479,7 +479,7 @@
         "video_hosted": "shopify://files/videos/Old Malton Case Study.mp4",
         "external_video_url": "",
         "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"d18d228e-db98-4e53-9ed1-746169e0c1a3\" data-portal-id=\"145723791\"></div>",
-        "padding_top": 70,
+        "padding_top": 90,
         "padding_bottom": 60
       }
     },
@@ -508,6 +508,7 @@
         "heading_H9pqAU",
         "tagline_W8ACai"
       ],
+      "disabled": true,
       "name": "Rich Text",
       "settings": {
         "id_anchor": "refurbishment",
@@ -603,6 +604,7 @@
         "case_x33G3z",
         "case_ARWMyd"
       ],
+      "disabled": true,
       "name": "Furncare Case Studies",
       "settings": {
         "enable_reveal": true,
@@ -682,6 +684,7 @@
         "card_AmdbMy",
         "card_hent3W"
       ],
+      "disabled": true,
       "name": "Furncare audience advanced",
       "settings": {
         "id_anchor": "",
