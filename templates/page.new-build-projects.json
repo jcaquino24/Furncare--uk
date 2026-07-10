@@ -236,6 +236,41 @@
         "icon_hover_scale": 108
       }
     },
+    "blocks_GifaU8": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ed0e5ef_mdyM9F": {
+          "type": "ai_gen_block_ed0e5ef",
+          "settings": {
+            "image_width": 400,
+            "image_height": 440,
+            "image_gap": 24,
+            "vertical_padding": 40,
+            "border_radius": 6,
+            "scroll_speed": 100,
+            "background_color": "#f9f7f0",
+            "image_1": "shopify://shop_images/P1044763.jpg",
+            "image_2": "shopify://shop_images/P1044676.jpg",
+            "image_3": "shopify://shop_images/Bedrooms_7_897770f1-b15f-4e4d-8701-81116150c553.jpg",
+            "image_4": "shopify://shop_images/Bistro_Area_7_b264746f-d24e-4ad9-8fc7-7eac1e2a1f95.jpg",
+            "image_5": "shopify://shop_images/Lounge_One_7_f25d4a1e-7a19-4cc9-aadb-1b84f0a76fa4.jpg",
+            "image_6": "shopify://shop_images/Furncare_GoogleBusiness_8.jpg",
+            "image_7": "shopify://shop_images/Corridor_28.jpg",
+            "image_8": "shopify://shop_images/PREG2455.jpg",
+            "image_9": "shopify://shop_images/Lounge_One_12.jpg",
+            "image_10": "shopify://shop_images/P1090896-2-HDR.jpg",
+            "image_11": "shopify://shop_images/Challenging_Garden.jpg",
+            "image_12": "shopify://shop_images/P1044730.jpg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ed0e5ef_mdyM9F"
+      ],
+      "name": "Image marquee",
+      "settings": {}
+    },
     "content_blocks_tBU6Y9": {
       "type": "content-blocks",
       "blocks": {
@@ -270,11 +305,28 @@
             "link": "shopify://blogs/news/old-malton",
             "gradient_overlay": "dark"
           }
+        },
+        "tab1_Ea7KVi": {
+          "type": "tab1",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/P1044648.jpg",
+            "text": "Elm Lodge",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
         }
       },
       "block_order": [
         "tab1_Cd376b",
-        "tab1_3FVEz6"
+        "tab1_3FVEz6",
+        "tab1_Ea7KVi"
       ],
       "name": "Content blocks",
       "settings": {
@@ -614,41 +666,6 @@
         "secondary_button_hover_color": "#243222",
         "secondary_button_hover_border": "#f9f7f0"
       }
-    },
-    "blocks_GifaU8": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_ed0e5ef_mdyM9F": {
-          "type": "ai_gen_block_ed0e5ef",
-          "settings": {
-            "image_width": 400,
-            "image_height": 440,
-            "image_gap": 24,
-            "vertical_padding": 40,
-            "border_radius": 6,
-            "scroll_speed": 100,
-            "background_color": "#f9f7f0",
-            "image_1": "shopify://shop_images/P1044763.jpg",
-            "image_2": "shopify://shop_images/P1044676.jpg",
-            "image_3": "shopify://shop_images/Bedrooms_7_897770f1-b15f-4e4d-8701-81116150c553.jpg",
-            "image_4": "shopify://shop_images/Bistro_Area_7_b264746f-d24e-4ad9-8fc7-7eac1e2a1f95.jpg",
-            "image_5": "shopify://shop_images/Lounge_One_7_f25d4a1e-7a19-4cc9-aadb-1b84f0a76fa4.jpg",
-            "image_6": "shopify://shop_images/Furncare_GoogleBusiness_8.jpg",
-            "image_7": "shopify://shop_images/Corridor_28.jpg",
-            "image_8": "shopify://shop_images/PREG2455.jpg",
-            "image_9": "shopify://shop_images/Lounge_One_12.jpg",
-            "image_10": "shopify://shop_images/P1090896-2-HDR.jpg",
-            "image_11": "shopify://shop_images/Challenging_Garden.jpg",
-            "image_12": "shopify://shop_images/P1044730.jpg"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_ed0e5ef_mdyM9F"
-      ],
-      "name": "Image marquee",
-      "settings": {}
     },
     "furncare_about_statement_NBFndQ": {
       "type": "furncare-about-statement",
