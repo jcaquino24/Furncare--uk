@@ -123,7 +123,7 @@
     "statement": {
       "type": "furncare-about-statement",
       "settings": {
-        "eyebrow": "More than furniture supplier",
+        "eyebrow": "More than a furniture supplier",
         "heading": "An end-to-end project partner.",
         "copy": "<p>Large-scale care projects demand more than products on a schedule. They need considered specification, dependable lead times, practical sector knowledge and a team that understands how care environments really work.</p>",
         "second_copy": "<p>That's where Furncare comes in.</p>",
@@ -570,7 +570,7 @@
     "proof": {
       "type": "furncare-about-proof",
       "blocks": {
-        "stat_1": {
+        "stat_63ii6t": {
           "type": "stat",
           "settings": {
             "number": "20+",
@@ -578,7 +578,15 @@
             "copy": "Supporting care environments with specialist furniture knowledge."
           }
         },
-        "stat_2": {
+        "stat_FCJyNd": {
+          "type": "stat",
+          "settings": {
+            "number": "7000+",
+            "label": "Deliveries every year",
+            "copy": ""
+          }
+        },
+        "stat_1": {
           "type": "stat",
           "settings": {
             "number": "UK",
@@ -586,24 +594,34 @@
             "copy": "Project support and delivery across care-sector locations."
           }
         },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "Norfolk",
+            "label": "Wide",
+            "copy": ""
+          }
+        },
         "stat_3": {
           "type": "stat",
           "settings": {
-            "number": "5-Day",
-            "label": "Options",
+            "number": "£1.5 million",
+            "label": "Stockholding",
             "copy": "Quick-delivery ranges available for time-sensitive requirements."
           }
         },
         "stat_4": {
           "type": "stat",
           "settings": {
-            "number": "2",
-            "label": "Core sectors",
-            "copy": "Elderly Care/Later Living and Challenging Environments expertise."
+            "number": "600+",
+            "label": "Care providers",
+            "copy": ""
           }
         }
       },
       "block_order": [
+        "stat_63ii6t",
+        "stat_FCJyNd",
         "stat_1",
         "stat_2",
         "stat_3",
@@ -699,7 +717,7 @@
         "left_copy": "Warm, practical and durable furniture that helps care spaces feel comfortable, considered and welcoming.",
         "right_icon": "users",
         "right_title": "Elevating Lives",
-        "right_copy": "Project-ready support, clear communication and dependable supply for teams managing complex environments.",
+        "right_copy": "Creating comfortable, supportive environments that enhance residents’ everyday experiences, wellbeing and quality of life.",
         "background_gradient": "",
         "background_color": "#f9f7f0",
         "max_width": 1280,
@@ -777,13 +795,13 @@
         "left_title_color": "#243222",
         "left_copy_color": "#243222",
         "left_icon_background": "#998c4d",
-        "left_icon_color": "#f9f7f0",
+        "left_icon_color": "#243222",
         "right_panel_bg": "#859488",
         "right_panel_text": "#ffffff",
         "right_title_color": "#243222",
         "right_copy_color": "#243222",
         "right_icon_background": "#859488",
-        "right_icon_color": "#f9f7f0"
+        "right_icon_color": "#243222"
       }
     },
     "furncare_about_pathways_RVaAzR": {
@@ -874,8 +892,8 @@
         "video_desktop": "shopify://files/videos/Furncare Brand Film.mp4",
         "video_mobile": "shopify://files/videos/Furncare Brand Film.mp4",
         "show_controls": true,
-        "mute_video": true,
-        "autoplay_video": true,
+        "mute_video": false,
+        "autoplay_video": false,
         "show_overlay": false,
         "overlay_background": "",
         "colour_scheme": "light",
