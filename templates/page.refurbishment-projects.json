@@ -17,8 +17,10 @@
         "copy": "Every care home reaches a point where its spaces need lease of life; refresh your space with furniture that works beautifully in real care environments. From single-room updates to larger phased refurbishments, we’ll help you choose contemporary, comfortable and durable pieces that make a visible difference without unnecessary disruption.",
         "primary_label": "Start a project",
         "primary_link": "shopify://pages/contact-us",
+        "scroll_target": "",
         "secondary_label": "",
         "secondary_link": "https://www.furncare.co.uk/blogs/news/tagged/case-study",
+        "secondary_scroll_target": "",
         "show_rotator": false,
         "animated_prefix": "",
         "animated_words": "",
@@ -118,122 +120,6 @@
         "secondary_button_hover_border": "#f9f7f0"
       }
     },
-    "furncare_about_audience_iV9TrC": {
-      "type": "furncare-about-audience",
-      "blocks": {
-        "card_UbGCNc": {
-          "type": "card",
-          "settings": {
-            "icon": "users",
-            "title": "Practical project support",
-            "copy": "We help you make confident decisions around furniture, finishes, layouts and timelines, with guidance shaped by care-sector experience."
-          }
-        },
-        "card_ezqN7r": {
-          "type": "card",
-          "settings": {
-            "icon": "sofa",
-            "title": "Seamless interiors",
-            "copy": "Introduce new furniture and finishes that sit naturally alongside your current scheme, giving spaces a refreshed, cohesive feel."
-          }
-        },
-        "card_AmdbMy": {
-          "type": "card",
-          "settings": {
-            "icon": "clipboard",
-            "title": "Design-led solutions",
-            "copy": "Choose from coordinated fabrics, finishes and furniture options that bring warmth, style and practicality into your care environment."
-          }
-        },
-        "card_hent3W": {
-          "type": "card",
-          "settings": {
-            "icon": "truck",
-            "title": "Quick delivery",
-            "copy": "Need your refurbishment in a short space of time? Our quick delivery range helps you refresh spaces without unnecessary delays."
-          }
-        }
-      },
-      "block_order": [
-        "card_UbGCNc",
-        "card_ezqN7r",
-        "card_AmdbMy",
-        "card_hent3W"
-      ],
-      "name": "Furncare audience advanced",
-      "settings": {
-        "eyebrow": "tailored refurbishment support",
-        "heading": "Refresh your care spaces with confidence.",
-        "background_gradient": "",
-        "background_color": "#f9f7f0",
-        "max_width": 1280,
-        "gutter_desktop": 24,
-        "gutter_mobile": 16,
-        "padding_top": 96,
-        "padding_bottom": 96,
-        "padding_mobile": 72,
-        "padding_bottom_mobile": 72,
-        "section_gap": 48,
-        "section_gap_mobile": 36,
-        "header_max_width": 1200,
-        "content_max_width": 960,
-        "text_alignment": "left",
-        "section_border_color": "#f9f7f0",
-        "border_top_width": 0,
-        "border_bottom_width": 0,
-        "heading_size_desktop": 52,
-        "heading_size_mobile": 36,
-        "heading_weight": 400,
-        "heading_line_height": 100,
-        "heading_letter_spacing": 0,
-        "heading_max_width": 1100,
-        "copy_size_desktop": 18,
-        "copy_size_mobile": 16,
-        "copy_weight": 400,
-        "copy_line_height": 170,
-        "copy_max_width": 760,
-        "copy_margin_top": 28,
-        "eyebrow_size": 13,
-        "eyebrow_weight": 700,
-        "eyebrow_letter_spacing": 22,
-        "eyebrow_transform": "uppercase",
-        "eyebrow_margin_bottom": 16,
-        "text_color": "#0c0a09",
-        "heading_color": "#0c0a09",
-        "copy_color": "#57534e",
-        "eyebrow_color": "#78716c",
-        "enable_reveal": true,
-        "reveal_distance": 32,
-        "reveal_duration": 760,
-        "card_background": "#c3c0b0",
-        "card_heading_color": "#0c0a09",
-        "card_copy_color": "#262520",
-        "card_border_color": "#e7e5e4",
-        "card_border_width": 1,
-        "card_radius": 32,
-        "card_padding": 28,
-        "card_padding_mobile": 24,
-        "card_shadow_opacity": 6,
-        "card_hover_shadow_opacity": 14,
-        "card_hover_lift": 4,
-        "card_title_size": 20,
-        "card_title_weight": 700,
-        "card_copy_size": 15,
-        "card_copy_line_height": 170,
-        "card_copy_margin_top": 16,
-        "grid_gap": 20,
-        "columns_desktop": "4",
-        "columns_tablet": "2",
-        "columns_mobile": "1",
-        "icon_background": "#839488",
-        "icon_color": "#292524",
-        "icon_size": 48,
-        "icon_svg_size": 23,
-        "icon_radius": 16,
-        "icon_margin_bottom": 32,
-        "icon_hover_scale": 108
-      }
-    },
     "blog_article_row_4iJ6Ye": {
       "type": "blog-article-row",
       "blocks": {
@@ -322,6 +208,7 @@
       ],
       "disabled": true,
       "settings": {
+        "id_anchor": "",
         "eyebrow": "Who we support",
         "heading": "Built around the teams delivering care environments.",
         "background_gradient": "",
@@ -905,7 +792,6 @@
   },
   "order": [
     "hero",
-    "furncare_about_audience_iV9TrC",
     "blog_article_row_4iJ6Ye",
     "audience",
     "proof",
