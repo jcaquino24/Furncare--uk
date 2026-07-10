@@ -126,7 +126,7 @@
         "case_RrqegD": {
           "type": "case",
           "settings": {
-            "tab_label": "For Interior Designers",
+            "tab_label": "",
             "kicker": "",
             "title": "Your scheme, made care-ready.",
             "copy": "From bespoke furniture to fabric and finish options, we're to help you carry your scheme through the full care environment, keeping each space consistent while making sure every piece works for daily use.",
@@ -149,6 +149,7 @@
         },
         "case_hMhd8q": {
           "type": "case",
+          "disabled": true,
           "settings": {
             "tab_label": "For Managers",
             "kicker": "",
@@ -173,6 +174,7 @@
         },
         "case_VUiE4k": {
           "type": "case",
+          "disabled": true,
           "settings": {
             "tab_label": "For Operators",
             "kicker": "",
@@ -222,10 +224,10 @@
         "padding_bottom": 25,
         "container_width": 1360,
         "grid_gap": 42,
-        "tab_bg": "#c3c0b0",
-        "tab_text": "#333",
-        "tab_active_bg": "#839488",
-        "tab_active_text": "#262520",
+        "tab_bg": "#F9F7F0",
+        "tab_text": "#F9F7F0",
+        "tab_active_bg": "#F9F7F0",
+        "tab_active_text": "#F9F7F0",
         "tab_border": "#f9f7f0",
         "tab_radius": 16,
         "metric_bg": "#c3c0b0",
@@ -467,8 +469,8 @@
         "bg_color": "#f9f6f0",
         "max_width": 2600,
         "subtitle": "",
-        "title": "Manor Park",
-        "description": "<p>One of our largest newbuild transformations, Manor Park was delivered from design support through to a complete, resident-ready fit-out.</p><p>Across 80 bedrooms and shared spaces, our team placed 5,500 items within a 10-day installation window, creating warm, practical interiors for everyday care.</p><p>Inspired by this project? Send us a message using the form below.</p>",
+        "title": "Manor Park Case Study",
+        "description": "<p>One of our new build transformations, Manor Park was delivered from specification support through to a complete, resident-ready fit-out.</p><p>ㅤ</p><p>Across 80 bedrooms and shared spaces, our team placed 5,500 items within a 10-day installation window, creating warm, practical interiors for everyday care.</p><p>ㅤ</p><p>Inspired by this project? Send us a message using the form below.</p>",
         "phone": "",
         "email": "",
         "facebook_url": "",
