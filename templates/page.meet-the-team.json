@@ -582,12 +582,24 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
+        },
+        "image_card_rfHNGF": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
         "image_card_LVEY4X",
         "image_card_7UJEXQ",
-        "image_card_WXVh6k"
+        "image_card_WXVh6k",
+        "image_card_rfHNGF"
       ],
       "name": "Image text blocks",
       "settings": {
