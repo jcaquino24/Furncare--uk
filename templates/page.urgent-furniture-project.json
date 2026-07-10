@@ -17,8 +17,10 @@
         "copy": "Whether you’re replacing damaged items, responding to an unexpected need or working to a tight deadline, our team can help you understand the options available and move quickly towards a practical solution. We’ll guide you through suitable furniture choices, availability and next steps, helping you get the support you need without adding unnecessary pressure.",
         "primary_label": "Shop Quick Delivery Products",
         "primary_link": "shopify://collections/quick-delivery-furniture-for-care-environments",
+        "scroll_target": "",
         "secondary_label": "Call our Team",
         "secondary_link": "tel:01603664900",
+        "secondary_scroll_target": "",
         "show_rotator": false,
         "animated_prefix": "",
         "animated_words": "",
@@ -321,6 +323,7 @@
       ],
       "disabled": true,
       "settings": {
+        "id_anchor": "",
         "eyebrow": "Who we support",
         "heading": "Built around the teams delivering care environments.",
         "background_gradient": "",
