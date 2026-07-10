@@ -45,7 +45,7 @@
             {%- endif -%}
 
             {%- if section.settings.secondary_label != blank -%}
-              <a class="fa-button fa-button--secondary" {%- unless section.settings.secondary_scroll_target != blank  -%} href="{{ section.settings.secondary_link }}"{%- endunless -%} data-scroll-to="{{ section.settings.secondary_scroll_target }}">
+              <a class="fa-button fa-button--secondary" {%- unless section.settings.secondary_scroll_target != blank  -%} href="{{ section.settings.secondary_link }}"{%- endunless -%} {%- if section.settings.secondary_scroll_target != blank -%}data-scroll-to="{{ section.settings.secondary_scroll_target }}{%- endif -%}">
                 {{ section.settings.secondary_label | escape }}
               </a>
             {%- endif -%}
