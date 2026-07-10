@@ -493,6 +493,7 @@
         "pathway_3",
         "pathway_4"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "Project pathways",
         "heading": "Tell us what you're planning.",
