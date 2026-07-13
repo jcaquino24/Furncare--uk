@@ -342,7 +342,7 @@
         "step_1": {
           "type": "step",
           "settings": {
-            "number": "01",
+            "number": "02",
             "title": "Assess",
             "copy": "We visit the site to review the space, take key measurements and identify any practical considerations."
           }
@@ -350,7 +350,7 @@
         "step_2": {
           "type": "step",
           "settings": {
-            "number": "02",
+            "number": "03",
             "title": "Specify",
             "copy": "We help shape the right furniture selections across rooms, schemes and finishes."
           }
@@ -358,7 +358,7 @@
         "step_3": {
           "type": "step",
           "settings": {
-            "number": "03",
+            "number": "04",
             "title": "Coordinate",
             "copy": "We support the project with clear communication, product information and delivery planning."
           }
@@ -366,7 +366,7 @@
         "step_4": {
           "type": "step",
           "settings": {
-            "number": "04",
+            "number": "05",
             "title": "Deliver",
             "copy": "We keep furniture supply aligned with project timelines and operational needs."
           }
@@ -374,7 +374,7 @@
         "step_5": {
           "type": "step",
           "settings": {
-            "number": "05",
+            "number": "06",
             "title": "Support",
             "copy": "We remain on hand for future phases, replacements and ongoing requirements."
           }
@@ -587,26 +587,10 @@
             "copy": "Delivering furniture to care environments across the UK, every working day."
           }
         },
-        "stat_1": {
-          "type": "stat",
-          "settings": {
-            "number": "UK",
-            "label": "Wide",
-            "copy": "Project support and delivery across care-sector locations."
-          }
-        },
-        "stat_2": {
-          "type": "stat",
-          "settings": {
-            "number": "Norfolk",
-            "label": "Manufacturing facilities",
-            "copy": "Designing and manufacturing specialist furniture from our Norfolk hubs."
-          }
-        },
         "stat_3": {
           "type": "stat",
           "settings": {
-            "number": "£1.5 million",
+            "number": "£1.8 million",
             "label": "Stockholding",
             "copy": "Quick-delivery ranges available for time-sensitive requirements."
           }
@@ -623,8 +607,6 @@
       "block_order": [
         "stat_63ii6t",
         "stat_FCJyNd",
-        "stat_1",
-        "stat_2",
         "stat_3",
         "stat_4"
       ],
