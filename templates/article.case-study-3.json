@@ -835,7 +835,7 @@
       "settings": {
         "id_anchor": "",
         "max_width_desktop": 100,
-        "section_padding": "--spacing-4xl",
+        "section_padding": "--spacing-6xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": false,
