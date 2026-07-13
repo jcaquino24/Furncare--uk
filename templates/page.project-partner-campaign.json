@@ -224,10 +224,10 @@
         "padding_bottom": 25,
         "container_width": 1380,
         "grid_gap": 42,
-        "tab_bg": "#F9F7F0",
-        "tab_text": "#F9F7F0",
-        "tab_active_bg": "#F9F7F0",
-        "tab_active_text": "#F9F7F0",
+        "tab_bg": "#f9f7f0",
+        "tab_text": "#f9f7f0",
+        "tab_active_bg": "#f9f7f0",
+        "tab_active_text": "#f9f7f0",
         "tab_border": "#f9f7f0",
         "tab_radius": 16,
         "metric_bg": "#c3c0b0",
@@ -352,15 +352,7 @@
           "settings": {
             "icon": "users",
             "title": "Specification from the start",
-            "copy": "Make furniture decisions early, with support around layouts, finishes, fabrics and practical care requirements from the beginning of your project."
-          }
-        },
-        "card_ByUftT": {
-          "type": "card",
-          "settings": {
-            "icon": "sofa",
-            "title": "Complete coordination",
-            "copy": "Create a cohesive furniture scheme across bedrooms, lounges, dining spaces and shared areas, with pieces selected to feel calm, consistent and beautifully considered."
+            "copy": "We get involved early, so furniture decisions are shaped around the project programme and the realities of construction."
           }
         },
         "card_P6BcN4": {
@@ -368,7 +360,15 @@
           "settings": {
             "icon": "clipboard",
             "title": "Care-ready design choices",
-            "copy": "Choose furniture, fabrics and finishes that bring quality and comfort, while standing up to everyday care environment demands."
+            "copy": "Your design vision stays central, with furniture choices that support the look and feel of each space while responding to the demands of everyday care."
+          }
+        },
+        "card_ByUftT": {
+          "type": "card",
+          "settings": {
+            "icon": "sofa",
+            "title": "Complete coordination",
+            "copy": "Each space is considered as part of the wider home, creating a scheme that feels consistent and calm for residents."
           }
         },
         "card_3xptrW": {
@@ -376,14 +376,14 @@
           "settings": {
             "icon": "truck",
             "title": "White glove delivery",
-            "copy": "Our in-house delivery team gives you complete flexibility around timings,  with every piece delivered, unpacked, assembled and placed throughout the home, ready for open day."
+            "copy": "Your furniture stays aligned with the project programme, with every piece delivered and assembled ready for opening day - plus support in place for future phases and  ongoing needs."
           }
         }
       },
       "block_order": [
         "card_7yCDzJ",
-        "card_ByUftT",
         "card_P6BcN4",
+        "card_ByUftT",
         "card_3xptrW"
       ],
       "name": "Furncare audience advanced",
