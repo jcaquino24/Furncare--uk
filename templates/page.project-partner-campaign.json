@@ -261,7 +261,7 @@
         "gutter_desktop": 24,
         "gutter_mobile": 16,
         "padding_top": 96,
-        "padding_bottom": 96,
+        "padding_bottom": 176,
         "padding_mobile": 72,
         "padding_bottom_mobile": 72,
         "section_gap": 48,
@@ -360,7 +360,7 @@
           "settings": {
             "icon": "clipboard",
             "title": "Care-ready design choices",
-            "copy": "Your design vision stays central, with furniture choices that support the look and feel of each space while responding to the demands of everyday care."
+            "copy": "Your design vision stays central - furniture choices that support the look and feel of each space, while responding to the demands of everyday care."
           }
         },
         "card_ByUftT": {
@@ -1060,7 +1060,7 @@
         "gutter_desktop": 24,
         "gutter_mobile": 16,
         "padding_top": 96,
-        "padding_bottom": 96,
+        "padding_bottom": 156,
         "padding_mobile": 72,
         "padding_bottom_mobile": 72,
         "section_gap": 48,
