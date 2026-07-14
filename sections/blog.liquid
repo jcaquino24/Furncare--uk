@@ -1,25 +1,69 @@
 {% paginate blog.articles by section.settings.blog_posts_per_page %}
+
+  {%- comment -%} determine if a tab block matches the current path {%- endcomment -%}
+  {%- assign selected_block = nil -%}
+  {%- for block in section.blocks -%}
+    {%- assign tab_url_raw = block.settings.tab_url | default: '' -%}
+    {%- assign tab_url_path = tab_url_raw | remove: shop.url -%}
+    {%- assign is_match = false -%}
+
+    {%- if tab_url_raw contains request.path -%}
+      {%- assign is_match = 'true' -%}
+    {%- elsif tab_url_path == request.path -%}
+      {%- assign is_match = 'true' -%}
+    {%- elsif tab_url_raw contains '/tagged/' and request.path contains '/tagged/' -%}
+      {%- assign tab_last = tab_url_raw | split: '/' | last -%}
+      {%- assign req_last = request.path | split: '/' | last -%}
+      {%- if tab_last == req_last -%}
+        {%- assign is_match = 'true' -%}
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if is_match == 'true' -%}
+      {%- assign selected_block = block -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+
   <div class="blog colour-scheme--base-white-01">
     <div class="container">
       <div class="blog__intro">
         <div class="blog__intro-title">
           <h1>
-            {{ blog.title }}
+            {%- if selected_block and selected_block.settings.tab_title != blank -%}
+              {{ selected_block.settings.tab_title }}
+            {%- else -%}
+              {{ blog.title }}
+            {%- endif -%}
           </h1>
         </div>
         <div class="blog__intro-content body-lg text-center">
-          {{ section.settings.blog_intro }}
+          {%- if selected_block and selected_block.settings.tab_description != blank -%}
+            {{ selected_block.settings.tab_description }}
+          {%- else -%}
+            {{ section.settings.blog_intro }}
+          {%- endif -%}
         </div>
         {% if section.blocks.size > 0 %}
           <div class="blog__intro-tabs-wrapper">
             <div class="blog__intro-tabs blog__intro-tabs--desktop">
               {% for block in section.blocks %}
                 <div class="blog__intro-tab">
-                  {% assign tab_url = block.settings.tab_url
-                    | remove: shop.url
-                  %}
+                  {%- assign tab_url_raw = block.settings.tab_url | default: '' -%}
+                  {%- assign tab_url_path = tab_url_raw | remove: shop.url -%}
+                  {%- assign is_active = false -%}
+                  {%- if tab_url_raw contains request.path or tab_url_path == request.path -%}
+                    {%- assign is_active = true -%}
+                  {%- elsif tab_url_raw contains '/tagged/' and request.path contains '/tagged/' -%}
+                    {%- assign tab_last = tab_url_raw | split: '/' | last -%}
+                    {%- assign req_last = request.path | split: '/' | last -%}
+                    {%- if tab_last == req_last -%}
+                      {%- assign is_active = true -%}
+                    {%- endif -%}
+                  {%- endif -%}
+
                   <a
-                    class="blog__intro-tab-link button {% if tab_url == request.path %}active{% endif %}"
+                    class="blog__intro-tab-link button {% if is_active %}active{% endif %}"
                     href="{{ block.settings.tab_url }}"
                   >
                     {{ block.settings.tab_title }}
@@ -41,11 +85,21 @@
               >
                 {% for block in section.blocks %}
                   <swiper-slide class="blog__intro-slide">
-                    {% assign tab_url = block.settings.tab_url
-                      | remove: shop.url
-                    %}
+                    {%- assign tab_url_raw = block.settings.tab_url | default: '' -%}
+                    {%- assign tab_url_path = tab_url_raw | remove: shop.url -%}
+                    {%- assign is_active = false -%}
+                    {%- if tab_url_raw contains request.path or tab_url_path == request.path -%}
+                      {%- assign is_active = true -%}
+                    {%- elsif tab_url_raw contains '/tagged/' and request.path contains '/tagged/' -%}
+                      {%- assign tab_last = tab_url_raw | split: '/' | last -%}
+                      {%- assign req_last = request.path | split: '/' | last -%}
+                      {%- if tab_last == req_last -%}
+                        {%- assign is_active = true -%}
+                      {%- endif -%}
+                    {%- endif -%}
+
                     <a
-                      class="blog__intro-tab-link button {% if tab_url == request.path %}active{% endif %}"
+                      class="blog__intro-tab-link button {% if is_active %}active{% endif %}"
                       href="{{ block.settings.tab_url }}"
                     >
                       {{ block.settings.tab_title }}
@@ -132,6 +186,11 @@
           "type": "url",
           "id": "tab_url",
           "label": "Tab URL"
+        },
+        {
+          "type": "richtext",
+          "id": "tab_description",
+          "label": "Tab Description"
         }
       ]
     }
