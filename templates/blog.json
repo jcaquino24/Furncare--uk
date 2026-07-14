@@ -16,35 +16,40 @@
           "type": "tab",
           "settings": {
             "tab_title": "All Resources",
-            "tab_url": "shopify://blogs/news"
+            "tab_url": "shopify://blogs/news",
+            "tab_description": "<p>resources description</p>"
           }
         },
         "tab_e4TgKP": {
           "type": "tab",
           "settings": {
             "tab_title": "Case Study",
-            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/case-study"
+            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/case-study",
+            "tab_description": ""
           }
         },
         "tab_jdbnxx": {
           "type": "tab",
           "settings": {
             "tab_title": "Article",
-            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/article"
+            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/article",
+            "tab_description": ""
           }
         },
         "tab_mP7RQi": {
           "type": "tab",
           "settings": {
             "tab_title": "Video",
-            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/video"
+            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/video",
+            "tab_description": ""
           }
         },
         "tab_KBYrMH": {
           "type": "tab",
           "settings": {
             "tab_title": "News",
-            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/news"
+            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/news",
+            "tab_description": ""
           }
         }
       },
