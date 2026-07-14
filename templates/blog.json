@@ -33,13 +33,6 @@
             "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/article"
           }
         },
-        "tab_mP7RQi": {
-          "type": "tab",
-          "settings": {
-            "tab_title": "Video",
-            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/video"
-          }
-        },
         "tab_KBYrMH": {
           "type": "tab",
           "settings": {
@@ -52,7 +45,6 @@
         "tab_XDXNhU",
         "tab_e4TgKP",
         "tab_jdbnxx",
-        "tab_mP7RQi",
         "tab_KBYrMH"
       ],
       "settings": {
