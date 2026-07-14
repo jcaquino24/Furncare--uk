@@ -16,32 +16,28 @@
           "type": "tab",
           "settings": {
             "tab_title": "All Resources",
-            "tab_url": "shopify://blogs/news",
-            "tab_description": ""
+            "tab_url": "shopify://blogs/news"
           }
         },
         "tab_e4TgKP": {
           "type": "tab",
           "settings": {
             "tab_title": "Case Study",
-            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/case-study",
-            "tab_description": "<p>Real care environments, thoughtfully transformed. Explore our completed projects.</p>"
+            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/case-study"
           }
         },
         "tab_jdbnxx": {
           "type": "tab",
           "settings": {
             "tab_title": "Article",
-            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/article",
-            "tab_description": "<p>Expert insight, practical guidance and fresh thinking to help you create better care spaces.</p>"
+            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/article"
           }
         },
         "tab_KBYrMH": {
           "type": "tab",
           "settings": {
             "tab_title": "News",
-            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/news",
-            "tab_description": "<p>The latest updates from Furncare, including new products, partnerships, events and company developments.</p>"
+            "tab_url": "https://furncare-uk.myshopify.com/blogs/news/tagged/news"
           }
         }
       },
