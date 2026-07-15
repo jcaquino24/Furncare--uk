@@ -85,13 +85,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": true,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "image_text_blocks_xYxbk8": {
@@ -826,14 +829,56 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
         "enable_animation": true,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
+    },
+    "image_video_banner_yi48qh": {
+      "type": "image-video-banner",
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 710,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "video",
+        "video_desktop": "shopify://files/videos/Old Malton Case Study.mp4",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "light",
+        "content_position": "center-center",
+        "content_alignment": "left"
+      }
+    },
+    "blocks_HErXQc": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_YE9bam": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 75,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#F9F7F0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_YE9bam"
+      ],
+      "name": "Spacer",
+      "settings": {}
     },
     "image_text_zXnynf": {
       "type": "image-text",
@@ -863,7 +908,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "image_text_nRYrfd": {
@@ -894,7 +942,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "image_text_FgCCAX": {
@@ -925,7 +976,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "richtext_JgQX8i": {
@@ -946,14 +1000,37 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
         "enable_animation": true,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
+    },
+    "1784102920a76ec080": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_94882ee_7PARYz": {
+          "type": "ai_gen_block_94882ee",
+          "settings": {
+            "image": "shopify://shop_images/Media_70da92e5-54f2-4bca-bb1e-45fbb38e34ee.jpg",
+            "desktop_width_percent": 75,
+            "border_width": 45,
+            "border_color": "#F9F7F0",
+            "border_radius": 90
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_94882ee_7PARYz"
+      ],
+      "settings": {}
     },
     "1769170984a6172538": {
       "type": "_blocks",
@@ -971,6 +1048,7 @@
       "block_order": [
         "ai_gen_block_5d6fd2d_PWkt6q"
       ],
+      "disabled": true,
       "settings": {}
     },
     "richtext_brEcwg": {
@@ -1011,13 +1089,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-6xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": false,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     }
   },
@@ -1027,10 +1108,13 @@
     "richtext_LTPVBd",
     "image_text_blocks_xYxbk8",
     "richtext_TDcVxF",
+    "image_video_banner_yi48qh",
+    "blocks_HErXQc",
     "image_text_zXnynf",
     "image_text_nRYrfd",
     "image_text_FgCCAX",
     "richtext_JgQX8i",
+    "1784102920a76ec080",
     "1769170984a6172538",
     "richtext_brEcwg"
   ]
