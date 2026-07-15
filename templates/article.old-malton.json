@@ -845,7 +845,7 @@
       "type": "image-video-banner",
       "name": "Image - Video Banner",
       "settings": {
-        "height_desktop": 710,
+        "height_desktop": 800,
         "height_mobile": 540,
         "maintain_aspect_ratio": false,
         "add_header_offset": false,
