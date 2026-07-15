@@ -838,7 +838,7 @@
         "optional_richtext": "",
         "small_container": false,
         "enable_see_more": false,
-        "see_more_max_height": 400
+        "see_more_max_height": 300
       }
     },
     "image_video_banner_yi48qh": {
@@ -846,12 +846,12 @@
       "name": "Image - Video Banner",
       "settings": {
         "height_desktop": 800,
-        "height_mobile": 540,
+        "height_mobile": 300,
         "maintain_aspect_ratio": false,
         "add_header_offset": false,
         "media_type": "video",
         "video_desktop": "shopify://files/videos/Old Malton Case Study.mp4",
-        "show_controls": false,
+        "show_controls": true,
         "mute_video": true,
         "autoplay_video": true,
         "show_overlay": false,
@@ -1091,7 +1091,7 @@
       "settings": {
         "id_anchor": "",
         "max_width_desktop": 100,
-        "section_padding": "--spacing-6xl",
+        "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": false,
@@ -1100,6 +1100,25 @@
         "enable_see_more": false,
         "see_more_max_height": 400
       }
+    },
+    "blocks_bBDtmY": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_FFFwfE": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 75,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#F9F7F0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_FFFwfE"
+      ],
+      "name": "Spacer",
+      "settings": {}
     }
   },
   "order": [
@@ -1116,6 +1135,7 @@
     "richtext_JgQX8i",
     "1784102920a76ec080",
     "1769170984a6172538",
-    "richtext_brEcwg"
+    "richtext_brEcwg",
+    "blocks_bBDtmY"
   ]
 }
