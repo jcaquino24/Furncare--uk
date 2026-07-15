@@ -589,13 +589,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-6xl",
         "text_alignment": "center",
         "colour_scheme": "green-01",
         "enable_animation": true,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "blog_article_row_8MhRNW": {
@@ -616,7 +619,7 @@
         "article_JyLBK7": {
           "type": "article",
           "settings": {
-            "article": "news/furncare-completes-installation-of-one-of-their-largest-ever-single-site-projects-for-ashton-group-1"
+            "article": "news/furncare-teams-up-with-bright-bay-design-to-furnish-stunning-new-care-home-elm-lodge"
           }
         },
         "article_tEF9Ve": {
@@ -726,13 +729,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": true,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "image_text_cqfzwp": {
