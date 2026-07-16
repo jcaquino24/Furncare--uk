@@ -12,8 +12,24 @@
     {%- elsif tab_url_path == request.path -%}
       {%- assign is_match = 'true' -%}
     {%- elsif tab_url_raw contains '/tagged/' and request.path contains '/tagged/' -%}
-      {%- assign tab_last = tab_url_raw | split: '/' | last -%}
-      {%- assign req_last = request.path | split: '/' | last -%}
+      {%- assign tab_clean = tab_url_raw | split: '?' | first -%}
+      {%- assign req_clean = request.path | split: '?' | first -%}
+      {%- assign tab_parts = tab_clean | split: '/' -%}
+      {%- assign req_parts = req_clean | split: '/' -%}
+      {%- assign tab_last = '' -%}
+      {%- for p in tab_parts reversed -%}
+        {%- if p != '' -%}
+          {%- assign tab_last = p -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- assign req_last = '' -%}
+      {%- for p in req_parts reversed -%}
+        {%- if p != '' -%}
+          {%- assign req_last = p -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
       {%- if tab_last == req_last -%}
         {%- assign is_match = 'true' -%}
       {%- endif -%}
@@ -65,6 +81,7 @@
                   <a
                     class="blog__intro-tab-link button {% if is_active %}active{% endif %}"
                     href="{{ block.settings.tab_url }}"
+                    style="cursor: pointer;"
                   >
                     {{ block.settings.tab_title }}
                   </a>
@@ -101,6 +118,7 @@
                     <a
                       class="blog__intro-tab-link button {% if is_active %}active{% endif %}"
                       href="{{ block.settings.tab_url }}"
+                      style="cursor: pointer;"
                     >
                       {{ block.settings.tab_title }}
                     </a>
