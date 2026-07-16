@@ -9,18 +9,6 @@
  */
 {
   "sections": {
-    "exit_intent_popup_8dBT63": {
-      "type": "exit-intent-popup",
-      "name": "Exit intent popup",
-      "settings": {
-        "admin_label": "Exit intent popup section",
-        "heading": "Wait! Before you go 👀",
-        "description": "Get 10% off your first order when you join our newsletter.",
-        "email_placeholder": "Enter your email",
-        "button_label": "Get Discount",
-        "success_message": "Thanks! Check your email for the discount 🎉"
-      }
-    },
     "main": {
       "type": "product",
       "blocks": {
@@ -133,7 +121,7 @@
         "cross_sell_h7YhAw": {
           "type": "cross_sell",
           "settings": {
-            "product_source": "rules",
+            "product_source": "manual",
             "trigger_products": [
               "30kg-parasol-base"
             ],
@@ -141,7 +129,7 @@
             "rule_upsell_products": [
               "acorn-set"
             ],
-            "target_collection": "elderly-care-tables",
+            "target_collection": "",
             "collection_upsell_products": [
               "15kg-parasol-base",
               "3-0m-parasol",
@@ -154,7 +142,7 @@
               "3-0m-parasol",
               "30kg-parasol-base"
             ],
-            "cross_sell_collection": "challenging-environments-bedroom-sets",
+            "cross_sell_collection": "",
             "exclude_current_product": true,
             "max_products": 8,
             "default_quantity": 1,
@@ -330,7 +318,6 @@
     }
   },
   "order": [
-    "exit_intent_popup_8dBT63",
     "main",
     "ai_product_recommendations_FjkdYa",
     "product_blocks_tncMV6"
