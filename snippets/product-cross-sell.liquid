@@ -1,0 +1,1438 @@
+<script src="{{ 'product-cross-sell.js' | asset_url }}" defer="defer"></script>
+{%- liquid
+  assign section_id = section | default: 'product'
+  assign source_is_variants = false
+assign source_products = block.settings.cross_sell_products
+assign show_block = true
+
+if block.settings.product_source == 'collection'
+  if block.settings.cross_sell_collection != blank
+    assign source_products = block.settings.cross_sell_collection.products
+  endif
+
+elsif block.settings.product_source == 'variants'
+  assign source_products = product.variants
+  assign source_is_variants = true
+
+elsif block.settings.product_source == 'collection_map'
+  assign show_block = false
+
+  if block.settings.target_collection != blank
+    for col in product.collections
+      if col.handle == block.settings.target_collection.handle
+        assign show_block = true
+        break
+      endif
+    endfor
+  endif
+
+  if show_block
+    assign source_products = block.settings.collection_upsell_products
+  endif
+
+  
+elsif block.settings.product_source == 'rules'
+  assign show_block = false
+
+  # 1. Check specific products
+  if block.settings.trigger_products != blank
+    for trigger_product in block.settings.trigger_products
+      if trigger_product.id == product.id
+        assign show_block = true
+        break
+      endif
+    endfor
+  endif
+
+  # 2. Check tags (only if not already matched)
+  if show_block == false and block.settings.trigger_tags != blank
+    assign trigger_tags = block.settings.trigger_tags | downcase | split: ','
+
+    for tag in product.tags
+      assign tag_clean = tag | strip | downcase
+      if trigger_tags contains tag_clean
+        assign show_block = true
+        break
+      endif
+    endfor
+  endif
+
+  # 3. Assign upsell products
+  if show_block
+    assign source_products = block.settings.rule_upsell_products
+  endif
+
+endif
+
+
+  assign max_products = block.settings.max_products
+  if max_products < 1
+    assign max_products = 1
+  endif
+
+  assign default_qty = block.settings.default_quantity
+  if default_qty < 1
+    assign default_qty = 1
+  endif
+
+  assign image_ratio_padding = '100%'
+  case block.settings.image_ratio
+    when 'landscape'
+      assign image_ratio_padding = '75%'
+    when 'portrait'
+      assign image_ratio_padding = '125%'
+    when 'natural'
+      assign image_ratio_padding = '0'
+  endcase
+
+  assign carousel_peek_px = 0
+  if block.settings.carousel_peek_enable
+    assign carousel_peek_px = block.settings.carousel_peek_px
+  endif
+
+  assign rendered_items = 0
+  assign batch_toggle_label = block.settings.batch_toggle_label | default: 'Add'
+  assign preselect_enabled = false
+  assign active_border_shadow_width = block.settings.active_border_width | minus: block.settings.card_border_width
+  if active_border_shadow_width < 0
+    assign active_border_shadow_width = 0
+  endif
+  if block.settings.preselect_products == true or block.settings.preselect_products == 'true'
+    assign preselect_enabled = true
+  endif
+
+  assign cross_visual = block.settings.visual_style | default: 'default'
+-%}
+{% if show_block %}
+<div
+  class="product-cross-sell product-cross-sell--{{ block.settings.layout_mode }} product-cross-sell--{{ block.settings.text_align }} product-cross-sell--truncate-{{ block.settings.title_truncation }} product-cross-sell--carousel-nav-{{ block.settings.carousel_nav_position }} product-cross-sell--card-{{ block.settings.card_layout }} product-cross-sell--content-{{ block.settings.card_content_alignment }} product-cross-sell--title-price-{{ block.settings.title_price_layout }} product-cross-sell--toggle-{{ block.settings.batch_toggle_position }} product-cross-sell--toggle-style-{{ block.settings.batch_toggle_style }} product-cross-sell--active-border-{{ block.settings.active_border_enable }} product-cross-sell--nav-hover-{{ block.settings.carousel_nav_show_on_hover }} product-cross-sell--nav-desktop-{{ block.settings.carousel_nav_desktop_visibility }} product-cross-sell--nav-mobile-{{ block.settings.carousel_nav_mobile_visibility }} product-cross-sell--scrollbar-{{ block.settings.carousel_scrollbar_show }} product-cross-sell--nav-circular-{{ block.settings.carousel_nav_buttons_circular }}{% if cross_visual == 'dark_promo' %} product-cross-sell--visual-dark-promo{% endif %}"
+  {{ block.shopify_attributes }}
+  data-cross-sell-block
+  data-layout="{{ block.settings.layout_mode }}"
+  data-visual-style="{{ cross_visual }}"
+  data-cta-mode="{{ block.settings.cta_mode }}"
+  data-batch-behavior="{{ block.settings.batch_add_behavior }}"
+  data-main-add-cross-sell-only="{{ block.settings.main_add_cross_sell_only }}"
+  data-preselect-enabled="{{ preselect_enabled }}"
+  data-selection-limit="{{ block.settings.max_selectable_products }}"
+  data-open-drawer="{{ block.settings.open_cart_drawer }}"
+  {%- if cross_visual == 'dark_promo' -%}
+  style="
+    --cross-sell-gap: {{ block.settings.card_gap }}px;
+    --cross-sell-cols-desktop: {{ block.settings.columns_desktop }};
+    --cross-sell-cols-mobile: {{ block.settings.columns_mobile }};
+    --cross-sell-padding: {{ block.settings.block_padding }}px;
+    --cross-sell-radius: {{ block.settings.block_radius }}px;
+    --cross-sell-card-radius: {{ block.settings.card_radius }}px;
+    --cross-sell-border-width: {{ block.settings.border_width }}px;
+    --cross-sell-card-border-width: {{ block.settings.card_border_width }}px;
+    --cross-sell-card-padding: {{ block.settings.card_padding }}px;
+    --cross-sell-heading-size: {{ block.settings.heading_size }}px;
+    --cross-sell-title-size: {{ block.settings.product_title_size }}px;
+    --cross-sell-price-size: {{ block.settings.price_size }}px;
+    --cross-sell-title-price-gap: {{ block.settings.title_price_gap }}px;
+    --cross-sell-image-width: {{ block.settings.image_width }}px;
+    --cross-sell-image-width-mobile: {{ block.settings.image_width_mobile }}px;
+    --cross-sell-button-height: {{ block.settings.button_height }}px;
+    --cross-sell-button-text-size: {{ block.settings.button_text_size }}px;
+    --cross-sell-button-padding-x: {{ block.settings.button_padding_x }}px;
+    --cross-sell-toggle-size: {{ block.settings.toggle_size }}px;
+    --cross-sell-toggle-text-size: {{ block.settings.toggle_text_size }}px;
+    --cross-sell-checkbox-control-width: {{ block.settings.checkbox_control_width }}px;
+    --cross-sell-checkbox-size: {{ block.settings.checkbox_size }}px;
+    --cross-sell-checkbox-radius: {{ block.settings.checkbox_radius }}px;
+    --cross-sell-content-gap: {{ block.settings.content_gap }}px;
+    --cross-sell-carousel-peek: {{ carousel_peek_px }}px;
+    --cross-sell-carousel-nav-offset: {{ block.settings.carousel_nav_offset }}px;
+    --cross-sell-carousel-nav-vertical-offset: {{ block.settings.carousel_nav_vertical_offset }}px;
+    --cross-sell-nav-btn-radius: {{ block.settings.carousel_nav_button_radius }}px;
+    --cross-sell-nav-btn-bg: {{ block.settings.carousel_nav_button_bg }};
+    --cross-sell-nav-btn-border: {{ block.settings.carousel_nav_button_border }};
+    --cross-sell-nav-btn-color: {{ block.settings.carousel_nav_button_icon }};
+    --cross-sell-active-border-color: {{ block.settings.active_border_color }};
+    --cross-sell-active-border-width: {{ block.settings.active_border_width }}px;
+    --cross-sell-active-border-shadow-width: {{ active_border_shadow_width }}px;
+    --cross-sell-image-padding: {{ image_ratio_padding }};
+  "
+  {%- else -%}
+  style="
+    --cross-sell-bg: {{ block.settings.background_color }};
+    --cross-sell-border-color: {{ block.settings.border_color }};
+    --cross-sell-card-bg: {{ block.settings.card_background }};
+    --cross-sell-card-border: {{ block.settings.card_border_color }};
+    --cross-sell-heading-color: {{ block.settings.heading_color }};
+    --cross-sell-text-color: {{ block.settings.text_color }};
+    --cross-sell-price-color: {{ block.settings.price_color }};
+    --cross-sell-badge-bg: {{ block.settings.badge_bg }};
+    --cross-sell-badge-text: {{ block.settings.badge_text }};
+    --cross-sell-action-bg: {{ block.settings.action_bg }};
+    --cross-sell-action-text: {{ block.settings.action_text }};
+    --cross-sell-gap: {{ block.settings.card_gap }}px;
+    --cross-sell-cols-desktop: {{ block.settings.columns_desktop }};
+    --cross-sell-cols-mobile: {{ block.settings.columns_mobile }};
+    --cross-sell-padding: {{ block.settings.block_padding }}px;
+    --cross-sell-radius: {{ block.settings.block_radius }}px;
+    --cross-sell-card-radius: {{ block.settings.card_radius }}px;
+    --cross-sell-border-width: {{ block.settings.border_width }}px;
+    --cross-sell-card-border-width: {{ block.settings.card_border_width }}px;
+    --cross-sell-card-padding: {{ block.settings.card_padding }}px;
+    --cross-sell-heading-size: {{ block.settings.heading_size }}px;
+    --cross-sell-title-size: {{ block.settings.product_title_size }}px;
+    --cross-sell-price-size: {{ block.settings.price_size }}px;
+    --cross-sell-title-price-gap: {{ block.settings.title_price_gap }}px;
+    --cross-sell-image-width: {{ block.settings.image_width }}px;
+    --cross-sell-image-width-mobile: {{ block.settings.image_width_mobile }}px;
+    --cross-sell-button-height: {{ block.settings.button_height }}px;
+    --cross-sell-button-text-size: {{ block.settings.button_text_size }}px;
+    --cross-sell-button-padding-x: {{ block.settings.button_padding_x }}px;
+    --cross-sell-toggle-size: {{ block.settings.toggle_size }}px;
+    --cross-sell-toggle-text-size: {{ block.settings.toggle_text_size }}px;
+    --cross-sell-checkbox-control-width: {{ block.settings.checkbox_control_width }}px;
+    --cross-sell-checkbox-size: {{ block.settings.checkbox_size }}px;
+    --cross-sell-checkbox-radius: {{ block.settings.checkbox_radius }}px;
+    --cross-sell-content-gap: {{ block.settings.content_gap }}px;
+    --cross-sell-carousel-peek: {{ carousel_peek_px }}px;
+    --cross-sell-carousel-nav-offset: {{ block.settings.carousel_nav_offset }}px;
+    --cross-sell-carousel-nav-vertical-offset: {{ block.settings.carousel_nav_vertical_offset }}px;
+    --cross-sell-nav-btn-radius: {{ block.settings.carousel_nav_button_radius }}px;
+    --cross-sell-nav-btn-bg: {{ block.settings.carousel_nav_button_bg }};
+    --cross-sell-nav-btn-border: {{ block.settings.carousel_nav_button_border }};
+    --cross-sell-nav-btn-color: {{ block.settings.carousel_nav_button_icon }};
+    --cross-sell-active-border-color: {{ block.settings.active_border_color }};
+    --cross-sell-active-border-width: {{ block.settings.active_border_width }}px;
+    --cross-sell-active-border-shadow-width: {{ active_border_shadow_width }}px;
+    --cross-sell-image-padding: {{ image_ratio_padding }};
+  "
+  {%- endif -%}
+>
+  {%- if block.settings.show_divider -%}
+    <div class="product-cross-sell__divider"></div>
+  {%- endif -%}
+
+  {%- if block.settings.heading != blank or block.settings.subheading != blank -%}
+    <div class="product-cross-sell__header">
+      {%- if block.settings.heading != blank -%}
+        <p class="product-cross-sell__heading">{{ block.settings.heading | escape }}</p>
+      {%- endif -%}
+      {%- if block.settings.subheading != blank and cross_visual != 'dark_promo' -%}
+        <div class="product-cross-sell__subheading rte">{{ block.settings.subheading }}</div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div class="product-cross-sell__viewport">
+    <div class="product-cross-sell__track" data-cross-sell-track>
+      {%- for cross_sell_product in source_products -%}
+        {%- if rendered_items >= max_products -%}
+          {%- break -%}
+        {%- endif -%}
+
+        {%- if cross_sell_product == blank -%}
+          {%- continue -%}
+        {%- endif -%}
+
+        {%- assign card_product = cross_sell_product -%}
+        {%- assign card_url = cross_sell_product.url -%}
+        {%- assign card_title = cross_sell_product.title -%}
+        {%- assign card_vendor = cross_sell_product.vendor -%}
+        {%- assign price_varies = cross_sell_product.price_varies -%}
+
+        {%- if source_is_variants -%}
+          {%- assign add_variant = cross_sell_product -%}
+          {%- assign card_product = product -%}
+          {%- assign card_url = product.url | append: '?variant=' | append: add_variant.id -%}
+          {%- assign card_vendor = product.vendor -%}
+          {%- assign price_varies = false -%}
+          {%- if add_variant.title != blank and add_variant.title != 'Default Title' -%}
+            {%- assign card_title = add_variant.title -%}
+          {%- else -%}
+            {%- assign card_title = product.title -%}
+          {%- endif -%}
+        {%- else -%}
+          {%- if block.settings.exclude_current_product and card_product.id == product.id -%}
+            {%- continue -%}
+          {%- endif -%}
+
+          {%- assign add_variant = card_product.selected_or_first_available_variant -%}
+          {%- if add_variant == blank -%}
+            {%- assign add_variant = card_product.variants.first -%}
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- if add_variant == blank -%}
+          {%- continue -%}
+        {%- endif -%}
+
+        {%- if block.settings.hide_unavailable_products and add_variant.available != true -%}
+          {%- continue -%}
+        {%- endif -%}
+
+        {%- assign rendered_items = rendered_items | plus: 1 -%}
+
+        {%- assign primary_price = add_variant.price -%}
+        {%- if price_varies -%}
+          {%- assign primary_price = card_product.price_min -%}
+        {%- endif -%}
+
+        {%- assign has_discount = false -%}
+        {%- assign savings_amount = 0 -%}
+        {%- assign savings_percent = 0 -%}
+        {%- assign cross_sell_checked = false -%}
+        {%- if preselect_enabled and add_variant.available -%}
+          {%- assign cross_sell_checked = true -%}
+        {%- endif -%}
+        {%- if add_variant.compare_at_price > add_variant.price -%}
+          {%- assign has_discount = true -%}
+          {%- assign savings_amount = add_variant.compare_at_price | minus: add_variant.price -%}
+          {%- assign savings_percent = savings_amount | times: 100.0 | divided_by: add_variant.compare_at_price | round -%}
+        {%- endif -%}
+
+        {%- assign promo_desc = '' -%}
+        {%- if cross_visual == 'dark_promo' and block.settings.show_product_description -%}
+          {%- assign promo_desc = card_product.description | strip_html | strip | truncate: 200 -%}
+        {%- endif -%}
+
+        <article class="product-cross-sell__item{% unless add_variant.available %} is-sold-out{% endunless %}" data-cross-sell-item data-variant-id="{{ add_variant.id }}">
+          {%- if block.settings.show_image -%}
+            <a href="{{ card_url }}" class="product-cross-sell__image-link" aria-label="{{ card_title | escape }}">
+              <div class="product-cross-sell__image-wrap{% if block.settings.image_ratio == 'natural' %} is-natural{% endif %}">
+                {%- assign cross_sell_image = blank -%}
+                {%- if source_is_variants and add_variant.featured_media != blank -%}
+                  {%- assign cross_sell_image = add_variant.featured_media.preview_image -%}
+                {%- elsif source_is_variants and add_variant.image != blank -%}
+                  {%- assign cross_sell_image = add_variant.image -%}
+                {%- elsif card_product.featured_media != blank -%}
+                  {%- assign cross_sell_image = card_product.featured_media.preview_image -%}
+                {%- endif -%}
+
+                {%- if cross_sell_image != blank -%}
+                  <img
+                    srcset="
+                      {%- if cross_sell_image.width >= 120 -%}{{ cross_sell_image | image_url: width: 120 }} 120w,{%- endif -%}
+                      {%- if cross_sell_image.width >= 180 -%}{{ cross_sell_image | image_url: width: 180 }} 180w,{%- endif -%}
+                      {%- if cross_sell_image.width >= 240 -%}{{ cross_sell_image | image_url: width: 240 }} 240w,{%- endif -%}
+                      {%- if cross_sell_image.width >= 360 -%}{{ cross_sell_image | image_url: width: 360 }} 360w,{%- endif -%}
+                      {{ cross_sell_image | image_url }} {{ cross_sell_image.width }}w
+                    "
+                    src="{{ cross_sell_image | image_url: width: 240 }}"
+                    sizes="(max-width: 749px) calc((100vw - 48px) / {{ block.settings.columns_mobile }}), calc((100vw - 80px) / {{ block.settings.columns_desktop }})"
+                    loading="lazy"
+                    width="{{ cross_sell_image.width }}"
+                    height="{{ cross_sell_image.height }}"
+                    alt="{{ cross_sell_image.alt | default: card_title | escape }}"
+                  >
+                {%- else -%}
+                  <div class="product-cross-sell__image-placeholder">{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+                {%- endif -%}
+              </div>
+            </a>
+          {%- endif -%}
+
+          <div class="product-cross-sell__content">
+            <div class="product-cross-sell__meta">
+              <div class="product-cross-sell__title-wrap">
+                <h3 class="product-cross-sell__title">
+                  <a href="{{ card_url }}">{{ card_title }}</a>
+                </h3>
+
+                {%- if block.settings.cta_mode == 'batch' and block.settings.batch_toggle_position == 'inline' and cross_visual != 'dark_promo' -%}
+                  <label class="product-cross-sell__pick-label" for="CrossSellPick-{{ section_id }}-{{ block.id }}-{{ forloop.index }}">
+                    <input
+                      id="CrossSellPick-{{ section_id }}-{{ block.id }}-{{ forloop.index }}"
+                      type="checkbox"
+                      data-cross-sell-select
+                      aria-label="Select {{ card_title | escape }}"
+                      {% if cross_sell_checked %}checked{% endif %}
+                      {% unless add_variant.available %}disabled{% endunless %}>
+                    <span{% if block.settings.batch_toggle_style == 'checkbox' %} aria-hidden="true"{% endif %}>{% unless block.settings.batch_toggle_style == 'checkbox' %}{{ batch_toggle_label }}{% endunless %}</span>
+                  </label>
+                {%- endif -%}
+              </div>
+
+              {%- if cross_visual == 'dark_promo' and promo_desc != blank -%}
+                <p class="product-cross-sell__promo-desc">{{ promo_desc | escape }}</p>
+              {%- endif -%}
+
+              {%- if block.settings.cta_mode == 'batch' and block.settings.batch_toggle_position != 'inline' and block.settings.batch_toggle_position != 'below_price' and block.settings.batch_toggle_position != 'bottom_full' and cross_visual != 'dark_promo' -%}
+                <label class="product-cross-sell__pick-label product-cross-sell__pick-label--floating" for="CrossSellPick-{{ section_id }}-{{ block.id }}-{{ forloop.index }}">
+                  <input
+                    id="CrossSellPick-{{ section_id }}-{{ block.id }}-{{ forloop.index }}"
+                    type="checkbox"
+                    data-cross-sell-select
+                    aria-label="Select {{ card_title | escape }}"
+                    {% if cross_sell_checked %}checked{% endif %}
+                    {% unless add_variant.available %}disabled{% endunless %}>
+                  <span{% if block.settings.batch_toggle_style == 'checkbox' %} aria-hidden="true"{% endif %}>{% unless block.settings.batch_toggle_style == 'checkbox' %}{{ batch_toggle_label }}{% endunless %}</span>
+                </label>
+              {%- endif -%}
+
+              {%- if block.settings.show_vendor and card_vendor != blank -%}
+                <p class="product-cross-sell__vendor">{{ card_vendor }}</p>
+              {%- endif -%}
+
+              {%- if block.settings.show_price -%}
+                <span class="product-cross-sell__meta-spacer" aria-hidden="true"></span>
+                <div class="product-cross-sell__price-row">
+                  <span class="product-cross-sell__price{% if has_discount %} is-sale{% endif %}">
+                    {%- if price_varies and block.settings.show_from_label -%}
+                      <span class="product-cross-sell__from">From</span>
+                    {%- endif -%}
+                    {{ primary_price | money }}
+                  </span>
+
+                  {%- if block.settings.show_compare_price and has_discount -%}
+                    <span class="product-cross-sell__compare-price">{{ add_variant.compare_at_price | money }}</span>
+                  {%- endif -%}
+
+                  {%- if block.settings.show_discount_badge and has_discount -%}
+                    <span class="product-cross-sell__badge">
+                      {%- if block.settings.discount_badge_type == 'amount' -%}
+                        Save {{ savings_amount | money }}
+                      {%- else -%}
+                        -{{ savings_percent }}%
+                      {%- endif -%}
+                    </span>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+
+              {%- if block.settings.cta_mode == 'batch' and block.settings.batch_toggle_position == 'below_price' and cross_visual != 'dark_promo' -%}
+                <label class="product-cross-sell__pick-label product-cross-sell__pick-label--below-price" for="CrossSellPick-{{ section_id }}-{{ block.id }}-{{ forloop.index }}">
+                  <input
+                    id="CrossSellPick-{{ section_id }}-{{ block.id }}-{{ forloop.index }}"
+                    type="checkbox"
+                    data-cross-sell-select
+                    aria-label="Select {{ card_title | escape }}"
+                    {% if cross_sell_checked %}checked{% endif %}
+                    {% unless add_variant.available %}disabled{% endunless %}>
+                  <span{% if block.settings.batch_toggle_style == 'checkbox' %} aria-hidden="true"{% endif %}>{% unless block.settings.batch_toggle_style == 'checkbox' %}{{ batch_toggle_label }}{% endunless %}</span>
+                </label>
+              {%- endif -%}
+            </div>
+
+            {%- if block.settings.cta_mode != 'none' and block.settings.enable_quantity_selector != true -%}
+              <input type="hidden" value="{{ default_qty }}" data-cross-sell-qty>
+            {%- endif -%}
+
+            {%- assign show_actions_row = false -%}
+            {%- if cross_visual == 'dark_promo' and block.settings.cta_mode == 'batch' -%}
+              {%- assign show_actions_row = true -%}
+            {%- endif -%}
+            {%- if block.settings.cta_mode != 'none' and block.settings.enable_quantity_selector -%}
+              {%- assign show_actions_row = true -%}
+            {%- endif -%}
+            {%- if block.settings.cta_mode == 'individual' -%}
+              {%- assign show_actions_row = true -%}
+            {%- endif -%}
+            {%- if block.settings.show_view_link -%}
+              {%- assign show_actions_row = true -%}
+            {%- endif -%}
+
+            {%- if show_actions_row -%}
+              <div class="product-cross-sell__actions{% if cross_visual == 'dark_promo' %} product-cross-sell__actions--promo{% endif %}">
+                {%- if block.settings.cta_mode != 'none' and block.settings.enable_quantity_selector -%}
+                  {%- if cross_visual == 'dark_promo' -%}
+                    <div class="product-cross-sell__qty-stepper" data-cross-sell-stepper>
+                      <button type="button" class="product-cross-sell__qty-step-btn" data-cross-sell-qty-minus aria-label="Decrease quantity">−</button>
+                      <label class="visually-hidden" for="CrossSellQty-{{ section_id }}-{{ block.id }}-{{ forloop.index }}">Quantity for {{ card_title }}</label>
+                      <input
+                        id="CrossSellQty-{{ section_id }}-{{ block.id }}-{{ forloop.index }}"
+                        class="product-cross-sell__qty-input product-cross-sell__qty-input--stepper"
+                        type="number"
+                        min="1"
+                        max="20"
+                        value="{{ default_qty }}"
+                        data-cross-sell-qty
+                        {% unless add_variant.available %}disabled{% endunless %}>
+                      <button type="button" class="product-cross-sell__qty-step-btn" data-cross-sell-qty-plus aria-label="Increase quantity">+</button>
+                    </div>
+                  {%- else -%}
+                    <label class="visually-hidden" for="CrossSellQty-{{ section_id }}-{{ block.id }}-{{ forloop.index }}">Quantity for {{ card_title }}</label>
+                    <input
+                      id="CrossSellQty-{{ section_id }}-{{ block.id }}-{{ forloop.index }}"
+                      class="product-cross-sell__qty-input"
+                      type="number"
+                      min="1"
+                      max="20"
+                      value="{{ default_qty }}"
+                      data-cross-sell-qty
+                      {% unless add_variant.available %}disabled{% endunless %}>
+                  {%- endif -%}
+                {%- endif -%}
+
+                {%- if cross_visual == 'dark_promo' and block.settings.cta_mode == 'batch' -%}
+                  <label class="product-cross-sell__pick-label product-cross-sell__pick-label--promo-add" for="CrossSellPickPromo-{{ section_id }}-{{ block.id }}-{{ forloop.index }}">
+                    <input
+                      id="CrossSellPickPromo-{{ section_id }}-{{ block.id }}-{{ forloop.index }}"
+                      type="checkbox"
+                      data-cross-sell-select
+                      aria-label="Select {{ card_title | escape }}"
+                      {% if cross_sell_checked %}checked{% endif %}
+                      {% unless add_variant.available %}disabled{% endunless %}>
+                    <span>{{ batch_toggle_label | escape }}</span>
+                  </label>
+                {%- endif -%}
+
+                {%- if block.settings.cta_mode == 'individual' -%}
+                  <button
+                    type="button"
+                    class="product-cross-sell__single-btn"
+                    data-cross-sell-single-add
+                    {% unless add_variant.available %}disabled{% endunless %}>
+                    {%- if add_variant.available -%}
+                      {{ block.settings.individual_button_label }}
+                    {%- else -%}
+                      Sold out
+                    {%- endif -%}
+                  </button>
+                {%- endif -%}
+
+                {%- if block.settings.show_view_link -%}
+                  <a href="{{ card_url }}" class="product-cross-sell__view-link">{{ block.settings.view_link_label }}</a>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </div>
+
+          {%- if block.settings.cta_mode == 'batch' and block.settings.batch_toggle_position == 'bottom_full' and cross_visual != 'dark_promo' -%}
+            <label class="product-cross-sell__pick-label product-cross-sell__pick-label--bottom-full" for="CrossSellPick-{{ section_id }}-{{ block.id }}-{{ forloop.index }}">
+              <input
+                id="CrossSellPick-{{ section_id }}-{{ block.id }}-{{ forloop.index }}"
+                type="checkbox"
+                data-cross-sell-select
+                aria-label="Select {{ card_title | escape }}"
+                {% if cross_sell_checked %}checked{% endif %}
+                {% unless add_variant.available %}disabled{% endunless %}>
+              <span{% if block.settings.batch_toggle_style == 'checkbox' %} aria-hidden="true"{% endif %}>{% unless block.settings.batch_toggle_style == 'checkbox' %}{{ batch_toggle_label }}{% endunless %}</span>
+            </label>
+          {%- endif -%}
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  {%- liquid
+    assign show_cross_sell_nav = false
+    if rendered_items > 1 and block.settings.layout_mode == 'carousel'
+      assign show_cross_sell_nav = true
+    elsif cross_visual == 'dark_promo' and rendered_items > 1
+      assign show_cross_sell_nav = true
+    endif
+  -%}
+  {%- if show_cross_sell_nav -%}
+    <div class="product-cross-sell__nav" data-cross-sell-nav>
+      <button type="button" class="product-cross-sell__nav-btn product-cross-sell__nav-btn--prev" data-cross-sell-prev aria-label="Previous products">
+        <svg class="product-cross-sell__nav-icon" width="20" height="20" viewBox="0 0 640 640" fill="none" aria-hidden="true" focusable="false">
+          <path d="M569.4 337L586.4 320L569.4 303L401.4 135L384.4 118L350.5 151.9L367.5 168.9L494.5 295.9H64.4V343.9H494.5L367.5 470.9L350.5 487.9L384.4 521.8L401.4 504.8L569.4 336.8V337Z" fill="currentColor"/>
+        </svg>
+      </button>
+      <button type="button" class="product-cross-sell__nav-btn product-cross-sell__nav-btn--next" data-cross-sell-next aria-label="Next products">
+        <svg class="product-cross-sell__nav-icon" width="20" height="20" viewBox="0 0 640 640" fill="none" aria-hidden="true" focusable="false">
+          <path d="M569.4 337L586.4 320L569.4 303L401.4 135L384.4 118L350.5 151.9L367.5 168.9L494.5 295.9H64.4V343.9H494.5L367.5 470.9L350.5 487.9L384.4 521.8L401.4 504.8L569.4 336.8V337Z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  {%- endif -%}
+
+  {%- if block.settings.cta_mode == 'batch' and rendered_items > 0 and block.settings.show_batch_button and block.settings.batch_add_behavior == 'button' -%}
+    <div class="product-cross-sell__batch">
+      <button type="button" class="product-cross-sell__batch-btn" data-cross-sell-add-selected>
+        {{ block.settings.batch_button_label }}
+      </button>
+      <p class="product-cross-sell__status" data-cross-sell-status aria-live="polite"></p>
+    </div>
+  {%- elsif block.settings.cta_mode == 'batch' and rendered_items > 0 and block.settings.batch_add_behavior == 'with_main_product' -%}
+    <div class="product-cross-sell__batch product-cross-sell__batch--status-only">
+      <p class="product-cross-sell__status" data-cross-sell-status aria-live="polite"></p>
+    </div>
+  {%- endif -%}
+
+  {%- if rendered_items == 0 -%}
+    {%- if source_is_variants -%}
+      <p class="product-cross-sell__empty">No variants available to display in this block.</p>
+    {%- else -%}
+      <p class="product-cross-sell__empty">Add products in this block to display your cross-sells.</p>
+    {%- endif -%}
+  {%- endif -%}
+</div>
+
+
+<style>
+  .product-cross-sell {
+  position: relative;
+  padding: var(--cross-sell-padding, 16px);
+  background: var(--cross-sell-bg, #f8f8f8);
+  border: var(--cross-sell-border-width, 1px) solid var(--cross-sell-border-color, #d9dde3);
+  border-radius: var(--cross-sell-radius, 0);
+  color: var(--cross-sell-text-color, inherit);
+}
+
+.product-cross-sell__divider {
+  border-top: 1px solid var(--cross-sell-border-color, #d9dde3);
+  margin-bottom: 14px;
+}
+
+.product-cross-sell__header {
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.product-cross-sell__heading {
+  margin: 0;
+  color: var(--cross-sell-heading-color, inherit);
+  font-size: var(--cross-sell-heading-size, 18px);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+}
+
+.product-cross-sell__subheading {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: 0.86;
+}
+
+.product-cross-sell--center .product-cross-sell__header {
+  text-align: center;
+}
+
+.product-cross-sell__track {
+  display: grid;
+  gap: var(--cross-sell-gap, 10px);
+  grid-template-columns: repeat(var(--cross-sell-cols-desktop, 2), minmax(0, 1fr));
+}
+
+.product-cross-sell--carousel .product-cross-sell__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 3px;
+  scrollbar-width: thin;
+}
+
+.product-cross-sell--carousel .product-cross-sell__track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.product-cross-sell--carousel .product-cross-sell__track::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.product-cross-sell--carousel.product-cross-sell--scrollbar-false .product-cross-sell__track {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.product-cross-sell--carousel.product-cross-sell--scrollbar-false .product-cross-sell__track::-webkit-scrollbar {
+  display: none;
+}
+
+.product-cross-sell--carousel .product-cross-sell__item {
+  flex: 0 0 calc((100% - ((var(--cross-sell-cols-desktop, 2) - 1) * var(--cross-sell-gap, 10px)) - var(--cross-sell-carousel-peek, 0px)) / var(--cross-sell-cols-desktop, 2));
+  scroll-snap-align: start;
+}
+
+.product-cross-sell__item {
+  display: flex;
+  gap: 10px;
+  padding: var(--cross-sell-card-padding, 10px);
+  background: var(--cross-sell-card-bg, #fff);
+  border: var(--cross-sell-card-border-width, 1px) solid var(--cross-sell-card-border, #d9dde3);
+  border-radius: var(--cross-sell-card-radius, 0);
+  min-width: 0;
+  position: relative;
+  text-align: left;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.product-cross-sell--active-border-true .product-cross-sell__item.is-selected {
+  border-color: var(--cross-sell-active-border-color, #243a53);
+  box-shadow: inset 0 0 0 var(--cross-sell-active-border-width, 1px) var(--cross-sell-active-border-color, #243a53);
+}
+
+.product-cross-sell--card-vertical .product-cross-sell__item {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.product-cross-sell__image-link {
+  flex: 0 0 var(--cross-sell-image-width, 72px);
+  width: var(--cross-sell-image-width, 72px);
+  text-decoration: none;
+}
+
+.product-cross-sell--card-vertical .product-cross-sell__image-link {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.product-cross-sell__image-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--cross-sell-card-radius, 0);
+  background: rgba(0, 0, 0, 0.04);
+  height: 0;
+  padding-bottom: var(--cross-sell-image-padding, 100%);
+}
+
+.product-cross-sell__image-wrap.is-natural {
+  height: auto;
+  padding-bottom: 0;
+}
+
+.product-cross-sell__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.product-cross-sell__image-wrap.is-natural img {
+  position: static;
+  height: auto;
+}
+
+.product-cross-sell__image-placeholder {
+  position: absolute;
+  inset: 0;
+}
+
+.product-cross-sell__image-placeholder .placeholder-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.product-cross-sell__content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1 1 auto;
+  gap: var(--cross-sell-content-gap, 12px);
+  justify-content: center;
+  text-align: left;
+}
+
+.product-cross-sell__meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.product-cross-sell--content-top .product-cross-sell__content {
+  justify-content: flex-start;
+}
+
+.product-cross-sell--content-center .product-cross-sell__content {
+  justify-content: center;
+}
+
+.product-cross-sell--content-bottom .product-cross-sell__content {
+  justify-content: flex-end;
+}
+
+.product-cross-sell__title-wrap {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.product-cross-sell__title {
+  margin: 0;
+  font-size: var(--cross-sell-title-size, 14px);
+  font-weight: 600;
+  line-height: 1.25;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.product-cross-sell__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-cross-sell__title a:hover {
+  text-decoration: underline;
+}
+
+.product-cross-sell--truncate-one .product-cross-sell__title a,
+.product-cross-sell--truncate-two .product-cross-sell__title a,
+.product-cross-sell--truncate-three .product-cross-sell__title a {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.product-cross-sell--truncate-one .product-cross-sell__title a {
+  -webkit-line-clamp: 1;
+}
+
+.product-cross-sell--truncate-two .product-cross-sell__title a {
+  -webkit-line-clamp: 2;
+}
+
+.product-cross-sell--truncate-three .product-cross-sell__title a {
+  -webkit-line-clamp: 3;
+}
+
+.product-cross-sell__vendor {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.product-cross-sell__title-wrap + .product-cross-sell__vendor {
+  margin-top: 4px;
+}
+
+.product-cross-sell__meta-spacer {
+  display: block;
+  height: var(--cross-sell-title-price-gap, 12px);
+  flex: 0 0 var(--cross-sell-title-price-gap, 12px);
+}
+
+.product-cross-sell--title-price-space_between .product-cross-sell__meta {
+  min-height: 100%;
+}
+
+.product-cross-sell--title-price-space_between .product-cross-sell__meta-spacer {
+  flex: 1 1 auto;
+  min-height: var(--cross-sell-title-price-gap, 12px);
+}
+
+.product-cross-sell__pick-label {
+  position: relative;
+  flex-shrink: 0;
+  display: inline-flex;
+}
+
+.product-cross-sell__pick-label input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.product-cross-sell__pick-label span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--cross-sell-card-border, #d9dde3);
+  border-radius: calc(var(--cross-sell-card-radius, 0) / 1.5);
+  font-size: var(--cross-sell-button-text-size, 13px);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  padding: 0 var(--cross-sell-button-padding-x, 12px);
+  min-width: var(--cross-sell-toggle-size, 32px);
+  min-height: var(--cross-sell-button-height, 38px);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.product-cross-sell__pick-label--below-price {
+  align-self: flex-start;
+  margin-top: var(--cross-sell-title-price-gap, 12px);
+}
+
+.product-cross-sell__pick-label input:checked + span {
+  background: var(--cross-sell-action-bg, #1f3854);
+  border-color: var(--cross-sell-action-bg, #1f3854);
+  color: var(--cross-sell-action-text, #fff);
+}
+
+.product-cross-sell__pick-label input:disabled + span {
+  opacity: 0.45;
+}
+
+.product-cross-sell--toggle-style-checkbox .product-cross-sell__pick-label span {
+  position: relative;
+  width: var(--cross-sell-checkbox-size, 18px);
+  min-width: var(--cross-sell-checkbox-size, 18px);
+  height: var(--cross-sell-checkbox-size, 18px);
+  min-height: var(--cross-sell-checkbox-size, 18px);
+  border: 1.5px solid var(--cross-sell-card-border, #d9dde3);
+  border-radius: var(--cross-sell-checkbox-radius, 4px);
+  background: #fff;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  padding: 0;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.product-cross-sell--toggle-style-checkbox .product-cross-sell__pick-label {
+  cursor: pointer;
+}
+
+.product-cross-sell--toggle-style-checkbox .product-cross-sell__pick-label span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--cross-sell-checkbox-size, 18px) * 0.72);
+  height: calc(var(--cross-sell-checkbox-size, 18px) * 0.72);
+  background-color: var(--cross-sell-action-text, #fff);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20640'%3E%3Cpath%20d='M557%20152.9L538.2%20178.8L282.2%20530.8L260.2%20561.1C259.5%20560.4%20208%20508.9%20105.7%20406.6L83%20384L128.3%20338.7C130.2%20340.6%20171.6%20382%20252.4%20462.8L486.4%20141.1L505.2%20115.2L557%20152.8V152.9Z'%20fill='black'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20640'%3E%3Cpath%20d='M557%20152.9L538.2%20178.8L282.2%20530.8L260.2%20561.1C259.5%20560.4%20208%20508.9%20105.7%20406.6L83%20384L128.3%20338.7C130.2%20340.6%20171.6%20382%20252.4%20462.8L486.4%20141.1L505.2%20115.2L557%20152.8V152.9Z'%20fill='black'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  transform: translate(-50%, -50%) scale(0.85);
+  opacity: 0;
+  transition: opacity 0.14s ease, transform 0.14s ease;
+}
+
+.product-cross-sell--toggle-style-checkbox .product-cross-sell__pick-label input:checked + span {
+  border-color: var(--cross-sell-action-bg, #1f3854);
+  background: var(--cross-sell-action-bg, #1f3854);
+}
+
+.product-cross-sell--toggle-style-checkbox .product-cross-sell__pick-label input:checked + span::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.product-cross-sell--toggle-style-checkbox .product-cross-sell__pick-label input:disabled + span {
+  cursor: not-allowed;
+}
+
+.product-cross-sell__price-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+}
+
+.product-cross-sell__price {
+  font-size: var(--cross-sell-price-size, 15px);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--cross-sell-price-color, inherit);
+}
+
+.product-cross-sell__from {
+  font-size: 11px;
+  opacity: 0.7;
+  margin-right: 4px;
+}
+
+.product-cross-sell__compare-price {
+  font-size: 12px;
+  opacity: 0.65;
+  text-decoration: line-through;
+}
+
+.product-cross-sell__badge {
+  background: var(--cross-sell-badge-bg, #1f3854);
+  color: var(--cross-sell-badge-text, #fff);
+  border-radius: calc(var(--cross-sell-card-radius, 0) / 1.5);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  padding: 5px 7px;
+  text-transform: uppercase;
+}
+
+.product-cross-sell__actions {
+  margin: 0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 0;
+}
+
+.product-cross-sell__qty-input {
+  width: 62px;
+  margin: 0;
+  padding: 6px 8px;
+  min-height: var(--cross-sell-button-height, 38px);
+  border-radius: calc(var(--cross-sell-card-radius, 0) / 1.7);
+  border-color: var(--cross-sell-card-border, #d9dde3);
+}
+
+.product-cross-sell__single-btn,
+.product-cross-sell__batch-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--cross-sell-action-bg, #1f3854);
+  background: var(--cross-sell-action-bg, #1f3854);
+  color: var(--cross-sell-action-text, #fff);
+  border-radius: calc(var(--cross-sell-card-radius, 0) / 1.5);
+  font-weight: 600;
+  font-size: var(--cross-sell-button-text-size, 13px) !important;
+  line-height: 1;
+  height: var(--cross-sell-button-height, 38px);
+  min-height: var(--cross-sell-button-height, 38px);
+  padding: 0 var(--cross-sell-button-padding-x, 12px);
+  transition: opacity 0.2s ease;
+}
+
+.product-cross-sell__single-btn:hover,
+.product-cross-sell__batch-btn:hover {
+  opacity: 0.88;
+}
+
+.product-cross-sell__single-btn[disabled],
+.product-cross-sell__batch-btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.product-cross-sell__view-link {
+  font-size: 12px;
+  line-height: 1;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.product-cross-sell--toggle-inline .product-cross-sell__title-wrap {
+  justify-content: space-between;
+}
+
+.product-cross-sell--toggle-top .product-cross-sell__pick-label,
+.product-cross-sell--toggle-middle .product-cross-sell__pick-label,
+.product-cross-sell--toggle-bottom .product-cross-sell__pick-label {
+  position: absolute;
+  right: 10px;
+  z-index: 2;
+}
+
+.product-cross-sell--toggle-top .product-cross-sell__pick-label {
+  top: 10px;
+}
+
+.product-cross-sell--toggle-middle .product-cross-sell__pick-label {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.product-cross-sell--toggle-bottom .product-cross-sell__pick-label {
+  bottom: 10px;
+}
+
+.product-cross-sell--toggle-top .product-cross-sell__content,
+.product-cross-sell--toggle-middle .product-cross-sell__content,
+.product-cross-sell--toggle-bottom .product-cross-sell__content {
+  padding-right: calc(var(--cross-sell-toggle-size, 32px) + 14px);
+}
+
+.product-cross-sell--toggle-bottom_full .product-cross-sell__item {
+  flex-wrap: wrap;
+}
+
+.product-cross-sell--toggle-bottom_full .product-cross-sell__pick-label--bottom-full {
+  width: 100%;
+  margin-top: var(--cross-sell-content-gap, 12px);
+}
+
+.product-cross-sell--toggle-bottom_full .product-cross-sell__pick-label--bottom-full span {
+  width: 100%;
+  min-height: var(--cross-sell-button-height, 38px);
+  font-size: var(--cross-sell-button-text-size, 13px);
+  border-color: var(--cross-sell-action-bg, #1f3854);
+  color: var(--cross-sell-action-bg, #1f3854);
+  border-radius: calc(var(--cross-sell-card-radius, 0) / 1.5);
+  justify-content: center;
+}
+
+.product-cross-sell--toggle-bottom_full.product-cross-sell--toggle-style-checkbox .product-cross-sell__pick-label--bottom-full {
+  width: auto;
+}
+
+.product-cross-sell--toggle-bottom_full.product-cross-sell--toggle-style-checkbox .product-cross-sell__pick-label--bottom-full span {
+  width: var(--cross-sell-checkbox-size, 18px);
+  min-width: var(--cross-sell-checkbox-size, 18px);
+  min-height: var(--cross-sell-checkbox-size, 18px);
+  height: var(--cross-sell-checkbox-size, 18px);
+  padding: 0;
+  justify-content: center;
+}
+
+.product-cross-sell--toggle-bottom_full .product-cross-sell__pick-label--bottom-full input:checked + span {
+  color: var(--cross-sell-action-text, #fff);
+}
+
+.product-cross-sell__nav {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.product-cross-sell--center .product-cross-sell__nav {
+  justify-content: center;
+}
+
+.product-cross-sell__nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--cross-sell-nav-btn-border, #d9dde3);
+  border-radius: var(--cross-sell-nav-btn-radius, 8px);
+  background: var(--cross-sell-nav-btn-bg, #fff);
+  color: var(--cross-sell-nav-btn-color, inherit);
+  transition: opacity 0.14s ease;
+}
+
+.product-cross-sell__nav-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.product-cross-sell__nav-btn--prev .product-cross-sell__nav-icon {
+  transform: scaleX(-1);
+}
+
+.product-cross-sell__nav-btn[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.product-cross-sell--nav-circular-true .product-cross-sell__nav-btn {
+  border-radius: 999px;
+}
+
+.product-cross-sell--carousel.product-cross-sell--carousel-nav-overlay .product-cross-sell__viewport {
+  position: relative;
+}
+
+.product-cross-sell--carousel.product-cross-sell--carousel-nav-overlay .product-cross-sell__nav {
+  position: absolute;
+  left: calc(var(--cross-sell-carousel-nav-offset, 8px) * -1);
+  right: calc(var(--cross-sell-carousel-nav-offset, 8px) * -1);
+  top: calc(50% + var(--cross-sell-carousel-nav-vertical-offset, 6px));
+  transform: translateY(-50%);
+  justify-content: space-between;
+  margin-top: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.product-cross-sell--carousel.product-cross-sell--carousel-nav-overlay .product-cross-sell__nav-btn {
+  pointer-events: auto;
+}
+
+@media only screen and (min-width: 769px) {
+  .product-cross-sell--nav-desktop-hide .product-cross-sell__nav {
+    display: none !important;
+  }
+
+  .product-cross-sell--nav-hover-true .product-cross-sell__nav {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.14s ease, visibility 0.14s ease;
+  }
+
+  .product-cross-sell--nav-hover-true .product-cross-sell__nav-btn {
+    opacity: 0;
+    transition: opacity 0.14s ease, transform 0.16s ease;
+  }
+
+  .product-cross-sell--nav-hover-true .product-cross-sell__nav-btn--prev {
+    transform: translateX(-12px);
+  }
+
+  .product-cross-sell--nav-hover-true .product-cross-sell__nav-btn--next {
+    transform: translateX(12px);
+  }
+
+  .product-cross-sell--nav-hover-true:hover .product-cross-sell__nav,
+  .product-cross-sell--nav-hover-true:focus-within .product-cross-sell__nav {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .product-cross-sell--nav-hover-true:hover .product-cross-sell__nav-btn,
+  .product-cross-sell--nav-hover-true:focus-within .product-cross-sell__nav-btn {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .product-cross-sell--nav-hover-true:hover .product-cross-sell__nav-btn[disabled],
+  .product-cross-sell--nav-hover-true:focus-within .product-cross-sell__nav-btn[disabled] {
+    opacity: 0.35;
+  }
+}
+
+.product-cross-sell__batch {
+  margin-top: 12px;
+}
+
+.product-cross-sell__batch--status-only {
+  margin-top: 0;
+}
+
+.product-cross-sell__batch-btn {
+  width: 100%;
+}
+
+.product-cross-sell__status {
+  margin: 7px 2px 0;
+  font-size: 12px;
+  line-height: 1.35;
+  opacity: 0.9;
+}
+
+.product-cross-sell__status:empty {
+  display: none;
+}
+
+.product-cross-sell__status.is-error {
+  color: #b42318;
+}
+
+.product-cross-sell__status.is-success {
+  color: #067647;
+}
+
+.product-cross-sell__empty {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.product-cross-sell__item.is-sold-out {
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 768px) {
+  .product-cross-sell__track {
+    grid-template-columns: repeat(var(--cross-sell-cols-mobile, 1), minmax(0, 1fr));
+  }
+
+  .product-cross-sell--carousel .product-cross-sell__item {
+    flex-basis: calc((100% - ((var(--cross-sell-cols-mobile, 1) - 1) * var(--cross-sell-gap, 10px)) - var(--cross-sell-carousel-peek, 0px)) / var(--cross-sell-cols-mobile, 1));
+  }
+
+  .product-cross-sell__item {
+    padding: var(--cross-sell-card-padding, 10px);
+  }
+
+  .product-cross-sell__image-link {
+    flex-basis: var(--cross-sell-image-width-mobile, 64px);
+    width: var(--cross-sell-image-width-mobile, 64px);
+  }
+
+  .product-cross-sell--card-vertical .product-cross-sell__image-link {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .product-cross-sell--carousel.product-cross-sell--carousel-nav-overlay .product-cross-sell__nav {
+    left: calc(var(--cross-sell-carousel-nav-offset, 8px) * -0.7);
+    right: calc(var(--cross-sell-carousel-nav-offset, 8px) * -0.7);
+  }
+
+  .product-cross-sell--nav-mobile-hide .product-cross-sell__nav {
+    display: none !important;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Dark highlight (“promo”) cross-sell style + stepped quantity
+   ------------------------------------------------------------------------- */
+
+.product-cross-sell--visual-dark-promo {
+  --cross-sell-bg: #1a1a1a;
+  --cross-sell-border-color: #2c2c2c;
+  --cross-sell-card-bg: #222222;
+  --cross-sell-card-border: #333333;
+  --cross-sell-heading-color: #ffffff;
+  --cross-sell-text-color: #a9b0ba;
+  --cross-sell-price-color: #ffffff;
+  --cross-sell-badge-bg: #333333;
+  --cross-sell-badge-text: #ffffff;
+  --cross-sell-action-bg: #00d4e0;
+  --cross-sell-action-text: #0b0b0b;
+  --cross-sell-image-width: 112px;
+  --cross-sell-image-width-mobile: 100px;
+  background: var(--cross-sell-bg);
+  border-color: var(--cross-sell-border-color);
+  color: #e8eaed;
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__heading {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--cross-sell-heading-color);
+}
+
+.product-cross-sell--visual-dark-promo:not(.product-cross-sell--carousel) .product-cross-sell__track {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__item {
+  background: var(--cross-sell-card-bg);
+  border-color: var(--cross-sell-card-border);
+  align-items: stretch;
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__image-wrap {
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__title {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__title a {
+  color: #ffffff;
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__promo-desc {
+  margin: 0 0 4px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--cross-sell-text-color);
+  max-width: 42em;
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__price {
+  color: var(--cross-sell-price-color);
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__compare-price {
+  color: #8a9199;
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__actions--promo {
+  margin-top: 4px;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__qty-stepper {
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #3a3a3a;
+  background: #2a2a2a;
+  min-height: var(--cross-sell-button-height, 40px);
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__qty-step-btn {
+  flex: 0 0 36px;
+  width: 36px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #f0f0f0;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__qty-step-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__qty-step-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__qty-input--stepper {
+  flex: 0 0 40px;
+  width: 40px;
+  min-width: 40px;
+  margin: 0;
+  padding: 0 4px;
+  text-align: center;
+  border: none;
+  border-left: 1px solid #3a3a3a;
+  border-right: 1px solid #3a3a3a;
+  border-radius: 0;
+  background: #2a2a2a;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  min-height: var(--cross-sell-button-height, 40px);
+  -moz-appearance: textfield;
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__qty-input--stepper::-webkit-outer-spin-button,
+.product-cross-sell--visual-dark-promo .product-cross-sell__qty-input--stepper::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__pick-label--promo-add span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--cross-sell-button-height, 40px);
+  padding: 0 22px;
+  border-radius: 4px;
+  border: none;
+  background: var(--cross-sell-action-bg);
+  color: var(--cross-sell-action-text);
+  font-weight: 800;
+  font-size: var(--cross-sell-button-text-size, 13px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__pick-label--promo-add input:checked + span {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.85);
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__pick-label--promo-add input:disabled + span {
+  opacity: 0.45;
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__single-btn {
+  background: var(--cross-sell-action-bg);
+  border-color: var(--cross-sell-action-bg);
+  color: var(--cross-sell-action-text);
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__nav-btn {
+  background: rgba(42, 42, 42, 0.95);
+  border-color: #444;
+  color: #f5f5f5;
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__status.is-success {
+  color: #5ee9a0;
+}
+
+.product-cross-sell--visual-dark-promo .product-cross-sell__status.is-error {
+  color: #ff8a8a;
+}
+
+@media only screen and (max-width: 768px) {
+  .product-cross-sell--visual-dark-promo .product-cross-sell__actions--promo {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+</style>
+
+{% endif %}
