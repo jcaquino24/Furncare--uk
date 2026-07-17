@@ -1,0 +1,227 @@
+<div 
+  class="custom-recommendations" 
+  data-base-url="{{ routes.product_recommendations_url }}" 
+  data-product-id="{{ product.id }}" 
+  data-section-id="{{ section.id }}"
+  data-limit="{{ section.settings.products_to_show }}"
+  data-intent="{{ section.settings.intent }}"
+>
+  {%- if recommendations.performed and recommendations.products_count > 0 -%}
+    <div class="custom-recommendations__inner">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="eyebrow-sm">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+  
+      <div class="custom-recommendations__grid">
+        {%- for recommendation in recommendations.products -%}
+          <div class="custom-recommendations__card" data-rec-product-id="{{ recommendation.id }}">
+            
+            <a href="{{ recommendation.url }}" class="custom-recommendations__link">
+           {% render 'product-card', product: recommendation %}
+              <div class="custom-recommendations__info">
+                <span class="custom-recommendations__title">{{ recommendation.title }}</span>
+                <span class="custom-recommendations__price">{{ recommendation.price | money }}</span>
+              </div>
+            </a>
+            {% comment %} End of Fallback Card Structure {% endcomment %}
+
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+<style>
+  .custom-recommendations { 
+    padding: 60px 0; 
+    background-color: #f9f7f0;
+  }
+  .custom-recommendations__inner { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+  }
+  .custom-recommendations__heading { 
+    font-size: 28px; 
+    margin-bottom: 32px; 
+    text-align: center; 
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .custom-recommendations__grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, minmax(0, 1fr)); 
+    gap: 24px; 
+  }
+  @media (max-width: 990px) { 
+    .custom-recommendations__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } 
+  }
+  @media (max-width: 480px) { 
+    .custom-recommendations__grid { grid-template-columns: 1fr; } 
+  }
+  .custom-recommendations__card { 
+    background: #ffffff; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    transition: transform 0.25s ease;
+  }
+  .custom-recommendations__card:hover { 
+    transform: translateY(-4px); 
+  }
+  .custom-recommendations__link { 
+    text-decoration: none; 
+    color: inherit; 
+    display: block; 
+  }
+  .custom-recommendations__image-wrapper { 
+    aspect-ratio: 1 / 1; 
+    overflow: hidden; 
+    background: #f4f4f4; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+  }
+  .custom-recommendations__image { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+  }
+  .custom-recommendations__info { 
+    padding: 16px 8px; 
+    text-align: left; 
+  }
+  .custom-recommendations__title { 
+    display: block; 
+    font-weight: 500; 
+    margin-bottom: 6px; 
+    font-size: 15px; 
+    line-height: 1.4;
+  }
+  .custom-recommendations__price { 
+    color: #222222; 
+    font-size: 14px; 
+    font-weight: 600;
+  }
+  .placeholder-svg {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+  }
+</style>
+
+<script>
+  (function() {
+    const loadRecommendations = (container) => {
+      if (!container) return;
+
+      const baseUrl = container.dataset.baseUrl;
+      const productId = container.dataset.productId;
+      const sectionId = container.dataset.sectionId;
+      const limit = container.dataset.limit;
+      const intent = container.dataset.intent;
+
+      if (!baseUrl || !productId) return;
+
+      const requestUrl = `${baseUrl}?section_id=${sectionId}&product_id=${productId}&limit=${limit}&intent=${intent}`;
+
+      fetch(requestUrl)
+        .then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const recommendationsHtml = doc.querySelector('.custom-recommendations');
+
+          if (recommendationsHtml && recommendationsHtml.innerHTML.trim().length > 0) {
+            container.innerHTML = recommendationsHtml.innerHTML;
+            
+            // Hard Scrub: Locate and drop the core parent product card if returned
+            const ghostDuplicates = container.querySelectorAll(`[data-rec-product-id="${productId}"]`);
+            ghostDuplicates.forEach(card => card.remove());
+
+            // Collapse container visually if it ends up completely empty
+            const remainingCards = container.querySelectorAll('.custom-recommendations__card');
+            if (remainingCards.length === 0) {
+              container.style.display = 'none';
+            }
+          }
+        })
+        .catch(err => console.error('Recommendations Error:', err));
+    };
+
+    const init = () => {
+      const container = document.querySelector('.custom-recommendations');
+      if (!container) return;
+
+      // Asynchronously fetch elements once they are close to entering view
+      const observer = new IntersectionObserver((entries, observer) => {
+        if (entries[0].isIntersecting) {
+          observer.unobserve(entries[0].target);
+          loadRecommendations(entries[0].target);
+        }
+      }, { rootMargin: '0px 0px 200px 0px' });
+
+      observer.observe(container);
+    };
+
+    // Initialize across dynamic template shifts and theme customizer adjustments
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+    
+    document.addEventListener('shopify:section:load', (e) => {
+      if (e.target.querySelector('.custom-recommendations')) init();
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Custom Recommendations",
+  "tag": "section",
+  "class": "section",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "You may also like"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 4,
+      "label": "Maximum products to show"
+    },
+    {
+      "type": "select",
+      "id": "intent",
+      "label": "Recommendation intent",
+      "default": "related",
+      "options": [
+        {
+          "value": "related",
+          "label": "Related products (Similar aesthetics)"
+        },
+        {
+          "value": "complementary",
+          "label": "Complementary products (Pairing/Cross-sell)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Recommendations"
+    }
+  ]
+}
+{% endschema %}
