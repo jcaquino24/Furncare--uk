@@ -161,6 +161,7 @@
       "block_order": [
         "heading_8ej3TE"
       ],
+      "disabled": true,
       "name": "Rich Text",
       "settings": {
         "id_anchor": "",
@@ -177,6 +178,7 @@
     },
     "product_recommendation_6Wr3HQ": {
       "type": "product-recommendation",
+      "disabled": true,
       "name": "Custom Recommendations",
       "settings": {
         "heading": "",
@@ -205,7 +207,6 @@
       "block_order": [
         "product_block_YAcrU9"
       ],
-      "disabled": true,
       "name": "Product blocks",
       "settings": {
         "title": "You may also like",
