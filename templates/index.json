@@ -685,6 +685,55 @@
         "tab2_colour_scheme": "warm-stone"
       }
     },
+    "product_blocks_yKwTgA": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_7Ycz3A": {
+          "type": "product_block",
+          "settings": {
+            "title": "Latest Additions",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "essentials-bundle",
+              "kora-coffee-table",
+              "struan-wingback-chair",
+              "emmi-lowered-arm-chair",
+              "langdon-rectangular-8-seater-dining-table-copy",
+              "thetford-small-side-table"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        },
+        "product_block_JNYNeX": {
+          "type": "product_block",
+          "settings": {
+            "title": "Coming Soon",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [],
+            "collection": "the-origins-collection",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_7Ycz3A",
+        "product_block_JNYNeX"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "",
+        "section_padding": "--spacing-2xl"
+      }
+    },
     "richtext_raLCwa": {
       "type": "richtext",
       "blocks": {
@@ -1048,6 +1097,7 @@
     "featured_blocks_cFzCid",
     "blocks_pTHr3w",
     "content_blocks_3fAQPE",
+    "product_blocks_yKwTgA",
     "richtext_raLCwa",
     "blog_article_row_8MhRNW",
     "richtext_DiEacU",
