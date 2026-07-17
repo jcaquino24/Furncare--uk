@@ -245,73 +245,6 @@
         "tab2_colour_scheme": "duck-egg"
       }
     },
-    "content_blocks_3fAQPE": {
-      "type": "content-blocks",
-      "blocks": {
-        "tab1_hdckNp": {
-          "type": "tab1",
-          "settings": {
-            "image": "shopify://shop_images/TV_Lounge_24_of_43.jpg",
-            "text": "Later Living & Elderly Care",
-            "richtext": "",
-            "richtext_color": "#000000",
-            "richtext_font_size": "16px",
-            "richtext_font_weight": "400",
-            "richtext_text_transform": "none",
-            "richtext_letter_spacing": "normal",
-            "link": "shopify://pages/later-living-furniture",
-            "gradient_overlay": "dark"
-          }
-        },
-        "tab1_t9VjBi": {
-          "type": "tab1",
-          "settings": {
-            "image": "shopify://shop_images/Bistro_Area_7_998c544b-983e-4232-bac2-c188d7c2bdf5.jpg",
-            "text": "Challenging Environments",
-            "richtext": "",
-            "richtext_color": "#000000",
-            "richtext_font_size": "16px",
-            "richtext_font_weight": "400",
-            "richtext_text_transform": "none",
-            "richtext_letter_spacing": "normal",
-            "link": "shopify://pages/challenging-environments-furniture",
-            "gradient_overlay": "dark"
-          }
-        },
-        "tab1_KWhGMA": {
-          "type": "tab1",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Image2-D.png",
-            "text": "Quick Delivery Packages",
-            "richtext": "",
-            "richtext_color": "#000000",
-            "richtext_font_size": "16px",
-            "richtext_font_weight": "400",
-            "richtext_text_transform": "none",
-            "richtext_letter_spacing": "normal",
-            "link": "shopify://pages/quick-delivery-care-furniture",
-            "gradient_overlay": "dark"
-          }
-        }
-      },
-      "block_order": [
-        "tab1_hdckNp",
-        "tab1_t9VjBi",
-        "tab1_KWhGMA"
-      ],
-      "name": "Content blocks",
-      "settings": {
-        "title": "Explore our sectors",
-        "section_padding": "--spacing-2xl",
-        "tab1_title": "",
-        "tab1_handle": "",
-        "tab1_colour_scheme": "warm-stone",
-        "tab2_title": "",
-        "tab2_handle": "",
-        "tab2_colour_scheme": "warm-stone"
-      }
-    },
     "review_blocks_TFrKC6": {
       "type": "review-blocks",
       "blocks": {
@@ -417,6 +350,73 @@
         "summary_rating": 5,
         "summary_text": "Based on 500 reviews",
         "fallback_message": "No reviews available at this time."
+      }
+    },
+    "content_blocks_3fAQPE": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_hdckNp": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/TV_Lounge_24_of_43.jpg",
+            "text": "Later Living & Elderly Care",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/later-living-furniture",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_t9VjBi": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_7_998c544b-983e-4232-bac2-c188d7c2bdf5.jpg",
+            "text": "Challenging Environments",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/challenging-environments-furniture",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_KWhGMA": {
+          "type": "tab1",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Image2-D.png",
+            "text": "Quick Delivery Packages",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/quick-delivery-care-furniture",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_hdckNp",
+        "tab1_t9VjBi",
+        "tab1_KWhGMA"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "Explore our sectors",
+        "section_padding": "--spacing-2xl",
+        "tab1_title": "",
+        "tab1_handle": "",
+        "tab1_colour_scheme": "warm-stone",
+        "tab2_title": "",
+        "tab2_handle": "",
+        "tab2_colour_scheme": "warm-stone"
       }
     },
     "featured_blocks_cFzCid": {
@@ -997,9 +997,9 @@
     "image_video_banner_XGAaBn",
     "featured_blocks_M7Nrnn",
     "content_blocks_LGcRAg",
-    "content_blocks_3fAQPE",
     "review_blocks_TFrKC6",
     "featured_blocks_cFzCid",
+    "content_blocks_3fAQPE",
     "content_blocks_fLpHR3",
     "richtext_raLCwa",
     "blog_article_row_8MhRNW",
