@@ -166,7 +166,7 @@
         "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
-        "text_alignment": "left",
+        "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": false,
         "optional_richtext": "",
