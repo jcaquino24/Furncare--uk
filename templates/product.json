@@ -145,11 +145,41 @@
         "security_grading_title": "Security Grading"
       }
     },
+    "richtext_3XMDTT": {
+      "type": "richtext",
+      "blocks": {
+        "heading_8ej3TE": {
+          "type": "heading",
+          "settings": {
+            "text": "You may also like",
+            "heading_level": "h1",
+            "heading_style": "title-md"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_8ej3TE"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "id_anchor": "",
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "left",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 300
+      }
+    },
     "product_recommendation_6Wr3HQ": {
       "type": "product-recommendation",
       "name": "Custom Recommendations",
       "settings": {
-        "heading": "You may also like",
+        "heading": "",
         "products_to_show": 4,
         "intent": "related"
       }
@@ -185,6 +215,7 @@
   },
   "order": [
     "main",
+    "richtext_3XMDTT",
     "product_recommendation_6Wr3HQ",
     "product_blocks_tncMV6"
   ]
