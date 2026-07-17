@@ -45,6 +45,7 @@
         "f2ebb9d6-3aec-4f10-b138-4d85261f5920",
         "message_q3ddnf"
       ],
+      "disabled": true,
       "settings": {
         "autoplay": true,
         "autoplay_speed": 3,
