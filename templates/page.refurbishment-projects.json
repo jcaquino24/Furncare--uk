@@ -163,6 +163,122 @@
         "background_colour_scheme": "base-white-01"
       }
     },
+    "furncare_about_audience_t9LVhj": {
+      "type": "furncare-about-audience",
+      "blocks": {
+        "card_PLPbaV": {
+          "type": "card",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Early ideas",
+            "copy": "You know a space needs updating, but you may not know exactly what needs to change yet. We can help you explore suitable furniture options, styles, finishes and practical considerations."
+          }
+        },
+        "card_dYm3n8": {
+          "type": "card",
+          "settings": {
+            "icon": "sofa",
+            "title": "Room-by-room planning",
+            "copy": "You’re looking at specific areas such as bedrooms, lounges, dining rooms or communal spaces and need guidance on what furniture will work best for each setting."
+          }
+        },
+        "card_NCm8it": {
+          "type": "card",
+          "settings": {
+            "icon": "layers",
+            "title": "Phased refurbishment",
+            "copy": "You’re planning improvements around a live care environment and need a practical approach that helps minimise disruption for residents, staff and visitors."
+          }
+        },
+        "card_Cda9dh": {
+          "type": "card",
+          "settings": {
+            "icon": "check",
+            "title": "Final details",
+            "copy": "You’re ready to bring the space together and need support with product choices, quantities, finishes and the details that help each room feel complete."
+          }
+        }
+      },
+      "block_order": [
+        "card_PLPbaV",
+        "card_dYm3n8",
+        "card_NCm8it",
+        "card_Cda9dh"
+      ],
+      "settings": {
+        "id_anchor": "",
+        "eyebrow": "tailored support for you",
+        "heading": "For every stage of the refurbishment",
+        "background_gradient": "",
+        "background_color": "#f9f7f0",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#e7e5e4",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 32,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 14,
+        "eyebrow_weight": 400,
+        "eyebrow_letter_spacing": 40,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 20,
+        "text_color": "#243222",
+        "heading_color": "#243222",
+        "copy_color": "#243222",
+        "eyebrow_color": "#243222",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "card_background": "#243222",
+        "card_heading_color": "#c3c0b0",
+        "card_copy_color": "#c3c0b0",
+        "card_border_color": "#243222",
+        "card_border_width": 1,
+        "card_radius": 32,
+        "card_padding": 28,
+        "card_padding_mobile": 24,
+        "card_shadow_opacity": 6,
+        "card_hover_shadow_opacity": 14,
+        "card_hover_lift": 4,
+        "card_title_size": 20,
+        "card_title_weight": 300,
+        "card_copy_size": 15,
+        "card_copy_line_height": 170,
+        "card_copy_margin_top": 16,
+        "grid_gap": 20,
+        "columns_desktop": "4",
+        "columns_tablet": "2",
+        "columns_mobile": "1",
+        "icon_background": "#c3c0b0",
+        "icon_color": "#243222",
+        "icon_size": 48,
+        "icon_svg_size": 23,
+        "icon_radius": 16,
+        "icon_margin_bottom": 32,
+        "icon_hover_scale": 108
+      }
+    },
     "audience": {
       "type": "furncare-about-audience",
       "blocks": {
@@ -792,6 +908,7 @@
   "order": [
     "hero",
     "blog_article_row_4iJ6Ye",
+    "furncare_about_audience_t9LVhj",
     "audience",
     "proof",
     "final_cta",
