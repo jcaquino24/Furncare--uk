@@ -434,7 +434,7 @@
         "colour_scheme": "base-white-01",
         "title": "Our trusted partners",
         "padding": "narrow",
-        "layout": "line_grid",
+        "layout": "marquee",
         "enable_lightbox": false
       }
     },
