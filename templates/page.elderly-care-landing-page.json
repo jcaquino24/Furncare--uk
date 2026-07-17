@@ -45,7 +45,124 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "warm-stone",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
+      }
+    },
+    "content_blocks_gN9UKF": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_NdrHB8": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Roomset_Lifestyle_db5be164-ab96-4916-b221-0f3c73ecb202.jpg",
+            "text": "Lounge",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/elderly-care-lounge-furniture",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_6XVTA8": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Roomset_Lifestyle.jpg",
+            "text": "Bedroom",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/elderly-care-bedroom-furniture-1",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_UGWKgE": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_7.jpg",
+            "text": "Activity Room",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/elderly-care-activity-rooms",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_Uqpz9q": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Tables_Roomset_Lifestyle.jpg",
+            "text": "Dining Room",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/elderly-care-dining-rooms",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_fHxhk6": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/TV_Lounge_12_of_43.jpg",
+            "text": "Café",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/cabinet-furniture",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_Pg83FB": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/WD_1.jpg",
+            "text": "Garden",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/curtains-blinds-soft-furnishings",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_NdrHB8",
+        "tab1_6XVTA8",
+        "tab1_UGWKgE",
+        "tab1_Uqpz9q",
+        "tab1_fHxhk6",
+        "tab1_Pg83FB"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "Shop by room",
+        "section_padding": "--spacing-2xl",
+        "tab1_title": "Later Living",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "warm-stone",
+        "tab2_title": "Challenging Environments",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "duck-egg"
       }
     },
     "richtext_844wCb": {
@@ -87,11 +204,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "green-01",
-        "enable_animation": true
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "image_text_xjAqkz": {
@@ -123,7 +245,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "image_text_Yqccjx": {
@@ -154,7 +279,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "featured_blocks_YgAnW7": {
@@ -231,6 +359,7 @@
     "main",
     "image_text_QGFYg4",
     "richtext_844wCb",
+    "content_blocks_gN9UKF",
     "image_text_xjAqkz",
     "image_text_Yqccjx",
     "featured_blocks_YgAnW7"
