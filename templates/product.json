@@ -86,9 +86,9 @@
             "active_border_enable": false,
             "active_border_width": 2,
             "active_border_color": "#243222",
-            "background_color": "#C3C0B0",
+            "background_color": "#c3c0b0",
             "border_color": "rgba(0,0,0,0)",
-            "card_background": "#C3C0B0",
+            "card_background": "#c3c0b0",
             "card_border_color": "rgba(0,0,0,0)",
             "heading_color": "#243222",
             "text_color": "#243222",
@@ -145,6 +145,15 @@
         "security_grading_title": "Security Grading"
       }
     },
+    "product_recommendation_6Wr3HQ": {
+      "type": "product-recommendation",
+      "name": "Custom Recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "products_to_show": 4,
+        "intent": "related"
+      }
+    },
     "product_blocks_tncMV6": {
       "type": "product-blocks",
       "blocks": {
@@ -166,6 +175,7 @@
       "block_order": [
         "product_block_YAcrU9"
       ],
+      "disabled": true,
       "name": "Product blocks",
       "settings": {
         "title": "You may also like",
@@ -175,6 +185,7 @@
   },
   "order": [
     "main",
+    "product_recommendation_6Wr3HQ",
     "product_blocks_tncMV6"
   ]
 }
