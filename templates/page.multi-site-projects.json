@@ -675,6 +675,166 @@
         "mobile_layout": "swiper",
         "enable_lightbox": false
       }
+    },
+    "furncare_about_proof_D3cX4t": {
+      "type": "furncare-about-proof",
+      "blocks": {
+        "stat_MLBq37": {
+          "type": "stat",
+          "settings": {
+            "number": "1",
+            "label": "Tell us about your extension",
+            "copy": "Complete the form below and share the spaces being added, your timescale, location and any key requirements."
+          }
+        },
+        "stat_gmwm4E": {
+          "type": "stat",
+          "settings": {
+            "number": "2",
+            "label": "We help shape the furniture brief",
+            "copy": "Our team can guide you through suitable options, finishes, quantities and practical considerations."
+          }
+        },
+        "stat_tUQCFK": {
+          "type": "stat",
+          "settings": {
+            "number": "3",
+            "label": "We support the project details",
+            "copy": "From product selection to order coordination, we help make the furniture side easier to manage."
+          }
+        }
+      },
+      "block_order": [
+        "stat_MLBq37",
+        "stat_gmwm4E",
+        "stat_tUQCFK"
+      ],
+      "name": "Furncare proof advanced",
+      "settings": {
+        "eyebrow": "the process",
+        "heading": "How it works",
+        "background_gradient": "",
+        "background_color": "#f9f7f0",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#e7e5e4",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 52,
+        "heading_size_mobile": 36,
+        "heading_weight": 300,
+        "heading_line_height": 100,
+        "heading_letter_spacing": -1,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 13,
+        "eyebrow_weight": 300,
+        "eyebrow_letter_spacing": 22,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 16,
+        "text_color": "#c3c0b0",
+        "heading_color": "#243222",
+        "copy_color": "#c3c0b0",
+        "eyebrow_color": "#243222",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "card_background": "#243222",
+        "card_heading_color": "#c3c0b0",
+        "card_copy_color": "#c3c0b0",
+        "card_border_color": "#f9f7f0",
+        "card_border_width": 1,
+        "card_radius": 32,
+        "card_padding": 28,
+        "card_padding_mobile": 24,
+        "card_shadow_opacity": 6,
+        "card_hover_shadow_opacity": 14,
+        "card_hover_lift": 4,
+        "card_title_size": 20,
+        "card_title_weight": 700,
+        "card_copy_size": 15,
+        "card_copy_line_height": 170,
+        "card_copy_margin_top": 16,
+        "grid_gap": 20,
+        "columns_desktop": "3",
+        "columns_tablet": "2",
+        "columns_mobile": "1",
+        "icon_background": "#f5f5f4",
+        "icon_color": "#292524",
+        "icon_size": 48,
+        "icon_svg_size": 23,
+        "icon_radius": 16,
+        "icon_margin_bottom": 32,
+        "icon_hover_scale": 108,
+        "stat_number_color": "#c3c0b0",
+        "stat_label_color": "#c3c0b0",
+        "stat_number_size": 48,
+        "stat_number_weight": 700,
+        "stat_label_size": 16,
+        "stat_label_margin_top": 12,
+        "stat_copy_margin_top": 12
+      }
+    },
+    "blocks_Xm84Xd": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_9e99ca3_KhKr9P": {
+          "type": "ai_gen_block_9e99ca3",
+          "settings": {
+            "layout": "form_left",
+            "mobile_layout": "content_first",
+            "container_width": 1600,
+            "column_gap": 60,
+            "section_padding_top": 60,
+            "section_padding_bottom": 60,
+            "embed_url": "",
+            "embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"4b643ffe-2b73-47b6-96c2-c0694276b3e6\" data-portal-id=\"145723791\"></div>",
+            "form_min_height": 500,
+            "form_background_color": "#f9f7f0",
+            "form_border_radius": 8,
+            "heading": "<h1>Let us know what you're planning</h1>",
+            "heading_font": "red_hat_display_n4",
+            "heading_size": 60,
+            "heading_color": "#243222",
+            "heading_spacing": 32,
+            "body_text": "<p></p><p>We'd love to know what you have planned! </p><p>Complete the form and we will be in touch to guide you towards your next steps.</p><p></p><p>If you'd rather contact us another way, you can:</p><p>- Call us on <a href=\"tel:01603 664900\" title=\"tel:01603 664900\"><strong>01603 664900</strong></a><br/>- Email our team on <a href=\"mailto:sales@furncare.co.uk\" title=\"mailto:sales@furncare.co.uk\"><strong>sales@furncare.co.uk<br/></strong></a>- Click on the live chat option on the bottom right of the page</p><p></p><p>We look forward to hearing from you!</p>",
+            "body_size": 16,
+            "body_color": "#243222",
+            "body_spacing": 42,
+            "button_label": "",
+            "button_link": "",
+            "button_font_size": 16,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "button_background_color": "#c3c0b0",
+            "button_text_color": "#f9f7f0",
+            "button_hover_background_color": "#c3c0b0",
+            "button_hover_text_color": "#f9f7f0",
+            "button_border_radius": 4
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_9e99ca3_KhKr9P"
+      ],
+      "name": "Form and text",
+      "settings": {}
     }
   },
   "order": [
@@ -684,6 +844,8 @@
     "process",
     "proof",
     "final_cta",
-    "image_text_blocks_9zedtg"
+    "image_text_blocks_9zedtg",
+    "furncare_about_proof_D3cX4t",
+    "blocks_Xm84Xd"
   ]
 }
