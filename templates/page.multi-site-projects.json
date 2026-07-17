@@ -835,6 +835,78 @@
       ],
       "name": "Form and text",
       "settings": {}
+    },
+    "faqs_fFYjia": {
+      "type": "faqs",
+      "blocks": {
+        "faq_QCKGgc": {
+          "type": "faq",
+          "settings": {
+            "question": "When should we start planning furniture for a care home extension?",
+            "answer": "<p>It’s helpful to start thinking about furniture as early as possible, especially if layouts, room types and completion dates are already being discussed. Early involvement can make it easier to plan quantities, finishes, budgets and timescales.</p>"
+          }
+        },
+        "faq_i63DrT": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you help us match furniture to our existing care home?",
+            "answer": "<p>Yes. We can help you explore furniture options that complement your existing interiors or support a refreshed look for the new spaces.</p>"
+          }
+        },
+        "faq_B6zEY4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you support bedroom and communal space extensions?",
+            "answer": "<p>Yes. We can support furniture requirements for additional bedrooms, lounges, dining areas, activity spaces and other shared areas within a care home extension.</p>"
+          }
+        },
+        "faq_xCCi3a": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you help if our extension is part of a live care environment?",
+            "answer": "<p>Yes. We understand that extension projects often happen while the existing home continues to operate. Our team can help make the furniture side feel clearer and easier to coordinate around your wider project.</p>"
+          }
+        },
+        "faq_BYjH9W": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you provide options for different budgets?",
+            "answer": "<p>Yes. We can help you explore suitable furniture options based on your budget, requirements, timescale and the type of spaces being added.</p>"
+          }
+        },
+        "faq_CA6M9W": {
+          "type": "faq",
+          "settings": {
+            "question": "What information should we share when enquiring?",
+            "answer": "<p>Useful details include your project location, expected completion date, number of new rooms or spaces, furniture requirements, preferred style or finishes and whether you have plans or drawings available.</p>"
+          }
+        },
+        "faq_r6LWhe": {
+          "type": "faq",
+          "settings": {
+            "question": "What happens after we submit an enquiry?",
+            "answer": "<p>Our team will review your details and get in touch to understand your extension project, what stage you’re at and how we can support.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_QCKGgc",
+        "faq_i63DrT",
+        "faq_B6zEY4",
+        "faq_xCCi3a",
+        "faq_BYjH9W",
+        "faq_CA6M9W",
+        "faq_r6LWhe"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "faq_title": "Frequently Asked Questions",
+        "title_element": "h2",
+        "faq_text": "If you can't find the answer to your question, please feel free to speak to one of our team via live chat or call us on <a href=\"tel:01603 664900\" title=\"tel:01603 664900\"><strong>01603 664900</strong></a><strong>.</strong>",
+        "title_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "padding": "wide"
+      }
     }
   },
   "order": [
@@ -846,6 +918,7 @@
     "final_cta",
     "image_text_blocks_9zedtg",
     "furncare_about_proof_D3cX4t",
-    "blocks_Xm84Xd"
+    "blocks_Xm84Xd",
+    "faqs_fFYjia"
   ]
 }
