@@ -171,7 +171,7 @@
             "image": "shopify://shop_images/External_Garden_1_ca713fe5-a556-4dd2-85dd-42f94b4a628c.jpg",
             "text": "New Builds",
             "richtext": "",
-            "richtext_color": "#F9F7F9",
+            "richtext_color": "#f9f7f9",
             "richtext_font_size": "16px",
             "richtext_font_weight": "400",
             "richtext_text_transform": "none",
@@ -195,6 +195,21 @@
             "gradient_overlay": "dark"
           }
         },
+        "tab1_9h3iwJ": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/External_Front_5_ce34d8f2-bb11-414a-8005-d1412dd78d88.jpg",
+            "text": "Extensions",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/elderly-care-dining-rooms",
+            "gradient_overlay": "dark"
+          }
+        },
         "tab1_TP9YRc": {
           "type": "tab1",
           "settings": {
@@ -209,29 +224,13 @@
             "link": "shopify://pages/urgent-furniture-projects",
             "gradient_overlay": "dark"
           }
-        },
-        "tab1_9h3iwJ": {
-          "type": "tab1",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Tables_Roomset_Lifestyle.jpg",
-            "text": "Dining Room",
-            "richtext": "",
-            "richtext_color": "#000000",
-            "richtext_font_size": "16px",
-            "richtext_font_weight": "400",
-            "richtext_text_transform": "none",
-            "richtext_letter_spacing": "normal",
-            "link": "shopify://collections/elderly-care-dining-rooms",
-            "gradient_overlay": "dark"
-          }
         }
       },
       "block_order": [
         "tab1_9a8mqJ",
         "tab1_PmniNm",
-        "tab1_TP9YRc",
-        "tab1_9h3iwJ"
+        "tab1_9h3iwJ",
+        "tab1_TP9YRc"
       ],
       "name": "Content blocks",
       "settings": {
