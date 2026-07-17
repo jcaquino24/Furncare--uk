@@ -33,8 +33,8 @@
             "title_size": "display",
             "text": "Everyone deserves to live in comfort and dignity, surrounded by spaces that feel safe and personal.\nFurncare furniture is created with that belief at its core - crafted to make care environments more than just functional, but truly homely.\n\nEach Furncare piece is crafted with attention to detail, using materials that stand up to daily use while offering warmth and familiarity. The result is furniture that supports residents’ independence, comfort, and wellbeing, while making life easier for the people who care for them every day.",
             "button_style": "primary",
-            "button_text": "Get in touch",
-            "button_url": "shopify://pages/show-van"
+            "button_text": "Start your project",
+            "button_url": "shopify://pages/about-us"
           }
         }
       },
@@ -45,7 +45,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "warm-stone",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "richtext_844wCb": {
@@ -87,11 +90,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "green-01",
-        "enable_animation": true
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "image_text_xjAqkz": {
@@ -123,7 +131,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "image_text_Yqccjx": {
@@ -154,7 +165,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "featured_blocks_YgAnW7": {
