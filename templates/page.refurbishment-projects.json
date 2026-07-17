@@ -120,49 +120,6 @@
         "secondary_button_hover_border": "#f9f7f0"
       }
     },
-    "blog_article_row_4iJ6Ye": {
-      "type": "blog-article-row",
-      "blocks": {
-        "article_J3nrN4": {
-          "type": "article",
-          "settings": {
-            "article": "news/dementia-and-nursing-care-at-letcombe-regis"
-          }
-        },
-        "article_y3fUY9": {
-          "type": "article",
-          "settings": {
-            "article": "news/the-chestnuts-care-home-transformed-with-stylish-new-extension"
-          }
-        },
-        "article_kc9wXR": {
-          "type": "article",
-          "settings": {
-            "article": "news/furncare-project-team-shines-at-chapel-view-care-home"
-          }
-        },
-        "article_TMp69Q": {
-          "type": "article",
-          "settings": {
-            "article": "news/stowlangtoft-hall"
-          }
-        }
-      },
-      "block_order": [
-        "article_J3nrN4",
-        "article_y3fUY9",
-        "article_kc9wXR",
-        "article_TMp69Q"
-      ],
-      "name": "Blog article row",
-      "settings": {
-        "title": "REFURBISHMENT CASE STUDIES",
-        "section_padding": "--spacing-2xl",
-        "show_badges": true,
-        "show_video_indicator": false,
-        "background_colour_scheme": "base-white-01"
-      }
-    },
     "furncare_about_audience_t9LVhj": {
       "type": "furncare-about-audience",
       "blocks": {
@@ -277,6 +234,84 @@
         "icon_radius": 16,
         "icon_margin_bottom": 32,
         "icon_hover_scale": 108
+      }
+    },
+    "blocks_AmDiWi": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ed0e5ef_HWch33": {
+          "type": "ai_gen_block_ed0e5ef",
+          "settings": {
+            "image_width": 400,
+            "image_height": 440,
+            "image_gap": 24,
+            "vertical_padding": 40,
+            "border_radius": 6,
+            "scroll_speed": 100,
+            "background_color": "#F9F7F0",
+            "image_1": "shopify://shop_images/Elderly_Care_Dining.jpg",
+            "image_2": "shopify://shop_images/Challenging_Cafe.jpg",
+            "image_3": "shopify://shop_images/PREG2398.jpg",
+            "image_4": "shopify://shop_images/PHOTO-2025-01-28-23-01-35.jpg",
+            "image_5": "shopify://shop_images/Reception_30_of_39.jpg",
+            "image_6": "shopify://shop_images/Conservatory_-_Chapel_View_9_of_12.jpg",
+            "image_7": "shopify://shop_images/Dining_Room_-_Chapel_View_27_of_60.jpg",
+            "image_8": "shopify://shop_images/Untitled-17_b1346a46-4d5a-4038-91d6-1cb0b5c8a5b8.png",
+            "image_9": "shopify://shop_images/Pub_-_Chapel_View_21_of_40.jpg",
+            "image_10": "shopify://shop_images/Untitled-5_8eff4791-2f09-4fe3-98f2-7d0f6898c64a.png",
+            "image_11": "shopify://shop_images/PREG2499.jpg",
+            "image_12": "shopify://shop_images/PREG2446.jpg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ed0e5ef_HWch33"
+      ],
+      "name": "Image marquee",
+      "settings": {}
+    },
+    "blog_article_row_4iJ6Ye": {
+      "type": "blog-article-row",
+      "blocks": {
+        "article_J3nrN4": {
+          "type": "article",
+          "settings": {
+            "article": "news/dementia-and-nursing-care-at-letcombe-regis"
+          }
+        },
+        "article_y3fUY9": {
+          "type": "article",
+          "settings": {
+            "article": "news/the-chestnuts-care-home-transformed-with-stylish-new-extension"
+          }
+        },
+        "article_kc9wXR": {
+          "type": "article",
+          "settings": {
+            "article": "news/furncare-project-team-shines-at-chapel-view-care-home"
+          }
+        },
+        "article_TMp69Q": {
+          "type": "article",
+          "settings": {
+            "article": "news/stowlangtoft-hall"
+          }
+        }
+      },
+      "block_order": [
+        "article_J3nrN4",
+        "article_y3fUY9",
+        "article_kc9wXR",
+        "article_TMp69Q"
+      ],
+      "name": "Blog article row",
+      "settings": {
+        "title": "REFURBISHMENT CASE STUDIES",
+        "section_padding": "--spacing-2xl",
+        "show_badges": true,
+        "show_video_indicator": false,
+        "background_colour_scheme": "base-white-01"
       }
     },
     "audience": {
@@ -907,8 +942,9 @@
   },
   "order": [
     "hero",
-    "blog_article_row_4iJ6Ye",
     "furncare_about_audience_t9LVhj",
+    "blocks_AmDiWi",
+    "blog_article_row_4iJ6Ye",
     "audience",
     "proof",
     "final_cta",
