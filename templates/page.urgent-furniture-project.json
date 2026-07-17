@@ -772,6 +772,52 @@
         "colour_scheme": "warm-stone",
         "padding": "wide"
       }
+    },
+    "blocks_DnyDRi": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_9e99ca3_gpHp6C": {
+          "type": "ai_gen_block_9e99ca3",
+          "settings": {
+            "layout": "form_left",
+            "mobile_layout": "content_first",
+            "container_width": 1200,
+            "column_gap": 60,
+            "section_padding_top": 60,
+            "section_padding_bottom": 60,
+            "embed_url": "",
+            "embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"5be810f4-bf1d-4ee2-9758-53772397fa4d\" data-portal-id=\"145723791\"></div>",
+            "form_min_height": 500,
+            "form_background_color": "#F9F7F0",
+            "form_border_radius": 8,
+            "heading": "<h2>How can we help?</h2>",
+            "heading_font": "red_hat_display_n4",
+            "heading_size": 60,
+            "heading_color": "#000000",
+            "heading_spacing": 42,
+            "body_text": "<p></p><p>We'd love to know what you have planned! </p><p>Complete the form and we will be in touch to guide you towards your next steps.</p><p></p><p>If you'd rather contact us another way, you can:</p><p>- Call us on <a href=\"tel:01603 664900\" title=\"tel:01603 664900\"><strong>01603 664900</strong></a><br/>- Email our team on <a href=\"mailto:sales@furncare.co.uk\" title=\"mailto:sales@furncare.co.uk\"><strong>sales@furncare.co.uk<br/></strong></a>- Click on the live chat option on the bottom right of the page</p><p></p><p>We look forward to hearing from you!</p>",
+            "body_size": 16,
+            "body_color": "#666666",
+            "body_spacing": 32,
+            "button_label": "",
+            "button_link": "",
+            "button_font_size": 16,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "button_background_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_hover_background_color": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "button_border_radius": 4
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_9e99ca3_gpHp6C"
+      ],
+      "name": "Form and text",
+      "settings": {}
     }
   },
   "order": [
@@ -783,6 +829,7 @@
     "proof",
     "final_cta",
     "content_blocks_tBmEyX",
-    "faqs_dhnxRC"
+    "faqs_dhnxRC",
+    "blocks_DnyDRi"
   ]
 }
