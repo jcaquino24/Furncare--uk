@@ -93,6 +93,51 @@
         "content_alignment": "center"
       }
     },
+    "blocks_JpBwcR": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_fGYQdH": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 15,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#F9F7F0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_fGYQdH"
+      ],
+      "name": "Spacer",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
     "featured_blocks_M7Nrnn": {
       "type": "featured-blocks",
       "blocks": {
@@ -155,11 +200,56 @@
       ],
       "name": "Featured Blocks",
       "settings": {
-        "colour_scheme": "base-white-02",
+        "colour_scheme": "base-white-01",
         "title": "",
-        "padding": "default",
+        "padding": "wide",
         "layout": "marquee",
         "enable_lightbox": false
+      }
+    },
+    "blocks_G7fFWx": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_LRWW9D": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 15,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#F9F7F0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_LRWW9D"
+      ],
+      "name": "Spacer",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     },
     "content_blocks_LGcRAg": {
@@ -860,7 +950,9 @@
   },
   "order": [
     "image_video_banner_XGAaBn",
+    "blocks_JpBwcR",
     "featured_blocks_M7Nrnn",
+    "blocks_G7fFWx",
     "content_blocks_LGcRAg",
     "review_blocks_TFrKC6",
     "featured_blocks_cFzCid",
