@@ -33,9 +33,9 @@
           "type": "button",
           "settings": {
             "text": "Bring Your Project to Life",
-            "button_url": "/",
+            "button_url": "shopify://pages/about-us",
             "new_tab": true,
-            "button_style": "primary"
+            "button_style": "underline"
           }
         },
         "card_rxRzbP": {
