@@ -76,8 +76,14 @@
   assign show_compare_at_price = show_compare_at_price | default: true, allow_false: true
 
   if product_card_style == 'interior_designer' or product_card_style == 'swatch_card' or product_card_style == 'default_noprice'
-    assign show_price = false
+   
   endif
+
+  if request.page_type == 'collection' and product.selected_or_first_available_variant.price == 0 
+     assign show_price = false
+  endif
+
+
   comment
   endcomment
 
