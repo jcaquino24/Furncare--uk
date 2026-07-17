@@ -123,14 +123,6 @@
     "audience": {
       "type": "furncare-about-audience",
       "blocks": {
-        "card_xFDLgx": {
-          "type": "card",
-          "settings": {
-            "icon": "users",
-            "title": "Care operators",
-            "copy": "Furniture schemes that support residents, staff, compliance, durability and long-term use."
-          }
-        },
         "audience_1": {
           "type": "card",
           "settings": {
@@ -154,13 +146,21 @@
             "title": "Procurement and ordering",
             "copy": "You need clear product choices, costs and timelines to help keep the project moving smoothly towards opening."
           }
+        },
+        "card_xFDLgx": {
+          "type": "card",
+          "settings": {
+            "icon": "heart",
+            "title": "Finishing Touches",
+            "copy": "You’re approaching the final stages and need furniture choices, quantities, finishes and timings aligned so each new space feels ready to use."
+          }
         }
       },
       "block_order": [
-        "card_xFDLgx",
         "audience_1",
         "audience_2",
-        "audience_3"
+        "audience_3",
+        "card_xFDLgx"
       ],
       "settings": {
         "id_anchor": "",
