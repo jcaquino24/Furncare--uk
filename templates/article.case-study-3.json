@@ -111,7 +111,7 @@
         "tagline_LFtXUT": {
           "type": "tagline",
           "settings": {
-            "content": "<a href=\"http://www.furncare.co.uk/\" target=\"_blank\">Furncare</a>, a leading provider of high-quality care home furniture for over 20 years, is proud to announce its collaboration with <a href=\"https://brightbaydesign.co.uk/\" target=\"_blank\">Bright Bay Design</a> in furnishing the newly launched <a href=\"https://www.forestcare.co.uk/homes/elm-lodge/\" target=\"_blank\">Forest Care Elm Lodge</a>, a state-of-the-art care home that promises to set a new benchmark in later living residential care.",
+            "content": "Working alongside Bright Bay Design, we furnished the newly launched Forest Care Elm Lodge with furniture designed specifically for later living environments. Together, we helped create a contemporary, welcoming care home that balances comfort, durability and thoughtful design.",
             "tagline_style": "body-lg"
           },
           "blocks": {}
@@ -119,7 +119,7 @@
         "tagline_AtLUnj": {
           "type": "tagline",
           "settings": {
-            "content": "The project brought together Furncare’s expertise in crafting furniture tailored for comfort, safety, and durability with Bright Bay Design’s innovative approach to interior aesthetics, which has resulted in an elegant, welcoming environment designed to enhance residents’ quality of life in the care home.",
+            "content": "Combining our expertise in care home furniture with Bright Bay Design’s innovative approach to interior aesthetics has resulted in an elegant, welcoming environment designed to enhance residents’ quality of life in the care home.",
             "tagline_style": "body-lg"
           },
           "blocks": {}
@@ -144,13 +144,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": false,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "featured_blocks_QcyUqa": {
@@ -160,6 +163,13 @@
           "type": "block",
           "settings": {
             "image": "shopify://shop_images/PREG2421.jpg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_UEc3BP": {
+          "type": "block",
+          "settings": {
             "caption": "",
             "lightbox_caption": ""
           }
@@ -311,6 +321,7 @@
       },
       "block_order": [
         "block_WB6nUy",
+        "block_UEc3BP",
         "block_9HR9qb",
         "block_WQpPgr",
         "block_pgBF4K",
@@ -330,6 +341,7 @@
         "block_zJTmib",
         "block_aKCpzq"
       ],
+      "disabled": true,
       "name": "Featured Blocks",
       "settings": {
         "colour_scheme": "base-white-01",
@@ -338,6 +350,41 @@
         "layout": "line_grid",
         "enable_lightbox": true
       }
+    },
+    "blocks_YXGqD9": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ed0e5ef_GBBC9G": {
+          "type": "ai_gen_block_ed0e5ef",
+          "settings": {
+            "image_width": 360,
+            "image_height": 520,
+            "image_gap": 24,
+            "vertical_padding": 40,
+            "border_radius": 0,
+            "scroll_speed": 85,
+            "background_color": "#F9F7F0",
+            "image_1": "shopify://shop_images/PREG2402.jpg",
+            "image_2": "shopify://shop_images/PREG2579.jpg",
+            "image_3": "shopify://shop_images/PREG2472.jpg",
+            "image_4": "shopify://shop_images/PREG2406.jpg",
+            "image_5": "shopify://shop_images/PREG2375.jpg",
+            "image_6": "shopify://shop_images/PREG2446.jpg",
+            "image_7": "shopify://shop_images/PREG2396.jpg",
+            "image_8": "shopify://shop_images/PREG2536.jpg",
+            "image_9": "shopify://shop_images/PREG2452.jpg",
+            "image_10": "shopify://shop_images/PREG2468.jpg",
+            "image_11": "shopify://shop_images/PREG2487.jpg",
+            "image_12": "shopify://shop_images/PREG2521.jpg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ed0e5ef_GBBC9G"
+      ],
+      "name": "Image marquee",
+      "settings": {}
     },
     "image_text_t4XjPt": {
       "type": "image-text",
@@ -353,9 +400,9 @@
           "settings": {
             "title": "Location",
             "title_size": "xl",
-            "text": "Elm Lodge is a state-of-the-art, 60-bed luxury residential care home nestled in \nthree acres of beautiful grounds in the picturesque Hampshire \ncountryside. As part of the Forest Care group, it offers residents over 43 years of dedicated care experience and five-star hospitality, all guided by residents' \npreferences.T his brand-new, eco-friendly facility creates a genuinely welcoming place to live. From the cosy lounge areas to the stylish yet practical restaurant and café bar, every detail has been designed with care.",
+            "text": "Elm Lodge is a state-of-the-art, 60-bed luxury residential care home nestled in \nthree acres of beautiful grounds in the picturesque Hampshire \ncountryside. As part of the Forest Care group, it offers residents over 43 years of dedicated care experience and five-star hospitality, all guided by residents' \npreferences. This brand-new, eco-friendly facility creates a genuinely welcoming place to live. From the cosy lounge areas to the stylish yet practical restaurant and café bar, every detail has been designed with care.",
             "button_style": "primary",
-            "button_text": "Learn more",
+            "button_text": "",
             "button_url": ""
           }
         }
@@ -412,13 +459,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
         "enable_animation": false,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "image_text_Rr8iJJ": {
@@ -432,6 +482,7 @@
         },
         "content_c9CaD6": {
           "type": "content",
+          "disabled": true,
           "settings": {
             "title": "Key Features",
             "title_size": "xl",
@@ -446,6 +497,7 @@
         "images_NXFXtC",
         "content_c9CaD6"
       ],
+      "disabled": true,
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
@@ -463,16 +515,16 @@
           "settings": {
             "title": "Custom Interiors",
             "title_size": "xl",
-            "text": "Bright Bay Design expertly balanced the high-quality design aesthetic with \nrobust interiors which meet the complex demands of a care home, creating a \nstylish, comfortable and tranquil atmosphere conducive to both relaxation \nand community. <br>\n<br>\nBy integrating durable materials with a cohesive and contemporary scheme, the result is care home furniture that feels both sophisticated and welcoming. Fabrics are selected for heavy contract use, furniture is engineered for strength and stability, and circulation spaces are planned to support both residents and care teams. These practical decisions sit alongside a confident, contemporary design approach, ensuring the home feels considered and well executed. <br>\n<br>\nThe result is a care home interior that works as hard as the people in it - robust, compliant and designed specifically for the realities of later living.",
+            "text": "Bright Bay Design expertly balanced the high-quality design aesthetic with \nrobust interiors which meet the complex demands of a care home, creating a \nstylish, comfortable and tranquil atmosphere conducive to both relaxation \nand functionality. <br>\n<br>\nBy integrating durable materials with a cohesive and contemporary scheme, the result is care home furniture that feels both sophisticated and welcoming. Fabrics are selected for heavy contract use, furniture is engineered for strength and stability, and circulation spaces are planned to support both residents and care teams. These practical decisions sit alongside a confident, contemporary design approach, ensuring the home feels considered and well executed. <br>\n<br>\nThe result is a care home interior that works as hard as the people in it - robust, compliant and designed specifically for the realities of later living.",
             "button_style": "underline",
-            "button_text": "See care home design from their point of view (?)",
+            "button_text": "",
             "button_url": "https://brightbaydesign.co.uk/elm-lodge/"
           }
         },
         "images_FmKCDq": {
           "type": "images",
           "settings": {
-            "image_one": "shopify://shop_images/PREG2385_8c3997b1-7655-4f99-8589-241780587cb1.jpg"
+            "image_one": "shopify://shop_images/Untitled_-_2025-10-02T072427.794.png"
           }
         }
       },
@@ -503,9 +555,9 @@
           "settings": {
             "title": "Durability and Sustainability",
             "title_size": "xl",
-            "text": "Furncare’s commitment to sustainability underpins every stage of the project. Responsibly sourced materials and carefully selected finishes ensure Elm Lodge’s interiors are environmentally conscious while meeting the rigorous demands of a care home setting.<br>\n<br>\nBuilt to withstand daily use, the furniture and fittings are designed for long-term performance in later living environments. This focus on quality, longevity and responsible procurement ensures the interiors remain both visually impressive and operationally effective for years to come, reducing the need for replacement and ongoing material waste and supporting operational efficiency - also lowering the environmental impact of the project. <br>\n<br>\nBy combining robust specification with considered procurement, the result is a care home interior that performs consistently, supports sustainable principles and is built to last.",
+            "text": "Furncare’s commitment to sustainability underpins every stage of the project. Responsibly sourced materials and carefully selected finishes ensure Elm Lodge’s interiors are environmentally conscious while meeting the rigorous demands of a care home setting.<br>\n<br>\nBuilt to withstand daily use, the furniture and fittings are designed for long-term performance in later living environments. This focus on quality and responsible procurement ensures the interiors remain both visually impressive and operationally effective for years to come, reducing the need for replacement and ongoing material waste and supporting operational efficiency - also lowering the environmental impact of the project. <br>\n<br>\nBy combining robust specification with considered procurement, the result is a care home interior that performs consistently, supports sustainable principles and is built to last.",
             "button_style": "primary",
-            "button_text": "Learn more",
+            "button_text": "",
             "button_url": ""
           }
         }
@@ -536,12 +588,12 @@
             "desktop_width_percent": 100,
             "gap": 40,
             "mobile_gap": 30,
-            "content_padding": 20,
+            "content_padding": 60,
             "aspect_ratio": "56.25",
             "border_color": "#f9f7f0",
-            "border_padding": 10,
-            "border_radius": 14,
-            "inner_border_radius": 24,
+            "border_padding": 30,
+            "border_radius": 6,
+            "inner_border_radius": 16,
             "heading_size": 32,
             "text_size": 16,
             "text_spacing": 16,
@@ -595,13 +647,16 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "max_width_desktop": 100,
+        "id_anchor": "",
+        "max_width_desktop": 75,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
         "enable_animation": false,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "image_video_banner_xWTgmR": {
@@ -727,13 +782,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
         "enable_animation": false,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "richtext_THLLqm": {
@@ -775,13 +833,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
-        "section_padding": "--spacing-4xl",
+        "section_padding": "--spacing-6xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": false,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     }
   },
@@ -790,6 +851,7 @@
     "image_video_banner_Mx3q8g",
     "richtext_PhprEj",
     "featured_blocks_QcyUqa",
+    "blocks_YXGqD9",
     "image_text_t4XjPt",
     "richtext_EW6cqY",
     "image_text_Rr8iJJ",

@@ -16,10 +16,10 @@
         "heading": "Shape your care home with practical, considered furniture support",
         "copy": "Every care home project needs furniture that feels considered, yet crafted for care environments. Whether you’re planning a new space, updating key rooms or working through a larger phased project, we’ll help you choose contemporary and comfortable pieces that support the people who live and work there.",
         "primary_label": "Plan a refurbishment",
-        "primary_link": "",
+        "primary_link": "shopify://pages/contact-us",
         "scroll_target": "refurbishment",
         "secondary_label": "Discuss your new build project",
-        "secondary_link": "",
+        "secondary_link": "shopify://pages/contact-us",
         "secondary_scroll_target": "new-build",
         "show_rotator": false,
         "animated_prefix": "",
@@ -126,73 +126,75 @@
         "case_RrqegD": {
           "type": "case",
           "settings": {
-            "tab_label": "For Interior Designers",
+            "tab_label": "",
             "kicker": "",
             "title": "Your scheme, made care-ready.",
             "copy": "From bespoke furniture to fabric and finish options, we're to help you carry your scheme through the full care environment, keeping each space consistent while making sure every piece works for daily use.",
-            "metric_1": "ㅤ",
-            "metric_label_1": "Bespoke furniture options, fabrics and finishing touches that carry one consistent design across bedrooms, lounges and shared spaces.",
-            "metric_2": "ㅤ",
-            "metric_label_2": "Support with samples, finishes and room-by-room coordination, helping every detail feel considered and aligned.",
-            "metric_3": "ㅤ",
-            "metric_label_3": "Care-sector practicality without compromising warmth, colour, personality or the overall scheme.",
-            "metric_4": "",
+            "metric_1": "Bespoke furniture options, fabrics and finishing touches that carry one consistent design across bedrooms, lounges and shared spaces.",
+            "metric_label_1": "",
+            "metric_2": "Support with samples, finishes and room-by-room coordination, helping every detail feel considered and aligned.",
+            "metric_label_2": "",
+            "metric_3": "Care-sector practicality without compromising warmth, colour, personality or the overall scheme.",
+            "metric_label_3": "",
+            "metric_4": "White-glove delivery, placement, assembly and packaging removal, ready for residents, staff and visitors.",
             "metric_label_4": "",
-            "image": "shopify://shop_images/P1049441_76d5ef38-a341-4e10-84b6-bf8e6f5305a6.jpg",
+            "image": "shopify://shop_images/Furncare_GoogleBusiness_8_9df87aca-dd20-443d-a60e-0ca2c4a55d72.jpg",
             "quote": "",
             "source": "",
             "metrics_layout": "1fr",
-            "metric_bg": "",
+            "metric_bg": "#c3c0b0",
             "metric_text": "",
-            "reverse_layout": false
+            "reverse_layout": true
           }
         },
         "case_hMhd8q": {
           "type": "case",
+          "disabled": true,
           "settings": {
             "tab_label": "For Managers",
             "kicker": "",
             "title": "Make refurbishment choices with confidence.",
             "copy": "See furniture, samples and finishes in your own care environment, making it easier to choose what works best for your residents, staff and space.",
-            "metric_1": "ㅤ",
-            "metric_label_1": "Mobile showroom and sample visits bring fabrics, finishes and furniture options directly to your care home.",
-            "metric_2": "ㅤ",
-            "metric_label_2": "Resident comfort, suitability, maintenance and everyday use can be considered before decisions are made.",
-            "metric_3": "ㅤ",
-            "metric_label_3": "Helpful for phased refurbishments, urgent upgrades and ongoing refreshes where time and disruption matter.",
+            "metric_1": "Mobile showroom and sample visits bring fabrics, finishes and furniture options directly to your care home.",
+            "metric_label_1": "",
+            "metric_2": "Resident comfort, suitability, maintenance and everyday use can be considered before decisions are made.",
+            "metric_label_2": "",
+            "metric_3": "Helpful for phased refurbishments, urgent upgrades and ongoing refreshes where time and disruption matter.",
+            "metric_label_3": "",
             "metric_4": "",
             "metric_label_4": "ㅤ",
             "image": "shopify://shop_images/Untitled_-_June_18_2026_at_08.20.35_1_5dc2ba04-6c4f-4e88-91e8-e33cfd868774.png",
             "quote": "",
             "source": "",
-            "metrics_layout": "repeat(2, 1fr)",
+            "metrics_layout": "1fr",
             "metric_bg": "",
             "metric_text": "",
-            "reverse_layout": false
+            "reverse_layout": true
           }
         },
         "case_VUiE4k": {
           "type": "case",
+          "disabled": true,
           "settings": {
             "tab_label": "For Operators",
             "kicker": "",
             "title": "Minimal disruption, maximum transformation.",
             "copy": "Whether you’re opening a new home, refurbishing existing spaces or planning a phased upgrade, we are here to help you bring your care environment together from first brief to the final product placement.",
-            "metric_1": "ㅤ",
-            "metric_label_1": "Furniture, curtains, soft furnishings, artwork and accessories brought together through one specialist partner.",
-            "metric_2": "ㅤ",
-            "metric_label_2": "Support with product selection, finishes, layouts and costings to help keep projects moving.",
-            "metric_3": "ㅤ",
-            "metric_label_3": "White-glove delivery, placement, assembly and packaging removal, ready for residents, staff and visitors.",
+            "metric_1": "Furniture, curtains, soft furnishings, artwork and accessories brought together through one specialist partner.",
+            "metric_label_1": "",
+            "metric_2": "Support with product selection, finishes, layouts and costings to help keep projects moving.",
+            "metric_label_2": "",
+            "metric_3": "White-glove delivery, placement, assembly and packaging removal, ready for residents, staff and visitors.",
+            "metric_label_3": "",
             "metric_4": "",
             "metric_label_4": "",
             "image": "shopify://shop_images/Lounge_One_1.jpg",
             "quote": "",
             "source": "",
-            "metrics_layout": "repeat(2, 1fr)",
+            "metrics_layout": "1fr",
             "metric_bg": "",
             "metric_text": "",
-            "reverse_layout": false
+            "reverse_layout": true
           }
         }
       },
@@ -216,30 +218,30 @@
         "heading_size": 54,
         "subheading_size": 14,
         "title_size": 32,
-        "bg_color": "#f9f0f0",
+        "bg_color": "#f9f7f0",
         "text_color": "#111111",
-        "padding_top": 70,
-        "padding_bottom": 60,
-        "container_width": 1360,
+        "padding_top": 50,
+        "padding_bottom": 25,
+        "container_width": 1380,
         "grid_gap": 42,
-        "tab_bg": "#c3c0b0",
-        "tab_text": "#333",
-        "tab_active_bg": "#839488",
-        "tab_active_text": "#262520",
+        "tab_bg": "#f9f7f0",
+        "tab_text": "#f9f7f0",
+        "tab_active_bg": "#f9f7f0",
+        "tab_active_text": "#f9f7f0",
         "tab_border": "#f9f7f0",
         "tab_radius": 16,
-        "metric_bg": "#c3b0b0",
-        "metric_text": "#ffffff",
-        "metric_radius": 40,
+        "metric_bg": "#c3c0b0",
+        "metric_text": "#262520",
+        "metric_radius": 22,
         "metrics_columns": 1,
-        "quote_bg": "#f9f0f0",
+        "quote_bg": "#f9f7f0",
         "quote_text": "#262252",
         "card_radius": 10,
-        "text_padding": 0,
+        "text_padding": 12,
         "image_padding": 0,
         "body_size": 15,
-        "metric_size": 20,
-        "metric_label_size": 12,
+        "metric_size": 14,
+        "metric_label_size": 11,
         "quote_size": 16
       }
     },
@@ -259,7 +261,7 @@
         "gutter_desktop": 24,
         "gutter_mobile": 16,
         "padding_top": 96,
-        "padding_bottom": 96,
+        "padding_bottom": 176,
         "padding_mobile": 72,
         "padding_bottom_mobile": 72,
         "section_gap": 48,
@@ -350,15 +352,7 @@
           "settings": {
             "icon": "users",
             "title": "Specification from the start",
-            "copy": "Make furniture decisions early, with support around layouts, finishes, fabrics and practical care requirements from the beginning of your project."
-          }
-        },
-        "card_ByUftT": {
-          "type": "card",
-          "settings": {
-            "icon": "sofa",
-            "title": "Complete coordination",
-            "copy": "Create a cohesive furniture scheme across bedrooms, lounges, dining spaces and shared areas, with pieces selected to feel calm, consistent and beautifully considered."
+            "copy": "We get involved early, so furniture decisions are shaped around the project programme and the realities of construction."
           }
         },
         "card_P6BcN4": {
@@ -366,7 +360,15 @@
           "settings": {
             "icon": "clipboard",
             "title": "Care-ready design choices",
-            "copy": "Choose furniture, fabrics and finishes that bring quality and comfort, while standing up to everyday care environment demands."
+            "copy": "Your design vision stays central - furniture choices that support the look and feel of each space, while responding to the demands of everyday care."
+          }
+        },
+        "card_ByUftT": {
+          "type": "card",
+          "settings": {
+            "icon": "sofa",
+            "title": "Complete coordination",
+            "copy": "Each space is considered as part of the wider home, creating a scheme that feels consistent and calm for residents."
           }
         },
         "card_3xptrW": {
@@ -374,14 +376,14 @@
           "settings": {
             "icon": "truck",
             "title": "White glove delivery",
-            "copy": "Our in-house delivery team gives you complete flexibility around timings,  with every piece delivered, unpacked, assembled and placed throughout the home, ready for open day."
+            "copy": "Your furniture stays aligned with the project programme, with every piece delivered and assembled ready for opening day - plus support in place for future phases and  ongoing needs."
           }
         }
       },
       "block_order": [
         "card_7yCDzJ",
-        "card_ByUftT",
         "card_P6BcN4",
+        "card_ByUftT",
         "card_3xptrW"
       ],
       "name": "Furncare audience advanced",
@@ -467,8 +469,8 @@
         "bg_color": "#f9f6f0",
         "max_width": 2600,
         "subtitle": "",
-        "title": "Manor Park",
-        "description": "<p>One of our largest newbuild transformations, Manor Park was delivered from design support through to a complete, resident-ready fit-out.</p><p>Across 80 bedrooms and shared spaces, our team placed 5,500 items within a 10-day installation window, creating warm, practical interiors for everyday care.</p><p>Inspired by this project? Send us a message using the form below.</p>",
+        "title": "Manor Park Case Study",
+        "description": "<p>ㅤ</p><p>One of our new build transformations, Manor Park was delivered from specification support through to a complete, resident-ready fit-out.</p><p>ㅤ</p><p>Across 80 bedrooms and shared spaces, our team placed 5,500 items within a 10-day installation window, creating warm, practical interiors for everyday care.</p><p>ㅤ</p><p>Inspired by this project? Send us a message using the form below.</p>",
         "phone": "",
         "email": "",
         "facebook_url": "",
@@ -476,8 +478,8 @@
         "linkedin_url": "",
         "video_hosted": "shopify://files/videos/Old Malton Case Study.mp4",
         "external_video_url": "",
-        "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
-        "padding_top": 70,
+        "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"d18d228e-db98-4e53-9ed1-746169e0c1a3\" data-portal-id=\"145723791\"></div>",
+        "padding_top": 90,
         "padding_bottom": 60
       }
     },
@@ -506,6 +508,7 @@
         "heading_H9pqAU",
         "tagline_W8ACai"
       ],
+      "disabled": true,
       "name": "Rich Text",
       "settings": {
         "id_anchor": "refurbishment",
@@ -529,7 +532,7 @@
             "tab_label": "Letcombe Regis",
             "kicker": "CASE STUDIES",
             "title": "Letcombe Regis",
-            "copy": "Letcombe Regis brings together dementia, nursing and respite care within Bupa’s Richmond Villages setting in the Oxfordshire countryside. Designed by Vogue Living, the home includes private ensuite bedrooms alongside premium shared spaces such as a swimming pool, gym, restaurant, licensed bar, library, lounges and accessible grounds. <br>\n<br>\nFurncare supplied furniture and upholstery across the scheme, with pieces chosen to sit naturally within Vogue Living’s warm, opulent interior style. The upholstery colours were carefully paired with the furniture shapes and finishes, helping each bedroom, lounge and shared area feel coordinated, comfortable and in keeping with the premium feel of Richmond Villages Letcombe Regis.",
+            "copy": "Letcombe Regis brings together dementia, nursing and respite care within Bupa’s Richmond Villages setting in the Oxfordshire countryside. Designed by Vogue Living, the home includes private ensuite bedrooms alongside premium shared spaces such as a swimming pool, gym, restaurant, licensed bar, library, lounges and accessible grounds. <br>\n<br>\nWe supplied furniture and upholstery across the scheme, with pieces chosen to sit naturally within Vogue Living’s warm, opulent interior style. The upholstery colours were carefully paired with the furniture shapes and finishes, helping each bedroom, lounge and shared area feel coordinated, comfortable and in keeping with the premium feel of Richmond Villages.",
             "metric_1": "",
             "metric_label_1": "",
             "metric_2": "",
@@ -544,7 +547,7 @@
             "metrics_layout": "repeat(2, 1fr)",
             "metric_bg": "",
             "metric_text": "",
-            "reverse_layout": false
+            "reverse_layout": true
           }
         },
         "case_x33G3z": {
@@ -563,19 +566,45 @@
             "metric_4": "",
             "metric_label_4": "",
             "image": "shopify://shop_images/Lounge_12_of_53.jpg",
-            "quote": "“You’ve managed to really understand what we are after and have transformed our thoughts into something really special.”",
-            "source": "Arnas Mauremootoo, Owner",
+            "quote": "",
+            "source": "",
             "metrics_layout": "repeat(2, 1fr)",
             "metric_bg": "",
             "metric_text": "",
-            "reverse_layout": false
+            "reverse_layout": true
+          }
+        },
+        "case_ARWMyd": {
+          "type": "case",
+          "settings": {
+            "tab_label": "Chapel View",
+            "kicker": "CASE STUDIES",
+            "title": "Chapel View",
+            "copy": "Chapel View in South Yorkshire was refurbished for Wood Care Group, a longstanding Furncare customer and family-run care provider. Although not a dedicated dementia unit, the home plays an important role alongside nearby Riverside and Field View, offering support and respite care in a refreshed, welcoming environment. The brief called for interiors with confidence and character, taking inspiration from bold wall coverings and balancing them with warm, practical finishes.\n<br>\n<br>\nWe worked closely with Wood Care Group from the initial site visit through to floorplans, room layouts, moodboards and costings. Bespoke faux leather upholstery was used throughout to create a more tactile, organic feel, while details such as Mountain Oak and Mussel-finished dining room cabinetry helped give each space its own identity. Our team supplied and installed furniture, seating, curtains, blinds and soft furnishings across the lounges, dining room, cinema and ‘Pub’, coordinating delivery around the construction team so the refurbishment could be completed on schedule without closing areas of the home.",
+            "metric_1": "",
+            "metric_label_1": "",
+            "metric_2": "",
+            "metric_label_2": "",
+            "metric_3": "",
+            "metric_label_3": "",
+            "metric_4": "",
+            "metric_label_4": "",
+            "image": "shopify://shop_images/Dining_Room_-_Chapel_View_42_of_60.jpg",
+            "quote": "",
+            "source": "",
+            "metrics_layout": "repeat(2, 1fr)",
+            "metric_bg": "",
+            "metric_text": "",
+            "reverse_layout": true
           }
         }
       },
       "block_order": [
         "case_9Ejkmw",
-        "case_x33G3z"
+        "case_x33G3z",
+        "case_ARWMyd"
       ],
+      "disabled": true,
       "name": "Furncare Case Studies",
       "settings": {
         "enable_reveal": true,
@@ -655,6 +684,7 @@
         "card_AmdbMy",
         "card_hent3W"
       ],
+      "disabled": true,
       "name": "Furncare audience advanced",
       "settings": {
         "id_anchor": "",
@@ -1030,7 +1060,7 @@
         "gutter_desktop": 24,
         "gutter_mobile": 16,
         "padding_top": 96,
-        "padding_bottom": 96,
+        "padding_bottom": 156,
         "padding_mobile": 72,
         "padding_bottom_mobile": 72,
         "section_gap": 48,

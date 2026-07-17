@@ -1,0 +1,87 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "settings": {
+        "show_sku": true,
+        "show_vat_badge": true,
+        "show_free_sample_label": true,
+        "show_price": false,
+        "show_call_to_action": false,
+        "contact_form_html": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+        "lead_time_icon": "shopify://shop_images/dark-delivery-icon.svg",
+        "lead_time_text": "Delivered",
+        "product_swatch_information": "<p>Experience the quality and texture of our finishes before you decide. Order a free sample swatch today and find the perfect match for your space with confidence.</p>",
+        "show_thumbnails": true,
+        "zoom": true,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "arrows": true,
+        "enlarge": true,
+        "show_design_services": false,
+        "design_services_text": "Interior design services",
+        "design_services_url": "",
+        "sustainability_content": "",
+        "warranty_content": "",
+        "shipping_returns_content": "",
+        "security_grading_title": "Security Grading"
+      }
+    },
+    "product_blocks_tncMV6": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_YAcrU9": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "recommendations",
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": true,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        },
+        "product_block_HCFHCd": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_YAcrU9",
+        "product_block_HCFHCd"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "You may also like",
+        "section_padding": "--spacing-2xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_blocks_tncMV6"
+  ]
+}

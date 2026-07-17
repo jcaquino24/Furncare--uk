@@ -17,8 +17,10 @@
         "copy": "From the initial brief to final installation, Furncare helps project teams specify, supply and deliver furniture schemes for a range of contemporary care environments.",
         "primary_label": "Start a project",
         "primary_link": "shopify://pages/contact-us",
+        "scroll_target": "",
         "secondary_label": "Explore case studies",
         "secondary_link": "https://www.furncare.co.uk/blogs/news/tagged/case-study",
+        "secondary_scroll_target": "",
         "show_rotator": true,
         "animated_prefix": "We help you",
         "animated_words": "Specify\nSupply\nDeliver\nCare\nDesign",
@@ -121,7 +123,7 @@
     "statement": {
       "type": "furncare-about-statement",
       "settings": {
-        "eyebrow": "More than furniture supplier",
+        "eyebrow": "More than a furniture supplier",
         "heading": "An end-to-end project partner.",
         "copy": "<p>Large-scale care projects demand more than products on a schedule. They need considered specification, dependable lead times, practical sector knowledge and a team that understands how care environments really work.</p>",
         "second_copy": "<p>That's where Furncare comes in.</p>",
@@ -168,7 +170,7 @@
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760,
-        "panel_background": "#C3C0B0",
+        "panel_background": "#c3c0b0",
         "panel_border_color": "#e7e5e4",
         "panel_border_width": 0,
         "panel_radius": 32,
@@ -182,7 +184,7 @@
         "images_bXQ7Jz": {
           "type": "images",
           "settings": {
-            "image_one": "shopify://shop_images/StaffMeeting2026_Unedited-005.jpg"
+            "image_one": "shopify://shop_images/StaffMeeting2026_Unedited-005_197a08d6-da9a-4d98-8d62-5f7b7026bae4.png"
           }
         },
         "content_GFYVgY": {
@@ -253,6 +255,7 @@
         "audience_4"
       ],
       "settings": {
+        "id_anchor": "",
         "eyebrow": "Who we support",
         "heading": "Built around the teams delivering care environments.",
         "background_gradient": "",
@@ -339,7 +342,7 @@
         "step_1": {
           "type": "step",
           "settings": {
-            "number": "01",
+            "number": "02",
             "title": "Assess",
             "copy": "We visit the site to review the space, take key measurements and identify any practical considerations."
           }
@@ -347,7 +350,7 @@
         "step_2": {
           "type": "step",
           "settings": {
-            "number": "02",
+            "number": "03",
             "title": "Specify",
             "copy": "We help shape the right furniture selections across rooms, schemes and finishes."
           }
@@ -355,7 +358,7 @@
         "step_3": {
           "type": "step",
           "settings": {
-            "number": "03",
+            "number": "04",
             "title": "Coordinate",
             "copy": "We support the project with clear communication, product information and delivery planning."
           }
@@ -363,7 +366,7 @@
         "step_4": {
           "type": "step",
           "settings": {
-            "number": "04",
+            "number": "05",
             "title": "Deliver",
             "copy": "We keep furniture supply aligned with project timelines and operational needs."
           }
@@ -371,7 +374,7 @@
         "step_5": {
           "type": "step",
           "settings": {
-            "number": "05",
+            "number": "06",
             "title": "Support",
             "copy": "We remain on hand for future phases, replacements and ongoing requirements."
           }
@@ -490,6 +493,7 @@
         "pathway_3",
         "pathway_4"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "Project pathways",
         "heading": "Tell us what you're planning.",
@@ -567,7 +571,7 @@
     "proof": {
       "type": "furncare-about-proof",
       "blocks": {
-        "stat_1": {
+        "stat_63ii6t": {
           "type": "stat",
           "settings": {
             "number": "20+",
@@ -575,34 +579,34 @@
             "copy": "Supporting care environments with specialist furniture knowledge."
           }
         },
-        "stat_2": {
+        "stat_FCJyNd": {
           "type": "stat",
           "settings": {
-            "number": "UK",
-            "label": "Wide",
-            "copy": "Project support and delivery across care-sector locations."
+            "number": "7000+",
+            "label": "Deliveries every year",
+            "copy": "Delivering furniture to care environments across the UK, every working day."
           }
         },
         "stat_3": {
           "type": "stat",
           "settings": {
-            "number": "5-Day",
-            "label": "Options",
+            "number": "£1.8 million",
+            "label": "Stockholding",
             "copy": "Quick-delivery ranges available for time-sensitive requirements."
           }
         },
         "stat_4": {
           "type": "stat",
           "settings": {
-            "number": "2",
-            "label": "Core sectors",
-            "copy": "Elderly Care/Later Living and Challenging Environments expertise."
+            "number": "600+",
+            "label": "Care providers",
+            "copy": "Trusted by care providers nationwide to support spaces for residents, staff and visitors."
           }
         }
       },
       "block_order": [
-        "stat_1",
-        "stat_2",
+        "stat_63ii6t",
+        "stat_FCJyNd",
         "stat_3",
         "stat_4"
       ],
@@ -696,7 +700,7 @@
         "left_copy": "Warm, practical and durable furniture that helps care spaces feel comfortable, considered and welcoming.",
         "right_icon": "users",
         "right_title": "Elevating Lives",
-        "right_copy": "Project-ready support, clear communication and dependable supply for teams managing complex environments.",
+        "right_copy": "Creating comfortable, supportive environments that enhance residents’ everyday experiences, wellbeing and quality of life.",
         "background_gradient": "",
         "background_color": "#f9f7f0",
         "max_width": 1280,
@@ -774,13 +778,13 @@
         "left_title_color": "#243222",
         "left_copy_color": "#243222",
         "left_icon_background": "#998c4d",
-        "left_icon_color": "#f9f7f0",
+        "left_icon_color": "#243222",
         "right_panel_bg": "#859488",
         "right_panel_text": "#ffffff",
         "right_title_color": "#243222",
         "right_copy_color": "#243222",
         "right_icon_background": "#859488",
-        "right_icon_color": "#f9f7f0"
+        "right_icon_color": "#243222"
       }
     },
     "furncare_about_pathways_RVaAzR": {
@@ -868,11 +872,11 @@
         "maintain_aspect_ratio": false,
         "add_header_offset": false,
         "media_type": "video",
-        "video_desktop": "shopify://files/videos/Furncare Brand Film.mp4",
-        "video_mobile": "shopify://files/videos/Furncare Brand Film.mp4",
+        "video_desktop": "shopify://files/videos/Furncare Edit V6.mp4",
+        "video_mobile": "shopify://files/videos/Furncare Edit V6.mp4",
         "show_controls": true,
-        "mute_video": true,
-        "autoplay_video": true,
+        "mute_video": false,
+        "autoplay_video": false,
         "show_overlay": false,
         "overlay_background": "",
         "colour_scheme": "light",

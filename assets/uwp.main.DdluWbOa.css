@@ -4372,6 +4372,7 @@ uwp-product .product__atc-button span {
   justify-content: center;
   text-align: center;
   gap: var(--spacing-3xs);
+  justify-content: center;
 }
 uwp-product .metafield-rich_text_field > p,
 uwp-product .metafield-rich_text_field > ul,

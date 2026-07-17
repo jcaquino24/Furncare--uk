@@ -289,26 +289,10 @@
             "recommendation_intent": "related",
             "colour_scheme": "base-white-01"
           }
-        },
-        "product_block_HCFHCd": {
-          "type": "product_block",
-          "disabled": true,
-          "settings": {
-            "title": "Best Sellers",
-            "handle": "best-sellers",
-            "product_feed_source": "product_list",
-            "products": [],
-            "collection": "",
-            "seed_product": "",
-            "use_current_product": false,
-            "recommendation_intent": "related",
-            "colour_scheme": "warm-stone"
-          }
         }
       },
       "block_order": [
-        "product_block_YAcrU9",
-        "product_block_HCFHCd"
+        "product_block_YAcrU9"
       ],
       "name": "Product blocks",
       "settings": {

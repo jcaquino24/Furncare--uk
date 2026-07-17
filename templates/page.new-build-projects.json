@@ -17,8 +17,10 @@
         "copy": "A new care home is a chance to shape every detail from the start. We work with interior designers, developers and project teams to create furniture schemes that feel warm, practical and carefully considered - supporting resident comfort, operational needs and the overall vision for the home.",
         "primary_label": "Start a project",
         "primary_link": "shopify://pages/contact-us",
+        "scroll_target": "",
         "secondary_label": "",
         "secondary_link": "https://www.furncare.co.uk/blogs/news/tagged/case-study",
+        "secondary_scroll_target": "",
         "show_rotator": false,
         "animated_prefix": "",
         "animated_words": "",
@@ -161,6 +163,7 @@
         "audience_3"
       ],
       "settings": {
+        "id_anchor": "",
         "eyebrow": "tailored support for you",
         "heading": "For every stage of the new build project",
         "background_gradient": "",
@@ -233,33 +236,108 @@
         "icon_hover_scale": 108
       }
     },
-    "blog_article_row_4iJ6Ye": {
-      "type": "blog-article-row",
+    "blocks_GifaU8": {
+      "type": "_blocks",
       "blocks": {
-        "article_J3nrN4": {
-          "type": "article",
+        "ai_gen_block_ed0e5ef_mdyM9F": {
+          "type": "ai_gen_block_ed0e5ef",
           "settings": {
-            "article": "news/ashton-meadows"
+            "image_width": 400,
+            "image_height": 440,
+            "image_gap": 24,
+            "vertical_padding": 40,
+            "border_radius": 6,
+            "scroll_speed": 100,
+            "background_color": "#f9f7f0",
+            "image_1": "shopify://shop_images/P1044763.jpg",
+            "image_2": "shopify://shop_images/P1044676.jpg",
+            "image_3": "shopify://shop_images/Bedrooms_7_897770f1-b15f-4e4d-8701-81116150c553.jpg",
+            "image_4": "shopify://shop_images/Bistro_Area_7_b264746f-d24e-4ad9-8fc7-7eac1e2a1f95.jpg",
+            "image_5": "shopify://shop_images/Lounge_One_7_f25d4a1e-7a19-4cc9-aadb-1b84f0a76fa4.jpg",
+            "image_6": "shopify://shop_images/Furncare_GoogleBusiness_8.jpg",
+            "image_7": "shopify://shop_images/Corridor_28.jpg",
+            "image_8": "shopify://shop_images/PREG2455.jpg",
+            "image_9": "shopify://shop_images/Lounge_One_12.jpg",
+            "image_10": "shopify://shop_images/P1090896-2-HDR.jpg",
+            "image_11": "shopify://shop_images/Challenging_Garden.jpg",
+            "image_12": "shopify://shop_images/P1044730.jpg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ed0e5ef_mdyM9F"
+      ],
+      "name": "Image marquee",
+      "settings": {}
+    },
+    "content_blocks_tBU6Y9": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_Cd376b": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_7.jpg",
+            "image_mobile": "shopify://shop_images/Bistro_Area_7.jpg",
+            "text": "Ashton Meadows",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://blogs/news/ashton-meadows",
+            "gradient_overlay": "dark"
           }
         },
-        "article_y3fUY9": {
-          "type": "article",
+        "tab1_3FVEz6": {
+          "type": "tab1",
           "settings": {
-            "article": "news/old-malton"
+            "image": "shopify://shop_images/Furncare_GoogleBusiness_8_9df87aca-dd20-443d-a60e-0ca2c4a55d72.jpg",
+            "image_mobile": "shopify://shop_images/Furncare_GoogleBusiness_8_9df87aca-dd20-443d-a60e-0ca2c4a55d72.jpg",
+            "text": "Old Malton",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://blogs/news/old-malton",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_Ea7KVi": {
+          "type": "tab1",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/P1044648.jpg",
+            "text": "Elm Lodge",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
           }
         }
       },
       "block_order": [
-        "article_J3nrN4",
-        "article_y3fUY9"
+        "tab1_Cd376b",
+        "tab1_3FVEz6",
+        "tab1_Ea7KVi"
       ],
-      "name": "Blog article row",
+      "name": "Content blocks",
       "settings": {
-        "title": "NEW BUILD CASE STUDIES",
+        "title": "new build case studies",
         "section_padding": "--spacing-2xl",
-        "show_badges": true,
-        "show_video_indicator": false,
-        "background_colour_scheme": "warm-stone"
+        "tab1_title": "Collection 1",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "Collection 2",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
       }
     },
     "process": {
@@ -589,41 +667,6 @@
         "secondary_button_hover_border": "#f9f7f0"
       }
     },
-    "blocks_GifaU8": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_ed0e5ef_mdyM9F": {
-          "type": "ai_gen_block_ed0e5ef",
-          "settings": {
-            "image_width": 400,
-            "image_height": 440,
-            "image_gap": 24,
-            "vertical_padding": 40,
-            "border_radius": 6,
-            "scroll_speed": 100,
-            "background_color": "#f9f7f0",
-            "image_1": "shopify://shop_images/P1044763.jpg",
-            "image_2": "shopify://shop_images/P1044676.jpg",
-            "image_3": "shopify://shop_images/Bedrooms_7_897770f1-b15f-4e4d-8701-81116150c553.jpg",
-            "image_4": "shopify://shop_images/Bistro_Area_7_b264746f-d24e-4ad9-8fc7-7eac1e2a1f95.jpg",
-            "image_5": "shopify://shop_images/Lounge_One_7_f25d4a1e-7a19-4cc9-aadb-1b84f0a76fa4.jpg",
-            "image_6": "shopify://shop_images/Furncare_GoogleBusiness_8.jpg",
-            "image_7": "shopify://shop_images/Corridor_28.jpg",
-            "image_8": "shopify://shop_images/PREG2455.jpg",
-            "image_9": "shopify://shop_images/Lounge_One_12.jpg",
-            "image_10": "shopify://shop_images/P1090896-2-HDR.jpg",
-            "image_11": "shopify://shop_images/Challenging_Garden.jpg",
-            "image_12": "shopify://shop_images/P1044730.jpg"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_ed0e5ef_mdyM9F"
-      ],
-      "name": "Image marquee",
-      "settings": {}
-    },
     "furncare_about_statement_NBFndQ": {
       "type": "furncare-about-statement",
       "name": "Furncare statement advanced",
@@ -822,7 +865,7 @@
         "eyebrow": "the process",
         "heading": "What happens next?",
         "background_gradient": "",
-        "background_color": "#F9F7F0",
+        "background_color": "#f9f7f0",
         "max_width": 1280,
         "gutter_desktop": 24,
         "gutter_mobile": 16,
@@ -855,17 +898,17 @@
         "eyebrow_letter_spacing": 22,
         "eyebrow_transform": "uppercase",
         "eyebrow_margin_bottom": 16,
-        "text_color": "#C3C0B0",
+        "text_color": "#c3c0b0",
         "heading_color": "#243222",
-        "copy_color": "#C3C0B0",
+        "copy_color": "#c3c0b0",
         "eyebrow_color": "#243222",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760,
         "card_background": "#243222",
-        "card_heading_color": "#C3C0B0",
-        "card_copy_color": "#C3C0B0",
-        "card_border_color": "#F9F7F0",
+        "card_heading_color": "#c3c0b0",
+        "card_copy_color": "#c3c0b0",
+        "card_border_color": "#f9f7f0",
         "card_border_width": 1,
         "card_radius": 32,
         "card_padding": 28,
@@ -889,8 +932,8 @@
         "icon_radius": 16,
         "icon_margin_bottom": 32,
         "icon_hover_scale": 108,
-        "stat_number_color": "#C3C0B0",
-        "stat_label_color": "#C3C0B0",
+        "stat_number_color": "#c3c0b0",
+        "stat_label_color": "#c3c0b0",
         "stat_number_size": 48,
         "stat_number_weight": 700,
         "stat_label_size": 16,
@@ -913,7 +956,7 @@
             "embed_url": "",
             "embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"4b643ffe-2b73-47b6-96c2-c0694276b3e6\" data-portal-id=\"145723791\"></div>",
             "form_min_height": 500,
-            "form_background_color": "#F9F7F0",
+            "form_background_color": "#f9f7f0",
             "form_border_radius": 8,
             "heading": "<h1>Let us know what you're planning</h1>",
             "heading_font": "red_hat_display_n4",
@@ -929,10 +972,10 @@
             "button_font_size": 16,
             "button_padding_vertical": 14,
             "button_padding_horizontal": 32,
-            "button_background_color": "#C3C0B0",
-            "button_text_color": "#F9F7F0",
-            "button_hover_background_color": "#C3C0B0",
-            "button_hover_text_color": "#F9F7F0",
+            "button_background_color": "#c3c0b0",
+            "button_text_color": "#f9f7f0",
+            "button_hover_background_color": "#c3c0b0",
+            "button_hover_text_color": "#f9f7f0",
             "button_border_radius": 4
           },
           "blocks": {}
@@ -948,11 +991,11 @@
   "order": [
     "hero",
     "audience",
-    "blog_article_row_4iJ6Ye",
+    "blocks_GifaU8",
+    "content_blocks_tBU6Y9",
     "process",
     "proof",
     "final_cta",
-    "blocks_GifaU8",
     "furncare_about_statement_NBFndQ",
     "image_text_8aKCNF",
     "faqs_WTbyFt",

@@ -73,14 +73,6 @@
       "localization-ui": {
         "type": "localization-ui",
         "settings": {}
-      },
-      "customers-register": {
-        "type": "customers-register",
-        "settings": {}
-      },
-      "customers-login": {
-        "type": "customers-login",
-        "settings": {}
       }
     },
     "content_for_index": [],
@@ -105,9 +97,9 @@
         "disabled": false,
         "settings": {}
       },
-      "16104204378477132507": {
-        "type": "shopify://apps/madgic-quote-hide-price/blocks/hide-price/7b8c0059-5527-4d13-ba0a-9871e0ee5b16",
-        "disabled": false,
+      "14082181514032464150": {
+        "type": "shopify://apps/o-request-a-quote/blocks/omgrfq_script/5f4ac0e6-8a57-4f3d-853e-0194eab86273",
+        "disabled": true,
         "settings": {}
       }
     }

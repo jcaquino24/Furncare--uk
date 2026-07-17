@@ -55,13 +55,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 45,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": false,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "image_text_blocks_tqpDa9": {
@@ -153,7 +156,7 @@
             "image": "shopify://shop_images/Candace_Turner_B_W_for_web.jpg",
             "image_mobile": "shopify://shop_images/Candace_Turner_B_W_for_web.jpg",
             "title": "Candace Turner",
-            "subtitle": "Marketing Executive",
+            "subtitle": "Content & Digital Marketing Executive",
             "text": "",
             "block_colour_scheme": "dark-mode",
             "show_gradient": true,
@@ -422,18 +425,6 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_bJRf6b": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Lorelle_Turner.jpg",
-            "title": "Lorelle Turner",
-            "subtitle": "ASSISTANT BUYER",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_EKj48B": {
           "type": "image_card",
           "settings": {
@@ -457,13 +448,25 @@
             "show_gradient": true,
             "lightbox_caption": ""
           }
+        },
+        "image_card_73WrgG": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Molly_Tinker.jpg",
+            "title": "Molly Tinker",
+            "subtitle": "Brand & Marketing Projects Coordinator",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
         "image_card_Y8N4Gy",
-        "image_card_bJRf6b",
         "image_card_EKj48B",
-        "image_card_X9zAEg"
+        "image_card_X9zAEg",
+        "image_card_73WrgG"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -478,18 +481,6 @@
     "image_text_blocks_YWfmBd": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_nkQpzk": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Molly_Tinker.jpg",
-            "title": "Molly Tinker",
-            "subtitle": "Marketing Coordinator",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_twBrzG": {
           "type": "image_card",
           "settings": {
@@ -525,13 +516,25 @@
             "show_gradient": true,
             "lightbox_caption": ""
           }
+        },
+        "image_card_YpHbTM": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Sarah_Hart.jpg",
+            "title": "Sarah Hart",
+            "subtitle": "MANAGEMENT ACCOUNTANT",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
-        "image_card_nkQpzk",
         "image_card_twBrzG",
         "image_card_M6EgXT",
-        "image_card_fpdqDx"
+        "image_card_fpdqDx",
+        "image_card_YpHbTM"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -546,18 +549,6 @@
     "image_text_blocks_Kj4trr": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_gCGDzy": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Sarah_Hart.jpg",
-            "title": "Sarah Hart",
-            "subtitle": "MANAGEMENT ACCOUNTANT",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_LVEY4X": {
           "type": "image_card",
           "settings": {
@@ -591,13 +582,24 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
+        },
+        "image_card_rfHNGF": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
-        "image_card_gCGDzy",
         "image_card_LVEY4X",
         "image_card_7UJEXQ",
-        "image_card_WXVh6k"
+        "image_card_WXVh6k",
+        "image_card_rfHNGF"
       ],
       "name": "Image text blocks",
       "settings": {
