@@ -12,13 +12,15 @@
     "hero": {
       "type": "furncare-about-hero",
       "settings": {
-        "eyebrow": "Multi Site Projects",
-        "heading": "Consistent furniture across every care home in your group",
+        "eyebrow": "Extension Projects",
+        "heading": "Furniture support for care home extensions",
         "copy": "Managing furniture across multiple care homes needs a joined-up approach. We help care groups create consistency across their spaces, with practical support for specification, procurement, delivery and ongoing requirements - making it easier to keep every home aligned without losing the character of each space.",
         "primary_label": "Start a project",
         "primary_link": "shopify://pages/contact-us",
+        "scroll_target": "",
         "secondary_label": "",
         "secondary_link": "https://www.furncare.co.uk/blogs/news/tagged/case-study",
+        "secondary_scroll_target": "",
         "show_rotator": false,
         "animated_prefix": "",
         "animated_words": "",
@@ -206,6 +208,7 @@
       ],
       "disabled": true,
       "settings": {
+        "id_anchor": "",
         "eyebrow": "Who we support",
         "heading": "Built around the teams delivering care environments.",
         "background_gradient": "",
