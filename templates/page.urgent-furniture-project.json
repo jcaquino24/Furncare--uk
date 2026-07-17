@@ -722,6 +722,56 @@
         "secondary_button_hover_color": "#243222",
         "secondary_button_hover_border": "#f9f7f0"
       }
+    },
+    "content_blocks_tBmEyX": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_PH9xbL": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Meadow_Scheme_L302_37763bcf-d98e-4b00-86ee-a207f2e5aaa4.jpg",
+            "text": "Quick Delivery Lounge Schemes",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_wLPT9c": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_-_July_17_2026_at_10.33.38.jpg",
+            "text": "Quick Delivery Bedroom Schemes",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_PH9xbL",
+        "tab1_wLPT9c"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "shop ready spaces",
+        "section_padding": "--spacing-2xl",
+        "tab1_title": "Collection 1",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "Collection 2",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
+      }
     }
   },
   "order": [
@@ -732,6 +782,7 @@
     "audience",
     "process",
     "proof",
-    "final_cta"
+    "final_cta",
+    "content_blocks_tBmEyX"
   ]
 }
