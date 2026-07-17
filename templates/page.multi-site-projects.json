@@ -607,6 +607,74 @@
         "secondary_button_hover_color": "#243222",
         "secondary_button_hover_border": "#f9f7f0"
       }
+    },
+    "image_text_blocks_9zedtg": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "image_card_nXC7qb": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Roomset_Lifestyle_1.jpg",
+            "title": "Additional Bedrooms",
+            "subtitle": "",
+            "text": "<p>Furniture for new resident rooms, including bedroom furniture, seating and finishing pieces that help each space feel comfortable and complete.</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_kQKTUD": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_1.jpg",
+            "title": "New Communal Spaces",
+            "subtitle": "",
+            "text": "<p>Furniture for lounges, dining areas, activity rooms and shared spaces designed for comfort, durability and everyday use.</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_DJDX9K": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/External_Front_5_87e3ce90-86d4-4040-92b8-f2fde1444dc3.jpg",
+            "title": "Expanded Facilities",
+            "subtitle": "",
+            "text": "<p>Support for new or updated areas within the home, helping you choose furniture that suits the purpose, layout and flow of the space.</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_dM9EfG": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/the_lounge_edit-2.jpg",
+            "title": "Consistent Schemes",
+            "subtitle": "",
+            "text": "<p>Guidance on furniture choices that can complement your existing home or introduce a fresh but considered design direction.</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_nXC7qb",
+        "image_card_kQKTUD",
+        "image_card_DJDX9K",
+        "image_card_dM9EfG"
+      ],
+      "name": "Image text blocks",
+      "settings": {
+        "title": "what we can support with",
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "base-white-01",
+        "text_position": "over_image",
+        "mobile_layout": "swiper",
+        "enable_lightbox": false
+      }
     }
   },
   "order": [
@@ -615,6 +683,7 @@
     "audience",
     "process",
     "proof",
-    "final_cta"
+    "final_cta",
+    "image_text_blocks_9zedtg"
   ]
 }
