@@ -810,7 +810,7 @@
       ],
       "name": "Image - Text",
       "settings": {
-        "colour_scheme": "base-white-01",
+        "colour_scheme": "base-white-02",
         "section_padding": "--spacing-2xl",
         "enable_reveal": true,
         "reveal_distance": 32,
