@@ -15,7 +15,7 @@
         "title_WYCUQG": {
           "type": "title",
           "settings": {
-            "text": "The Ryker Collection",
+            "text": "The Origins Collection",
             "title_element": "h1",
             "title_size": "display",
             "text_color": "#f9f7f0"
@@ -24,7 +24,7 @@
         "eyebrow_NfMeef": {
           "type": "eyebrow",
           "settings": {
-            "text": "cabinet furniture for later living and challenging environments",
+            "text": "later living ____________",
             "eyebrow_size": "sm",
             "text_color": "#f9f7f0"
           }
@@ -81,7 +81,7 @@
         "maintain_aspect_ratio": true,
         "add_header_offset": false,
         "media_type": "image",
-        "image_desktop": "shopify://shop_images/Ryker_Blue_and_walnut_PM.png",
+        "image_desktop": "shopify://shop_images/Ellington_CU_1e809bbc-3e10-42f5-abef-f608f2a03a8a.jpg",
         "video_desktop": "shopify://files/videos/Garden Furn 2026 Landing Page.mp4",
         "show_controls": false,
         "mute_video": true,
@@ -123,12 +123,81 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
-        "enable_animation": true
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
+    },
+    "richtext_rBN8BC": {
+      "type": "richtext",
+      "blocks": {
+        "tagline_aJMWGp": {
+          "type": "tagline",
+          "settings": {
+            "content": "CHOOSE FROM A LARGE SELECTION OF CONTEMPORARY FINISHES",
+            "tagline_style": "body-sm"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "tagline_aJMWGp"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "id_anchor": "",
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "left",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 300
+      }
+    },
+    "blocks_zjXTry": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ed0e5ef_hCP88j": {
+          "type": "ai_gen_block_ed0e5ef",
+          "settings": {
+            "image_width": 200,
+            "image_height": 200,
+            "image_gap": 20,
+            "vertical_padding": 20,
+            "border_radius": 20,
+            "scroll_speed": 90,
+            "background_color": "#F9F7F0",
+            "image_1": "shopify://shop_images/brushedcashmere.png",
+            "image_2": "shopify://shop_images/brackensage.png",
+            "image_3": "shopify://shop_images/coastalstorm.png",
+            "image_4": "shopify://shop_images/coastalblue.png",
+            "image_5": "shopify://shop_images/minx.png",
+            "image_6": "shopify://shop_images/moorlandchar.png",
+            "image_7": "shopify://shop_images/moorlandcinder.png",
+            "image_8": "shopify://shop_images/nordicslate.png",
+            "image_9": "shopify://shop_images/northernwenge.png",
+            "image_10": "shopify://shop_images/sablewalnut.png",
+            "image_11": "shopify://shop_images/moorlandoak.png",
+            "image_12": "shopify://shop_images/arboroak.png"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ed0e5ef_hCP88j"
+      ],
+      "name": "Image marquee",
+      "settings": {}
     },
     "content_blocks_QVU3xP": {
       "type": "content-blocks",
@@ -138,6 +207,12 @@
           "settings": {
             "image": "shopify://shop_images/Opera_Walnut_1_1.jpg",
             "text": "Walnut",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "",
             "gradient_overlay": "dark"
           }
@@ -147,6 +222,12 @@
           "settings": {
             "image": "shopify://shop_images/image_9_1.png",
             "text": "Sage",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "",
             "gradient_overlay": "dark"
           }
@@ -156,6 +237,12 @@
           "settings": {
             "image": "shopify://shop_images/Lissa_Oak_1.jpg",
             "text": "Oak",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "",
             "gradient_overlay": "dark"
           }
@@ -165,6 +252,12 @@
           "settings": {
             "image": "shopify://shop_images/image_10_1.png",
             "text": "Navy",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "",
             "gradient_overlay": "dark"
           }
@@ -174,6 +267,12 @@
           "settings": {
             "image": "shopify://shop_images/image_11_2.png",
             "text": "Mussel",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "",
             "gradient_overlay": "dark"
           }
@@ -183,6 +282,12 @@
           "settings": {
             "image": "shopify://shop_images/Wenge_Timber_1_1.jpg",
             "text": "Wenge",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "",
             "gradient_overlay": "dark"
           }
@@ -196,6 +301,7 @@
         "tab1_jkQbz4",
         "tab1_gM4AHE"
       ],
+      "disabled": true,
       "name": "Content blocks",
       "settings": {
         "title": "choose from a selection of contemporary finishes",
@@ -236,17 +342,41 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-md"
+        "section_padding": "--spacing-md",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "content_blocks_FX6f8U": {
       "type": "content-blocks",
       "blocks": {
+        "tab1_mChUGV": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Abbott_CU_e870aefe-03c5-4222-802d-f19ee1c96cc8.jpg",
+            "text": "The Crosshatch Handle",
+            "richtext": "<p>Tilbury & Abbot</p>",
+            "richtext_color": "#F9F7F0",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
         "tab1_EyFgVJ": {
           "type": "tab1",
           "settings": {
-            "image": "shopify://shop_images/71bc882d-2d87-494c-a4ff-4d3d15320993_f0e5b912-fd43-4dfd-ad85-fe1586d92198.jpg",
-            "text": "Standard Handle",
+            "image": "shopify://shop_images/Ellington_CU_1e809bbc-3e10-42f5-abef-f608f2a03a8a.jpg",
+            "text": "The Contour Handle",
+            "richtext": "<p>Ellington & Galloway</p>",
+            "richtext_color": "#F9F7F0",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "",
             "gradient_overlay": "dark"
           }
@@ -254,14 +384,21 @@
         "tab1_MTMgPm": {
           "type": "tab1",
           "settings": {
-            "image": "shopify://shop_images/6c17ea69-343c-4f5b-96a0-09924ee365d6.jpg",
-            "text": "Premium Handle",
+            "image": "shopify://shop_images/Bronson_CU_b24d1449-7ca7-4045-ac3d-78982065612f.jpg",
+            "text": "The Core Handle",
+            "richtext": "<p>Bronson</p>",
+            "richtext_color": "#F9F7F0",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "",
             "gradient_overlay": "dark"
           }
         }
       },
       "block_order": [
+        "tab1_mChUGV",
         "tab1_EyFgVJ",
         "tab1_MTMgPm"
       ],
@@ -381,7 +518,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "blocks_Dipxg4": {
@@ -439,11 +579,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
-        "enable_animation": true
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "blocks_wxNUjq": {
@@ -466,11 +611,30 @@
       ],
       "name": "Form embed",
       "settings": {}
+    },
+    "blocks_jWrm4R": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3e4b0ee_JYWYd4": {
+          "type": "ai_gen_block_3e4b0ee",
+          "settings": {
+            "spacing_size": "medium"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3e4b0ee_JYWYd4"
+      ],
+      "name": "Spacer",
+      "settings": {}
     }
   },
   "order": [
     "image_video_banner_tUQhjn",
     "richtext_gkEqTF",
+    "richtext_rBN8BC",
+    "blocks_zjXTry",
     "content_blocks_QVU3xP",
     "image_text_RqyGcY",
     "content_blocks_FX6f8U",
@@ -482,6 +646,7 @@
     "blocks_gzkyCP",
     "blocks_3pXGmt",
     "richtext_PPG4Ye",
-    "blocks_wxNUjq"
+    "blocks_wxNUjq",
+    "blocks_jWrm4R"
   ]
 }
