@@ -473,7 +473,7 @@
         "pathway_3": {
           "type": "pathway",
           "settings": {
-            "title": "Multi-site rollout",
+            "title": "Extension",
             "copy": "Explore how Furncare can support this type of project.",
             "link": "shopify://pages/multi-site-projects"
           }
