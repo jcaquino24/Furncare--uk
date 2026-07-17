@@ -14,31 +14,37 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "message_J7gWyr": {
+          "type": "message",
+          "settings": {
+            "message": "<p>End to End Project Management</p>"
+          }
+        },
         "bb311c46-e88a-4f5a-bcff-fabbd3b19e0b": {
           "type": "message",
           "settings": {
-            "message": "<p><strong>Free Delivery On Orders Over £50</strong></p>"
+            "message": "<p>Trusted by Over 600 Care Providers</p>"
           }
         },
         "f2ebb9d6-3aec-4f10-b138-4d85261f5920": {
           "type": "message",
           "settings": {
-            "message": "<p>UK Based Customer Services Team</p>"
+            "message": "<p>4.9* Trustpilot Rating</p>"
           }
         },
         "message_q3ddnf": {
           "type": "message",
           "settings": {
-            "message": "<p>Test announcement </p>"
+            "message": "<p>Over 400 Stocked Products</p>"
           }
         }
       },
       "block_order": [
+        "message_J7gWyr",
         "bb311c46-e88a-4f5a-bcff-fabbd3b19e0b",
         "f2ebb9d6-3aec-4f10-b138-4d85261f5920",
         "message_q3ddnf"
       ],
-      "disabled": true,
       "settings": {
         "autoplay": true,
         "autoplay_speed": 3,
