@@ -162,14 +162,97 @@
         "enable_lightbox": false
       }
     },
-    "content_blocks_tyrXJd": {
+    "content_blocks_LGcRAg": {
       "type": "content-blocks",
       "blocks": {
-        "tab1_9C4VMK": {
+        "tab1_9a8mqJ": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/External_Garden_1_ca713fe5-a556-4dd2-85dd-42f94b4a628c.jpg",
+            "text": "New Builds",
+            "richtext": "",
+            "richtext_color": "#F9F7F9",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/new-build-projects",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_PmniNm": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_7_f25d4a1e-7a19-4cc9-aadb-1b84f0a76fa4.jpg",
+            "text": "Refurbishments",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/refurbishment-projects",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_TP9YRc": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_14.jpg",
+            "text": "Quick Delivery",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/urgent-furniture-projects",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_9h3iwJ": {
+          "type": "tab1",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Tables_Roomset_Lifestyle.jpg",
+            "text": "Dining Room",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://collections/elderly-care-dining-rooms",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_9a8mqJ",
+        "tab1_PmniNm",
+        "tab1_TP9YRc",
+        "tab1_9h3iwJ"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "start your project",
+        "section_padding": "--spacing-2xl",
+        "tab1_title": "Later Living",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "warm-stone",
+        "tab2_title": "Challenging Environments",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "duck-egg"
+      }
+    },
+    "content_blocks_3fAQPE": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_hdckNp": {
           "type": "tab1",
           "settings": {
             "image": "shopify://shop_images/TV_Lounge_24_of_43.jpg",
-            "text": "Later Living",
+            "text": "Later Living & Elderly Care",
             "richtext": "",
             "richtext_color": "#000000",
             "richtext_font_size": "16px",
@@ -180,7 +263,7 @@
             "gradient_overlay": "dark"
           }
         },
-        "tab1_zqwyfA": {
+        "tab1_t9VjBi": {
           "type": "tab1",
           "settings": {
             "image": "shopify://shop_images/Bistro_Area_7_998c544b-983e-4232-bac2-c188d7c2bdf5.jpg",
@@ -195,7 +278,7 @@
             "gradient_overlay": "dark"
           }
         },
-        "tab1_aHLTXF": {
+        "tab1_KWhGMA": {
           "type": "tab1",
           "disabled": true,
           "settings": {
@@ -213,20 +296,20 @@
         }
       },
       "block_order": [
-        "tab1_9C4VMK",
-        "tab1_zqwyfA",
-        "tab1_aHLTXF"
+        "tab1_hdckNp",
+        "tab1_t9VjBi",
+        "tab1_KWhGMA"
       ],
       "name": "Content blocks",
       "settings": {
         "title": "Explore our sectors",
-        "section_padding": "--spacing-4xl",
+        "section_padding": "--spacing-2xl",
         "tab1_title": "",
         "tab1_handle": "",
         "tab1_colour_scheme": "warm-stone",
         "tab2_title": "",
         "tab2_handle": "",
-        "tab2_colour_scheme": "base-white-01"
+        "tab2_colour_scheme": "warm-stone"
       }
     },
     "review_blocks_TFrKC6": {
@@ -334,6 +417,93 @@
         "summary_rating": 5,
         "summary_text": "Based on 500 reviews",
         "fallback_message": "No reviews available at this time."
+      }
+    },
+    "featured_blocks_cFzCid": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_4FDMAq": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_5_970d40d9-f1ee-4409-a17f-b317eefb53ef.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_i6YPKM": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_2_f3030b0a-2deb-49af-8ff3-18f506f2cff0.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_y8XbHp": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/priory-logo.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_jqzNtJ": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_7_4e3454ce-6eb8-4c8a-bea5-abd2d3f0b8c0.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_Y6gqbd": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_1_bf3d4c38-2d38-460e-9767-d84c5ac0ad56.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_AdQ8QD": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/CAreTech_2.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_QBgTz6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_6_876d59f6-a91b-4a01-afda-746f99e41bf4.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_kRaLeP": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/maria-mallaband.svg",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_4FDMAq",
+        "block_i6YPKM",
+        "block_y8XbHp",
+        "block_jqzNtJ",
+        "block_Y6gqbd",
+        "block_AdQ8QD",
+        "block_QBgTz6",
+        "block_kRaLeP"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "Our trusted partners",
+        "padding": "narrow",
+        "layout": "line_grid",
+        "enable_lightbox": false
       }
     },
     "content_blocks_fLpHR3": {
@@ -548,93 +718,6 @@
         "tab2_title": "Challenging Environments",
         "tab2_handle": "collection-2",
         "tab2_colour_scheme": "duck-egg"
-      }
-    },
-    "featured_blocks_cFzCid": {
-      "type": "featured-blocks",
-      "blocks": {
-        "block_4FDMAq": {
-          "type": "block",
-          "settings": {
-            "image": "shopify://shop_images/image_5_970d40d9-f1ee-4409-a17f-b317eefb53ef.png",
-            "caption": "",
-            "lightbox_caption": ""
-          }
-        },
-        "block_i6YPKM": {
-          "type": "block",
-          "settings": {
-            "image": "shopify://shop_images/image_2_f3030b0a-2deb-49af-8ff3-18f506f2cff0.png",
-            "caption": "",
-            "lightbox_caption": ""
-          }
-        },
-        "block_y8XbHp": {
-          "type": "block",
-          "settings": {
-            "image": "shopify://shop_images/priory-logo.png",
-            "caption": "",
-            "lightbox_caption": ""
-          }
-        },
-        "block_jqzNtJ": {
-          "type": "block",
-          "settings": {
-            "image": "shopify://shop_images/image_7_4e3454ce-6eb8-4c8a-bea5-abd2d3f0b8c0.png",
-            "caption": "",
-            "lightbox_caption": ""
-          }
-        },
-        "block_Y6gqbd": {
-          "type": "block",
-          "settings": {
-            "image": "shopify://shop_images/image_1_bf3d4c38-2d38-460e-9767-d84c5ac0ad56.png",
-            "caption": "",
-            "lightbox_caption": ""
-          }
-        },
-        "block_AdQ8QD": {
-          "type": "block",
-          "settings": {
-            "image": "shopify://shop_images/CAreTech_2.png",
-            "caption": "",
-            "lightbox_caption": ""
-          }
-        },
-        "block_QBgTz6": {
-          "type": "block",
-          "settings": {
-            "image": "shopify://shop_images/image_6_876d59f6-a91b-4a01-afda-746f99e41bf4.png",
-            "caption": "",
-            "lightbox_caption": ""
-          }
-        },
-        "block_kRaLeP": {
-          "type": "block",
-          "settings": {
-            "image": "shopify://shop_images/maria-mallaband.svg",
-            "caption": "",
-            "lightbox_caption": ""
-          }
-        }
-      },
-      "block_order": [
-        "block_4FDMAq",
-        "block_i6YPKM",
-        "block_y8XbHp",
-        "block_jqzNtJ",
-        "block_Y6gqbd",
-        "block_AdQ8QD",
-        "block_QBgTz6",
-        "block_kRaLeP"
-      ],
-      "name": "Featured Blocks",
-      "settings": {
-        "colour_scheme": "base-white-01",
-        "title": "Our trusted partners",
-        "padding": "wide",
-        "layout": "line_grid",
-        "enable_lightbox": false
       }
     },
     "richtext_raLCwa": {
@@ -913,10 +996,11 @@
   "order": [
     "image_video_banner_XGAaBn",
     "featured_blocks_M7Nrnn",
-    "content_blocks_tyrXJd",
+    "content_blocks_LGcRAg",
+    "content_blocks_3fAQPE",
     "review_blocks_TFrKC6",
-    "content_blocks_fLpHR3",
     "featured_blocks_cFzCid",
+    "content_blocks_fLpHR3",
     "richtext_raLCwa",
     "blog_article_row_8MhRNW",
     "richtext_DiEacU",
