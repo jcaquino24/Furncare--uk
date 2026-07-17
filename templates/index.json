@@ -12,16 +12,6 @@
     "image_video_banner_XGAaBn": {
       "type": "image-video-banner",
       "blocks": {
-        "button_Fd4JPd": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "text": "Button",
-            "button_url": "/",
-            "new_tab": false,
-            "button_style": "underline"
-          }
-        },
         "title_mY98gr": {
           "type": "title",
           "settings": {
@@ -37,6 +27,15 @@
             "text": "FURNITURE FOR LATER LIVING  & CHALLENGING ENVIRONMENTS",
             "eyebrow_size": "md",
             "text_color": "#f9f7f0"
+          }
+        },
+        "button_Fd4JPd": {
+          "type": "button",
+          "settings": {
+            "text": "Bring Your Project to Life",
+            "button_url": "/",
+            "new_tab": true,
+            "button_style": "primary"
           }
         },
         "card_rxRzbP": {
@@ -69,9 +68,9 @@
         }
       },
       "block_order": [
-        "button_Fd4JPd",
         "title_mY98gr",
         "eyebrow_mUTnQz",
+        "button_Fd4JPd",
         "card_rxRzbP",
         "card_TD7x4w"
       ],
@@ -161,6 +160,180 @@
         "padding": "default",
         "layout": "marquee",
         "enable_lightbox": false
+      }
+    },
+    "content_blocks_tyrXJd": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_9C4VMK": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/TV_Lounge_24_of_43.jpg",
+            "text": "Later Living",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/later-living-furniture",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_zqwyfA": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_7_998c544b-983e-4232-bac2-c188d7c2bdf5.jpg",
+            "text": "Challenging Environments",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/challenging-environments-furniture",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_aHLTXF": {
+          "type": "tab1",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Image2-D.png",
+            "text": "Quick Delivery Packages",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/quick-delivery-care-furniture",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_9C4VMK",
+        "tab1_zqwyfA",
+        "tab1_aHLTXF"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "Explore our sectors",
+        "section_padding": "--spacing-4xl",
+        "tab1_title": "",
+        "tab1_handle": "",
+        "tab1_colour_scheme": "warm-stone",
+        "tab2_title": "",
+        "tab2_handle": "",
+        "tab2_colour_scheme": "base-white-01"
+      }
+    },
+    "review_blocks_TFrKC6": {
+      "type": "review-blocks",
+      "blocks": {
+        "review_RnbEAP": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "met our expectations and more",
+            "body": "I have recently purchased furniture for a care home where durability and is a key factor as well as being easy to clean, the furniture met our expectations and more and the sales rep Declan was a delight to work with. Big thumbs up from me and we will be coming back for more.",
+            "reviewer_name": "Jamie",
+            "meta": ""
+          }
+        },
+        "review_ahQpCT": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "excellent communication",
+            "body": "Furncare were a delight to deal with start to finish, offering site visits to previously completed projects, design support and excellent communication throughout. The physical fit out went well, and the aftercare has been second to none.",
+            "reviewer_name": "Gareth Rogers",
+            "meta": ""
+          }
+        },
+        "review_HiYJXg": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Amazing",
+            "body": "This is our second order with Furncare and there is a reason we picked them again. The customer service is fantastic. The delivery driver even built the furniture for us. Highly recommend",
+            "reviewer_name": "Elmbrook Court",
+            "meta": ""
+          }
+        },
+        "review_pcKP7F": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Great Furniture, Great Service!",
+            "body": "The quality of the furniture excellent, delivery times are fast. The products were unpacked, assembled in the rooms of our choosing in a professional and timely manner, with the packaging removed too.",
+            "reviewer_name": "Silver Birch Care",
+            "meta": ""
+          }
+        },
+        "review_w8LckW": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Thank you!",
+            "body": "They delivered carefully and unpacked all the items and disposed of all the packaging. A very big thank you for moving an old piece of furniture for me. It’s that personal touch and helpfulness that makes all the difference.",
+            "reviewer_name": "Bill Woolliscroft",
+            "meta": ""
+          }
+        },
+        "review_gNfdr4": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "5/5 experience",
+            "body": "Ian and Ollie were great at supporting delivering the furniture in the home and assembling this straight away! Friendly, kind and considerate of residents in the home. Thankyou!",
+            "reviewer_name": "Ces",
+            "meta": ""
+          }
+        },
+        "review_WL4EDw": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Furncare Have been amazing",
+            "body": "Furncare have been amazing in supporting us to furnish our 3-bed childrens home. The quality of the furniture is great and the communication between Declan and us has been amazing. I would highly recommend this company",
+            "reviewer_name": "Damini Rura",
+            "meta": ""
+          }
+        },
+        "review_CQqHGd": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "headline": "Furncare came to the rescue!",
+            "body": "Furncare came to the rescue with an express delivery for bespoke furniture for one of our services! They assembled on delivery which was also a huge help and we're impressed with the quality of the furniture. Thanks Furncare, you never fail to assist when needed. We'll be ordering again soon :)",
+            "reviewer_name": "Emma",
+            "meta": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_RnbEAP",
+        "review_ahQpCT",
+        "review_HiYJXg",
+        "review_pcKP7F",
+        "review_w8LckW",
+        "review_gNfdr4",
+        "review_WL4EDw",
+        "review_CQqHGd"
+      ],
+      "name": "Review blocks",
+      "settings": {
+        "title": "What our customers think",
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "warm-stone",
+        "show_summary": true,
+        "summary_label": "Loved by over 10,000 customers",
+        "summary_title": "Excellent",
+        "summary_rating": 5,
+        "summary_text": "Based on 500 reviews",
+        "fallback_message": "No reviews available at this time."
       }
     },
     "content_blocks_fLpHR3": {
@@ -377,113 +550,6 @@
         "tab2_colour_scheme": "duck-egg"
       }
     },
-    "review_blocks_TFrKC6": {
-      "type": "review-blocks",
-      "blocks": {
-        "review_RnbEAP": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "headline": "met our expectations and more",
-            "body": "I have recently purchased furniture for a care home where durability and is a key factor as well as being easy to clean, the furniture met our expectations and more and the sales rep Declan was a delight to work with. Big thumbs up from me and we will be coming back for more.",
-            "reviewer_name": "Jamie",
-            "meta": ""
-          }
-        },
-        "review_ahQpCT": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "headline": "excellent communication",
-            "body": "Furncare were a delight to deal with start to finish, offering site visits to previously completed projects, design support and excellent communication throughout. The physical fit out went well, and the aftercare has been second to none.",
-            "reviewer_name": "Gareth Rogers",
-            "meta": ""
-          }
-        },
-        "review_HiYJXg": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "headline": "Amazing",
-            "body": "This is our second order with Furncare and there is a reason we picked them again. The customer service is fantastic. The delivery driver even built the furniture for us. Highly recommend",
-            "reviewer_name": "Elmbrook Court",
-            "meta": ""
-          }
-        },
-        "review_pcKP7F": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "headline": "Great Furniture, Great Service!",
-            "body": "The quality of the furniture excellent, delivery times are fast. The products were unpacked, assembled in the rooms of our choosing in a professional and timely manner, with the packaging removed too.",
-            "reviewer_name": "Silver Birch Care",
-            "meta": ""
-          }
-        },
-        "review_w8LckW": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "headline": "Thank you!",
-            "body": "They delivered carefully and unpacked all the items and disposed of all the packaging. A very big thank you for moving an old piece of furniture for me. It’s that personal touch and helpfulness that makes all the difference.",
-            "reviewer_name": "Bill Woolliscroft",
-            "meta": ""
-          }
-        },
-        "review_gNfdr4": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "headline": "5/5 experience",
-            "body": "Ian and Ollie were great at supporting delivering the furniture in the home and assembling this straight away! Friendly, kind and considerate of residents in the home. Thankyou!",
-            "reviewer_name": "Ces",
-            "meta": ""
-          }
-        },
-        "review_WL4EDw": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "headline": "Furncare Have been amazing",
-            "body": "Furncare have been amazing in supporting us to furnish our 3-bed childrens home. The quality of the furniture is great and the communication between Declan and us has been amazing. I would highly recommend this company",
-            "reviewer_name": "Damini Rura",
-            "meta": ""
-          }
-        },
-        "review_CQqHGd": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "headline": "Furncare came to the rescue!",
-            "body": "Furncare came to the rescue with an express delivery for bespoke furniture for one of our services! They assembled on delivery which was also a huge help and we're impressed with the quality of the furniture. Thanks Furncare, you never fail to assist when needed. We'll be ordering again soon :)",
-            "reviewer_name": "Emma",
-            "meta": ""
-          }
-        }
-      },
-      "block_order": [
-        "review_RnbEAP",
-        "review_ahQpCT",
-        "review_HiYJXg",
-        "review_pcKP7F",
-        "review_w8LckW",
-        "review_gNfdr4",
-        "review_WL4EDw",
-        "review_CQqHGd"
-      ],
-      "name": "Review blocks",
-      "settings": {
-        "title": "What our customers think",
-        "section_padding": "--spacing-2xl",
-        "colour_scheme": "warm-stone",
-        "show_summary": true,
-        "summary_label": "Loved by over 10,000 customers",
-        "summary_title": "Excellent",
-        "summary_rating": 5,
-        "summary_text": "Based on 500 reviews",
-        "fallback_message": "No reviews available at this time."
-      }
-    },
     "featured_blocks_cFzCid": {
       "type": "featured-blocks",
       "blocks": {
@@ -642,73 +708,6 @@
         "show_badges": true,
         "show_video_indicator": true,
         "background_colour_scheme": "base-white-01"
-      }
-    },
-    "content_blocks_tyrXJd": {
-      "type": "content-blocks",
-      "blocks": {
-        "tab1_9C4VMK": {
-          "type": "tab1",
-          "settings": {
-            "image": "shopify://shop_images/TV_Lounge_24_of_43.jpg",
-            "text": "Later Living",
-            "richtext": "",
-            "richtext_color": "#000000",
-            "richtext_font_size": "16px",
-            "richtext_font_weight": "400",
-            "richtext_text_transform": "none",
-            "richtext_letter_spacing": "normal",
-            "link": "shopify://pages/later-living-furniture",
-            "gradient_overlay": "dark"
-          }
-        },
-        "tab1_zqwyfA": {
-          "type": "tab1",
-          "settings": {
-            "image": "shopify://shop_images/Bistro_Area_7_998c544b-983e-4232-bac2-c188d7c2bdf5.jpg",
-            "text": "Challenging Environments",
-            "richtext": "",
-            "richtext_color": "#000000",
-            "richtext_font_size": "16px",
-            "richtext_font_weight": "400",
-            "richtext_text_transform": "none",
-            "richtext_letter_spacing": "normal",
-            "link": "shopify://pages/challenging-environments-furniture",
-            "gradient_overlay": "dark"
-          }
-        },
-        "tab1_aHLTXF": {
-          "type": "tab1",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Image2-D.png",
-            "text": "Quick Delivery Packages",
-            "richtext": "",
-            "richtext_color": "#000000",
-            "richtext_font_size": "16px",
-            "richtext_font_weight": "400",
-            "richtext_text_transform": "none",
-            "richtext_letter_spacing": "normal",
-            "link": "shopify://pages/quick-delivery-care-furniture",
-            "gradient_overlay": "dark"
-          }
-        }
-      },
-      "block_order": [
-        "tab1_9C4VMK",
-        "tab1_zqwyfA",
-        "tab1_aHLTXF"
-      ],
-      "name": "Content blocks",
-      "settings": {
-        "title": "Explore our sectors",
-        "section_padding": "--spacing-4xl",
-        "tab1_title": "",
-        "tab1_handle": "",
-        "tab1_colour_scheme": "warm-stone",
-        "tab2_title": "",
-        "tab2_handle": "",
-        "tab2_colour_scheme": "base-white-01"
       }
     },
     "richtext_DiEacU": {
@@ -914,12 +913,12 @@
   "order": [
     "image_video_banner_XGAaBn",
     "featured_blocks_M7Nrnn",
-    "content_blocks_fLpHR3",
+    "content_blocks_tyrXJd",
     "review_blocks_TFrKC6",
+    "content_blocks_fLpHR3",
     "featured_blocks_cFzCid",
     "richtext_raLCwa",
     "blog_article_row_8MhRNW",
-    "content_blocks_tyrXJd",
     "richtext_DiEacU",
     "image_text_cqfzwp",
     "image_text_V4HwxM",
