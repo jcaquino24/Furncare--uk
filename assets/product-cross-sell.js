@@ -56,6 +56,40 @@
 
     setStatus(block, 'Adding...');
 
+    var cartElement = document.querySelector('uwp-cart');
+    var canUseCartComponent = cartElement && typeof cartElement.addItem === 'function';
+
+    function finishWithSuccess() {
+      setStatus(block, 'Added to cart.', 'success');
+      openDrawerAndRefresh();
+    }
+
+    function finishWithError(error) {
+      console.error('Error adding to cart:', error);
+      setStatus(block, 'Error adding to cart.', 'error');
+    }
+
+    function resetButton() {
+      if (triggerButton) {
+        triggerButton.disabled = false;
+        triggerButton.classList.remove('is-loading');
+      }
+    }
+
+    if (canUseCartComponent) {
+      try {
+        items.forEach(function (item) {
+          cartElement.addItem(String(item.id), Number(item.quantity || 1));
+        });
+        finishWithSuccess();
+      } catch (error) {
+        finishWithError(error);
+      } finally {
+        resetButton();
+      }
+      return;
+    }
+
     fetch('/cart/add.js', {
       method: 'POST',
       headers: {
@@ -71,18 +105,13 @@
         return res.json();
       })
       .then(() => {
-        setStatus(block, 'Added to cart.', 'success');
-        openDrawerAndRefresh();
+        finishWithSuccess();
       })
       .catch((error) => {
-        console.error('Error adding to cart:', error);
-        setStatus(block, 'Error adding to cart.', 'error');
+        finishWithError(error);
       })
       .finally(() => {
-        if (triggerButton) {
-          triggerButton.disabled = false;
-          triggerButton.classList.remove('is-loading');
-        }
+        resetButton();
       });
   }
 
@@ -115,7 +144,10 @@
 
   function setupSingleAdd(block) {
     block.querySelectorAll('[data-cross-sell-single-add]').forEach(btn => {
-      btn.addEventListener('click', function () {
+      btn.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
         var item = closestParent(btn, '[data-cross-sell-item]');
         if (!item) return;
 
