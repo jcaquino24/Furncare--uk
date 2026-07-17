@@ -314,6 +314,70 @@
         "background_colour_scheme": "base-white-01"
       }
     },
+    "faqs_A6qr9d": {
+      "type": "faqs",
+      "blocks": {
+        "faq_GwjnpY": {
+          "type": "faq",
+          "settings": {
+            "question": "When should we get Furncare involved in a refurbishment project?",
+            "answer": "<p>You can involve us at any stage. Whether you’re still exploring ideas, planning specific rooms or ready to choose furniture, our team can help guide you towards suitable options for your space, setting and timescale.</p>"
+          }
+        },
+        "faq_x84yYB": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you help with small refurbishments as well as larger projects?",
+            "answer": "<p>Yes. We can support anything from single-room updates and replacement furniture to larger phased refurbishments across several areas of a care home.</p>"
+          }
+        },
+        "faq_7hxD9G": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you help us choose furniture for specific rooms?",
+            "answer": "<p>Yes. We can guide you through furniture options for bedrooms, lounges, dining areas, reception spaces and communal rooms, helping you choose pieces that suit how each space is used.</p>"
+          }
+        },
+        "faq_PGiThY": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you support phased refurbishments?",
+            "answer": "<p>Yes. If you’re updating different areas over time, our team can help you think through furniture choices, quantities and priorities in a way that supports a more manageable phased approach.</p>"
+          }
+        },
+        "faq_HdBDc4": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you help if we need to replace damaged or tired furniture?",
+            "answer": "<p>Yes. If furniture is worn, damaged or no longer suitable, we can help you explore replacement options that fit your space, requirements and timescale.</p>"
+          }
+        },
+        "faq_KKb7UL": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you work with our interior designer?",
+            "answer": "<p>Yes. We regularly support wider project teams by helping with furniture selection, specification details, product guidance and practical considerations for care environments.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_GwjnpY",
+        "faq_x84yYB",
+        "faq_7hxD9G",
+        "faq_PGiThY",
+        "faq_HdBDc4",
+        "faq_KKb7UL"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "faq_title": "Frequently Asked Questions",
+        "title_element": "h2",
+        "faq_text": "If you can't find the answer to your question, please feel free to speak to one of our team via live chat or call us on <a href=\"tel:01603 664900\" title=\"tel:01603 664900\"><strong>01603 664900</strong></a><strong>.</strong>",
+        "title_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "padding": "default"
+      }
+    },
     "audience": {
       "type": "furncare-about-audience",
       "blocks": {
@@ -945,6 +1009,7 @@
     "furncare_about_audience_t9LVhj",
     "blocks_AmDiWi",
     "blog_article_row_4iJ6Ye",
+    "faqs_A6qr9d",
     "audience",
     "proof",
     "final_cta",
