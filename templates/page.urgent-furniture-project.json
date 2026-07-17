@@ -179,62 +179,6 @@
         "section_padding": "--spacing-2xl"
       }
     },
-    "faqs_dhnxRC": {
-      "type": "faqs",
-      "blocks": {
-        "faq_CwmHFc": {
-          "type": "faq",
-          "settings": {
-            "question": "How quickly can you deliver?",
-            "answer": "<p>Delivery times can vary depending on the products you need, quantities, finishes and delivery location. Our standard terms state a minimum lead time of 1 - 5 working days, however, If you have an urgent requirement, our team can help you understand what may be available sooner and guide you towards suitable options.</p>"
-          }
-        },
-        "faq_DdVAmr": {
-          "type": "faq",
-          "settings": {
-            "question": "What types of care home furniture are available for quicker delivery?",
-            "answer": "<p>This can vary, but we hold a range of bedroom furniture, care home chairs, dining furniture, occasional furniture and soft furnishings in stock.</p>"
-          }
-        },
-        "faq_NNbnEP": {
-          "type": "faq",
-          "settings": {
-            "question": "Can you support larger urgent requirements?",
-            "answer": "<p>Yes, depending on availability and project details. If you need furniture for multiple rooms, several spaces or a wider care home requirement, we can review what is possible and help you plan a practical route forward.</p>"
-          }
-        },
-        "faq_6fk6pT": {
-          "type": "faq",
-          "settings": {
-            "question": "Can I request a quote for quick delivery furniture?",
-            "answer": "<p>Yes. Share your requirements, quantities, location and timeline, and our team can advise on suitable furniture options and provide a quote where possible.</p>"
-          }
-        },
-        "faq_dQBXCQ": {
-          "type": "faq",
-          "settings": {
-            "question": "Are quick delivery options suitable for all care environments?",
-            "answer": "<p>Yes. Our quick delivery range includes furniture for a wide span of specialist environments, including care homes, later living settings, challenging environments and extreme mental health spaces.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "faq_CwmHFc",
-        "faq_DdVAmr",
-        "faq_NNbnEP",
-        "faq_6fk6pT",
-        "faq_dQBXCQ"
-      ],
-      "name": "FAQs",
-      "settings": {
-        "faq_title": "Frequently Asked Questions",
-        "title_element": "h2",
-        "faq_text": "If you can't find the answer to your question, please feel free to speak to one of our team via live chat or call us on <a href=\"tel:01603 664900\" title=\"tel:01603 664900\"><strong>01603 664900</strong></a><strong>.</strong>",
-        "title_alignment": "center",
-        "colour_scheme": "base-white-01",
-        "padding": "wide"
-      }
-    },
     "blog_article_row_4iJ6Ye": {
       "type": "blog-article-row",
       "blocks": {
@@ -763,7 +707,7 @@
       ],
       "name": "Content blocks",
       "settings": {
-        "title": "shop ready spaces",
+        "title": "browse ready spaces",
         "section_padding": "--spacing-2xl",
         "tab1_title": "Collection 1",
         "tab1_handle": "collection-1",
@@ -772,17 +716,73 @@
         "tab2_handle": "collection-2",
         "tab2_colour_scheme": "warm-stone"
       }
+    },
+    "faqs_dhnxRC": {
+      "type": "faqs",
+      "blocks": {
+        "faq_CwmHFc": {
+          "type": "faq",
+          "settings": {
+            "question": "How quickly can you deliver?",
+            "answer": "<p>Delivery times can vary depending on the products you need, quantities, finishes and delivery location. Our standard terms state a minimum lead time of 1 - 5 working days, however, If you have an urgent requirement, our team can help you understand what may be available sooner and guide you towards suitable options.</p>"
+          }
+        },
+        "faq_DdVAmr": {
+          "type": "faq",
+          "settings": {
+            "question": "What types of care home furniture are available for quicker delivery?",
+            "answer": "<p>This can vary, but we hold a range of bedroom furniture, care home chairs, dining furniture, occasional furniture and soft furnishings in stock.</p>"
+          }
+        },
+        "faq_NNbnEP": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you support larger urgent requirements?",
+            "answer": "<p>Yes, depending on availability and project details. If you need furniture for multiple rooms, several spaces or a wider care home requirement, we can review what is possible and help you plan a practical route forward.</p>"
+          }
+        },
+        "faq_6fk6pT": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I request a quote for quick delivery furniture?",
+            "answer": "<p>Yes. Share your requirements, quantities, location and timeline, and our team can advise on suitable furniture options and provide a quote where possible.</p>"
+          }
+        },
+        "faq_dQBXCQ": {
+          "type": "faq",
+          "settings": {
+            "question": "Are quick delivery options suitable for all care environments?",
+            "answer": "<p>Yes. Our quick delivery range includes furniture for a wide span of specialist environments, including care homes, later living settings, challenging environments and extreme mental health spaces.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_CwmHFc",
+        "faq_DdVAmr",
+        "faq_NNbnEP",
+        "faq_6fk6pT",
+        "faq_dQBXCQ"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "faq_title": "Frequently Asked Questions",
+        "title_element": "h2",
+        "faq_text": "If you can't find the answer to your question, please feel free to speak to one of our team via live chat or call us on <a href=\"tel:01603 664900\" title=\"tel:01603 664900\"><strong>01603 664900</strong></a><strong>.</strong>",
+        "title_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "padding": "wide"
+      }
     }
   },
   "order": [
     "hero",
     "product_blocks_bUgmqL",
-    "faqs_dhnxRC",
     "blog_article_row_4iJ6Ye",
     "audience",
     "process",
     "proof",
     "final_cta",
-    "content_blocks_tBmEyX"
+    "content_blocks_tBmEyX",
+    "faqs_dhnxRC"
   ]
 }
