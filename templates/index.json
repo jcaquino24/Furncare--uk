@@ -24,7 +24,7 @@
         "eyebrow_mUTnQz": {
           "type": "eyebrow",
           "settings": {
-            "text": "FURNITURE FOR LATER LIVING  & CHALLENGING ENVIRONMENTS",
+            "text": "Contemporary interiors for care communities",
             "eyebrow_size": "md",
             "text_color": "#f9f7f0"
           }
@@ -184,8 +184,8 @@
         "block_UE4k6h": {
           "type": "block",
           "settings": {
-            "image": "shopify://shop_images/Phone_f4b0d652-6e2d-4972-8b79-3fee1c34b42d.svg",
-            "caption": "UK Based Customer Service Team",
+            "image": "shopify://shop_images/Manufacturing_icon_baf82fc0-fac9-4ee4-946f-46a6b8278637.svg",
+            "caption": "UK Manufacturing",
             "lightbox_caption": ""
           }
         }
