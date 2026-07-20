@@ -579,6 +579,167 @@
         "enable_lightbox": false
       }
     },
+    "blocks_pTHr3w": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_bUqpmi": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 15,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#f9f7f0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_bUqpmi"
+      ],
+      "name": "Spacer",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "product_blocks_yKwTgA": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_7Ycz3A": {
+          "type": "product_block",
+          "settings": {
+            "title": "Latest Additions",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "essentials-bundle",
+              "kora-coffee-table",
+              "struan-wingback-chair",
+              "emmi-lowered-arm-chair",
+              "langdon-rectangular-8-seater-dining-table-copy",
+              "thetford-small-side-table"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        },
+        "product_block_JNYNeX": {
+          "type": "product_block",
+          "settings": {
+            "title": "Coming Soon",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [],
+            "collection": "the-origins-collection",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_7Ycz3A",
+        "product_block_JNYNeX"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "content_blocks_3fAQPE": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_hdckNp": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Two_5_58ba4f25-5860-4091-a359-b8449570d174.jpg",
+            "text": "Later Living & Elderly Care",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/later-living-furniture",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_t9VjBi": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_7_998c544b-983e-4232-bac2-c188d7c2bdf5.jpg",
+            "text": "Challenging Environments",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/challenging-environments-furniture",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_KWhGMA": {
+          "type": "tab1",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Image2-D.png",
+            "text": "Quick Delivery Packages",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/quick-delivery-care-furniture",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_hdckNp",
+        "tab1_t9VjBi",
+        "tab1_KWhGMA"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "Explore our sectors",
+        "section_padding": "--spacing-2xl",
+        "tab1_title": "",
+        "tab1_handle": "",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "",
+        "tab2_handle": "",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    },
     "richtext_raLCwa": {
       "type": "richtext",
       "blocks": {
@@ -865,6 +1026,9 @@
     "content_blocks_fLpHR3",
     "review_blocks_TFrKC6",
     "featured_blocks_cFzCid",
+    "blocks_pTHr3w",
+    "content_blocks_3fAQPE",
+    "product_blocks_yKwTgA",
     "richtext_raLCwa",
     "blog_article_row_8MhRNW",
     "content_blocks_tyrXJd",
