@@ -80,7 +80,7 @@
           "type": "menu_promotions",
           "settings": {
             "menu_title": "Explore",
-            "title": "Resources",
+            "title": "",
             "package": "resources",
             "package_limit": 3,
             "promo_banner": "need-support",
