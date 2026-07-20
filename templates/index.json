@@ -849,68 +849,6 @@
         "reveal_distance": 32,
         "reveal_duration": 760
       }
-    },
-    "1781866559cff4eafb": {
-      "type": "_blocks",
-      "settings": {}
-    },
-    "178455561786f2a3be": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_870b6e5_CmBYJb": {
-          "type": "ai_gen_block_870b6e5",
-          "settings": {
-            "hero_section_id": "template--26558791844176__hero",
-            "drawer_title": "Get in touch",
-            "drawer_description": "<p>We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>",
-            "name_label": "Name",
-            "name_placeholder": "Your name",
-            "name_required": true,
-            "email_label": "Email",
-            "email_placeholder": "your.email@example.com",
-            "show_phone": true,
-            "phone_label": "Phone",
-            "phone_placeholder": "Your phone number",
-            "phone_required": false,
-            "message_label": "Message",
-            "message_placeholder": "Tell us how we can help you...",
-            "message_required": true,
-            "submit_button_text": "Send message",
-            "success_message": "Thank you for your message. We'll be in touch soon.",
-            "drawer_width": 500,
-            "padding": 40,
-            "drawer_bg_color": "#ffffff",
-            "text_color": "#1a1a1a",
-            "border_color": "#e5e5e5",
-            "overlay_opacity": 0.6,
-            "title_font": "red_hat_display_n4",
-            "title_size": 24,
-            "description_size": 15,
-            "label_size": 14,
-            "input_size": 15,
-            "input_bg_color": "#ffffff",
-            "input_border_color": "#d1d1d1",
-            "input_focus_color": "#1a1a1a",
-            "input_border_radius": 4,
-            "button_bg_color": "#1a1a1a",
-            "button_hover_color": "#000000",
-            "button_text_color": "#ffffff",
-            "button_size": 15,
-            "button_border_radius": 4,
-            "success_bg_color": "#e8f5e9",
-            "success_text_color": "#2e7d32",
-            "success_border_color": "#81c784",
-            "error_bg_color": "#ffebee",
-            "error_text_color": "#c62828",
-            "error_border_color": "#ef5350"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_870b6e5_CmBYJb"
-      ],
-      "settings": {}
     }
   },
   "order": [
@@ -925,8 +863,6 @@
     "richtext_DiEacU",
     "image_text_cqfzwp",
     "image_text_V4HwxM",
-    "image_text_aYpUjc",
-    "1781866559cff4eafb",
-    "178455561786f2a3be"
+    "image_text_aYpUjc"
   ]
 }
