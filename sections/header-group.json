@@ -79,7 +79,7 @@
         "menu_promotions_xACgfr": {
           "type": "menu_promotions",
           "settings": {
-            "menu_title": "About",
+            "menu_title": "Explore",
             "title": "Resources",
             "package": "resources",
             "package_limit": 3,
