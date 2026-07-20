@@ -484,14 +484,6 @@
             "lightbox_caption": ""
           }
         },
-        "block_gYVfNg": {
-          "type": "block",
-          "settings": {
-            "image": "shopify://shop_images/jen-bernard-logo-charcoal.svg",
-            "caption": "",
-            "lightbox_caption": ""
-          }
-        },
         "block_jqzNtJ": {
           "type": "block",
           "settings": {
@@ -555,7 +547,6 @@
         "block_i6YPKM",
         "block_iyEtzc",
         "block_y8XbHp",
-        "block_gYVfNg",
         "block_jqzNtJ",
         "block_Y6gqbd",
         "block_XdkjfK",
