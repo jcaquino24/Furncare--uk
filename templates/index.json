@@ -543,6 +543,14 @@
             "lightbox_caption": ""
           }
         },
+        "block_hjANRY": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/HomeSmiths-revised-logo_1.webp",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
         "block_kRaLeP": {
           "type": "block",
           "settings": {
