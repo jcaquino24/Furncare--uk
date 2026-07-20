@@ -79,8 +79,8 @@
         "menu_promotions_xACgfr": {
           "type": "menu_promotions",
           "settings": {
-            "menu_title": "Resources",
-            "title": "",
+            "menu_title": "About",
+            "title": "Resources",
             "package": "resources",
             "package_limit": 3,
             "promo_banner": "need-support",
