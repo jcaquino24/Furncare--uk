@@ -635,6 +635,7 @@
         },
         "product_block_JNYNeX": {
           "type": "product_block",
+          "disabled": true,
           "settings": {
             "title": "Coming Soon",
             "handle": "best-sellers",
@@ -654,7 +655,7 @@
       ],
       "name": "Product blocks",
       "settings": {
-        "title": "",
+        "title": "latest additions",
         "section_padding": "--spacing-2xl"
       }
     },
