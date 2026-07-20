@@ -807,8 +807,8 @@
       ],
       "name": "Blog article row",
       "settings": {
-        "title": "Latest Case Studies",
-        "section_padding": "--spacing-2xl",
+        "title": "Explore our Case Studies",
+        "section_padding": "--spacing-4xl",
         "show_badges": true,
         "show_video_indicator": true,
         "background_colour_scheme": "base-white-01"
