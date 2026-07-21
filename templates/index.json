@@ -392,6 +392,14 @@
     "featured_blocks_cFzCid": {
       "type": "featured-blocks",
       "blocks": {
+        "block_rQbkN9": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/logo11_0_2_1.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
         "block_PBPcNg": {
           "type": "block",
           "settings": {
@@ -428,6 +436,14 @@
           "type": "block",
           "settings": {
             "image": "shopify://shop_images/priory-logo.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_Drm7gJ": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Kisimul-LogoGrey.png",
             "caption": "",
             "lightbox_caption": ""
           }
@@ -472,6 +488,14 @@
             "lightbox_caption": ""
           }
         },
+        "block_6MPiCf": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/EQ-Care-Group-Logo_Wordmark-Green-scaled.webp",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
         "block_hjANRY": {
           "type": "block",
           "settings": {
@@ -490,16 +514,19 @@
         }
       },
       "block_order": [
+        "block_rQbkN9",
         "block_PBPcNg",
         "block_4FDMAq",
         "block_i6YPKM",
         "block_iyEtzc",
         "block_y8XbHp",
+        "block_Drm7gJ",
         "block_jqzNtJ",
         "block_Y6gqbd",
         "block_XdkjfK",
         "block_AdQ8QD",
         "block_QBgTz6",
+        "block_6MPiCf",
         "block_hjANRY",
         "block_kRaLeP"
       ],
