@@ -138,21 +138,21 @@
         }
 
 
-        {% assign faqs = collection.metafields.custom.faqs.value %}
+        {% assign faq_group = collection.metafields.custom.faqs.value %}
 
-{% if faqs != blank %}
+{% if faq_group and faq_group.faqs_list.value.count > 0 %}
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
   "@id": {{ canonical_url | append: '#faq' | json }},
-  "mainEntity": [
-    {% for faq in faqs %}
+  "mainEntity":[
+    {% for faq in faq_group.faqs_list.value %}
     {
-      "@type": "Question",
+      "@type":"Question",
       "name": {{ faq.question | json }},
-      "acceptedAnswer": {
-        "@type": "Answer",
+      "acceptedAnswer":{
+        "@type":"Answer",
         "text": {{ faq.answer | strip_html | json }}
       }
     }{% unless forloop.last %},{% endunless %}
