@@ -136,6 +136,31 @@
           "name": {{ collection.title | json }},
           "item": {{ canonical_url | json }}
         }
+
+
+        {% assign faqs = collection.metafields.custom.faqs.value %}
+
+{% if faqs != blank %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": {{ canonical_url | append: '#faq' | json }},
+  "mainEntity": [
+    {% for faq in faqs %}
+    {
+      "@type": "Question",
+      "name": {{ faq.question | json }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ faq.answer | strip_html | json }}
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
       {%- when 'blog' -%}
         ,{
           "@type": "ListItem",
