@@ -450,6 +450,7 @@
         },
         "block_XdkjfK": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/6-h4k8Jd_400x400_0fbc98f0-ae62-4dbc-8657-67b662e1c688.jpg",
             "caption": "",
@@ -474,6 +475,7 @@
         },
         "block_hjANRY": {
           "type": "block",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/HomeSmiths-revised-logo_1.webp",
             "caption": "",
