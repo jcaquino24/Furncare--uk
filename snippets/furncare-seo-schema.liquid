@@ -28,30 +28,51 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["Organization", "OnlineStore"],
+  "@type": ["Organization","OnlineStore","LocalBusiness"],
   "@id": {{ org_id | json }},
   "name": "Furncare",
   "legalName": "Furncare Limited",
   "url": {{ shop.url | append: '/' | json }},
-  {%- if settings.logo != blank -%}
-  "logo": {{ settings.logo | image_url: width: 512 | prepend: 'https:' | json }},
-  {%- endif -%}
+  {% if settings.logo != blank %}
+  "logo": {
+    "@type": "ImageObject",
+    "url": {{ settings.logo | image_url: width: 512 | prepend: 'https:' | json }}
+  },
+  {% endif %}
   "telephone": "+44 1603 664900",
   "email": "sales@furncare.co.uk",
+  "foundingDate": "2012",
+  "areaServed": "GB",
+  "sameAs": [
+    "https://www.linkedin.com/company/furncare",
+    "https://www.facebook.com/furncare"
+  ],
   "identifier": {
     "@type": "PropertyValue",
     "propertyID": "UK Company Registration Number",
     "value": "08093065"
   },
-  "contactPoint": {
+  "contactPoint": [{
     "@type": "ContactPoint",
     "telephone": "+44 1603 664900",
     "email": "sales@furncare.co.uk",
     "contactType": "customer service",
     "areaServed": "GB",
     "availableLanguage": "en"
-  }
-  {%- if request.page_type == 'page' and page.handle == 'contact-us' -%},
+  }],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "08:30",
+    "closes": "17:00"
+  }]
+  {% if request.page_type == 'page' and page.handle == 'contact-us' %},
   "address": [
     {
       "@type": "PostalAddress",
@@ -72,7 +93,7 @@
       "addressCountry": "GB"
     }
   ]
-  {%- endif -%}
+  {% endif %}
 }
 </script>
 {%- endif -%}
@@ -268,14 +289,12 @@
   {%- endif -%}
   "datePublished": {{ article.published_at | date_to_xmlschema | json }},
   "dateModified": {{ article.updated_at | date_to_xmlschema | json }},
-  "author": {
-    "@type": "Organization",
-    "name": "Furncare",
-    "url": {{ shop.url | append: '/' | json }}
-  },
+  "author": {2  "@id": "https://www.furncare.co.uk/#organization"3},
   "publisher": { "@id": {{ org_id | json }} },
   "articleSection": {{ blog.title | json }},
+  "publisher": {2  "@id": "https://www.furncare.co.uk/#organization"3},
   "url": {{ canonical_url | json }}
+  "keywords": "{{ article.tags | join: ', ' }}"
 }
 </script>
 
@@ -352,7 +371,8 @@
   "name": {{ page.title | json }},
   "description": {{ page_desc | json }},
   "breadcrumb": { "@id": {{ breadcrumb_id | json }} },
-  "mainEntity": { "@id": {{ org_id | json }} }
+  "mainEntity": { "@id": {{ org_id | json }} },
+  "about": { "@id": {{ org_id | json }} }
 }
 </script>
   {%- elsif page.handle == 'about-us' -%}
