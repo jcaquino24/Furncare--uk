@@ -55,7 +55,7 @@
         </a>
       </div>
     {% endif %}
-   {% unless template.suffix == 'no-price' %}
+  
   {% if hubspot_form != blank %}
     <div class="{{ base_class }}__hubspot-form">
       {{ hubspot_form }}
@@ -179,7 +179,7 @@
       <span class="body-sm body-sm--bold"></span>
     </div>
   {%- endform -%}
-{% endunless %}
+
 {% endif %}
 
 {% if show_notify_modal %}
