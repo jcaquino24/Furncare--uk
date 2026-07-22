@@ -119,6 +119,27 @@
     Buy Now {% render 'icons', icon: 'cart' %}
   </button>
 
+  <button
+  id="mprfq-quote-{{ product.id }}"
+  product-handle="{{ product.handle }}"
+  class="mprfq-add-to-quote-button-pdp mprfq-btn-hidden"
+  type="button"
+  onclick="
+    this.disabled = true;
+    this.setAttribute('loading', 'true');
+    document.dispatchEvent(new CustomEvent('mprfq:rfq_add_product_to_quote', {
+      detail: {
+        buttonId: this.id,
+        productHandle: this.getAttribute('product-handle'),
+        variantPriceHidden: false,
+        eligibleVariantIds: []
+      }
+    }));
+  "
+>
+  Add to Quote
+</button>
+
 {%- endform -%}
       
         <a
