@@ -196,30 +196,6 @@
       <div class="product-card__button-container--inline product-card__button-container">
         {{ button_content }}
       </div>
-      {% if customer %}  {% if customer.id == 11696191635792 or customer.id == 11063103160656 %}
-  
-    <button
-  id="mprfq-quote-{{ product.id }}"
-  product-handle="{{ product.handle }}"
-  class="mprfq-add-to-quote-button-pdp mprfq-btn-hidden"
-  type="button"
-  onclick="
-    this.disabled = true;
-    this.setAttribute('loading', 'true');
-    document.dispatchEvent(new CustomEvent('mprfq:rfq_add_product_to_quote', {
-      detail: {
-        buttonId: this.id,
-        productHandle: this.getAttribute('product-handle'),
-        variantPriceHidden: false,
-        eligibleVariantIds: []
-      }
-    }));
-  "
->
-  Add to Quote
-</button>
-{% endif %}
-{% endif %}
     </div>
 
     {% comment %} Badges {% endcomment %}
@@ -260,7 +236,30 @@
       {% endfor %}
     </div>
 
-
+{% if customer %}  {% if customer.id == 11696191635792 or customer.id == 11063103160656 %}
+  
+    <button
+  id="mprfq-quote-{{ product.id }}"
+  product-handle="{{ product.handle }}"
+  class="mprfq-add-to-quote-button-pdp mprfq-btn-hidden"
+  type="button"
+  onclick="
+    this.disabled = true;
+    this.setAttribute('loading', 'true');
+    document.dispatchEvent(new CustomEvent('mprfq:rfq_add_product_to_quote', {
+      detail: {
+        buttonId: this.id,
+        productHandle: this.getAttribute('product-handle'),
+        variantPriceHidden: false,
+        eligibleVariantIds: []
+      }
+    }));
+  "
+>
+  Add to Quote
+</button>
+{% endif %}
+{% endif %}
 
     {% comment %} Product info {% endcomment %}
     <div class="product-card__info">
