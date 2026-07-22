@@ -86,7 +86,7 @@
   {% comment %} Lead time {% endcomment %}
 
   {% if product.metafields.custom.delivered_within.value != blank %}
-  <div class="delivered-within">
+    <div class="delivered-within">
     
     {% if section.settings.lead_time_icon != blank %}
       <div>
@@ -105,8 +105,8 @@
       {{  section.settings.lead_time_text }} {{ product.metafields.custom.delivered_within.value }}
     </div>
 
-  </div>
-{% endif %}
+    </div>
+  {% endif %}
 
 
 {%- for block in section.blocks -%}
@@ -119,8 +119,11 @@
   {% comment %} End of lead time code {% endcomment %}
 
   {% comment %} Product Form {% endcomment %}
-  {% render 'product-form', product: product, section_id: section_id, section: section %}
+    {% if product.template_suffix != 'no-price' %}
+      {% render 'product-form', product: product, section_id: section_id, section: section %}
+    {% endif %}
 {% endif %}
+
 {% if customer %}  {% if customer.id == 11696191635792 or customer.id == 11063103160656 %}
 <button
   id="mprfq-quote-{{ product.id }}"
@@ -144,6 +147,7 @@
 </button>
 {% endif %}
 {% endif %}
+
   {% comment %} USPs {% endcomment %}
   {% render 'product-usp', product: product %}
 
