@@ -55,7 +55,7 @@
         </a>
       </div>
     {% endif %}
-  
+  {% if template.suffix != 'no-price' %}
   {% if hubspot_form != blank %}
     <div class="{{ base_class }}__hubspot-form">
       {{ hubspot_form }}
@@ -181,28 +181,7 @@
   {%- endform -%}
 
 {% endif %}
-
+{% endif %}
 {% if show_notify_modal %}
   {% render 'product-notify-me', base_class: base_class %}
 {% endif %}
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  function moveQuoteButton() {
-    const quoteBtn = document.querySelector('.omgrfq-button');
-    const target = document.querySelector('#quote-button-container');
-
-    if (quoteBtn && target && !quoteBtn.classList.contains('moved')) {
-      target.insertAdjacentElement('afterend', quoteBtn);
-      quoteBtn.classList.add('moved');
-    }
-  }
-
-  // Run immediately
-  moveQuoteButton();
-
-  // Also watch for delayed app injection
-  const observer = new MutationObserver(moveQuoteButton);
-  observer.observe(document.body, { childList: true, subtree: true });
-});
-</script>
