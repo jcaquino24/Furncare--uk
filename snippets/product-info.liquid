@@ -119,10 +119,10 @@
   {% comment %} End of lead time code {% endcomment %}
 
   {% comment %} Product Form {% endcomment %}
-    {% if product.template_suffix != 'no-price' %}
+    {% unless product.template_suffix == 'no-price' %}
       {% render 'product-form', product: product, section_id: section_id, section: section %}
       
-    {% endif %}
+    {% endunless %}
 {% endif %}
 
 {% if customer %}  {% if customer.id == 11696191635792 or customer.id == 11063103160656 %}
@@ -152,7 +152,7 @@
   {% comment %} USPs {% endcomment %}
   {% render 'product-usp', product: product %}
 
-   {% if product.template_suffix != 'no-price' %}
+   {% unless product.template_suffix == 'no-price' %}
     {% comment %} Action Buttons {% endcomment %}
     <uwp-product-actions
       role="region"
@@ -161,7 +161,7 @@
     >
       {% render 'product-actions', product: product, section: section %}
     </uwp-product-actions>
-    {% endif %}
+  {% endunless %}
     
   
 </div>
