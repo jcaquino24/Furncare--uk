@@ -74,9 +74,11 @@
         </a>
       </div>
     {% endif %}
-  <div class="{{ base_class }}__hubspot-form">
-    {{ hubspot_form }}
-  </div>
+    {% if template.suffix != 'no-price' %}
+      <div class="{{ base_class }}__hubspot-form">
+        {{ hubspot_form }}
+      </div>
+    {% endif %}
 {% else %}
   {% if template.suffix != 'no-price' %}
   {%- form 'product',
