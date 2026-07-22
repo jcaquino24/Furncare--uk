@@ -195,8 +195,8 @@
 
       <div class="product-card__button-container--inline product-card__button-container">
         {{ button_content }}
-
-        {% if customer %}  {% if customer.id == 11696191635792 or customer.id == 11063103160656 %}
+      </div>
+      {% if customer %}  {% if customer.id == 11696191635792 or customer.id == 11063103160656 %}
   
     <button
   id="mprfq-quote-{{ product.id }}"
@@ -220,7 +220,6 @@
 </button>
 {% endif %}
 {% endif %}
-      </div>
     </div>
 
     {% comment %} Badges {% endcomment %}
