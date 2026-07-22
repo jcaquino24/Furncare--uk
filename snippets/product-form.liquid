@@ -78,11 +78,13 @@
     {{ hubspot_form }}
   </div>
 {% else %}
+  {% if template.suffix != 'no-price' %}
   {%- form 'product',
     product,
     class: 'ProductForm',
     data-productForm: 'true'
   -%}
+  
     {%- comment -%} Hidden input for variant ID - required for add to cart {%- endcomment -%}
     <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 
@@ -179,7 +181,7 @@
       <span class="body-sm body-sm--bold"></span>
     </div>
   {%- endform -%}
-
+{% endif %}
 {% endif %}
 
 {% if show_notify_modal %}
