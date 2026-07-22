@@ -124,17 +124,7 @@
   {% comment %} USPs {% endcomment %}
   {% render 'product-usp', product: product %}
 
-  
-    {% comment %} Action Buttons {% endcomment %}
-    <uwp-product-actions
-      role="region"
-      aria-label="Product actions"
-      aria-roledescription="region"
-    >
-      {% render 'product-actions', product: product, section: section %}
-    </uwp-product-actions>
-
-    <button
+  <button
   id="mprfq-quote-{{ product.id }}"
   product-handle="{{ product.handle }}"
   class="mprfq-add-to-quote-button-pdp mprfq-btn-hidden"
@@ -154,5 +144,15 @@
 >
   Add to Quote
 </button>
+    {% comment %} Action Buttons {% endcomment %}
+    <uwp-product-actions
+      role="region"
+      aria-label="Product actions"
+      aria-roledescription="region"
+    >
+      {% render 'product-actions', product: product, section: section %}
+    </uwp-product-actions>
+
+    
   
 </div>
