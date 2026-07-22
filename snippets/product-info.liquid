@@ -121,7 +121,7 @@
   {% comment %} Product Form {% endcomment %}
   {% render 'product-form', product: product, section_id: section_id, section: section %}
 {% endif %}
-{%comment %}
+
 <button
   id="mprfq-quote-{{ product.id }}"
   product-handle="{{ product.handle }}"
@@ -142,7 +142,7 @@
 >
   Add to Quote
 </button>
-{% endcomment %}
+
   {% comment %} USPs {% endcomment %}
   {% render 'product-usp', product: product %}
 
