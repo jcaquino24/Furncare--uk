@@ -119,10 +119,10 @@
   {% comment %} End of lead time code {% endcomment %}
 
   {% comment %} Product Form {% endcomment %}
-    {% unless template.suffix == 'no-price' %}
+   
       {% render 'product-form', product: product, section_id: section_id, section: section %}
       
-    {% endunless %}
+
 {% endif %}
 
 {% if customer %}  {% if customer.id == 11696191635792 or customer.id == 11063103160656 %}
