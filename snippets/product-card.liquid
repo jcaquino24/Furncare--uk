@@ -236,7 +236,7 @@
       {% endfor %}
     </div>
 
-{% if customer and (customer.id == 11696191635792 or customer.id == 11063103160656) %}
+{% if customer %}  {% if customer.id == 11696191635792 or customer.id == 11063103160656 %}
   
     <button
   id="mprfq-quote-{{ product.id }}"
@@ -258,7 +258,7 @@
 >
   Add to Quote
 </button>
-
+{% endif %}
 {% endif %}
 
     {% comment %} Product info {% endcomment %}
