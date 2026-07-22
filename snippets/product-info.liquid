@@ -119,7 +119,7 @@
   {% comment %} End of lead time code {% endcomment %}
 
   {% comment %} Product Form {% endcomment %}
-    {% unless product.template_suffix == 'no-price' %}
+    {% unless template_suffix == 'no-price' %}
       {% render 'product-form', product: product, section_id: section_id, section: section %}
       
     {% endunless %}
@@ -152,7 +152,7 @@
   {% comment %} USPs {% endcomment %}
   {% render 'product-usp', product: product %}
 
-   {% unless product.template_suffix == 'no-price' %}
+   {% unless template_suffix == 'no-price' %}
     {% comment %} Action Buttons {% endcomment %}
     <uwp-product-actions
       role="region"
