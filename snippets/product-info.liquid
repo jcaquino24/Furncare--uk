@@ -151,7 +151,7 @@
   {% comment %} USPs {% endcomment %}
   {% render 'product-usp', product: product %}
 
-  
+   {% if product.template_suffix != 'no-price' %}
     {% comment %} Action Buttons {% endcomment %}
     <uwp-product-actions
       role="region"
@@ -160,7 +160,7 @@
     >
       {% render 'product-actions', product: product, section: section %}
     </uwp-product-actions>
-
+    {% endif %}
     
   
 </div>
