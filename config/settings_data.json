@@ -99,7 +99,7 @@
       },
       "10145915593124433170": {
         "type": "shopify://apps/sp-request-a-quote/blocks/mp-request-for-quote-embed/019a3441-fea6-7e7b-ada9-3c4f6e8c5569",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       }
     }
