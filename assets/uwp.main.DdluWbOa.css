@@ -2241,7 +2241,7 @@ template {
   border-radius: var(--radius-md, 8px);
   aspect-ratio: 125/156;
 }
-.image-text-blocks .image-text-block__image > div {
+.image-text-blocks .image-text-block__image > * {
   position: absolute;
   inset: 0;
 }
@@ -2255,9 +2255,17 @@ template {
   pointer-events: none;
   transition: opacity var(--duration-normal) ease;
 }
+.image-text-blocks .image-text-block__primary-image {
+  z-index: 1;
+  transition: opacity var(--duration-normal) ease;
+}
+.image-text-blocks .image-text-block__hover-image {
+  z-index: 2;
+}
 .image-text-blocks .image-text-block__image img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
   transition: transform var(--duration-normal) ease;
 }

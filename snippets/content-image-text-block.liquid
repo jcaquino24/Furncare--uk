@@ -57,23 +57,23 @@
       >
     {% endif %}
     {% if image != blank %}
-      <div class="image-text-block__primary-image">
+      <span class="image-text-block__primary-image">
         {{ image | image_url: width: 1100, height: nil | image_tag: class: 'image-text-block__image-desktop hide-on-mobile' }}
         {% if image_mobile != blank %}
           {{ image_mobile | image_url: width: 400, height: nil | image_tag: class: 'image-text-block__image-mobile hide-on-desktop' }}
         {% endif %}
-      </div>
+      </span>
     {% else %}
       {% render 'placeholder-image', aspect_ratio: 1 %}
     {% endif %}
 
     {% if hover_image != blank %}
-      <div class="image-text-block__hover-image">
+      <span class="image-text-block__hover-image">
         {{ hover_image | image_url: width: 1100, height: nil | image_tag: class: 'image-text-block__hover-image-desktop hide-on-mobile' }}
         {% if hover_image_mobile != blank %}
           {{ hover_image_mobile | image_url: width: 400, height: nil | image_tag: class: 'image-text-block__hover-image-mobile hide-on-desktop' }}
         {% endif %}
-      </div>
+      </span>
     {% endif %}
     {% if enable_lightbox %}
       </button>
