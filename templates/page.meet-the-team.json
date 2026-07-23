@@ -186,27 +186,13 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
-        },
-        "image_card_4GG9rr": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Damian-Temple_B_W-for-web.jpg",
-            "image_mobile": "shopify://shop_images/Damian-Temple_B_W-for-web.jpg",
-            "title": "Damian Temple",
-            "subtitle": "Business Development Manager",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
         }
       },
       "block_order": [
         "image_card_4jLb9h",
         "image_card_rb9WiY",
         "image_card_BkPkaF",
-        "image_card_TM4beM",
-        "image_card_4GG9rr"
+        "image_card_TM4beM"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -221,6 +207,19 @@
     "image_text_blocks_kTRnwi": {
       "type": "image-text-blocks",
       "blocks": {
+        "image_card_VGKDDc": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Damian-Temple_B_W-for-web.jpg",
+            "image_mobile": "shopify://shop_images/Damian-Temple_B_W-for-web.jpg",
+            "title": "Damian Temple",
+            "subtitle": "Business Development Manager",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_cnKgXx": {
           "type": "image_card",
           "settings": {
@@ -256,26 +255,13 @@
             "show_gradient": true,
             "lightbox_caption": ""
           }
-        },
-        "image_card_wwGtjf": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Emily-Kilkenny_B_W-for-web.jpg",
-            "image_mobile": "shopify://shop_images/Emily-Kilkenny_B_W-for-web.jpg",
-            "title": "Emily Kilkenny",
-            "subtitle": "Sales Support Executive",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
         }
       },
       "block_order": [
+        "image_card_VGKDDc",
         "image_card_cnKgXx",
         "image_card_GFzrYz",
-        "image_card_gzfknB",
-        "image_card_wwGtjf"
+        "image_card_gzfknB"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -290,6 +276,19 @@
     "image_text_blocks_8ERLYk": {
       "type": "image-text-blocks",
       "blocks": {
+        "image_card_BzzWbt": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Emily-Kilkenny_B_W-for-web.jpg",
+            "image_mobile": "shopify://shop_images/Emily-Kilkenny_B_W-for-web.jpg",
+            "title": "Emily Kilkenny",
+            "subtitle": "Sales Support Executive",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_cNfiPK": {
           "type": "image_card",
           "settings": {
@@ -325,25 +324,13 @@
             "show_gradient": true,
             "lightbox_caption": ""
           }
-        },
-        "image_card_7gGr7T": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/tadlas_jh_B_W.jpg",
-            "title": "Jo Hazelle Tadlas",
-            "subtitle": "System Developer",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
         }
       },
       "block_order": [
+        "image_card_BzzWbt",
         "image_card_cNfiPK",
         "image_card_KpQgPx",
-        "image_card_y49iGr",
-        "image_card_7gGr7T"
+        "image_card_y49iGr"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -358,6 +345,18 @@
     "image_text_blocks_bNU4RW": {
       "type": "image-text-blocks",
       "blocks": {
+        "image_card_wT46fW": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/tadlas_jh_B_W.jpg",
+            "title": "Jo Hazelle Tadlas",
+            "subtitle": "System Developer",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_jWhD7C": {
           "type": "image_card",
           "settings": {
@@ -393,25 +392,13 @@
             "show_gradient": true,
             "lightbox_caption": ""
           }
-        },
-        "image_card_yy3kKm": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Lloyd-Bradley-B_W_for-web.jpg",
-            "title": "Lloyd Bradley",
-            "subtitle": "Production Supervisor",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
         }
       },
       "block_order": [
+        "image_card_wT46fW",
         "image_card_jWhD7C",
         "image_card_wKdEEm",
-        "image_card_bHhh89",
-        "image_card_yy3kKm"
+        "image_card_bHhh89"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -426,6 +413,18 @@
     "image_text_blocks_ALbkEp": {
       "type": "image-text-blocks",
       "blocks": {
+        "image_card_kxixx4": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Lloyd-Bradley-B_W_for-web.jpg",
+            "title": "Lloyd Bradley",
+            "subtitle": "Production Supervisor",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_Y8N4Gy": {
           "type": "image_card",
           "settings": {
@@ -461,25 +460,13 @@
             "show_gradient": true,
             "lightbox_caption": ""
           }
-        },
-        "image_card_73WrgG": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Molly_Tinker.jpg",
-            "title": "Molly Tinker",
-            "subtitle": "Brand & Marketing Projects Coordinator",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
         }
       },
       "block_order": [
+        "image_card_kxixx4",
         "image_card_Y8N4Gy",
         "image_card_EKj48B",
-        "image_card_X9zAEg",
-        "image_card_73WrgG"
+        "image_card_X9zAEg"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -494,6 +481,18 @@
     "image_text_blocks_YWfmBd": {
       "type": "image-text-blocks",
       "blocks": {
+        "image_card_xrVCtH": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Molly_Tinker.jpg",
+            "title": "Molly Tinker",
+            "subtitle": "Brand & Marketing Projects Coordinator",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_twBrzG": {
           "type": "image_card",
           "settings": {
@@ -529,25 +528,13 @@
             "show_gradient": true,
             "lightbox_caption": ""
           }
-        },
-        "image_card_YpHbTM": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Sarah_Hart.jpg",
-            "title": "Sarah Hart",
-            "subtitle": "MANAGEMENT ACCOUNTANT",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
         }
       },
       "block_order": [
+        "image_card_xrVCtH",
         "image_card_twBrzG",
         "image_card_M6EgXT",
-        "image_card_fpdqDx",
-        "image_card_YpHbTM"
+        "image_card_fpdqDx"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -562,6 +549,18 @@
     "image_text_blocks_Kj4trr": {
       "type": "image-text-blocks",
       "blocks": {
+        "image_card_Ccgrzd": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Sarah_Hart.jpg",
+            "title": "Sarah Hart",
+            "subtitle": "MANAGEMENT ACCOUNTANT",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_LVEY4X": {
           "type": "image_card",
           "settings": {
@@ -609,6 +608,7 @@
         }
       },
       "block_order": [
+        "image_card_Ccgrzd",
         "image_card_LVEY4X",
         "image_card_7UJEXQ",
         "image_card_WXVh6k",
