@@ -175,6 +175,18 @@
             "lightbox_caption": ""
           }
         },
+        "image_card_TM4beM": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Clifford-Aquino_B_W_forweb.jpg",
+            "title": "Clifford Aquino",
+            "subtitle": "E-Commerce Specialist",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_4GG9rr": {
           "type": "image_card",
           "settings": {
@@ -193,6 +205,7 @@
         "image_card_4jLb9h",
         "image_card_rb9WiY",
         "image_card_BkPkaF",
+        "image_card_TM4beM",
         "image_card_4GG9rr"
       ],
       "name": "Image text blocks",
