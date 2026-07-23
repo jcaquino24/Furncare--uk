@@ -15,7 +15,7 @@
         "eyebrow": "your project partner",
         "heading": "Shape your care home with practical, considered furniture support",
         "copy": "Every care home project needs furniture that feels considered, yet crafted for care environments. Whether you’re planning a new space, updating key rooms or working through a larger phased project, we’ll help you choose contemporary and comfortable pieces that support the people who live and work there.",
-        "primary_label": "Plan a refurbishment",
+        "primary_label": "",
         "primary_link": "shopify://pages/contact-us",
         "scroll_target": "refurbishment",
         "secondary_label": "Discuss your new build project",
@@ -388,7 +388,7 @@
       ],
       "name": "Furncare audience advanced",
       "settings": {
-        "id_anchor": "new-build",
+        "id_anchor": "",
         "eyebrow": "NEW BUILD FURNITURE SUPPORT",
         "heading": "Bring your new care spaces to life.",
         "background_gradient": "",
@@ -466,6 +466,7 @@
       "custom_css": [],
       "name": "Video & Form",
       "settings": {
+        "id_anchor": "new-build",
         "bg_color": "#f9f6f0",
         "max_width": 2600,
         "subtitle": "",
