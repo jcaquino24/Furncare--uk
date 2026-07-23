@@ -4,9 +4,16 @@
 
   @param {string} label - The button text
   @param {string} [size] - Optional size of the button (xs, sm, md)
-  @param {string} [style] - Optional style of the button (primary, secondary, underline)
+  @param {string} [style] - Optional style of the button (primary, secondary, underline, custom)
   @param {string} [link] - Optional URL to link to
   @param {string} [target] - Optional target for the link (e.g., _blank)
+  @param {boolean} [new_tab] - Opens the link in a new tab when set to true
+  @param {number} [button_font_size] - Optional font size in px for the custom button style
+  @param {string} [button_font_color] - Optional font color for the custom button style
+  @param {string} [button_background] - Optional background for the custom button style
+  @param {string} [button_border_color] - Optional border color for the custom button style
+  @param {number} [button_border_width] - Optional border width in px for the custom button style
+  @param {number} [button_padding] - Optional padding in px for the custom button style
   @param {string} [icon] - Optional icon to display, refer to icons.liquid snippet and pass in the icon name only
   @param {boolean} [icon_only] - Toggle to show only the icon without text. A label is still required for accessibility. Only for primary and secondary styles.
   @param {string} [button_type] - Optional button type (button, submit, reset)
@@ -43,9 +50,19 @@
   assign target = target | default: null
   assign icon = icon | default: null
   assign button_type = button_type | default: 'button'
+  assign button_font_size = button_font_size | default: 16
+  assign button_font_color = button_font_color | default: 'var(--color-text-primary, #111111)'
+  assign button_background = button_background | default: 'transparent'
+  assign button_border_color = button_border_color | default: 'transparent'
+  assign button_border_width = button_border_width | default: 1
+  assign button_padding = button_padding | default: 12
 
   if link != blank
     assign element = 'a'
+  endif
+
+  if new_tab == true and target == blank and link != blank
+    assign target = '_blank'
   endif
 
   if icon != blank and icon_only == false and style == 'underline'
@@ -53,8 +70,13 @@
   endif
 -%}
 
+{%- assign custom_styles = blank -%}
+{%- if style == 'custom' -%}
+  {%- assign custom_styles = 'font-size: ' | append: button_font_size | append: 'px; color: ' | append: button_font_color | append: '; background: ' | append: button_background | append: '; border: ' | append: button_border_width | append: 'px solid ' | append: button_border_color | append: '; padding: ' | append: button_padding | append: 'px;' -%}
+{%- endif -%}
+
 <{{ element }}
-  class="button button--{{ style }}{% if scheme_class != blank %} button--{{ scheme_class }}{% endif %} button--{{ size }}{% if icon_only %} button--icon-only{% endif %} {{ class }}"
+  class="button button--{{ style }}{% if scheme_class != blank %} button--{{ scheme_class }}{% endif %} button--{{ size }}{% if style == 'custom' %} button--custom{% endif %}{% if icon_only %} button--icon-only{% endif %} {{ class }}"
   {%- if element == 'a' -%}
     href="{{- link -}}"
     {%- if target -%}
@@ -65,6 +87,9 @@
   {%- endif -%}
   {%- if icon_only -%}
     aria-label="{{- label -}}"
+  {%- endif -%}
+  {%- if custom_styles != blank -%}
+    style="{{- custom_styles -}}"
   {%- endif -%}
   {{- attributes -}}
 >

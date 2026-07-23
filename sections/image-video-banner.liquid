@@ -230,7 +230,13 @@
                 new_tab: block.settings.new_tab,
                 style: block.settings.button_style,
                 size: 'md',
-                scheme: section.settings.colour_scheme
+                scheme: section.settings.colour_scheme,
+                button_font_size: block.settings.button_font_size,
+                button_font_color: block.settings.button_font_color,
+                button_background: block.settings.button_background,
+                button_border_width: block.settings.button_border_width,
+                button_border_color: block.settings.button_border_color,
+                button_padding: block.settings.button_padding
               -%}
           {%- endcase -%}
         {%- endfor -%}
@@ -577,9 +583,67 @@
             {
               "value": "underline",
               "label": "Underline"
+            },
+            {
+              "value": "custom",
+              "label": "Custom"
             }
           ],
           "default": "primary"
+        },
+        {
+          "type": "range",
+          "id": "button_font_size",
+          "label": "Font size",
+          "default": 16,
+          "min": 10,
+          "max": 48,
+          "step": 1,
+          "unit": "px",
+          "visible_if": "{{ block.settings.button_style == 'custom' }}"
+        },
+        {
+          "type": "color",
+          "id": "button_font_color",
+          "label": "Font color",
+          "default": "#ffffff",
+          "visible_if": "{{ block.settings.button_style == 'custom' }}"
+        },
+        {
+          "type": "color_background",
+          "id": "button_background",
+          "label": "Background",
+          "default": "#1f1f1f",
+          "visible_if": "{{ block.settings.button_style == 'custom' }}"
+        },
+        {
+          "type": "range",
+          "id": "button_border_width",
+          "label": "Border width",
+          "default": 1,
+          "min": 0,
+          "max": 8,
+          "step": 1,
+          "unit": "px",
+          "visible_if": "{{ block.settings.button_style == 'custom' }}"
+        },
+        {
+          "type": "color",
+          "id": "button_border_color",
+          "label": "Border color",
+          "default": "#ffffff",
+          "visible_if": "{{ block.settings.button_style == 'custom' }}"
+        },
+        {
+          "type": "range",
+          "id": "button_padding",
+          "label": "Padding",
+          "default": 12,
+          "min": 4,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "visible_if": "{{ block.settings.button_style == 'custom' }}"
         }
       ]
     },
