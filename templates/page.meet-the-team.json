@@ -133,7 +133,7 @@
         "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "grid",
-        "enable_lightbox": false
+        "enable_lightbox": true
       }
     },
     "image_text_blocks_8w6bAc": {
