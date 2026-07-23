@@ -3,6 +3,10 @@
     assign image_mobile = image
   endif
 
+  if hover_image_mobile == blank
+    assign hover_image_mobile = hover_image
+  endif
+
   if video_mobile == blank
     assign video_mobile = video
   endif
@@ -53,12 +57,23 @@
       >
     {% endif %}
     {% if image != blank %}
-      {{ image | image_url: width: 1100, height: nil | image_tag: class: 'image-text-block__image-desktop hide-on-mobile' }}
-      {% if image_mobile != blank %}
-        {{ image_mobile | image_url: width: 400, height: nil | image_tag: class: 'image-text-block__image-mobile hide-on-desktop' }}
-      {% endif %}
+      <div class="image-text-block__primary-image">
+        {{ image | image_url: width: 1100, height: nil | image_tag: class: 'image-text-block__image-desktop hide-on-mobile' }}
+        {% if image_mobile != blank %}
+          {{ image_mobile | image_url: width: 400, height: nil | image_tag: class: 'image-text-block__image-mobile hide-on-desktop' }}
+        {% endif %}
+      </div>
     {% else %}
       {% render 'placeholder-image', aspect_ratio: 1 %}
+    {% endif %}
+
+    {% if hover_image != blank %}
+      <div class="image-text-block__hover-image">
+        {{ hover_image | image_url: width: 1100, height: nil | image_tag: class: 'image-text-block__hover-image-desktop hide-on-mobile' }}
+        {% if hover_image_mobile != blank %}
+          {{ hover_image_mobile | image_url: width: 400, height: nil | image_tag: class: 'image-text-block__hover-image-mobile hide-on-desktop' }}
+        {% endif %}
+      </div>
     {% endif %}
     {% if enable_lightbox %}
       </button>

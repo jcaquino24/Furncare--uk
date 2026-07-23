@@ -113,6 +113,8 @@
                   {% render 'content-image-text-block',
                     image: block.settings.image,
                     image_mobile: block.settings.image_mobile,
+                    hover_image: block.settings.hover_image,
+                    hover_image_mobile: block.settings.hover_image_mobile,
                     video: block.settings.video,
                     video_mobile: block.settings.video_mobile,
                     text: block.settings.text,
@@ -140,6 +142,8 @@
                 {% render 'content-image-text-block',
                   image: block.settings.image,
                   image_mobile: block.settings.image_mobile,
+                  hover_image: block.settings.hover_image,
+                  hover_image_mobile: block.settings.hover_image_mobile,
                   video: block.settings.video,
                   video_mobile: block.settings.video_mobile,
                   text: block.settings.text,
@@ -203,6 +207,8 @@
                 {% render 'content-image-text-block',
                   image: block.settings.image,
                   image_mobile: block.settings.image_mobile,
+                  hover_image: block.settings.hover_image,
+                  hover_image_mobile: block.settings.hover_image_mobile,
                   video: block.settings.video,
                   video_mobile: block.settings.video_mobile,
                   text: block.settings.text,
@@ -442,6 +448,16 @@
           "type": "image_picker",
           "id": "image_mobile",
           "label": "Image (mobile)"
+        },
+        {
+          "type": "image_picker",
+          "id": "hover_image",
+          "label": "Hover image"
+        },
+        {
+          "type": "image_picker",
+          "id": "hover_image_mobile",
+          "label": "Hover image (mobile)"
         },
         {
           "type": "video",
