@@ -92,7 +92,6 @@
             "text": "",
             "block_colour_scheme": "dark-mode",
             "show_gradient": true,
-            "lightbox_image": "shopify://shop_images/Clifford-Aquino_B_W_forweb.jpg",
             "lightbox_caption": ""
           }
         },
@@ -134,7 +133,7 @@
         "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "grid",
-        "enable_lightbox": true
+        "enable_lightbox": false
       }
     },
     "image_text_blocks_8w6bAc": {
