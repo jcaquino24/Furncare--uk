@@ -584,12 +584,17 @@
         },
         "product_block_JNYNeX": {
           "type": "product_block",
-          "disabled": true,
           "settings": {
             "title": "Coming Soon",
             "handle": "best-sellers",
             "product_feed_source": "product_list",
-            "products": [],
+            "products": [
+              "ellington-3-drawer-bedside",
+              "abbott-3-drawer-bedside",
+              "bronson-3-drawer-bedside",
+              "tilbury-3-drawer-bedside",
+              "galloway-3-drawer-bedside"
+            ],
             "collection": "the-origins-collection",
             "seed_product": "",
             "use_current_product": false,
