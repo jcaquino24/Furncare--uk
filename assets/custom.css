@@ -597,7 +597,7 @@
   height: 42px;
   border: none;
   border-radius: 50%;
-  background: var(--color-surface);
+  background: #fff;
   color: var(--color-text);
   font-size: 1.3rem;
   cursor: pointer;
