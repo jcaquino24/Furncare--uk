@@ -1,0 +1,113 @@
+{% comment %}
+  Product collection popup block for product pages.
+{% endcomment %}
+{% assign popup_collection = block.settings.collection %}
+{% if popup_collection != blank %}
+  <div class="product-collection-popup-block">
+    <button
+      type="button"
+      class="product-collection-popup-block__trigger"
+      data-popup-id="product-collection-popup-{{ section_id }}-{{ block.id }}"
+      aria-expanded="false"
+      aria-controls="product-collection-popup-{{ section_id }}-{{ block.id }}"
+    >
+      <span class="product-collection-popup-block__text">
+        <span class="product-collection-popup-block__label">
+          {{ block.settings.button_text | default: popup_collection.title }}
+        </span>
+        {% if block.settings.button_subtext != blank %}
+          <span class="product-collection-popup-block__subtext">{{ block.settings.button_subtext }}</span>
+        {% else %}
+          <span class="product-collection-popup-block__subtext">View products without leaving the product page</span>
+        {% endif %}
+      </span>
+      <span class="product-collection-popup-block__icon">→</span>
+    </button>
+
+    <div
+      id="product-collection-popup-{{ section_id }}-{{ block.id }}"
+      class="product-collection-popup-block__modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="product-collection-popup-title-{{ section_id }}-{{ block.id }}"
+      hidden
+    >
+      <div class="product-collection-popup-block__overlay" data-popup-close></div>
+      <div class="product-collection-popup-block__panel" role="document">
+        <button
+          type="button"
+          class="product-collection-popup-block__close"
+          data-popup-close
+          aria-label="{{ 'accessibility.close_dialog' | t }}"
+        >
+          ×
+        </button>
+        <div class="product-collection-popup-block__header">
+          <h3 id="product-collection-popup-title-{{ section_id }}-{{ block.id }}" class="product-collection-popup-block__heading">
+            {{ block.settings.modal_title | default: popup_collection.title }}
+          </h3>
+          {% if block.settings.modal_description != blank %}
+            <p class="product-collection-popup-block__description">{{ block.settings.modal_description }}</p>
+          {% endif %}
+        </div>
+        <div class="product-collection-popup-block__content">
+          {% assign limit = block.settings.products_limit | default: 8 %}
+          {% if popup_collection.products_count > 0 %}
+            <div class="product-collection-popup-block__grid">
+              {% for product_item in popup_collection.products limit: limit %}
+                {% render 'product-card', product: product_item %}
+              {% endfor %}
+            </div>
+          {% else %}
+            <p class="product-collection-popup-block__empty">No products were found in this collection.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var trigger = document.querySelector('[data-popup-id="product-collection-popup-{{ section_id }}-{{ block.id }}"]');
+      var popup = document.getElementById('product-collection-popup-{{ section_id }}-{{ block.id }}');
+      if (!trigger || !popup) return;
+
+      var openPopup = function() {
+        popup.removeAttribute('hidden');
+        popup.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+        var closeButton = popup.querySelector('[data-popup-close]');
+        if (closeButton) closeButton.focus();
+      };
+
+      var closePopup = function() {
+        popup.classList.remove('is-open');
+        popup.setAttribute('hidden', '');
+        trigger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        trigger.focus();
+      };
+
+      trigger.addEventListener('click', function() {
+        if (popup.classList.contains('is-open')) {
+          closePopup();
+        } else {
+          openPopup();
+        }
+      });
+
+      popup.addEventListener('click', function(event) {
+        if (event.target.matches('[data-popup-close], .product-collection-popup-block__overlay')) {
+          closePopup();
+        }
+      });
+
+      popup.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          closePopup();
+        }
+      });
+    })();
+  </script>
+{% endif %}
