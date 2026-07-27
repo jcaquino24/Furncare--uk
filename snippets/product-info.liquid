@@ -112,14 +112,16 @@
 {%- when 'cross_sell' %}
 {% render 'product-cross-sell', product: product, block: block, section: section.id %}
 {%- when 'collection_popup' %}
-{% render 'product-collection-popup-block', product: product, block: block, section: section, section_id: section_id %}
+  {%- if section.settings.show_collection_popup -%}
+    {% render 'product-collection-popup-block', product: product, block: block, section: section, section_id: section_id %}
+  {%- endif -%}
 {%- endcase -%}
 {%- endfor -%}
 
   {% comment %} End of lead time code {% endcomment %}
 
   {% comment %} Product Form {% endcomment %}
-  {% render 'product-form', product: product, section_id: section_id, section: section %}
+  {% render 'product-form', product: product, section_id: section_id %}
 {% endif %}
   {% comment %} USPs {% endcomment %}
   {% render 'product-usp', product: product %}
