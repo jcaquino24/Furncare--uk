@@ -1216,6 +1216,51 @@
         }
       ]
     }
+  ,
+    {
+      "type": "collection_popup",
+      "name": "Collection popup",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection",
+          "info": "Select the collection to open in the popup"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "Browse collection"
+        },
+        {
+          "type": "text",
+          "id": "button_subtext",
+          "label": "Button subtext",
+          "default": "View products without leaving the product page"
+        },
+        {
+          "type": "text",
+          "id": "modal_title",
+          "label": "Popup title",
+          "default": "Products in collection"
+        },
+        {
+          "type": "textarea",
+          "id": "modal_description",
+          "label": "Popup description",
+          "default": "Explore this collection without leaving the product page."
+        },
+        {
+          "type": "number",
+          "id": "products_limit",
+          "label": "Products limit",
+          "default": 8,
+          "min": 1,
+          "max": 20
+        }
+      ]
+    }
   ]
 }
 {% endschema %}

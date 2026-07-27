@@ -111,6 +111,8 @@
 {%- case block.type -%}
 {%- when 'cross_sell' %}
 {% render 'product-cross-sell', product: product, block: block, section: section.id %}
+{%- when 'collection_popup' %}
+{% render 'product-collection-popup-block', product: product, block: block, section: section, section_id: section_id %}
 {%- endcase -%}
 {%- endfor -%}
 
