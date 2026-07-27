@@ -1,0 +1,256 @@
+{% comment %}
+  Product collection popup section.
+  Displays one or two button cards that open a modal overlay showing products from a selected collection.
+{% endcomment %}
+{% liquid
+  assign layout = section.settings.layout | default: 'two_columns'
+  assign button_class = 'product-collection-popup__buttons'
+  if layout == 'one_column'
+    assign button_class = button_class | append: ' product-collection-popup__buttons--single'
+  else
+    assign button_class = button_class | append: ' product-collection-popup__buttons--dual'
+  endif
+-%}
+<section class="product-collection-popup" id="product-collection-popup-{{ section.id }}" {{ section.shopify_attributes }}>
+  <div class="product-collection-popup__inner container">
+    {% if section.settings.title != blank %}
+      <div class="product-collection-popup__header">
+        <h2 class="product-collection-popup__title title-md">{{ section.settings.title }}</h2>
+      </div>
+    {% endif %}
+
+    <div class="{{ button_class }}">
+      {% for block in section.blocks %}
+        {% assign popup_collection = block.settings.collection %}
+        {% if popup_collection != blank %}
+          <div class="product-collection-popup__button-card">
+            <button
+              type="button"
+              class="product-collection-popup__trigger"
+              data-popup-id="collection-popup-{{ section.id }}-{{ block.id }}"
+              aria-expanded="false"
+              aria-controls="collection-popup-{{ section.id }}-{{ block.id }}"
+            >
+              <span class="product-collection-popup__image-wrapper">
+                {% if popup_collection.image != blank %}
+                  <img
+                    class="product-collection-popup__image"
+                    src="{{ popup_collection.image | image_url: width: 720 }}"
+                    alt="{{ popup_collection.title }}"
+                    loading="lazy"
+                  />
+                {% else %}
+                  <span class="product-collection-popup__image-fallback"></span>
+                {% endif %}
+              </span>
+
+              <span class="product-collection-popup__text">
+                <span class="product-collection-popup__label">{{ block.settings.button_text | default: popup_collection.title }}</span>
+                {% if block.settings.button_subtext != blank %}
+                  <span class="product-collection-popup__subtext">{{ block.settings.button_subtext }}</span>
+                {% else %}
+                  <span class="product-collection-popup__subtext">View products without leaving the page</span>
+                {% endif %}
+              </span>
+
+              <span class="product-collection-popup__arrow" aria-hidden="true">→</span>
+            </button>
+
+            <div
+              id="collection-popup-{{ section.id }}-{{ block.id }}"
+              class="collection-popup-modal"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="collection-popup-title-{{ section.id }}-{{ block.id }}"
+              hidden
+            >
+              <div class="collection-popup-modal__overlay" data-popup-close></div>
+              <div class="collection-popup-modal__panel" role="document">
+                <button
+                  type="button"
+                  class="collection-popup-modal__close"
+                  data-popup-close
+                  aria-label="{{ 'accessibility.close_dialog' | t }}"
+                >
+                  ×
+                </button>
+                <div class="collection-popup-modal__header">
+                  <h3 id="collection-popup-title-{{ section.id }}-{{ block.id }}" class="collection-popup-modal__heading">
+                    {{ block.settings.modal_title | default: popup_collection.title }}
+                  </h3>
+                  {% if block.settings.modal_description != blank %}
+                    <p class="collection-popup-modal__description">{{ block.settings.modal_description }}</p>
+                  {% endif %}
+                </div>
+                <div class="collection-popup-modal__content">
+                  {% if popup_collection.products_count > 0 %}
+                    <div class="collection-popup-modal__products">
+                      {% assign products_limit = block.settings.products_limit | default: 8 %}
+                      {% for product in popup_collection.products limit: products_limit %}
+                        {% render 'product-card', product: product %}
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    <p class="collection-popup-modal__empty">No products were found in this collection.</p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    var sectionId = 'product-collection-popup-{{ section.id }}';
+    var sectionRoot = document.getElementById(sectionId);
+    if (!sectionRoot) return;
+
+    var openPopup = function(button, popup) {
+      popup.removeAttribute('hidden');
+      popup.classList.add('is-open');
+      button.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      var closeButton = popup.querySelector('[data-popup-close]');
+      if (closeButton) closeButton.focus();
+    };
+
+    var closePopup = function(button, popup) {
+      popup.classList.remove('is-open');
+      popup.setAttribute('hidden', '');
+      button.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
+    sectionRoot.querySelectorAll('[data-popup-id]').forEach(function(button) {
+      var popupId = button.getAttribute('data-popup-id');
+      var popup = sectionRoot.querySelector('#' + popupId);
+      if (!popup) return;
+
+      button.addEventListener('click', function() {
+        if (popup.classList.contains('is-open')) {
+          closePopup(button, popup);
+        } else {
+          openPopup(button, popup);
+        }
+      });
+
+      popup.addEventListener('click', function(event) {
+        if (event.target.matches('[data-popup-close], .collection-popup-modal__overlay')) {
+          closePopup(button, popup);
+        }
+      });
+
+      popup.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          closePopup(button, popup);
+        }
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Product collection popup",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Browse finishes and handle options"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Button layout",
+      "default": "two_columns",
+      "options": [
+        {
+          "value": "one_column",
+          "label": "One column"
+        },
+        {
+          "value": "two_columns",
+          "label": "Two columns"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_button",
+      "name": "Collection button",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection",
+          "info": "Select the collection to open in the popup"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "Browse collection"
+        },
+        {
+          "type": "text",
+          "id": "button_subtext",
+          "label": "Button subtext",
+          "default": "View products without leaving the page"
+        },
+        {
+          "type": "text",
+          "id": "modal_title",
+          "label": "Popup title",
+          "default": "Products in collection"
+        },
+        {
+          "type": "textarea",
+          "id": "modal_description",
+          "label": "Popup description",
+          "default": "Explore this collection without leaving the product page."
+        },
+        {
+          "type": "number",
+          "id": "products_limit",
+          "label": "Products limit",
+          "default": 8
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection popup buttons",
+      "blocks": [
+        {
+          "type": "collection_button",
+          "settings": {
+            "button_text": "Browse Finishes",
+            "button_subtext": "See finish options",
+            "modal_title": "Finishes",
+            "modal_description": "Browse the finish collection without leaving this product page.",
+            "products_limit": 8
+          }
+        },
+        {
+          "type": "collection_button",
+          "settings": {
+            "button_text": "Browse Handle Options",
+            "button_subtext": "See handle choices",
+            "modal_title": "Handle options",
+            "modal_description": "Browse handle options without leaving this product page.",
+            "products_limit": 8
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
