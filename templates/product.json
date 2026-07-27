@@ -9,6 +9,42 @@
  */
 {
   "sections": {
+    "product_collection_popup_t4iBQJ": {
+      "type": "product-collection-popup",
+      "blocks": {
+        "collection_button_WKf7QP": {
+          "type": "collection_button",
+          "settings": {
+            "collection": "create-your-perfect-origins-look",
+            "button_text": "Browse Handle Options",
+            "button_subtext": "See handle choices",
+            "modal_title": "Handle options",
+            "modal_description": "Browse handle options without leaving this product page.",
+            "products_limit": 8
+          }
+        },
+        "collection_button_j7NpmD": {
+          "type": "collection_button",
+          "settings": {
+            "collection": "create-your-perfect-origins-look-copy",
+            "button_text": "Browse Finishes",
+            "button_subtext": "See finish options",
+            "modal_title": "Finishes",
+            "modal_description": "Browse the finish collection without leaving this product page.",
+            "products_limit": 8
+          }
+        }
+      },
+      "block_order": [
+        "collection_button_WKf7QP",
+        "collection_button_j7NpmD"
+      ],
+      "name": "Collection popup buttons",
+      "settings": {
+        "title": "Browse finishes and handle options",
+        "layout": "two_columns"
+      }
+    },
     "main": {
       "type": "product",
       "blocks": {
@@ -88,7 +124,7 @@
             "active_border_color": "#243222",
             "background_color": "#c3c0b0",
             "border_color": "rgba(0,0,0,0)",
-            "card_background": "#C3C0B0",
+            "card_background": "#c3c0b0",
             "card_border_color": "rgba(0,0,0,0)",
             "heading_color": "#243222",
             "text_color": "#243222",
@@ -184,6 +220,7 @@
   },
   "order": [
     "main",
+    "product_collection_popup_t4iBQJ",
     "ai_product_recommendations_FjkdYa",
     "product_blocks_tncMV6"
   ]
