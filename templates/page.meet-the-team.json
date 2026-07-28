@@ -23,7 +23,7 @@
           "type": "heading",
           "settings": {
             "text": "Meet the Furncare Team",
-            "heading_level": "h2",
+            "heading_level": "h1",
             "heading_style": "title-xl"
           },
           "blocks": {}
