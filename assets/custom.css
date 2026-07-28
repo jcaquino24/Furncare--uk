@@ -580,7 +580,7 @@
   grid-template-columns: auto 1fr auto;
   gap: 18px;
   align-items: center;
-  width: 100%;
+  width: auto;
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: 28px;
