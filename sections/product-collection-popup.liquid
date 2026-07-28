@@ -3,12 +3,17 @@
   Displays one or two button cards that open a modal overlay showing products from a selected collection.
 {% endcomment %}
 {% liquid
-  assign layout = section.settings.layout | default: 'two_columns'
+  assign block_count = section.blocks.size | default: 0
+  if block_count > 3
+    assign block_count = 3
+  endif
   assign button_class = 'product-collection-popup__buttons'
-  if layout == 'one_column'
-    assign button_class = button_class | append: ' product-collection-popup__buttons--single'
+  if block_count == 1
+    assign button_class = button_class | append: ' product-collection-popup__buttons--one'
+  elsif block_count == 2
+    assign button_class = button_class | append: ' product-collection-popup__buttons--two'
   else
-    assign button_class = button_class | append: ' product-collection-popup__buttons--dual'
+    assign button_class = button_class | append: ' product-collection-popup__buttons--three'
   endif
 -%}
 <section class="product-collection-popup" id="product-collection-popup-{{ section.id }}" {{ section.shopify_attributes }}>
@@ -20,7 +25,7 @@
     {% endif %}
 
     <div class="{{ button_class }}">
-      {% for block in section.blocks %}
+      {% for block in section.blocks limit: 3 %}
         {% assign popup_collection = block.settings.collection %}
         {% if popup_collection != blank %}
           <div class="product-collection-popup__button-card">
@@ -165,22 +170,11 @@
       "default": "Browse finishes and handle options"
     },
     {
-      "type": "select",
-      "id": "layout",
-      "label": "Button layout",
-      "default": "two_columns",
-      "options": [
-        {
-          "value": "one_column",
-          "label": "One column"
-        },
-        {
-          "value": "two_columns",
-          "label": "Two columns"
-        }
-      ]
+      "type": "header",
+      "content": "Button Layout"
     }
   ],
+  "max_blocks": 3,
   "blocks": [
     {
       "type": "collection_button",
