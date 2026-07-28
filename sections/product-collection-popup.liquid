@@ -68,9 +68,10 @@
               aria-modal="true"
               aria-labelledby="collection-popup-title-{{ section.id }}-{{ block.id }}"
               hidden
+              style="position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; width: 100vw !important; height: 100vh !important; z-index: 2147483646 !important;"
             >
-              <div class="collection-popup-modal__overlay" data-popup-close></div>
-              <div class="collection-popup-modal__panel" role="document">
+              <div class="collection-popup-modal__overlay" data-popup-close style="position: fixed !important; inset: 0 !important; background: rgba(255,255,255,0.95) !important; z-index: 2147483646 !important;"></div>
+              <div class="collection-popup-modal__panel" role="document" style="z-index: 2147483647 !important;">
                 <button
                   type="button"
                   class="collection-popup-modal__close"
