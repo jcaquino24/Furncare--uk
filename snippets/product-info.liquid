@@ -108,15 +108,32 @@
 
 
 {%- for block in section.blocks -%}
-{%- case block.type -%}
-{%- when 'cross_sell' %}
-{% render 'product-cross-sell', product: product, block: block, section: section.id %}
-{%- when 'collection_popup' %}
-  {%- if section.settings.show_collection_popup -%}
-    {% render 'product-collection-popup-block', product: product, block: block, section: section, section_id: section_id %}
+  {%- if block.type == 'cross_sell' -%}
+    {% render 'product-cross-sell', product: product, block: block, section: section.id %}
   {%- endif -%}
-{%- endcase -%}
 {%- endfor -%}
+
+{%- assign collection_popup_blocks = section.blocks | where: "type", "collection_popup" -%}
+{%- assign collection_popup_count = collection_popup_blocks.size -%}
+{%- if collection_popup_count > 3 -%}
+  {%- assign collection_popup_count = 3 -%}
+{%- endif -%}
+{%- assign collection_popup_class = 'product-collection-popup__buttons' -%}
+{%- if collection_popup_count == 1 -%}
+  {%- assign collection_popup_class = collection_popup_class | append: ' product-collection-popup__buttons--one' -%}
+{%- elsif collection_popup_count == 2 -%}
+  {%- assign collection_popup_class = collection_popup_class | append: ' product-collection-popup__buttons--two' -%}
+{%- else -%}
+  {%- assign collection_popup_class = collection_popup_class | append: ' product-collection-popup__buttons--three' -%}
+{%- endif -%}
+
+{%- if collection_popup_count > 0 and section.settings.show_collection_popup -%}
+  <div class="{{ collection_popup_class }}">
+    {%- for block in collection_popup_blocks limit: 3 -%}
+      {% render 'product-collection-popup-block', product: product, block: block, section: section, section_id: section_id %}
+    {%- endfor -%}
+  </div>
+{%- endif -%}
 
   {% comment %} End of lead time code {% endcomment %}
 

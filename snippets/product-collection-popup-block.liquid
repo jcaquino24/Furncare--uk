@@ -11,6 +11,16 @@
       aria-expanded="false"
       aria-controls="product-collection-popup-{{ section_id }}-{{ block.id }}"
     >
+      {% if popup_collection.image != blank %}
+        <span class="product-collection-popup-block__image-wrapper">
+          <img
+            class="product-collection-popup-block__image"
+            src="{{ popup_collection.image | image_url: width: 280 }}"
+            alt="{{ popup_collection.title }}"
+            loading="lazy"
+          />
+        </span>
+      {% endif %}
       <span class="product-collection-popup-block__text">
         <span class="product-collection-popup-block__label">
           {{ block.settings.button_text | default: popup_collection.title }}
