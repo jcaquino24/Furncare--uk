@@ -485,7 +485,7 @@
   inset: 0;
   display: grid;
   place-items: center;
-  z-index: 1500;
+  z-index: 99999;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
@@ -499,7 +499,7 @@
 .collection-popup-modal__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .collection-popup-modal__panel {
@@ -511,7 +511,7 @@
   background: #fff;
   padding: 32px;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
-  z-index: 1;
+  z-index: 100000;
 }
 
 .collection-popup-modal__close {
