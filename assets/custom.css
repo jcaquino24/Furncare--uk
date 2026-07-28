@@ -670,6 +670,15 @@
   pointer-events: auto;
 }
 
+body.collection-popup-open .header,
+html.collection-popup-open .header,
+body.collection-popup-open uwp-product-gallery,
+html.collection-popup-open uwp-product-gallery,
+body.collection-popup-open .product-gallery__thumbnails-wrapper,
+html.collection-popup-open .product-gallery__thumbnails-wrapper {
+  z-index: 1 !important;
+}
+
 .product-collection-popup-block__overlay {
   position: fixed !important;
   inset: 0;

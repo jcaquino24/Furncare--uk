@@ -83,11 +83,20 @@
       var popup = document.getElementById('product-collection-popup-{{ section_id }}-{{ block.id }}');
       if (!trigger || !popup) return;
 
+      var ensureTopLayer = function() {
+        if (popup.dataset.popupMovedToBody === 'true') return;
+        document.body.appendChild(popup);
+        popup.dataset.popupMovedToBody = 'true';
+      };
+
       var openPopup = function() {
+        ensureTopLayer();
         popup.removeAttribute('hidden');
         popup.classList.add('is-open');
         trigger.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
+        document.body.classList.add('collection-popup-open');
+        document.documentElement.classList.add('collection-popup-open');
         var closeButton = popup.querySelector('[data-popup-close]');
         if (closeButton) closeButton.focus();
       };
@@ -97,6 +106,8 @@
         popup.setAttribute('hidden', '');
         trigger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
+        document.body.classList.remove('collection-popup-open');
+        document.documentElement.classList.remove('collection-popup-open');
         trigger.focus();
       };
 
