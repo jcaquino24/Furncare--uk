@@ -173,6 +173,17 @@
     "product_collection_popup_t4iBQJ": {
       "type": "product-collection-popup",
       "blocks": {
+        "collection_button_FGC7Tw": {
+          "type": "collection_button",
+          "settings": {
+            "collection": "",
+            "button_text": "Browse collection",
+            "button_subtext": "View products without leaving the page",
+            "modal_title": "Products in collection",
+            "modal_description": "Explore this collection without leaving the product page.",
+            "products_limit": 8
+          }
+        },
         "collection_button_WKf7QP": {
           "type": "collection_button",
           "settings": {
@@ -197,13 +208,13 @@
         }
       },
       "block_order": [
+        "collection_button_FGC7Tw",
         "collection_button_WKf7QP",
         "collection_button_j7NpmD"
       ],
       "name": "Collection popup buttons",
       "settings": {
-        "title": "Browse finishes and handle options",
-        "layout": "two_columns"
+        "title": "Browse finishes and handle options"
       }
     },
     "ai_product_recommendations_FjkdYa": {
