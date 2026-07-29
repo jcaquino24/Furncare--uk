@@ -1,0 +1,284 @@
+import { r as S, i as w } from "./uwp.utils.nmjlQhSZ.js";
+
+class y {
+    constructor(t) {
+        this.config = t;
+    }
+    async executeSearch(t) {
+        if (!t || "string" != typeof t || t.length < 3) throw new Error("Search query must be a non-empty string with at least 3 characters.");
+        const s = this.getSearchUrl(t);
+        try {
+            const t = await fetch(s);
+            if (!t.ok) throw new Error(`HTTP error! status: ${t.status}`);
+            const e = await t.json();
+            return S(e.resources.results);
+        } catch (t) {
+            throw console.error("Error fetching data: ", t), t;
+        }
+    }
+    getSearchUrl(t) {
+        let s = `/search/suggest.json?q=${encodeURIComponent(t)}`;
+        const {resources: e, limit: i, unavailable_products: n, fields: l, prefix: r} = this.config.SearchAPISearchOptions;
+        return e && (s += `&resources[type]=${e.join(",")}`), i && (s += `&resources[limit]=${i}`), 
+        n && (s += `&resources[unavailable_products]=${n}`), l && l.length > 0 && (s += `&resources[fields]=${l.join(",")}`), 
+        r && (s += `&resources[options][prefix]=${r}`), s;
+    }
+}
+
+class L extends HTMLElement {
+    constructor() {
+        super(), this.searchButton = null, this.viewAllButton = null, this.waitingResults = null, 
+        this.hasResults = null, this.noResults = null, this.suggestionColumn = null, this.collectionColumn = null, 
+        this.productColumn = null, this.viewAllTermsEl = null, this.noResultsTermsEl = null, 
+        this.headerInner = null, this.headerWasTransparent = !1, this.bodyScrollLocked = !1, 
+        this.apiConfig = {
+            SearchAPISearchOptions: {
+                resources: [ "query", "collection", "product", "page" ],
+                unavailable_products: "hide",
+                fields: [],
+                limit: 4,
+                prefix: "last"
+            }
+        }, this.searchHandler = new y(this.apiConfig), this.debouncedSearch = this.debounce(t => this.getSearchResults(t), 300);
+    }
+    lockBodyScroll() {
+        if (this.bodyScrollLocked) return;
+        const t = window.innerWidth - document.documentElement.clientWidth;
+        document.body.style.overflow = "hidden", t > 0 && (document.body.style.paddingRight = `${t}px`), 
+        this.bodyScrollLocked = !0;
+    }
+    unlockBodyScroll() {
+        this.bodyScrollLocked && (document.body.style.overflow = "", document.body.style.paddingRight = "", 
+        this.bodyScrollLocked = !1);
+    }
+    closeSearchResults() {
+        var t;
+        null == (t = this.resultsParent) || t.classList.remove("is-open"), this.classList.remove("is-active"), 
+        this.unlockBodyScroll(), document.body.classList.remove("search-is-open"), this.headerInner && this.headerWasTransparent && (this.headerInner.classList.add("is-transparent"), 
+        this.headerWasTransparent = !1), this.dispatchEvent(new CustomEvent("search-input-state-change", {
+            detail: {
+                isActive: !1
+            },
+            bubbles: !0
+        }));
+    }
+    connectedCallback() {
+        this.cacheDomElements(), this.headerInner = document.querySelector(".header__inner"), 
+        this.setEventListeners(), this.setInitialValueFromUrl(), this.setVisibilityChangeListener();
+    }
+    cacheDomElements() {
+        if (this.searchInput = this.querySelector("[js-search-input='input']"), !this.searchInput) throw new Error("search input is a required element");
+        this.searchButton = this.querySelector("[js-search-input='button']"), this.viewAllButton = this.querySelector("[js-instant-search='view-all']"), 
+        this.resultsParent = this.querySelector("[js-instant-search='results-parent']"), 
+        this.waitingResults = this.querySelector('[js-instant-search="waiting-input"]'), 
+        this.hasResults = this.querySelector('[js-instant-search="has-results"]'), this.noResults = this.querySelector('[js-instant-search="no-results"]'), 
+        this.suggestionColumn = this.querySelector("[js-instant-search='suggestions']"), 
+        this.collectionColumn = this.querySelector("[js-instant-search='collections']"), 
+        this.productColumn = this.querySelector("[js-instant-search='products']"), this.viewAllTermsEl = this.querySelector(".instant-search-results__view-all-text__terms"), 
+        this.noResultsTermsEl = this.querySelector(".instant-search-results__no-results-text__terms");
+    }
+    setVisibilityChangeListener() {
+        document.addEventListener("visibilitychange", () => {
+            var t;
+            document.hidden && null != (t = this.resultsParent) && t.classList.contains("is-open");
+        });
+    }
+    setEventListeners() {
+        var t, s, e, i, n;
+        null == (t = this.searchInput) || t.addEventListener("input", this.handleSearchInput.bind(this)), 
+        null == (s = this.searchInput) || s.addEventListener("focusin", () => {
+            var t, s, e;
+            null == (t = this.resultsParent) || t.classList.add("is-open");
+            const i = (null == (s = this.searchInput) ? void 0 : s.value) || "";
+            this.getSearchResults(i), i.trim() || null == (e = this.waitingResults) || e.classList.remove("visually-hidden"), 
+            this.headerInner && this.headerInner.classList.contains("is-transparent") && (this.headerWasTransparent = !0, 
+            this.headerInner.classList.remove("is-transparent")), this.lockBodyScroll(), document.body.classList.add("search-is-open"), 
+            w() && this.classList.add("is-active"), this.dispatchEvent(new CustomEvent("search-input-state-change", {
+                detail: {
+                    isActive: !0
+                },
+                bubbles: !0
+            }));
+        }), null == (e = this.searchInput) || e.addEventListener("keydown", t => {
+            var s, e;
+            if ("Enter" === t.key) {
+                t.preventDefault();
+                const i = null == (e = null == (s = this.searchInput) ? void 0 : s.value) ? void 0 : e.trim();
+                i && i.length > 0 && this.submitSearch(i);
+            }
+        }), this.addEventListener("focusout", t => {
+            var s;
+            const e = t.relatedTarget;
+            !e || null != (s = this.resultsParent) && s.contains(e) || this.contains(e) || setTimeout(() => {
+                var t, s;
+                (null == (t = this.searchInput) || !t.matches(":focus")) && (null == (s = this.resultsParent) || !s.contains(document.activeElement)) && this.closeSearchResults();
+            }, 100);
+        }), null == (i = this.searchButton) || i.addEventListener("click", t => {
+            var s, e;
+            if (w()) {
+                if (!this.classList.contains("is-active")) return;
+                t.preventDefault(), this.searchInput && (this.searchInput.value = "", null == (s = this.searchInput) || s.blur()), 
+                null == (e = this.resultsParent) || e.classList.remove("is-open"), this.classList.remove("is-active"), 
+                this.unlockBodyScroll(), document.body.classList.remove("search-is-open"), this.updateUrlQuery("");
+            }
+        });
+        const l = this.querySelector("[js-instant-search='close']");
+        null == l || l.addEventListener("click", () => {
+            this.closeSearchResults();
+        });
+        const r = this.querySelector("[js-search-input='reset']");
+        r && r.addEventListener("click", t => {
+            t.preventDefault(), t.stopPropagation(), this.searchInput && (this.searchInput.value = "", 
+            this.resetSuggestions(), this.updateUrlQuery(""), this.renderResultsPanel(""), this.clearExistingSearchResults(), 
+            this.closeSearchResults());
+        }), null == (n = this.viewAllButton) || n.addEventListener("click", () => {
+            var t;
+            const s = (null == (t = this.searchInput) ? void 0 : t.value) || "";
+            window.location.href = `${window.location.origin}/search?q=${s}`;
+        }), document.addEventListener("click", t => {
+            var s;
+            const e = t.target, i = t.target.parentElement;
+            !this.contains(e) && (null == (s = this.resultsParent) || !s.contains(e)) && (null == i || !i.hasAttribute("js-header")) && this.closeSearchResults();
+        });
+    }
+    submitSearch(t) {
+        this.closeSearchResults(), window.location.href = `${window.location.origin}/search?q=${encodeURIComponent(t)}`;
+    }
+    isResultsEmpty(t) {
+        return !(t.queries && t.queries.length > 0 || t.pages && t.pages.length > 0 || t.collections && t.collections.length > 0 || t.products && t.products.length > 0);
+    }
+    highlightSearchTerm(t, s, e) {
+        if (!e.trim()) return void (t.innerHTML = s);
+        const i = e.toLowerCase(), n = s.toLowerCase().indexOf(i);
+        if (-1 === n) return void (t.innerHTML = s);
+        const l = s.substring(0, n), r = s.substring(n, n + e.length), o = s.substring(n + e.length);
+        t.innerHTML = `${l}<mark class="search-highlight">${r}</mark>${o}`;
+    }
+    filterAndHighlightSuggestions(t) {
+        const s = this.querySelector('[js-instant-search="suggestions"] .instant-search-results__results');
+        if (!s) return;
+        const e = s.querySelectorAll("a[data-suggestion-text]"), i = t.toLowerCase().trim();
+        e.forEach(s => {
+            const e = s, n = e.getAttribute("data-suggestion-text") || "", l = e.querySelector("span");
+            if (!l) return;
+            const r = n.toLowerCase();
+            "" === i || r.includes(i) ? (e.style.display = "", this.highlightSearchTerm(l, n, t)) : e.style.display = "none";
+        });
+    }
+    resetSuggestions() {
+        const t = this.querySelector('[js-instant-search="suggestions"] .instant-search-results__results');
+        t && t.querySelectorAll("a[data-suggestion-text]").forEach(t => {
+            const s = t;
+            s.style.display = "";
+            const e = s.querySelector("span"), i = s.getAttribute("data-suggestion-text") || "";
+            e && (e.innerHTML = i);
+        });
+    }
+    setColumnVisible(t, s) {
+        t && t.classList.toggle("visually-hidden", !s);
+    }
+    renderResultsPanel(t, s) {
+        var e, i, n, l, r, o, a, u, h, c, d, m;
+        return t ? s ? void (this.isResultsEmpty(s) ? (null == (c = this.waitingResults) || c.classList.add("visually-hidden"), 
+        null == (d = this.hasResults) || d.classList.add("visually-hidden"), null == (m = this.noResults) || m.classList.remove("visually-hidden"), 
+        this.viewAllTermsEl && (this.viewAllTermsEl.textContent = t), this.noResultsTermsEl && (this.noResultsTermsEl.textContent = t)) : (null == (a = this.waitingResults) || a.classList.add("visually-hidden"), 
+        null == (u = this.hasResults) || u.classList.remove("visually-hidden"), null == (h = this.noResults) || h.classList.add("visually-hidden"), 
+        this.viewAllTermsEl && (this.viewAllTermsEl.textContent = t))) : (null == (l = this.waitingResults) || l.classList.add("visually-hidden"), 
+        null == (r = this.hasResults) || r.classList.add("visually-hidden"), null == (o = this.noResults) || o.classList.remove("visually-hidden"), 
+        void (this.noResultsTermsEl && (this.noResultsTermsEl.textContent = t))) : (null == (e = this.waitingResults) || e.classList.remove("visually-hidden"), 
+        null == (i = this.hasResults) || i.classList.add("visually-hidden"), void (null == (n = this.noResults) || n.classList.add("visually-hidden")));
+    }
+    async getSearchResults(t) {
+        if (t.trim()) try {
+            const s = await this.searchHandler.executeSearch(t);
+            this.renderResultsPanel(t, s), this.clearExistingSearchResults(), this.renderSearchResults(s, t);
+        } catch (t) {
+            throw t instanceof Error ? t : new Error(String(t));
+        } else this.renderResultsPanel("");
+    }
+    handleSearchInput(t) {
+        var s;
+        const e = t.target.value;
+        null == (s = this.resultsParent) || s.classList.add("is-open"), this.filterAndHighlightSuggestions(e), 
+        this.updateUrlQuery(e), e.trim().length >= 3 ? this.debouncedSearch(e) : 0 === e.trim().length && this.renderResultsPanel("");
+    }
+    setInitialValueFromUrl() {
+        const t = new URLSearchParams(window.location.search).get("q");
+        t && this.setAttribute("query", t);
+    }
+    updateUrlQuery(t) {
+        const s = new URLSearchParams(window.location.search);
+        "" !== t.trim() ? s.set("q", t) : s.delete("q");
+        const e = `${window.location.pathname}?${s.toString()}${window.location.hash}`;
+        window.history.pushState({
+            path: e
+        }, "", e);
+    }
+    clearExistingSearchResults() {
+        const t = t => {
+            const s = null == t ? void 0 : t.querySelector(".instant-search-results__results");
+            null == s || s.replaceChildren();
+        };
+        t(this.suggestionColumn), t(this.collectionColumn), t(this.productColumn);
+    }
+    async renderSearchResults(t, s) {
+        var e, i, n, l;
+        const r = t => {
+            const s = t;
+            return (null == s ? void 0 : s.title) ?? (null == s ? void 0 : s.text) ?? (null == s ? void 0 : s.query) ?? "";
+        }, o = (t, s, e) => {
+            const i = document.createElement("a");
+            i.href = t.url, i.className = "instant-search-results__result button button--text";
+            const n = r(t), l = document.createElement("span");
+            return l.textContent = n, s && (i.innerHTML = s), i.appendChild(l), null != e && e.trim() && n && this.highlightSearchTerm(l, n, e), 
+            i;
+        }, a = (t, s, e) => {
+            var i;
+            if (!t || !s) return;
+            const n = s.querySelector(".instant-search-results__results");
+            if (!n) return;
+            const l = n.dataset.iconType, a = l && null != (i = window.themeVars) && i.icons ? window.themeVars.icons[l] : void 0;
+            t.slice(0, 3).forEach(t => {
+                r(t) && n.appendChild(o(t, a, e));
+            });
+        };
+        if (this.setColumnVisible(this.suggestionColumn, !1), this.setColumnVisible(this.collectionColumn, !1), 
+        this.setColumnVisible(this.productColumn, !1), t.queries || t.pages) {
+            a(t.queries, this.suggestionColumn, s), a(t.pages, this.suggestionColumn, s);
+            const e = !!(t.queries && t.queries.length > 0 || t.pages && t.pages.length > 0);
+            this.setColumnVisible(this.suggestionColumn, e);
+        }
+        if (t.collections) {
+            a(t.collections, this.collectionColumn, s);
+            const e = t.collections.length > 0;
+            this.setColumnVisible(this.collectionColumn, e);
+        }
+        if (this.productColumn) {
+            const r = this.productColumn.querySelector(".instant-search-results__results");
+            if (r) try {
+                const t = encodeURIComponent((null == (e = this.searchInput) ? void 0 : e.value) || ""), o = await fetch(`${window.location.origin}/search?view=condensed&q=${t}`);
+                if (!o.ok) throw new Error("Failed to fetch condensed view");
+                const a = await o.text();
+                r.innerHTML = a;
+                const u = r.children.length > 0;
+                this.setColumnVisible(this.productColumn, u), u && (null == (i = this.waitingResults) || i.classList.add("visually-hidden"), 
+                null == (n = this.hasResults) || n.classList.remove("visually-hidden"), null == (l = this.noResults) || l.classList.add("visually-hidden"), 
+                this.viewAllTermsEl && (this.viewAllTermsEl.textContent = s || ""));
+            } catch (s) {
+                if (console.error("Error fetching condensed product results", s), t.products) {
+                    a(t.products, this.productColumn);
+                    const s = t.products.length > 0;
+                    this.setColumnVisible(this.productColumn, s);
+                }
+            }
+        }
+    }
+    debounce(t, s) {
+        let e;
+        return (...i) => {
+            clearTimeout(e), e = window.setTimeout(() => t(...i), s);
+        };
+    }
+}
+
+customElements.define("uwp-search-input", L);
