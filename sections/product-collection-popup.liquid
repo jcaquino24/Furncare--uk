@@ -93,7 +93,7 @@
                     <div class="collection-popup-modal__products">
                       {% assign products_limit = block.settings.products_limit | default: 8 %}
                       {% for product in popup_collection.products limit: products_limit %}
-                        {% render 'product-card', product: product %}
+                        {% render 'product-card', product: product, show_price: false, show_compare_at_price: false %}
                       {% endfor %}
                     </div>
                   {% else %}
