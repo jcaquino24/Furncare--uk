@@ -168,7 +168,7 @@
           "type": "title",
           "settings": {
             "text": "Quick Delivery Care Home Lounges",
-            "title_element": "h2",
+            "title_element": "h1",
             "title_size": "display",
             "text_color": "#f9f7f0"
           }
@@ -264,13 +264,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 75,
         "section_padding": "--spacing-6xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": true,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "content_blocks_FjmdzX": {
@@ -281,6 +284,12 @@
           "settings": {
             "image": "shopify://shop_images/LV_Communal_Scheme_Room_Image_Lounge-Dining_Scheme_1_preview_09.jpg",
             "text": "View the Woodland Scheme",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "shopify://pages/the-woodland-scheme",
             "gradient_overlay": "dark"
           }
@@ -290,6 +299,12 @@
           "settings": {
             "image": "shopify://shop_images/LV_Communal_Scheme_Room_Image_Lounge-Dining_Scheme_2_preview_09.jpg",
             "text": "View the Meadow Scheme",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "shopify://pages/the-meadow-scheme",
             "gradient_overlay": "dark"
           }
