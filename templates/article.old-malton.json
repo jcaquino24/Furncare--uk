@@ -29,7 +29,7 @@
           "type": "title",
           "settings": {
             "text": "Manor Park Care Home",
-            "title_element": "h2",
+            "title_element": "h1",
             "title_size": "xl",
             "text_color": "#f9f7f0"
           }
@@ -869,7 +869,7 @@
           "settings": {
             "spacer_height": 75,
             "spacer_height_mobile": 30,
-            "spacer_color": "#F9F7F0"
+            "spacer_color": "#f9f7f0"
           },
           "blocks": {}
         }
@@ -1021,7 +1021,7 @@
             "image": "shopify://shop_images/Media_70da92e5-54f2-4bca-bb1e-45fbb38e34ee.jpg",
             "desktop_width_percent": 75,
             "border_width": 45,
-            "border_color": "#F9F7F0",
+            "border_color": "#f9f7f0",
             "border_radius": 90
           },
           "blocks": {}
@@ -1109,7 +1109,7 @@
           "settings": {
             "spacer_height": 75,
             "spacer_height_mobile": 30,
-            "spacer_color": "#F9F7F0"
+            "spacer_color": "#f9f7f0"
           },
           "blocks": {}
         }
