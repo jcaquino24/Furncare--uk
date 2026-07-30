@@ -216,23 +216,22 @@ class L extends HTMLElement {
         n;
     }
     async fetchCondensedProducts(t, e) {
-        let s = "";
-        for (const n of t) {
-            const t = await fetch(`${window.location.origin}/search?view=condensed&q=${encodeURIComponent(n)}`);
+        for (const s of t) {
+            const t = await fetch(`${window.location.origin}/search?view=condensed&q=${encodeURIComponent(s)}`);
             if (!t.ok) continue;
-            const l = await t.text(), r = document.createElement("template");
-            r.innerHTML = l.trim();
-            const o = Array.from(r.content.querySelectorAll(".product-card")), a = o.map(t => {
+            const i = await t.text(), n = document.createElement("template");
+            n.innerHTML = i.trim();
+            const l = Array.from(n.content.querySelectorAll(".product-card")).map(t => {
                 const e = t.querySelector(".product-card__title a, .product-card__title");
                 return (null == e ? void 0 : e.textContent) ? e.textContent.trim() : "";
             }).filter(Boolean);
-            if (a.some(t => this.doesTitleMatchSearch(t, e))) return {
-                html: l,
+            if (l.some(t => this.doesTitleMatchSearch(t, e))) return {
+                html: i,
                 hasResults: !0
             };
         }
         return {
-            html: s,
+            html: "",
             hasResults: !1
         };
     }
