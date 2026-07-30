@@ -216,7 +216,7 @@ class L extends HTMLElement {
         n;
     }
     async fetchCondensedProducts(t, e) {
-        let s = "";
+        let s = "", i = !1;
         for (const n of t) {
             const t = await fetch(`${window.location.origin}/search?view=condensed&q=${encodeURIComponent(n)}`);
             if (!t.ok) continue;
@@ -226,14 +226,15 @@ class L extends HTMLElement {
                 const e = t.querySelector(".product-card__title a, .product-card__title");
                 return (null == e ? void 0 : e.textContent) ? e.textContent.trim() : "";
             }).filter(Boolean);
-            if (a.some(t => this.doesTitleMatchSearch(t, e))) return {
+            if (o.length && !s && (s = l), a.some(t => this.doesTitleMatchSearch(t, e))) return {
                 html: l,
                 hasResults: !0
             };
+            o.length && (i = !0);
         }
         return {
             html: s,
-            hasResults: !1
+            hasResults: i
         };
     }
     renderResultsPanel(t, e) {
