@@ -75,8 +75,7 @@ class L extends HTMLElement {
         this.suggestionColumn = this.querySelector("[js-instant-search='suggestions']"), 
         this.collectionColumn = this.querySelector("[js-instant-search='collections']"), 
         this.productColumn = this.querySelector("[js-instant-search='products']"), this.viewAllTermsEl = this.querySelector(".instant-search-results__view-all-text__terms"), 
-        this.noResultsTermsEl = this.querySelector(".instant-search-results__no-results-text__terms"), 
-        this.productCardTemplate = this.querySelector("[js-instant-search='product-card-template']");
+        this.noResultsTermsEl = this.querySelector(".instant-search-results__no-results-text__terms");
     }
     setVisibilityChangeListener() {
         document.addEventListener("visibilitychange", () => {
@@ -298,29 +297,6 @@ class L extends HTMLElement {
         };
         t(this.suggestionColumn), t(this.collectionColumn), t(this.productColumn);
     }
-    escapeHtml(t) {
-        return ("" + (t || "")).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;").replace(/'/g, "&#39;");
-    }
-    buildInstantProductCardHtml(t) {
-        var e;
-        const s = this.productCardTemplate;
-        if (!s) return "";
-        const i = this.escapeHtml(t.title || ""), n = t.url || "#", l = this.escapeHtml((null == (e = t.featured_image) ? void 0 : e.alt) || t.title || ""), r = (null == t ? void 0 : t.featured_image) && t.featured_image.url ? t.featured_image.url : t.image || "";
-        return s.innerHTML.replaceAll("__PRODUCT_TITLE__", i).replaceAll("__PRODUCT_URL__", n).replaceAll("__PRODUCT_IMAGE__", r).replaceAll("__PRODUCT_IMAGE_ALT__", l);
-    }
-    renderPredictiveProducts(t, e, s) {
-        const i = this.productColumn;
-        if (!i) return;
-        const n = i.querySelector(".instant-search-results__results");
-        if (!n) return;
-        const l = this.tokenizeSearchTerm(e), r = t.filter(t => this.doesTitleMatchSearch(t.title || "", [ e, ...s ])).slice(0, 4);
-        if (!r.length) return this.setColumnVisible(this.productColumn, !1), void (n.innerHTML = "");
-        n.innerHTML = r.map(t => this.buildInstantProductCardHtml(t)).join("");
-        const o = n.children.length > 0;
-        this.setColumnVisible(this.productColumn, o), o && (null == this.waitingResults || this.waitingResults.classList.add("visually-hidden"), 
-        null == this.hasResults || this.hasResults.classList.remove("visually-hidden"), null == this.noResults || this.noResults.classList.add("visually-hidden"), 
-        this.viewAllTermsEl && (this.viewAllTermsEl.textContent = e || ""));
-    }
     async renderSearchResults(t, e, s) {
         var i, n, l;
         const r = t => {
@@ -354,8 +330,23 @@ class L extends HTMLElement {
             this.setColumnVisible(this.collectionColumn, s);
         }
         if (this.productColumn) {
-            const o = [ e, ...(t.queries || []).map(t => r(t)).filter(Boolean) ];
-            this.renderPredictiveProducts(t.products || [], e, o);
+            const r = this.productColumn.querySelector(".instant-search-results__results");
+            if (r) try {
+                const o = this.buildProductQueryCandidates(e, t, s, null == this.searchInput ? void 0 : this.searchInput.value), a = [ e, ...(t.queries || []).map(t => r(t)).filter(Boolean) ], u = await this.fetchCondensedProducts(o, a);
+                r.innerHTML = u.html || "";
+                const c = u.hasResults && r.children.length > 0;
+                this.setColumnVisible(this.productColumn, c), c && (null == (i = this.waitingResults) || i.classList.add("visually-hidden"), 
+                null == (n = this.hasResults) || n.classList.remove("visually-hidden"), null == (l = this.noResults) || l.classList.add("visually-hidden"), 
+                this.viewAllTermsEl && (this.viewAllTermsEl.textContent = e || ""));
+            } catch (e) {
+                if (console.error("Error fetching condensed product results", e), t.products) {
+                    a(t.products, this.productColumn, e);
+                    const s = t.products.length > 0;
+                    this.setColumnVisible(this.productColumn, s), s && (null == (i = this.waitingResults) || i.classList.add("visually-hidden"), 
+                    null == (n = this.hasResults) || n.classList.remove("visually-hidden"), null == (l = this.noResults) || l.classList.add("visually-hidden"), 
+                    this.viewAllTermsEl && (this.viewAllTermsEl.textContent = e || ""));
+                }
+            }
         }
     }
     debounce(t, e) {

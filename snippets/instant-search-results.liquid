@@ -152,14 +152,6 @@
         <div class="instant-search-results__title body-md--bold body-md">
           {{ 'search.products' | t }}
         </div>
-        <template js-instant-search="product-card-template">
-          {% render 'instant-search-product-card',
-            product_title: '__PRODUCT_TITLE__',
-            product_url: '__PRODUCT_URL__',
-            product_image: '__PRODUCT_IMAGE__',
-            product_image_alt: '__PRODUCT_IMAGE_ALT__'
-          %}
-        </template>
         <div class="instant-search-results__instant-results instant-search-results__results product-grid--condensed">
           {% render 'product-card',
             is_loading: true,
