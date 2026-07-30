@@ -1,0 +1,38 @@
+{% comment %}
+  Lightweight product card used by instant search JS renderer.
+  Expects:
+  - product_title
+  - product_url
+  - product_image
+  - product_image_alt
+{% endcomment %}
+<article class="product-card product-card--condensed">
+  <div class="product-card__rollover-images">
+    <div class="product-card__original-image product-card__image">
+      <a href="{{ product_url }}">
+        {% if product_image != blank %}
+          <img
+            src="{{ product_image }}"
+            alt="{{ product_image_alt | escape }}"
+            class="product-card__image"
+            loading="lazy"
+            width="240"
+            height="240"
+          >
+        {% endif %}
+      </a>
+    </div>
+
+    <div class="product-card__button-container--inline product-card__button-container">
+      <a aria-label="Visit {{ product_title | escape }}" href="{{ product_url }}" class="product-card__button button button--primary">
+        View Details
+      </a>
+    </div>
+  </div>
+
+  <div class="product-card__info">
+    <div class="product-card__title title-2xs">
+      <a class="title-2xs" href="{{ product_url }}">{{ product_title }}</a>
+    </div>
+  </div>
+</article>
