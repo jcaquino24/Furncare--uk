@@ -168,7 +168,7 @@
           "type": "title",
           "settings": {
             "text": "Dementia Bedroom Packages",
-            "title_element": "h2",
+            "title_element": "h1",
             "title_size": "display",
             "text_color": "#f9f7f0"
           }
@@ -252,11 +252,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-6xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
-        "enable_animation": true
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "richtext_k33eCd": {
@@ -286,11 +291,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 60,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
-        "enable_animation": true
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "content_blocks_FjmdzX": {
@@ -301,6 +311,12 @@
           "settings": {
             "image": "shopify://shop_images/Remini-B901-Olive-Bedroom-Package-main-image-with-logo.jpg",
             "text": "Request Olive Package Pricing",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "https://2erd73.share-eu1.hsforms.com/2PfMdxjMcR_SO-_BhmM236Q",
             "gradient_overlay": "dark"
           }
@@ -310,6 +326,12 @@
           "settings": {
             "image": "shopify://shop_images/Remini-B902-Marine-Bedroom-Package-main-image-with-logo.jpg",
             "text": "Request Marine Package Pricing",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "https://2erd73.share-eu1.hsforms.com/2XE-9EpgBTkWen7oaUSC1Tw",
             "gradient_overlay": "dark"
           }
@@ -339,6 +361,12 @@
           "settings": {
             "image": "shopify://shop_images/B903-Remini-Bedroom-Package-main-image-with-logo.jpg",
             "text": "Request Teal Package Pricing",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "https://2erd73.share-eu1.hsforms.com/29QbwLjbZTF-UT7friKul4w",
             "gradient_overlay": "dark"
           }
@@ -348,6 +376,12 @@
           "settings": {
             "image": "shopify://shop_images/Remini-B904-Mulberry-Bedroom-Package-main-image-with-logo.jpg",
             "text": "Request Mulberry Package Pricing",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "https://2erd73.share-eu1.hsforms.com/267X8ThxWQ0KiaE_Ld0jEXw",
             "gradient_overlay": "dark"
           }
