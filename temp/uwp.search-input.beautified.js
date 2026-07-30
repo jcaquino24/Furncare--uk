@@ -134,7 +134,7 @@ class L extends HTMLElement {
         }), null == (n = this.viewAllButton) || n.addEventListener("click", () => {
             var t;
             const s = (null == (t = this.searchInput) ? void 0 : t.value) || "";
-            window.location.href = `${window.location.origin}/search?q=${s}`;
+            window.location.href = `${window.location.origin}/search?q=${encodeURIComponent(s)}*`;
         }), document.addEventListener("click", t => {
             var s;
             const e = t.target, i = t.target.parentElement;
@@ -142,7 +142,7 @@ class L extends HTMLElement {
         });
     }
     submitSearch(t) {
-        this.closeSearchResults(), window.location.href = `${window.location.origin}/search?q=${encodeURIComponent(t)}`;
+        this.closeSearchResults(), window.location.href = `${window.location.origin}/search?q=${encodeURIComponent(t)}*`;
     }
     isResultsEmpty(t) {
         return !(t.queries && t.queries.length > 0 || t.pages && t.pages.length > 0 || t.collections && t.collections.length > 0 || t.products && t.products.length > 0);
@@ -190,11 +190,29 @@ class L extends HTMLElement {
     }
     async getSearchResults(t) {
         if (t.trim()) try {
-            const s = await this.searchHandler.executeSearch(t);
-            this.renderResultsPanel(t, s), this.clearExistingSearchResults(), this.renderSearchResults(s, t);
+            const s = t.trim(), e = [ s, ...this.getFallbackQueries(s) ], i = [];
+            let n = null, l = s;
+            for (const t of e) if (t && !i.includes(t)) try {
+                i.push(t);
+                const s = await this.searchHandler.executeSearch(t);
+                if (n = s, l = t, !this.isResultsEmpty(s)) break;
+            } catch (t) {}
+            this.renderResultsPanel(s, n), this.clearExistingSearchResults(), this.renderSearchResults(n || {
+                queries: [],
+                products: [],
+                collections: [],
+                pages: []
+            }, s, l);
         } catch (t) {
             throw t instanceof Error ? t : new Error(String(t));
         } else this.renderResultsPanel("");
+    }
+    getFallbackQueries(t) {
+        const s = t.trim().replace(/\s+/g, " "), e = [];
+        if (!s) return e;
+        const i = s.replace(/[^\p{L}\p{N}\s-]+/gu, "").trim();
+        return i && i !== s && e.push(i), s.length >= 4 && e.push(`${s.slice(0, -1)}*`), i.length >= 4 && i !== s && e.push(`${i.slice(0, -1)}*`), 
+        e;
     }
     handleSearchInput(t) {
         var s;
@@ -221,7 +239,7 @@ class L extends HTMLElement {
         };
         t(this.suggestionColumn), t(this.collectionColumn), t(this.productColumn);
     }
-    async renderSearchResults(t, s) {
+    async renderSearchResults(t, s, e) {
         var e, i, n, l;
         const r = t => {
             const s = t;
@@ -256,7 +274,7 @@ class L extends HTMLElement {
         if (this.productColumn) {
             const r = this.productColumn.querySelector(".instant-search-results__results");
             if (r) try {
-                const t = encodeURIComponent((null == (e = this.searchInput) ? void 0 : e.value) || ""), o = await fetch(`${window.location.origin}/search?view=condensed&q=${t}`);
+                const t = encodeURIComponent(e || (null == this.searchInput ? void 0 : this.searchInput.value) || ""), o = await fetch(`${window.location.origin}/search?view=condensed&q=${t}`);
                 if (!o.ok) throw new Error("Failed to fetch condensed view");
                 const a = await o.text();
                 r.innerHTML = a;
