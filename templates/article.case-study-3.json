@@ -103,7 +103,7 @@
           "type": "heading",
           "settings": {
             "text": "Furncare Teams Up with Bright Bay Design to Furnish Stunning New Care Home in Hampshire",
-            "heading_level": "h2",
+            "heading_level": "h1",
             "heading_style": "title-xl"
           },
           "blocks": {}
@@ -363,7 +363,7 @@
             "vertical_padding": 40,
             "border_radius": 0,
             "scroll_speed": 85,
-            "background_color": "#F9F7F0",
+            "background_color": "#f9f7f0",
             "image_1": "shopify://shop_images/PREG2402.jpg",
             "image_2": "shopify://shop_images/PREG2579.jpg",
             "image_3": "shopify://shop_images/PREG2472.jpg",
