@@ -177,67 +177,6 @@ class L extends HTMLElement {
     setColumnVisible(s, t) {
         s && s.classList.toggle("visually-hidden", !t);
     }
-    normalizeSearchTerm(s) {
-        return (s || "").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^\p{L}\p{N}\s-]+/gu, " ").replace(/\s+/g, " ").trim();
-    }
-    tokenizeSearchTerm(s) {
-        const t = this.normalizeSearchTerm(s);
-        return t ? t.split(" ").filter(Boolean) : [];
-    }
-    isTokenCloseMatch(s, t) {
-        if (!s || !t) return !1;
-        if (s === t || s.startsWith(t) || t.startsWith(s)) return !0;
-        if (Math.abs(s.length - t.length) > 1) return !1;
-        let e = 0, i = 0, n = 0;
-        for (;e < s.length && i < t.length; ) if (s[e] === t[i]) e++, i++; else {
-            if (n++, n > 1) return !1;
-            s.length > t.length ? e++ : t.length > s.length ? i++ : (e++, i++);
-        }
-        return (e < s.length || i < t.length) && n++, n <= 1;
-    }
-    doesTitleMatchSearch(s, t) {
-        const e = this.tokenizeSearchTerm(s);
-        if (!e.length) return !1;
-        const i = e.join(" ");
-        return t.some(s => {
-            const t = this.tokenizeSearchTerm(s);
-            if (!t.length) return !1;
-            const n = t.join(" ");
-            return !!i.includes(n) || t.every(s => e.some(t => this.isTokenCloseMatch(t, s)));
-        });
-    }
-    buildProductQueryCandidates(s, t, e, i) {
-        const n = [], l = s => {
-            s && "string" == typeof s && s.trim().length >= 3 && !n.includes(s.trim()) && n.push(s.trim());
-        }, r = s => s && ((null == s ? void 0 : s.title) ?? (null == s ? void 0 : s.text) ?? (null == s ? void 0 : s.query) ?? "");
-        l(s), l(e), l(i);
-        [ ...(t.queries || []).slice(0, 3), ...(t.products || []).slice(0, 3) ].forEach(s => l(r(s)));
-        const o = this.normalizeSearchTerm(s), a = this.tokenizeSearchTerm(s), c = a[a.length - 1];
-        return o && l(o), c && c.length >= 4 && l(`${c.slice(0, -1)}*`), o && o.length >= 4 && l(`${o.slice(0, -1)}*`), 
-        n;
-    }
-    async fetchCondensedProducts(s, t) {
-        let e = "", i = !1;
-        for (const n of s) {
-            const s = await fetch(`${window.location.origin}/search?view=condensed&q=${encodeURIComponent(n)}`);
-            if (!s.ok) continue;
-            const l = await s.text(), r = document.createElement("template");
-            r.innerHTML = l.trim();
-            const o = Array.from(r.content.querySelectorAll(".product-card")), a = o.map(s => {
-                const t = s.querySelector(".product-card__title a, .product-card__title");
-                return (null == t ? void 0 : t.textContent) ? t.textContent.trim() : "";
-            }).filter(Boolean);
-            if (o.length && !e && (e = l), a.some(s => this.doesTitleMatchSearch(s, t))) return {
-                html: l,
-                hasResults: !0
-            };
-            o.length && (i = !0);
-        }
-        return {
-            html: e,
-            hasResults: i
-        };
-    }
     renderResultsPanel(s, t) {
         var e, i, n, l, r, o, a, c, u, h, d, m;
         return s ? t ? void (this.isResultsEmpty(t) ? (null == (h = this.waitingResults) || h.classList.add("visually-hidden"), 
@@ -335,19 +274,19 @@ class L extends HTMLElement {
         if (this.productColumn) {
             const r = this.productColumn.querySelector(".instant-search-results__results");
             if (r) try {
-                const o = this.buildProductQueryCandidates(t, s, e, null == this.searchInput ? void 0 : this.searchInput.value), a = [ t, ...(s.queries || []).map(s => r(s)).filter(Boolean) ], c = await this.fetchCondensedProducts(o, a);
-                r.innerHTML = c.html || "";
-                const u = c.hasResults && r.children.length > 0;
-                this.setColumnVisible(this.productColumn, u), u && (null == (i = this.waitingResults) || i.classList.add("visually-hidden"), 
+                const s = encodeURIComponent(e || (null == this.searchInput ? void 0 : this.searchInput.value) || ""), o = await fetch(`${window.location.origin}/search?view=condensed&q=${s}`);
+                if (!o.ok) throw new Error("Failed to fetch condensed view");
+                const a = await o.text();
+                r.innerHTML = a;
+                const c = r.children.length > 0;
+                this.setColumnVisible(this.productColumn, c), c && (null == (i = this.waitingResults) || i.classList.add("visually-hidden"), 
                 null == (n = this.hasResults) || n.classList.remove("visually-hidden"), null == (l = this.noResults) || l.classList.add("visually-hidden"), 
                 this.viewAllTermsEl && (this.viewAllTermsEl.textContent = t || ""));
             } catch (t) {
                 if (console.error("Error fetching condensed product results", t), s.products) {
-                    a(s.products, this.productColumn, t);
-                    const e = s.products.length > 0;
-                    this.setColumnVisible(this.productColumn, e), e && (null == (i = this.waitingResults) || i.classList.add("visually-hidden"), 
-                    null == (n = this.hasResults) || n.classList.remove("visually-hidden"), null == (l = this.noResults) || l.classList.add("visually-hidden"), 
-                    this.viewAllTermsEl && (this.viewAllTermsEl.textContent = t || ""));
+                    a(s.products, this.productColumn);
+                    const t = s.products.length > 0;
+                    this.setColumnVisible(this.productColumn, t);
                 }
             }
         }
