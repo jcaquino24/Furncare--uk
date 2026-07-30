@@ -16,6 +16,45 @@
         "show_title": false
       }
     },
+    "richtext_8b8Q3q": {
+      "type": "richtext",
+      "blocks": {
+        "heading_PFQ9XA": {
+          "type": "heading",
+          "settings": {
+            "text": "The Woodland Scheme",
+            "heading_level": "h1",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_gAKzda": {
+          "type": "tagline",
+          "settings": {
+            "content": "Design led in <em>every </em>detail.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_PFQ9XA",
+        "tagline_gAKzda"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "id_anchor": "",
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
+      }
+    },
     "hotspots_dbUyqe": {
       "type": "hotspots",
       "blocks": {
@@ -286,13 +325,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": false,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "blocks_MJMyCi": {
@@ -388,7 +430,10 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "warm-stone",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "blocks_N4QKeR": {
@@ -453,13 +498,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": false,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "blocks_zQrGGK": {
@@ -486,6 +534,7 @@
   },
   "order": [
     "main",
+    "richtext_8b8Q3q",
     "hotspots_dbUyqe",
     "richtext_xeCfNd",
     "blocks_MJMyCi",
