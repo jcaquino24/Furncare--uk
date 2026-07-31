@@ -17,9 +17,9 @@
           "settings": {
             "collection": "create-your-perfect-origins-look",
             "button_text": "Browse collection",
-            "button_subtext": "View products without leaving the product page",
+            "button_subtext": "",
             "modal_title": "Products in collection",
-            "modal_description": "Explore this collection without leaving the product page.",
+            "modal_description": "",
             "products_limit": 8
           }
         },
@@ -28,9 +28,9 @@
           "settings": {
             "collection": "create-your-perfect-origins-look-copy",
             "button_text": "Browse collection",
-            "button_subtext": "View products without leaving the product page",
+            "button_subtext": "",
             "modal_title": "Products in collection",
-            "modal_description": "Explore this collection without leaving the product page.",
+            "modal_description": "",
             "products_limit": 8
           }
         },
@@ -170,53 +170,6 @@
         "security_grading_title": "Security Grading"
       }
     },
-    "product_collection_popup_t4iBQJ": {
-      "type": "product-collection-popup",
-      "blocks": {
-        "collection_button_FGC7Tw": {
-          "type": "collection_button",
-          "settings": {
-            "collection": "",
-            "button_text": "Browse collection",
-            "button_subtext": "View products without leaving the page",
-            "modal_title": "Products in collection",
-            "modal_description": "Explore this collection without leaving the product page.",
-            "products_limit": 8
-          }
-        },
-        "collection_button_WKf7QP": {
-          "type": "collection_button",
-          "settings": {
-            "collection": "create-your-perfect-origins-look-copy",
-            "button_text": "Browse Handle Options",
-            "button_subtext": "See handle choices",
-            "modal_title": "Handle options",
-            "modal_description": "Browse handle options without leaving this product page.",
-            "products_limit": 8
-          }
-        },
-        "collection_button_j7NpmD": {
-          "type": "collection_button",
-          "settings": {
-            "collection": "create-your-perfect-origins-look",
-            "button_text": "Browse Finishes",
-            "button_subtext": "See finish options",
-            "modal_title": "Finishes",
-            "modal_description": "Browse the finish collection without leaving this product page.",
-            "products_limit": 8
-          }
-        }
-      },
-      "block_order": [
-        "collection_button_FGC7Tw",
-        "collection_button_WKf7QP",
-        "collection_button_j7NpmD"
-      ],
-      "name": "Collection popup buttons",
-      "settings": {
-        "title": "Browse finishes and handle options"
-      }
-    },
     "ai_product_recommendations_FjkdYa": {
       "type": "ai-product-recommendations",
       "name": "Custom Recommendations",
@@ -256,7 +209,6 @@
   },
   "order": [
     "main",
-    "product_collection_popup_t4iBQJ",
     "ai_product_recommendations_FjkdYa",
     "product_blocks_tncMV6"
   ]
