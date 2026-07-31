@@ -709,7 +709,7 @@ html.collection-popup-open .product-gallery__thumbnails-wrapper {
   max-height: min(85vh, 1000px);
   overflow: auto;
   border-radius: 28px;
-  background: #fff;
+  background: #f9f7f0;
   padding: 32px;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
   z-index: 2;
