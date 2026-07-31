@@ -20,6 +20,21 @@
     text-transform: capitalize;
 }
 
+.instant-search-results__search-suggestion {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 0 8px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #f1f1f1;
+  color: #222;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
 .button_container {
   width: 100%;
   display: grid;
@@ -272,7 +287,7 @@
 @media print {
   body {
     -webkit-print-color-adjust: exact;
-    color-adjust: exact;
+    print-color-adjust: exact;
     background: #fff;
   }
 
