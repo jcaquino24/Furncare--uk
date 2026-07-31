@@ -17,7 +17,7 @@
           "settings": {
             "collection": "create-your-perfect-origins-look",
             "button_text": "Browse collection",
-            "button_subtext": "",
+            "button_subtext": "View Finishes",
             "modal_title": "Products in collection",
             "modal_description": "",
             "products_limit": 8
@@ -28,7 +28,7 @@
           "settings": {
             "collection": "create-your-perfect-origins-look-copy",
             "button_text": "Browse collection",
-            "button_subtext": "",
+            "button_subtext": "View Handles",
             "modal_title": "Products in collection",
             "modal_description": "",
             "products_limit": 8
