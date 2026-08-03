@@ -46,6 +46,11 @@
     assign title_class = 'title-2xs'
   endif
 
+  assign product_card_title = product.title | split: '|' | first | strip
+  if product_card_style == 'condensed' and product.title contains '|'
+    assign product_card_title = product.title | split: '|' | last | strip
+  endif
+
   comment
   endcomment
   assign show_button = show_button | default: true, allow_false: true
@@ -271,7 +276,7 @@
       {% if show_title %}
         <div class="product-card__title {{ title_class }}">
           <a class="{{ title_class }}" href="{{ product.url | split: '?' | first }}">
-            {{- product.title | split: '|' | first -}}
+            {{- product_card_title -}}
           </a>
         </div>
       {% endif %}
