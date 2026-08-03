@@ -148,3 +148,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-5745TTG');</script>
 <!-- End Google Tag Manager -->
+
+<script>
+  (function () {
+    const originalFetch = window.fetch;
+
+    window.fetch = function (input, init) {
+      const requestUrl = input instanceof Request ? input.url : input;
+
+      if (typeof requestUrl !== 'string') {
+        return originalFetch.call(this, input, init);
+      }
+
+      const url = new URL(requestUrl, window.location.origin);
+
+      if (url.pathname === '/search' && url.searchParams.get('view') === 'condensed') {
+        const searchTerm = url.searchParams.get('q') || '';
+
+        if (searchTerm) {
+          url.searchParams.set('q', 'title:"' + searchTerm.replace(/"/g, '') + '"');
+          input = url.toString();
+        }
+      }
+
+      return originalFetch.call(this, input, init);
+    };
+  })();
+</script>
