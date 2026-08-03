@@ -23,6 +23,12 @@
     endif
   endfor
 
+  assign display_search_terms = search.terms
+  if display_search_terms contains 'title:'
+    assign display_search_terms = display_search_terms | remove_first: 'title:'
+  endif
+  assign display_search_terms = display_search_terms | remove: '*' | strip
+
 -%}
 
 <div class="collection colour-scheme--light colour-scheme--base-white-01">
@@ -42,7 +48,7 @@
             >
               {{
                 'search.results_for_with_count'
-                | t: count: search.results_count, terms: search.terms
+                | t: count: search.results_count, terms: display_search_terms
               }}
             </uwp-search-count>
           {%- endif -%}
@@ -53,7 +59,7 @@
     {%- if search.performed -%}
       {%- if search.results_count == 0 and search.filters == empty -%}
         <p role="status" class="collection__no-results body-md">
-          {{ 'search.no_results' | t: terms: search.terms }}
+          {{ 'search.no_results' | t: terms: display_search_terms }}
         </p>
       {%- else -%}
         {%- paginate search.results by 12 -%}
