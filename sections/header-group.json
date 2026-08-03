@@ -157,7 +157,7 @@
         "nav_link_gap": 16,
         "nav_uppercase": true,
         "show_nav_chevron": true,
-        "search_mode": "modal",
+        "search_mode": "page",
         "search_placeholder": "Search",
         "search_height": 40,
         "search_border_radius": 100,
