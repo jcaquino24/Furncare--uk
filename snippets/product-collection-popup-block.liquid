@@ -1,0 +1,133 @@
+{% comment %}
+  Product collection popup block for product pages.
+{% endcomment %}
+{% assign popup_collection = block.settings.collection %}
+{% if popup_collection != blank %}
+  <div class="product-collection-popup-block">
+    <button
+      type="button"
+      class="product-collection-popup-block__trigger"
+      data-popup-id="product-collection-popup-{{ section_id }}-{{ block.id }}"
+      aria-expanded="false"
+      aria-controls="product-collection-popup-{{ section_id }}-{{ block.id }}"
+    >
+      {% if popup_collection.image != blank %}
+        <span class="product-collection-popup-block__image-wrapper">
+          <img
+            class="product-collection-popup-block__image"
+            src="{{ popup_collection.image | image_url: width: 280 }}"
+            alt="{{ popup_collection.title }}"
+            loading="lazy"
+          />
+        </span>
+      {% endif %}
+      <span class="product-collection-popup-block__text">
+        <span class="product-collection-popup-block__label">
+          {{ block.settings.button_text | default: popup_collection.title }}
+        </span>
+        {% if block.settings.button_subtext != blank %}
+          <span class="product-collection-popup-block__subtext">{{ block.settings.button_subtext }}</span>
+        {% endif %}
+      </span>
+      <span class="product-collection-popup-block__icon">↗</span>
+    </button>
+
+    <div
+      id="product-collection-popup-{{ section_id }}-{{ block.id }}"
+      class="product-collection-popup-block__modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="product-collection-popup-title-{{ section_id }}-{{ block.id }}"
+      hidden
+      style="position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; width: 100vw !important; height: 100vh !important; z-index: 2147483646 !important;"
+    >
+      <div class="product-collection-popup-block__overlay" data-popup-close style="position: fixed !important; inset: 0 !important; background: rgba(255,255,255,0.95) !important; z-index: 2147483646 !important;"></div>
+      <div class="product-collection-popup-block__panel" role="document" style="z-index: 2147483647 !important;">
+        <button
+          type="button"
+          class="product-collection-popup-block__close"
+          data-popup-close
+          aria-label="{{ 'accessibility.close_dialog' | t }}"
+        >
+          ×
+        </button>
+        <div class="product-collection-popup-block__header">
+          <h3 id="product-collection-popup-title-{{ section_id }}-{{ block.id }}" class="product-collection-popup-block__heading">
+            {{ block.settings.modal_title | default: popup_collection.title }}
+          </h3>
+          {% if block.settings.modal_description != blank %}
+            <p class="product-collection-popup-block__description">{{ block.settings.modal_description }}</p>
+          {% endif %}
+        </div>
+        <div class="product-collection-popup-block__content">
+          {% assign limit = block.settings.products_limit | default: 8 %}
+          {% if popup_collection.products_count > 0 %}
+            <div class="product-collection-popup-block__grid">
+              {% for product_item in popup_collection.products limit: limit %}
+                {% render 'product-card', product: product_item, show_price: false, show_compare_at_price: false %}
+              {% endfor %}
+            </div>
+          {% else %}
+            <p class="product-collection-popup-block__empty">No products were found in this collection.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var trigger = document.querySelector('[data-popup-id="product-collection-popup-{{ section_id }}-{{ block.id }}"]');
+      var popup = document.getElementById('product-collection-popup-{{ section_id }}-{{ block.id }}');
+      if (!trigger || !popup) return;
+
+      var ensureTopLayer = function() {
+        if (popup.dataset.popupMovedToBody === 'true') return;
+        document.body.appendChild(popup);
+        popup.dataset.popupMovedToBody = 'true';
+      };
+
+      var openPopup = function() {
+        ensureTopLayer();
+        popup.removeAttribute('hidden');
+        popup.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+        document.body.classList.add('collection-popup-open');
+        document.documentElement.classList.add('collection-popup-open');
+        var closeButton = popup.querySelector('[data-popup-close]');
+        if (closeButton) closeButton.focus();
+      };
+
+      var closePopup = function() {
+        popup.classList.remove('is-open');
+        popup.setAttribute('hidden', '');
+        trigger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        document.body.classList.remove('collection-popup-open');
+        document.documentElement.classList.remove('collection-popup-open');
+        trigger.focus();
+      };
+
+      trigger.addEventListener('click', function() {
+        if (popup.classList.contains('is-open')) {
+          closePopup();
+        } else {
+          openPopup();
+        }
+      });
+
+      popup.addEventListener('click', function(event) {
+        if (event.target.matches('[data-popup-close], .product-collection-popup-block__overlay')) {
+          closePopup();
+        }
+      });
+
+      popup.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          closePopup();
+        }
+      });
+    })();
+  </script>
+{% endif %}

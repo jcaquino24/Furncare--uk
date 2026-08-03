@@ -1,0 +1,71 @@
+<div class="quote-request container colour-scheme--base-white-01">
+  <div class="quote-request__inner">
+    <div class="quote-request__content">
+      <h1 class="quote-request__title">Request a quote</h1>
+      <p class="quote-request__intro">
+        Use this page to send your current quote basket to our sales team. We will respond with a confirmed quote and pricing details for the items you have selected.
+      </p>
+    </div>
+
+    <div class="quote-request__layout">
+      <section class="quote-request__summary" id="quote-request-summary">
+        <h2 class="quote-request__summary-title">Quote basket</h2>
+        <div class="quote-request__summary-body"></div>
+      </section>
+
+      <section class="quote-request__form-wrapper">
+        <h2 class="quote-request__form-title">Your details</h2>
+
+        {% form 'contact', class: 'quote-request__form' %}
+          <input type="hidden" name="contact[body]" id="quote-request-body">
+
+          <div class="quote-request__field">
+            <label for="quote-email">Email</label>
+            <input id="quote-email" type="email" name="contact[email]" required>
+          </div>
+
+          <div class="quote-request__field">
+            <label for="quote-first-name">Name</label>
+            <input id="quote-first-name" type="text" name="contact[first_name]" required>
+          </div>
+
+          <div class="quote-request__field">
+            <label for="quote-phone">Phone</label>
+            <input id="quote-phone" type="tel" name="contact[phone]" required>
+          </div>
+
+          <div class="quote-request__field">
+            <label for="quote-company">Company / Customer</label>
+            <input id="quote-company" type="text" name="contact[company]">
+          </div>
+
+          <div class="quote-request__field quote-request__field--textarea">
+            <label for="quote-message">Additional information</label>
+            <textarea id="quote-message" name="quote_message" rows="5" placeholder="Any special requirements, delivery notes or quantity details"></textarea>
+          </div>
+
+          <div class="quote-request__actions">
+            <button type="submit" class="button button--primary button--full-width">Send quote request</button>
+          </div>
+
+          <div class="quote-request__messages body-sm body-sm--bold">
+            {% if form.posted_successfully? %}
+              <p class="quote-request__success">Thank you! Your quote request has been received. We will email you shortly.</p>
+            {% elsif form.errors %}
+              {{ form.errors | default_errors }}
+            {% endif %}
+          </div>
+        {% endform %}
+      </section>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.quoteRequestSettings = {
+    locale: "{{ shop.locale | replace: '_', '-' }}",
+    currency: "{{ shop.currency }}",
+    storageKey: "furncare_quote_requests"
+  };
+</script>
+<script src="{{ 'quote-request.js' | asset_url }}" defer></script>

@@ -1,0 +1,112 @@
+(function () {
+  const settings = window.quotePrintSettings || {
+    locale: 'en-GB',
+    currency: 'GBP'
+  };
+
+  const formatter = new Intl.NumberFormat(settings.locale, {
+    style: 'currency',
+    currency: settings.currency,
+    minimumFractionDigits: 2
+  });
+
+  function formatMoney(amount) {
+    return formatter.format(amount / 100);
+  }
+
+  function renderCartItems(cart) {
+    if (!cart || !cart.items || !cart.items.length) {
+      return '<p class="quote-print__empty">Your cart is empty. Add items to your cart and refresh this page.</p>';
+    }
+
+    return `
+      <div class="quote-print__summary">
+        ${cart.items.map((item) => {
+          const imageUrl = item.image || item.featured_image || '';
+          const title = item.product_title || item.title;
+          const options = item.options_with_values || [];
+          const optionsText = options
+            .filter((option) => option.value && option.value !== 'Default Title')
+            .map((option) => `<span class="quote-print__option">${option.name}: ${option.value}</span>`)
+            .join('');
+
+          return `
+            <div class="quote-print__summary-row">
+              <div class="quote-print__product">
+                ${imageUrl ? `<img src="${imageUrl}" alt="${title}" class="quote-print__product-image">` : ''}
+                <div>
+                  <strong>${title}</strong>
+                  ${optionsText ? `<div class="quote-print__options">${optionsText}</div>` : ''}
+                </div>
+              </div>
+              <span>${item.quantity}</span>
+              <span>${formatMoney(item.line_price)}</span>
+            </div>`;
+        }).join('')}
+        <div class="quote-print__summary-total">
+          <span>Total</span>
+          <span>${cart.item_count}</span>
+          <span>${formatMoney(cart.total_price)}</span>
+        </div>
+      </div>`;
+  }
+
+  function buildMailtoLink(cart) {
+    const email = settings.customerEmail || '';
+    const subject = encodeURIComponent('Furncare quote basket');
+    const lines = ['Quote basket details:', ''];
+
+    cart.items.forEach((item, index) => {
+      const title = item.product_title || item.title;
+      const options = (item.options_with_values || [])
+        .filter((option) => option.value && option.value !== 'Default Title')
+        .map((option) => `${option.name}: ${option.value}`)
+        .join(', ');
+
+      lines.push(`${index + 1}. ${title}`);
+      if (options) lines.push(`   ${options}`);
+      lines.push(`   Quantity: ${item.quantity}`);
+      lines.push(`   Line total: ${formatMoney(item.line_price)}`);
+      lines.push('');
+    });
+
+    lines.push(`Total: ${formatMoney(cart.total_price)}`);
+    const body = encodeURIComponent(lines.join('\n'));
+    return `mailto:${email}?subject=${subject}&body=${body}`;
+  }
+
+  function setEmailButton(cart) {
+    window.currentQuoteCart = cart;
+  }
+
+  function init() {
+    const container = document.getElementById('quote-print-items');
+    const printButton = document.getElementById('quote-print-button');
+    if (!container || !printButton) return;
+
+    fetch('/cart.js')
+      .then((response) => response.json())
+      .then((cart) => {
+        container.innerHTML = renderCartItems(cart);
+        setEmailButton(cart);
+      })
+      .catch(() => {
+        container.innerHTML = '<p class="quote-print__empty">Unable to load cart items. Please refresh.</p>';
+      });
+
+    printButton.addEventListener('click', function () {
+      window.print();
+    });
+
+    const emailButton = document.getElementById('quote-email-button');
+    if (emailButton) {
+      emailButton.addEventListener('click', function () {
+        const cart = window.currentQuoteCart;
+        if (!cart) return;
+        window.location.href = buildMailtoLink(cart);
+      });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+})();

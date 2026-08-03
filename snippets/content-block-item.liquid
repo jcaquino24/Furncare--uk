@@ -13,36 +13,29 @@
   if video_mobile == blank
     assign video_mobile = video
   endif
-  
+
   assign rich_styles = ''
-  if rich_font_size != blank
-    assign rich_styles = rich_styles | append: 'font-size:' | append: rich_font_size | append: ';'
+
+  if richtext_font_size != blank
+    assign rich_styles = rich_styles | append: 'font-size:' | append: richtext_font_size | append: ';'
   endif
-  if rich_font_weight != blank
-    assign rich_styles = rich_styles | append: 'font-weight:' | append: rich_font_weight | append: ';'
+
+  if richtext_font_weight != blank
+    assign rich_styles = rich_styles | append: 'font-weight:' | append: richtext_font_weight | append: ';'
   endif
-  if rich_color != blank
-    assign rich_styles = rich_styles | append: 'color:' | append: rich_color | append: ';'
+
+  if richtext_color != blank
+    assign rich_styles = rich_styles | append: 'color:' | append: richtext_color | append: ';'
   endif
-  assign rich_font_family_css = ''
-  if rich_font_family == 'sans'
-    assign rich_font_family_css = 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-  elsif rich_font_family == 'serif'
-    assign rich_font_family_css = 'Georgia, "Times New Roman", Times, serif'
-  elsif rich_font_family == 'inherit' or rich_font_family == blank
-    assign rich_font_family_css = 'inherit'
-  else
-    assign rich_font_family_css = rich_font_family
+
+  if richtext_letter_spacing != blank and richtext_letter_spacing != 'normal'
+    assign rich_styles = rich_styles | append: 'letter-spacing:' | append: richtext_letter_spacing | append: ';'
   endif
-  if rich_font_family_css != blank
-    assign rich_styles = rich_styles | append: 'font-family:' | append: rich_font_family_css | append: ';'
+
+  if richtext_text_transform != blank and richtext_text_transform != 'none'
+    assign rich_styles = rich_styles | append: 'text-transform:' | append: richtext_text_transform | append: ';'
   endif
-  if rich_letter_spacing != blank and rich_letter_spacing != 'normal'
-    assign rich_styles = rich_styles | append: 'letter-spacing:' | append: rich_letter_spacing | append: ';'
-  endif
-  if rich_text_transform != blank and rich_text_transform != 'none'
-    assign rich_styles = rich_styles | append: 'text-transform:' | append: rich_text_transform | append: ';'
-  endif
+
 
 %}
 
@@ -89,3 +82,15 @@
     </div>
   {% endif %}
 </{{ element }}> 
+
+<style>
+.content-block-item__richtext,
+.content-block-item__richtext * {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+}
+
+</style>

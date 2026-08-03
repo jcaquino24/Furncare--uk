@@ -1,0 +1,34 @@
+<div class="quote-print container colour-scheme--base-white-01">
+  <div class="quote-print__inner">
+    <div class="quote-print__header">
+      <h1 class="quote-print__title">Quote basket</h1>
+      <p class="quote-print__intro">
+        This page shows the current cart items for printing.
+      </p>
+      <div class="quote-print__actions">
+        <button id="quote-print-button" class="button button--primary button--full-width quote-print__button" type="button">
+          Print this quote
+        </button>
+        <button id="quote-email-button" class="button button--secondary button--full-width quote-print__button" type="button">
+          Email this quote to me
+        </button>
+      </div>
+    </div>
+
+    <div id="quote-print-items" class="quote-print__items">
+      <p>Loading your cart…</p>
+    </div>
+    
+    
+  </div>
+  
+</div>
+
+<script>
+  window.quotePrintSettings = {
+    locale: "{{ shop.locale | replace: '_', '-' }}",
+    currency: "{{ shop.currency }}",
+    customerEmail: "{{ customer.email | default: '' }}"
+  };
+</script>
+<script src="{{ 'quote-print.js' | asset_url }}" defer></script>

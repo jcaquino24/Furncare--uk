@@ -86,6 +86,7 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Untitled_-_2025-11-18T103904.632.png",
+            "hover_image": "shopify://shop_images/Clifford-Aquino_B_W_forweb.jpg",
             "title": "Anna Poczapinska",
             "subtitle": "SALES SUPPORT EXECUTIVE",
             "text": "",
