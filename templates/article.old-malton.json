@@ -847,7 +847,7 @@
       "settings": {
         "height_desktop": 800,
         "height_mobile": 300,
-        "maintain_aspect_ratio": false,
+        "maintain_aspect_ratio": true,
         "add_header_offset": false,
         "media_type": "video",
         "video_desktop": "shopify://files/videos/Old Malton Case Study.mp4",
