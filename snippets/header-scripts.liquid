@@ -153,6 +153,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   (function () {
     const originalFetch = window.fetch;
 
+    function getTitlePrefixQuery(searchTerm) {
+      const sanitizedTerm = searchTerm.replace(/[^\w\s-]/g, '').trim();
+
+      return sanitizedTerm ? 'title:' + sanitizedTerm + '*' : '';
+    }
+
+    function navigateToTitleSearch(searchTerm) {
+      const query = getTitlePrefixQuery(searchTerm);
+
+      if (query) {
+        window.location.assign('/search?q=' + encodeURIComponent(query));
+      }
+    }
+
     window.fetch = function (input, init) {
       const requestUrl = input instanceof Request ? input.url : input;
 
@@ -164,14 +178,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       if (url.pathname === '/search' && url.searchParams.get('view') === 'condensed') {
         const searchTerm = url.searchParams.get('q') || '';
+        const query = getTitlePrefixQuery(searchTerm);
 
-        if (searchTerm) {
-          url.searchParams.set('q', 'title:' + searchTerm.replace(/[^\w\s-]/g, '').trim() + '*');
+        if (query) {
+          url.searchParams.set('q', query);
           input = url.toString();
         }
       }
 
       return originalFetch.call(this, input, init);
     };
+
+    document.addEventListener('click', function (event) {
+      const viewAllButton = event.target.closest("[js-instant-search='view-all']");
+
+      if (!viewAllButton) return;
+
+      const searchInput = viewAllButton.closest('uwp-search-input')
+        ?.querySelector("[js-search-input='input']");
+
+      if (!searchInput?.value.trim()) return;
+
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      navigateToTitleSearch(searchInput.value);
+    }, true);
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Enter' || !event.target.matches("[js-search-input='input']")) return;
+
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      navigateToTitleSearch(event.target.value);
+    }, true);
   })();
 </script>
