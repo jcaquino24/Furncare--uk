@@ -24,7 +24,7 @@
           "type": "title",
           "settings": {
             "text": "Request a Free Brochure",
-            "title_element": "h2",
+            "title_element": "h1",
             "title_size": "display",
             "text_color": "#f9f7f0"
           }
@@ -239,14 +239,14 @@
       ],
       "settings": {
         "title": "Request a brochure",
-        "intro_text": "<p></p><p>Select the brochure most relevant to you and complete the form on the right to request your copy. Choose from our Elderly Care, Challenging Environments, or Quick Delivery brochures. Once submitted, a member of our team will be in touch to provide your brochure and answer any questions about your furniture requirements.</p>",
+        "intro_text": "<p></p><p></p><p>Select the brochure most relevant to you and complete the form on the right to request your copy. Choose from our our digital and physical brochure options. Once submitted, a member of our team will be in touch to provide your brochure and answer any questions about your furniture requirements.</p>",
         "success_message": "",
         "phone": "01603664900",
         "phone_icon": "shopify://shop_images/Phone_f4b0d652-6e2d-4972-8b79-3fee1c34b42d.svg",
         "email": "sales@furncare.co.uk",
         "email_icon": "shopify://shop_images/Enveloppe_9440784c-af0a-43f4-8f42-462a9a7043e6.svg",
         "show_social_icons": true,
-        "hubspot_form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"6cdd6546-8c7e-46b8-a285-94b40b19569a\" data-portal-id=\"145723791\"></div>"
+        "hubspot_form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"2d993bad-eb03-4d9b-9eb4-6a6880f7e773\" data-portal-id=\"145723791\"></div>"
       }
     }
   },
