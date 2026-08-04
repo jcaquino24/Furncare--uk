@@ -239,7 +239,7 @@
       ],
       "settings": {
         "title": "Request a brochure",
-        "intro_text": "<p></p><p></p><p>Select the brochure most relevant to you and complete the form on the right to request your copy. Choose from our our digital and physical brochure options. Once submitted, a member of our team will be in touch to provide your brochure and answer any questions about your furniture requirements.</p>",
+        "intro_text": "<p> </p><p>Select the brochure most relevant to you and complete the form on the right to request your copy. Choose from our our digital and physical brochure options. Once submitted, a member of our team will be in touch to provide your brochure and answer any questions about your furniture requirements.</p>",
         "success_message": "",
         "phone": "01603664900",
         "phone_icon": "shopify://shop_images/Phone_f4b0d652-6e2d-4972-8b79-3fee1c34b42d.svg",
