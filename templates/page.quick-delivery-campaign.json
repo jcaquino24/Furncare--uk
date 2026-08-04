@@ -257,23 +257,25 @@
           "settings": {
             "text": "Already know what you need?",
             "heading_level": "h2",
-            "heading_style": "title-md"
+            "heading_style": "title-lg"
           },
           "blocks": {}
         },
-        "tagline_hWc64y": {
-          "type": "tagline",
-          "disabled": true,
+        "button_pmpVzJ": {
+          "type": "button",
+          "name": "Button",
           "settings": {
-            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "tagline_style": "body-md"
+            "style": "secondary",
+            "text": "Explore Our Stock Range",
+            "url": "shopify://collections/quick-delivery-products",
+            "new_tab": false
           },
           "blocks": {}
         }
       },
       "block_order": [
         "heading_hRaPty",
-        "tagline_hWc64y"
+        "button_pmpVzJ"
       ],
       "name": "Rich Text",
       "settings": {
@@ -281,7 +283,7 @@
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
-        "colour_scheme": "warm-stone",
+        "colour_scheme": "green-01",
         "enable_animation": false,
         "optional_richtext": "",
         "small_container": false,
@@ -301,14 +303,15 @@
             "products": [
               "cambourne-high-back-chair-lismore-almond",
               "aurora-electric-rise-and-recliner-brookland-dove",
-              "cambourne-wingback",
+              "freja-2-seater-sofa",
               "lavia-chair-with-arms-stone",
               "karsson-bedroom-furniture-bundle",
               "lingwood-tub-chair-1",
+              "livonia-oval-coffee-table",
               "venice-visitor-chair-seat-stone-back-taupe",
               "earlwood-square-2-seater-dining-table",
               "dawson-bedroom-furniture-bundle",
-              "livonia-oval-coffee-table",
+              "cambourne-wingback",
               "portland-bedroom-furniture-bundle"
             ],
             "collection": "",
@@ -327,6 +330,86 @@
         "title": "browse the collection",
         "section_padding": "--spacing-2xl"
       }
+    },
+    "furncare_about_final_cta_3BLpXG": {
+      "type": "furncare-about-final-cta",
+      "name": "Furncare final CTA",
+      "settings": {
+        "eyebrow": "Start the conversation",
+        "heading": "Planning a care-sector furniture project? Let's make it easier.",
+        "copy": "Bring Furncare in early and we'll help you shape a furniture scheme that works for your space, your users, your timeline and your budget.",
+        "primary_label": "Start a project",
+        "primary_link": "",
+        "secondary_label": "Request a brochure",
+        "secondary_link": "",
+        "background_gradient": "",
+        "background_color": "#F9F7F0",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "center",
+        "section_border_color": "#F9F7F0",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 45,
+        "heading_size_mobile": 40,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 15,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 13,
+        "eyebrow_weight": 700,
+        "eyebrow_letter_spacing": 22,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 16,
+        "text_color": "#262520",
+        "heading_color": "#262520",
+        "copy_color": "#243222",
+        "eyebrow_color": "#243222",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "button_radius": 900,
+        "button_padding_x": 24,
+        "button_padding_y": 14,
+        "button_min_height": 54,
+        "button_font_size": 12,
+        "button_weight": 700,
+        "button_text_transform": "none",
+        "button_gap": 12,
+        "button_margin_top": 32,
+        "button_border_width": 1,
+        "button_hover_lift": 1,
+        "button_hover_shadow_opacity": 12,
+        "buttons_full_width_mobile": true,
+        "primary_button_bg": "#C3C0B0",
+        "primary_button_color": "#F9F7F0",
+        "primary_button_border": "#C3C0B0",
+        "primary_button_hover_bg": "#243222",
+        "primary_button_hover_color": "#F9F7F0",
+        "primary_button_hover_border": "#243222",
+        "secondary_button_bg": "#243222",
+        "secondary_button_bg_opacity": 44,
+        "secondary_button_color": "#F9F7F0",
+        "secondary_button_border": "#F9F7F0",
+        "secondary_button_hover_bg": "#F9F7F0",
+        "secondary_button_hover_color": "#0c0a09",
+        "secondary_button_hover_border": "#F9F7F0"
+      }
     }
   },
   "order": [
@@ -336,6 +419,7 @@
     "blocks_L3JrDV",
     "main",
     "richtext_Y8TeQn",
-    "product_blocks_8Yn8VF"
+    "product_blocks_8Yn8VF",
+    "furncare_about_final_cta_3BLpXG"
   ]
 }
