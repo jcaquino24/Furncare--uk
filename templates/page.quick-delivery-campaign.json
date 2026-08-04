@@ -248,6 +248,85 @@
         "show_social_icons": true,
         "hubspot_form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"2d993bad-eb03-4d9b-9eb4-6a6880f7e773\" data-portal-id=\"145723791\"></div>"
       }
+    },
+    "richtext_Y8TeQn": {
+      "type": "richtext",
+      "blocks": {
+        "heading_hRaPty": {
+          "type": "heading",
+          "settings": {
+            "text": "Already know what you need?",
+            "heading_level": "h2",
+            "heading_style": "title-md"
+          },
+          "blocks": {}
+        },
+        "tagline_hWc64y": {
+          "type": "tagline",
+          "disabled": true,
+          "settings": {
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_hRaPty",
+        "tagline_hWc64y"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "id_anchor": "",
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
+      }
+    },
+    "product_blocks_8Yn8VF": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_dEPWiA": {
+          "type": "product_block",
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [
+              "cambourne-high-back-chair-lismore-almond",
+              "aurora-electric-rise-and-recliner-brookland-dove",
+              "cambourne-wingback",
+              "lavia-chair-with-arms-stone",
+              "karsson-bedroom-furniture-bundle",
+              "lingwood-tub-chair-1",
+              "venice-visitor-chair-seat-stone-back-taupe",
+              "earlwood-square-2-seater-dining-table",
+              "dawson-bedroom-furniture-bundle",
+              "livonia-oval-coffee-table",
+              "portland-bedroom-furniture-bundle"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_dEPWiA"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "browse the collection",
+        "section_padding": "--spacing-2xl"
+      }
     }
   },
   "order": [
@@ -255,6 +334,8 @@
     "richtext_DTqTkT",
     "blocks_BkKJKG",
     "blocks_L3JrDV",
-    "main"
+    "main",
+    "richtext_Y8TeQn",
+    "product_blocks_8Yn8VF"
   ]
 }
