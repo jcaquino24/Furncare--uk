@@ -106,7 +106,7 @@
           "settings": {
             "text": "Discover how we can make a difference. See our offerings, understand our approach, and get inspired by what’s possible.",
             "heading_level": "h1",
-            "heading_style": "title-lg"
+            "heading_style": "title-xl"
           },
           "blocks": {}
         },
@@ -139,7 +139,7 @@
       "name": "Rich Text",
       "settings": {
         "id_anchor": "",
-        "max_width_desktop": 76,
+        "max_width_desktop": 87,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
@@ -280,7 +280,7 @@
           "settings": {
             "text": "Already know what you need?",
             "heading_level": "h2",
-            "heading_style": "title-lg"
+            "heading_style": "title-xl"
           },
           "blocks": {}
         },
@@ -367,11 +367,11 @@
         "secondary_link": "",
         "background_gradient": "",
         "background_color": "#F9F7F0",
-        "max_width": 1280,
+        "max_width": 1600,
         "gutter_desktop": 24,
         "gutter_mobile": 16,
-        "padding_top": 96,
-        "padding_bottom": 96,
+        "padding_top": 144,
+        "padding_bottom": 168,
         "padding_mobile": 72,
         "padding_bottom_mobile": 72,
         "section_gap": 48,
