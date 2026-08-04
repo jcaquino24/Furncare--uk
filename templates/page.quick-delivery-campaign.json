@@ -249,6 +249,29 @@
         "hubspot_form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"2d993bad-eb03-4d9b-9eb4-6a6880f7e773\" data-portal-id=\"145723791\"></div>"
       }
     },
+    "blocks_8cC7Mf": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_WJzeQB": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "large",
+            "small_height": 30,
+            "medium_height": 60,
+            "large_height": 100,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_WJzeQB"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
     "richtext_Y8TeQn": {
       "type": "richtext",
       "blocks": {
@@ -281,7 +304,7 @@
       "settings": {
         "id_anchor": "",
         "max_width_desktop": 100,
-        "section_padding": "--spacing-2xl",
+        "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "green-01",
         "enable_animation": false,
@@ -418,6 +441,7 @@
     "blocks_BkKJKG",
     "blocks_L3JrDV",
     "main",
+    "blocks_8cC7Mf",
     "richtext_Y8TeQn",
     "product_blocks_8Yn8VF",
     "furncare_about_final_cta_3BLpXG"
