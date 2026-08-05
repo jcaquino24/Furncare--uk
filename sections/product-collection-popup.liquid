@@ -28,6 +28,17 @@
       {% for block in section.blocks limit: 3 %}
         {% assign popup_collection = block.settings.collection %}
         {% if popup_collection != blank %}
+          {% capture trigger_style %}
+            {% if block.settings.button_border != blank %}border: {{ block.settings.button_border }};{% endif %}
+            {% if block.settings.button_background_color != blank %}background-color: {{ block.settings.button_background_color }};{% endif %}
+            {% if block.settings.button_text_color != blank %}color: {{ block.settings.button_text_color }};{% endif %}
+          {% endcapture %}
+          {% assign trigger_style = trigger_style | strip %}
+          {% capture label_style %}
+            {% if block.settings.button_font_size != blank %}font-size: {{ block.settings.button_font_size }}px;{% endif %}
+            {% if block.settings.button_font_weight != blank %}font-weight: {{ block.settings.button_font_weight }};{% endif %}
+          {% endcapture %}
+          {% assign label_style = label_style | strip %}
           <div class="product-collection-popup__button-card">
             <button
               type="button"
@@ -35,6 +46,9 @@
               data-popup-id="collection-popup-{{ section.id }}-{{ block.id }}"
               aria-expanded="false"
               aria-controls="collection-popup-{{ section.id }}-{{ block.id }}"
+              {% if trigger_style != blank %}
+                style="{{ trigger_style }}"
+              {% endif %}
             >
               <span class="product-collection-popup__image-wrapper">
                 {% if popup_collection.image != blank %}
@@ -50,13 +64,13 @@
               </span>
 
               <span class="product-collection-popup__text">
-                <span class="product-collection-popup__label">{{ block.settings.button_text | default: popup_collection.title }}</span>
+                <span class="product-collection-popup__label"{% if label_style != blank %} style="{{ label_style }}"{% endif %}>{{ block.settings.button_text | default: popup_collection.title }}</span>
                 {% if block.settings.button_subtext != blank %}
-                  <span class="product-collection-popup__subtext">{{ block.settings.button_subtext }}</span>
+                  <span class="product-collection-popup__subtext"{% if block.settings.button_text_color != blank %} style="color: inherit;"{% endif %}>{{ block.settings.button_subtext }}</span>
                 {% endif %}
               </span>
 
-              <span class="product-collection-popup__arrow" aria-hidden="true">↗</span>
+              <span class="product-collection-popup__arrow" aria-hidden="true"{% if block.settings.button_text_color != blank %} style="color: inherit;"{% endif %}>↗</span>
             </button>
 
             <div
@@ -207,6 +221,59 @@
           "id": "button_subtext",
           "label": "Button subtext",
           "default": "View products without leaving the page"
+        },
+        {
+          "type": "text",
+          "id": "button_border",
+          "label": "Button border",
+          "default": "1px solid #d9d9d9",
+          "info": "Example: 1px solid #d9d9d9"
+        },
+        {
+          "type": "color",
+          "id": "button_background_color",
+          "label": "Button background color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button text color",
+          "default": "#1a1a1a"
+        },
+        {
+          "type": "range",
+          "id": "button_font_size",
+          "label": "Button text size",
+          "min": 12,
+          "max": 28,
+          "step": 1,
+          "unit": "px",
+          "default": 16
+        },
+        {
+          "type": "select",
+          "id": "button_font_weight",
+          "label": "Button text weight",
+          "default": "700",
+          "options": [
+            {
+              "value": "400",
+              "label": "400"
+            },
+            {
+              "value": "500",
+              "label": "500"
+            },
+            {
+              "value": "600",
+              "label": "600"
+            },
+            {
+              "value": "700",
+              "label": "700"
+            }
+          ]
         },
         {
           "type": "text",
