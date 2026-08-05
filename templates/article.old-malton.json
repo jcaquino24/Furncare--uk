@@ -256,30 +256,6 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_8WBRTt": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091081-2-HDR.png",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_9w8NYk": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049396.png",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_yznG76": {
           "type": "image_card",
           "settings": {
@@ -464,6 +440,18 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/P1091261-2-HDR.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_8WBRTt": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/P1091081-2-HDR.png",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -859,8 +847,6 @@
         "image_card_HedqtB",
         "image_card_UFmX3W",
         "image_card_QFfCGK",
-        "image_card_8WBRTt",
-        "image_card_9w8NYk",
         "image_card_yznG76",
         "image_card_myGMMC",
         "image_card_A3PDJk",
@@ -877,6 +863,7 @@
         "image_card_pwkDX4",
         "image_card_wreLDT",
         "image_card_Wdkhxi",
+        "image_card_8WBRTt",
         "image_card_RUUn4C",
         "image_card_hqrD4C",
         "image_card_FiFr8D",
