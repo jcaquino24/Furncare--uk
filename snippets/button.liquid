@@ -29,10 +29,6 @@
   if label == blank
     continue
   endif
-
-  if scheme == blank
-    assign scheme = section.settings.colour_scheme
-  endif
   
   if scheme contains 'green'
     assign scheme_class = 'dark'
