@@ -7,6 +7,50 @@
   {{ 'uwp.critical.DLj9qVjH.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
 {% elsif path == "/frontend/entrypoints/main.css" or path == "main.css" %}
   {{ 'uwp.main.DdluWbOa.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
+  {{ 'custom.css' | asset_url | stylesheet_tag }}
+  <script>
+    window.__uwpLoadModuleWhenVisible = window.__uwpLoadModuleWhenVisible || function (options) {
+      if (!options || !options.src) return;
+
+      var registry = window.__uwpLoadedModules = window.__uwpLoadedModules || {};
+
+      function loadModule() {
+        if (registry[options.src]) return;
+        registry[options.src] = true;
+
+        var script = document.createElement('script');
+        script.src = options.src;
+        script.type = 'module';
+        script.crossOrigin = 'anonymous';
+        document.head.appendChild(script);
+      }
+
+      var anchor = options.anchor;
+      if (!anchor || typeof anchor.closest !== 'function') {
+        loadModule();
+        return;
+      }
+
+      var target = anchor.closest('[id^="shopify-section-"]') || anchor.closest('section') || anchor.parentElement;
+
+      if (!target || !('IntersectionObserver' in window)) {
+        loadModule();
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          observer.disconnect();
+          loadModule();
+        });
+      }, {
+        rootMargin: '200px 0px',
+      });
+
+      observer.observe(target);
+    };
+  </script>
 {% elsif path == "/frontend/entrypoints/main.ts" or path == "main.ts" %}
   <script>
     (function () {
@@ -47,97 +91,156 @@
     })();
   </script>
 {% elsif path == "/frontend/src/ts/sections/address-form.ts" or path == "../src/ts/sections/address-form.ts" %}
-  <script src="{{ 'uwp.address-form.BlBRUc7B.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.address-form.BlBRUc7B.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/sections/addresses.ts" or path == "../src/ts/sections/addresses.ts" %}
-  <script src="{{ 'uwp.addresses.BPv5SSpa.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.addresses.BPv5SSpa.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/sections/announcement-bar.ts" or path == "../src/ts/sections/announcement-bar.ts" %}
   <script src="{{ 'uwp.announcement-bar.CHjTaLD1.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
 {% elsif path == "/frontend/src/ts/sections/cart.ts" or path == "../src/ts/sections/cart.ts" %}
-  <script src="{{ 'uwp.cart.DVdjJZou.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
-  <link rel="modulepreload" href="{{ 'uwp.utils.nmjlQhSZ.js' | asset_url | split: '?' | first }}" crossorigin="anonymous">
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.cart.DVdjJZou.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/sections/contact.ts" or path == "../src/ts/sections/contact.ts" %}
-  <script src="{{ 'uwp.contact.N3NvOBcb.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.contact.N3NvOBcb.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/sections/content-blocks.ts" or path == "../src/ts/sections/content-blocks.ts" %}
-  <script src="{{ 'uwp.content-blocks.DCj6I2nv.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.content-blocks.DCj6I2nv.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/sections/content-carousel.ts" or path == "../src/ts/sections/content-carousel.ts" %}
-  <script src="{{ 'uwp.content-carousel.PPBNmA43.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.content-carousel.PPBNmA43.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/sections/featured-blocks.ts" or path == "../src/ts/sections/featured-blocks.ts" %}
-  <script src="{{ 'uwp.featured-blocks.CF1TLndi.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
-  <link rel="modulepreload" href="{{ 'uwp.tua-bsl.aO87w0ZW.js' | asset_url | split: '?' | first }}" crossorigin="anonymous">
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.featured-blocks.CF1TLndi.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/sections/header.ts" or path == "../src/ts/sections/header.ts" %}
   <script src="{{ 'uwp.header.otJq-7Ek.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
-  <link rel="modulepreload" href="{{ 'uwp.index.C2BuoGdU.js' | asset_url | split: '?' | first }}" crossorigin="anonymous">
 {% elsif path == "/frontend/src/ts/sections/hotspots.ts" or path == "../src/ts/sections/hotspots.ts" %}
-  <script src="{{ 'uwp.hotspots.xnsMGeWo.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.hotspots.xnsMGeWo.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
   {{ 'uwp.hotspots.BHH8rdGj.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
 {% elsif path == "/frontend/src/ts/sections/image-text-blocks.ts" or path == "../src/ts/sections/image-text-blocks.ts" %}
-  <script src="{{ 'uwp.image-text-blocks.BT2TQdP_.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
-  <link rel="modulepreload" href="{{ 'uwp.tua-bsl.aO87w0ZW.js' | asset_url | split: '?' | first }}" crossorigin="anonymous">
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.image-text-blocks.BT2TQdP_.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/sections/image-video-banner.ts" or path == "../src/ts/sections/image-video-banner.ts" %}
-  <script src="{{ 'uwp.image-video-banner.DNMkv46a.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.image-video-banner.DNMkv46a.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/sections/localization-ui.ts" or path == "../src/ts/sections/localization-ui.ts" %}
-  <script src="{{ 'uwp.localization-ui.4HqKik7U.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
-  <link rel="modulepreload" href="{{ 'uwp.utils.nmjlQhSZ.js' | asset_url | split: '?' | first }}" crossorigin="anonymous">
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.localization-ui.4HqKik7U.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/sections/product.ts" or path == "../src/ts/sections/product.ts" %}
-  <script src="{{ 'uwp.product.msi-FrTr.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.product.msi-FrTr.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/article-share.ts" or path == "../src/ts/snippets/article-share.ts" %}
-  <script src="{{ 'uwp.article-share.DZaZch5c.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.article-share.DZaZch5c.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/filter-form.ts" or path == "../src/ts/snippets/filter-form.ts" %}
-  <script src="{{ 'uwp.filter-form.E7AwBp3g.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.filter-form.E7AwBp3g.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/filter-toggle.ts" or path == "../src/ts/snippets/filter-toggle.ts" %}
-  <script src="{{ 'uwp.filter-toggle.DD9OP_uK.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.filter-toggle.DD9OP_uK.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/input-select.ts" or path == "../src/ts/snippets/input-select.ts" %}
-  <script src="{{ 'uwp.input-select.Bwn6hq7G.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.input-select.Bwn6hq7G.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/input-slider.ts" or path == "../src/ts/snippets/input-slider.ts" %}
-  <script src="{{ 'uwp.input-slider.FU0SasiF.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.input-slider.FU0SasiF.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/layout-switcher.ts" or path == "../src/ts/snippets/layout-switcher.ts" %}
-  <script src="{{ 'uwp.layout-switcher.DBdZlBsG.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.layout-switcher.DBdZlBsG.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/line-item.ts" or path == "../src/ts/snippets/line-item.ts" %}
-  <script src="{{ 'uwp.line-item.DH78-2Ug.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.line-item.DH78-2Ug.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/load-more.ts" or path == "../src/ts/snippets/load-more.ts" %}
-  <script src="{{ 'uwp.load-more.seuPfReD.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.load-more.seuPfReD.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/mobile-menu.ts" or path == "../src/ts/snippets/mobile-menu.ts" %}
   <script src="{{ 'uwp.mobile-menu.C4X5oyGG.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
 {% elsif path == "/frontend/src/ts/snippets/product-actions.ts" or path == "../src/ts/snippets/product-actions.ts" %}
-  <script src="{{ 'uwp.product-actions.Mai__Wmx.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.product-actions.Mai__Wmx.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/product-count.ts" or path == "../src/ts/snippets/product-count.ts" %}
-  <script src="{{ 'uwp.product-count.DMLT5vxb.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.product-count.DMLT5vxb.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/product-gallery.ts" or path == "../src/ts/snippets/product-gallery.ts" %}
-  <script src="{{ 'uwp.product-gallery.BjL_szTl.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
-  <link rel="modulepreload" href="{{ 'uwp.tua-bsl.aO87w0ZW.js' | asset_url | split: '?' | first }}" crossorigin="anonymous">
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.product-gallery.BjL_szTl.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/product-grid.ts" or path == "../src/ts/snippets/product-grid.ts" %}
-  <script src="{{ 'uwp.product-grid.ClsgMDkg.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.product-grid.ClsgMDkg.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/product-swatches.ts" or path == "../src/ts/snippets/product-swatches.ts" %}
-  <script src="{{ 'uwp.product-swatches.DVtWAvjW.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
-  <link rel="modulepreload" href="{{ 'uwp.utils.nmjlQhSZ.js' | asset_url | split: '?' | first }}" crossorigin="anonymous">
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.product-swatches.DVtWAvjW.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/search-count.ts" or path == "../src/ts/snippets/search-count.ts" %}
-  <script src="{{ 'uwp.search-count.DV7CHlyo.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.search-count.DV7CHlyo.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/search-input.ts" or path == "../src/ts/snippets/search-input.ts" %}
-  <script src="{{ 'uwp.search-input.D_HkTcim.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
-  <link rel="modulepreload" href="{{ 'uwp.utils.nmjlQhSZ.js' | asset_url | split: '?' | first }}" crossorigin="anonymous">
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.search-input.D_HkTcim.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/sort-form.ts" or path == "../src/ts/snippets/sort-form.ts" %}
-  <script src="{{ 'uwp.sort-form.BrrjbkF8.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.sort-form.BrrjbkF8.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/upsell-block.ts" or path == "../src/ts/snippets/upsell-block.ts" %}
-  <script src="{{ 'uwp.upsell-block.DBXqWbQD.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.upsell-block.DBXqWbQD.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/snippets/video-controls.ts" or path == "../src/ts/snippets/video-controls.ts" %}
-  <script src="{{ 'uwp.video-controls.D2QJT4d0.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.video-controls.D2QJT4d0.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/theme/cart-html.ts" or path == "../src/ts/theme/cart-html.ts" %}
-  <script src="{{ 'uwp.cart-html.RfzOt23B.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.cart-html.RfzOt23B.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/theme/flyout-tooltip.ts" or path == "../src/ts/theme/flyout-tooltip.ts" %}
-  <script src="{{ 'uwp.flyout-tooltip.D1KePpT6.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.flyout-tooltip.D1KePpT6.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/theme/index.ts" or path == "../src/ts/theme/index.ts" %}
   <script src="{{ 'uwp.index.C3PyAZFW.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
-  <link rel="modulepreload" href="{{ 'uwp.minicart-sync.CzvlEgbh.js' | asset_url | split: '?' | first }}" crossorigin="anonymous">
-  <link rel="modulepreload" href="{{ 'uwp.minicart-body.VkLW_-8h.js' | asset_url | split: '?' | first }}" crossorigin="anonymous">
-  <link rel="modulepreload" href="{{ 'uwp.cart-html.RfzOt23B.js' | asset_url | split: '?' | first }}" crossorigin="anonymous">
 {% elsif path == "/frontend/src/ts/theme/minicart-body.ts" or path == "../src/ts/theme/minicart-body.ts" %}
-  <script src="{{ 'uwp.minicart-body.VkLW_-8h.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.minicart-body.VkLW_-8h.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/theme/minicart-sync.ts" or path == "../src/ts/theme/minicart-sync.ts" %}
-  <script src="{{ 'uwp.minicart-sync.CzvlEgbh.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
-  <link rel="modulepreload" href="{{ 'uwp.cart-html.RfzOt23B.js' | asset_url | split: '?' | first }}" crossorigin="anonymous">
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.minicart-sync.CzvlEgbh.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/theme/quantity-selector.ts" or path == "../src/ts/theme/quantity-selector.ts" %}
-  <script src="{{ 'uwp.quantity-selector.DSqfQ9NB.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.quantity-selector.DSqfQ9NB.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/theme/text-animation.ts" or path == "../src/ts/theme/text-animation.ts" %}
-  <script src="{{ 'uwp.text-animation.BvKFLsUV.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.text-animation.BvKFLsUV.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% endif %}
-{{ 'custom.css' | asset_url | stylesheet_tag }}
