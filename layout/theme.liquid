@@ -56,32 +56,18 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+    </style>
+
     {% comment %} Preloads {% endcomment %}
     {%- unless settings.type_body_font.system? -%}
-      <link
-        rel="preload"
-        as="font"
-        href="{{ settings.type_body_font | font_url }}"
-        type="font/woff2"
-        crossorigin
-      >
+      {{ settings.type_body_font | font_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
     {%- endunless -%}
 
     {% comment %} Big Caslon font preloads {% endcomment %}
-    <link
-      rel="preload"
-      as="font"
-      href="{{ 'Big_Caslon_Medium.woff' | asset_url }}"
-      type="font/woff"
-      crossorigin
-    >
-    <link
-      rel="preload"
-      as="font"
-      href="{{ 'Big_Caslon_Bold.woff' | asset_url }}"
-      type="font/woff"
-      crossorigin
-    >
+    {{ 'Big_Caslon_Medium.woff' | asset_url | preload_tag: as: 'font', type: 'font/woff', crossorigin: 'anonymous' }}
+    {{ 'Big_Caslon_Bold.woff' | asset_url | preload_tag: as: 'font', type: 'font/woff', crossorigin: 'anonymous' }}
 
     {% comment %} Scripts and utils {% endcomment %}
     {% render 'header-scripts' %}
