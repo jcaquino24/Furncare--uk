@@ -111,6 +111,9 @@
 
 {%- for block in section.blocks -%}
   {%- if block.type == 'cross_sell' -%}
+    {% if forloop.first %}
+      <script src="{{ 'product-cross-sell.js' | asset_url }}" defer="defer"></script>
+    {% endif %}
     {% render 'product-cross-sell', product: product, block: block, section: section.id %}
   {%- endif -%}
 {%- endfor -%}
