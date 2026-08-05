@@ -135,40 +135,48 @@
         %}
       {% endif %}
     </div>
-    <!-- begin olark code -->
-    <script type="text/javascript" async>
-      (function (o, l, a, r, k, y) {
-        if (o.olark) return;
-        r = 'script';
-        y = l.createElement(r);
-        r = l.getElementsByTagName(r)[0];
-        y.async = 1;
-        y.src = '//' + a;
-        r.parentNode.insertBefore(y, r);
-        y = o.olark = function () {
-          k.s.push(arguments);
-          k.t.push(+new Date());
-        };
-        y.extend = function (i, j) {
-          y('extend', i, j);
-        };
-        y.identify = function (i) {
-          y('identify', (k.i = i));
-        };
-        y.configure = function (i, j) {
-          y('configure', i, j);
-          k.c[i] = j;
-        };
-        k = y._ = { s: [], t: [+new Date()], c: {}, l: a };
-      })(window, document, 'static.olark.com/jsclient/loader.js');
-      /* custom configuration goes here (www.olark.com/documentation) */ olark.identify(
-        '6982-996-10-5917',
-      );
-    </script>
-    <!-- end olark code -->
-
     <script>
       (function () {
+        var hasLoadedThirdParty = false;
+
+        function runOnce(fn) {
+          var hasRun = false;
+          return function () {
+            if (hasRun) return;
+            hasRun = true;
+            fn();
+          };
+        }
+
+        function loadOlark() {
+          (function (o, l, a, r, k, y) {
+            if (o.olark) return;
+            r = 'script';
+            y = l.createElement(r);
+            r = l.getElementsByTagName(r)[0];
+            y.async = 1;
+            y.src = '//' + a;
+            r.parentNode.insertBefore(y, r);
+            y = o.olark = function () {
+              k.s.push(arguments);
+              k.t.push(+new Date());
+            };
+            y.extend = function (i, j) {
+              y('extend', i, j);
+            };
+            y.identify = function (i) {
+              y('identify', (k.i = i));
+            };
+            y.configure = function (i, j) {
+              y('configure', i, j);
+              k.c[i] = j;
+            };
+            k = y._ = { s: [], t: [+new Date()], c: {}, l: a };
+          })(window, document, 'static.olark.com/jsclient/loader.js');
+
+          window.olark.identify('6982-996-10-5917');
+        }
+
         function loadTesterify() {
           var script = document.createElement('script');
           script.src = 'https://panel.testerify.com/testerify.js';
@@ -193,25 +201,28 @@
           document.body.appendChild(script);
         }
 
-        function schedule(callback, delay) {
-          if ('requestIdleCallback' in window) {
-            window.requestIdleCallback(
-              function () {
-                window.setTimeout(callback, delay);
-              },
-              { timeout: 2000 },
-            );
-            return;
-          }
+        var loadThirdParty = runOnce(function () {
+          if (hasLoadedThirdParty) return;
+          hasLoadedThirdParty = true;
 
-          window.setTimeout(callback, delay);
-        }
+          loadTesterify();
+          window.setTimeout(loadClarity, 600);
+          window.setTimeout(loadOlark, 1200);
+        });
+
+        var interactionEvents = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+
+        interactionEvents.forEach(function (eventName) {
+          window.addEventListener(eventName, loadThirdParty, {
+            once: true,
+            passive: true,
+          });
+        });
 
         window.addEventListener(
           'load',
           function () {
-            schedule(loadTesterify, 400);
-            schedule(loadClarity, 1200);
+            window.setTimeout(loadThirdParty, 10000);
           },
           { once: true },
         );
