@@ -15,7 +15,7 @@
         "collection_popup_Y8Bric": {
           "type": "collection_popup",
           "settings": {
-            "collection": "create-your-perfect-origins-look",
+            "collection": "create-your-perfect-ryker-look",
             "button_text": "Browse Finishes",
             "button_subtext": "",
             "button_border": "1.5px solid #d9d9d9",
@@ -23,15 +23,15 @@
             "button_text_color": "#1a1a1a",
             "button_font_size": 14,
             "button_font_weight": "400",
-            "modal_title": "Create Your Perfect Origins Look",
-            "modal_description": "Create an Origins furniture look perfectly suited to your care environment. Choose one wood finish or colour across the entire piece for a coordinated design, or combine finishes across the top and body to create a warm, natural or distinctive two-tone look.",
+            "modal_title": "Create Your Perfect Ryker Look",
+            "modal_description": "Create a Ryker cabinet that’s perfectly suited to your space. Choose from our wood finishes for a fully coordinated look across the entire cabinet, or use a wood finish on the top and pair it with your choice of colour for the body. Our colours are designed for the cabinet body, giving you the freedom to create a warm, natural, or beautifully contrasted two-tone design.",
             "products_limit": 14
           }
         },
         "collection_popup_nUtbfX": {
           "type": "collection_popup",
           "settings": {
-            "collection": "create-your-perfect-origins-look-copy-1",
+            "collection": "create-your-perfect-ryker-look-handles",
             "button_text": "Browse Handle Options",
             "button_subtext": "",
             "button_border": "1px solid #d9d9d9",
@@ -39,8 +39,8 @@
             "button_text_color": "#1a1a1a",
             "button_font_size": 14,
             "button_font_weight": "400",
-            "modal_title": "Create Your Perfect Origins Look",
-            "modal_description": "Create an Origins look perfectly suited to your space with our contour handle options. Choose the standard handle or upgrade to a black or gold finish for a more elevated, considered look across your care home furniture.",
+            "modal_title": "Create Your Perfect Ryker Look",
+            "modal_description": "Create a Ryker cabinet that’s perfectly suited to your space. Choose from our handle options for a design led look across the entire range.",
             "products_limit": 8
           }
         },
