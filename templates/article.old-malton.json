@@ -136,18 +136,6 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_WhFiat": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049334.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_GDNdXW": {
           "type": "image_card",
           "settings": {
@@ -272,6 +260,18 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/P1091251-2-HDR.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_WhFiat": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/P1049334.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -837,7 +837,6 @@
         "image_card_G7eHnW",
         "image_card_aGhK6X",
         "image_card_b9yjtU",
-        "image_card_WhFiat",
         "image_card_GDNdXW",
         "image_card_QWgDNK",
         "image_card_J8ww48",
@@ -849,6 +848,7 @@
         "image_card_QFfCGK",
         "image_card_yznG76",
         "image_card_myGMMC",
+        "image_card_WhFiat",
         "image_card_A3PDJk",
         "image_card_BMHWF7",
         "image_card_zneQr7",
