@@ -86,7 +86,7 @@
         "image_mobile": "shopify://shop_images/63fe1f2ffac87df74182c0c4bc2e38aefdb5a90b.png",
         "show_controls": false,
         "mute_video": true,
-        "autoplay_video": true,
+        "autoplay_video": false,
         "show_overlay": false,
         "overlay_background": "",
         "colour_scheme": "dark",

@@ -25,16 +25,6 @@
     <meta name="twitter:image" content="https:{{ settings.logo | image_url: width: 1200 }}">
     {% endif %}
 
-    <script src="https://panel.testerify.com/testerify.js"
-        data-tfy-key="d65b9e5f0e54bd024cd2d833099b430c1a6019a7e9c6e63172c5a14a5d5cb87e" defer></script>
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wxmb2evbaq");
-</script>
-
     {% comment %} Meta information {% endcomment %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -176,6 +166,57 @@
       );
     </script>
     <!-- end olark code -->
+
+    <script>
+      (function () {
+        function loadTesterify() {
+          var script = document.createElement('script');
+          script.src = 'https://panel.testerify.com/testerify.js';
+          script.defer = true;
+          script.setAttribute(
+            'data-tfy-key',
+            'd65b9e5f0e54bd024cd2d833099b430c1a6019a7e9c6e63172c5a14a5d5cb87e',
+          );
+          document.body.appendChild(script);
+        }
+
+        function loadClarity() {
+          window.clarity =
+            window.clarity ||
+            function () {
+              (window.clarity.q = window.clarity.q || []).push(arguments);
+            };
+
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.clarity.ms/tag/wxmb2evbaq';
+          document.body.appendChild(script);
+        }
+
+        function schedule(callback, delay) {
+          if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(
+              function () {
+                window.setTimeout(callback, delay);
+              },
+              { timeout: 2000 },
+            );
+            return;
+          }
+
+          window.setTimeout(callback, delay);
+        }
+
+        window.addEventListener(
+          'load',
+          function () {
+            schedule(loadTesterify, 400);
+            schedule(loadClarity, 1200);
+          },
+          { once: true },
+        );
+      })();
+    </script>
 
 
 
