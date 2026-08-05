@@ -144,15 +144,25 @@
 >
   <div class="container">
     <div class="content-blocks__header">
-      {% render 'title-with-nav',
-        title: section.settings.title,
-        heading_level: 'h2',
-        heading_style: 'eyebrow-sm',
-        tabs: tabs_html,
-        show_nav: show_nav,
-        nav_class: title_classes,
-        section_id: fallback_section_id
-      %}
+      <div class="title-with-nav {% if tabs_html == blank %}title-with-nav--no-tabs{% endif %}">
+        <div class="title-with-nav__row">
+          {% if section.settings.title != blank %}
+            <h2 class="eyebrow-sm title-with-nav__title">
+              {{ section.settings.title }}
+            </h2>
+          {% endif %}
+
+          {% if tabs_html != blank %}
+            <div class="title-with-nav__tabs">
+              {{ tabs_html }}
+            </div>
+          {% endif %}
+        </div>
+
+        {% if show_nav %}
+          {% render 'swiper-nav', class: title_classes, section_id: fallback_section_id %}
+        {% endif %}
+      </div>
     </div>
 
     <div class="content-blocks__content">
