@@ -25,8 +25,21 @@
     assign media_class_mobile = media_class | append: ' hide-on-desktop'
   endif
 
+  assign mobile_fallback_image = blank
+  if section.settings.media_type == 'video' and media_mobile == blank
+    assign media_class_desktop = media_class | append: ' hide-on-mobile'
+    assign mobile_fallback_image = section.settings.image_mobile | default: section.settings.image_desktop
+  endif
+
   if card_blocks.size > 0
     assign has_cards = ' has-cards'
+  endif
+
+  assign media_fetchpriority = 'auto'
+  assign media_loading = 'lazy'
+  if section.index == 1
+    assign media_fetchpriority = 'high'
+    assign media_loading = 'eager'
   endif
 
   assign desktop_ratio = blank
@@ -110,6 +123,7 @@
           autoplay: check_autoplay,
           loop: true,
           muted: check_muted,
+          preload: 'metadata',
           controls: section.settings.show_controls,
           class: media_class_desktop,
           width: 1920,
@@ -119,8 +133,10 @@
       %}
       {{
         video_player_html
-        | replace: '<img src="', '<img alt="%alt_text%" src="'
+        | replace: '<img src="', '<img loading="%loading%" fetchpriority="%priority%" alt="%alt_text%" src="'
         | replace: '%alt_text%', alt_text
+        | replace: '%priority%', media_fetchpriority
+        | replace: '%loading%', media_loading
       }}
     {% endif %}
 
@@ -136,6 +152,7 @@
           autoplay: check_autoplay,
           loop: true,
           muted: check_muted,
+          preload: 'metadata',
           controls: section.settings.show_controls,
           class: media_class_mobile,
           width: 768,
@@ -145,8 +162,24 @@
       %}
       {{
         video_player_html
-        | replace: '<img src="', '<img alt="%alt_text%" src="'
+        | replace: '<img src="', '<img loading="%loading%" fetchpriority="%priority%" alt="%alt_text%" src="'
         | replace: '%alt_text%', alt_text
+        | replace: '%priority%', media_fetchpriority
+        | replace: '%loading%', media_loading
+      }}
+    {% endif %}
+    {% if mobile_fallback_image != blank %}
+      {{
+        mobile_fallback_image
+        | image_url: width: 1440
+        | image_tag:
+          width: 375,
+          height: section.settings.height_mobile,
+          widths: '320, 480, 640, 768, 960, 1200, 1440',
+          sizes: '100vw',
+          loading: media_loading,
+          fetchpriority: media_fetchpriority,
+          class: media_class_mobile
       }}
     {% endif %}
   {% else %}
@@ -160,6 +193,8 @@
             height: 540,
             widths: '1366, 1536, 1920, 2048, 2560, 2880',
             sizes: '100vw',
+            loading: media_loading,
+            fetchpriority: media_fetchpriority,
             class: media_class_desktop
         }}
       {% endif %}
@@ -173,6 +208,8 @@
             height: 540,
             widths: '320, 480, 640, 768, 960, 1536',
             sizes: '100vw',
+            loading: media_loading,
+            fetchpriority: media_fetchpriority,
             class: media_class_mobile
         }}
       {% endif %}
