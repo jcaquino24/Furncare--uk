@@ -15,7 +15,7 @@
         "eyebrow_WLja8F": {
           "type": "eyebrow",
           "settings": {
-            "text": "scroll down to",
+            "text": "scroll down to request the brochure",
             "eyebrow_size": "sm",
             "text_color": "#f9f7f0"
           }
@@ -23,7 +23,7 @@
         "title_cxMJHe": {
           "type": "title",
           "settings": {
-            "text": "Request a Free Brochure",
+            "text": "The Quick Delivery Collection",
             "title_element": "h1",
             "title_size": "display",
             "text_color": "#f9f7f0"
@@ -367,7 +367,7 @@
         "secondary_label": "Request a brochure",
         "secondary_link": "",
         "background_gradient": "",
-        "background_color": "#F9F7F0",
+        "background_color": "#f9f7f0",
         "max_width": 1600,
         "gutter_desktop": 24,
         "gutter_mobile": 16,
@@ -380,7 +380,7 @@
         "header_max_width": 780,
         "content_max_width": 960,
         "text_alignment": "center",
-        "section_border_color": "#F9F7F0",
+        "section_border_color": "#f9f7f0",
         "border_top_width": 0,
         "border_bottom_width": 0,
         "heading_size_desktop": 45,
@@ -420,19 +420,19 @@
         "button_hover_lift": 1,
         "button_hover_shadow_opacity": 12,
         "buttons_full_width_mobile": true,
-        "primary_button_bg": "#C3C0B0",
-        "primary_button_color": "#F9F7F0",
-        "primary_button_border": "#C3C0B0",
+        "primary_button_bg": "#c3c0b0",
+        "primary_button_color": "#f9f7f0",
+        "primary_button_border": "#c3c0b0",
         "primary_button_hover_bg": "#243222",
-        "primary_button_hover_color": "#F9F7F0",
+        "primary_button_hover_color": "#f9f7f0",
         "primary_button_hover_border": "#243222",
         "secondary_button_bg": "#243222",
         "secondary_button_bg_opacity": 44,
-        "secondary_button_color": "#F9F7F0",
-        "secondary_button_border": "#F9F7F0",
-        "secondary_button_hover_bg": "#F9F7F0",
+        "secondary_button_color": "#f9f7f0",
+        "secondary_button_border": "#f9f7f0",
+        "secondary_button_hover_bg": "#f9f7f0",
         "secondary_button_hover_color": "#0c0a09",
-        "secondary_button_hover_border": "#F9F7F0"
+        "secondary_button_hover_border": "#f9f7f0"
       }
     }
   },
