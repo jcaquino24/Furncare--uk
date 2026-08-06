@@ -128,7 +128,9 @@
   </script>
   {{ 'uwp.hotspots.BHH8rdGj.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
 {% elsif path == "/frontend/src/ts/sections/image-text-blocks.ts" or path == "../src/ts/sections/image-text-blocks.ts" %}
-  <script src="{{ 'uwp.image-text-blocks.BT2TQdP_.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script>
+    window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.image-text-blocks.BT2TQdP_.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
+  </script>
 {% elsif path == "/frontend/src/ts/sections/image-video-banner.ts" or path == "../src/ts/sections/image-video-banner.ts" %}
   <script>
     window.__uwpLoadModuleWhenVisible({ src: "{{ 'uwp.image-video-banner.DNMkv46a.js' | asset_url | split: '?' | first }}", anchor: document.currentScript });
