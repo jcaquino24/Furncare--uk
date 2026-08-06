@@ -29,13 +29,6 @@
     assign has_cards = ' has-cards'
   endif
 
-  assign hero_fetchpriority = 'auto'
-  assign hero_loading = 'lazy'
-  if section.index == 1
-    assign hero_fetchpriority = 'high'
-    assign hero_loading = 'eager'
-  endif
-
   assign desktop_ratio = blank
   assign mobile_ratio = blank
   if section.settings.media_type == 'video' and section.settings.maintain_aspect_ratio
@@ -167,8 +160,6 @@
             height: 540,
             widths: '1366, 1536, 1920, 2048, 2560, 2880',
             sizes: '100vw',
-            loading: hero_loading,
-            fetchpriority: hero_fetchpriority,
             class: media_class_desktop
         }}
       {% endif %}
@@ -182,8 +173,6 @@
             height: 540,
             widths: '320, 480, 640, 768, 960, 1536',
             sizes: '100vw',
-            loading: hero_loading,
-            fetchpriority: hero_fetchpriority,
             class: media_class_mobile
         }}
       {% endif %}

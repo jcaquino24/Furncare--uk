@@ -33,13 +33,9 @@
 
     {%- liquid
       render 'vite-tag' with 'critical.css', preload_stylesheet: true
-      render 'vite-tag' with 'main.css', preload_stylesheet: true
+      render 'vite-tag' with 'main.css'
       render 'vite-tag' with 'main.ts'
     -%}
-
-    {% if template.name == 'article' and page_image %}
-      {{ page_image | image_url: width: 2048 | preload_tag: as: 'image' }}
-    {% endif %}
 
     {% if settings.favicon != null %}
       <link
