@@ -35,7 +35,13 @@
             "text": "Bring Your Project to Life",
             "button_url": "shopify://pages/about-us",
             "new_tab": true,
-            "button_style": "underline"
+            "button_style": "underline",
+            "button_font_size": 16,
+            "button_font_color": "#ffffff",
+            "button_background": "#1f1f1f",
+            "button_border_width": 1,
+            "button_border_color": "#ffffff",
+            "button_padding": 12
           }
         },
         "card_rxRzbP": {
@@ -81,7 +87,6 @@
         "maintain_aspect_ratio": false,
         "add_header_offset": true,
         "media_type": "video",
-        "image_desktop": "shopify://shop_images/Lounge_Roomset_Lifestyle.jpg",
         "video_desktop": "shopify://files/videos/My Movie 12.mp4",
         "show_controls": false,
         "mute_video": true,
