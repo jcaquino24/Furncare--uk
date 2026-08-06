@@ -87,6 +87,7 @@
         "maintain_aspect_ratio": false,
         "add_header_offset": true,
         "media_type": "video",
+        "image_desktop": "shopify://shop_images/Lounge_Roomset_Lifestyle_0825b1e2-6ad0-484e-b8eb-54adbe410da5.jpg",
         "video_desktop": "shopify://files/videos/My Movie 12.mp4",
         "show_controls": false,
         "mute_video": true,
