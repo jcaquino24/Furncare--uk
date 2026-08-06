@@ -52,6 +52,12 @@
     };
   </script>
 {% elsif path == "/frontend/entrypoints/main.ts" or path == "main.ts" %}
+  {%- liquid
+    assign should_auto_boot_main = true
+    if template.name == 'article' or template.name == 'blog' or template.name == 'page'
+      assign should_auto_boot_main = false
+    endif
+  -%}
   <script>
     (function () {
       var src = "{{ 'uwp.main.bCRper3M.js' | asset_url | split: '?' | first }}";
@@ -75,6 +81,7 @@
         });
       });
 
+      {% if should_auto_boot_main %}
       window.addEventListener(
         'load',
         function () {
@@ -88,6 +95,7 @@
       } else {
         window.setTimeout(loadMainBundle, 2500);
       }
+      {% endif %}
     })();
   </script>
 {% elsif path == "/frontend/src/ts/sections/address-form.ts" or path == "../src/ts/sections/address-form.ts" %}
