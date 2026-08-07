@@ -9,12 +9,6 @@
   {{ 'uwp.main.DdluWbOa.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
   {{ 'custom.css' | asset_url | stylesheet_tag }}
 {% elsif path == "/frontend/entrypoints/main.ts" or path == "main.ts" %}
-  {%- liquid
-    assign should_auto_boot_main = true
-    if template.name == 'product' or template.name == 'collection' or template.name == 'search'
-      assign should_auto_boot_main = false
-    endif
-  -%}
   <script>
     (function () {
       var src = "{{ 'uwp.main.bCRper3M.js' | asset_url | split: '?' | first }}";
@@ -38,7 +32,6 @@
         });
       });
 
-      {% if should_auto_boot_main %}
       window.addEventListener(
         'load',
         function () {
@@ -52,7 +45,6 @@
       } else {
         window.setTimeout(loadMainBundle, 2500);
       }
-      {% endif %}
     })();
   </script>
 {% elsif path == "/frontend/src/ts/sections/address-form.ts" or path == "../src/ts/sections/address-form.ts" %}
