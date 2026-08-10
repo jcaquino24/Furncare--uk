@@ -12,6 +12,19 @@
 {% comment %} Adds canonical urls {% endcomment %}
 <link rel="canonical" href="{{ canonical_url }}">
 
+<script>
+  (function () {
+    var pathname = window.location.pathname;
+
+    if (pathname.length <= 1 || !pathname.endsWith('/')) return;
+
+    var normalizedPath = pathname.replace(/\/+$/, '');
+    var normalizedUrl = normalizedPath + window.location.search + window.location.hash;
+
+    window.location.replace(normalizedUrl);
+  })();
+</script>
+
 {% comment %} Sets the page title to something SEO friendly {% endcomment %}
 {%- capture seo_title -%}
   {%- if template == 'search' and search.performed == true -%}
