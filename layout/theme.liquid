@@ -35,6 +35,10 @@
     <meta name="robots" content="noindex,follow">
     {% endif %}
 
+    {% if request.page_type == 'search' %}
+    <meta name="robots" content="noindex,follow">
+    {% endif %}
+
     {%- liquid
       render 'vite-tag' with 'critical.css', preload_stylesheet: true
       render 'vite-tag' with 'main.css', preload_stylesheet: true
