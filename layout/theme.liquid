@@ -31,6 +31,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ page_description }}">
 
+    {% if collection.handle == 'all' %}
+    <meta name="robots" content="noindex,follow">
+    {% endif %}
+
     {%- liquid
       render 'vite-tag' with 'critical.css', preload_stylesheet: true
       render 'vite-tag' with 'main.css', preload_stylesheet: true
