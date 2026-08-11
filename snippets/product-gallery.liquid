@@ -4,14 +4,14 @@
   - Automatically detects and handles 3D models (model media type).
   - Disables touch move when 3D models are present to allow model interaction.
 
-  @param {Array} images - Array of Media objects to render (supports image, video, external_video, and model types).
-  @param {Boolean} show_thumbnails - Show thumbnails for the gallery.
-  @param {Boolean} zoom - Enables/Disables zoom functionality.
-  @param {Boolean} autoplay - Enables/Disables autoplay functionality.
-  @param {Number} autoplay_speed - Speed of autoplay in seconds.
-  @param {Boolean} arrows - Enables/Disables arrows functionality.
-  @param {Boolean} enlarge - Enables/Disables lightbox functionality.
-  @param {String} section_id - Section ID for unique button identifiers.
+  @param images - Array of media objects to render (supports image, video, external_video, and model types).
+  @param show_thumbnails - Show thumbnails for the gallery.
+  @param zoom - Enables or disables zoom functionality.
+  @param autoplay - Enables or disables autoplay functionality.
+  @param autoplay_speed - Speed of autoplay in seconds.
+  @param arrows - Enables or disables arrows functionality.
+  @param enlarge - Enables or disables lightbox functionality.
+  @param section_id - Section ID for unique button identifiers.
 
   @example
   {% render 'product-gallery',
@@ -160,17 +160,31 @@
             aria-roledescription="carousel"
           >
             {% for media in images %}
+              {% liquid
+                assign media_loading = 'lazy'
+                assign media_fetchpriority = 'auto'
+
+                if forloop.first
+                  assign media_loading = 'eager'
+                  assign media_fetchpriority = 'high'
+                endif
+
+                if product.selected_variant and product.selected_variant.featured_media and media.id == product.selected_variant.featured_media.id
+                  assign media_loading = 'eager'
+                  assign media_fetchpriority = 'high'
+                endif
+              %}
               <swiper-slide
                 class="product-gallery__main-slide"
                 data-media-type="{{ media.media_type }}"
               >
                 {% if media.media_type == 'model' %}
                   <div class="product-gallery__model-container">
-                    {% render 'product-media', media: media, forloop: forloop %}
+                    {% render 'product-media', media: media, forloop: forloop, loading: media_loading, fetchpriority: media_fetchpriority %}
                   </div>
                 {% else %}
                   <div class="swiper-zoom-container">
-                    {% render 'product-media', media: media, forloop: forloop %}
+                    {% render 'product-media', media: media, forloop: forloop, loading: media_loading, fetchpriority: media_fetchpriority %}
                   </div>
                 {% endif %}
               </swiper-slide>
