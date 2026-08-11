@@ -176,14 +176,14 @@
           <a href="{{ product.url | split: '?' | first }}">
             {{
               product.images[1]
-              | image_url: width: 1284
+              | image_url: width: 800
               | image_tag:
-                width: 642,
+                width: 400,
                 class: 'product-card__image',
                 loading: 'lazy',
                 fetchpriority: 'low',
-                sizes: '(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw',
-                widths: '321, 642, 964, 1284'
+                sizes: '(min-width: 1024px) 20vw, (min-width: 768px) 30vw, 45vw',
+                widths: '160, 240, 320, 400, 560, 800'
             }}
           </a>
         </div>
@@ -196,14 +196,14 @@
             {% if product.featured_image %}
               {{
                 product.featured_image
-                | image_url: width: 1284
+                | image_url: width: 800
                 | image_tag:
-                  width: 642,
+                  width: 400,
                   class: 'product-card__image',
                   loading: image_loading,
                   fetchpriority: image_fetchpriority,
-                  sizes: '(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw',
-                  widths: '321, 642, 964, 1284'
+                  sizes: '(min-width: 1024px) 20vw, (min-width: 768px) 30vw, 45vw',
+                  widths: '160, 240, 320, 400, 560, 800'
               }}
             {% endif %}
           </a>
