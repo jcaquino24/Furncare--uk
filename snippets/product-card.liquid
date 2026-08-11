@@ -16,6 +16,12 @@
 
 {% liquid
   assign title_class = 'title-2xs'
+  assign image_loading = loading | default: 'lazy'
+  assign image_fetchpriority = 'auto'
+
+  if image_loading == 'eager'
+    assign image_fetchpriority = 'high'
+  endif
 
   assign product_card_style = product_card_style | default: 'default'
   if product.type == 'Swatch' and product_card_style != 'condensed'
@@ -175,6 +181,7 @@
                 width: 642,
                 class: 'product-card__image',
                 loading: 'lazy',
+                fetchpriority: 'low',
                 sizes: '(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw',
                 widths: '321, 642, 964, 1284'
             }}
@@ -193,7 +200,8 @@
                 | image_tag:
                   width: 642,
                   class: 'product-card__image',
-                  loading: 'lazy',
+                  loading: image_loading,
+                  fetchpriority: image_fetchpriority,
                   sizes: '(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw',
                   widths: '321, 642, 964, 1284'
               }}
