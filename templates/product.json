@@ -333,7 +333,8 @@
           "settings": {
             "product_source": "rules",
             "trigger_products": [
-              "double-kalvo-bed-base"
+              "double-kalvo-bed-base",
+              "oster-deluxe-double-bed-base"
             ],
             "trigger_tags": "",
             "rule_upsell_products": [
