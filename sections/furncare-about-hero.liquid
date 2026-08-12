@@ -9,7 +9,7 @@
 
   assign words = section.settings.animated_words | newline_to_br | split: '<br />'
   assign reveal_class = ''
-  assign drawer_id = 'furncare-contact-form-drawer-' | append: section.id
+  assign drawer_id = 'contact-form-drawer'
   assign primary_action = section.settings.primary_action | default: 'link'
   assign secondary_action = section.settings.secondary_action | default: 'link'
   assign has_contact_form = false
