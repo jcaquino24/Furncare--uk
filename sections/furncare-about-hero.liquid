@@ -264,21 +264,16 @@
           drawer.showDrawer();
           return;
         }
+        document.dispatchEvent(new CustomEvent('modal:show:' + drawerName));
 
         if (window.customElements && typeof window.customElements.whenDefined === 'function') {
           window.customElements.whenDefined('uwp-drawer').then(function () {
             var upgradedDrawer = document.querySelector('[modal-name="' + drawerName + '"]');
             if (upgradedDrawer && typeof upgradedDrawer.showDrawer === 'function') {
               upgradedDrawer.showDrawer();
-              return;
             }
-
-            document.dispatchEvent(new CustomEvent('modal:show:' + drawerName));
           });
-          return;
         }
-
-        document.dispatchEvent(new CustomEvent('modal:show:' + drawerName));
       }
 
       if (document.readyState === 'loading') {
