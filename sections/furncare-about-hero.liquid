@@ -4,6 +4,23 @@
 {%- liquid
   assign words = section.settings.animated_words | newline_to_br | split: '<br />'
   assign reveal_class = ''
+  assign drawer_id = 'furncare-contact-form-drawer-' | append: section.id
+  assign primary_action = section.settings.primary_action | default: 'link'
+  assign secondary_action = section.settings.secondary_action | default: 'link'
+  assign has_contact_form = false
+
+  if section.settings.contact_form_html != blank
+    assign has_contact_form = true
+  endif
+
+  assign show_contact_drawer = false
+  if has_contact_form and primary_action == 'contact_drawer'
+    assign show_contact_drawer = true
+  endif
+  if has_contact_form and secondary_action == 'contact_drawer'
+    assign show_contact_drawer = true
+  endif
+
   if section.settings.enable_reveal
     assign reveal_class = ' fa-reveal'
   endif
@@ -38,16 +55,46 @@
         {%- if section.settings.primary_label != blank or section.settings.secondary_label != blank -%}
           <div class="fa-buttons">
             {%- if section.settings.primary_label != blank -%}
-              <a class="fa-button fa-button--primary" {%- unless section.settings.scroll_target != blank  -%}href="{{ section.settings.primary_link }}"{%- endunless -%} {%- if section.settings.scroll_target != blank  -%} data-scroll-to="{{ section.settings.scroll_target }}"{%- endif -%}>
-                {{ section.settings.primary_label | escape }}
-                <svg class="fa-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </a>
+              {%- if primary_action == 'contact_drawer' and has_contact_form -%}
+                <button
+                  type="button"
+                  class="fa-button fa-button--primary"
+                  data-drawer-trigger="{{ drawer_id }}"
+                >
+                  {{ section.settings.primary_label | escape }}
+                  <svg class="fa-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </button>
+              {%- elsif primary_action == 'scroll' and section.settings.scroll_target != blank -%}
+                <a class="fa-button fa-button--primary" data-scroll-to="{{ section.settings.scroll_target }}" href="#">
+                  {{ section.settings.primary_label | escape }}
+                  <svg class="fa-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              {%- else -%}
+                <a class="fa-button fa-button--primary" href="{{ section.settings.primary_link | default: '#' }}">
+                  {{ section.settings.primary_label | escape }}
+                  <svg class="fa-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              {%- endif -%}
             {%- endif -%}
 
             {%- if section.settings.secondary_label != blank -%}
-              <a class="fa-button fa-button--secondary" {%- unless section.settings.secondary_scroll_target != blank  -%} href="{{ section.settings.secondary_link }}"{%- endunless -%} {%- if section.settings.secondary_scroll_target != blank -%}data-scroll-to="{{ section.settings.secondary_scroll_target }}{%- endif -%}">
-                {{ section.settings.secondary_label | escape }}
-              </a>
+              {%- if secondary_action == 'contact_drawer' and has_contact_form -%}
+                <button
+                  type="button"
+                  class="fa-button fa-button--secondary"
+                  data-drawer-trigger="{{ drawer_id }}"
+                >
+                  {{ section.settings.secondary_label | escape }}
+                </button>
+              {%- elsif secondary_action == 'scroll' and section.settings.secondary_scroll_target != blank -%}
+                <a class="fa-button fa-button--secondary" data-scroll-to="{{ section.settings.secondary_scroll_target }}" href="#">
+                  {{ section.settings.secondary_label | escape }}
+                </a>
+              {%- else -%}
+                <a class="fa-button fa-button--secondary" href="{{ section.settings.secondary_link | default: '#' }}">
+                  {{ section.settings.secondary_label | escape }}
+                </a>
+              {%- endif -%}
             {%- endif -%}
           </div>
         {%- endif -%}
@@ -76,6 +123,55 @@
     </div>
   </div>
 </section>
+
+{% if show_contact_drawer %}
+  <uwp-drawer
+    modal-name="{{ drawer_id }}"
+    drawer-direction="right"
+    class="drawer"
+    aria-hidden="true"
+    role="region"
+    aria-label="Contact form drawer"
+    aria-roledescription="drawer"
+  >
+    <div class="modal__overlay" tabindex="-1" data-close-drawer></div>
+
+    <aside
+      class="drawer__container"
+      role="dialog"
+      aria-modal="true"
+      js-uwp-modal="modal"
+      aria-labelledby="FurncareHeroDrawerTitle-{{ section.id }}"
+    >
+      <div class="drawer__header">
+        <div class="drawer__header-title-wrapper">
+          {% render 'icons', icon: 'chat' %}
+
+          <h2 id="FurncareHeroDrawerTitle-{{ section.id }}" class="drawer__title body-lg body-lg--bold">
+            {{ 'product.actions.contact_us' | t }}
+          </h2>
+        </div>
+        <button
+          type="button"
+          class="drawer__close"
+          data-close-drawer
+          aria-label="{{ 'general.close' | t }}"
+        >
+          {% render 'icons', icon: 'close' %}
+        </button>
+      </div>
+
+      <div class="drawer__body">
+        <div class="drawer__description">
+          <p class="body-md">{{ 'product.actions.contact_description' | t }}</p>
+        </div>
+        <div class="contact-form-content">
+          {{ section.settings.contact_form_html }}
+        </div>
+      </div>
+    </aside>
+  </uwp-drawer>
+{% endif %}
 
 {% schema %}
 {
@@ -112,6 +208,26 @@
       "default": "Start a project"
     },
     {
+      "type": "select",
+      "id": "primary_action",
+      "label": "Primary button action",
+      "default": "link",
+      "options": [
+        {
+          "value": "link",
+          "label": "Link (page or external URL)"
+        },
+        {
+          "value": "scroll",
+          "label": "Scroll to target"
+        },
+        {
+          "value": "contact_drawer",
+          "label": "Open contact form drawer"
+        }
+      ]
+    },
+    {
       "type": "url",
       "id": "primary_link",
       "label": "Primary button link"
@@ -128,6 +244,26 @@
       "default": "Explore our sectors"
     },
     {
+      "type": "select",
+      "id": "secondary_action",
+      "label": "Secondary button action",
+      "default": "link",
+      "options": [
+        {
+          "value": "link",
+          "label": "Link (page or external URL)"
+        },
+        {
+          "value": "scroll",
+          "label": "Scroll to target"
+        },
+        {
+          "value": "contact_drawer",
+          "label": "Open contact form drawer"
+        }
+      ]
+    },
+    {
       "type": "url",
       "id": "secondary_link",
       "label": "Secondary button link"
@@ -136,6 +272,16 @@
       "type": "text",
       "id": "secondary_scroll_target",
       "label": "Scroll to Target"
+    },
+    {
+      "type": "header",
+      "content": "Contact drawer"
+    },
+    {
+      "type": "textarea",
+      "id": "contact_form_html",
+      "label": "Contact form HTML",
+      "info": "Used when button action is set to Open contact form drawer. Paste form embed HTML here."
     },
     {
       "type": "header",
