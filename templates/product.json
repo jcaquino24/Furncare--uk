@@ -434,16 +434,18 @@
             "content_gap": 12
           }
         },
-        "cross_sell_XwkN6n": {
+        "cross_sell_xF4KrB": {
           "type": "cross_sell",
           "settings": {
             "product_source": "rules",
             "trigger_products": [
-              "single-kalvo-bed-base"
+              "small-double-kalvo-bed-base",
+              "small-double-loren-divan-bed-base-grey",
+              "small-double-loren-divan-bed-base-beige"
             ],
             "trigger_tags": "",
             "rule_upsell_products": [
-              "celia-water-resistant-mattress"
+              "parker-small-double-sprung-mattress"
             ],
             "target_collection": "",
             "collection_upsell_products": [],
@@ -540,16 +542,18 @@
             "content_gap": 12
           }
         },
-        "cross_sell_xF4KrB": {
+        "cross_sell_97kmTq": {
           "type": "cross_sell",
           "settings": {
             "product_source": "rules",
             "trigger_products": [
-              "small-double-kalvo-bed-base"
+              "single-loren-divan-bed-base-grey",
+              "single-loren-divan-bed-base-beige",
+              "single-kalvo-bed-base"
             ],
             "trigger_tags": "",
             "rule_upsell_products": [
-              "parker-small-double-sprung-mattress"
+              "celia-water-resistant-mattress"
             ],
             "target_collection": "",
             "collection_upsell_products": [],
@@ -652,8 +656,8 @@
         "cross_sell_nQKcQ6",
         "cross_sell_9jQAdq",
         "cross_sell_ahHVxg",
-        "cross_sell_XwkN6n",
-        "cross_sell_xF4KrB"
+        "cross_sell_xF4KrB",
+        "cross_sell_97kmTq"
       ],
       "settings": {
         "show_sku": true,
