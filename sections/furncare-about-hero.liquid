@@ -190,7 +190,7 @@
       function mountDrawer() {
         var globalDrawers = document.getElementById('global-drawers');
         if (!drawerTemplate || !globalDrawers) return;
-        if (document.querySelector('[modal-name="{{ drawer_id }}"]')) return;
+        if (globalDrawers.querySelector('[modal-name="{{ drawer_id }}"]')) return;
 
         var drawerElement = drawerTemplate.querySelector('uwp-drawer');
         if (!drawerElement) return;
@@ -200,6 +200,10 @@
 
       function ensureDrawer(drawerName) {
         mountDrawer();
+        var globalDrawers = document.getElementById('global-drawers');
+        if (globalDrawers) {
+          return globalDrawers.querySelector('[modal-name="' + drawerName + '"]');
+        }
         return document.querySelector('[modal-name="' + drawerName + '"]');
       }
 
