@@ -2,6 +2,11 @@
 <script src="{{ 'furncare-about.js' | asset_url }}" defer="defer"></script>
 
 {%- liquid
+  if section.settings.contact_form_html != blank
+    render 'vite-tag' with '@snippets/product-actions.css'
+    render 'vite-tag' with '@snippets/product-actions.ts'
+  endif
+
   assign words = section.settings.animated_words | newline_to_br | split: '<br />'
   assign reveal_class = ''
   assign drawer_id = 'furncare-contact-form-drawer-' | append: section.id
