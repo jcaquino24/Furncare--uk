@@ -59,7 +59,6 @@
                 <button
                   type="button"
                   class="fa-button fa-button--primary"
-                  data-action="contact"
                   data-furncare-drawer-trigger
                   data-drawer-trigger="{{ drawer_id }}"
                 >
@@ -84,7 +83,6 @@
                 <button
                   type="button"
                   class="fa-button fa-button--secondary"
-                  data-action="contact"
                   data-furncare-drawer-trigger
                   data-drawer-trigger="{{ drawer_id }}"
                 >
@@ -182,9 +180,9 @@
     (function () {
       var sectionRoot = document.getElementById('FurncareAboutHero-{{ section.id }}');
       var drawerTemplate = document.getElementById('furncare-contact-form-drawer-template-{{ section.id }}');
-      var globalDrawers = document.getElementById('global-drawers');
 
       function mountDrawer() {
+        var globalDrawers = document.getElementById('global-drawers');
         if (!drawerTemplate || !globalDrawers) return;
         if (document.querySelector('[modal-name="{{ drawer_id }}"]')) return;
 
@@ -194,7 +192,16 @@
         globalDrawers.appendChild(drawerElement);
       }
 
-      mountDrawer();
+      function ensureDrawer() {
+        mountDrawer();
+        return document.querySelector('[modal-name="{{ drawer_id }}"]');
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', mountDrawer, { once: true });
+      } else {
+        mountDrawer();
+      }
 
       if (!sectionRoot) return;
 
@@ -207,7 +214,7 @@
         var drawerName = trigger.getAttribute('data-drawer-trigger');
         if (!drawerName) return;
 
-        var drawer = document.querySelector('[modal-name="' + drawerName + '"]');
+        var drawer = ensureDrawer();
         if (!drawer) return;
 
         if (typeof drawer.showDrawer === 'function') {
