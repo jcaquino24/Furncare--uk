@@ -249,7 +249,6 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/ella-4.jpg",
-            "hover_image": "shopify://shop_images/Michelle_Lawrence.jpg",
             "title": "Ella Pasion",
             "subtitle": "Client Support Executive",
             "text": "",
