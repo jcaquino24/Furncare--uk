@@ -73,48 +73,52 @@
         "image_card_hnLrPL": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Adam_Drury.jpg",
+            "image": "shopify://shop_images/Adam_Drury_03d890f0-fcaa-4777-bf3b-5533ce3c12cc.jpg",
+            "hover_image": "shopify://shop_images/Adam_Drury_7be97044-fb06-4f98-b310-ffad81113fe2.png",
             "title": "Adam Drury",
             "subtitle": "Head of Operations",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
         "image_card_qbbyRb": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Untitled_-_2025-11-18T103904.632.png",
+            "image": "shopify://shop_images/P1050008_1_e5d81b3d-4a26-4ffd-b598-165e57fbdbb7.jpg",
+            "hover_image": "shopify://shop_images/P1050008-2_66119ee8-0246-47de-bd61-1ae7c702a906.jpg",
             "title": "Anna Poczapinska",
             "subtitle": "SALES SUPPORT EXECUTIVE",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
         "image_card_zg4VqD": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Arnie_Goodenough.jpg",
+            "image": "shopify://shop_images/Arnie_Goodenough_711e49b3-fcbe-4c9a-9947-97977f28fd03.jpg",
+            "hover_image": "shopify://shop_images/Arnie_Goodenough.png",
             "title": "Arnie Goodenough",
             "subtitle": "KEY ACCOUNT MANAGER",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
         "image_card_NetWXa": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Beatrice_Turner_2.jpg",
+            "image": "shopify://shop_images/Beatrice_Turner_2_445e3be2-0a11-4259-b2eb-9519d0d0da60.jpg",
+            "hover_image": "shopify://shop_images/Beatrice_Turner.jpg",
             "title": "Beatrice Turner",
             "subtitle": "Logistics Assistant",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         }
@@ -141,37 +145,40 @@
         "image_card_4jLb9h": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Ben_Southall.jpg",
+            "image": "shopify://shop_images/Ben_Southall_1a9d261d-04af-44c9-9992-d3c6ba3adcda.jpg",
+            "hover_image": "shopify://shop_images/Ben_Southall.png",
             "title": "Ben Southall",
             "subtitle": "FINANCE DIRECTOR",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
         "image_card_rb9WiY": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Candace_Turner_B_W_for_web.jpg",
+            "image": "shopify://shop_images/Candace_Turner_B_W.jpg",
             "image_mobile": "shopify://shop_images/Candace_Turner_B_W_for_web.jpg",
+            "hover_image": "shopify://shop_images/Candace_Turner.jpg",
             "title": "Candace Turner",
             "subtitle": "Content & Digital Marketing Executive",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
         "image_card_BkPkaF": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Carl_Southall.jpg",
+            "image": "shopify://shop_images/Carl_Southall_1e3ba92e-a443-43cc-90e3-ac158d5c58f9.jpg",
+            "hover_image": "shopify://shop_images/Carl_Southall.png",
             "title": "Carl Southall",
             "subtitle": "Managing Director",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
