@@ -1,20 +1,9 @@
-{% assign wishlist_products = customer.metafields.custom.wishlist.value | default: empty %}
-
 <section class="wishlist-page container" data-wishlist-page>
   <header class="wishlist-page__header">
     <h1>{{ page.title | default: 'Wishlist' }}</h1>
   </header>
 
-  {% if customer == blank %}
-    <p>Please <a href="{{ routes.account_login_url }}?return_url={{ request.path | url_encode }}">sign in</a> to view your wishlist.</p>
-  {% elsif wishlist_products == empty %}
-    <p>Your wishlist is empty.</p>
-    <a class="button button--primary" href="{{ routes.all_products_collection_url }}">Browse products</a>
-  {% else %}
-    <div class="product-grid wishlist-page__grid">
-      {% for wishlist_product in wishlist_products %}
-        {% render 'product-card', product: wishlist_product, loading: 'lazy' %}
-      {% endfor %}
-    </div>
-  {% endif %}
+  <div data-wishlist-content>
+    <p>Loading wishlist...</p>
+  </div>
 </section>

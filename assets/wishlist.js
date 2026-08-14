@@ -1,6 +1,21 @@
 (function () {
-  const endpoint = '/apps/furncare-wishlist';
-  const loginUrl = '/account/login?return_url=' + encodeURIComponent(window.location.pathname);
+  const storageKey = 'furncare-wishlist';
+
+  function getWishlist() {
+    try {
+      return JSON.parse(window.localStorage.getItem(storageKey) || '[]');
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function saveWishlist(wishlist) {
+    try {
+      window.localStorage.setItem(storageKey, JSON.stringify(wishlist));
+    } catch (error) {
+      console.error('Unable to save wishlist', error);
+    }
+  }
 
   function setCount(count) {
     document.querySelectorAll('[data-wishlist-count]').forEach((element) => {
@@ -11,39 +26,73 @@
 
   function setButton(button, active) {
     button.setAttribute('aria-pressed', active ? 'true' : 'false');
-    button.setAttribute('aria-label', active ? 'Remove from wishlist' : 'Add to wishlist');
+    button.setAttribute(
+      'aria-label',
+      `${active ? 'Remove' : 'Add'} ${button.dataset.productTitle} ${active ? 'from' : 'to'} wishlist`,
+    );
   }
 
-  async function updateWishlist(button) {
-    if (button.dataset.requiresLogin === 'true') {
-      window.location.href = loginUrl;
+  function syncButtons(wishlist) {
+    const ids = wishlist.map((item) => String(item.id));
+    document.querySelectorAll('[data-wishlist-button]').forEach((button) => {
+      setButton(button, ids.includes(String(button.dataset.productId)));
+    });
+    setCount(wishlist.length);
+  }
+
+  function renderWishlistPage(wishlist) {
+    const page = document.querySelector('[data-wishlist-page]');
+    if (!page) return;
+
+    const content = page.querySelector('[data-wishlist-content]');
+    if (!wishlist.length) {
+      content.innerHTML = '<p>Your wishlist is empty.</p><a class="button button--primary" href="/collections/all">Browse products</a>';
       return;
     }
 
-    const active = button.getAttribute('aria-pressed') === 'true';
-    button.disabled = true;
-
-    try {
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        credentials: 'same-origin',
-        body: JSON.stringify({ product_id: button.dataset.productId, action: active ? 'remove' : 'add' }),
-      });
-      if (!response.ok) throw new Error('Wishlist request failed');
-
-      const result = await response.json();
-      setButton(button, result.active);
-      setCount(Number(result.count) || 0);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      button.disabled = false;
-    }
+    content.innerHTML = `<div class="wishlist-page__grid">${wishlist.map((item) => `
+      <article class="wishlist-item">
+        <a href="${item.url}">
+          ${item.image ? `<img src="${item.image}" alt="${item.title}" loading="lazy">` : ''}
+          <h2>${item.title}</h2>
+        </a>
+        <button type="button" class="button button--underline" data-wishlist-remove="${item.id}">Remove</button>
+      </article>
+    `).join('')}</div>`;
   }
 
   document.addEventListener('click', (event) => {
     const button = event.target.closest('[data-wishlist-button]');
-    if (button) updateWishlist(button);
+    if (!button) return;
+
+    const wishlist = getWishlist();
+    const productId = String(button.dataset.productId);
+    const index = wishlist.findIndex((item) => String(item.id) === productId);
+    if (index === -1) {
+      wishlist.push({
+        id: productId,
+        title: button.dataset.productTitle,
+        url: button.dataset.productUrl,
+        image: button.dataset.productImage,
+      });
+    } else {
+      wishlist.splice(index, 1);
+    }
+    saveWishlist(wishlist);
+    syncButtons(wishlist);
+    renderWishlistPage(wishlist);
   });
+
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-wishlist-remove]');
+    if (!button) return;
+    const wishlist = getWishlist().filter((item) => String(item.id) !== String(button.dataset.wishlistRemove));
+    saveWishlist(wishlist);
+    syncButtons(wishlist);
+    renderWishlistPage(wishlist);
+  });
+
+  const wishlist = getWishlist();
+  syncButtons(wishlist);
+  renderWishlistPage(wishlist);
 })();

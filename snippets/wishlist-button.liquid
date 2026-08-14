@@ -1,13 +1,13 @@
-{% assign wishlist_products = customer.metafields.custom.wishlist.value | default: empty %}
-{% assign wishlist_product_ids = wishlist_products | map: 'id' %}
 <button
   type="button"
   class="wishlist-button"
   data-wishlist-button
   data-product-id="{{ product.id }}"
-  aria-label="{% if wishlist_product_ids contains product.id %}Remove {{ product.title | escape }} from wishlist{% else %}Add {{ product.title | escape }} to wishlist{% endif %}"
-  aria-pressed="{% if wishlist_product_ids contains product.id %}true{% else %}false{% endif %}"
-  {% unless customer %}data-requires-login="true"{% endunless %}
+  data-product-title="{{ product.title | escape }}"
+  data-product-url="{{ product.url | split: '?' | first }}"
+  data-product-image="{% if product.featured_image %}{{ product.featured_image | image_url: width: 600 }}{% endif %}"
+  aria-label="Add {{ product.title | escape }} to wishlist"
+  aria-pressed="false"
 >
   <span class="visually-hidden">Wishlist</span>
   <span data-wishlist-icon="empty">{% render 'icons', icon: 'wishlist' %}</span>

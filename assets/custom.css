@@ -114,6 +114,62 @@
   position: relative;
 }
 
+.image-text-blocks .image-text-block__image {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.image-text-blocks .image-text-block__primary-image,
+.image-text-blocks .image-text-block__hover-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.image-text-blocks .image-text-block__primary-image {
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+.image-text-blocks .image-text-block__hover-image {
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.image-text-blocks .image-text-block__image:hover .image-text-block__primary-image {
+  opacity: 0 !important;
+}
+
+.image-text-blocks .image-text-block__image:hover .image-text-block__hover-image {
+  opacity: 1 !important;
+}
+
+.image-text-blocks .image-text-block__content {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+.wishlist-item {
+  display: grid;
+  gap: 12px;
+}
+
+.wishlist-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1.2;
+  object-fit: cover;
+}
+
  .richtext__collapse {
   overflow: visible;
   transition: max-height 0.4s ease;
