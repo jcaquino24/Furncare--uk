@@ -119,20 +119,6 @@
   isolation: isolate;
   overflow: hidden;
   cursor: pointer;
-  z-index: 3;
-}
-
-.image-text-blocks .image-text-block--gradient {
-  position: relative;
-}
-
-.image-text-blocks .image-text-block--gradient::after {
-  z-index: 2;
-  pointer-events: none;
-}
-
-.image-text-blocks .image-text-block--gradient .image-text-block__inner {
-  position: relative;
 }
 
 .image-text-blocks .image-text-block__primary-image,
@@ -177,7 +163,7 @@
   position: absolute;
   inset-inline: 0;
   bottom: 0;
-  z-index: 4;
+  z-index: 3;
 }
 
 .wishlist-item {
