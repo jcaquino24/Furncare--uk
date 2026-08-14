@@ -50,7 +50,7 @@
       return;
     }
 
-    content.innerHTML = `<div class="wishlist-page__grid">${wishlist.map((item) => `
+    content.innerHTML = wishlist.map((item) => `
       <article class="wishlist-item">
         <a href="${item.url}">
           ${item.image ? `<img src="${item.image}" alt="${item.title}" loading="lazy">` : ''}
@@ -58,7 +58,7 @@
         </a>
         <button type="button" class="button button--underline" data-wishlist-remove="${item.id}">Remove</button>
       </article>
-    `).join('')}</div>`;
+    `).join('');
   }
 
   document.addEventListener('click', (event) => {
