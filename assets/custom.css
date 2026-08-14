@@ -137,7 +137,7 @@
 }
 
 .image-text-blocks .image-text-block__hover-image {
-  z-index: 0;
+  z-index: 2;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -153,13 +153,11 @@
 }
 
 .image-text-blocks .image-text-block__image:hover .image-text-block__hover-image {
-  z-index: 2;
   opacity: 1 !important;
   visibility: visible;
 }
 
 .image-text-blocks .image-text-block__image.is-hovered .image-text-block__hover-image {
-  z-index: 2;
   opacity: 1 !important;
   visibility: visible;
 }
