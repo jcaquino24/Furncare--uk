@@ -370,6 +370,18 @@
             "lightbox_caption": ""
           }
         },
+        "image_card_bRWV33": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/P1141052-B_W.jpg",
+            "title": "Kevin Langley",
+            "subtitle": "Head of Supply Chain",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_wKdEEm": {
           "type": "image_card",
           "settings": {
@@ -381,25 +393,13 @@
             "show_gradient": true,
             "lightbox_caption": ""
           }
-        },
-        "image_card_bHhh89": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Lilly_Godfrey.jpg",
-            "title": "Lilly Godfrey",
-            "subtitle": "Logistics Coordinator",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
         }
       },
       "block_order": [
         "image_card_wT46fW",
         "image_card_jWhD7C",
-        "image_card_wKdEEm",
-        "image_card_bHhh89"
+        "image_card_bRWV33",
+        "image_card_wKdEEm"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -414,6 +414,18 @@
     "image_text_blocks_ALbkEp": {
       "type": "image-text-blocks",
       "blocks": {
+        "image_card_Nz7Ufz": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Lilly_Godfrey.jpg",
+            "title": "Lilly Godfrey",
+            "subtitle": "Logistics Coordinator",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_kxixx4": {
           "type": "image_card",
           "settings": {
@@ -449,25 +461,13 @@
             "show_gradient": true,
             "lightbox_caption": ""
           }
-        },
-        "image_card_X9zAEg": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Mark_Flood.jpg",
-            "title": "Mark Flood",
-            "subtitle": "Project Manager",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
         }
       },
       "block_order": [
+        "image_card_Nz7Ufz",
         "image_card_kxixx4",
         "image_card_Y8N4Gy",
-        "image_card_EKj48B",
-        "image_card_X9zAEg"
+        "image_card_EKj48B"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -482,6 +482,31 @@
     "image_text_blocks_YWfmBd": {
       "type": "image-text-blocks",
       "blocks": {
+        "image_card_gt7P3H": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Mark_Flood.jpg",
+            "title": "Mark Flood",
+            "subtitle": "Project Manager",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_w7T9ic": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Michelle_Lawrence-B_W.jpg",
+            "hover_image": "shopify://shop_images/Michelle_Lawrence.jpg",
+            "title": "Michelle Lawrence",
+            "subtitle": "Category Buyer",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_xrVCtH": {
           "type": "image_card",
           "settings": {
@@ -494,36 +519,13 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_twBrzG": {
+        "image_card_jeKqnp": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Paige_McLellan.png",
-            "title": "Paige McLellan",
-            "subtitle": "PRODUCT DEVELOPMENT COORDINATOR",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_M6EgXT": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Paul_Sims.jpg",
-            "title": "Paul Sims",
-            "subtitle": "Warehouse & Production Manager",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_fpdqDx": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Randal_Southall.jpg",
-            "title": "Randal Southall",
-            "subtitle": "SALES & MARKETING DIRECTOR",
+            "image": "shopify://shop_images/Nick_Southall-B_W.jpg",
+            "hover_image": "shopify://shop_images/Nick_Southall.jpg",
+            "title": "Nick Southall",
+            "subtitle": "Senior Buyer",
             "text": "",
             "block_colour_scheme": "dark-mode",
             "show_gradient": true,
@@ -532,10 +534,10 @@
         }
       },
       "block_order": [
+        "image_card_gt7P3H",
+        "image_card_w7T9ic",
         "image_card_xrVCtH",
-        "image_card_twBrzG",
-        "image_card_M6EgXT",
-        "image_card_fpdqDx"
+        "image_card_jeKqnp"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -550,6 +552,42 @@
     "image_text_blocks_Kj4trr": {
       "type": "image-text-blocks",
       "blocks": {
+        "image_card_r8cgNT": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Paige_McLellan.png",
+            "title": "Paige McLellan",
+            "subtitle": "PRODUCT DEVELOPMENT COORDINATOR",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_VVybKB": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Paul_Sims.jpg",
+            "title": "Paul Sims",
+            "subtitle": "Warehouse & Production Manager",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_cgHqBM": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Randal_Southall.jpg",
+            "title": "Randal Southall",
+            "subtitle": "SALES & MARKETING DIRECTOR",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_Ccgrzd": {
           "type": "image_card",
           "settings": {
@@ -561,8 +599,28 @@
             "show_gradient": true,
             "lightbox_caption": ""
           }
-        },
-        "image_card_LVEY4X": {
+        }
+      },
+      "block_order": [
+        "image_card_r8cgNT",
+        "image_card_VVybKB",
+        "image_card_cgHqBM",
+        "image_card_Ccgrzd"
+      ],
+      "name": "Image text blocks",
+      "settings": {
+        "title": "",
+        "section_padding": "--spacing-md",
+        "colour_scheme": "base-white-01",
+        "text_position": "over_image",
+        "mobile_layout": "grid",
+        "enable_lightbox": false
+      }
+    },
+    "image_text_blocks_DF3jXP": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "image_card_RWnTF4": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Sheldon_Southall.jpg",
@@ -574,18 +632,31 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_7UJEXQ": {
+        "image_card_dEyM4r": {
           "type": "image_card",
           "settings": {
-            "title": "",
-            "subtitle": "",
+            "image": "shopify://shop_images/Paul_Sims.jpg",
+            "title": "Paul Sims",
+            "subtitle": "Warehouse & Production Manager",
             "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         },
-        "image_card_WXVh6k": {
+        "image_card_9EaJCt": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Randal_Southall.jpg",
+            "title": "Randal Southall",
+            "subtitle": "SALES & MARKETING DIRECTOR",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_DjEkVF": {
           "type": "image_card",
           "settings": {
             "title": "",
@@ -598,10 +669,10 @@
         }
       },
       "block_order": [
-        "image_card_Ccgrzd",
-        "image_card_LVEY4X",
-        "image_card_7UJEXQ",
-        "image_card_WXVh6k"
+        "image_card_RWnTF4",
+        "image_card_dEyM4r",
+        "image_card_9EaJCt",
+        "image_card_DjEkVF"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -624,6 +695,7 @@
     "image_text_blocks_bNU4RW",
     "image_text_blocks_ALbkEp",
     "image_text_blocks_YWfmBd",
-    "image_text_blocks_Kj4trr"
+    "image_text_blocks_Kj4trr",
+    "image_text_blocks_DF3jXP"
   ]
 }
