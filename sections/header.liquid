@@ -89,11 +89,11 @@
           hide_on_mobile: true
         %}
 
-        {% comment @TODO: Add wishlist back in once we have a wishlist feature %}
-        <a class="header__action hide-on-mobile" href="#" aria-label="Wishlist">
+        {% assign wishlist_count = customer.metafields.custom.wishlist.value.count | default: 0 %}
+        <a class="header__action header__wishlist" href="/pages/wishlist" aria-label="Wishlist">
           {% render 'icons', icon: 'wishlist' %}
+          <span class="header__wishlist-count" data-wishlist-count{% if wishlist_count == 0 %} hidden{% endif %}>{{ wishlist_count }}</span>
         </a>
-        {% endcomment %}
 
         <a
           class="header__action"
