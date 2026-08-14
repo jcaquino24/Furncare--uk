@@ -89,10 +89,12 @@
           hide_on_mobile: true
         %}
 
-        <a class="header__action header__wishlist" href="/pages/wishlist" aria-label="Wishlist">
-          {% render 'icons', icon: 'wishlist' %}
-          <span class="header__wishlist-count" data-wishlist-count hidden>0</span>
-        </a>
+        {% if settings.enable_wishlist %}
+          <a class="header__action header__wishlist" href="/pages/wishlist" aria-label="Wishlist">
+            {% render 'icons', icon: 'wishlist' %}
+            <span class="header__wishlist-count" data-wishlist-count hidden>0</span>
+          </a>
+        {% endif %}
 
         <a
           class="header__action"

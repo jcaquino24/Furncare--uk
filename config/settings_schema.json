@@ -30,6 +30,13 @@
         "type": "image_picker",
         "id": "delivered_within_icon",
         "label": "Delivered within icon"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_wishlist",
+        "label": "Enable wishlist",
+        "default": true,
+        "info": "Show wishlist buttons and the wishlist link in the header."
       }
     ]
   },
