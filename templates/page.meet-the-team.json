@@ -362,12 +362,13 @@
         "image_card_wT46fW": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/tadlas_jh_B_W.jpg",
+            "image": "shopify://shop_images/Jo_b_w.png",
+            "hover_image": "shopify://shop_images/Jo.png",
             "title": "Jo Hazelle Tadlas",
             "subtitle": "System Developer",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
