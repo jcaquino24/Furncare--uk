@@ -147,7 +147,15 @@
   opacity: 0 !important;
 }
 
+.image-text-blocks .image-text-block__image.is-hovered .image-text-block__primary-image {
+  opacity: 0 !important;
+}
+
 .image-text-blocks .image-text-block__image:hover .image-text-block__hover-image {
+  opacity: 1 !important;
+}
+
+.image-text-blocks .image-text-block__image.is-hovered .image-text-block__hover-image {
   opacity: 1 !important;
 }
 

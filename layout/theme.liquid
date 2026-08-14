@@ -80,6 +80,7 @@
     {% render 'theme-variables' %}
     {% render 'theme-style-variables' %}
     <script src="{{ 'wishlist.js' | asset_url }}" defer></script>
+    <script src="{{ 'image-text-hover.js' | asset_url }}" defer></script>
     {% unless theme.role == 'development' %}
       <style>
         {{ 'uwp.critical.css' | inline_asset_content }}
