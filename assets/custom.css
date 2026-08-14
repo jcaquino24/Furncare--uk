@@ -137,7 +137,7 @@
 }
   display: none;
 .image-text-blocks .image-text-block__hover-image {
-  z-index: 2;
+  z-index: 0;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease;
@@ -165,10 +165,12 @@
 }
 
 .image-text-blocks .image-text-block__image:hover .image-text-block__hover-image {
+  z-index: 2;
   opacity: 1 !important;
 }
 
 .image-text-blocks .image-text-block__image.is-hovered .image-text-block__hover-image {
+  z-index: 2;
   opacity: 1 !important;
 }
 
