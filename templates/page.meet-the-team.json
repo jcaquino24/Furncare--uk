@@ -454,7 +454,6 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Mark_Flood.jpg",
-            "hover_image": "shopify://shop_images/Nick_Southall.jpg",
             "title": "Mark Flood",
             "subtitle": "Project Manager",
             "text": "",
