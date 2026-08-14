@@ -74,7 +74,6 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Adam_Drury.jpg",
-            "hover_image": "shopify://shop_images/Adam_Drury.png",
             "title": "Adam Drury",
             "subtitle": "Head of Operations",
             "text": "",
