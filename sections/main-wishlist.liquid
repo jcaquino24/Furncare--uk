@@ -1,0 +1,22 @@
+<section class="collection collection--default colour-scheme--light colour-scheme--base-white-01 wishlist-page" data-wishlist-page>
+  <div class="collection__container container">
+    <header class="collection__header wishlist-page__header">
+      <div class="collection__header-content">
+        <h1 class="collection__header-title title-md">{{ page.title | default: 'Wishlist' }}</h1>
+      </div>
+    </header>
+
+    <div class="collection__wrapper wishlist-page__wrapper">
+      <uwp-product-grid
+        class="collection__body"
+        role="region"
+        aria-label="Wishlist products"
+        aria-roledescription="region"
+      >
+        <div class="collection__grid" data-wishlist-content>
+          <p>Loading wishlist...</p>
+        </div>
+      </uwp-product-grid>
+    </div>
+  </div>
+</section>

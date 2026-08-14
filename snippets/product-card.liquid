@@ -169,6 +169,9 @@
     assign variant_taxable = product.selected_or_first_available_variant.taxable
   -%}
   <article class="product-card {{ additional_classes }}" data-price="{{ price_pounds }}" data-taxable="{{ variant_taxable }}">
+    {% if settings.enable_wishlist %}
+      {% render 'wishlist-button', product: product %}
+    {% endif %}
     <div class="product-card__rollover-images">
       {% comment %} Alternate Image - shown on hover {% endcomment %}
       {% if product.images.size > 1 %}

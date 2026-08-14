@@ -1,0 +1,15 @@
+<button
+  type="button"
+  class="wishlist-button"
+  data-wishlist-button
+  data-product-id="{{ product.id }}"
+  data-product-title="{{ product.title | escape }}"
+  data-product-url="{{ product.url | split: '?' | first }}"
+  data-product-image="{% if product.featured_image %}{{ product.featured_image | image_url: width: 600 }}{% endif %}"
+  aria-label="Add {{ product.title | escape }} to wishlist"
+  aria-pressed="false"
+>
+  <span class="visually-hidden">Wishlist</span>
+  <span data-wishlist-icon="empty">{% render 'icons', icon: 'wishlist' %}</span>
+  <span data-wishlist-icon="filled">{% render 'icons', icon: 'wishlist-fill' %}</span>
+</button>
