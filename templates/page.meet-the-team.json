@@ -374,6 +374,7 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/P1141052-B_W.jpg",
+            "hover_image": "shopify://shop_images/P1141052.jpg",
             "title": "Kevin Langley",
             "subtitle": "Head of Supply Chain",
             "text": "",
