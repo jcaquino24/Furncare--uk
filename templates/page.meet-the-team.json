@@ -620,24 +620,23 @@
     "image_text_blocks_DF3jXP": {
       "type": "image-text-blocks",
       "blocks": {
+        "image_card_KGNzJ8": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_RWnTF4": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Sheldon_Southall.jpg",
             "title": "Sheldon Southall",
             "subtitle": "HEAD OF BUSINESS DEVELOPMENT",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_dEyM4r": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Paul_Sims.jpg",
-            "title": "Paul Sims",
-            "subtitle": "Warehouse & Production Manager",
             "text": "",
             "block_colour_scheme": "dark-mode",
             "show_gradient": true,
@@ -668,8 +667,8 @@
         }
       },
       "block_order": [
+        "image_card_KGNzJ8",
         "image_card_RWnTF4",
-        "image_card_dEyM4r",
         "image_card_DjEkVF",
         "image_card_kCTBhT"
       ],
