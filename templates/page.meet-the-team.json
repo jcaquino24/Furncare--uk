@@ -644,19 +644,18 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_9EaJCt": {
+        "image_card_DjEkVF": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Randal_Southall.jpg",
-            "title": "Randal Southall",
-            "subtitle": "SALES & MARKETING DIRECTOR",
+            "title": "",
+            "subtitle": "",
             "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
-        "image_card_DjEkVF": {
+        "image_card_kCTBhT": {
           "type": "image_card",
           "settings": {
             "title": "",
@@ -671,8 +670,8 @@
       "block_order": [
         "image_card_RWnTF4",
         "image_card_dEyM4r",
-        "image_card_9EaJCt",
-        "image_card_DjEkVF"
+        "image_card_DjEkVF",
+        "image_card_kCTBhT"
       ],
       "name": "Image text blocks",
       "settings": {
