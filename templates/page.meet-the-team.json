@@ -185,12 +185,13 @@
         "image_card_TM4beM": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Clifford-Aquino_B_W_forweb.jpg",
+            "image": "shopify://shop_images/Untitled_-_August_14_2026_at_14.44.07.png",
+            "hover_image": "shopify://shop_images/Clifford-Aquino_forweb.jpg",
             "title": "Clifford Aquino",
             "subtitle": "E-Commerce Specialist",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         }
@@ -217,13 +218,13 @@
         "image_card_VGKDDc": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Damian-Temple_B_W-for-web.jpg",
-            "image_mobile": "shopify://shop_images/Damian-Temple_B_W-for-web.jpg",
+            "image": "shopify://shop_images/Damian_Temple_B_W.png",
+            "hover_image": "shopify://shop_images/Damian_Temple.png",
             "title": "Damian Temple",
             "subtitle": "Business Development Manager",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
@@ -231,11 +232,12 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Debbie_Park.jpg",
+            "hover_image": "shopify://shop_images/Debbie_Park.png",
             "title": "Debbie Park",
             "subtitle": "Finance Assistant",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
@@ -243,18 +245,19 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Declan_Turner.jpg",
+            "hover_image": "shopify://shop_images/Declan_Turner.png",
             "title": "Declan Turner",
             "subtitle": "Head of Client Relations",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
         "image_card_gzfknB": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/ella-4.jpg",
+            "image": "shopify://shop_images/ella-3.jpg",
             "title": "Ella Pasion",
             "subtitle": "Client Support Executive",
             "text": "",
@@ -288,11 +291,12 @@
           "settings": {
             "image": "shopify://shop_images/Emily-Kilkenny_B_W-for-web.jpg",
             "image_mobile": "shopify://shop_images/Emily-Kilkenny_B_W-for-web.jpg",
+            "hover_image": "shopify://shop_images/Emily_Kilkenny.png",
             "title": "Emily Kilkenny",
             "subtitle": "Sales Support Executive",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
@@ -300,11 +304,12 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Ernie_Francis.jpg",
+            "hover_image": "shopify://shop_images/Ernie_Francis.png",
             "title": "Ernie Francis",
             "subtitle": "CLIENT RELATIONS MANAGER",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
@@ -312,23 +317,25 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Giedrius_Kukuris.jpg",
+            "hover_image": "shopify://shop_images/Giedrius_Kukuris.png",
             "title": "Giedrius Kukuris",
             "subtitle": "Assistant Warehouse Manager",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
         "image_card_y49iGr": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Untitled_-_2025-11-18T103316.143.png",
+            "image": "shopify://shop_images/P1049918-2_abc57b09-c411-40fe-8e1f-7d7e8d52b78d.jpg",
+            "hover_image": "shopify://shop_images/P1049918_28dd821b-d999-409b-a572-8a1350a5c5a0.jpg",
             "title": "Jade Eaglen",
             "subtitle": "Specification & FIt-Out Manager",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         }
@@ -368,11 +375,12 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Jonathan_Southall_e2b9d1c1-59ce-47b8-9a7e-98aa242ab915.jpg",
+            "hover_image": "shopify://shop_images/Jonathan_Southall.png",
             "title": "Jonathan Southall",
             "subtitle": "FOUNDING DIRECTOR",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
@@ -385,7 +393,7 @@
             "subtitle": "Head of Supply Chain",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
@@ -393,11 +401,12 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Laura_Bajor.jpg",
+            "hover_image": "shopify://shop_images/Laura_Bajor.png",
             "title": "Laura Bajor",
             "subtitle": "Purchasing Coordinator",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         }
@@ -425,11 +434,12 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Lilly_Godfrey.jpg",
+            "hover_image": "shopify://shop_images/Lilly_Godfrey.png",
             "title": "Lilly Godfrey",
             "subtitle": "Logistics Coordinator",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
@@ -437,11 +447,12 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Lloyd-Bradley-B_W_for-web.jpg",
+            "hover_image": "shopify://shop_images/Lloyd_Bradley.png",
             "title": "Lloyd Bradley",
             "subtitle": "Production Supervisor",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
@@ -449,11 +460,12 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Lola_Devine.jpg",
+            "hover_image": "shopify://shop_images/Lola_Devine.png",
             "title": "Lola Devine",
             "subtitle": "Sales Support Executive",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
@@ -461,11 +473,12 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Marcella_Turner.jpg",
+            "hover_image": "shopify://shop_images/Marcella_Turner.png",
             "title": "Marcella Turner",
             "subtitle": "Executive Assistant",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         }
@@ -493,11 +506,12 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Mark_Flood.jpg",
+            "hover_image": "shopify://shop_images/Mark_Flood.png",
             "title": "Mark Flood",
             "subtitle": "Project Manager",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
@@ -510,7 +524,7 @@
             "subtitle": "Category Buyer",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
@@ -518,11 +532,12 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Molly_Tinker.jpg",
+            "hover_image": "shopify://shop_images/Molly_Tinker.png",
             "title": "Molly Tinker",
             "subtitle": "Brand & Marketing Projects Coordinator",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
@@ -563,11 +578,12 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Paige_McLellan.png",
+            "hover_image": "shopify://shop_images/Paige_McLellan_11787850-ffe9-4105-aff8-f9a41a78755b.jpg",
             "title": "Paige McLellan",
             "subtitle": "PRODUCT DEVELOPMENT COORDINATOR",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
@@ -575,11 +591,12 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Paul_Sims.jpg",
+            "hover_image": "shopify://shop_images/Paul_Sims.png",
             "title": "Paul Sims",
             "subtitle": "Warehouse & Production Manager",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
@@ -587,11 +604,12 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Randal_Southall.jpg",
+            "hover_image": "shopify://shop_images/Randal_Southall.png",
             "title": "Randal Southall",
             "subtitle": "SALES & MARKETING DIRECTOR",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
@@ -599,11 +617,12 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Sarah_Hart.jpg",
+            "hover_image": "shopify://shop_images/Sarah_Hart.png",
             "title": "Sarah Hart",
             "subtitle": "MANAGEMENT ACCOUNTANT",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         }
@@ -642,11 +661,12 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Sheldon_Southall.jpg",
+            "hover_image": "shopify://shop_images/Sheldon_Southall.png",
             "title": "Sheldon Southall",
             "subtitle": "HEAD OF BUSINESS DEVELOPMENT",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         },
