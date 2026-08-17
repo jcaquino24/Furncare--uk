@@ -12,6 +12,34 @@
 {% comment %} Adds canonical urls {% endcomment %}
 <link rel="canonical" href="{{ canonical_url }}">
 
+{% comment %}
+  Olark queue stub only: the header component calls olark("api.box.expand") on click.
+  Olark is installed via app embed/GTM (deferred for performance) so window.olark may not
+  exist yet at click time, which throws and silently breaks the button. This stub queues
+  calls so the click never errors; the real Olark loader (wherever it's configured) reads
+  and replays the queue once it attaches. It does not fetch olark itself to avoid a duplicate load.
+{% endcomment %}
+<script>
+  (function (o) {
+    if (o.olark) return;
+    var k = { s: [], t: [+new Date()], configure: {}, extend: {} };
+    var y = (o.olark = function () {
+      k.s.push(arguments);
+      k.t.push(+new Date());
+    });
+    y.extend = function (i, j) {
+      k.extend[i] = j;
+    };
+    y.identify = function (i) {
+      y('api.chat.login', { snippet: i });
+    };
+    y.configure = function (i, j) {
+      k.configure[i] = j;
+    };
+  })(window);
+</script>
+</script>
+
 <script>
   (function () {
     var pathname = window.location.pathname;
