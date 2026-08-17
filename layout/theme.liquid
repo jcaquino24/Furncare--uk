@@ -25,23 +25,25 @@
     <meta name="twitter:image" content="https:{{ settings.logo | image_url: width: 1200 }}">
     {% endif %}
 
+    <script src="https://panel.testerify.com/testerify.js"
+        data-tfy-key="d65b9e5f0e54bd024cd2d833099b430c1a6019a7e9c6e63172c5a14a5d5cb87e" defer></script>
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wxmb2evbaq");
+</script>
+
     {% comment %} Meta information {% endcomment %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ page_description }}">
 
-    {% if collection.handle == 'all' %}
-    <meta name="robots" content="noindex,follow">
-    {% endif %}
-
-    {% if request.page_type == 'search' %}
-    <meta name="robots" content="noindex,follow">
-    {% endif %}
-
     {%- liquid
       render 'vite-tag' with 'critical.css', preload_stylesheet: true
-      render 'vite-tag' with 'main.css', preload_stylesheet: true
+      render 'vite-tag' with 'main.css'
       render 'vite-tag' with 'main.ts'
     -%}
 
@@ -66,12 +68,30 @@
 
     {% comment %} Preloads {% endcomment %}
     {%- unless settings.type_body_font.system? -%}
-      {{ settings.type_body_font | font_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
+      <link
+        rel="preload"
+        as="font"
+        href="{{ settings.type_body_font | font_url }}"
+        type="font/woff2"
+        crossorigin
+      >
     {%- endunless -%}
 
     {% comment %} Big Caslon font preloads {% endcomment %}
-    {{ 'Big_Caslon_Medium.woff' | asset_url | preload_tag: as: 'font', type: 'font/woff', crossorigin: 'anonymous' }}
-    {{ 'Big_Caslon_Bold.woff' | asset_url | preload_tag: as: 'font', type: 'font/woff', crossorigin: 'anonymous' }}
+    <link
+      rel="preload"
+      as="font"
+      href="{{ 'Big_Caslon_Medium.woff' | asset_url }}"
+      type="font/woff"
+      crossorigin
+    >
+    <link
+      rel="preload"
+      as="font"
+      href="{{ 'Big_Caslon_Bold.woff' | asset_url }}"
+      type="font/woff"
+      crossorigin
+    >
 
     {% comment %} Scripts and utils {% endcomment %}
     {% render 'header-scripts' %}
@@ -79,8 +99,6 @@
     {% comment %} Theme variables {% endcomment %}
     {% render 'theme-variables' %}
     {% render 'theme-style-variables' %}
-    <script src="{{ 'wishlist.js' | asset_url }}" defer></script>
-    <script src="{{ 'image-text-hover.js' | asset_url }}" defer></script>
     {% unless theme.role == 'development' %}
       <style>
         {{ 'uwp.critical.css' | inline_asset_content }}
@@ -127,7 +145,7 @@
         %}
       {% endif %}
     </div>
-<!-- begin olark code -->
+    <!-- begin olark code -->
     <script type="text/javascript" async>
       (function (o, l, a, r, k, y) {
         if (o.olark) return;
@@ -158,5 +176,10 @@
       );
     </script>
     <!-- end olark code -->
+
+
+
+
+
   </body>
 </html>
