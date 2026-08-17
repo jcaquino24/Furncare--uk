@@ -182,7 +182,7 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_TM4beM": {
+        "image_card_CBJGJw": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Untitled_-_August_14_2026_at_14.44.07.png",
@@ -191,7 +191,7 @@
             "subtitle": "E-Commerce Specialist",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": false,
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         }
@@ -200,7 +200,7 @@
         "image_card_4jLb9h",
         "image_card_rb9WiY",
         "image_card_BkPkaF",
-        "image_card_TM4beM"
+        "image_card_CBJGJw"
       ],
       "name": "Image text blocks",
       "settings": {
