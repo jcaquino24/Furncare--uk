@@ -258,12 +258,12 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Untitled_-_August_17_2026_at_07.57.27.png",
-            "hover_image": "shopify://shop_images/ChatGPT_Image_Aug_17_2026_07_56_02_AM.png",
+            "hover_image": "shopify://shop_images/ChatGPT_Image_Aug_17_2026_07_56_02_AM_708e689c-4495-4373-95aa-44b19cdccb2e.png",
             "title": "Ella Pasion",
             "subtitle": "Client Support Executive",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         }
