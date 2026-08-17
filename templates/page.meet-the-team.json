@@ -257,7 +257,8 @@
         "image_card_gzfknB": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/ella-3.jpg",
+            "image": "shopify://shop_images/Untitled_-_August_17_2026_at_07.57.27.png",
+            "hover_image": "shopify://shop_images/ChatGPT_Image_Aug_17_2026_07_56_02_AM.png",
             "title": "Ella Pasion",
             "subtitle": "Client Support Executive",
             "text": "",
