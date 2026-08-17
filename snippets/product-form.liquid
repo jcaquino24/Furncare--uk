@@ -57,7 +57,7 @@
     {% endif %}
   
   {% if hubspot_form != blank %}
-    {% if template.suffix != 'no-price' or template.suffix != 'fabric' %}
+    {% if template.suffix != 'no-price' %}
     <div class="{{ base_class }}__hubspot-form">
       {{ hubspot_form }}
     </div>
@@ -76,13 +76,13 @@
         </a>
       </div>
     {% endif %}
-    {% if template.suffix != 'no-price' or template.suffix != 'fabric' %}
+    {% if template.suffix != 'no-price' %}
       <div class="{{ base_class }}__hubspot-form">
         {{ hubspot_form }}
       </div>
     {% endif %}
 {% else %}
-  {% if template.suffix != 'no-price' or template.suffix != 'fabric' %}
+  {% if template.suffix != 'no-price' %}
   {%- form 'product',
     product,
     class: 'ProductForm',
