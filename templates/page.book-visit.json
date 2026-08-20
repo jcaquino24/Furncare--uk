@@ -9,15 +9,257 @@
  */
 {
   "sections": {
+    "faqs_Lwg9Cg": {
+      "type": "faqs",
+      "blocks": {
+        "faq_zdCQx6": {
+          "type": "faq",
+          "settings": {
+            "question": "How can I place an order?",
+            "answer": "<p>You can place an order by any of the following methods:</p><ul><li>online</li><li>email to <a href=\"mailto:sales@furncare.co.uk\">sales@furncare.co.uk</a></li><li>call <a href=\"tel:01603664900\">01603 664 900</a></li><li>via our website’s online chat function</li></ul><p>Our advisors will be able to talk through your purchase and offer advice based on your requirements. Please advise when placing your order if you have a purchase order number and if there are any special delivery instructions i.e. difficult access, stairs etc.</p><p>Once your order has been placed, you will receive a confirmation email along with any additional information you need to know and our operations team will then be in contact to book your delivery date.</p>"
+          }
+        },
+        "faq_mW9d3H": {
+          "type": "faq",
+          "settings": {
+            "question": "What are your delivery terms and where do you deliver to?",
+            "answer": "<p>Please refer to </p>"
+          }
+        },
+        "faq_iVhRLj": {
+          "type": "faq",
+          "settings": {
+            "question": "What are my payment options?",
+            "answer": "<p>New customers:</p>"
+          }
+        },
+        "faq_DhwLYE": {
+          "type": "faq",
+          "settings": {
+            "question": "When will I receive my order?",
+            "answer": "<p>For in stock items</p>"
+          }
+        },
+        "faq_D6hfGm": {
+          "type": "faq",
+          "settings": {
+            "question": "What should I expect on the day of my delivery?",
+            "answer": "<p>We pride ourselves</p>"
+          }
+        },
+        "faq_YYzig7": {
+          "type": "faq",
+          "settings": {
+            "question": "Are my items covered under a guarantee?",
+            "answer": "<p>Our general guarantee terms are as below</p>"
+          }
+        },
+        "faq_FNAWrc": {
+          "type": "faq",
+          "settings": {
+            "question": "Are your furniture and soft furnishings fire retardant?",
+            "answer": "<p>All of our upholstery and textiles are fire retardant and wherever applicable all of our furniture is also Crib 5 FR.</p>"
+          }
+        },
+        "faq_hW9E4x": {
+          "type": "faq",
+          "settings": {
+            "question": "I have a project I'd like to discuss, will you visit my home?",
+            "answer": "<p>We'd love to hear more about your project!</p>"
+          }
+        },
+        "faq_k3HngJ": {
+          "type": "faq",
+          "settings": {
+            "question": "Is faux leather upholstery the best option for my home?",
+            "answer": "<p>There are a wide range of healthcare upholstery options and in many cases both textile and faux leather upholstery would be suitable. Our advisors are happy to recommend upholsteries based on your requirements and the type of care you provide. Please discuss this with us when placing your order if you would like any guidance.</p>"
+          }
+        },
+        "faq_HeftDM": {
+          "type": "faq",
+          "settings": {
+            "question": "What sectors do you supply to?",
+            "answer": "<p>We supply to elderly care, including dementia and nursing, supported living, learning and physical disability homes and also more challenging environments.</p><p>As some products aren’t suitable for certain sectors, you can navigate through our menus on the homepage to the sector you require and the products that we would recommend. Our team are also able to offer advice on the suitability of a product for your environment.</p>"
+          }
+        },
+        "faq_77ewXj": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I care for my products?",
+            "answer": "<p>To find out how to look after your products in the best way possible, please read our cleaning and laundering guides, which contain step by step processes and top tips when it comes to caring for your products.</p>"
+          }
+        },
+        "faq_iC36hH": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you have a showroom?",
+            "answer": "<p>Yes. Our showroom is available for visits subject to booking. Please call 01603 664900 or email sales@furncare.co.uk to arrange a viewing. Alternatively, we offer a sample van service where we can bring products to you.</p>"
+          }
+        },
+        "faq_LGQt4L": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you remove old furniture when you deliver?",
+            "answer": "<p>Our furniture removal service was introduced to provide a completely hassle-free service for our clients. As old furniture and furnishings are always disposed of responsibly (materials are recycled where possible), this service does come at a small extra cost per item. Get in touch with our team today to request a quotation for this service.</p>"
+          }
+        },
+        "faq_CqbGNm": {
+          "type": "faq",
+          "settings": {
+            "question": "My payment isn't going through online. What do I do?",
+            "answer": "<p>While it may seem obvious, please check you have the necessary funds in the account you are using. Check through the card details inputted for typos in the long card number, name on the card, expiry date or CCV number. If you are still having issues then please contact us, either through our web chat, email or give us a call.</p>"
+          }
+        },
+        "faq_jQitw7": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you measure up our windows for curtains or blinds?",
+            "answer": "<p>We will come out to your locations to measure up if you are dressing 6 windows or more. If you are dressing less than 6 windows then we would charge a callout fee.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_zdCQx6",
+        "faq_mW9d3H",
+        "faq_iVhRLj",
+        "faq_DhwLYE",
+        "faq_D6hfGm",
+        "faq_YYzig7",
+        "faq_FNAWrc",
+        "faq_hW9E4x",
+        "faq_k3HngJ",
+        "faq_HeftDM",
+        "faq_77ewXj",
+        "faq_iC36hH",
+        "faq_LGQt4L",
+        "faq_CqbGNm",
+        "faq_jQitw7"
+      ],
+      "disabled": true,
+      "name": "FAQs",
+      "settings": {
+        "faq_title": "Frequently Asked Questions",
+        "title_element": "h2",
+        "faq_text": "Scroll down for answers to our FAQs. If you can't find an answer to your question, give us a call on 01603 664900 or start a web chat and we'd be happy to help.",
+        "title_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "padding": "default"
+      }
+    },
     "main": {
       "type": "page",
-      "disabled": true,
       "settings": {
         "show_title": false
+      }
+    },
+    "image_text_7RTphB": {
+      "type": "image-text",
+      "blocks": {
+        "images_th7yC3": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Screenshot_2026-08-20_at_11.48.41.png"
+          }
+        },
+        "content_fKdp36": {
+          "type": "content",
+          "settings": {
+            "title": "Visit our Manufacturing Hub",
+            "title_size": "xl",
+            "text": "Step inside our new Manufacturing Hub and see where our furniture comes to life.\nExplore our manufacturing capabilities, meet the team and get a closer look at the craftsmanship, materials and processes behind our products.",
+            "button_style": "primary",
+            "button_text": "Book a Visit",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_th7yC3",
+        "content_fKdp36"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
+      }
+    },
+    "image_text_pqDwp7": {
+      "type": "image-text",
+      "blocks": {
+        "content_MyjECd": {
+          "type": "content",
+          "settings": {
+            "title": "Visit our National Distribution Centre",
+            "title_size": "xl",
+            "text": "Take a look behind the scenes at our warehouse and see how we keep everything moving.\nExplore our stockholding and distribution operation, meet the team and see how we manage products from arrival through to dispatch.",
+            "button_style": "primary",
+            "button_text": "Book a Visit",
+            "button_url": ""
+          }
+        },
+        "images_UKgBhq": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/DSC_2029_90aab2bf-0348-4f6d-aef7-85ece0fccfa3.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "content_MyjECd",
+        "images_UKgBhq"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
+      }
+    },
+    "image_text_eeRLUR": {
+      "type": "image-text",
+      "blocks": {
+        "images_QcEJA4": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Screenshot_2026-08-20_at_12.05.46.png"
+          }
+        },
+        "content_aahENW": {
+          "type": "content",
+          "settings": {
+            "title": "Visit our Head Office & Showroom",
+            "title_size": "xl",
+            "text": "Visit our showroom, meet the people behind Furncare and experience our range in person.\n\nExplore our products, compare styles and finishes, and chat with our team about your projects, ideas and what you’re looking to achieve.",
+            "button_style": "primary",
+            "button_text": "Book a Visit",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_QcEJA4",
+        "content_aahENW"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     }
   },
   "order": [
-    "main"
+    "faqs_Lwg9Cg",
+    "main",
+    "image_text_7RTphB",
+    "image_text_pqDwp7",
+    "image_text_eeRLUR"
   ]
 }
