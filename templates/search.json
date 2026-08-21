@@ -12,7 +12,8 @@
     "main": {
       "type": "search",
       "settings": {
-        "promo_block": ""
+        "promo_block": "",
+        "price_filter_vat_percent": 20
       }
     },
     "content_blocks_qbXmqt": {
@@ -24,6 +25,12 @@
             "image": "shopify://shop_images/P1044762.jpg",
             "image_mobile": "shopify://shop_images/P1044762.jpg",
             "text": "Case Studies",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "https://www.furncare.co.uk/blogs/news/tagged/case-study",
             "gradient_overlay": "dark"
           }
@@ -34,7 +41,13 @@
             "image": "shopify://shop_images/P1091374-2-HDR.jpg",
             "image_mobile": "shopify://shop_images/P1091374-2-HDR.jpg",
             "text": "Inspiration",
-            "link": "https://pin.it/4882WQDjd",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "shopify://pages/about-us",
             "gradient_overlay": "dark"
           }
         },
@@ -44,6 +57,12 @@
             "image": "shopify://shop_images/Bistro_Area_7_f2121886-34fa-4304-96dd-467db6119328.jpg",
             "image_mobile": "shopify://shop_images/Bistro_Area_7_f2121886-34fa-4304-96dd-467db6119328.jpg",
             "text": "Contact Us",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "shopify://pages/contact-us",
             "gradient_overlay": "dark"
           }
