@@ -174,7 +174,7 @@
             {% for block in block_images %}
               {% if block.settings.image != blank %}
                 <swiper-slide class="image-text-blocks__slide">
-                  {% render 'content-image-text-block',
+                  {% render 'content-image-text-blockv2',
                     image: block.settings.image,
                     image_mobile: block.settings.image_mobile,
                     video: block.settings.video,
@@ -200,7 +200,7 @@
             {% assign slide_index = 0 %}
             {% for block in block_images %}
               {% if block.settings.image != blank %}
-                {% render 'content-image-text-block',
+                {% render 'content-image-text-blockv2',
                   image: block.settings.image,
                   image_mobile: block.settings.image_mobile,
                   video: block.settings.video,
