@@ -164,7 +164,7 @@
         "heading_FxDXBy": {
           "type": "heading",
           "settings": {
-            "text": "Hello, Julie!",
+            "text": "Hello, Rosie!",
             "heading_level": "h2",
             "heading_style": "title-display"
           },
@@ -174,7 +174,7 @@
           "type": "tagline",
           "name": "Tagline",
           "settings": {
-            "content": "Congratulations on finding us! We hope you and the team at Catalyst enjoy the cake. Whilst you do, pop the kettle on and watch the below video to find out more about us...",
+            "content": "Congratulations on finding us! We hope you and the team at RDCP Care enjoy the cake. Whilst you do, pop the kettle on and watch the below video to find out more about us...",
             "tagline_style": "body-lg"
           },
           "blocks": {}
@@ -186,13 +186,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 73,
         "section_padding": "--spacing-6xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": true,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "image_video_banner_rymz8n": {
@@ -221,9 +224,9 @@
         "content_yKNCUE": {
           "type": "content",
           "settings": {
-            "title": "Tailored to Catalyst Interiors",
+            "title": "Tailored to RDCP Care",
             "title_size": "xl",
-            "text": "This private preview has been created for the Catalyst Interiors team - a first look at how Furncare could support your upcoming bedroom schemes with considered furniture, flexible finishes and samples brought directly to your studio.",
+            "text": "This private preview has been created for the RDCP team - a first look at how Furncare could support your upcoming bedroom schemes with considered furniture, flexible finishes and samples brought directly to your studio.",
             "button_style": "primary",
             "button_text": "",
             "button_url": ""
@@ -232,7 +235,7 @@
         "images_aHJkED": {
           "type": "images",
           "settings": {
-            "image_one": "shopify://shop_images/Remove_background_project_-_June_16_2026_at_11.12.09_1.png"
+            "image_one": "shopify://shop_images/Untitled-1_92ab2829-dd12-4854-b6cf-5ca72ddb3b3d.png"
           }
         }
       },
@@ -242,7 +245,7 @@
       ],
       "name": "Image - Text",
       "settings": {
-        "colour_scheme": "warm-stone",
+        "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
         "enable_reveal": true,
         "reveal_distance": 32,
@@ -277,13 +280,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 64,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "green-02",
         "enable_animation": true,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "image_text_blocks_nxGfDV": {
@@ -687,13 +693,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
         "enable_animation": true,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "blocks_mRjBap": {
