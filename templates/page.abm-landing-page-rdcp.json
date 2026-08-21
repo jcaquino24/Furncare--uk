@@ -726,6 +726,87 @@
       ],
       "name": "Rich text with form",
       "settings": {}
+    },
+    "image_text_nohover_gCNzKQ": {
+      "type": "image-text-nohover",
+      "blocks": {
+        "image_card_hcwwMF": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Close_up_curve2.png",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_e6gG4V": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-08-20_at_12.05.46.png",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_YxzFfz": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-08-20_at_11.48.41.png",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_g7YAjU": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_-_August_17_2026_at_08.00.34.png",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_bibXtC": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/StaffMeeting2026_Unedited-086.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_hcwwMF",
+        "image_card_e6gG4V",
+        "image_card_YxzFfz",
+        "image_card_g7YAjU",
+        "image_card_bibXtC"
+      ],
+      "name": "Image text blocks v2",
+      "settings": {
+        "title": "Content Gallery",
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "base-white-01",
+        "text_position": "over_image",
+        "mobile_layout": "swiper",
+        "enable_lightbox": false
+      }
     }
   },
   "order": [
@@ -741,6 +822,7 @@
     "image_text_blocks_t47UB4",
     "image_text_blocks_AUyHrE",
     "richtext_RWTbfW",
-    "blocks_mRjBap"
+    "blocks_mRjBap",
+    "image_text_nohover_gCNzKQ"
   ]
 }
