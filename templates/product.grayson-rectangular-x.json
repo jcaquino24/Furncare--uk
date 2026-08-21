@@ -31,7 +31,7 @@
         "collection_popup_nUtbfX": {
           "type": "collection_popup",
           "settings": {
-            "collection": "grayson-circular-tables-curve-base-size-options-copy",
+            "collection": "grayson-square-tables-curve-base-size-options-copy",
             "button_text": "Browse Size Options",
             "button_subtext": "",
             "button_border": "1px solid #d9d9d9",
