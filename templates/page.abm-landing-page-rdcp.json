@@ -376,7 +376,7 @@
         "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
-        "enable_lightbox": false
+        "enable_lightbox": true
       }
     },
     "image_text_blocks_m8PcqQ": {
@@ -490,7 +490,7 @@
         "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
-        "enable_lightbox": true
+        "enable_lightbox": false
       }
     },
     "image_text_blocks_t47UB4": {
