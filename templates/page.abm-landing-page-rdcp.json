@@ -730,6 +730,18 @@
     "image_text_nohover_gCNzKQ": {
       "type": "image-text-nohover",
       "blocks": {
+        "image_card_ihcnhB": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/StaffMeeting2026_Unedited-086.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_hcwwMF": {
           "type": "image_card",
           "settings": {
@@ -777,26 +789,14 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
-        },
-        "image_card_bibXtC": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/StaffMeeting2026_Unedited-086.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
         }
       },
       "block_order": [
+        "image_card_ihcnhB",
         "image_card_hcwwMF",
         "image_card_e6gG4V",
         "image_card_YxzFfz",
-        "image_card_g7YAjU",
-        "image_card_bibXtC"
+        "image_card_g7YAjU"
       ],
       "name": "Image text blocks v2",
       "settings": {
