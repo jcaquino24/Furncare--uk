@@ -1,0 +1,737 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "faqs_Lwg9Cg": {
+      "type": "faqs",
+      "blocks": {
+        "faq_zdCQx6": {
+          "type": "faq",
+          "settings": {
+            "question": "How can I place an order?",
+            "answer": "<p>You can place an order by any of the following methods:</p><ul><li>online</li><li>email to <a href=\"mailto:sales@furncare.co.uk\">sales@furncare.co.uk</a></li><li>call <a href=\"tel:01603664900\">01603 664 900</a></li><li>via our website’s online chat function</li></ul><p>Our advisors will be able to talk through your purchase and offer advice based on your requirements. Please advise when placing your order if you have a purchase order number and if there are any special delivery instructions i.e. difficult access, stairs etc.</p><p>Once your order has been placed, you will receive a confirmation email along with any additional information you need to know and our operations team will then be in contact to book your delivery date.</p>"
+          }
+        },
+        "faq_mW9d3H": {
+          "type": "faq",
+          "settings": {
+            "question": "What are your delivery terms and where do you deliver to?",
+            "answer": "<p>Please refer to </p>"
+          }
+        },
+        "faq_iVhRLj": {
+          "type": "faq",
+          "settings": {
+            "question": "What are my payment options?",
+            "answer": "<p>New customers:</p>"
+          }
+        },
+        "faq_DhwLYE": {
+          "type": "faq",
+          "settings": {
+            "question": "When will I receive my order?",
+            "answer": "<p>For in stock items</p>"
+          }
+        },
+        "faq_D6hfGm": {
+          "type": "faq",
+          "settings": {
+            "question": "What should I expect on the day of my delivery?",
+            "answer": "<p>We pride ourselves</p>"
+          }
+        },
+        "faq_YYzig7": {
+          "type": "faq",
+          "settings": {
+            "question": "Are my items covered under a guarantee?",
+            "answer": "<p>Our general guarantee terms are as below</p>"
+          }
+        },
+        "faq_FNAWrc": {
+          "type": "faq",
+          "settings": {
+            "question": "Are your furniture and soft furnishings fire retardant?",
+            "answer": "<p>All of our upholstery and textiles are fire retardant and wherever applicable all of our furniture is also Crib 5 FR.</p>"
+          }
+        },
+        "faq_hW9E4x": {
+          "type": "faq",
+          "settings": {
+            "question": "I have a project I'd like to discuss, will you visit my home?",
+            "answer": "<p>We'd love to hear more about your project!</p>"
+          }
+        },
+        "faq_k3HngJ": {
+          "type": "faq",
+          "settings": {
+            "question": "Is faux leather upholstery the best option for my home?",
+            "answer": "<p>There are a wide range of healthcare upholstery options and in many cases both textile and faux leather upholstery would be suitable. Our advisors are happy to recommend upholsteries based on your requirements and the type of care you provide. Please discuss this with us when placing your order if you would like any guidance.</p>"
+          }
+        },
+        "faq_HeftDM": {
+          "type": "faq",
+          "settings": {
+            "question": "What sectors do you supply to?",
+            "answer": "<p>We supply to elderly care, including dementia and nursing, supported living, learning and physical disability homes and also more challenging environments.</p><p>As some products aren’t suitable for certain sectors, you can navigate through our menus on the homepage to the sector you require and the products that we would recommend. Our team are also able to offer advice on the suitability of a product for your environment.</p>"
+          }
+        },
+        "faq_77ewXj": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I care for my products?",
+            "answer": "<p>To find out how to look after your products in the best way possible, please read our cleaning and laundering guides, which contain step by step processes and top tips when it comes to caring for your products.</p>"
+          }
+        },
+        "faq_iC36hH": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you have a showroom?",
+            "answer": "<p>Yes. Our showroom is available for visits subject to booking. Please call 01603 664900 or email sales@furncare.co.uk to arrange a viewing. Alternatively, we offer a sample van service where we can bring products to you.</p>"
+          }
+        },
+        "faq_LGQt4L": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you remove old furniture when you deliver?",
+            "answer": "<p>Our furniture removal service was introduced to provide a completely hassle-free service for our clients. As old furniture and furnishings are always disposed of responsibly (materials are recycled where possible), this service does come at a small extra cost per item. Get in touch with our team today to request a quotation for this service.</p>"
+          }
+        },
+        "faq_CqbGNm": {
+          "type": "faq",
+          "settings": {
+            "question": "My payment isn't going through online. What do I do?",
+            "answer": "<p>While it may seem obvious, please check you have the necessary funds in the account you are using. Check through the card details inputted for typos in the long card number, name on the card, expiry date or CCV number. If you are still having issues then please contact us, either through our web chat, email or give us a call.</p>"
+          }
+        },
+        "faq_jQitw7": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you measure up our windows for curtains or blinds?",
+            "answer": "<p>We will come out to your locations to measure up if you are dressing 6 windows or more. If you are dressing less than 6 windows then we would charge a callout fee.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_zdCQx6",
+        "faq_mW9d3H",
+        "faq_iVhRLj",
+        "faq_DhwLYE",
+        "faq_D6hfGm",
+        "faq_YYzig7",
+        "faq_FNAWrc",
+        "faq_hW9E4x",
+        "faq_k3HngJ",
+        "faq_HeftDM",
+        "faq_77ewXj",
+        "faq_iC36hH",
+        "faq_LGQt4L",
+        "faq_CqbGNm",
+        "faq_jQitw7"
+      ],
+      "disabled": true,
+      "name": "FAQs",
+      "settings": {
+        "faq_title": "Frequently Asked Questions",
+        "title_element": "h2",
+        "faq_text": "Scroll down for answers to our FAQs. If you can't find an answer to your question, give us a call on 01603 664900 or start a web chat and we'd be happy to help.",
+        "title_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "padding": "default"
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "blocks_YBCEMw": {
+      "type": "_blocks",
+      "name": "Image",
+      "settings": {}
+    },
+    "richtext_ppgrRb": {
+      "type": "richtext",
+      "blocks": {
+        "heading_FxDXBy": {
+          "type": "heading",
+          "settings": {
+            "text": "Hello, Julie!",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_eLJk6D": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "Congratulations on finding us! We hope you and the team at Catalyst enjoy the cake. Whilst you do, pop the kettle on and watch the below video to find out more about us...",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_FxDXBy",
+        "tagline_eLJk6D"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 73,
+        "section_padding": "--spacing-6xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "image_video_banner_rymz8n": {
+      "type": "image-video-banner",
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 800,
+        "height_mobile": 300,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "video",
+        "video_mobile": "shopify://files/videos/Furncare Edit V6-1_380d84d1-144a-4f06-8683-81fdf8054b5d.mp4",
+        "show_controls": true,
+        "mute_video": false,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "light",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "image_text_AnXHqr": {
+      "type": "image-text",
+      "blocks": {
+        "content_yKNCUE": {
+          "type": "content",
+          "settings": {
+            "title": "Tailored to Catalyst Interiors",
+            "title_size": "xl",
+            "text": "This private preview has been created for the Catalyst Interiors team - a first look at how Furncare could support your upcoming bedroom schemes with considered furniture, flexible finishes and samples brought directly to your studio.",
+            "button_style": "primary",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "images_aHJkED": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Remove_background_project_-_June_16_2026_at_11.12.09_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "content_yKNCUE",
+        "images_aHJkED"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "warm-stone",
+        "section_padding": "--spacing-2xl",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
+      }
+    },
+    "richtext_Tr8V7z": {
+      "type": "richtext",
+      "blocks": {
+        "heading_FLnWrH": {
+          "type": "heading",
+          "settings": {
+            "text": "Here's your <em>exclusive</em> preview of our upcoming range...",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_aaQPUP": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "We're delighted to give you exclusive access to our new bedroom furniture ranges that are launching next month, allowing you to create truly bespoke bedrooms for care spaces.",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_FLnWrH",
+        "tagline_aaQPUP"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 64,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "green-02",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "image_text_blocks_nxGfDV": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "image_card_PYtYDy": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Elington.png",
+            "image_mobile": "shopify://shop_images/Elington.png",
+            "title": "Ellington",
+            "subtitle": "",
+            "text": "<p>Sleek front with fluted side detailing.</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_gmVWfh": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Tilbryy.png",
+            "image_mobile": "shopify://shop_images/Tilbryy.png",
+            "title": "Tilbury",
+            "subtitle": "",
+            "text": "<p>Soft rounded inset panel detailing.</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_iHghBK": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Abbottt.png",
+            "image_mobile": "shopify://shop_images/Abbottt.png",
+            "title": "Abbott",
+            "subtitle": "",
+            "text": "<p>Framed shaker-style drawer fronts.</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_GyHHQE": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Bronsno.png",
+            "image_mobile": "shopify://shop_images/Bronsno.png",
+            "title": "Bronson",
+            "subtitle": "",
+            "text": "<p>Clean, flat-front contemporary design.</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_QGknAa": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Gallkoway.png",
+            "image_mobile": "shopify://shop_images/Gallkoway.png",
+            "title": "Galloway",
+            "subtitle": "",
+            "text": "<p>Traditional raised-panel drawer design.</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_image": "shopify://shop_images/Galloway_542f340d-6eb6-4a59-b8df-ae0b47448fe1.png",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_PYtYDy",
+        "image_card_gmVWfh",
+        "image_card_iHghBK",
+        "image_card_GyHHQE",
+        "image_card_QGknAa"
+      ],
+      "name": "Image text blocks",
+      "settings": {
+        "title": "THE STYLES",
+        "section_padding": "--spacing-4xl",
+        "colour_scheme": "base-white-01",
+        "text_position": "over_image",
+        "mobile_layout": "swiper",
+        "enable_lightbox": false
+      }
+    },
+    "image_text_blocks_m8PcqQ": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "image_card_hDUXU4": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Arbor_Oak.jpg",
+            "image_mobile": "shopify://shop_images/Arbor_Oak.jpg",
+            "title": "Arbor Oak",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_KndxTX": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Moorland_Char.jpg",
+            "image_mobile": "shopify://shop_images/Moorland_Char.jpg",
+            "title": "Moorland Char",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_FKjcUi": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Moorland_Cinder.jpg",
+            "image_mobile": "shopify://shop_images/Moorland_Cinder.jpg",
+            "title": "Moorland Cinder",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_AhnMDV": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Moorland_Oak.jpg",
+            "image_mobile": "shopify://shop_images/Moorland_Oak.jpg",
+            "title": "Moorland Oak",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_Q8r99J": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Nera_Oak.jpg",
+            "image_mobile": "shopify://shop_images/Nera_Oak.jpg",
+            "title": "Nera Oak",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_BgXyVp": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Northen_Wenge.jpg",
+            "image_mobile": "shopify://shop_images/Northen_Wenge.jpg",
+            "title": "Northern Wenge",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_BU7nBH": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Sable_Walnut.jpg",
+            "image_mobile": "shopify://shop_images/Sable_Walnut.jpg",
+            "title": "Sable Walnut",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_hDUXU4",
+        "image_card_KndxTX",
+        "image_card_FKjcUi",
+        "image_card_AhnMDV",
+        "image_card_Q8r99J",
+        "image_card_BgXyVp",
+        "image_card_BU7nBH"
+      ],
+      "name": "Image text blocks",
+      "settings": {
+        "title": "the wood finishes",
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "base-white-01",
+        "text_position": "over_image",
+        "mobile_layout": "swiper",
+        "enable_lightbox": true
+      }
+    },
+    "image_text_blocks_t47UB4": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "image_card_p86eBK": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Bracken_Sage.jpg",
+            "image_mobile": "shopify://shop_images/Bracken_Sage.jpg",
+            "title": "Bracken Sage",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_kxdmLH": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Brushed_Cashmere.jpg",
+            "image_mobile": "shopify://shop_images/Brushed_Cashmere.jpg",
+            "title": "Brushed Cashmere",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_Vfeddi": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Coastal_Blue.jpg",
+            "image_mobile": "shopify://shop_images/Coastal_Blue.jpg",
+            "title": "Coastal Blue",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_ATKNA7": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Coastal_Storm.jpg",
+            "image_mobile": "shopify://shop_images/Coastal_Storm.jpg",
+            "title": "Coastal Storm",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_BTKUPg": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Minx.jpg",
+            "image_mobile": "shopify://shop_images/Minx.jpg",
+            "title": "Mink",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_8QyNhN": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Nordic_Slate.jpg",
+            "image_mobile": "shopify://shop_images/Nordic_Slate.jpg",
+            "title": "Nordic Slate",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_ipCh3g": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Porcelain.jpg",
+            "image_mobile": "shopify://shop_images/Porcelain.jpg",
+            "title": "Porcelain",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_p86eBK",
+        "image_card_kxdmLH",
+        "image_card_Vfeddi",
+        "image_card_ATKNA7",
+        "image_card_BTKUPg",
+        "image_card_8QyNhN",
+        "image_card_ipCh3g"
+      ],
+      "name": "Image text blocks",
+      "settings": {
+        "title": "the colour finishes",
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "base-white-01",
+        "text_position": "over_image",
+        "mobile_layout": "swiper",
+        "enable_lightbox": false
+      }
+    },
+    "image_text_blocks_AUyHrE": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "image_card_te9mAT": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Bronson_CU_e94cd062-ed6e-4d2b-af25-d183c0daddbc.jpg",
+            "image_mobile": "shopify://shop_images/Bronson_CU_e94cd062-ed6e-4d2b-af25-d183c0daddbc.jpg",
+            "title": "Core Handles",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_XMFjEK": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Ellington_CU.jpg",
+            "image_mobile": "shopify://shop_images/Ellington_CU.jpg",
+            "title": "Contour Handles",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_bx8bXd": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Abbott_CU.jpg",
+            "image_mobile": "shopify://shop_images/Abbott_CU.jpg",
+            "title": "Crosshatch Handles",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": true,
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_te9mAT",
+        "image_card_XMFjEK",
+        "image_card_bx8bXd"
+      ],
+      "name": "Image text blocks",
+      "settings": {
+        "title": "the finishing touches",
+        "section_padding": "--spacing-4xl",
+        "colour_scheme": "base-white-01",
+        "text_position": "over_image",
+        "mobile_layout": "swiper",
+        "enable_lightbox": false
+      }
+    },
+    "richtext_RWTbfW": {
+      "type": "richtext",
+      "blocks": {
+        "heading_xHFGxt": {
+          "type": "heading",
+          "settings": {
+            "text": "We'd love to bring you a sample of this new collection",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_TpMgq4": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "Please select a date from the options below that works for you, and we will be in touch to confirm a specific time!",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_xHFGxt",
+        "tagline_TpMgq4"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false
+      }
+    },
+    "blocks_mRjBap": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_txa47D": {
+          "type": "ai_gen_block_a8b1ae7",
+          "name": "Form embed",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"1e64f5f3-29b4-40e0-8f51-3237da20dbfe\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_txa47D"
+      ],
+      "name": "Rich text with form",
+      "settings": {}
+    }
+  },
+  "order": [
+    "faqs_Lwg9Cg",
+    "main",
+    "blocks_YBCEMw",
+    "richtext_ppgrRb",
+    "image_video_banner_rymz8n",
+    "image_text_AnXHqr",
+    "richtext_Tr8V7z",
+    "image_text_blocks_nxGfDV",
+    "image_text_blocks_m8PcqQ",
+    "image_text_blocks_t47UB4",
+    "image_text_blocks_AUyHrE",
+    "richtext_RWTbfW",
+    "blocks_mRjBap"
+  ]
+}
