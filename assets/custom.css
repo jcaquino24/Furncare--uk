@@ -159,6 +159,13 @@
   opacity: 1 !important;
 }
 
+/* Hover images are absolutely positioned, so swiper-slide (width: fit-content) has no
+   intrinsic content to size from and collapses to 0 width in slides-per-view="auto" mode. */
+.image-text-blocks .image-text-blocks__swiper.hide-on-mobile swiper-slide {
+  width: 320px;
+  max-width: 320px;
+}
+
 .image-text-blocks .image-text-block__content {
   position: absolute;
   inset-inline: 0;
