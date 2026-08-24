@@ -199,7 +199,7 @@
             "text": "Take a look behind the scenes at our warehouse and see how we keep everything moving.\nExplore our stockholding and distribution operation, meet the team and see how we manage products from arrival through to dispatch.",
             "button_style": "primary",
             "button_text": "Book a Visit",
-            "button_action": "link",
+            "button_action": "contact_drawer",
             "button_url": ""
           }
         },
@@ -241,7 +241,7 @@
             "text": "Visit our showroom, meet the people behind Furncare and experience our range in person.\n\nExplore our products, compare styles and finishes, and chat with our team about your projects, ideas and what you’re looking to achieve.",
             "button_style": "primary",
             "button_text": "Book a Visit",
-            "button_action": "link",
+            "button_action": "contact_drawer",
             "button_url": ""
           }
         }
