@@ -537,6 +537,7 @@
         },
         "image_card_ATKNA7": {
           "type": "image_card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Coastal_Storm.jpg",
             "image_mobile": "shopify://shop_images/Coastal_Storm.jpg",
