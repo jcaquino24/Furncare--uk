@@ -97,6 +97,14 @@
         "type": "shopify://apps/sp-request-a-quote/blocks/mp-request-for-quote-embed/019a3441-fea6-7e7b-ada9-3c4f6e8c5569",
         "disabled": true,
         "settings": {}
+      },
+      "7870687481494312845": {
+        "type": "shopify://apps/wishlist-hero/blocks/app-embed/a9a5079b-59e8-47cb-b659-ecf1c60b9b72",
+        "disabled": false,
+        "settings": {
+          "additionalWLButtonCssClasses": "",
+          "additionalWLCartBubbleCssClasses": ""
+        }
       }
     }
   },
