@@ -31,11 +31,33 @@
         "show_video_indicator": false,
         "background_colour_scheme": "base-white-01"
       }
+    },
+    "blocks_UcEpKV": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_c8DEjY": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"ca92391d-8d36-4546-b48f-a46d5f4a5eb2\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 40,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_c8DEjY"
+      ],
+      "name": "Form embed",
+      "settings": {}
     }
   },
   "order": [
     "main",
     "article_products",
-    "related_articles"
+    "related_articles",
+    "blocks_UcEpKV"
   ]
 }
