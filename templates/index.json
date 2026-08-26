@@ -37,10 +37,10 @@
             "new_tab": true,
             "button_style": "custom",
             "button_font_size": 14,
-            "button_font_color": "#F9F7F0",
+            "button_font_color": "#f9f7f0",
             "button_background": "",
             "button_border_width": 1,
-            "button_border_color": "#F9F7F0",
+            "button_border_color": "#f9f7f0",
             "button_padding": 12
           }
         },
@@ -89,6 +89,7 @@
         "media_type": "video",
         "image_desktop": "shopify://shop_images/Lounge_Roomset_Lifestyle_0825b1e2-6ad0-484e-b8eb-54adbe410da5.jpg",
         "video_desktop": "shopify://files/videos/My Movie 12.mp4",
+        "video_mobile": "shopify://files/videos/My Movie 12.mp4",
         "show_controls": false,
         "mute_video": true,
         "autoplay_video": true,
@@ -807,6 +808,7 @@
             "text": "Our experienced team builds relationships with customers to create long-lasting partnerships that help deliver outstanding care through ergonomically designed, contract-standard furniture. Our customers know we can support them with repeat orders and larger projects, including complete room refurbishment and full fit-outs.\n\nWe work with owners, managers, interior designers and staff of residential care homes, dementia care, nursing homes, mental health, and supported living services to deliver a wide range of furniture for care homes, including care home chairs, fire-retardant curtains, bedroom furniture, and care home beds, as well as complete pre-designed bedroom packages.",
             "button_style": "primary",
             "button_text": "",
+            "button_action": "link",
             "button_url": ""
           }
         }
@@ -819,6 +821,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -835,6 +838,7 @@
             "text": "Furncare specialises in the design, manufacture, and installation of distinctive care home furniture and interiors. With the widest range of furniture for care homes and the shortest lead times on the market, our 5 working-day delivery promise has revolutionised turnaround times, helping care homes maintain their occupancy rates and deliver excellent care.",
             "button_style": "primary",
             "button_text": "",
+            "button_action": "link",
             "button_url": ""
           }
         },
@@ -846,6 +850,7 @@
             "text": "We manufacture our chairs and fabrics to meet care industry standards, and continually work with our customers to develop inspirational ranges. \n\n\nEvery care is taken to ensure the finish and longevity of our unique furniture. Crafted to meet contract standards, our customers know that they can count on us for durable, well-finished furniture.",
             "button_style": "primary",
             "button_text": "",
+            "button_action": "link",
             "button_url": ""
           }
         }
@@ -858,6 +863,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -874,6 +880,7 @@
             "text": "Since being founded in 2004, Furncare's focus has been on quality and delivery. It is our mission to support architects and interior designers working on large-scale care home projects so they can develop their ideas knowing they have a robust, creative furniture supplier.\nOur customers know that they can rely on us, time and time again, to help them deliver superb-quality furnishings for their homes and care facilities. If you would like to discuss a project with Furncare, please contact us.",
             "button_style": "primary",
             "button_text": "",
+            "button_action": "link",
             "button_url": ""
           }
         },
@@ -893,6 +900,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
