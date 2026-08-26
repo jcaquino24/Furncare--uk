@@ -130,10 +130,283 @@
         "secondary_button_hover_color": "#0c0a09",
         "secondary_button_hover_border": "#ffffff"
       }
+    },
+    "richtext_crVmJc": {
+      "type": "richtext",
+      "blocks": {
+        "heading_a6NARf": {
+          "type": "heading",
+          "settings": {
+            "text": "Explore the schemes:",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_a6NARf"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "id_anchor": "",
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
+      }
+    },
+    "image_text_FA3Lh3": {
+      "type": "image-text",
+      "blocks": {
+        "images_aU4NBW": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/image_71.png"
+          }
+        },
+        "content_Lg8Pha": {
+          "type": "content",
+          "settings": {
+            "title": "The Botanical Scheme",
+            "title_size": "xl",
+            "text": "Display an image alongside text content to highlight key information about your brand or products.",
+            "button_style": "primary",
+            "button_text": "View this scheme",
+            "button_action": "link",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_aU4NBW",
+        "content_Lg8Pha"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
+      }
+    },
+    "image_text_EMDTyg": {
+      "type": "image-text",
+      "blocks": {
+        "images_Kp4hQy": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/image_71.png"
+          }
+        },
+        "content_QVKLTJ": {
+          "type": "content",
+          "settings": {
+            "title": "The Botanical Scheme",
+            "title_size": "xl",
+            "text": "Display an image alongside text content to highlight key information about your brand or products.",
+            "button_style": "primary",
+            "button_text": "View this scheme",
+            "button_action": "link",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_Kp4hQy",
+        "content_QVKLTJ"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
+      }
+    },
+    "image_text_gd63tV": {
+      "type": "image-text",
+      "blocks": {
+        "images_nTrA3E": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/image_71.png"
+          }
+        },
+        "content_xYWKVm": {
+          "type": "content",
+          "settings": {
+            "title": "The Botanical Scheme",
+            "title_size": "xl",
+            "text": "Display an image alongside text content to highlight key information about your brand or products.",
+            "button_style": "primary",
+            "button_text": "View this scheme",
+            "button_action": "link",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_nTrA3E",
+        "content_xYWKVm"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
+      }
+    },
+    "image_text_BfEWWq": {
+      "type": "image-text",
+      "blocks": {
+        "images_fhDDA4": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/image_71.png"
+          }
+        },
+        "content_YxV3jB": {
+          "type": "content",
+          "settings": {
+            "title": "The Botanical Scheme",
+            "title_size": "xl",
+            "text": "Display an image alongside text content to highlight key information about your brand or products.",
+            "button_style": "primary",
+            "button_text": "View this scheme",
+            "button_action": "link",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_fhDDA4",
+        "content_YxV3jB"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
+      }
+    },
+    "image_text_kQ4tLi": {
+      "type": "image-text",
+      "blocks": {
+        "images_PUVVp3": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/image_71.png"
+          }
+        },
+        "content_pyj39e": {
+          "type": "content",
+          "settings": {
+            "title": "The Botanical Scheme",
+            "title_size": "xl",
+            "text": "Display an image alongside text content to highlight key information about your brand or products.",
+            "button_style": "primary",
+            "button_text": "View this scheme",
+            "button_action": "link",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "images_PUVVp3",
+        "content_pyj39e"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
+      }
+    },
+    "faqs_bR3HUQ": {
+      "type": "faqs",
+      "blocks": {
+        "faq_qE7nKM": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I mix pieces from different schemes?",
+            "answer": "<p>Yes. If you like elements from different schemes, you can mix and match to create something that feels right for your space.</p>"
+          }
+        },
+        "faq_ferWYB": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you help me adapt a scheme to my space?",
+            "answer": "<p>Yes. Our team can help you make practical changes while keeping the scheme feeling cohesive.</p>"
+          }
+        },
+        "faq_RDwEq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I see samples before ordering?",
+            "answer": "<p>Yes. We can provide samples so you can see and feel fabrics and finishes before making a final decision.</p>"
+          }
+        },
+        "faq_jUqTe9": {
+          "type": "faq",
+          "settings": {
+            "question": "Is there an additional design fee?",
+            "answer": "<p>No. Curated Spaces was created to reduce the need for a full bespoke design process. Any additional support can be discussed with your Furncare contact.</p>"
+          }
+        },
+        "faq_BjykGM": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I change the fabrics?",
+            "answer": "<p>Curated Spaces are designed to be a starting point, not a rulebook. You can swap fabrics, finishes or pieces to better suit your space, while still using the scheme as your guide.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_qE7nKM",
+        "faq_ferWYB",
+        "faq_RDwEq4",
+        "faq_jUqTe9",
+        "faq_BjykGM"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "faq_title": "Frequently Asked Questions",
+        "title_element": "h2",
+        "faq_text": "",
+        "title_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "padding": "wide"
+      }
     }
   },
   "order": [
     "main",
-    "furncare_about_hero_bxhnJb"
+    "furncare_about_hero_bxhnJb",
+    "richtext_crVmJc",
+    "image_text_FA3Lh3",
+    "image_text_EMDTyg",
+    "image_text_gd63tV",
+    "image_text_BfEWWq",
+    "image_text_kQ4tLi",
+    "faqs_bR3HUQ"
   ]
 }

@@ -1,0 +1,319 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "richtext_iLabEM": {
+      "type": "richtext",
+      "blocks": {
+        "heading_UeeDLH": {
+          "type": "heading",
+          "settings": {
+            "text": "The Botanical Scheme",
+            "heading_level": "h1",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_UeeDLH"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "id_anchor": "",
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
+      }
+    },
+    "hotspots_bfFtxR": {
+      "type": "hotspots",
+      "blocks": {
+        "hotspot_7rzE6j": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "",
+            "description": "",
+            "desktop_x": 50,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_AKqBtN": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "overton-small-sideboard",
+            "description": "",
+            "desktop_x": 88,
+            "desktop_y": 22,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_7TR63d": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "overton-5-shelf-bookcase",
+            "description": "",
+            "desktop_x": 92,
+            "desktop_y": 66,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_m3QJAH": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "amara-arm-chair",
+            "description": "",
+            "desktop_x": 65,
+            "desktop_y": 76,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_MDJdmT": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "amara-arm-chair",
+            "description": "",
+            "desktop_x": 83,
+            "desktop_y": 76,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_kcJM9y": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "livonia-circular-coffee-table",
+            "description": "",
+            "desktop_x": 34,
+            "desktop_y": 88,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "tab_gHwhLq": {
+          "type": "tab",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/image_71.png",
+            "image_desktop": "shopify://shop_images/image_71.png",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "hotspot_AKcbMM": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "overton-small-tv-unit",
+            "description": "",
+            "desktop_x": 29,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_Cry7mM": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "ethan-highback-3-seater-sofa",
+            "description": "",
+            "desktop_x": 21,
+            "desktop_y": 20,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_jC3LWj": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "livonia-square-coffee-table",
+            "description": "",
+            "desktop_x": 38,
+            "desktop_y": 24,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_wiiVMc": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "overton-console-table",
+            "description": "",
+            "desktop_x": 50,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_7qNhjA": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "elliot-tub-chair",
+            "description": "",
+            "desktop_x": 60,
+            "desktop_y": 26,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_7rzE6j",
+        "hotspot_AKqBtN",
+        "hotspot_7TR63d",
+        "hotspot_m3QJAH",
+        "hotspot_MDJdmT",
+        "hotspot_kcJM9y",
+        "tab_gHwhLq",
+        "hotspot_AKcbMM",
+        "hotspot_Cry7mM",
+        "hotspot_jC3LWj",
+        "hotspot_wiiVMc",
+        "hotspot_7qNhjA"
+      ],
+      "name": "Hotspots",
+      "settings": {
+        "remove_top_padding": false,
+        "colour_scheme": "base-white-01"
+      }
+    },
+    "product_blocks_Fra7Pt": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_3mFakK": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "amaryllis-papaya",
+              "amaryllis-aquamarine",
+              "amaryllis-spring",
+              "albany-papaya",
+              "albany-slate-blue",
+              "albany-spring"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        },
+        "product_block_gbHrnY": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_3mFakK",
+        "product_block_gbHrnY"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Featured Fabrics",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "blocks_whr8ft": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_9e99ca3_L3AVc7": {
+          "type": "ai_gen_block_9e99ca3",
+          "settings": {
+            "layout": "form_left",
+            "mobile_layout": "content_first",
+            "container_width": 1200,
+            "column_gap": 60,
+            "section_padding_top": 60,
+            "section_padding_bottom": 60,
+            "embed_url": "",
+            "embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "form_min_height": 300,
+            "form_background_color": "#f8f8f8",
+            "form_border_radius": 8,
+            "heading": "<p>Get in touch</p>",
+            "heading_font": "red_hat_display_n4",
+            "heading_size": 40,
+            "heading_color": "#000000",
+            "heading_spacing": 24,
+            "body_text": "<p>We'd love to hear from you. Fill out the form and our team will get back to you within 24 hours.</p>",
+            "body_size": 16,
+            "body_color": "#666666",
+            "body_spacing": 32,
+            "button_label": "",
+            "button_link": "",
+            "button_font_size": 16,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "button_background_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_hover_background_color": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "button_border_radius": 4
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_9e99ca3_L3AVc7"
+      ],
+      "name": "Form and text",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "richtext_iLabEM",
+    "hotspots_bfFtxR",
+    "product_blocks_Fra7Pt",
+    "blocks_whr8ft"
+  ]
+}
