@@ -20,9 +20,9 @@
       "type": "furncare-about-hero",
       "name": "Furncare hero advanced",
       "settings": {
-        "eyebrow": "",
-        "heading": "Curated Spaces",
-        "copy": "From first brief to final placement, Furncare helps project teams specify, supply and deliver furniture schemes for ambitious care environments.",
+        "eyebrow": "introducing curated spaces...",
+        "heading": "Professionally coordinated room schemes made simple.",
+        "copy": "",
         "primary_label": "",
         "primary_action": "link",
         "primary_link": "",
