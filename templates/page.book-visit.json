@@ -155,10 +155,11 @@
     "image_text_7RTphB": {
       "type": "image-text",
       "blocks": {
-        "images_th7yC3": {
-          "type": "images",
+        "video_XrhKLN": {
+          "type": "video",
           "settings": {
-            "image_one": "shopify://shop_images/Screenshot_2026-08-20_at_11.48.41.png"
+            "video": "shopify://files/videos/Old Malton Case Study.mp4",
+            "show_controls": false
           }
         },
         "content_fKdp36": {
@@ -175,7 +176,7 @@
         }
       },
       "block_order": [
-        "images_th7yC3",
+        "video_XrhKLN",
         "content_fKdp36"
       ],
       "name": "Image - Text",
@@ -254,7 +255,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
-        "contact_form_html": "<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"ca92391d-8d36-4546-b48f-a46d5f4a5eb2\" data-portal-id=\"145723791\"></div>",
+        "contact_form_html": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"d238ceee-b51b-451a-bcea-4b3987db931e\" data-portal-id=\"145723791\"></div>",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
