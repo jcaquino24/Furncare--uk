@@ -340,6 +340,62 @@
         "reveal_distance": 32,
         "reveal_duration": 760
       }
+    },
+    "faqs_bR3HUQ": {
+      "type": "faqs",
+      "blocks": {
+        "faq_qE7nKM": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I mix pieces from different schemes?",
+            "answer": "<p>Yes. If you like elements from different schemes, you can mix and match to create something that feels right for your space.</p>"
+          }
+        },
+        "faq_ferWYB": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you help me adapt a scheme to my space?",
+            "answer": "<p>Yes. Our team can help you make practical changes while keeping the scheme feeling cohesive.</p>"
+          }
+        },
+        "faq_RDwEq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I see samples before ordering?",
+            "answer": "<p>Yes. We can provide samples so you can see and feel fabrics and finishes before making a final decision.</p>"
+          }
+        },
+        "faq_jUqTe9": {
+          "type": "faq",
+          "settings": {
+            "question": "Is there an additional design fee?",
+            "answer": "<p>No. Curated Spaces was created to reduce the need for a full bespoke design process. Any additional support can be discussed with your Furncare contact.</p>"
+          }
+        },
+        "faq_BjykGM": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I change the fabrics?",
+            "answer": "<p>Curated Spaces are designed to be a starting point, not a rulebook. You can swap fabrics, finishes or pieces to better suit your space, while still using the scheme as your guide.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_qE7nKM",
+        "faq_ferWYB",
+        "faq_RDwEq4",
+        "faq_jUqTe9",
+        "faq_BjykGM"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "faq_title": "Frequently Asked Questions",
+        "title_element": "h2",
+        "faq_text": "",
+        "title_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "padding": "wide"
+      }
     }
   },
   "order": [
@@ -350,6 +406,7 @@
     "image_text_EMDTyg",
     "image_text_gd63tV",
     "image_text_BfEWWq",
-    "image_text_kQ4tLi"
+    "image_text_kQ4tLi",
+    "faqs_bR3HUQ"
   ]
 }
