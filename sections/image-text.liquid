@@ -23,6 +23,17 @@
 {%- capture furncare_selector -%}#FurncareAboutHero-{{ section.id }}{%- endcapture -%}
 {% style %}
   {% render 'furncare-about-style-vars', selector: furncare_selector, section_settings: section.settings %}
+  #FurncareAbouttext-{{ section.id }} .image-text__video {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-sm, 4px);
+    overflow: hidden;
+  }
+  #FurncareAbouttext-{{ section.id }} .image-text__video video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 {% endstyle %}
 {%- liquid
   assign colour_scheme = section.settings.colour_scheme
@@ -71,6 +82,34 @@
                   -%}
                 {%- endif -%}
               </div>
+            </div>
+          {% when 'video' %}
+            {% assign video_mobile = block.settings.video_mobile | default: block.settings.video %}
+            <div
+              class="image-text__video"
+              data-index="{{ forloop.index }}"
+              {{ block.shopify_attributes }}
+            >
+              {% if block.settings.video != blank %}
+                {{ block.settings.video | video_tag:
+                  autoplay: true,
+                  loop: true,
+                  muted: true,
+                  controls: block.settings.show_controls,
+                  preload: 'metadata',
+                  class: 'image-text__video-desktop hide-on-mobile'
+                }}
+              {% endif %}
+              {% if video_mobile != blank %}
+                {{ video_mobile | video_tag:
+                  autoplay: true,
+                  loop: true,
+                  muted: true,
+                  controls: block.settings.show_controls,
+                  preload: 'metadata',
+                  class: 'image-text__video-mobile hide-on-desktop'
+                }}
+              {% endif %}
             </div>
           {% when 'content' %}
             <div
@@ -492,6 +531,29 @@
           "type": "image_picker",
           "id": "image_two",
           "label": "Image two"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Desktop video"
+        },
+        {
+          "type": "video",
+          "id": "video_mobile",
+          "label": "Mobile video",
+          "info": "Optional. Uses the desktop video when blank."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_controls",
+          "label": "Show video controls",
+          "default": false
         }
       ]
     },
