@@ -22,24 +22,15 @@
         "heading_UeeDLH": {
           "type": "heading",
           "settings": {
-            "text": "The Oatmeal Scheme",
+            "text": "The Botanical Scheme",
             "heading_level": "h1",
             "heading_style": "title-display"
-          },
-          "blocks": {}
-        },
-        "tagline_Bba3di": {
-          "type": "tagline",
-          "settings": {
-            "content": "PACKAGE SKU: B702",
-            "tagline_style": "body-sm"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "heading_UeeDLH",
-        "tagline_Bba3di"
+        "heading_UeeDLH"
       ],
       "name": "Rich Text",
       "settings": {
@@ -58,156 +49,132 @@
     "hotspots_bfFtxR": {
       "type": "hotspots",
       "blocks": {
-        "tab_gHwhLq": {
-          "type": "tab",
-          "settings": {
-            "title": "",
-            "image": "shopify://shop_images/Untitled_68.jpg",
-            "image_desktop": "shopify://shop_images/Untitled_68.jpg",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        },
-        "hotspot_a9JU6t": {
+        "hotspot_7rzE6j": {
           "type": "hotspot",
           "settings": {
             "tab": "1",
-            "product": "portland-gents-wardrobe",
+            "product": "",
             "description": "",
-            "desktop_x": 11,
-            "desktop_y": 35,
-            "mobile_x": 50,
-            "mobile_y": 50
-          }
-        },
-        "hotspot_Rtw73F": {
-          "type": "hotspot",
-          "settings": {
-            "tab": "1",
-            "product": "portland-three-drawer-chest",
-            "description": "",
-            "desktop_x": 39,
-            "desktop_y": 52,
-            "mobile_x": 50,
-            "mobile_y": 50
-          }
-        },
-        "hotspot_RPxeYB": {
-          "type": "hotspot",
-          "settings": {
-            "tab": "1",
-            "product": "portland-three-drawer-bedside",
-            "description": "",
-            "desktop_x": 90,
-            "desktop_y": 63,
-            "mobile_x": 50,
-            "mobile_y": 50
-          }
-        },
-        "hotspot_WWcGt8": {
-          "type": "hotspot",
-          "settings": {
-            "tab": "1",
-            "product": "alice-highback-chair-with-wings-marna-hessian",
-            "description": "",
-            "desktop_x": 24,
-            "desktop_y": 60,
-            "mobile_x": 50,
-            "mobile_y": 50
-          }
-        },
-        "hotspot_w4UamA": {
-          "type": "hotspot",
-          "settings": {
-            "tab": "1",
-            "product": "grandios-b702-chair-cushion",
-            "description": "",
-            "desktop_x": 27,
+            "desktop_x": 50,
             "desktop_y": 50,
             "mobile_x": 50,
             "mobile_y": 50
           }
         },
-        "hotspot_yGUBJH": {
+        "hotspot_AKqBtN": {
           "type": "hotspot",
           "settings": {
             "tab": "1",
-            "product": "oliver-chablis",
+            "product": "overton-small-sideboard",
             "description": "",
-            "desktop_x": 42,
+            "desktop_x": 88,
+            "desktop_y": 22,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_7TR63d": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "overton-5-shelf-bookcase",
+            "description": "",
+            "desktop_x": 92,
+            "desktop_y": 66,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_m3QJAH": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "amara-arm-chair",
+            "description": "",
+            "desktop_x": 65,
+            "desktop_y": 76,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_MDJdmT": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "amara-arm-chair",
+            "description": "",
+            "desktop_x": 83,
+            "desktop_y": 76,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_kcJM9y": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "livonia-circular-coffee-table",
+            "description": "",
+            "desktop_x": 34,
+            "desktop_y": 88,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "tab_gHwhLq": {
+          "type": "tab",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/image_71.png",
+            "image_desktop": "shopify://shop_images/image_71.png",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "hotspot_AKcbMM": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "overton-small-tv-unit",
+            "description": "",
+            "desktop_x": 29,
+            "desktop_y": 50,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_Cry7mM": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "ethan-highback-3-seater-sofa",
+            "description": "",
+            "desktop_x": 21,
             "desktop_y": 20,
             "mobile_x": 50,
             "mobile_y": 50
           }
         },
-        "hotspot_DUbtC7": {
+        "hotspot_jC3LWj": {
           "type": "hotspot",
           "settings": {
             "tab": "1",
-            "product": "perla-tub-chair-fabric-luxe-cinnamon",
+            "product": "livonia-square-coffee-table",
             "description": "",
-            "desktop_x": 48,
-            "desktop_y": 40,
+            "desktop_x": 38,
+            "desktop_y": 24,
             "mobile_x": 50,
             "mobile_y": 50
           }
         },
-        "hotspot_BDqRyP": {
+        "hotspot_wiiVMc": {
           "type": "hotspot",
           "settings": {
             "tab": "1",
-            "product": "livonia-small-traditional-circular-pedestal-table",
+            "product": "overton-console-table",
             "description": "",
-            "desktop_x": 57,
-            "desktop_y": 48,
-            "mobile_x": 50,
-            "mobile_y": 50
-          }
-        },
-        "hotspot_BgQHjR": {
-          "type": "hotspot",
-          "settings": {
-            "tab": "1",
-            "product": "small-double-loren-divan-bed-base-grey",
-            "description": "",
-            "desktop_x": 51,
-            "desktop_y": 78,
-            "mobile_x": 50,
-            "mobile_y": 50
-          }
-        },
-        "hotspot_HK4R9L": {
-          "type": "hotspot",
-          "settings": {
-            "tab": "1",
-            "product": "grandios-b702-bed-runner",
-            "description": "",
-            "desktop_x": 62,
-            "desktop_y": 56,
-            "mobile_x": 50,
-            "mobile_y": 50
-          }
-        },
-        "hotspot_CkYe3F": {
-          "type": "hotspot",
-          "settings": {
-            "tab": "1",
-            "product": "grandios-b702-bed-cushion",
-            "description": "",
-            "desktop_x": 74,
-            "desktop_y": 49,
-            "mobile_x": 50,
-            "mobile_y": 50
-          }
-        },
-        "hotspot_q46ckF": {
-          "type": "hotspot",
-          "settings": {
-            "tab": "1",
-            "product": "grandios-b702-framed-picture",
-            "description": "",
-            "desktop_x": 80,
-            "desktop_y": 23,
+            "desktop_x": 50,
+            "desktop_y": 50,
             "mobile_x": 50,
             "mobile_y": 50
           }
@@ -216,7 +183,7 @@
           "type": "hotspot",
           "settings": {
             "tab": "1",
-            "product": "grandios-framed-mirror",
+            "product": "elliot-tub-chair",
             "description": "",
             "desktop_x": 60,
             "desktop_y": 26,
@@ -226,19 +193,17 @@
         }
       },
       "block_order": [
+        "hotspot_7rzE6j",
+        "hotspot_AKqBtN",
+        "hotspot_7TR63d",
+        "hotspot_m3QJAH",
+        "hotspot_MDJdmT",
+        "hotspot_kcJM9y",
         "tab_gHwhLq",
-        "hotspot_a9JU6t",
-        "hotspot_Rtw73F",
-        "hotspot_RPxeYB",
-        "hotspot_WWcGt8",
-        "hotspot_w4UamA",
-        "hotspot_yGUBJH",
-        "hotspot_DUbtC7",
-        "hotspot_BDqRyP",
-        "hotspot_BgQHjR",
-        "hotspot_HK4R9L",
-        "hotspot_CkYe3F",
-        "hotspot_q46ckF",
+        "hotspot_AKcbMM",
+        "hotspot_Cry7mM",
+        "hotspot_jC3LWj",
+        "hotspot_wiiVMc",
         "hotspot_7qNhjA"
       ],
       "name": "Hotspots",
@@ -257,15 +222,12 @@
             "handle": "new-arrivals",
             "product_feed_source": "product_list",
             "products": [
-              "portland-bedroom-furniture-bundle",
-              "perla-tub-chair-fabric-luxe-cinnamon",
-              "livonia-small-traditional-circular-pedestal-table",
-              "grandios-framed-mirror",
-              "alice-highback-chair-with-wings-marna-hessian",
-              "grandios-b702-framed-picture",
-              "grandios-b702-chair-cushion",
-              "grandios-b702-bed-runner",
-              "grandios-b702-bed-cushion"
+              "amaryllis-papaya",
+              "amaryllis-aquamarine",
+              "amaryllis-spring",
+              "albany-papaya",
+              "albany-slate-blue",
+              "albany-spring"
             ],
             "collection": "",
             "seed_product": "",
@@ -296,7 +258,7 @@
       ],
       "name": "Product blocks",
       "settings": {
-        "title": "Featured Products",
+        "title": "Featured Fabrics",
         "section_padding": "--spacing-2xl"
       }
     }
