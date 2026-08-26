@@ -293,6 +293,38 @@
   
 "blocks": [
 {
+      "type": "variant_selector",
+      "name": "Variant selector",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Choose an option"
+        },
+        {
+          "type": "select",
+          "id": "display_mode",
+          "label": "Display",
+          "default": "image_text",
+          "options": [
+            {
+              "value": "image_text",
+              "label": "Variant image and name"
+            },
+            {
+              "value": "image",
+              "label": "Variant image only"
+            },
+            {
+              "value": "text",
+              "label": "Variant name only"
+            }
+          ]
+        }
+      ]
+    },
+{
       "type": "cross_sell",
       "name": "Cross sell",
       "settings": [

@@ -1,0 +1,65 @@
+{%- liquid
+  assign display_mode = block.settings.display_mode | default: 'image_text'
+  assign current_variant = product.selected_or_first_available_variant
+-%}
+
+{% if product.variants.size > 1 %}
+  <div class="product-variant-selector product-variant-selector--{{ display_mode }}" data-product-variant-selector>
+    <fieldset class="product-variant-selector__group">
+      <legend class="product-variant-selector__label body-sm body-sm--bold">
+        {{ block.settings.heading | default: 'Choose an option' }}
+      </legend>
+
+      <div class="product-variant-selector__items">
+        {% for variant in product.variants %}
+          {% assign variant_image = variant.featured_image | default: product.featured_image %}
+          <button
+            type="button"
+            class="product-variant-selector__item{% if variant.id == current_variant.id %} is-selected{% endif %}"
+            data-variant-id="{{ variant.id }}"
+            aria-label="{{ variant.title | escape }}"
+            aria-pressed="{% if variant.id == current_variant.id %}true{% else %}false{% endif %}"
+            {% unless variant.available %}disabled{% endunless %}
+          >
+            {% if display_mode != 'text' and variant_image != blank %}
+              <span class="product-variant-selector__image">
+                {{ variant_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: variant.title }}
+              </span>
+            {% endif %}
+            {% if display_mode != 'image' %}
+              <span class="product-variant-selector__name">{{ variant.title }}</span>
+            {% endif %}
+          </button>
+        {% endfor %}
+      </div>
+    </fieldset>
+  </div>
+
+  <script>
+    (function () {
+      var selectors = document.querySelectorAll('[data-product-variant-selector]');
+
+      selectors.forEach(function (selector) {
+        if (selector.dataset.initialized === 'true') return;
+        selector.dataset.initialized = 'true';
+
+        selector.addEventListener('click', function (event) {
+          var button = event.target.closest('[data-variant-id]');
+          if (!button || button.disabled) return;
+
+          var productRoot = selector.closest('uwp-product') || document;
+          var variantInput = productRoot.querySelector('input[name="id"]');
+          if (!variantInput) return;
+
+          variantInput.value = button.dataset.variantId;
+          selector.querySelectorAll('[data-variant-id]').forEach(function (item) {
+            var selected = item === button;
+            item.classList.toggle('is-selected', selected);
+            item.setAttribute('aria-pressed', selected ? 'true' : 'false');
+          });
+          variantInput.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+      });
+    })();
+  </script>
+{% endif %}
