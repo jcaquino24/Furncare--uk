@@ -9,152 +9,131 @@
  */
 {
   "sections": {
-    "faqs_Lwg9Cg": {
-      "type": "faqs",
-      "blocks": {
-        "faq_zdCQx6": {
-          "type": "faq",
-          "settings": {
-            "question": "How can I place an order?",
-            "answer": "<p>You can place an order by any of the following methods:</p><ul><li>online</li><li>email to <a href=\"mailto:sales@furncare.co.uk\">sales@furncare.co.uk</a></li><li>call <a href=\"tel:01603664900\">01603 664 900</a></li><li>via our website’s online chat function</li></ul><p>Our advisors will be able to talk through your purchase and offer advice based on your requirements. Please advise when placing your order if you have a purchase order number and if there are any special delivery instructions i.e. difficult access, stairs etc.</p><p>Once your order has been placed, you will receive a confirmation email along with any additional information you need to know and our operations team will then be in contact to book your delivery date.</p>"
-          }
-        },
-        "faq_mW9d3H": {
-          "type": "faq",
-          "settings": {
-            "question": "What are your delivery terms and where do you deliver to?",
-            "answer": "<p>Please refer to </p>"
-          }
-        },
-        "faq_iVhRLj": {
-          "type": "faq",
-          "settings": {
-            "question": "What are my payment options?",
-            "answer": "<p>New customers:</p>"
-          }
-        },
-        "faq_DhwLYE": {
-          "type": "faq",
-          "settings": {
-            "question": "When will I receive my order?",
-            "answer": "<p>For in stock items</p>"
-          }
-        },
-        "faq_D6hfGm": {
-          "type": "faq",
-          "settings": {
-            "question": "What should I expect on the day of my delivery?",
-            "answer": "<p>We pride ourselves</p>"
-          }
-        },
-        "faq_YYzig7": {
-          "type": "faq",
-          "settings": {
-            "question": "Are my items covered under a guarantee?",
-            "answer": "<p>Our general guarantee terms are as below</p>"
-          }
-        },
-        "faq_FNAWrc": {
-          "type": "faq",
-          "settings": {
-            "question": "Are your furniture and soft furnishings fire retardant?",
-            "answer": "<p>All of our upholstery and textiles are fire retardant and wherever applicable all of our furniture is also Crib 5 FR.</p>"
-          }
-        },
-        "faq_hW9E4x": {
-          "type": "faq",
-          "settings": {
-            "question": "I have a project I'd like to discuss, will you visit my home?",
-            "answer": "<p>We'd love to hear more about your project!</p>"
-          }
-        },
-        "faq_k3HngJ": {
-          "type": "faq",
-          "settings": {
-            "question": "Is faux leather upholstery the best option for my home?",
-            "answer": "<p>There are a wide range of healthcare upholstery options and in many cases both textile and faux leather upholstery would be suitable. Our advisors are happy to recommend upholsteries based on your requirements and the type of care you provide. Please discuss this with us when placing your order if you would like any guidance.</p>"
-          }
-        },
-        "faq_HeftDM": {
-          "type": "faq",
-          "settings": {
-            "question": "What sectors do you supply to?",
-            "answer": "<p>We supply to elderly care, including dementia and nursing, supported living, learning and physical disability homes and also more challenging environments.</p><p>As some products aren’t suitable for certain sectors, you can navigate through our menus on the homepage to the sector you require and the products that we would recommend. Our team are also able to offer advice on the suitability of a product for your environment.</p>"
-          }
-        },
-        "faq_77ewXj": {
-          "type": "faq",
-          "settings": {
-            "question": "How do I care for my products?",
-            "answer": "<p>To find out how to look after your products in the best way possible, please read our cleaning and laundering guides, which contain step by step processes and top tips when it comes to caring for your products.</p>"
-          }
-        },
-        "faq_iC36hH": {
-          "type": "faq",
-          "settings": {
-            "question": "Do you have a showroom?",
-            "answer": "<p>Yes. Our showroom is available for visits subject to booking. Please call 01603 664900 or email sales@furncare.co.uk to arrange a viewing. Alternatively, we offer a sample van service where we can bring products to you.</p>"
-          }
-        },
-        "faq_LGQt4L": {
-          "type": "faq",
-          "settings": {
-            "question": "Can you remove old furniture when you deliver?",
-            "answer": "<p>Our furniture removal service was introduced to provide a completely hassle-free service for our clients. As old furniture and furnishings are always disposed of responsibly (materials are recycled where possible), this service does come at a small extra cost per item. Get in touch with our team today to request a quotation for this service.</p>"
-          }
-        },
-        "faq_CqbGNm": {
-          "type": "faq",
-          "settings": {
-            "question": "My payment isn't going through online. What do I do?",
-            "answer": "<p>While it may seem obvious, please check you have the necessary funds in the account you are using. Check through the card details inputted for typos in the long card number, name on the card, expiry date or CCV number. If you are still having issues then please contact us, either through our web chat, email or give us a call.</p>"
-          }
-        },
-        "faq_jQitw7": {
-          "type": "faq",
-          "settings": {
-            "question": "Can you measure up our windows for curtains or blinds?",
-            "answer": "<p>We will come out to your locations to measure up if you are dressing 6 windows or more. If you are dressing less than 6 windows then we would charge a callout fee.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "faq_zdCQx6",
-        "faq_mW9d3H",
-        "faq_iVhRLj",
-        "faq_DhwLYE",
-        "faq_D6hfGm",
-        "faq_YYzig7",
-        "faq_FNAWrc",
-        "faq_hW9E4x",
-        "faq_k3HngJ",
-        "faq_HeftDM",
-        "faq_77ewXj",
-        "faq_iC36hH",
-        "faq_LGQt4L",
-        "faq_CqbGNm",
-        "faq_jQitw7"
-      ],
-      "disabled": true,
-      "name": "FAQs",
-      "settings": {
-        "faq_title": "Frequently Asked Questions",
-        "title_element": "h2",
-        "faq_text": "Scroll down for answers to our FAQs. If you can't find an answer to your question, give us a call on 01603 664900 or start a web chat and we'd be happy to help.",
-        "title_alignment": "center",
-        "colour_scheme": "base-white-01",
-        "padding": "default"
-      }
-    },
     "main": {
       "type": "page",
+      "disabled": true,
       "settings": {
         "show_title": false
+      }
+    },
+    "furncare_about_hero_bxhnJb": {
+      "type": "furncare-about-hero",
+      "name": "Furncare hero advanced",
+      "settings": {
+        "eyebrow": "",
+        "heading": "Curated Spaces",
+        "copy": "From first brief to final placement, Furncare helps project teams specify, supply and deliver furniture schemes for ambitious care environments.",
+        "primary_label": "",
+        "primary_action": "link",
+        "primary_link": "",
+        "scroll_target": "",
+        "secondary_label": "",
+        "secondary_action": "link",
+        "secondary_link": "",
+        "secondary_scroll_target": "",
+        "contact_form_html": "",
+        "show_rotator": false,
+        "animated_prefix": "We help you",
+        "animated_words": "Specify\nSupply\nDeliver\nSupport",
+        "animated_suffix": "with confidence.",
+        "background_image": "shopify://shop_images/P1049875.jpg",
+        "fallback_image_url": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2200&q=80",
+        "background_position": "center left",
+        "background_size": "cover",
+        "min_height": 100,
+        "min_height_mobile": 80,
+        "content_vertical_position": "center",
+        "enable_parallax": true,
+        "overlay_color": "#1c1917",
+        "overlay_color_2": "#1c1917",
+        "overlay_opacity": 38,
+        "overlay_angle": 120,
+        "radial_color": "#ffffff",
+        "radial_opacity": 18,
+        "radial_x": 20,
+        "radial_y": 10,
+        "radial_size": 28,
+        "rotator_line_color": "#e7e5e4",
+        "rotator_background": "#ffffff",
+        "rotator_text_color": "#ffffff",
+        "rotator_font_size": 16,
+        "rotator_min_width": 138,
+        "rotator_height": 34,
+        "rotator_radius": 1000,
+        "rotator_padding_x": 16,
+        "rotator_margin_top": 36,
+        "background_gradient": "",
+        "background_color": "#0c0a09",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#e7e5e4",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 95,
+        "heading_size_mobile": 48,
+        "heading_weight": 300,
+        "heading_line_height": 100,
+        "heading_letter_spacing": -1,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 20,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 13,
+        "eyebrow_weight": 700,
+        "eyebrow_letter_spacing": 22,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 16,
+        "text_color": "#F9F7F0",
+        "heading_color": "#F9F7F0",
+        "copy_color": "#F9F7F0",
+        "eyebrow_color": "#F9F7F0",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "button_radius": 900,
+        "button_padding_x": 24,
+        "button_padding_y": 14,
+        "button_min_height": 54,
+        "button_font_size": 16,
+        "button_weight": 700,
+        "button_text_transform": "none",
+        "button_gap": 12,
+        "button_margin_top": 32,
+        "button_border_width": 1,
+        "button_hover_lift": 1,
+        "button_hover_shadow_opacity": 12,
+        "buttons_full_width_mobile": true,
+        "primary_button_bg": "#ffffff",
+        "primary_button_color": "#0c0a09",
+        "primary_button_border": "#ffffff",
+        "primary_button_hover_bg": "#e7e5e4",
+        "primary_button_hover_color": "#0c0a09",
+        "primary_button_hover_border": "#e7e5e4",
+        "secondary_button_bg": "#ffffff",
+        "secondary_button_bg_opacity": 12,
+        "secondary_button_color": "#ffffff",
+        "secondary_button_border": "#ffffff",
+        "secondary_button_hover_bg": "#ffffff",
+        "secondary_button_hover_color": "#0c0a09",
+        "secondary_button_hover_border": "#ffffff"
       }
     }
   },
   "order": [
-    "faqs_Lwg9Cg",
-    "main"
+    "main",
+    "furncare_about_hero_bxhnJb"
   ]
 }
