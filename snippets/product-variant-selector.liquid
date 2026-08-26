@@ -19,6 +19,10 @@
             data-variant-id="{{ variant.id }}"
             {% if variant.featured_media != blank %}data-variant-media-id="{{ variant.featured_media.id }}"{% endif %}
             data-variant-name="{{ variant.title | escape }}"
+            data-variant-sku="{{ variant.sku | escape }}"
+            data-variant-inventory="{{ variant.inventory_quantity }}"
+            data-variant-price="{{ variant.price | money | escape }}"
+            data-variant-compare-price="{% if variant.compare_at_price > variant.price %}{{ variant.compare_at_price | money | escape }}{% endif %}"
             aria-label="{{ variant.title | escape }}"
             aria-pressed="{% if variant.id == current_variant.id %}true{% else %}false{% endif %}"
             {% unless variant.available %}disabled{% endunless %}
@@ -55,10 +59,42 @@
           var selectedVariantName = selector.querySelector('[data-selected-variant-name]');
           if (selectedVariantName) selectedVariantName.textContent = button.dataset.variantName;
 
+          var skuElement = productRoot.querySelector('[data-product-sku]');
+          var skuValue = productRoot.querySelector('[data-product-sku-value]');
+          if (skuElement && skuValue) {
+            skuValue.textContent = button.dataset.variantSku || '';
+            skuElement.hidden = !button.dataset.variantSku;
+          }
+
+          var priceElement = productRoot.querySelector('[data-product-price] .price');
+          if (priceElement) {
+            var priceRegular = priceElement.querySelector('.price__regular .price__item--regular');
+            var priceSale = priceElement.querySelector('.price__sale > .price__item--sale');
+            var comparePrice = priceElement.querySelector('.price__sale s.price__item--regular');
+            var compareAtPrice = button.dataset.variantComparePrice;
+            var isOnSale = Boolean(compareAtPrice);
+
+            priceElement.classList.toggle('price--on-sale', isOnSale);
+            if (priceRegular) priceRegular.textContent = button.dataset.variantPrice;
+            if (priceSale) priceSale.textContent = button.dataset.variantPrice;
+            if (comparePrice) comparePrice.textContent = compareAtPrice;
+            if (comparePrice) comparePrice.parentElement.hidden = !isOnSale;
+          }
+
           if (variantInput) {
             variantInput.value = button.dataset.variantId;
             variantInput.dispatchEvent(new Event('change', { bubbles: true }));
           }
+
+          window.dispatchEvent(new CustomEvent('variant:changed', {
+            detail: {
+              variant: {
+                id: Number(button.dataset.variantId),
+                sku: button.dataset.variantSku || '',
+                inventory_quantity: Number(button.dataset.variantInventory) || 0
+              }
+            }
+          }));
 
           selector.querySelectorAll('[data-variant-id]').forEach(function (item) {
             var selected = item === button;

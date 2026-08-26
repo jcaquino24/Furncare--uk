@@ -19,9 +19,14 @@
   {% comment %} Badges {% endcomment %}
   {% render 'badge', product: product %}
 
-  {% if section.settings.show_sku and product.selected_or_first_available_variant.sku != blank %}
-    <div class="product-info__sku eyebrow-2xs">
-      {{ 'product.product_sku' | t }}: {{ product.selected_or_first_available_variant.sku }}
+  {% if section.settings.show_sku %}
+    <div
+      class="product-info__sku eyebrow-2xs"
+      data-product-sku
+      {% if product.selected_or_first_available_variant.sku == blank %}hidden{% endif %}
+    >
+      {{ 'product.product_sku' | t }}:
+      <span data-product-sku-value>{{ product.selected_or_first_available_variant.sku }}</span>
     </div>
   {% endif %}
 
@@ -35,15 +40,16 @@
   {% comment %} Price {% endcomment %}
   {%- assign has_swatch_collections = product.metafields.custom.swatch_collections.value -%}
   {% if section.settings.show_price %}
-    {% render 'price',
-      product: product,
-      use_variant: true,
-      
-      show_compare_at_price: true,
-      show_vat_badge: section.settings.show_vat_badge,
-      show_free_sample_label: section.settings.show_free_sample_label,
-      force_from_price: has_swatch_collections
-    %}
+    <div data-product-price>
+      {% render 'price',
+        product: product,
+        use_variant: true,
+        show_compare_at_price: true,
+        show_vat_badge: section.settings.show_vat_badge,
+        show_free_sample_label: section.settings.show_free_sample_label,
+        force_from_price: has_swatch_collections
+      %}
+    </div>
   {% endif %}
 
   {% comment %} Description {% endcomment %}
