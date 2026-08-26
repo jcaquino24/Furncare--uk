@@ -12,6 +12,13 @@
     "main": {
       "type": "product",
       "blocks": {
+        "variant_selector_fzAgh3": {
+          "type": "variant_selector",
+          "settings": {
+            "heading": "",
+            "display_mode": "image"
+          }
+        },
         "cross_sell_VVehwj": {
           "type": "cross_sell",
           "settings": {
@@ -766,6 +773,7 @@
         }
       },
       "block_order": [
+        "variant_selector_fzAgh3",
         "cross_sell_VVehwj",
         "cross_sell_nQKcQ6",
         "cross_sell_9jQAdq",
