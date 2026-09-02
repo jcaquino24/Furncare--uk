@@ -306,7 +306,7 @@
             "subtitle": "",
             "text": "<p>Sleek front with fluted side detailing.</p>",
             "block_colour_scheme": "light-mode",
-            "show_gradient": false,
+            "show_gradient": true,
             "lightbox_caption": ""
           }
         },
