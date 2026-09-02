@@ -305,7 +305,7 @@
             "title": "Ellington",
             "subtitle": "",
             "text": "<p>Sleek front with fluted side detailing.</p>",
-            "block_colour_scheme": "light-mode",
+            "block_colour_scheme": "dark-mode",
             "show_gradient": true,
             "lightbox_caption": ""
           }
