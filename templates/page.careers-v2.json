@@ -9,6 +9,29 @@
  */
 {
   "sections": {
+    "blocks_XE9UqQ": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_aDUzmV": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "medium",
+            "small_height": 30,
+            "medium_height": 60,
+            "large_height": 100,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_aDUzmV"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
     "main": {
       "type": "contact",
       "blocks": {
@@ -68,6 +91,7 @@
     }
   },
   "order": [
+    "blocks_XE9UqQ",
     "main",
     "image_video_banner_k3GKVQ"
   ]
