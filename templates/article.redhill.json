@@ -148,30 +148,6 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_GDNdXW": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Willow_Lodge_Vol_2-27.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_QWgDNK": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Willow_Lodge_Vol_5-30.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_J8ww48": {
           "type": "image_card",
           "settings": {
@@ -200,6 +176,30 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_5-19.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_GDNdXW": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Willow_Lodge_Vol_2-27.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_QWgDNK": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Willow_Lodge_Vol_5-30.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -250,11 +250,11 @@
         "image_card_aGhK6X",
         "image_card_b9yjtU",
         "image_card_HedqtB",
-        "image_card_GDNdXW",
-        "image_card_QWgDNK",
         "image_card_J8ww48",
         "image_card_LMDJAP",
         "image_card_c9Eg9W",
+        "image_card_GDNdXW",
+        "image_card_QWgDNK",
         "image_card_JLbtCr",
         "image_card_UFmX3W",
         "image_card_QAR9yP"
