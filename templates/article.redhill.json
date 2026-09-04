@@ -408,7 +408,7 @@
         "section_padding": "--spacing-md",
         "colour_scheme": "base-white-01",
         "text_position": "over_image",
-        "mobile_layout": "swiper",
+        "mobile_layout": "grid",
         "enable_lightbox": true
       }
     },
@@ -679,6 +679,7 @@
       "block_order": [
         "ai_gen_block_90768fd_FFFwfE"
       ],
+      "disabled": true,
       "name": "Spacer",
       "settings": {}
     }
