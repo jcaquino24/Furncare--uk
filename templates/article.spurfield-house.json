@@ -135,6 +135,18 @@
             "lightbox_caption": ""
           }
         },
+        "image_card_QUEgED": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/meadow-common-area-112.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_38DDwM": {
           "type": "image_card",
           "settings": {
@@ -199,18 +211,6 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/b8-mh-105.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_QUEgED": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/meadow-common-area-112.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -302,25 +302,51 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
+        },
+        "image_card_7gQcfT": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/b10-127.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_rxxcAH": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/hare-93.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
         "image_card_ih9D7Q",
         "image_card_GDNdXW",
+        "image_card_QUEgED",
         "image_card_38DDwM",
         "image_card_G7eHnW",
         "image_card_FNF4W8",
         "image_card_pcEWmd",
         "image_card_aGhK6X",
         "image_card_b9yjtU",
-        "image_card_QUEgED",
         "image_card_UYDdKW",
         "image_card_NLXzDG",
         "image_card_Yk6cfA",
         "image_card_CJm6tW",
         "image_card_6edzd8",
         "image_card_tgaeXF",
-        "image_card_QAR9yP"
+        "image_card_QAR9yP",
+        "image_card_7gQcfT",
+        "image_card_rxxcAH"
       ],
       "name": "Image text blocks",
       "settings": {
