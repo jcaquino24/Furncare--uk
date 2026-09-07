@@ -137,18 +137,6 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_pcEWmd": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/blue-room-101.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_G7eHnW": {
           "type": "image_card",
           "settings": {
@@ -165,6 +153,18 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/mh-bedroom-2-98.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_pcEWmd": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/blue-room-101.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -298,9 +298,9 @@
         "image_card_ih9D7Q",
         "image_card_GDNdXW",
         "image_card_38DDwM",
-        "image_card_pcEWmd",
         "image_card_G7eHnW",
         "image_card_FNF4W8",
+        "image_card_pcEWmd",
         "image_card_aGhK6X",
         "image_card_b9yjtU",
         "image_card_QUEgED",
@@ -328,7 +328,7 @@
         "heading_Ti6ndF": {
           "type": "heading",
           "settings": {
-            "text": "\"Furncare were a delight to deal with start to finish, offering site visits to previously completed projects, design support and excellent communication throughout. The physical fit out went well, and the aftercare has been second to none.\"",
+            "text": "TBCCC",
             "heading_level": "h2",
             "heading_style": "title-xl"
           },
@@ -361,25 +361,24 @@
         "see_more_max_height": 300
       }
     },
-    "image_video_banner_yi48qh": {
-      "type": "image-video-banner",
-      "name": "Image - Video Banner",
-      "settings": {
-        "height_desktop": 800,
-        "height_mobile": 300,
-        "maintain_aspect_ratio": true,
-        "add_header_offset": false,
-        "media_type": "video",
-        "video_desktop": "shopify://files/videos/Old Malton Case Study.mp4",
-        "show_controls": true,
-        "mute_video": true,
-        "autoplay_video": false,
-        "show_overlay": false,
-        "overlay_background": "",
-        "colour_scheme": "light",
-        "content_position": "center-center",
-        "content_alignment": "left"
-      }
+    "blocks_tXUDYQ": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_5d6fd2d_KzrVim": {
+          "type": "ai_gen_block_5d6fd2d",
+          "settings": {
+            "image": "shopify://shop_images/out-nook-144.jpg",
+            "desktop_width_percent": 100,
+            "border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_5d6fd2d_KzrVim"
+      ],
+      "name": "Image",
+      "settings": {}
     },
     "blocks_HErXQc": {
       "type": "_blocks",
@@ -406,15 +405,15 @@
         "images_Qdr4kx": {
           "type": "images",
           "settings": {
-            "image_one": "shopify://shop_images/P1049349_eb211818-047b-45ed-b949-0ceb5363ed4c.jpg"
+            "image_one": "shopify://shop_images/donkey-117.jpg"
           }
         },
         "content_bWjPrR": {
           "type": "content",
           "settings": {
-            "title": "Our Approach",
+            "title": "A setting designed around different needs",
             "title_size": "display",
-            "text": "When Manor Park Care Home was handed over as a newbuild, the structure was complete, but the character of the home was still to be defined. Our role was to bring that character to life — shaping interiors that support everyday living and balance the practical demands of care with spaces that feel calm, welcoming and familiar.\n<br>\n<br>\nWorking closely with the project team, we delivered a complete FF&E package designed to support wellbeing and daily living across the home. Every element was chosen with comfort, durability and purpose in mind, ensuring bedrooms, lounges and dining spaces function seamlessly while still feeling warm and homely.\n<br>\n<br>\nThrough thoughtful, purposeful solutions, we helped these care environments feel more homely, supportive and uplifting, balancing practical requirements with warmth and familiarity. In doing so, we delivered on our commitment to transforming spaces and elevating lives, shaping environments that support wellbeing, dignity and everyday comfort within care settings.",
+            "text": "Spurfield House combines a restored Grade II listed building with purpose-built accommodation, creating 24 bedrooms across three distinct areas.\n<br>\n<br>\nThe Main House retains the character of the original building, with a combination of bedrooms and shared communal spaces, while Meadow Wing provides fully accessible accommodation for individuals with higher physical support needs.\n<br>\n<br>\nOrchard Wing takes a more independent approach, with self-contained studio apartments designed to give residents greater autonomy while maintaining access to support when needed.\n<br>\n<br>\nAt the centre of the development sits a landscaped courtyard, connecting the different areas of the home and creating an inviting outdoor space.\n<br>\n<br>\nThroughout the scheme, dedicated spaces have also been created to support different aspects of daily life, including The Nest, a social hub; The Hive, an activity and learning space; and The Nook, a quieter setting for reflection and one-to-one support.",
             "button_style": "primary",
             "button_text": "",
             "button_action": "link",
@@ -653,7 +652,7 @@
     "richtext_LTPVBd",
     "image_text_blocks_xYxbk8",
     "richtext_TDcVxF",
-    "image_video_banner_yi48qh",
+    "blocks_tXUDYQ",
     "blocks_HErXQc",
     "image_text_zXnynf",
     "image_text_nRYrfd",
