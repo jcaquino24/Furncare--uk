@@ -97,95 +97,6 @@
         "see_more_max_height": 400
       }
     },
-    "image_text_blocks_ExMqMi": {
-      "type": "image-text-blocks",
-      "blocks": {
-        "image_card_nBQh9a": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_XBmRND": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_AYTfhU": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_TtBh4P": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_WF6win": {
-          "type": "image_card",
-          "settings": {
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_YdHkVh": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/lounge-2-91.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_card_nBQh9a",
-        "image_card_XBmRND",
-        "image_card_AYTfhU",
-        "image_card_TtBh4P",
-        "image_card_WF6win",
-        "image_card_YdHkVh"
-      ],
-      "name": "Image text blocks",
-      "settings": {
-        "title": "Content Gallery",
-        "section_padding": "--spacing-2xl",
-        "colour_scheme": "base-white-01",
-        "text_position": "over_image",
-        "mobile_layout": "swiper",
-        "enable_lightbox": false
-      }
-    },
     "image_text_blocks_xYxbk8": {
       "type": "image-text-blocks",
       "blocks": {
@@ -202,9 +113,22 @@
             "lightbox_caption": ""
           }
         },
+        "image_card_GDNdXW": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/donkey-117.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_38DDwM": {
           "type": "image_card",
           "settings": {
+            "image": "shopify://shop_images/mh-b1-97.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -216,6 +140,7 @@
         "image_card_pcEWmd": {
           "type": "image_card",
           "settings": {
+            "image": "shopify://shop_images/blue-room-101.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -236,10 +161,22 @@
             "lightbox_caption": ""
           }
         },
+        "image_card_FNF4W8": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/mh-bedroom-2-98.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_aGhK6X": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/P1049435_22255214-8b10-4641-bea2-6bb7894f798f.jpg",
+            "image": "shopify://shop_images/blue-bedroom-103.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -251,7 +188,7 @@
         "image_card_b9yjtU": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/P1049416.jpg",
+            "image": "shopify://shop_images/b8-mh-105.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -260,10 +197,22 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_GDNdXW": {
+        "image_card_QUEgED": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/P1091056-2-HDR.png",
+            "image": "shopify://shop_images/meadow-common-area-112.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_UYDdKW": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/mh-dining-107.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -275,7 +224,55 @@
         "image_card_NLXzDG": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/P1049344.jpg",
+            "image": "shopify://shop_images/meadow-lounge-118.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_Yk6cfA": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/bed-20-121.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_CJm6tW": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/b11-126.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_6edzd8": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/b16-2-123.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_tgaeXF": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/b16-122.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -287,7 +284,7 @@
         "image_card_QAR9yP": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/P1049408_7d917098-a363-4933-ae90-5195c3dfbcdb.jpg",
+            "image": "shopify://shop_images/b20-120.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -299,13 +296,20 @@
       },
       "block_order": [
         "image_card_ih9D7Q",
+        "image_card_GDNdXW",
         "image_card_38DDwM",
         "image_card_pcEWmd",
         "image_card_G7eHnW",
+        "image_card_FNF4W8",
         "image_card_aGhK6X",
         "image_card_b9yjtU",
-        "image_card_GDNdXW",
+        "image_card_QUEgED",
+        "image_card_UYDdKW",
         "image_card_NLXzDG",
+        "image_card_Yk6cfA",
+        "image_card_CJm6tW",
+        "image_card_6edzd8",
+        "image_card_tgaeXF",
         "image_card_QAR9yP"
       ],
       "name": "Image text blocks",
@@ -647,7 +651,6 @@
     "main",
     "image_video_banner_n9JT9E",
     "richtext_LTPVBd",
-    "image_text_blocks_ExMqMi",
     "image_text_blocks_xYxbk8",
     "richtext_TDcVxF",
     "image_video_banner_yi48qh",
