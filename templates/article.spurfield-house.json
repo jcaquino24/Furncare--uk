@@ -655,6 +655,7 @@
       "block_order": [
         "ai_gen_block_90768fd_FFFwfE"
       ],
+      "disabled": true,
       "name": "Spacer",
       "settings": {}
     }
