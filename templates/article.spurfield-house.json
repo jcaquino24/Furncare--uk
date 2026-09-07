@@ -28,7 +28,7 @@
         "title_hYdUtU": {
           "type": "title",
           "settings": {
-            "text": "Manor Park Care Home",
+            "text": "Spurfield House",
             "title_element": "h1",
             "title_size": "xl",
             "text_color": "#f9f7f0"
@@ -46,7 +46,7 @@
         "maintain_aspect_ratio": false,
         "add_header_offset": false,
         "media_type": "image",
-        "image_desktop": "shopify://shop_images/Untitled_59.jpg",
+        "image_desktop": "shopify://shop_images/main-house-lounge-90.jpg",
         "show_controls": false,
         "mute_video": true,
         "autoplay_video": false,
@@ -63,7 +63,7 @@
         "heading_rzxmCK": {
           "type": "heading",
           "settings": {
-            "text": "A Blank Canvas to a Home: Manor Park Care Home, Old Malton",
+            "text": "Spurfield House is <strong>CoActive Care’s newest home</strong>, located in the village of Exminster, just outside Exeter.",
             "heading_level": "h2",
             "heading_style": "title-xl"
           },
@@ -73,7 +73,7 @@
           "type": "tagline",
           "name": "Tagline",
           "settings": {
-            "content": "Manor Park Care Home was handed over as a blank canvas - a modern new-build designed to provide high-quality residential care. Our role was to transform that empty structure into a warm, practical, and fully functioning home from day one.",
+            "content": "Bringing together over 35 years of experience in complex care, the service has been designed around wellbeing, independence and progression, creating an environment that feels calm, considered and suited to the different needs of the people who live there.",
             "tagline_style": "body-xl"
           },
           "blocks": {}
@@ -97,13 +97,137 @@
         "see_more_max_height": 400
       }
     },
+    "image_text_blocks_ExMqMi": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "image_card_nBQh9a": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_XBmRND": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_AYTfhU": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_TtBh4P": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_WF6win": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_YdHkVh": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/lounge-2-91.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_nBQh9a",
+        "image_card_XBmRND",
+        "image_card_AYTfhU",
+        "image_card_TtBh4P",
+        "image_card_WF6win",
+        "image_card_YdHkVh"
+      ],
+      "name": "Image text blocks",
+      "settings": {
+        "title": "Content Gallery",
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "base-white-01",
+        "text_position": "over_image",
+        "mobile_layout": "swiper",
+        "enable_lightbox": false
+      }
+    },
     "image_text_blocks_xYxbk8": {
       "type": "image-text-blocks",
       "blocks": {
+        "image_card_ih9D7Q": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/lounge-2-91.jpg",
+            "image_mobile": "shopify://shop_images/lounge-2-91.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_38DDwM": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_pcEWmd": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_G7eHnW": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/P1049342.jpg",
+            "image": "shopify://shop_images/inside-nook-142.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -148,666 +272,6 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_QWgDNK": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091041-2-HDR.png",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_J8ww48": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091146-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_LMDJAP": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091201-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_c9Eg9W": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049396.png",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_JLbtCr": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049338.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_HedqtB": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091031-2-HDR.png",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_UFmX3W": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049345.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_QFfCGK": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049351.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_yznG76": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049398.png",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_myGMMC": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091251-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_WhFiat": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049334.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_A3PDJk": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049405.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_BMHWF7": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091271-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_zneQr7": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091324-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_abF8WY": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091036-2-HDR.png",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_XdGrbX": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091329-2-HDR_314e2fff-962a-4719-b27d-1673accd30db.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_wRkzHW": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091354-2-HDR_4867b77d-5828-4915-abfc-2bf6423b7560.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_qLJdCT": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091369-2-HDR_bb7680ab-11ef-4afa-a96c-80797f2119e4.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_zcNEk9": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091374-2-HDR_6df19980-daad-4c29-bbdd-87e16caaee71.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_7ph8Xg": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091379-2-HDR_8c9f17e2-14ad-49fa-931e-9c35fc6e6bb1.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_gKmJeh": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049415.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_FetiXX": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091384-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_pwkDX4": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091246-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_wreLDT": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091036-2-HDR.png",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_Wdkhxi": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091261-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_8WBRTt": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091081-2-HDR.png",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_RUUn4C": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091276-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_hqrD4C": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091161-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_FiFr8D": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091176-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_X8b4q4": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091181-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_BLgjFT": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091191-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_aHFMeX": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091216-2-HDR_01f21add-edbb-4fd4-8375-632088cd59df.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_3LKawx": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091220-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_TgRNhw": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091226-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_LTWJMP": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1090891-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_CkFTwt": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1090896-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_Nn7N8k": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1090911-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_knHDT8": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1090916-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_hEiMbd": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1090921-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_rJr49q": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049442.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_w7c6XU": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1090931-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_KW9kMn": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1090833-2-HDR_b2622d92-a187-4b6b-a3e1-aaa1b7482a71.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_zTV8wD": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1090839-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_Anx3XE": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049349_cd98744d-572d-4c6b-9542-9a732481c729.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_ji7EBa": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049423.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_fAj6Wq": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1090845.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_j8GG4z": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1090854-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_HptUpF": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049336_c9fc55a4-a87c-4fba-8b45-17a1f61f9ce9.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_mwHAK4": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1090866-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_yDjYHk": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049358_9e0df66f-052c-48ed-8059-52339596aa38.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_ccJzXT": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1090885-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_WM3cQ7": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049436_4ad67847-60dd-4de6-9598-efdd2b5e9e1c.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_CUaVJN": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049410.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_Cjq8Ce": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049341.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_a8iQRj": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049337_d3685974-01d7-4bc9-ba6c-bc9a0948309e.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_NLXzDG": {
           "type": "image_card",
           "settings": {
@@ -834,65 +298,13 @@
         }
       },
       "block_order": [
+        "image_card_ih9D7Q",
+        "image_card_38DDwM",
+        "image_card_pcEWmd",
         "image_card_G7eHnW",
         "image_card_aGhK6X",
         "image_card_b9yjtU",
         "image_card_GDNdXW",
-        "image_card_QWgDNK",
-        "image_card_J8ww48",
-        "image_card_LMDJAP",
-        "image_card_c9Eg9W",
-        "image_card_JLbtCr",
-        "image_card_HedqtB",
-        "image_card_UFmX3W",
-        "image_card_QFfCGK",
-        "image_card_yznG76",
-        "image_card_myGMMC",
-        "image_card_WhFiat",
-        "image_card_A3PDJk",
-        "image_card_BMHWF7",
-        "image_card_zneQr7",
-        "image_card_abF8WY",
-        "image_card_XdGrbX",
-        "image_card_wRkzHW",
-        "image_card_qLJdCT",
-        "image_card_zcNEk9",
-        "image_card_7ph8Xg",
-        "image_card_gKmJeh",
-        "image_card_FetiXX",
-        "image_card_pwkDX4",
-        "image_card_wreLDT",
-        "image_card_Wdkhxi",
-        "image_card_8WBRTt",
-        "image_card_RUUn4C",
-        "image_card_hqrD4C",
-        "image_card_FiFr8D",
-        "image_card_X8b4q4",
-        "image_card_BLgjFT",
-        "image_card_aHFMeX",
-        "image_card_3LKawx",
-        "image_card_TgRNhw",
-        "image_card_LTWJMP",
-        "image_card_CkFTwt",
-        "image_card_Nn7N8k",
-        "image_card_knHDT8",
-        "image_card_hEiMbd",
-        "image_card_rJr49q",
-        "image_card_w7c6XU",
-        "image_card_KW9kMn",
-        "image_card_zTV8wD",
-        "image_card_Anx3XE",
-        "image_card_ji7EBa",
-        "image_card_fAj6Wq",
-        "image_card_j8GG4z",
-        "image_card_HptUpF",
-        "image_card_mwHAK4",
-        "image_card_yDjYHk",
-        "image_card_ccJzXT",
-        "image_card_WM3cQ7",
-        "image_card_CUaVJN",
-        "image_card_Cjq8Ce",
-        "image_card_a8iQRj",
         "image_card_NLXzDG",
         "image_card_QAR9yP"
       ],
@@ -1001,6 +413,7 @@
             "text": "When Manor Park Care Home was handed over as a newbuild, the structure was complete, but the character of the home was still to be defined. Our role was to bring that character to life — shaping interiors that support everyday living and balance the practical demands of care with spaces that feel calm, welcoming and familiar.\n<br>\n<br>\nWorking closely with the project team, we delivered a complete FF&E package designed to support wellbeing and daily living across the home. Every element was chosen with comfort, durability and purpose in mind, ensuring bedrooms, lounges and dining spaces function seamlessly while still feeling warm and homely.\n<br>\n<br>\nThrough thoughtful, purposeful solutions, we helped these care environments feel more homely, supportive and uplifting, balancing practical requirements with warmth and familiarity. In doing so, we delivered on our commitment to transforming spaces and elevating lives, shaping environments that support wellbeing, dignity and everyday comfort within care settings.",
             "button_style": "primary",
             "button_text": "",
+            "button_action": "link",
             "button_url": ""
           }
         }
@@ -1013,6 +426,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -1029,6 +443,7 @@
             "text": "<div style=\"white-space: pre-wrap; white-space: pre-line;\">◦ Fully furnished bedrooms, including cabinet furniture, seating, and soft furnishings.\n\n◦ Lounge and dining spaces designed for comfort, social interaction, and ease of movement.\n\n◦ Reception, staff, and office areas fitted out for daily use.\n\n◦ Curtains and drapes adding warmth and style throughout the home.\n\n◦ Finishing touches including artwork, accessories, and even eating utensils to bring Manor Park to life.</div>",
             "button_style": "primary",
             "button_text": "",
+            "button_action": "link",
             "button_url": ""
           }
         },
@@ -1047,6 +462,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -1069,6 +485,7 @@
             "text": "From early planning through to final styling, our aim at Manor Park was to create a dementia-friendly environment that felt warm, calm and intuitive to navigate, without ever appearing clinical. Ahead of installation, we supported the client with site visits to previously completed projects alongside a full sampling process, helping shape a consistent look and feel across the 80-bedroom home — from communal areas through to staff offices. Working within a live newbuild meant close coordination with other trades throughout the installation. During installation, a Project Manager and Deputy Project Manager were on site throughout, overseeing a white glove fit-out that saw 5,500 items placed across the home in just 10 days, with zero damages. Our delivery team averaged 17,000 steps per person per day, placing each piece exactly where it was needed. \n<br>\n Beyond furniture supply, we completed the final layers too — installing curtains, artwork and accessories — transforming Manor Park from a blank canvas into a fully functioning, welcoming home ready to receive residents from day one.",
             "button_style": "underline",
             "button_text": "Our Delivery Service",
+            "button_action": "link",
             "button_url": "shopify://pages/delivery"
           }
         }
@@ -1081,6 +498,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -1229,6 +647,7 @@
     "main",
     "image_video_banner_n9JT9E",
     "richtext_LTPVBd",
+    "image_text_blocks_ExMqMi",
     "image_text_blocks_xYxbk8",
     "richtext_TDcVxF",
     "image_video_banner_yi48qh",
