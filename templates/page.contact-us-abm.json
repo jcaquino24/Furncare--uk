@@ -1,0 +1,124 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "contact",
+      "blocks": {
+        "forms_inline_LYdNT4": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "disabled": true,
+          "settings": {
+            "form_id": "639372",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#ffffff",
+            "links_color": "#1878b9",
+            "errors_color": "#e02229",
+            "text_alignment": "left",
+            "form_alignment": "flex-start",
+            "padding_top": 20,
+            "padding_bottom": 24,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_LYdNT4"
+      ],
+      "settings": {
+        "title": "Get in touch",
+        "intro_text": "<p>If you have a question, require further information, or would like to discuss how we can help, please get in touch. Our team is here to assist with enquiries of all kinds.</p><p>Simply complete the form on the right with your details and message, and a member of our team will respond as soon as possible.</p>",
+        "success_message": "",
+        "phone": "01603664900",
+        "phone_icon": "shopify://shop_images/Phone_f4b0d652-6e2d-4972-8b79-3fee1c34b42d.svg",
+        "email": "sales@furncare.co.uk",
+        "email_icon": "shopify://shop_images/Enveloppe_9440784c-af0a-43f4-8f42-462a9a7043e6.svg",
+        "show_social_icons": true,
+        "hubspot_form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>"
+      }
+    },
+    "richtext_BnMHhk": {
+      "type": "richtext",
+      "blocks": {
+        "heading_mryhAy": {
+          "type": "heading",
+          "settings": {
+            "text": "Find us here:",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_mryhAy"
+      ],
+      "custom_css": [],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false
+      }
+    },
+    "17713390705f07af14": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_4c80cf9_zzFCEx": {
+          "type": "ai_gen_block_4c80cf9",
+          "settings": {
+            "map_embed_url": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.7912295078904!2d0.738398076922968!3d52.42828494301554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d83491837501b5%3A0xf8f3734b30880df2!2sFurncare%20Head%20Office%20and%20Showroom!5e1!3m2!1sen!2suk!4v1771339260920!5m2!1sen!2suk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+            "min_height": 450,
+            "location_1_enabled": true,
+            "location_1_title": "Head Office and Showroom",
+            "location_1_address": "<p>Wyatt House, Wyatt Way</p><p>Fison Way Industrial Estate</p><p>Thetford, Norfolk, IP24 1HB</p><p>United Kingdom</p>",
+            "location_2_enabled": true,
+            "location_2_title": "National Distribution Centre",
+            "location_2_address": "<p>Unit 6, Johnston Quarter</p><p>Harling Road</p><p>Snetterton, Norfolk, NR16 2JU</p><p>United Kingdom<br/><br/></p>",
+            "desktop_width_percent": 100,
+            "gap": 10,
+            "address_gap": 60,
+            "mobile_map_position": "1",
+            "mobile_addresses_position": "2",
+            "border_radius": 20,
+            "card_background": "#f9f7f0",
+            "card_border_color": "#f9f7f0",
+            "card_padding": 40,
+            "title_size": 20,
+            "title_color": "#333333",
+            "title_margin": 5,
+            "text_size": 14,
+            "text_color": "#333333"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_4c80cf9_zzFCEx"
+      ],
+      "settings": {}
+    },
+    "blocks_j6MjRD": {
+      "type": "_blocks",
+      "name": "Spacer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "richtext_BnMHhk",
+    "17713390705f07af14",
+    "blocks_j6MjRD"
+  ]
+}
