@@ -540,6 +540,129 @@
         "reveal_duration": 760
       }
     },
+    "furncare_about_proof_DVGATz": {
+      "type": "furncare-about-proof",
+      "blocks": {
+        "stat_YHV4xk": {
+          "type": "stat",
+          "settings": {
+            "number": "80",
+            "label": "Bedrooms",
+            "copy": "Project support and delivery across care-sector locations."
+          }
+        },
+        "stat_UFfLjA": {
+          "type": "stat",
+          "settings": {
+            "number": "400",
+            "label": "New Product Codes",
+            "copy": "mmkay"
+          }
+        },
+        "stat_fc8rzV": {
+          "type": "stat",
+          "settings": {
+            "number": "133",
+            "label": "Windows Dressed",
+            "copy": "Quick-delivery ranges available for time-sensitive requirements."
+          }
+        },
+        "stat_a6YXUX": {
+          "type": "stat",
+          "settings": {
+            "number": "2",
+            "label": "Core sectors",
+            "copy": "Later Living and Challenging Environments expertise."
+          }
+        }
+      },
+      "block_order": [
+        "stat_YHV4xk",
+        "stat_UFfLjA",
+        "stat_fc8rzV",
+        "stat_a6YXUX"
+      ],
+      "name": "Furncare proof advanced",
+      "settings": {
+        "eyebrow": "Why project teams choose Furncare",
+        "heading": "Confidence at every stage of the scheme.",
+        "background_gradient": "",
+        "background_color": "#C3C0B0",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#e7e5e4",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 36,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 13,
+        "eyebrow_weight": 700,
+        "eyebrow_letter_spacing": 22,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 16,
+        "text_color": "#0c0a09",
+        "heading_color": "#0c0a09",
+        "copy_color": "#57534e",
+        "eyebrow_color": "#78716c",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "card_background": "#FFFEF8",
+        "card_heading_color": "#0c0a09",
+        "card_copy_color": "#57534e",
+        "card_border_color": "#e7e5e4",
+        "card_border_width": 1,
+        "card_radius": 32,
+        "card_padding": 28,
+        "card_padding_mobile": 24,
+        "card_shadow_opacity": 6,
+        "card_hover_shadow_opacity": 14,
+        "card_hover_lift": 4,
+        "card_title_size": 14,
+        "card_title_weight": 300,
+        "card_copy_size": 15,
+        "card_copy_line_height": 170,
+        "card_copy_margin_top": 16,
+        "grid_gap": 20,
+        "columns_desktop": "4",
+        "columns_tablet": "2",
+        "columns_mobile": "1",
+        "icon_background": "#f5f5f4",
+        "icon_color": "#292524",
+        "icon_size": 48,
+        "icon_svg_size": 23,
+        "icon_radius": 16,
+        "icon_margin_bottom": 32,
+        "icon_hover_scale": 108,
+        "stat_number_color": "#0c0a09",
+        "stat_label_color": "#292524",
+        "stat_number_size": 48,
+        "stat_number_weight": 700,
+        "stat_label_size": 16,
+        "stat_label_margin_top": 12,
+        "stat_copy_margin_top": 12
+      }
+    },
     "richtext_JgQX8i": {
       "type": "richtext",
       "blocks": {
@@ -556,6 +679,7 @@
       "block_order": [
         "heading_UzRMmX"
       ],
+      "disabled": true,
       "name": "Rich Text",
       "settings": {
         "id_anchor": "",
@@ -579,7 +703,7 @@
         "maintain_aspect_ratio": false,
         "add_header_offset": false,
         "media_type": "image",
-        "image_desktop": "shopify://shop_images/Willow_Lodge_Vol_2-20_11ba86b0-3e56-4055-ba23-36194f1ed434.jpg",
+        "image_desktop": "shopify://shop_images/Willow_Lodge_Vol_2-20_0f00c045-7470-4b64-9dee-ae4a9fe56dee.jpg",
         "show_controls": false,
         "mute_video": true,
         "autoplay_video": true,
@@ -693,6 +817,7 @@
     "image_text_zXnynf",
     "image_text_nRYrfd",
     "image_text_FgCCAX",
+    "furncare_about_proof_DVGATz",
     "richtext_JgQX8i",
     "image_video_banner_YMmQ4a",
     "1784102920a76ec080",
