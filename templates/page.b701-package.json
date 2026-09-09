@@ -108,7 +108,7 @@
           "type": "hotspot",
           "settings": {
             "tab": "1",
-            "product": "alice-highback-chair-with-wings-luxe-indigo",
+            "product": "alice-highback-chair-with-wings",
             "description": "",
             "desktop_x": 24,
             "desktop_y": 60,
@@ -258,7 +258,7 @@
             "product_feed_source": "product_list",
             "products": [
               "portland-bedroom-furniture-bundle",
-              "alice-highback-chair-with-wings-luxe-indigo",
+              "alice-highback-chair-with-wings",
               "perla-tub-chair-fabric-luxe-elm",
               "livonia-small-traditional-circular-pedestal-table",
               "grandios-framed-mirror",
