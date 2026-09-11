@@ -218,6 +218,9 @@
               if (comparePrice) comparePrice.parentElement.hidden = !isOnSale;
             }
 
+            var atcPriceElement = productRoot.querySelector('[data-atc-price]');
+            if (atcPriceElement) atcPriceElement.textContent = button.dataset.variantPrice;
+
             if (variantInput) {
               variantInput.value = button.dataset.variantId;
               variantInput.dispatchEvent(new Event('change', { bubbles: true }));
@@ -384,6 +387,9 @@
             if (comparePrice) comparePrice.textContent = compareAtPrice;
             if (comparePrice) comparePrice.parentElement.hidden = !isOnSale;
           }
+
+          var atcPriceElement = productRoot.querySelector('[data-atc-price]');
+          if (atcPriceElement) atcPriceElement.textContent = variant.price;
 
           window.dispatchEvent(new CustomEvent('variant:changed', {
             detail: {

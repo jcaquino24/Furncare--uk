@@ -132,7 +132,7 @@
           >
             <span style="justify-content:center;">
               {{ 'product.add_to_cart' | t }} -
-              {{ product.selected_or_first_available_variant.price | money }}
+              <span data-atc-price>{{ product.selected_or_first_available_variant.price | money }}</span>
               {% render 'icons', icon: 'cart' %}
             </span>
           </button>
