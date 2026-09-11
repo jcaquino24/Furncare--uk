@@ -63,7 +63,7 @@
         "heading_rzxmCK": {
           "type": "heading",
           "settings": {
-            "text": "A Blank Canvas to a Home: Manor Park Care Home, Old Malton",
+            "text": "Willow Lodge Care Home, Redhill | From Moodboard to Move-Ready:",
             "heading_level": "h2",
             "heading_style": "title-xl"
           },
@@ -73,7 +73,7 @@
           "type": "tagline",
           "name": "Tagline",
           "settings": {
-            "content": "Manor Park Care Home was handed over as a blank canvas - a modern new-build designed to provide high-quality residential care. Our role was to transform that empty structure into a warm, practical, and fully functioning home from day one.",
+            "content": "A purpose-built 80-bed care home in Redhill, Willow Lodge has been designed around a household model for people living with dementia. All the way from the first moodboards, we worked with StyleSmiths Interiors to translate the scheme into bedroom and dining furniture that suited the finished home.",
             "tagline_style": "body-xl"
           },
           "blocks": {}
@@ -431,6 +431,148 @@
       "name": "Spacer",
       "settings": {}
     },
+    "furncare_about_proof_DVGATz": {
+      "type": "furncare-about-proof",
+      "blocks": {
+        "stat_YHV4xk": {
+          "type": "stat",
+          "settings": {
+            "number": "80",
+            "label": "Bedrooms",
+            "copy": "Coordinated furniture supply across a large-scale care project."
+          }
+        },
+        "stat_UFfLjA": {
+          "type": "stat",
+          "settings": {
+            "number": "400",
+            "label": "New Product Codes",
+            "copy": "A complex specification, all details carefully managed."
+          }
+        },
+        "stat_fc8rzV": {
+          "type": "stat",
+          "settings": {
+            "number": "130",
+            "label": "Windows Dressed",
+            "copy": "Made-to-measure curtains and blinds installed throughout the scheme."
+          }
+        },
+        "stat_a6YXUX": {
+          "type": "stat",
+          "settings": {
+            "number": "tbc",
+            "label": "Core sectors",
+            "copy": "Later Living and Challenging Environments expertise."
+          }
+        }
+      },
+      "block_order": [
+        "stat_YHV4xk",
+        "stat_UFfLjA",
+        "stat_fc8rzV",
+        "stat_a6YXUX"
+      ],
+      "name": "Furncare proof advanced",
+      "settings": {
+        "eyebrow": "WILLOW LODGE, REDHILL",
+        "heading": "Confidence at every stage of the scheme.",
+        "background_gradient": "",
+        "background_color": "#C3C0B0",
+        "max_width": 1280,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#e7e5e4",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 36,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 13,
+        "eyebrow_weight": 700,
+        "eyebrow_letter_spacing": 22,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 16,
+        "text_color": "#0c0a09",
+        "heading_color": "#0c0a09",
+        "copy_color": "#57534e",
+        "eyebrow_color": "#78716c",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "card_background": "#FFFEF8",
+        "card_heading_color": "#0c0a09",
+        "card_copy_color": "#57534e",
+        "card_border_color": "#e7e5e4",
+        "card_border_width": 1,
+        "card_radius": 32,
+        "card_padding": 28,
+        "card_padding_mobile": 24,
+        "card_shadow_opacity": 6,
+        "card_hover_shadow_opacity": 14,
+        "card_hover_lift": 4,
+        "card_title_size": 14,
+        "card_title_weight": 300,
+        "card_copy_size": 15,
+        "card_copy_line_height": 170,
+        "card_copy_margin_top": 16,
+        "grid_gap": 20,
+        "columns_desktop": "4",
+        "columns_tablet": "2",
+        "columns_mobile": "1",
+        "icon_background": "#f5f5f4",
+        "icon_color": "#292524",
+        "icon_size": 48,
+        "icon_svg_size": 23,
+        "icon_radius": 16,
+        "icon_margin_bottom": 32,
+        "icon_hover_scale": 108,
+        "stat_number_color": "#0c0a09",
+        "stat_label_color": "#292524",
+        "stat_number_size": 40,
+        "stat_number_weight": 300,
+        "stat_label_size": 16,
+        "stat_label_margin_top": 12,
+        "stat_copy_margin_top": 12
+      }
+    },
+    "blocks_TDPceM": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_eWinAj": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 50,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#f9f7f0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_eWinAj"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
     "image_text_zXnynf": {
       "type": "image-text",
       "blocks": {
@@ -445,7 +587,7 @@
           "settings": {
             "title": "Our Approach",
             "title_size": "display",
-            "text": "When Manor Park Care Home was handed over as a newbuild, the structure was complete, but the character of the home was still to be defined. Our role was to bring that character to life — shaping interiors that support everyday living and balance the practical demands of care with spaces that feel calm, welcoming and familiar.\n<br>\n<br>\nWorking closely with the project team, we delivered a complete FF&E package designed to support wellbeing and daily living across the home. Every element was chosen with comfort, durability and purpose in mind, ensuring bedrooms, lounges and dining spaces function seamlessly while still feeling warm and homely.\n<br>\n<br>\nThrough thoughtful, purposeful solutions, we helped these care environments feel more homely, supportive and uplifting, balancing practical requirements with warmth and familiarity. In doing so, we delivered on our commitment to transforming spaces and elevating lives, shaping environments that support wellbeing, dignity and everyday comfort within care settings.",
+            "text": "When Willow Lodge was presented to us, it was still in the early stages of construction - this gave us plenty of time to work alongside StyleSmiths, to ensure no detail was missed in the specification. Shaping interiors that support everyday living and balance the practical demands of care takes time and precision. \n<br>\n<br>\nWorking closely with the project team, we delivered a complete FF&E package designed to support wellbeing and daily living across the home. Every element was chosen with comfort, durability and purpose in mind, ensuring bedrooms, lounges and dining spaces function seamlessly while still feeling warm and homely.\n<br>\n<br>\nThrough thoughtful, purposeful solutions, we helped these care environments feel more homely, supportive and uplifting, balancing practical requirements with warmth and familiarity. In doing so, we delivered on our commitment to transforming spaces and elevating lives, shaping environments that support wellbeing, dignity and everyday comfort within care settings.",
             "button_style": "primary",
             "button_text": "",
             "button_action": "link",
@@ -538,129 +680,6 @@
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
-      }
-    },
-    "furncare_about_proof_DVGATz": {
-      "type": "furncare-about-proof",
-      "blocks": {
-        "stat_YHV4xk": {
-          "type": "stat",
-          "settings": {
-            "number": "80",
-            "label": "Bedrooms",
-            "copy": "Project support and delivery across care-sector locations."
-          }
-        },
-        "stat_UFfLjA": {
-          "type": "stat",
-          "settings": {
-            "number": "400",
-            "label": "New Product Codes",
-            "copy": "mmkay"
-          }
-        },
-        "stat_fc8rzV": {
-          "type": "stat",
-          "settings": {
-            "number": "133",
-            "label": "Windows Dressed",
-            "copy": "Quick-delivery ranges available for time-sensitive requirements."
-          }
-        },
-        "stat_a6YXUX": {
-          "type": "stat",
-          "settings": {
-            "number": "2",
-            "label": "Core sectors",
-            "copy": "Later Living and Challenging Environments expertise."
-          }
-        }
-      },
-      "block_order": [
-        "stat_YHV4xk",
-        "stat_UFfLjA",
-        "stat_fc8rzV",
-        "stat_a6YXUX"
-      ],
-      "name": "Furncare proof advanced",
-      "settings": {
-        "eyebrow": "Why project teams choose Furncare",
-        "heading": "Confidence at every stage of the scheme.",
-        "background_gradient": "",
-        "background_color": "#C3C0B0",
-        "max_width": 1280,
-        "gutter_desktop": 24,
-        "gutter_mobile": 16,
-        "padding_top": 96,
-        "padding_bottom": 96,
-        "padding_mobile": 72,
-        "padding_bottom_mobile": 72,
-        "section_gap": 48,
-        "section_gap_mobile": 36,
-        "header_max_width": 780,
-        "content_max_width": 960,
-        "text_alignment": "left",
-        "section_border_color": "#e7e5e4",
-        "border_top_width": 0,
-        "border_bottom_width": 0,
-        "heading_size_desktop": 48,
-        "heading_size_mobile": 36,
-        "heading_weight": 500,
-        "heading_line_height": 100,
-        "heading_letter_spacing": 0,
-        "heading_max_width": 1100,
-        "copy_size_desktop": 18,
-        "copy_size_mobile": 16,
-        "copy_weight": 400,
-        "copy_line_height": 170,
-        "copy_max_width": 760,
-        "copy_margin_top": 28,
-        "eyebrow_size": 13,
-        "eyebrow_weight": 700,
-        "eyebrow_letter_spacing": 22,
-        "eyebrow_transform": "uppercase",
-        "eyebrow_margin_bottom": 16,
-        "text_color": "#0c0a09",
-        "heading_color": "#0c0a09",
-        "copy_color": "#57534e",
-        "eyebrow_color": "#78716c",
-        "enable_reveal": true,
-        "reveal_distance": 32,
-        "reveal_duration": 760,
-        "card_background": "#FFFEF8",
-        "card_heading_color": "#0c0a09",
-        "card_copy_color": "#57534e",
-        "card_border_color": "#e7e5e4",
-        "card_border_width": 1,
-        "card_radius": 32,
-        "card_padding": 28,
-        "card_padding_mobile": 24,
-        "card_shadow_opacity": 6,
-        "card_hover_shadow_opacity": 14,
-        "card_hover_lift": 4,
-        "card_title_size": 14,
-        "card_title_weight": 300,
-        "card_copy_size": 15,
-        "card_copy_line_height": 170,
-        "card_copy_margin_top": 16,
-        "grid_gap": 20,
-        "columns_desktop": "4",
-        "columns_tablet": "2",
-        "columns_mobile": "1",
-        "icon_background": "#f5f5f4",
-        "icon_color": "#292524",
-        "icon_size": 48,
-        "icon_svg_size": 23,
-        "icon_radius": 16,
-        "icon_margin_bottom": 32,
-        "icon_hover_scale": 108,
-        "stat_number_color": "#0c0a09",
-        "stat_label_color": "#292524",
-        "stat_number_size": 48,
-        "stat_number_weight": 700,
-        "stat_label_size": 16,
-        "stat_label_margin_top": 12,
-        "stat_copy_margin_top": 12
       }
     },
     "richtext_JgQX8i": {
@@ -787,6 +806,26 @@
         "see_more_max_height": 400
       }
     },
+    "image_video_banner_qe6Agh": {
+      "type": "image-video-banner",
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/VT_ZephyrX_Redhill_V1_FINAL03_LoRes-scaled-e1737734385491-1920x800.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "light",
+        "content_position": "center-center",
+        "content_alignment": "left"
+      }
+    },
     "blocks_bBDtmY": {
       "type": "_blocks",
       "blocks": {
@@ -814,15 +853,17 @@
     "richtext_LTPVBd",
     "image_text_blocks_xYxbk8",
     "blocks_HErXQc",
+    "furncare_about_proof_DVGATz",
+    "blocks_TDPceM",
     "image_text_zXnynf",
     "image_text_nRYrfd",
     "image_text_FgCCAX",
-    "furncare_about_proof_DVGATz",
     "richtext_JgQX8i",
     "image_video_banner_YMmQ4a",
     "1784102920a76ec080",
     "1769170984a6172538",
     "richtext_brEcwg",
+    "image_video_banner_qe6Agh",
     "blocks_bBDtmY"
   ]
 }
