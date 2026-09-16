@@ -26,8 +26,8 @@
             "title_size": "display",
             "text": "In settings where behaviours, vulnerabilities, and complex needs must be carefully managed, the environment becomes a crucial part of care.\n\n\nOur furniture is developed specifically for these high-demand spaces, offering strength, stability, and reassurance for both users and staff. With a focus on durability, safety, and controlled comfort, each product is engineered to reduce risk without compromising on the quality of the space. \n\n\nThe result is a reliable, adaptable range that helps care providers maintain safe, calming environments that support positive outcomes and everyday wellbeing.",
             "button_style": "secondary",
-            "button_text": "Start your project",
-            "button_url": "shopify://pages/about-us"
+            "button_text": "Get in touch",
+            "button_url": "shopify://pages/show-van"
           }
         },
         "images_zLGb8j": {
@@ -44,10 +44,7 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "warm-stone",
-        "section_padding": "--spacing-2xl",
-        "enable_reveal": true,
-        "reveal_distance": 32,
-        "reveal_duration": 760
+        "section_padding": "--spacing-2xl"
       }
     },
     "richtext_B4pri3": {
@@ -57,7 +54,7 @@
           "type": "heading",
           "settings": {
             "text": "Carefully crafted to meet the unique demands of both care providers and the people they support.",
-            "heading_level": "h1",
+            "heading_level": "h2",
             "heading_style": "title-display"
           },
           "blocks": {}
@@ -90,16 +87,11 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "green-01",
-        "enable_animation": true,
-        "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
+        "enable_animation": true
       }
     },
     "image_text_DLkDEt": {
@@ -131,10 +123,7 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl",
-        "enable_reveal": true,
-        "reveal_distance": 32,
-        "reveal_duration": 760
+        "section_padding": "--spacing-2xl"
       }
     },
     "featured_blocks_tJyBpX": {
@@ -144,48 +133,42 @@
           "type": "block",
           "settings": {
             "image": "shopify://shop_images/CAreTech_2.png",
-            "caption": "",
-            "lightbox_caption": ""
+            "caption": ""
           }
         },
         "block_c7iVjG": {
           "type": "block",
           "settings": {
             "image": "shopify://shop_images/priory-logo.png",
-            "caption": "",
-            "lightbox_caption": ""
+            "caption": ""
           }
         },
         "block_3PK3kD": {
           "type": "block",
           "settings": {
             "image": "shopify://shop_images/logo11_0_f83b4fa5-2505-4d9b-a5f4-c146e017546e.png",
-            "caption": "",
-            "lightbox_caption": ""
+            "caption": ""
           }
         },
         "block_9JDWVn": {
           "type": "block",
           "settings": {
             "image": "shopify://shop_images/Achieve-Together-Sized.png",
-            "caption": "",
-            "lightbox_caption": ""
+            "caption": ""
           }
         },
         "block_Y8CXfE": {
           "type": "block",
           "settings": {
             "image": "shopify://shop_images/Cygnet-Logo-CMYK.png",
-            "caption": "",
-            "lightbox_caption": ""
+            "caption": ""
           }
         },
         "block_JnUzMz": {
           "type": "block",
           "settings": {
             "image": "shopify://shop_images/ivolve-og-image.png",
-            "caption": "",
-            "lightbox_caption": ""
+            "caption": ""
           }
         }
       },
@@ -202,8 +185,7 @@
         "colour_scheme": "base-white-01",
         "title": "our trusted partners",
         "padding": "default",
-        "layout": "line_grid",
-        "enable_lightbox": false
+        "layout": "line_grid"
       }
     }
   },

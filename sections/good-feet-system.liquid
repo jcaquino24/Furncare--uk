@@ -1,0 +1,255 @@
+{%- style -%}
+  /* Namespacing all styles to the specific section ID */
+  #shopify-section-{{ section.id }} .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.bg_color }};
+  }
+  
+  #shopify-section-{{ section.id }} .gfs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  #shopify-section-{{ section.id }} .gfs-header { 
+    margin-bottom: 50px; 
+  }
+
+  /* Typography Styles */
+  #shopify-section-{{ section.id }} .gfs-subheading { 
+    display: block;
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    margin-bottom: 10px;
+    color: {{ section.settings.sub_color }};
+    font-size: {{ section.settings.sub_size }}px;
+    font-weight: {{ section.settings.sub_weight }};
+  }
+  
+  #shopify-section-{{ section.id }} .gfs-title { 
+    margin: 0 0 20px 0;
+    color: {{ section.settings.head_color }};
+    font-size: {{ section.settings.head_size }}px;
+    font-weight: {{ section.settings.head_weight }};
+  }
+  
+  #shopify-section-{{ section.id }} .gfs-description { 
+    max-width: 650px; 
+    margin: 0 auto; 
+    line-height: 1.6;
+    color: {{ section.settings.body_color }};
+    font-size: {{ section.settings.body_size }}px;
+  }
+  
+  /* Grid Logic */
+  #shopify-section-{{ section.id }} .gfs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  #shopify-section-{{ section.id }} .gfs-item {
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* VIDEO CONTAINER */
+  #shopify-section-{{ section.id }} .gfs-media-wrapper--video {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 4/5;
+    background: #f4f6fa;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    overflow: hidden;
+  }
+  
+  #shopify-section-{{ section.id }} .gfs-media-wrapper--video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* IMAGE CONTAINER */
+  #shopify-section-{{ section.id }} .gfs-media-wrapper--image {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    margin-bottom: 25px;
+    height: {{ section.settings.img_container_height }}px;
+  }
+
+  #shopify-section-{{ section.id }} .gfs-image-shape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: {{ section.settings.img_bg }};
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .shape--circle { 
+    border-radius: 50%; 
+    width: {{ section.settings.img_container_height }}px; 
+  }
+  
+  #shopify-section-{{ section.id }} .shape--box { 
+    border-radius: 12px; 
+  }
+
+  #shopify-section-{{ section.id }} .gfs-image-shape img {
+    max-width: {{ section.settings.img_max_width }}px;   
+    max-height: {{ section.settings.img_max_height }}px; 
+    object-fit: contain; 
+    display: block;      
+  }
+
+  /* Block Content Typography */
+  #shopify-section-{{ section.id }} .gfs-item-title {
+    margin-bottom: 15px;
+    color: {{ section.settings.block_head_color }};
+    font-size: {{ section.settings.block_head_size }}px;
+    font-weight: {{ section.settings.block_head_weight }};
+  }
+  
+  #shopify-section-{{ section.id }} .gfs-item-text {
+    line-height: 1.6;
+    color: {{ section.settings.block_text_color }};
+    font-size: {{ section.settings.block_text_size }}px;
+  }
+
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }} .gfs-grid { 
+      flex-direction: column; 
+      align-items: center; 
+    }
+    #shopify-section-{{ section.id }} .gfs-item { 
+      width: 100%; 
+      max-width: 100%; 
+    }
+  }
+{%- endstyle -%}
+
+<section class="section-{{ section.id }}-padding">
+  <div class="gfs-container">
+    <div class="gfs-header">
+      <span class="gfs-subheading">{{ section.settings.subheading }}</span>
+      <h2 class="gfs-title">{{ section.settings.title }}</h2>
+      <div class="gfs-description">{{ section.settings.description }}</div>
+    </div>
+
+    <div class="gfs-grid">
+      {%- for block in section.blocks -%}
+        <div class="gfs-item" {{ block.shopify_attributes }}>
+          
+          {%- if block.settings.video != blank -%}
+            <div class="gfs-media-wrapper--video">
+              {{ block.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
+            </div>
+          {%- elsif block.settings.image != blank -%}
+            <div class="gfs-media-wrapper--image">
+               <div class="gfs-image-shape shape--{{ section.settings.image_style }}">
+                 {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+               </div>
+            </div>
+          {%- else -%}
+            <div class="gfs-media-wrapper--image">
+              <div class="gfs-image-shape shape--{{ section.settings.image_style }}">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            </div>
+          {%- endif -%}
+
+          <h3 class="gfs-item-title">{{ block.settings.title }}</h3>
+          <div class="gfs-item-text">{{ block.settings.text }}</div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Custom 3-Step System",
+  "settings": [
+    { "type": "header", "content": "Layout Settings" },
+    { "type": "color", "id": "bg_color", "label": "Background Color", "default": "#ffffff" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top Padding", "default": 60 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Bottom Padding", "default": 60 },
+    
+    { "type": "header", "content": "Image Container Settings" },
+    {
+      "type": "select",
+      "id": "image_style",
+      "label": "Image Container Shape",
+      "options": [
+        { "value": "circle", "label": "Circular" },
+        { "value": "box", "label": "Box" }
+      ],
+      "default": "box"
+    },
+    { "type": "color", "id": "img_bg", "label": "Image Background Color", "default": "#ffffff" },
+    { "type": "range", "id": "img_container_height", "min": 100, "max": 500, "step": 10, "unit": "px", "label": "Container Height", "default": 300 },
+    { "type": "range", "id": "img_max_width", "min": 50, "max": 400, "step": 10, "unit": "px", "label": "Image Max Width", "default": 200 },
+    { "type": "range", "id": "img_max_height", "min": 50, "max": 400, "step": 10, "unit": "px", "label": "Image Max Height", "default": 200 },
+
+    { "type": "header", "content": "Subheading" },
+    { "type": "text", "id": "subheading", "label": "Text", "default": "BRACES FOR THE FEET" },
+    { "type": "color", "id": "sub_color", "label": "Color", "default": "#8e94a7" },
+    { "type": "range", "id": "sub_size", "min": 10, "max": 30, "step": 1, "unit": "px", "label": "Font Size", "default": 14 },
+    { "type": "select", "id": "sub_weight", "label": "Weight", "options": [ {"value": "400", "label": "Normal"}, {"value": "700", "label": "Bold"} ], "default": "400" },
+
+    { "type": "header", "content": "Main Heading" },
+    { "type": "text", "id": "title", "label": "Text", "default": "Why the Good Feet system works" },
+    { "type": "color", "id": "head_color", "label": "Color", "default": "#4a5486" },
+    { "type": "range", "id": "head_size", "min": 20, "max": 60, "step": 2, "unit": "px", "label": "Font Size", "default": 36 },
+    { "type": "select", "id": "head_weight", "label": "Weight", "options": [ {"value": "400", "label": "Normal"}, {"value": "700", "label": "Bold"} ], "default": "700" },
+
+    { "type": "header", "content": "Intro Body" },
+    { "type": "richtext", "id": "description", "label": "Text" },
+    { "type": "color", "id": "body_color", "label": "Color", "default": "#7a7a7a" },
+    { "type": "range", "id": "body_size", "min": 12, "max": 24, "step": 1, "unit": "px", "label": "Font Size", "default": 16 },
+
+    { "type": "header", "content": "Block Typography" },
+    { "type": "color", "id": "block_head_color", "label": "Block Heading Color", "default": "#4a5486" },
+    { "type": "range", "id": "block_head_size", "min": 16, "max": 32, "step": 1, "unit": "px", "label": "Block Heading Size", "default": 22 },
+    { "type": "select", "id": "block_head_weight", "label": "Block Heading Weight", "options": [ {"value": "400", "label": "Normal"}, {"value": "700", "label": "Bold"} ], "default": "700" },
+    { "type": "color", "id": "block_text_color", "label": "Block Text Color", "default": "#7a7a7a" },
+    { "type": "range", "id": "block_text_size", "min": 12, "max": 20, "step": 1, "unit": "px", "label": "Block Text Size", "default": 15 }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Step",
+      "limit": 3,
+      "settings": [
+        { "type": "video", "id": "video", "label": "Icon Video", "info": "Priority media. Uses 'Cover' full-column settings." },
+        { "type": "image_picker", "id": "image", "label": "Icon Image", "info": "Uses 'Contain' centered settings." },
+        { "type": "text", "id": "title", "label": "Title", "default": "Strengthen" },
+        { "type": "richtext", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "presets": [
+    { 
+      "name": "Good Feet System", 
+      "blocks": [ 
+        { "type": "column", "settings": { "title": "Strengthen" } }, 
+        { "type": "column", "settings": { "title": "Maintain" } }, 
+        { "type": "column", "settings": { "title": "Relax" } } 
+      ] 
+    }
+  ]
+}
+{% endschema %}

@@ -88,7 +88,7 @@
         "image_desktop": "shopify://shop_images/20240221_Lounge_ViewArtwork.jpg",
         "show_controls": false,
         "mute_video": true,
-        "autoplay_video": false,
+        "autoplay_video": true,
         "show_overlay": true,
         "overlay_background": "linear-gradient(54deg, rgba(255, 250, 99, 1), rgba(38, 37, 32, 0.4) 1%)",
         "colour_scheme": "dark",
@@ -103,7 +103,7 @@
           "type": "heading",
           "settings": {
             "text": "Unique interiors for flagship brain injury centre",
-            "heading_level": "h1",
+            "heading_level": "h2",
             "heading_style": "title-xl"
           },
           "blocks": {}
@@ -123,16 +123,11 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
-        "enable_animation": false,
-        "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
+        "enable_animation": false
       }
     },
     "featured_blocks_QcyUqa": {
@@ -360,16 +355,11 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
-        "enable_animation": false,
-        "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
+        "enable_animation": false
       }
     },
     "image_text_Rr8iJJ": {
@@ -400,10 +390,7 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl",
-        "enable_reveal": true,
-        "reveal_distance": 32,
-        "reveal_duration": 760
+        "section_padding": "--spacing-2xl"
       }
     },
     "richtext_TJAtU7": {
@@ -446,16 +433,11 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
-        "enable_animation": false,
-        "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
+        "enable_animation": false
       }
     },
     "image_video_banner_xWTgmR": {
@@ -534,7 +516,7 @@
         "image_desktop": "shopify://shop_images/20240221_Frontage_ViewSignageNight.jpg",
         "show_controls": false,
         "mute_video": true,
-        "autoplay_video": false,
+        "autoplay_video": true,
         "show_overlay": false,
         "overlay_background": "linear-gradient(320deg, rgba(255, 250, 99, 0.2), rgba(203, 68, 194, 1), rgba(255, 250, 99, 0))",
         "colour_scheme": "light",
@@ -581,16 +563,11 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
-        "enable_animation": false,
-        "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
+        "enable_animation": false
       }
     },
     "product_blocks_hr4bkw": {

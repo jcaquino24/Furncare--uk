@@ -19,14 +19,9 @@
   {% comment %} Badges {% endcomment %}
   {% render 'badge', product: product %}
 
-  {% if section.settings.show_sku %}
-    <div
-      class="product-info__sku eyebrow-2xs"
-      data-product-sku
-      {% if product.selected_or_first_available_variant.sku == blank %}hidden{% endif %}
-    >
-      {{ 'product.product_sku' | t }}:
-      <span data-product-sku-value>{{ product.selected_or_first_available_variant.sku }}</span>
+  {% if section.settings.show_sku and product.selected_or_first_available_variant.sku != blank %}
+    <div class="product-info__sku eyebrow-2xs">
+      {{ 'product.product_sku' | t }}: {{ product.selected_or_first_available_variant.sku }}
     </div>
   {% endif %}
 
@@ -40,16 +35,14 @@
   {% comment %} Price {% endcomment %}
   {%- assign has_swatch_collections = product.metafields.custom.swatch_collections.value -%}
   {% if section.settings.show_price %}
-    <div data-product-price>
-      {% render 'price',
-        product: product,
-        use_variant: true,
-        show_compare_at_price: true,
-        show_vat_badge: section.settings.show_vat_badge,
-        show_free_sample_label: section.settings.show_free_sample_label,
-        force_from_price: has_swatch_collections
-      %}
-    </div>
+    {% render 'price',
+      product: product,
+      use_variant: true,
+      show_compare_at_price: true,
+      show_vat_badge: section.settings.show_vat_badge,
+      show_free_sample_label: section.settings.show_free_sample_label,
+      force_from_price: has_swatch_collections
+    %}
   {% endif %}
 
   {% comment %} Description {% endcomment %}
@@ -63,8 +56,6 @@
       </div>
     </div>
   {% endif %}
-
-  
 
   {% comment %} Product Swatch Information - Show if hubspot_form exists and not bespoke {% endcomment %}
   {% liquid
@@ -89,17 +80,11 @@
     </div>
   {% endif %}
   
-{%- for block in section.blocks -%}
-  {%- if block.type == 'variant_selector' -%}
-    {% render 'product-variant-selector', product: product, block: block %}
-  {%- endif -%}
-{%- endfor -%}
-
 {% if section.settings.show_call_to_action %}
   {% comment %} Lead time {% endcomment %}
 
   {% if product.metafields.custom.delivered_within.value != blank %}
-    <div class="delivered-within">
+  <div class="delivered-within">
     
     {% if section.settings.lead_time_icon != blank %}
       <div>
@@ -118,51 +103,26 @@
       {{  section.settings.lead_time_text }} {{ product.metafields.custom.delivered_within.value }}
     </div>
 
-    </div>
-  {% endif %}
+  </div>
+{% endif %}
 
 
 {%- for block in section.blocks -%}
-  {%- if block.type == 'cross_sell' -%}
-    {% if forloop.first %}
-      <script src="{{ 'product-cross-sell.js' | asset_url }}" defer="defer"></script>
-    {% endif %}
-    {% render 'product-cross-sell', product: product, block: block, section: section.id %}
-  {%- endif -%}
+{%- case block.type -%}
+{%- when 'cross_sell' %}
+{% render 'product-cross-sell', product: product, block: block, section: section.id %}
+{%- endcase -%}
 {%- endfor -%}
-
-{%- assign collection_popup_blocks = section.blocks | where: "type", "collection_popup" -%}
-{%- assign collection_popup_count = collection_popup_blocks.size -%}
-{%- if collection_popup_count > 3 -%}
-  {%- assign collection_popup_count = 3 -%}
-{%- endif -%}
-{%- assign collection_popup_class = 'product-collection-popup__buttons' -%}
-{%- if collection_popup_count == 1 -%}
-  {%- assign collection_popup_class = collection_popup_class | append: ' product-collection-popup__buttons--one' -%}
-{%- elsif collection_popup_count == 2 -%}
-  {%- assign collection_popup_class = collection_popup_class | append: ' product-collection-popup__buttons--two' -%}
-{%- else -%}
-  {%- assign collection_popup_class = collection_popup_class | append: ' product-collection-popup__buttons--three' -%}
-{%- endif -%}
-
-{%- if collection_popup_count > 0 and section.settings.show_collection_popup -%}
-  <div class="{{ collection_popup_class }}">
-    {%- for block in collection_popup_blocks limit: 3 -%}
-      {% render 'product-collection-popup-block', product: product, block: block, section: section, section_id: section_id %}
-    {%- endfor -%}
-  </div>
-{%- endif -%}
 
   {% comment %} End of lead time code {% endcomment %}
 
   {% comment %} Product Form {% endcomment %}
-   
-      {% render 'product-form', product: product, section_id: section_id, section: section %}
-      
-
+  {% render 'product-form', product: product, section_id: section_id, section: section %}
 {% endif %}
+  {% comment %} USPs {% endcomment %}
+  {% render 'product-usp', product: product %}
 
-{% if customer %}  {% if customer.id == 11696191635792 or customer.id == 11063103160656 %}
+
 <button
   id="mprfq-quote-{{ product.id }}"
   product-handle="{{ product.handle }}"
@@ -183,13 +143,7 @@
 >
   Add to Quote
 </button>
-{% endif %}
-{% endif %}
-
-  {% comment %} USPs {% endcomment %}
-  {% render 'product-usp', product: product %}
-
-
+  
     {% comment %} Action Buttons {% endcomment %}
     <uwp-product-actions
       role="region"
@@ -198,7 +152,5 @@
     >
       {% render 'product-actions', product: product, section: section %}
     </uwp-product-actions>
-
-    
   
 </div>

@@ -4,6 +4,8 @@
 {% endcomment %}
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
   .koz-grid-section-{{ section.id }} {
     background-color: {{ section.settings.bg_color }};
     padding-top: {{ section.settings.padding_top }}px;
@@ -68,7 +70,7 @@
     bottom: 20px;
     left: 20px;
     color: #ffffff;
-    font-family: var(--font-heading-family);
+    font-family: 'Bebas Neue', Impact, sans-serif; /* Matches the tall, condensed look */
     font-size: clamp(20px, 2.5vw, 28px);
     line-height: 1;
     margin: 0;

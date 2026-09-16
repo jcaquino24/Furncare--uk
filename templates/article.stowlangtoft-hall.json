@@ -88,7 +88,7 @@
         "image_desktop": "shopify://shop_images/20201020-IMG_1435-2.jpg",
         "show_controls": false,
         "mute_video": true,
-        "autoplay_video": false,
+        "autoplay_video": true,
         "show_overlay": true,
         "overlay_background": "linear-gradient(54deg, rgba(255, 250, 99, 1), rgba(38, 37, 32, 0.4) 1%)",
         "colour_scheme": "dark",
@@ -103,7 +103,7 @@
           "type": "heading",
           "settings": {
             "text": "Set in beautiful grounds, Stowlangtoft Hall delivers outstanding rated care to its residents.",
-            "heading_level": "h1",
+            "heading_level": "h2",
             "heading_style": "title-xl"
           },
           "blocks": {}
@@ -135,16 +135,11 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
-        "enable_animation": false,
-        "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
+        "enable_animation": false
       }
     },
     "featured_blocks_QcyUqa": {
@@ -377,16 +372,11 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
-        "enable_animation": false,
-        "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
+        "enable_animation": false
       }
     },
     "image_video_banner_xWTgmR": {
@@ -466,7 +456,7 @@
         "image_mobile": "shopify://shop_images/Screenshot_2025-10-29_120623.png",
         "show_controls": false,
         "mute_video": true,
-        "autoplay_video": false,
+        "autoplay_video": true,
         "show_overlay": false,
         "overlay_background": "linear-gradient(320deg, rgba(255, 250, 99, 0.2), rgba(203, 68, 194, 1), rgba(255, 250, 99, 0))",
         "colour_scheme": "light",

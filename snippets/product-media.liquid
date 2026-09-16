@@ -1,7 +1,5 @@
 {%- liquid
   assign lightbox = lightbox | default: false
-  assign media_loading = loading | default: 'lazy'
-  assign media_fetchpriority = fetchpriority | default: 'auto'
 -%}
 
 {% case media.media_type %}
@@ -13,23 +11,16 @@
         | image_tag: loading: 'lazy', sizes: '96px', widths: '96, 192'
       }}
     {% else %}
-      {% assign image_loading = media_loading %}
-      {% assign image_fetchpriority = media_fetchpriority %}
+      {% assign lazyloading = 'lazy' %}
 
-      {% if image_loading == blank %}
-        {% assign image_loading = 'lazy' %}
+      {% if forloop.first %}
+        {% assign lazyloading = 'eager' %}
       {% endif %}
-
-      {% if image_fetchpriority == blank %}
-        {% assign image_fetchpriority = 'auto' %}
-      {% endif %}
-
       {{
         media
         | image_url: width: 2048
         | image_tag:
-          loading: image_loading,
-          fetchpriority: image_fetchpriority,
+          loading: lazyloading,
           sizes: '(min-width: 1024px) 730px, 100vw',
           widths: '375, 550, 730, 1100, 1460, 2048'
       }}

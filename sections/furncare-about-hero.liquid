@@ -2,30 +2,8 @@
 <script src="{{ 'furncare-about.js' | asset_url }}" defer="defer"></script>
 
 {%- liquid
-  if section.settings.contact_form_html != blank
-    render 'vite-tag' with '@snippets/product-actions.css'
-    render 'vite-tag' with '@snippets/product-actions.ts'
-  endif
-
   assign words = section.settings.animated_words | newline_to_br | split: '<br />'
   assign reveal_class = ''
-  assign drawer_id = 'contact-form-drawer'
-  assign primary_action = section.settings.primary_action | default: 'link'
-  assign secondary_action = section.settings.secondary_action | default: 'link'
-  assign has_contact_form = false
-
-  if section.settings.contact_form_html != blank
-    assign has_contact_form = true
-  endif
-
-  assign show_contact_drawer = false
-  if has_contact_form and primary_action == 'contact_drawer'
-    assign show_contact_drawer = true
-  endif
-  if has_contact_form and secondary_action == 'contact_drawer'
-    assign show_contact_drawer = true
-  endif
-
   if section.settings.enable_reveal
     assign reveal_class = ' fa-reveal'
   endif
@@ -60,48 +38,16 @@
         {%- if section.settings.primary_label != blank or section.settings.secondary_label != blank -%}
           <div class="fa-buttons">
             {%- if section.settings.primary_label != blank -%}
-              {%- if primary_action == 'contact_drawer' and has_contact_form -%}
-                <button
-                  type="button"
-                  class="fa-button fa-button--primary"
-                  data-furncare-drawer-trigger
-                  data-drawer-trigger="{{ drawer_id }}"
-                >
-                  {{ section.settings.primary_label | escape }}
-                  <svg class="fa-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </button>
-              {%- elsif primary_action == 'scroll' and section.settings.scroll_target != blank -%}
-                <a class="fa-button fa-button--primary" data-scroll-to="{{ section.settings.scroll_target }}" href="#">
-                  {{ section.settings.primary_label | escape }}
-                  <svg class="fa-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-              {%- else -%}
-                <a class="fa-button fa-button--primary" href="{{ section.settings.primary_link | default: '#' }}">
-                  {{ section.settings.primary_label | escape }}
-                  <svg class="fa-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-              {%- endif -%}
+              <a class="fa-button fa-button--primary" {%- unless section.settings.scroll_target != blank  -%}href="{{ section.settings.primary_link }}"{%- endunless -%} {%- if section.settings.scroll_target != blank  -%} data-scroll-to="{{ section.settings.scroll_target }}"{%- endif -%}>
+                {{ section.settings.primary_label | escape }}
+                <svg class="fa-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
             {%- endif -%}
 
             {%- if section.settings.secondary_label != blank -%}
-              {%- if secondary_action == 'contact_drawer' and has_contact_form -%}
-                <button
-                  type="button"
-                  class="fa-button fa-button--secondary"
-                  data-furncare-drawer-trigger
-                  data-drawer-trigger="{{ drawer_id }}"
-                >
-                  {{ section.settings.secondary_label | escape }}
-                </button>
-              {%- elsif secondary_action == 'scroll' and section.settings.secondary_scroll_target != blank -%}
-                <a class="fa-button fa-button--secondary" data-scroll-to="{{ section.settings.secondary_scroll_target }}" href="#">
-                  {{ section.settings.secondary_label | escape }}
-                </a>
-              {%- else -%}
-                <a class="fa-button fa-button--secondary" href="{{ section.settings.secondary_link | default: '#' }}">
-                  {{ section.settings.secondary_label | escape }}
-                </a>
-              {%- endif -%}
+              <a class="fa-button fa-button--secondary" {%- unless section.settings.secondary_scroll_target != blank  -%} href="{{ section.settings.secondary_link }}"{%- endunless -%} {%- if section.settings.secondary_scroll_target != blank -%}data-scroll-to="{{ section.settings.secondary_scroll_target }}{%- endif -%}">
+                {{ section.settings.secondary_label | escape }}
+              </a>
             {%- endif -%}
           </div>
         {%- endif -%}
@@ -131,186 +77,6 @@
   </div>
 </section>
 
-{% if show_contact_drawer %}
-  <div id="furncare-contact-form-drawer-template-{{ section.id }}" style="display: none;">
-    <uwp-drawer
-      modal-name="{{ drawer_id }}"
-      drawer-direction="right"
-      class="drawer"
-      aria-hidden="true"
-      role="region"
-      aria-label="Contact form drawer"
-      aria-roledescription="drawer"
-    >
-      <div class="modal__overlay" tabindex="-1" data-close-drawer></div>
-
-      <aside
-        class="drawer__container"
-        role="dialog"
-        aria-modal="true"
-        js-uwp-modal="modal"
-        aria-labelledby="FurncareHeroDrawerTitle-{{ section.id }}"
-      >
-        <div class="drawer__header">
-          <div class="drawer__header-title-wrapper">
-            {% render 'icons', icon: 'chat' %}
-
-            <h2 id="FurncareHeroDrawerTitle-{{ section.id }}" class="drawer__title body-lg body-lg--bold">
-              {{ 'product.actions.contact_us' | t }}
-            </h2>
-          </div>
-          <button
-            type="button"
-            class="drawer__close"
-            data-close-drawer
-            aria-label="{{ 'general.close' | t }}"
-          >
-            {% render 'icons', icon: 'close' %}
-          </button>
-        </div>
-
-        <div class="drawer__body">
-          <div class="drawer__description">
-            <p class="body-md">{{ 'product.actions.contact_description' | t }}</p>
-          </div>
-          <div class="contact-form-content">
-            {{ section.settings.contact_form_html }}
-          </div>
-        </div>
-      </aside>
-    </uwp-drawer>
-  </div>
-
-  <script>
-    (function () {
-      var sectionRoot = document.getElementById('FurncareAboutHero-{{ section.id }}');
-      var drawerTemplate = document.getElementById('furncare-contact-form-drawer-template-{{ section.id }}');
-      var hubspotScriptSrc = 'https://js-eu1.hsforms.net/forms/embed/145723791.js';
-
-      function mountDrawer() {
-        var globalDrawers = document.getElementById('global-drawers');
-        if (!drawerTemplate || !globalDrawers) return;
-        if (globalDrawers.querySelector('[modal-name="{{ drawer_id }}"]')) return;
-
-        var drawerElement = drawerTemplate.querySelector('uwp-drawer');
-        if (!drawerElement) return;
-
-        globalDrawers.appendChild(drawerElement);
-      }
-
-      function ensureDrawer(drawerName) {
-        mountDrawer();
-        var globalDrawers = document.getElementById('global-drawers');
-        if (globalDrawers) {
-          return globalDrawers.querySelector('[modal-name="' + drawerName + '"]');
-        }
-        return document.querySelector('[modal-name="' + drawerName + '"]');
-      }
-
-      function loadHubSpotScript(onReady) {
-        if (window.hbspt && window.hbspt.forms && typeof window.hbspt.forms.create === 'function') {
-          onReady();
-          return;
-        }
-
-        var existingScript = document.querySelector('script[data-furncare-hsforms]');
-        if (existingScript) {
-          existingScript.addEventListener('load', onReady, { once: true });
-          return;
-        }
-
-        var script = document.createElement('script');
-        script.src = hubspotScriptSrc;
-        script.defer = true;
-        script.setAttribute('data-furncare-hsforms', 'true');
-        script.addEventListener('load', onReady, { once: true });
-        document.head.appendChild(script);
-      }
-
-      function initHubSpotForms(drawer) {
-        if (!drawer) return;
-
-        var frames = drawer.querySelectorAll('.hs-form-frame[data-form-id][data-portal-id]');
-        if (!frames.length) return;
-
-        function renderForms() {
-          if (!window.hbspt || !window.hbspt.forms || typeof window.hbspt.forms.create !== 'function') return;
-
-          frames.forEach(function (frame, index) {
-            if (frame.getAttribute('data-hs-initialized') === 'true') return;
-            if (frame.querySelector('iframe, form')) {
-              frame.setAttribute('data-hs-initialized', 'true');
-              return;
-            }
-
-            var targetId = frame.id;
-            if (!targetId) {
-              targetId = 'hs-form-{{ section.id }}-' + index;
-              frame.id = targetId;
-            }
-
-            window.hbspt.forms.create({
-              region: frame.getAttribute('data-region') || 'eu1',
-              portalId: frame.getAttribute('data-portal-id'),
-              formId: frame.getAttribute('data-form-id'),
-              target: '#' + targetId
-            });
-
-            frame.setAttribute('data-hs-initialized', 'true');
-          });
-        }
-
-        if (window.hbspt && window.hbspt.forms && typeof window.hbspt.forms.create === 'function') {
-          renderForms();
-          return;
-        }
-
-        loadHubSpotScript(renderForms);
-      }
-
-      function openDrawer(drawer, drawerName) {
-        if (typeof drawer.showDrawer === 'function') {
-          drawer.showDrawer();
-          return;
-        }
-        document.dispatchEvent(new CustomEvent('modal:show:' + drawerName));
-
-        if (window.customElements && typeof window.customElements.whenDefined === 'function') {
-          window.customElements.whenDefined('uwp-drawer').then(function () {
-            var upgradedDrawer = document.querySelector('[modal-name="' + drawerName + '"]');
-            if (upgradedDrawer && typeof upgradedDrawer.showDrawer === 'function') {
-              upgradedDrawer.showDrawer();
-            }
-          });
-        }
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', mountDrawer, { once: true });
-      } else {
-        mountDrawer();
-      }
-
-      if (!sectionRoot) return;
-
-      sectionRoot.addEventListener('click', function (event) {
-        var trigger = event.target.closest('[data-furncare-drawer-trigger]');
-        if (!trigger) return;
-
-        event.preventDefault();
-
-        var drawerName = trigger.getAttribute('data-drawer-trigger');
-        if (!drawerName) return;
-
-        var drawer = ensureDrawer(drawerName);
-        if (!drawer) return;
-
-        initHubSpotForms(drawer);
-        openDrawer(drawer, drawerName);
-      });
-    })();
-  </script>
-{% endif %}
 {% schema %}
 {
   "name": "Furncare hero advanced",
@@ -346,26 +112,6 @@
       "default": "Start a project"
     },
     {
-      "type": "select",
-      "id": "primary_action",
-      "label": "Primary button action",
-      "default": "link",
-      "options": [
-        {
-          "value": "link",
-          "label": "Link (page or external URL)"
-        },
-        {
-          "value": "scroll",
-          "label": "Scroll to target"
-        },
-        {
-          "value": "contact_drawer",
-          "label": "Open contact form drawer"
-        }
-      ]
-    },
-    {
       "type": "url",
       "id": "primary_link",
       "label": "Primary button link"
@@ -382,26 +128,6 @@
       "default": "Explore our sectors"
     },
     {
-      "type": "select",
-      "id": "secondary_action",
-      "label": "Secondary button action",
-      "default": "link",
-      "options": [
-        {
-          "value": "link",
-          "label": "Link (page or external URL)"
-        },
-        {
-          "value": "scroll",
-          "label": "Scroll to target"
-        },
-        {
-          "value": "contact_drawer",
-          "label": "Open contact form drawer"
-        }
-      ]
-    },
-    {
       "type": "url",
       "id": "secondary_link",
       "label": "Secondary button link"
@@ -410,16 +136,6 @@
       "type": "text",
       "id": "secondary_scroll_target",
       "label": "Scroll to Target"
-    },
-    {
-      "type": "header",
-      "content": "Contact drawer"
-    },
-    {
-      "type": "textarea",
-      "id": "contact_form_html",
-      "label": "Contact form HTML",
-      "info": "Used when button action is set to Open contact form drawer. Paste form embed HTML here."
     },
     {
       "type": "header",

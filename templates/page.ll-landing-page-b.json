@@ -45,10 +45,7 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "warm-stone",
-        "section_padding": "--spacing-md",
-        "enable_reveal": true,
-        "reveal_distance": 32,
-        "reveal_duration": 760
+        "section_padding": "--spacing-md"
       }
     },
     "1775814653dedd3b0c": {
@@ -266,7 +263,7 @@
           "type": "heading",
           "settings": {
             "text": "Contemporary furniture solutions that balance innovation, practicality, and a warmth for later living environments.",
-            "heading_level": "h1",
+            "heading_level": "h2",
             "heading_style": "title-display"
           },
           "blocks": {}
@@ -299,16 +296,11 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "green-01",
-        "enable_animation": true,
-        "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
+        "enable_animation": true
       }
     },
     "image_text_xjAqkz": {
@@ -340,10 +332,7 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl",
-        "enable_reveal": true,
-        "reveal_distance": 32,
-        "reveal_duration": 760
+        "section_padding": "--spacing-2xl"
       }
     },
     "image_text_Yqccjx": {
@@ -374,10 +363,7 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl",
-        "enable_reveal": true,
-        "reveal_distance": 32,
-        "reveal_duration": 760
+        "section_padding": "--spacing-2xl"
       }
     },
     "richtext_GAKgWc": {
@@ -399,16 +385,11 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
-        "enable_animation": true,
-        "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
+        "enable_animation": true
       }
     },
     "blocks_TgDwab": {

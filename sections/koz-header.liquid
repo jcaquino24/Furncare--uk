@@ -1,0 +1,1334 @@
+{% comment %}
+  Kozler custom navigation — desktop + mobile swap
+
+  Self-contained: account/cart use section images + sizes only (no theme snippets). Copy this single section file to another theme.
+
+  Installation:
+  1. Theme editor → Header group → add "Kozler custom navigation".
+  2. Remove/disable the default Header if you only want this bar.
+
+  Search "Open modal" uses the theme search dialog when present; switch to "Link to search page" in settings if your theme has no search modal.
+{% endcomment %}
+
+{%- liquid
+  assign bp = section.settings.mobile_breakpoint | default: 990
+  assign main_menu = section.settings.main_menu
+  assign categories_menu = section.settings.categories_menu
+  assign cat_mode = section.settings.categories_mode
+  assign categories_url = section.settings.categories_url
+  assign main_menu_obj = linklists[main_menu]
+  assign categories_menu_obj = linklists[categories_menu]
+  assign hamburger_w = section.settings.hamburger_icon_width | default: 20
+-%}
+
+{%- capture kozler_hamburger_icon_inner -%}
+  {%- if section.settings.hamburger_icon != blank -%}
+    {{
+      section.settings.hamburger_icon
+      | image_url: width: 256
+      | image_tag:
+        class: 'kozler-custom-nav__menu-img',
+        loading: 'lazy',
+        alt: '',
+        width: hamburger_w,
+        height: hamburger_w
+    }}
+  {%- else -%}
+    {{- 'icon-menu.svg' | inline_asset_content -}}
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- if section.settings.logo_image != blank -%}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": {{ shop.name | json }},
+      "logo": {{ section.settings.logo_image | image_url: width: 500 | prepend: "https:" | json }},
+      "url": {{ request.origin | append: routes.root_url | json }}
+    }
+  </script>
+{%- endif -%}
+
+<header
+  class="kozler-custom-nav{% if section.settings.enable_sticky %} kozler-custom-nav--sticky{% endif %}"
+  id="kozler-custom-nav-{{ section.id }}"
+  style="
+    --kozler-nav-bp: {{ bp }}px;
+    --kozler-nav-bg: {{ section.settings.color_background }};
+    --kozler-nav-text: {{ section.settings.color_text }};
+    --kozler-nav-icon: {{ section.settings.color_icons }};
+    --kozler-nav-border: {{ section.settings.color_row_border }};
+    --kozler-nav-divider: {{ section.settings.color_vertical_divider }};
+    --kozler-nav-search-bg: {{ section.settings.color_search_background }};
+    --kozler-nav-search-text: {{ section.settings.color_search_text }};
+    --kozler-nav-search-placeholder: {{ section.settings.color_search_placeholder }};
+    --kozler-nav-nav-size: {{ section.settings.nav_font_size }}px;
+    --kozler-nav-nav-gap: {{ section.settings.nav_link_gap }}px;
+    --kozler-nav-logo-max: {{ section.settings.logo_max_width }}px;
+    --kozler-nav-tagline-size: {{ section.settings.tagline_font_size }}px;
+    --kozler-nav-search-radius: {{ section.settings.search_border_radius }}px;
+    --kozler-nav-search-height: {{ section.settings.search_height }}px;
+    --kozler-nav-mobile-cat-bg: {{ section.settings.mobile_cat_bg }};
+    --kozler-nav-mobile-cat-text: {{ section.settings.mobile_cat_text }};
+    --kozler-nav-mobile-cat-radius: {{ section.settings.mobile_cat_radius }}px;
+    --kozler-nav-drawer-bg: {{ section.settings.drawer_background }};
+    --kozler-nav-drawer-text: {{ section.settings.drawer_text }};
+    --kozler-util-account: {{ section.settings.account_icon_width | default: 24 }}px;
+    --kozler-util-cart: {{ section.settings.cart_icon_width | default: 24 }}px;
+    --kozler-util-gap: {{ section.settings.utility_icon_gap | default: 12 }}px;
+    --kozler-cart-badge-bg: {{ section.settings.cart_count_bg }};
+    --kozler-cart-badge-text: {{ section.settings.cart_count_text }};
+    --kozler-hamburger-size: {{ hamburger_w }}px;
+  "
+  {{ section.shopify_attributes }}
+>
+  <div class="kozler-custom-nav__inner {% if section.settings.section_width == 'page' %}page-width-normal{% endif %}">
+    {%- comment -%} Row 1: logo + utilities {%- endcomment -%}
+    <div class="kozler-custom-nav__row kozler-custom-nav__row--top">
+      <div class="kozler-custom-nav__logo-wrap">
+        <a href="{{ routes.root_url }}" class="kozler-custom-nav__logo-link">
+          {%- if section.settings.logo_image != blank -%}
+            {{
+              section.settings.logo_image
+              | image_url: width: 600
+              | image_tag:
+                class: 'kozler-custom-nav__logo-img',
+                loading: 'eager',
+                alt: section.settings.logo_alt | default: shop.name | escape
+            }}
+          {%- else -%}
+            <span class="kozler-custom-nav__logo-text">{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+        {%- if section.settings.tagline_left != blank or section.settings.tagline_right != blank -%}
+          <div class="kozler-custom-nav__tagline">
+            {%- if section.settings.tagline_left != blank -%}
+              <span>{{ section.settings.tagline_left }}</span>
+            {%- endif -%}
+            {%- if section.settings.tagline_right != blank -%}
+              <span>{{ section.settings.tagline_right }}</span>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+      <div class="kozler-custom-nav__utilities">
+        {%- liquid
+          assign acc_w = section.settings.account_icon_width | default: 24
+          assign cart_w = section.settings.cart_icon_width | default: 24
+        -%}
+        {%- if section.settings.show_account_link and shop.customer_accounts_enabled and section.settings.account_icon != blank -%}
+          <a
+            href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}"
+            class="kozler-custom-nav__utility-link"
+            aria-label="{{ 'accessibility.account' | t }}"
+          >
+            {{
+              section.settings.account_icon
+              | image_url: width: 256
+              | image_tag:
+                class: 'kozler-custom-nav__utility-img kozler-custom-nav__utility-img--account',
+                loading: 'lazy',
+                alt: '',
+                width: acc_w,
+                height: acc_w
+            }}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.show_cart_link and section.settings.cart_icon != blank -%}
+          {%- liquid
+            assign cart_aria = 'accessibility.cart' | t
+            if section.settings.show_cart_count and cart.item_count > 0
+              assign cart_aria = cart_aria | append: ' (' | append: cart.item_count | append: ')'
+            endif
+          -%}
+          <a
+            href="{{ routes.cart_url }}"
+            class="kozler-custom-nav__utility-link kozler-custom-nav__utility-link--cart"
+            aria-label="{{ cart_aria }}"
+          >
+            <span class="kozler-custom-nav__cart-stack">
+              {{
+                section.settings.cart_icon
+                | image_url: width: 256
+                | image_tag:
+                  class: 'kozler-custom-nav__utility-img kozler-custom-nav__utility-img--cart',
+                  loading: 'lazy',
+                  alt: '',
+                  width: cart_w,
+                  height: cart_w
+              }}
+              {%- if section.settings.show_cart_count and cart.item_count > 0 -%}
+                <span class="kozler-custom-nav__cart-count" aria-hidden="true">{{ cart.item_count }}</span>
+              {%- endif -%}
+            </span>
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="kozler-custom-nav__row-border" aria-hidden="true"></div>
+
+    {%- comment -%} Row 2: shop / search / nav {%- endcomment -%}
+    <div class="kozler-custom-nav__row kozler-custom-nav__row--bottom">
+      {%- comment -%} Desktop: categories / shop cluster {%- endcomment -%}
+      <div class="kozler-custom-nav__shop-slot kozler-custom-nav__desktop-only">
+        {%- if cat_mode == 'url' -%}
+          <a
+            href="{{ categories_url | default: routes.all_products_collection_url }}"
+            class="kozler-custom-nav__shop-link"
+          >
+            {%- if section.settings.show_shop_hamburger -%}
+              <span class="kozler-custom-nav__icon kozler-custom-nav__icon--menu" aria-hidden="true">{{ kozler_hamburger_icon_inner }}</span>
+            {%- endif -%}
+            <span class="kozler-custom-nav__shop-label">{{ section.settings.shop_label }}</span>
+          </a>
+        {%- else -%}
+          <details class="kozler-custom-nav__details kozler-custom-nav__details--cats">
+            <summary class="kozler-custom-nav__summary kozler-custom-nav__summary--shop">
+              {%- if section.settings.show_shop_hamburger -%}
+                <span class="kozler-custom-nav__icon kozler-custom-nav__icon--menu" aria-hidden="true">{{ kozler_hamburger_icon_inner }}</span>
+              {%- endif -%}
+              <span class="kozler-custom-nav__shop-label">{{ section.settings.shop_label }}</span>
+            </summary>
+            <div class="kozler-custom-nav__backdrop" tabindex="-1"></div>
+            <div class="kozler-custom-nav__panel kozler-custom-nav__panel--left">
+              <div class="kozler-custom-nav__panel-head">
+                <span class="kozler-custom-nav__panel-title">{{ section.settings.categories_drawer_title }}</span>
+                <button type="button" class="kozler-custom-nav__close" data-kozler-close-details aria-label="{{ 'actions.close' | t }}">
+                  <span class="svg-wrapper">{{ 'icon-close.svg' | inline_asset_content }}</span>
+                </button>
+              </div>
+              <nav class="kozler-custom-nav__drawer-nav" aria-label="{{ section.settings.categories_drawer_title }}">
+                {%- if categories_menu_obj != blank and categories_menu_obj.links.size > 0 -%}
+                  <ul class="kozler-custom-nav__drawer-list list-unstyled">
+                    {%- for link in categories_menu_obj.links -%}
+                      <li class="kozler-custom-nav__drawer-li">
+                        <a href="{{ link.url }}" class="kozler-custom-nav__drawer-link{% if link.current %} kozler-custom-nav__drawer-link--active{% endif %}">{{ link.title }}</a>
+                        {%- if link.links != blank -%}
+                          <ul class="kozler-custom-nav__drawer-sub list-unstyled">
+                            {%- for child in link.links -%}
+                              <li>
+                                <a href="{{ child.url }}" class="kozler-custom-nav__drawer-sublink{% if child.current %} kozler-custom-nav__drawer-link--active{% endif %}">{{ child.title }}</a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- else -%}
+                  <p class="kozler-custom-nav__empty">{{ section.settings.categories_empty_message }}</p>
+                {%- endif -%}
+              </nav>
+            </div>
+          </details>
+        {%- endif -%}
+      </div>
+
+      <div class="kozler-custom-nav__divider kozler-custom-nav__desktop-only" aria-hidden="true"></div>
+
+      {%- comment -%} Search (pill) {%- endcomment -%}
+      <div class="kozler-custom-nav__search-wrap">
+        {%- if section.settings.search_mode == 'page' -%}
+          <a
+            href="{{ routes.search_url }}"
+            class="kozler-custom-nav__search-btn kozler-custom-nav__search-btn--link"
+            aria-label="{{ 'content.search_input_label' | t }}"
+          >
+            <span class="kozler-custom-nav__search-placeholder">{{ section.settings.search_placeholder }}</span>
+          </a>
+        {%- else -%}
+          <search-button class="kozler-custom-nav__search">
+            <button
+              type="button"
+              on:click="#search-modal/showDialog"
+              class="kozler-custom-nav__search-btn"
+              aria-label="{{ 'content.search_input_label' | t }}"
+              aria-haspopup="dialog"
+            >
+              <span class="kozler-custom-nav__icon kozler-custom-nav__icon--search" aria-hidden="true">
+                {{- 'icon-search.svg' | inline_asset_content -}}
+              </span>
+              <span class="kozler-custom-nav__search-placeholder">{{ section.settings.search_placeholder }}</span>
+            </button>
+          </search-button>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} Desktop primary nav {%- endcomment -%}
+      <nav
+        class="kozler-custom-nav__primary kozler-custom-nav__desktop-only"
+        aria-label="{{ section.settings.main_nav_aria_label }}"
+      >
+        {%- if main_menu_obj != blank and main_menu_obj.links.size > 0 -%}
+          <ul class="kozler-custom-nav__primary-list list-unstyled">
+            {%- for link in main_menu_obj.links -%}
+              <li class="kozler-custom-nav__primary-item{% if link.links != blank %} kozler-custom-nav__primary-item--has-child{% endif %}">
+                <a
+                  href="{{ link.url }}"
+                  class="kozler-custom-nav__primary-link{% if link.current %} kozler-custom-nav__primary-link--active{% endif %}"
+                  {% if link.current %}
+                    aria-current="page"
+                  {% endif %}
+                >
+                  {{ link.title }}
+                  {%- if link.links != blank and section.settings.show_nav_chevron -%}
+                    <span class="kozler-custom-nav__chevron" aria-hidden="true">{{ 'icon-caret.svg' | inline_asset_content }}</span>
+                  {%- endif -%}
+                </a>
+                {%- if link.links != blank -%}
+                  <ul class="kozler-custom-nav__dropdown list-unstyled">
+                    {%- for child in link.links -%}
+                      <li>
+                        <a
+                          href="{{ child.url }}"
+                          class="kozler-custom-nav__dropdown-link{% if child.current %} kozler-custom-nav__primary-link--active{% endif %}"
+                          {% if child.current %}
+                            aria-current="page"
+                          {% endif %}
+                        >
+                          {{- child.title -}}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </nav>
+
+      {%- comment -%} Mobile: view categories (replaces desktop shop cluster) {%- endcomment -%}
+      <div class="kozler-custom-nav__mobile-cat kozler-custom-nav__mobile-only">
+        {%- if cat_mode == 'url' -%}
+          <a
+            href="{{ categories_url | default: routes.all_products_collection_url }}"
+            class="kozler-custom-nav__mobile-cat-btn{% unless section.settings.mobile_cat_full_width %} kozler-custom-nav__mobile-cat-btn--inline{% endunless %}"
+          >
+            {{ section.settings.mobile_cat_label }}
+          </a>
+        {%- else -%}
+          <details class="kozler-custom-nav__details kozler-custom-nav__details--cats-mobile{% if section.settings.mobile_cat_full_width %} kozler-custom-nav__details--cats-mobile-full{% endif %}">
+            <summary class="kozler-custom-nav__mobile-cat-summary{% unless section.settings.mobile_cat_full_width %} kozler-custom-nav__mobile-cat-summary--inline{% endunless %}">
+              {{ section.settings.mobile_cat_label }}
+            </summary>
+            <div class="kozler-custom-nav__backdrop" tabindex="-1"></div>
+            <div class="kozler-custom-nav__panel kozler-custom-nav__panel--left">
+              <div class="kozler-custom-nav__panel-head">
+                <span class="kozler-custom-nav__panel-title">{{ section.settings.categories_drawer_title }}</span>
+                <button type="button" class="kozler-custom-nav__close" data-kozler-close-details aria-label="{{ 'actions.close' | t }}">
+                  <span class="svg-wrapper">{{ 'icon-close.svg' | inline_asset_content }}</span>
+                </button>
+              </div>
+              <nav class="kozler-custom-nav__drawer-nav" aria-label="{{ section.settings.categories_drawer_title }}">
+                {%- if categories_menu_obj != blank and categories_menu_obj.links.size > 0 -%}
+                  <ul class="kozler-custom-nav__drawer-list list-unstyled">
+                    {%- for link in categories_menu_obj.links -%}
+                      <li class="kozler-custom-nav__drawer-li">
+                        <a href="{{ link.url }}" class="kozler-custom-nav__drawer-link{% if link.current %} kozler-custom-nav__drawer-link--active{% endif %}">{{ link.title }}</a>
+                        {%- if link.links != blank -%}
+                          <ul class="kozler-custom-nav__drawer-sub list-unstyled">
+                            {%- for child in link.links -%}
+                              <li>
+                                <a href="{{ child.url }}" class="kozler-custom-nav__drawer-sublink{% if child.current %} kozler-custom-nav__drawer-link--active{% endif %}">{{ child.title }}</a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+              </nav>
+            </div>
+          </details>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} Mobile: main nav hamburger {%- endcomment -%}
+      <div class="kozler-custom-nav__mobile-nav-trigger kozler-custom-nav__mobile-only">
+        <details class="kozler-custom-nav__details kozler-custom-nav__details--main">
+          <summary class="kozler-custom-nav__summary kozler-custom-nav__summary--nav">
+            <span class="kozler-custom-nav__icon kozler-custom-nav__icon--menu" aria-hidden="true">{{ kozler_hamburger_icon_inner }}</span>
+            <span class="visually-hidden">{{ section.settings.mobile_main_nav_label }}</span>
+          </summary>
+          <div class="kozler-custom-nav__backdrop" tabindex="-1"></div>
+          <div class="kozler-custom-nav__panel kozler-custom-nav__panel--right">
+            <div class="kozler-custom-nav__panel-head">
+              <span class="kozler-custom-nav__panel-title">{{ section.settings.main_drawer_title }}</span>
+              <button type="button" class="kozler-custom-nav__close" data-kozler-close-details aria-label="{{ 'actions.close' | t }}">
+                <span class="svg-wrapper">{{ 'icon-close.svg' | inline_asset_content }}</span>
+              </button>
+            </div>
+            <nav class="kozler-custom-nav__drawer-nav" aria-label="{{ section.settings.main_nav_aria_label }}">
+              {%- if main_menu_obj != blank and main_menu_obj.links.size > 0 -%}
+                <ul class="kozler-custom-nav__drawer-list list-unstyled">
+                  {%- for link in main_menu_obj.links -%}
+                    <li class="kozler-custom-nav__drawer-li">
+                      {%- if link.links != blank -%}
+                        <details class="kozler-custom-nav__nested">
+                          <summary class="kozler-custom-nav__nested-summary">{{ link.title }}</summary>
+                          <ul class="kozler-custom-nav__drawer-sub list-unstyled">
+                            {%- for child in link.links -%}
+                              <li>
+                                <a href="{{ child.url }}" class="kozler-custom-nav__drawer-sublink{% if child.current %} kozler-custom-nav__drawer-link--active{% endif %}">{{ child.title }}</a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        </details>
+                      {%- else -%}
+                        <a href="{{ link.url }}" class="kozler-custom-nav__drawer-link{% if link.current %} kozler-custom-nav__drawer-link--active{% endif %}">{{ link.title }}</a>
+                      {%- endif -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+            </nav>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  #kozler-custom-nav-{{ section.id }} {
+    background: var(--kozler-nav-bg);
+    color: var(--kozler-nav-text);
+    width: 100%;
+  }
+  #kozler-custom-nav-{{ section.id }}.kozler-custom-nav--sticky {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__inner {
+    padding: {{ section.settings.padding_top }}px {{ section.settings.padding_horizontal }}px {{ section.settings.padding_bottom }}px;
+    max-width: 100%;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__row--top {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    min-height: 3.5rem;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__logo-wrap {
+    grid-column: 2;
+    text-align: center;
+    justify-self: center;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__utilities {
+    grid-column: 3;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: var(--kozler-util-gap);
+    color: var(--kozler-nav-icon);
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__utility-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    color: inherit;
+    text-decoration: none;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__utility-img--account {
+    width: var(--kozler-util-account);
+    height: var(--kozler-util-account);
+    object-fit: contain;
+    display: block;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__utility-img--cart {
+    width: var(--kozler-util-cart);
+    height: var(--kozler-util-cart);
+    object-fit: contain;
+    display: block;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__cart-stack {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__cart-count {
+    position: absolute;
+    top: -0.15rem;
+    right: -0.25rem;
+    min-width: 1rem;
+    min-height: 1rem;
+    padding: 0 0.25rem;
+    border-radius: 999px;
+    background: var(--kozler-cart-badge-bg);
+    color: var(--kozler-cart-badge-text);
+    font-size: clamp(0.55rem, calc(var(--kozler-util-cart) * 0.38), 0.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__logo-img {
+    max-width: var(--kozler-nav-logo-max);
+    height: auto;
+    display: block;
+    margin-inline: auto;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--kozler-nav-text);
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__tagline {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-size: var(--kozler-nav-tagline-size);
+    margin-top: 0.25rem;
+    opacity: 0.9;
+    color: var(--kozler-nav-text);
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__row-border {
+    height: 1px;
+    background: var(--kozler-nav-border);
+    margin: 0.5rem 0 0;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__row--bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1rem;
+    padding-top: 0.75rem;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__divider {
+    width: 1px;
+    align-self: stretch;
+    min-height: 2rem;
+    background: var(--kozler-nav-divider);
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__shop-slot {
+    flex: 0 0 auto;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__shop-link,
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__summary--shop {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--kozler-nav-text);
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    list-style: none;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__summary--shop::-webkit-details-marker {
+    display: none;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__icon {
+    display: inline-flex;
+    color: var(--kozler-nav-icon);
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__icon--menu {
+    width: var(--kozler-hamburger-size);
+    height: var(--kozler-hamburger-size);
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__icon--menu svg,
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__icon--menu .kozler-custom-nav__menu-img {
+    width: 100%;
+    height: 100%;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__menu-img {
+    object-fit: contain;
+    display: block;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__search-wrap {
+    flex: 1 1 200px;
+    min-width: 0;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__search {
+    display: block;
+    width: 100%;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__search-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    min-height: var(--kozler-nav-search-height);
+    padding: 0.35rem 1rem;
+    border: none;
+    border-radius: var(--kozler-nav-search-radius);
+    background: var(--kozler-nav-search-bg);
+    color: var(--kozler-nav-search-placeholder);
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+    box-sizing: border-box;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__search-btn--link {
+    text-decoration: none;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__search-placeholder {
+    color: var(--kozler-nav-search-placeholder);
+    opacity: 0.85;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__icon--search {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    color: var(--kozler-nav-search-placeholder);
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__icon--search svg {
+    width: 100%;
+    height: 100%;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__primary {
+    flex: 0 1 auto;
+    margin-left: auto;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__primary-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: var(--kozler-nav-nav-gap);
+    margin: 0;
+    padding: 0;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__primary-item {
+    position: relative;
+    list-style: none;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__primary-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--kozler-nav-text);
+    text-decoration: none;
+    font-size: var(--kozler-nav-nav-size);
+    font-weight: 600;
+    text-transform: {% if section.settings.nav_uppercase %}uppercase{% else %}none{% endif %};
+    white-space: nowrap;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__chevron {
+    display: inline-flex;
+    width: 0.65rem;
+    height: 0.65rem;
+    opacity: 0.85;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__chevron svg {
+    width: 100%;
+    height: 100%;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 12rem;
+    margin: 0;
+    padding: 0.5rem 0;
+    background: var(--kozler-nav-drawer-bg);
+    color: var(--kozler-nav-drawer-text);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    z-index: 30;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__primary-item--has-child:hover .kozler-custom-nav__dropdown,
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__primary-item--has-child:focus-within .kozler-custom-nav__dropdown {
+    display: block;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__dropdown-link {
+    display: block;
+    padding: 0.35rem 1rem;
+    color: inherit;
+    text-decoration: none;
+    font-size: calc(var(--kozler-nav-nav-size) * 0.95);
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__details {
+    position: relative;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 35;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__details[open] > .kozler-custom-nav__backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__panel {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: min(22rem, 88vw);
+    background: var(--kozler-nav-drawer-bg);
+    color: var(--kozler-nav-drawer-text);
+    z-index: 40;
+    overflow: auto;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.25);
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__panel--left {
+    left: 0;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__panel--right {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__details[open] > .kozler-custom-nav__panel--left {
+    transform: translateX(0);
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__details[open] > .kozler-custom-nav__panel--right {
+    transform: translateX(0);
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.3);
+    position: sticky;
+    top: 0;
+    background: var(--kozler-nav-drawer-bg);
+    z-index: 1;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__panel-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__close {
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    color: inherit;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__drawer-nav {
+    padding: 0.5rem 0 1.5rem;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__drawer-link,
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__drawer-sublink {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: inherit;
+    text-decoration: none;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__drawer-sub {
+    padding-left: 0.75rem;
+    margin: 0;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__drawer-sublink {
+    font-size: 0.9em;
+    opacity: 0.95;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__nested {
+    border-bottom: 1px solid rgba(127, 127, 127, 0.2);
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__nested-summary {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__nested-summary::-webkit-details-marker {
+    display: none;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__summary--nav {
+    list-style: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    color: var(--kozler-nav-icon);
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__summary--nav::-webkit-details-marker {
+    display: none;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__mobile-cat-summary {
+    list-style: none;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.85rem 1rem;
+    background: var(--kozler-nav-mobile-cat-bg);
+    color: var(--kozler-nav-mobile-cat-text);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-radius: var(--kozler-nav-mobile-cat-radius);
+    border: none;
+    font: inherit;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__mobile-cat-summary::-webkit-details-marker {
+    display: none;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__details--cats-mobile-full {
+    width: 100%;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__mobile-cat-summary--inline {
+    width: auto;
+    display: inline-block;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__details--cats-mobile:not(.kozler-custom-nav__details--cats-mobile-full) {
+    text-align: center;
+    width: 100%;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__mobile-cat-btn {
+    display: block;
+    text-align: center;
+    padding: 0.85rem 1rem;
+    background: var(--kozler-nav-mobile-cat-bg);
+    color: var(--kozler-nav-mobile-cat-text);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-radius: var(--kozler-nav-mobile-cat-radius);
+    text-decoration: none;
+    width: 100%;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__mobile-cat-btn--inline {
+    width: auto;
+    display: inline-block;
+    margin-inline: auto;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__desktop-only {
+    display: flex;
+  }
+  #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__mobile-only {
+    display: none;
+  }
+  @media screen and (max-width: {{ bp | minus: 1 }}px) {
+    #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__row--top {
+      grid-template-columns: 1fr auto;
+    }
+    #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__logo-wrap {
+      grid-column: 1;
+      justify-self: start;
+      text-align: left;
+    }
+    #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__utilities {
+      grid-column: 2;
+    }
+    #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__row--bottom {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__desktop-only {
+      display: none !important;
+    }
+    #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__mobile-only {
+      display: flex !important;
+    }
+    #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__search-wrap {
+      flex: 1 1 auto;
+      min-width: 0;
+      order: 1;
+    }
+    #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__mobile-nav-trigger {
+      order: 2;
+      margin-left: auto;
+    }
+    #kozler-custom-nav-{{ section.id }} .kozler-custom-nav__mobile-cat {
+      order: 3;
+      flex: 1 0 100%;
+      margin-top: 0.5rem;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    var root = document.getElementById('kozler-custom-nav-{{ section.id }}');
+    if (!root) return;
+    root.querySelectorAll('.kozler-custom-nav__backdrop').forEach(function (el) {
+      el.addEventListener('click', function () {
+        var d = el.closest('details');
+        if (d) d.removeAttribute('open');
+      });
+    });
+    root.querySelectorAll('[data-kozler-close-details]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var d = btn.closest('details');
+        if (d) d.removeAttribute('open');
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Kozler custom navigation",
+  "class": "section-kozler-custom-nav",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Add this section in the Header group and remove the default Header section to avoid duplicate headers."
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky",
+      "label": "Sticky header",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "mobile_breakpoint",
+      "label": "Mobile breakpoint (px)",
+      "min": 400,
+      "max": 1200,
+      "step": 10,
+      "default": 990
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Content width",
+      "options": [
+        { "value": "full", "label": "Full width" },
+        { "value": "page", "label": "Page width" }
+      ],
+      "default": "page"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Padding horizontal",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "color_icons",
+      "label": "Icons",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "color_row_border",
+      "label": "Row divider",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "color_vertical_divider",
+      "label": "Vertical divider (shop / search)",
+      "default": "#444444"
+    },
+    {
+      "type": "color",
+      "id": "color_search_background",
+      "label": "Search field background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "color_search_text",
+      "label": "Search field text (focus)",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "color_search_placeholder",
+      "label": "Search icon and placeholder",
+      "default": "#757575"
+    },
+    {
+      "type": "color",
+      "id": "drawer_background",
+      "label": "Drawer background",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "drawer_text",
+      "label": "Drawer text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo image"
+    },
+    {
+      "type": "text",
+      "id": "logo_alt",
+      "label": "Logo alt text"
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "label": "Logo max width (px)",
+      "min": 80,
+      "max": 400,
+      "step": 4,
+      "default": 200
+    },
+    {
+      "type": "text",
+      "id": "tagline_left",
+      "label": "Tagline left",
+      "default": "PERFORMANCE PARTS"
+    },
+    {
+      "type": "text",
+      "id": "tagline_right",
+      "label": "Tagline right",
+      "default": "AUSTRALIA"
+    },
+    {
+      "type": "range",
+      "id": "tagline_font_size",
+      "label": "Tagline font size (px)",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Account and cart (standalone)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Plain links with your images — no theme snippets. Upload icons below; leave an image empty to hide that control."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_account_link",
+      "label": "Show account link",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "account_icon",
+      "label": "Account icon image"
+    },
+    {
+      "type": "range",
+      "id": "account_icon_width",
+      "label": "Account icon size (px)",
+      "min": 16,
+      "max": 64,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart_link",
+      "label": "Show cart link",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "cart_icon",
+      "label": "Cart icon image"
+    },
+    {
+      "type": "range",
+      "id": "cart_icon_width",
+      "label": "Cart icon size (px)",
+      "min": 16,
+      "max": 64,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "utility_icon_gap",
+      "label": "Space between account and cart (px)",
+      "min": 4,
+      "max": 32,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart_count",
+      "label": "Show cart item count badge",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "cart_count_bg",
+      "label": "Cart badge background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cart_count_text",
+      "label": "Cart badge text",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Categories / shop (left)"
+    },
+    {
+      "type": "select",
+      "id": "categories_mode",
+      "label": "Desktop & mobile behavior",
+      "options": [
+        { "value": "url", "label": "Link to URL" },
+        { "value": "drawer", "label": "Slide-out menu" }
+      ],
+      "default": "url"
+    },
+    {
+      "type": "url",
+      "id": "categories_url",
+      "label": "Categories URL",
+      "info": "Used when behavior is “Link to URL”."
+    },
+    {
+      "type": "link_list",
+      "id": "categories_menu",
+      "label": "Categories menu",
+      "info": "Used when behavior is “Slide-out menu”."
+    },
+    {
+      "type": "text",
+      "id": "shop_label",
+      "label": "Desktop label",
+      "default": "SHOP"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shop_hamburger",
+      "label": "Show hamburger icon on desktop",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "hamburger_icon",
+      "label": "Hamburger icon image",
+      "info": "Used for desktop shop control and mobile main menu. Leave empty to use the built-in SVG."
+    },
+    {
+      "type": "range",
+      "id": "hamburger_icon_width",
+      "label": "Hamburger icon size (px)",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "text",
+      "id": "categories_drawer_title",
+      "label": "Categories drawer title",
+      "default": "Categories"
+    },
+    {
+      "type": "text",
+      "id": "categories_empty_message",
+      "label": "Message when categories menu is empty",
+      "default": "Add a categories menu in theme settings."
+    },
+    {
+      "type": "header",
+      "content": "Primary navigation (right)"
+    },
+    {
+      "type": "link_list",
+      "id": "main_menu",
+      "label": "Menu"
+    },
+    {
+      "type": "text",
+      "id": "main_nav_aria_label",
+      "label": "Accessibility label",
+      "default": "Main navigation"
+    },
+    {
+      "type": "range",
+      "id": "nav_font_size",
+      "label": "Font size (px)",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "nav_link_gap",
+      "label": "Link spacing (px)",
+      "min": 4,
+      "max": 40,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "checkbox",
+      "id": "nav_uppercase",
+      "label": "Uppercase links",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_nav_chevron",
+      "label": "Show chevron when a link has children",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Search"
+    },
+    {
+      "type": "select",
+      "id": "search_mode",
+      "label": "Search behavior",
+      "options": [
+        { "value": "modal", "label": "Open theme search modal" },
+        { "value": "page", "label": "Link to search page (portable)" }
+      ],
+      "default": "modal",
+      "info": "Use “Link to search page” on themes without a search modal or #search-modal."
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Placeholder text",
+      "default": "Search"
+    },
+    {
+      "type": "range",
+      "id": "search_height",
+      "label": "Field height (px)",
+      "min": 32,
+      "max": 56,
+      "step": 2,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "search_border_radius",
+      "label": "Corner radius (px)",
+      "info": "Use the maximum for a pill-shaped search bar (Shopify allows at most 101 steps on range settings).",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Mobile — categories button"
+    },
+    {
+      "type": "text",
+      "id": "mobile_cat_label",
+      "label": "Button label",
+      "default": "VIEW CATEGORIES"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_cat_full_width",
+      "label": "Full width button",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "mobile_cat_bg",
+      "label": "Background",
+      "default": "#4a5d4e"
+    },
+    {
+      "type": "color",
+      "id": "mobile_cat_text",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "mobile_cat_radius",
+      "label": "Corner radius (px)",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Mobile — main menu drawer"
+    },
+    {
+      "type": "text",
+      "id": "mobile_main_nav_label",
+      "label": "Hamburger button label (screen readers)",
+      "default": "Open menu"
+    },
+    {
+      "type": "text",
+      "id": "main_drawer_title",
+      "label": "Drawer title",
+      "default": "Menu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kozler custom navigation"
+    }
+  ]
+}
+{% endschema %}

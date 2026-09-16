@@ -1,0 +1,224 @@
+{%- style -%}
+  .koz-comp-{{ section.id }} {
+    padding: {{ section.settings.padding_v }}px 0;
+    background-color: {{ section.settings.bg_color }};
+    color: {{ section.settings.table_text_color }};
+  }
+
+  .koz-comp-container {
+    max-width: {{ section.settings.container_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .koz-comp-heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: {{ section.settings.heading_size }}px;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    color: {{ section.settings.heading_color }};
+  }
+
+  .koz-table {
+    display: grid;
+    /* Explicitly define the columns: 180px for labels, then equal fractions for products */
+    grid-template-columns: 180px repeat({{ section.blocks.size }}, 1fr);
+    background: #000;
+  }
+
+  @media screen and (max-width: 990px) {
+    .koz-table {
+      grid-template-columns: 120px repeat({{ section.blocks.size }}, 300px);
+      overflow-x: auto;
+    }
+  }
+
+  /* CRITICAL: Ensure every label stays in Column 1 */
+  .koz-row-label {
+    grid-column: 1 / 2; 
+    padding: 30px 15px;
+    border-bottom: 1px solid #1a1a1a;
+    border-right: 1px solid #1a1a1a;
+    color: {{ section.settings.label_text_color }};
+    font-size: {{ section.settings.label_font_size }}px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+  }
+
+  .koz-col {
+    padding: 30px 25px;
+    border-bottom: 1px solid #1a1a1a;
+    border-right: 1px solid #1a1a1a;
+    background: #0d0d0d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: {{ section.settings.table_body_size }}px;
+  }
+
+  /* Specific styling for the buttons to prevent shifting */
+  .koz-btn-row-item {
+    border-bottom: none;
+    padding-top: 40px;
+  }
+
+  .koz-prod-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; margin-bottom: 20px; }
+  .koz-price-large { font-weight: bold; display: block; }
+  .koz-sub-label { font-size: 9px; opacity: 0.6; text-transform: uppercase; display: block; margin-top: 5px; }
+  .koz-material-wrap { border-left: 2px solid {{ section.settings.accent_color }}; padding-left: 15px; }
+  .koz-material-title { font-size: 0.95em; font-weight: bold; text-transform: uppercase; display: block; }
+  .koz-material-desc { font-size: 0.8em; opacity: 0.6; display: block; margin-top: 4px; }
+  .koz-weight { font-weight: 300; }
+  .koz-weight span { font-size: 0.8rem; color: {{ section.settings.accent_color }}; font-weight: bold; margin-left: 5px; }
+  .koz-tag { display: block; padding: 6px 10px; border: 1px solid #333; color: #999; font-size: 10px; margin-bottom: 5px; text-align: left; }
+
+  .koz-atc-btn {
+    width: 100%;
+    padding: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+{%- endstyle -%}
+
+<section class="koz-comp-{{ section.id }}">
+  <div class="koz-comp-container">
+    {% if section.settings.heading != blank %}
+      <h2 class="koz-comp-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="koz-table">
+      <div class="koz-row-label">Model Selection</div>
+      {% for block in section.blocks %}
+        <div class="koz-col" style="text-align: {{ block.settings.align }};">
+          {% if block.settings.image != blank %}
+            {{ block.settings.image | image_url: width: 600 | image_tag: class: 'koz-prod-img' }}
+          {% else %}
+            {{ 'product-1' | placeholder_svg_tag: 'koz-prod-img' }}
+          {% endif %}
+          <h3 class="koz-prod-title" style="font-size: {{ block.settings.title_size }}px;">{{ block.settings.title }}</h3>
+        </div>
+      {% endfor %}
+
+      <div class="koz-row-label">Price (MSRP)</div>
+      {% for block in section.blocks %}
+        <div class="koz-col" style="text-align: {{ block.settings.align }};">
+          <span class="koz-price-large" style="font-size: {{ block.settings.price_size }}px;">{{ block.settings.price }}</span>
+          <span class="koz-sub-label">Starting From</span>
+        </div>
+      {% endfor %}
+
+      <div class="koz-row-label">Shell Material</div>
+      {% for block in section.blocks %}
+        <div class="koz-col" style="text-align: {{ block.settings.align }};">
+          <div class="koz-material-wrap">
+            <span class="koz-material-title">{{ block.settings.material_title }}</span>
+            <span class="koz-material-desc">{{ block.settings.material_desc }}</span>
+          </div>
+        </div>
+      {% endfor %}
+
+      <div class="koz-row-label">Gross Weight</div>
+      {% for block in section.blocks %}
+        <div class="koz-col" style="text-align: {{ block.settings.align }};">
+          <span class="koz-weight" style="font-size: {{ block.settings.price_size }}px;">{{ block.settings.weight }}<span>KG</span></span>
+        </div>
+      {% endfor %}
+
+      <div class="koz-row-label">Certification</div>
+      {% for block in section.blocks %}
+        <div class="koz-col" style="text-align: {{ block.settings.align }};">
+          {% assign tags = block.settings.cert_tags | split: ',' %}
+          {% for tag in tags %}
+            <span class="koz-tag">{{ tag | strip }}</span>
+          {% endfor %}
+        </div>
+      {% endfor %}
+
+      <div class="koz-row-label">Compatibility</div>
+      {% for block in section.blocks %}
+        <div class="koz-col" style="text-align: {{ block.settings.align }};">
+          <div style="line-height: 1.5;">{{ block.settings.compatibility | newline_to_br }}</div>
+        </div>
+      {% endfor %}
+
+      <div class="koz-row-label" style="background: transparent; border-bottom: none;"> </div>
+      {% for block in section.blocks %}
+        <div class="koz-col koz-btn-row-item" style="background: transparent; border-bottom: none;">
+          {%- if block.settings.button_text != blank -%}
+            <a href="{{ block.settings.button_link }}" 
+               class="koz-atc-btn" 
+               style="background: {{ block.settings.btn_bg }}; color: {{ block.settings.btn_text_color }};">
+              {{ block.settings.button_text }}
+            </a>
+          {%- endif -%}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Koz Comparison Table",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "header", "content": "Heading Settings" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "COMPARE THE TOP SELLING SEATS" },
+    { "type": "range", "id": "heading_size", "label": "Heading Font Size", "min": 18, "max": 60, "step": 2, "default": 32, "unit": "px" },
+    { "type": "color", "id": "heading_color", "label": "Heading Color", "default": "#ffffff" },
+    { "type": "header", "content": "Table Settings" },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#0a0a0a" },
+    { "type": "color", "id": "label_text_color", "label": "Label Text Color (Left Col)", "default": "#666666" },
+    { "type": "range", "id": "label_font_size", "label": "Label Font Size", "min": 8, "max": 14, "default": 10, "unit": "px" },
+    { "type": "color", "id": "table_text_color", "label": "Table Body Text Color", "default": "#ffffff" },
+    { "type": "range", "id": "table_body_size", "label": "Table Body Font Size", "min": 10, "max": 20, "default": 13, "unit": "px" },
+    { "type": "color", "id": "accent_color", "label": "Accent Color (Weight/Lines)", "default": "#00c3e3" },
+    { "type": "number", "id": "container_width", "label": "Max Width", "default": 1400 },
+    { "type": "range", "id": "padding_v", "label": "Padding Vertical", "min": 0, "max": 100, "default": 60 }
+  ],
+  "blocks": [
+    {
+      "type": "product_col",
+      "name": "Product Column",
+      "settings": [
+        { "type": "select", "id": "align", "label": "Text Alignment", "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" }
+          ], "default": "left" 
+        },
+        { "type": "image_picker", "id": "image", "label": "Product Image" },
+        { "type": "text", "id": "title", "label": "Title", "default": "VELOCITY PRO V2" },
+        { "type": "range", "id": "title_size", "label": "Title Font Size", "min": 12, "max": 30, "default": 18, "unit": "px" },
+        { "type": "text", "id": "price", "label": "Price", "default": "$1,299" },
+        { "type": "range", "id": "price_size", "label": "Price/Weight Font Size", "min": 18, "max": 40, "default": 32, "unit": "px" },
+        { "type": "text", "id": "material_title", "label": "Material Title", "default": "AUTOCLAVED CARBON" },
+        { "type": "text", "id": "material_desc", "label": "Material Subtext", "default": "High-pressure cured composite" },
+        { "type": "text", "id": "weight", "label": "Weight (Num)", "default": "5.2" },
+        { "type": "text", "id": "cert_tags", "label": "Certs (Comma separated)", "default": "FIA 8855-1999, ADR APPROVED" },
+        { "type": "textarea", "id": "compatibility", "label": "Compatibility", "default": "Universal Side Mount\n4/5/6 Point Harness" },
+        { "type": "text", "id": "button_text", "label": "Button Text", "default": "ADD TO RIG" },
+        { "type": "url", "id": "button_link", "label": "Button Link" },
+        { "type": "color", "id": "btn_bg", "label": "Button Background", "default": "#00c3e3" },
+        { "type": "color", "id": "btn_text_color", "label": "Button Text Color", "default": "#000000" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Koz Comparison Table"
+    }
+  ]
+}
+{% endschema %}

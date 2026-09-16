@@ -1,0 +1,164 @@
+{% comment %}
+  Generates rule-based or default cart upsells HTML.
+  Parameters:
+    - cart: The cart object
+    - upsell_blocks: Section blocks array (optional, for rule-based upsells)
+    - max_items: Maximum number of upsells to show (default: 8)
+    - button_style: Button style setting (default: 'primary')
+{% endcomment %}
+
+{% liquid
+  assign cart_product_ids = '|'
+  assign rendered_product_ids = '|'
+  assign upsell_count = 0
+  assign max_upsell_items = max_items | default: 8
+  assign has_configured_upsell_rules = false
+  assign button_style = button_style | default: 'primary'
+
+  if upsell_blocks != blank
+    for block in upsell_blocks
+      if block.type == 'upsell_block'
+        if block.settings.trigger_tag != blank and block.settings.products != blank
+          assign has_configured_upsell_rules = true
+        endif
+      endif
+    endfor
+  endif
+
+  for line_item in cart.items
+    if line_item.product and line_item.product.id
+      assign cart_product_ids = cart_product_ids | append: line_item.product.id | append: '|'
+    endif
+  endfor
+%}
+
+{% capture upsell_slides %}
+  {% if has_configured_upsell_rules %}
+    {% for block in upsell_blocks %}
+      {% if block.type == 'upsell_block' and block.settings.trigger_tag != blank and block.settings.products != blank %}
+        
+{% liquid
+  assign rule_matches_cart = false
+  assign trigger_tag = block.settings.trigger_tag | strip | downcase
+
+  for line_item in cart.items
+    assign upsell_tags = line_item.properties._upsell_tags | downcase
+
+    if upsell_tags contains trigger_tag
+      assign rule_matches_cart = true
+    endif
+  endfor
+%}
+
+
+        {% if rule_matches_cart %}
+          {% for upsell_product in block.settings.products %}
+            {% liquid
+              assign product_id_token = '|' | append: upsell_product.id | append: '|'
+              assign show_upsell_product = true
+              if cart_product_ids contains product_id_token
+                assign show_upsell_product = false
+              endif
+              if rendered_product_ids contains product_id_token
+                assign show_upsell_product = false
+              endif
+              if upsell_product.available == false
+                assign show_upsell_product = false
+              endif
+              if upsell_count >= max_upsell_items
+                assign show_upsell_product = false
+              endif
+            %}
+
+            {% if show_upsell_product %}
+              {% liquid
+                assign rendered_product_ids = rendered_product_ids | append: upsell_product.id | append: '|'
+                assign upsell_count = upsell_count | plus: 1
+                assign card_title = upsell_product.title
+                if block.settings.title != blank
+                  assign card_title = block.settings.title
+                endif
+              %}
+              <div class="cart-upsell-slider__slide" {{ block.shopify_attributes }}>
+                {% render 'upsell-block',
+                  title: card_title,
+                  content: block.settings.content,
+                  image: upsell_product.featured_image,
+                  upsell_product: upsell_product,
+                  button_style: button_style
+                %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% elsif settings.cart_upsell != blank %}
+    {% liquid
+      assign upsell_product_obj = settings.cart_upsell.product
+      if upsell_product_obj != blank and upsell_product_obj.value
+        assign upsell_product_obj = upsell_product_obj.value
+      endif
+
+      assign upsell_in_cart = false
+      if upsell_product_obj and upsell_product_obj.id
+        for line_item in cart.items
+          if line_item.product and line_item.product.id == upsell_product_obj.id
+            assign upsell_in_cart = true
+          endif
+        endfor
+      endif
+    %}
+
+    {% if upsell_product_obj and upsell_product_obj.available and upsell_in_cart == false %}
+      {% assign upsell_count = upsell_count | plus: 1 %}
+      <div class="cart-upsell-slider__slide">
+        {% render 'upsell-block',
+          title: settings.cart_upsell.title,
+          content: settings.cart_upsell.content,
+          image: settings.cart_upsell.image,
+          upsell_product: settings.cart_upsell.product,
+          button_style: button_style
+        %}
+      </div>
+    {% endif %}
+  {% endif %}
+{% endcapture %}
+
+{% assign upsell_slides_content = upsell_slides | strip %}
+
+{% if upsell_slides_content == blank and settings.cart_upsell != blank %}
+  {% capture upsell_slides %}
+    {% liquid
+      assign upsell_product_obj = settings.cart_upsell.product
+      if upsell_product_obj != blank and upsell_product_obj.value
+        assign upsell_product_obj = upsell_product_obj.value
+      endif
+
+      assign upsell_in_cart = false
+      if upsell_product_obj and upsell_product_obj.id
+        for line_item in cart.items
+          if line_item.product and line_item.product.id == upsell_product_obj.id
+            assign upsell_in_cart = true
+          endif
+        endfor
+      endif
+    %}
+
+    {% if upsell_product_obj and upsell_product_obj.available and upsell_in_cart == false %}
+      {% assign upsell_count = upsell_count | plus: 1 %}
+      <div class="cart-upsell-slider__slide">
+        {% render 'upsell-block',
+          title: settings.cart_upsell.title,
+          content: settings.cart_upsell.content,
+          image: settings.cart_upsell.image,
+          upsell_product: settings.cart_upsell.product,
+          button_style: button_style
+        %}
+      </div>
+    {% endif %}
+  {% endcapture %}
+  {% assign upsell_slides_content = upsell_slides | strip %}
+{% endif %}
+
+{{ upsell_slides_content }}

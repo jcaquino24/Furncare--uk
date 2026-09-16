@@ -55,15 +55,12 @@
         </a>
       </div>
     {% endif %}
-  
-  {% if hubspot_form != blank and template.suffix != 'fabric' %}
-    {% if template.suffix != 'no-price' or template.suffix != 'fabric' %}
+  {% if hubspot_form != blank %}
     <div class="{{ base_class }}__hubspot-form">
       {{ hubspot_form }}
     </div>
-    {% endif %}
   {% endif %}
-{% elsif hubspot_form != blank and template.suffix != 'fabric' %}
+{% elsif hubspot_form != blank %}
   {% if show_data_sheet %}
       <div class="{{ base_class }}__data-sheet">
         <a
@@ -76,19 +73,15 @@
         </a>
       </div>
     {% endif %}
-    {% if template.suffix != 'no-price' or template.suffix != 'fabric' %}
-      <div class="{{ base_class }}__hubspot-form">
-        {{ hubspot_form }}
-      </div>
-    {% endif %}
+  <div class="{{ base_class }}__hubspot-form">
+    {{ hubspot_form }}
+  </div>
 {% else %}
-  {% if template.suffix != 'no-price' or template.suffix != 'fabric' %}
   {%- form 'product',
     product,
     class: 'ProductForm',
     data-productForm: 'true'
   -%}
-  
     {%- comment -%} Hidden input for variant ID - required for add to cart {%- endcomment -%}
     <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 
@@ -132,7 +125,7 @@
           >
             <span style="justify-content:center;">
               {{ 'product.add_to_cart' | t }} -
-              <span data-atc-price>{{ product.selected_or_first_available_variant.price | money }}</span>
+              {{ product.selected_or_first_available_variant.price | money }}
               {% render 'icons', icon: 'cart' %}
             </span>
           </button>
@@ -186,8 +179,28 @@
     </div>
   {%- endform -%}
 {% endif %}
-{% endif %}
 
 {% if show_notify_modal %}
   {% render 'product-notify-me', base_class: base_class %}
 {% endif %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  function moveQuoteButton() {
+    const quoteBtn = document.querySelector('.omgrfq-button');
+    const target = document.querySelector('#quote-button-container');
+
+    if (quoteBtn && target && !quoteBtn.classList.contains('moved')) {
+      target.insertAdjacentElement('afterend', quoteBtn);
+      quoteBtn.classList.add('moved');
+    }
+  }
+
+  // Run immediately
+  moveQuoteButton();
+
+  // Also watch for delayed app injection
+  const observer = new MutationObserver(moveQuoteButton);
+  observer.observe(document.body, { childList: true, subtree: true });
+});
+</script>

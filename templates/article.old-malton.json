@@ -29,7 +29,7 @@
           "type": "title",
           "settings": {
             "text": "Manor Park Care Home",
-            "title_element": "h1",
+            "title_element": "h2",
             "title_size": "xl",
             "text_color": "#f9f7f0"
           }
@@ -49,7 +49,7 @@
         "image_desktop": "shopify://shop_images/Untitled_59.jpg",
         "show_controls": false,
         "mute_video": true,
-        "autoplay_video": false,
+        "autoplay_video": true,
         "show_overlay": false,
         "overlay_background": "",
         "colour_scheme": "dark",
@@ -136,22 +136,10 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_GDNdXW": {
+        "image_card_WhFiat": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/P1091056-2-HDR.png",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_QWgDNK": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091041-2-HDR.png",
+            "image": "shopify://shop_images/P1049334.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -184,34 +172,10 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_c9Eg9W": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049396.png",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_JLbtCr": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/P1049338.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_HedqtB": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091031-2-HDR.png",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -244,34 +208,10 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_yznG76": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049398.png",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_myGMMC": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/P1091251-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_WhFiat": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1049334.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -308,18 +248,6 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/P1091324-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_abF8WY": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091036-2-HDR.png",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -424,34 +352,10 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_wreLDT": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091036-2-HDR.png",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_Wdkhxi": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/P1091261-2-HDR.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_8WBRTt": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1091081-2-HDR.png",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -837,22 +741,16 @@
         "image_card_G7eHnW",
         "image_card_aGhK6X",
         "image_card_b9yjtU",
-        "image_card_GDNdXW",
-        "image_card_QWgDNK",
+        "image_card_WhFiat",
         "image_card_J8ww48",
         "image_card_LMDJAP",
-        "image_card_c9Eg9W",
         "image_card_JLbtCr",
-        "image_card_HedqtB",
         "image_card_UFmX3W",
         "image_card_QFfCGK",
-        "image_card_yznG76",
         "image_card_myGMMC",
-        "image_card_WhFiat",
         "image_card_A3PDJk",
         "image_card_BMHWF7",
         "image_card_zneQr7",
-        "image_card_abF8WY",
         "image_card_XdGrbX",
         "image_card_wRkzHW",
         "image_card_qLJdCT",
@@ -861,9 +759,7 @@
         "image_card_gKmJeh",
         "image_card_FetiXX",
         "image_card_pwkDX4",
-        "image_card_wreLDT",
         "image_card_Wdkhxi",
-        "image_card_8WBRTt",
         "image_card_RUUn4C",
         "image_card_hqrD4C",
         "image_card_FiFr8D",
@@ -951,13 +847,13 @@
       "settings": {
         "height_desktop": 800,
         "height_mobile": 300,
-        "maintain_aspect_ratio": true,
+        "maintain_aspect_ratio": false,
         "add_header_offset": false,
         "media_type": "video",
         "video_desktop": "shopify://files/videos/Old Malton Case Study.mp4",
         "show_controls": true,
         "mute_video": true,
-        "autoplay_video": false,
+        "autoplay_video": true,
         "show_overlay": false,
         "overlay_background": "",
         "colour_scheme": "light",
@@ -973,7 +869,7 @@
           "settings": {
             "spacer_height": 75,
             "spacer_height_mobile": 30,
-            "spacer_color": "#f9f7f0"
+            "spacer_color": "#F9F7F0"
           },
           "blocks": {}
         }
@@ -1125,7 +1021,7 @@
             "image": "shopify://shop_images/Media_70da92e5-54f2-4bca-bb1e-45fbb38e34ee.jpg",
             "desktop_width_percent": 75,
             "border_width": 45,
-            "border_color": "#f9f7f0",
+            "border_color": "#F9F7F0",
             "border_radius": 90
           },
           "blocks": {}
@@ -1213,7 +1109,7 @@
           "settings": {
             "spacer_height": 75,
             "spacer_height_mobile": 30,
-            "spacer_color": "#f9f7f0"
+            "spacer_color": "#F9F7F0"
           },
           "blocks": {}
         }

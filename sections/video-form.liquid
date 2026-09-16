@@ -4,7 +4,6 @@
 {% endcomment %}
 
 <div class="show-van-section" id="show-van-{{ section.id }}">
-  <div id="{{ section.settings.id_anchor }}">
   <div class="show-van-container">
     
     <!-- Header Area -->
@@ -90,7 +89,6 @@
       </div>
       
     </div>
-  </div>
   </div>
 </div>
 
@@ -190,8 +188,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    
+    object-fit: cover;
     border: none;
   }
   .placeholder-svg {
@@ -226,11 +223,6 @@
 {
   "name": "Video & Form",
   "settings": [
-    {
-      "type": "text",
-      "id": "id_anchor",
-      "label": "ID Anchor",
-    },
     {
       "type": "color",
       "id": "bg_color",

@@ -89,12 +89,11 @@
           hide_on_mobile: true
         %}
 
-        {% if settings.enable_wishlist %}
-          <a class="header__action header__wishlist" href="/pages/wishlist" aria-label="Wishlist">
-            {% render 'icons', icon: 'wishlist' %}
-            <span class="header__wishlist-count" data-wishlist-count hidden>0</span>
-          </a>
-        {% endif %}
+        {% comment @TODO: Add wishlist back in once we have a wishlist feature %}
+        <a class="header__action hide-on-mobile" href="#" aria-label="Wishlist">
+          {% render 'icons', icon: 'wishlist' %}
+        </a>
+        {% endcomment %}
 
         <a
           class="header__action"

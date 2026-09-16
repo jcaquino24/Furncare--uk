@@ -81,7 +81,6 @@
         class: button_class,
         label: block.settings.title,
         style: 'underline',
-        scheme: block.settings.colour_scheme,
         attributes: attributes
       %}
     {% endfor %}
@@ -144,25 +143,15 @@
 >
   <div class="container">
     <div class="content-blocks__header">
-      <div class="title-with-nav {% if tabs_html == blank %}title-with-nav--no-tabs{% endif %}">
-        <div class="title-with-nav__row">
-          {% if section.settings.title != blank %}
-            <h2 class="eyebrow-sm title-with-nav__title">
-              {{ section.settings.title }}
-            </h2>
-          {% endif %}
-
-          {% if tabs_html != blank %}
-            <div class="title-with-nav__tabs">
-              {{ tabs_html }}
-            </div>
-          {% endif %}
-        </div>
-
-        {% if show_nav %}
-          {% render 'swiper-nav', class: title_classes, section_id: fallback_section_id %}
-        {% endif %}
-      </div>
+      {% render 'title-with-nav',
+        title: section.settings.title,
+        heading_level: 'h2',
+        heading_style: 'eyebrow-sm',
+        tabs: tabs_html,
+        show_nav: show_nav,
+        nav_class: title_classes,
+        section_id: fallback_section_id
+      %}
     </div>
 
     <div class="content-blocks__content">
@@ -245,12 +234,8 @@
                   {% for rec_item in recommendations.products limit: 8 %}
                     {% assign id_token = ',' | append: rec_item.id | append: ',' %}
                     {% unless rendered_ids contains id_token or rec_item.id == product_id %}
-                      {% assign card_loading = 'lazy' %}
-                      {% if forloop.index <= 2 %}
-                        {% assign card_loading = 'eager' %}
-                      {% endif %}
                       <swiper-slide class="content-blocks__slide">
-                        {% render 'product-card', product: rec_item, loading: card_loading %}
+                        {% render 'product-card', product: rec_item %}
                       </swiper-slide>
                       {% assign rendered_ids = rendered_ids | append: rec_item.id | append: ',' %}
                     {% endunless %}
@@ -260,12 +245,8 @@
                   {% for p_item in block_products limit: 8 %}
                     {% assign id_token = ',' | append: p_item.id | append: ',' %}
                     {% unless rendered_ids contains id_token or p_item.id == main_product_id %}
-                      {% assign card_loading = 'lazy' %}
-                      {% if forloop.index <= 2 %}
-                        {% assign card_loading = 'eager' %}
-                      {% endif %}
                       <swiper-slide class="content-blocks__slide">
-                        {% render 'product-card', product: p_item, loading: card_loading %}
+                        {% render 'product-card', product: p_item %}
                       </swiper-slide>
                       {% assign rendered_ids = rendered_ids | append: p_item.id | append: ',' %}
                     {% endunless %}
@@ -289,11 +270,7 @@
                   {% for rec_item in recommendations.products %}
                     {% assign id_token = ',' | append: rec_item.id | append: ',' %}
                     {% unless rendered_ids contains id_token or rec_item.id == product_id %}
-                      {% assign card_loading = 'lazy' %}
-                      {% if forloop.index <= 2 %}
-                        {% assign card_loading = 'eager' %}
-                      {% endif %}
-                      {% render 'product-card', product: rec_item, loading: card_loading %}
+                      {% render 'product-card', product: rec_item %}
                       {% assign rendered_ids = rendered_ids | append: rec_item.id | append: ',' %}
                     {% endunless %}
                   {% endfor %}
@@ -302,11 +279,7 @@
                   {% for p_item in block_products %}
                     {% assign id_token = ',' | append: p_item.id | append: ',' %}
                     {% unless rendered_ids contains id_token or p_item.id == main_product_id %}
-                      {% assign card_loading = 'lazy' %}
-                      {% if forloop.index <= 2 %}
-                        {% assign card_loading = 'eager' %}
-                      {% endif %}
-                      {% render 'product-card', product: p_item, loading: card_loading %}
+                      {% render 'product-card', product: p_item %}
                       {% assign rendered_ids = rendered_ids | append: p_item.id | append: ',' %}
                     {% endunless %}
                   {% endfor %}

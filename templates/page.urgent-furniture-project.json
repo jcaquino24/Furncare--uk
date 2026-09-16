@@ -112,8 +112,8 @@
         "primary_button_hover_color": "#243222",
         "primary_button_hover_border": "#f9f7f0",
         "secondary_button_bg": "#f9f7f0",
-        "secondary_button_bg_opacity": 100,
-        "secondary_button_color": "#243222",
+        "secondary_button_bg_opacity": 0,
+        "secondary_button_color": "#ffffff",
         "secondary_button_border": "#f9f7f0",
         "secondary_button_hover_bg": "#f9f7f0",
         "secondary_button_hover_color": "#243222",
@@ -130,13 +130,13 @@
             "handle": "new-arrivals",
             "product_feed_source": "product_list",
             "products": [
-              "cambourne-medium-back-chair-riva-nutmeg",
-              "somerton-bedroom-furniture-bundle",
-              "lingwood-tub-chair-1",
-              "cambourne-medium-back-chair-ocean",
-              "cambourne-high-back-chair-lismore-almond",
               "cambourne-high-back-chair-juniper",
               "cambourne-medium-back-2-seater-sofa-alba-wheat",
+              "somerton-bedroom-furniture-bundle",
+              "lingwood-tub-chair-1",
+              "cambourne-high-back-chair-lismore-almond",
+              "cambourne-medium-back-chair-ocean",
+              "cambourne-medium-back-chair-riva-nutmeg",
               "cambourne-medium-back-2-seater-sofa-riva-chablis"
             ],
             "collection": "",
@@ -177,6 +177,62 @@
       "settings": {
         "title": "Shop Now",
         "section_padding": "--spacing-2xl"
+      }
+    },
+    "faqs_dhnxRC": {
+      "type": "faqs",
+      "blocks": {
+        "faq_CwmHFc": {
+          "type": "faq",
+          "settings": {
+            "question": "How quickly can you deliver?",
+            "answer": "<p>Delivery times can vary depending on the products you need, quantities, finishes and delivery location. Our standard terms state a minimum lead time of 1 - 5 working days, however, If you have an urgent requirement, our team can help you understand what may be available sooner and guide you towards suitable options.</p>"
+          }
+        },
+        "faq_DdVAmr": {
+          "type": "faq",
+          "settings": {
+            "question": "What types of care home furniture are available for quicker delivery?",
+            "answer": "<p>This can vary, but we hold a range of bedroom furniture, care home chairs, dining furniture, occasional furniture and soft furnishings in stock.</p>"
+          }
+        },
+        "faq_NNbnEP": {
+          "type": "faq",
+          "settings": {
+            "question": "Can you support larger urgent requirements?",
+            "answer": "<p>Yes, depending on availability and project details. If you need furniture for multiple rooms, several spaces or a wider care home requirement, we can review what is possible and help you plan a practical route forward.</p>"
+          }
+        },
+        "faq_6fk6pT": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I request a quote for quick delivery furniture?",
+            "answer": "<p>Yes. Share your requirements, quantities, location and timeline, and our team can advise on suitable furniture options and provide a quote where possible.</p>"
+          }
+        },
+        "faq_dQBXCQ": {
+          "type": "faq",
+          "settings": {
+            "question": "Are quick delivery options suitable for all care environments?",
+            "answer": "<p>Yes. Our quick delivery range includes furniture for a wide span of specialist environments, including care homes, later living settings, challenging environments and extreme mental health spaces.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_CwmHFc",
+        "faq_DdVAmr",
+        "faq_NNbnEP",
+        "faq_6fk6pT",
+        "faq_dQBXCQ"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "faq_title": "Frequently Asked Questions",
+        "title_element": "h2",
+        "faq_text": "If you can't find the answer to your question, please feel free to speak to one of our team via live chat or call us on <a href=\"tel:01603 664900\" title=\"tel:01603 664900\"><strong>01603 664900</strong></a><strong>.</strong>",
+        "title_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "padding": "wide"
       }
     },
     "blog_article_row_4iJ6Ye": {
@@ -666,170 +722,16 @@
         "secondary_button_hover_color": "#243222",
         "secondary_button_hover_border": "#f9f7f0"
       }
-    },
-    "content_blocks_tBmEyX": {
-      "type": "content-blocks",
-      "blocks": {
-        "tab1_PH9xbL": {
-          "type": "tab1",
-          "settings": {
-            "image": "shopify://shop_images/Meadow_Scheme_L302_37763bcf-d98e-4b00-86ee-a207f2e5aaa4.jpg",
-            "text": "Quick Delivery Lounge Schemes",
-            "richtext": "",
-            "richtext_color": "#000000",
-            "richtext_font_size": "16px",
-            "richtext_font_weight": "400",
-            "richtext_text_transform": "none",
-            "richtext_letter_spacing": "normal",
-            "link": "https://www.furncare.co.uk/pages/ready-lounge-spaces",
-            "gradient_overlay": "dark"
-          }
-        },
-        "tab1_wLPT9c": {
-          "type": "tab1",
-          "settings": {
-            "image": "shopify://shop_images/Untitled_-_July_17_2026_at_10.33.38.jpg",
-            "text": "Quick Delivery Bedroom Schemes",
-            "richtext": "",
-            "richtext_color": "#000000",
-            "richtext_font_size": "16px",
-            "richtext_font_weight": "400",
-            "richtext_text_transform": "none",
-            "richtext_letter_spacing": "normal",
-            "link": "https://www.furncare.co.uk/pages/ready-bedroom-spaces",
-            "gradient_overlay": "dark"
-          }
-        }
-      },
-      "block_order": [
-        "tab1_PH9xbL",
-        "tab1_wLPT9c"
-      ],
-      "name": "Content blocks",
-      "settings": {
-        "title": "browse our pre-designed ready spaces",
-        "section_padding": "--spacing-4xl",
-        "tab1_title": "Collection 1",
-        "tab1_handle": "collection-1",
-        "tab1_colour_scheme": "base-white-01",
-        "tab2_title": "Collection 2",
-        "tab2_handle": "collection-2",
-        "tab2_colour_scheme": "warm-stone"
-      }
-    },
-    "blocks_DnyDRi": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_9e99ca3_gpHp6C": {
-          "type": "ai_gen_block_9e99ca3",
-          "settings": {
-            "layout": "form_left",
-            "mobile_layout": "content_first",
-            "container_width": 1200,
-            "column_gap": 60,
-            "section_padding_top": 60,
-            "section_padding_bottom": 60,
-            "embed_url": "",
-            "embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"5be810f4-bf1d-4ee2-9758-53772397fa4d\" data-portal-id=\"145723791\"></div>",
-            "form_min_height": 500,
-            "form_background_color": "#F9F7F0",
-            "form_border_radius": 8,
-            "heading": "<h2>How can we help?</h2>",
-            "heading_font": "red_hat_display_n4",
-            "heading_size": 60,
-            "heading_color": "#000000",
-            "heading_spacing": 42,
-            "body_text": "<p></p><p></p><p>Complete the form and we will be in touch to guide you towards your next steps.</p><p></p><p>If you'd rather contact us another way, you can:</p><p>- Call us on <a href=\"tel:01603 664900\" title=\"tel:01603 664900\"><strong>01603 664900</strong></a><br/>- Email our team on <a href=\"mailto:sales@furncare.co.uk\" title=\"mailto:sales@furncare.co.uk\"><strong>sales@furncare.co.uk<br/></strong></a>- Click on the live chat option on the bottom right of the page</p><p></p><p>We look forward to hearing from you!</p>",
-            "body_size": 16,
-            "body_color": "#666666",
-            "body_spacing": 32,
-            "button_label": "",
-            "button_link": "",
-            "button_font_size": 16,
-            "button_padding_vertical": 14,
-            "button_padding_horizontal": 32,
-            "button_background_color": "#000000",
-            "button_text_color": "#ffffff",
-            "button_hover_background_color": "#333333",
-            "button_hover_text_color": "#ffffff",
-            "button_border_radius": 4
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_9e99ca3_gpHp6C"
-      ],
-      "name": "Form and text",
-      "settings": {}
-    },
-    "faqs_dhnxRC": {
-      "type": "faqs",
-      "blocks": {
-        "faq_CwmHFc": {
-          "type": "faq",
-          "settings": {
-            "question": "How quickly can you deliver?",
-            "answer": "<p>Delivery times can vary depending on the products you need, quantities, finishes and delivery location. Our standard terms state a minimum lead time of 1 - 5 working days, however, If you have an urgent requirement, our team can help you understand what may be available sooner and guide you towards suitable options.</p>"
-          }
-        },
-        "faq_DdVAmr": {
-          "type": "faq",
-          "settings": {
-            "question": "What types of care home furniture are available for quicker delivery?",
-            "answer": "<p>This can vary, but we hold a range of bedroom furniture, care home chairs, dining furniture, occasional furniture and soft furnishings in stock.</p>"
-          }
-        },
-        "faq_NNbnEP": {
-          "type": "faq",
-          "settings": {
-            "question": "Can you support larger urgent requirements?",
-            "answer": "<p>Yes, depending on availability and project details. If you need furniture for multiple rooms, several spaces or a wider care home requirement, we can review what is possible and help you plan a practical route forward.</p>"
-          }
-        },
-        "faq_6fk6pT": {
-          "type": "faq",
-          "settings": {
-            "question": "Can I request a quote for quick delivery furniture?",
-            "answer": "<p>Yes. Share your requirements, quantities, location and timeline, and our team can advise on suitable furniture options and provide a quote where possible.</p>"
-          }
-        },
-        "faq_dQBXCQ": {
-          "type": "faq",
-          "settings": {
-            "question": "Are quick delivery options suitable for all care environments?",
-            "answer": "<p>Yes. Our quick delivery range includes furniture for a wide span of specialist environments, including care homes, later living settings, challenging environments and extreme mental health spaces.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "faq_CwmHFc",
-        "faq_DdVAmr",
-        "faq_NNbnEP",
-        "faq_6fk6pT",
-        "faq_dQBXCQ"
-      ],
-      "name": "FAQs",
-      "settings": {
-        "faq_title": "Frequently Asked Questions",
-        "title_element": "h2",
-        "faq_text": "If you can't find the answer to your question, please feel free to speak to one of our team via live chat or call us on <a href=\"tel:01603 664900\" title=\"tel:01603 664900\"><strong>01603 664900</strong></a><strong>.</strong>",
-        "title_alignment": "center",
-        "colour_scheme": "warm-stone",
-        "padding": "wide"
-      }
     }
   },
   "order": [
     "hero",
     "product_blocks_bUgmqL",
+    "faqs_dhnxRC",
     "blog_article_row_4iJ6Ye",
     "audience",
     "process",
     "proof",
-    "final_cta",
-    "content_blocks_tBmEyX",
-    "blocks_DnyDRi",
-    "faqs_dhnxRC"
+    "final_cta"
   ]
 }

@@ -88,7 +88,7 @@
         "image_desktop": "shopify://shop_images/PREG2501.jpg",
         "show_controls": false,
         "mute_video": true,
-        "autoplay_video": false,
+        "autoplay_video": true,
         "show_overlay": true,
         "overlay_background": "linear-gradient(54deg, rgba(255, 250, 99, 1), rgba(38, 37, 32, 0.4) 1%)",
         "colour_scheme": "dark",
@@ -103,7 +103,7 @@
           "type": "heading",
           "settings": {
             "text": "Furncare Teams Up with Bright Bay Design to Furnish Stunning New Care Home in Hampshire",
-            "heading_level": "h1",
+            "heading_level": "h2",
             "heading_style": "title-xl"
           },
           "blocks": {}
@@ -363,7 +363,7 @@
             "vertical_padding": 40,
             "border_radius": 0,
             "scroll_speed": 85,
-            "background_color": "#f9f7f0",
+            "background_color": "#F9F7F0",
             "image_1": "shopify://shop_images/PREG2402.jpg",
             "image_2": "shopify://shop_images/PREG2579.jpg",
             "image_3": "shopify://shop_images/PREG2472.jpg",
@@ -735,7 +735,7 @@
         "image_desktop": "shopify://shop_images/P1044815_CARS_REMOVED.jpg",
         "show_controls": false,
         "mute_video": true,
-        "autoplay_video": false,
+        "autoplay_video": true,
         "show_overlay": false,
         "overlay_background": "linear-gradient(320deg, rgba(255, 250, 99, 0.2), rgba(203, 68, 194, 1), rgba(255, 250, 99, 0))",
         "colour_scheme": "light",

@@ -25,21 +25,8 @@
     assign media_class_mobile = media_class | append: ' hide-on-desktop'
   endif
 
-  assign mobile_fallback_image = blank
-  if section.settings.media_type == 'video' and media_mobile == blank
-    assign media_class_desktop = media_class | append: ' hide-on-mobile'
-    assign mobile_fallback_image = section.settings.image_mobile | default: section.settings.image_desktop
-  endif
-
   if card_blocks.size > 0
     assign has_cards = ' has-cards'
-  endif
-
-  assign media_fetchpriority = 'auto'
-  assign media_loading = 'lazy'
-  if section.index == 1
-    assign media_fetchpriority = 'high'
-    assign media_loading = 'eager'
   endif
 
   assign desktop_ratio = blank
@@ -123,7 +110,6 @@
           autoplay: check_autoplay,
           loop: true,
           muted: check_muted,
-          preload: 'metadata',
           controls: section.settings.show_controls,
           class: media_class_desktop,
           width: 1920,
@@ -133,10 +119,8 @@
       %}
       {{
         video_player_html
-        | replace: '<img src="', '<img loading="%loading%" fetchpriority="%priority%" alt="%alt_text%" src="'
+        | replace: '<img src="', '<img alt="%alt_text%" src="'
         | replace: '%alt_text%', alt_text
-        | replace: '%priority%', media_fetchpriority
-        | replace: '%loading%', media_loading
       }}
     {% endif %}
 
@@ -152,7 +136,6 @@
           autoplay: check_autoplay,
           loop: true,
           muted: check_muted,
-          preload: 'metadata',
           controls: section.settings.show_controls,
           class: media_class_mobile,
           width: 768,
@@ -162,24 +145,8 @@
       %}
       {{
         video_player_html
-        | replace: '<img src="', '<img loading="%loading%" fetchpriority="%priority%" alt="%alt_text%" src="'
+        | replace: '<img src="', '<img alt="%alt_text%" src="'
         | replace: '%alt_text%', alt_text
-        | replace: '%priority%', media_fetchpriority
-        | replace: '%loading%', media_loading
-      }}
-    {% endif %}
-    {% if mobile_fallback_image != blank %}
-      {{
-        mobile_fallback_image
-        | image_url: width: 1440
-        | image_tag:
-          width: 375,
-          height: section.settings.height_mobile,
-          widths: '320, 480, 640, 768, 960, 1200, 1440',
-          sizes: '100vw',
-          loading: media_loading,
-          fetchpriority: media_fetchpriority,
-          class: media_class_mobile
       }}
     {% endif %}
   {% else %}
@@ -193,8 +160,6 @@
             height: 540,
             widths: '1366, 1536, 1920, 2048, 2560, 2880',
             sizes: '100vw',
-            loading: media_loading,
-            fetchpriority: media_fetchpriority,
             class: media_class_desktop
         }}
       {% endif %}
@@ -208,8 +173,6 @@
             height: 540,
             widths: '320, 480, 640, 768, 960, 1536',
             sizes: '100vw',
-            loading: media_loading,
-            fetchpriority: media_fetchpriority,
             class: media_class_mobile
         }}
       {% endif %}
@@ -267,13 +230,7 @@
                 new_tab: block.settings.new_tab,
                 style: block.settings.button_style,
                 size: 'md',
-                scheme: section.settings.colour_scheme,
-                button_font_size: block.settings.button_font_size,
-                button_font_color: block.settings.button_font_color,
-                button_background: block.settings.button_background,
-                button_border_width: block.settings.button_border_width,
-                button_border_color: block.settings.button_border_color,
-                button_padding: block.settings.button_padding
+                scheme: section.settings.colour_scheme
               -%}
           {%- endcase -%}
         {%- endfor -%}
@@ -620,67 +577,9 @@
             {
               "value": "underline",
               "label": "Underline"
-            },
-            {
-              "value": "custom",
-              "label": "Custom"
             }
           ],
           "default": "primary"
-        },
-        {
-          "type": "range",
-          "id": "button_font_size",
-          "label": "Font size",
-          "default": 16,
-          "min": 10,
-          "max": 48,
-          "step": 1,
-          "unit": "px",
-          "visible_if": "{{ block.settings.button_style == 'custom' }}"
-        },
-        {
-          "type": "color",
-          "id": "button_font_color",
-          "label": "Font color",
-          "default": "#ffffff",
-          "visible_if": "{{ block.settings.button_style == 'custom' }}"
-        },
-        {
-          "type": "color_background",
-          "id": "button_background",
-          "label": "Background",
-          "default": "#1f1f1f",
-          "visible_if": "{{ block.settings.button_style == 'custom' }}"
-        },
-        {
-          "type": "range",
-          "id": "button_border_width",
-          "label": "Border width",
-          "default": 1,
-          "min": 0,
-          "max": 8,
-          "step": 1,
-          "unit": "px",
-          "visible_if": "{{ block.settings.button_style == 'custom' }}"
-        },
-        {
-          "type": "color",
-          "id": "button_border_color",
-          "label": "Border color",
-          "default": "#ffffff",
-          "visible_if": "{{ block.settings.button_style == 'custom' }}"
-        },
-        {
-          "type": "range",
-          "id": "button_padding",
-          "label": "Padding",
-          "default": 12,
-          "min": 4,
-          "max": 40,
-          "step": 1,
-          "unit": "px",
-          "visible_if": "{{ block.settings.button_style == 'custom' }}"
         }
       ]
     },

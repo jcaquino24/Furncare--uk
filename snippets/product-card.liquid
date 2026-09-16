@@ -16,12 +16,6 @@
 
 {% liquid
   assign title_class = 'title-2xs'
-  assign image_loading = loading | default: 'lazy'
-  assign image_fetchpriority = 'auto'
-
-  if image_loading == 'eager'
-    assign image_fetchpriority = 'high'
-  endif
 
   assign product_card_style = product_card_style | default: 'default'
   if product.type == 'Swatch' and product_card_style != 'condensed'
@@ -50,11 +44,6 @@
   if product_card_style == 'condensed' or product_card_style == 'condensed_swatch_card'
     assign additional_classes = additional_classes | append: ' product-card--condensed'
     assign title_class = 'title-2xs'
-  endif
-
-  assign product_card_title = product.title | split: '|' | first | strip
-  if product_card_style == 'condensed' and product.title contains '|'
-    assign product_card_title = product.title | split: '|' | last | strip
   endif
 
   comment
@@ -94,10 +83,7 @@
      assign show_price = false
   endif
 
-  if request.page_type == 'collection' and product.selected_or_first_available_variant.price == 0 
-     assign show_price = false
-  endif
-  
+
   comment
   endcomment
 
@@ -169,9 +155,6 @@
     assign variant_taxable = product.selected_or_first_available_variant.taxable
   -%}
   <article class="product-card {{ additional_classes }}" data-price="{{ price_pounds }}" data-taxable="{{ variant_taxable }}">
-    {% if settings.enable_wishlist %}
-      {% render 'wishlist-button', product: product %}
-    {% endif %}
     <div class="product-card__rollover-images">
       {% comment %} Alternate Image - shown on hover {% endcomment %}
       {% if product.images.size > 1 %}
@@ -179,14 +162,13 @@
           <a href="{{ product.url | split: '?' | first }}">
             {{
               product.images[1]
-              | image_url: width: 800
+              | image_url: width: 1284
               | image_tag:
-                width: 400,
+                width: 642,
                 class: 'product-card__image',
                 loading: 'lazy',
-                fetchpriority: 'low',
-                sizes: '(min-width: 1024px) 20vw, (min-width: 768px) 30vw, 45vw',
-                widths: '160, 240, 320, 400, 560, 800'
+                sizes: '(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw',
+                widths: '321, 642, 964, 1284'
             }}
           </a>
         </div>
@@ -199,14 +181,13 @@
             {% if product.featured_image %}
               {{
                 product.featured_image
-                | image_url: width: 800
+                | image_url: width: 1284
                 | image_tag:
-                  width: 400,
+                  width: 642,
                   class: 'product-card__image',
-                  loading: image_loading,
-                  fetchpriority: image_fetchpriority,
-                  sizes: '(min-width: 1024px) 20vw, (min-width: 768px) 30vw, 45vw',
-                  widths: '160, 240, 320, 400, 560, 800'
+                  loading: 'lazy',
+                  sizes: '(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw',
+                  widths: '321, 642, 964, 1284'
               }}
             {% endif %}
           </a>
@@ -256,9 +237,7 @@
       {% endfor %}
     </div>
 
-{% if customer %}  {% if customer.id == 11696191635792 or customer.id == 11063103160656 %}
-  
-    <button
+<button
   id="mprfq-quote-{{ product.id }}"
   product-handle="{{ product.handle }}"
   class="mprfq-add-to-quote-button-pdp mprfq-btn-hidden"
@@ -278,8 +257,6 @@
 >
   Add to Quote
 </button>
-{% endif %}
-{% endif %}
 
     {% comment %} Product info {% endcomment %}
     <div class="product-card__info">
@@ -287,7 +264,7 @@
       {% if show_title %}
         <div class="product-card__title {{ title_class }}">
           <a class="{{ title_class }}" href="{{ product.url | split: '?' | first }}">
-            {{- product_card_title -}}
+            {{- product.title | split: '|' | first -}}
           </a>
         </div>
       {% endif %}

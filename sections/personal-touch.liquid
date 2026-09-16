@@ -1,0 +1,93 @@
+{% schema %}
+{
+  "name": "Personal Touch Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "CUSTOMISE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main heading",
+      "default": "Add your personal touch"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Description",
+      "default": "<p>Create your dream engagement ring with our Bespoke Ring Builder. Tailor each element to suit your personal preferences.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button text",
+      "default": "CUSTOMISE"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Right Image"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Personal Touch",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="personal-touch-section">
+  <div class="personal-touch-container">
+    <div class="personal-touch-content text-{{ section.settings.text_alignment }}">
+      {% if section.settings.subheading != blank %}
+        <p class="personal-touch-subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2 class="personal-touch-heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+<div class="personal-touch-text-wrapper">
+      {% if section.settings.text != blank %}
+        <div class="personal-touch-text">{{ section.settings.text }}</div>
+      {% endif %}
+
+      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+        <a href="{{ section.settings.button_link }}" class="personal-touch-button">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+</div>
+    </div>
+
+    {% if section.settings.image != blank %}
+      <div class="personal-touch-image">
+        <img
+          src="{{ section.settings.image | image_url: width: 800 }}"
+          alt="{{ section.settings.heading | escape }}"
+          loading="lazy"
+        >
+      </div>
+    {% endif %}
+  </div>
+</section>

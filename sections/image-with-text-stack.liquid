@@ -1,0 +1,68 @@
+{% schema %}
+{
+  "name": "Timeless Elegance",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Behind the Ring"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Timeless Elegance"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right Image"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Our most coveted engagement ring silhouette. The Ceremonial Solitaire showcases a dazzling oval diamond in a minimal basket setting.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Timeless Elegance Section"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="timeless-elegance-section">
+  <div class="container">
+    <div class="content-wrapper">
+      <div class="left">
+        {% if section.settings.eyebrow != blank %}
+          <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+        {% endif %}
+        <h2 class="title">{{ section.settings.heading }}</h2>
+        </div>
+        {% if section.settings.left_image %}
+          <div class="left-image">
+            <img src="{{ section.settings.left_image | image_url: width: 800 }}" alt="{{ section.settings.heading }}">
+          </div>
+        {% endif %}
+      
+
+    
+        {% if section.settings.right_image %}
+          <div class="right-image">
+            <img src="{{ section.settings.right_image | image_url: width: 500 }}" alt="{{ section.settings.heading }}">
+          </div>
+        {% endif %}
+        <div class="right">{{ section.settings.description }}</div>
+      </div>
+    </div>
+
+</section>

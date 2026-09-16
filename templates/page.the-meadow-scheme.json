@@ -16,45 +16,6 @@
         "show_title": false
       }
     },
-    "richtext_dUdyGc": {
-      "type": "richtext",
-      "blocks": {
-        "heading_BBhYkL": {
-          "type": "heading",
-          "settings": {
-            "text": "The Meadow Scheme",
-            "heading_level": "h1",
-            "heading_style": "title-display"
-          },
-          "blocks": {}
-        },
-        "tagline_CtkY3j": {
-          "type": "tagline",
-          "settings": {
-            "content": "Design led in <em>every </em>detail.",
-            "tagline_style": "body-md"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "heading_BBhYkL",
-        "tagline_CtkY3j"
-      ],
-      "name": "Rich Text",
-      "settings": {
-        "id_anchor": "",
-        "max_width_desktop": 100,
-        "section_padding": "--spacing-2xl",
-        "text_alignment": "center",
-        "colour_scheme": "base-white-01",
-        "enable_animation": false,
-        "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
-      }
-    },
     "hotspots_dbUyqe": {
       "type": "hotspots",
       "blocks": {
@@ -325,16 +286,13 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "id_anchor": "",
         "max_width_desktop": 64,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": false,
         "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
+        "small_container": false
       }
     },
     "blocks_cxLWgM": {
@@ -429,10 +387,7 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "warm-stone",
-        "section_padding": "--spacing-2xl",
-        "enable_reveal": true,
-        "reveal_distance": 32,
-        "reveal_duration": 760
+        "section_padding": "--spacing-2xl"
       }
     },
     "blocks_GAABFr": {
@@ -497,16 +452,13 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": false,
         "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
+        "small_container": false
       }
     },
     "blocks_zQrGGK": {
@@ -533,7 +485,6 @@
   },
   "order": [
     "main",
-    "richtext_dUdyGc",
     "hotspots_dbUyqe",
     "richtext_taQyjz",
     "blocks_cxLWgM",

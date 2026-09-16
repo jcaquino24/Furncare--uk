@@ -160,7 +160,7 @@
           "type": "heading",
           "settings": {
             "text": "The Signature Spaces",
-            "heading_level": "h1",
+            "heading_level": "h2",
             "heading_style": "title-xl"
           },
           "blocks": {}
@@ -184,16 +184,13 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": true,
         "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
+        "small_container": false
       }
     },
     "content_blocks_FjmdzX": {
@@ -204,7 +201,7 @@
           "settings": {
             "image": "shopify://shop_images/Untitled_-_2026-05-06T112857.053.png",
             "text": "The Indigo Scheme",
-            "richtext": "",
+            "richtext": "<p>HELLO</p>",
             "richtext_color": "#ffffff",
             "richtext_font_size": "14px",
             "richtext_font_weight": "400",
@@ -303,16 +300,13 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": true,
         "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
+        "small_container": false
       }
     },
     "content_blocks_URgbfr": {
@@ -469,16 +463,13 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": true,
         "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
+        "small_container": false
       }
     },
     "content_blocks_H4je3q": {
@@ -635,16 +626,13 @@
       ],
       "name": "Rich Text",
       "settings": {
-        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": true,
         "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
+        "small_container": false
       }
     },
     "content_blocks_X3HFdJ": {

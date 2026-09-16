@@ -1,0 +1,29 @@
+{% comment %}
+  Section: Related products by metafield value
+  Shows products that share the same metafield (custom.collection)
+{% endcomment %}
+
+{% assign metafield_value = product.metafields.custom.collection.value %}
+{% if metafield_value %}
+  {% assign related_products = collections.all.products | where: "metafields.custom.collection.value", metafield_value | where: "id", "!=" , product.id %}
+{% endif %}
+
+{% if related_products and related_products.size > 0 %}
+  <div class="related-products page-width">
+    <h2 class="related-title">Related {{ metafield_value }}s</h2>
+    <div class="grid grid--2-col md:grid--4-col">
+      {% for related_product in related_products limit: 4 %}
+        <div class="grid__item">
+          <a href="{{ related_product.url }}" class="related-product">
+            <img
+              src="{{ related_product.featured_image | img_url: '400x' }}"
+              alt="{{ related_product.title | escape }}"
+              class="related-product__image"
+            >
+            <p class="related-product__title">{{ related_product.title }}</p>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

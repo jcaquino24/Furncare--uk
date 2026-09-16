@@ -37,7 +37,6 @@
               class: button_class,
               label: block.settings.title,
               style: 'underline',
-              scheme: section.settings.colour_scheme,
               attributes: attributes
             %}
           {% endfor %}
@@ -82,8 +81,7 @@
                 {% render 'button',
                   label: block.settings.cta_text,
                   link: block.settings.cta_link,
-                  style: 'primary',
-                  scheme: section.settings.colour_scheme
+                  style: 'primary'
                 %}
               </div>
             </div>
