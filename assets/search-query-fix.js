@@ -1,6 +1,5 @@
 const nativeFetch = window.fetch.bind(window);
-const buildSearchQuery = (term) => `${term} OR variants.sku:${term}`;
-const buildSearchUrl = (term) => `${window.location.origin}/search?options[prefix]=last&q=${encodeURIComponent(buildSearchQuery(term))}`;
+const buildSearchUrl = (term) => `${window.location.origin}/search?options[prefix]=last&q=${encodeURIComponent(term)}`;
 
 window.fetch = (input, init) => {
   const requestUrl = new URL(typeof input === 'string' ? input : input.url, window.location.origin);
@@ -11,9 +10,16 @@ window.fetch = (input, init) => {
     if (term) {
       requestUrl.searchParams.set('type', 'product');
       requestUrl.searchParams.set('options[prefix]', 'last');
-      requestUrl.searchParams.set('q', `${term} OR variants.sku:${term}`);
+      requestUrl.searchParams.set('q', term);
 
-      return nativeFetch(requestUrl.toString(), init);
+      return nativeFetch(requestUrl.toString(), init).then(async (response) => {
+        const responseBody = await response.clone().text();
+
+        if (responseBody.includes('product-card')) return response;
+
+        requestUrl.searchParams.set('q', `variants.sku:${term}`);
+        return nativeFetch(requestUrl.toString(), init);
+      });
     }
   }
 
