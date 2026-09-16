@@ -1,11 +1,12 @@
 const nativeFetch = window.fetch.bind(window);
 const buildSearchUrl = (term) => `${window.location.origin}/search?q=${encodeURIComponent(term)}`;
+const hasProductResults = (html) => /<article\b[^>]*class="[^"]*\bproduct-card\b/.test(html);
 const findSearchQuery = async (term) => {
   try {
     const response = await nativeFetch(`${window.location.origin}/search?view=condensed&q=${encodeURIComponent(term)}`);
     const responseBody = await response.text();
 
-    return response.ok && responseBody.includes('product-card') ? term : `variants.sku:${term}`;
+    return response.ok && hasProductResults(responseBody) ? term : `variants.sku:${term}`;
   } catch {
     return term;
   }
@@ -14,16 +15,14 @@ const findSearchQuery = async (term) => {
 window.fetch = (input, init) => {
   const requestUrl = new URL(typeof input === 'string' ? input : input.url, window.location.origin);
 
-  if (requestUrl.pathname === '/search' && requestUrl.searchParams.get('view') === 'condensed') {
+  if (requestUrl.pathname.endsWith('/search') && requestUrl.searchParams.get('view') === 'condensed') {
     const term = requestUrl.searchParams.get('q')?.trim();
 
     if (term) {
-      requestUrl.searchParams.set('q', term);
-
-      return nativeFetch(requestUrl.toString(), init).then(async (response) => {
+      return nativeFetch(input, init).then(async (response) => {
         const responseBody = await response.clone().text();
 
-        if (responseBody.includes('product-card')) return response;
+        if (hasProductResults(responseBody)) return response;
 
         requestUrl.searchParams.set('q', `variants.sku:${term}`);
         return nativeFetch(requestUrl.toString(), init);
