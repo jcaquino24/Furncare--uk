@@ -9,6 +9,7 @@
   {{ 'uwp.main.DdluWbOa.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
 {% elsif path == "/frontend/entrypoints/main.ts" or path == "main.ts" %}
   <script src="{{ 'uwp.main.bCRper3M.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script src="{{ 'search-query-fix.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
 {% elsif path == "/frontend/src/ts/sections/address-form.ts" or path == "../src/ts/sections/address-form.ts" %}
   <script src="{{ 'uwp.address-form.BlBRUc7B.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
 {% elsif path == "/frontend/src/ts/sections/addresses.ts" or path == "../src/ts/sections/addresses.ts" %}
@@ -70,7 +71,6 @@
   <script src="{{ 'uwp.search-count.DV7CHlyo.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
 {% elsif path == "/frontend/src/ts/snippets/search-input.ts" or path == "../src/ts/snippets/search-input.ts" %}
   <script src="{{ 'uwp.search-input.D_HkTcim.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
-  <script src="{{ 'search-query-fix.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
 {% elsif path == "/frontend/src/ts/snippets/sort-form.ts" or path == "../src/ts/snippets/sort-form.ts" %}
   <script src="{{ 'uwp.sort-form.BrrjbkF8.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
 {% elsif path == "/frontend/src/ts/snippets/upsell-block.ts" or path == "../src/ts/snippets/upsell-block.ts" %}
