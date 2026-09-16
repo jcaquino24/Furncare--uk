@@ -1,5 +1,15 @@
 const nativeFetch = window.fetch.bind(window);
-const buildSearchUrl = (term) => `${window.location.origin}/search?options[prefix]=last&q=${encodeURIComponent(term)}`;
+const buildSearchUrl = (term) => `${window.location.origin}/search?q=${encodeURIComponent(term)}`;
+const findSearchQuery = async (term) => {
+  try {
+    const response = await nativeFetch(`${window.location.origin}/search?view=condensed&q=${encodeURIComponent(term)}`);
+    const responseBody = await response.text();
+
+    return response.ok && responseBody.includes('product-card') ? term : `variants.sku:${term}`;
+  } catch {
+    return term;
+  }
+};
 
 window.fetch = (input, init) => {
   const requestUrl = new URL(typeof input === 'string' ? input : input.url, window.location.origin);
@@ -8,8 +18,6 @@ window.fetch = (input, init) => {
     const term = requestUrl.searchParams.get('q')?.trim();
 
     if (term) {
-      requestUrl.searchParams.set('type', 'product');
-      requestUrl.searchParams.set('options[prefix]', 'last');
       requestUrl.searchParams.set('q', term);
 
       return nativeFetch(requestUrl.toString(), init).then(async (response) => {
@@ -29,9 +37,10 @@ window.fetch = (input, init) => {
 customElements.whenDefined('uwp-search-input').then(() => {
   const SearchInput = customElements.get('uwp-search-input');
 
-  SearchInput.prototype.submitSearch = function (term) {
+  SearchInput.prototype.submitSearch = async function (term) {
+    const query = await findSearchQuery(term);
     this.closeSearchResults();
-    window.location.href = buildSearchUrl(term);
+    window.location.href = buildSearchUrl(query);
   };
 });
 
@@ -47,5 +56,7 @@ document.addEventListener('click', (event) => {
 
   event.preventDefault();
   event.stopImmediatePropagation();
-  window.location.href = buildSearchUrl(term);
+  findSearchQuery(term).then((query) => {
+    window.location.href = buildSearchUrl(query);
+  });
 }, true);
