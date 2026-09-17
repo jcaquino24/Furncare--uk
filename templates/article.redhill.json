@@ -41,7 +41,7 @@
       ],
       "name": "Image - Video Banner",
       "settings": {
-        "height_desktop": 640,
+        "height_desktop": 800,
         "height_mobile": 680,
         "maintain_aspect_ratio": false,
         "add_header_offset": false,
@@ -146,7 +146,7 @@
         "background_gradient": "",
         "background_color": "#F9F7F0",
         "max_width": 1600,
-        "gutter_desktop": 24,
+        "gutter_desktop": 12,
         "gutter_mobile": 16,
         "padding_top": 32,
         "padding_bottom": 96,
