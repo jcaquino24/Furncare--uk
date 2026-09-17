@@ -479,7 +479,7 @@
         "heading": "",
         "background_gradient": "",
         "background_color": "#c3c0b0",
-        "max_width": 1280,
+        "max_width": 1340,
         "gutter_desktop": 24,
         "gutter_mobile": 16,
         "padding_top": 32,
@@ -537,7 +537,7 @@
         "grid_gap": 20,
         "columns_desktop": "4",
         "columns_tablet": "2",
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "icon_background": "#f5f5f4",
         "icon_color": "#292524",
         "icon_size": 48,
@@ -628,7 +628,7 @@
         "tagline_CQ9Qpi": {
           "type": "tagline",
           "settings": {
-            "content": "Willow Lodge in Redhill represents one of our largest and most detailed projects to date. Developed by Zephyr X and operated by EQ Care Group, the interior design for the home was led by Stylesmith Interiors. We became involved while the first moodboards were being developed, working alongside the wider team to turn the interior specification into a coordinated furniture and furnishings package ready for installation.",
+            "content": "Willow Lodge represents one of our largest and most detailed projects to date. Developed by Zephyr X and operated by EQ Care Group, the interior design for the home was led by Stylesmith Interiors. We became involved while the first moodboards were being developed, working alongside the wider team to turn the interior specification into a coordinated furniture and furnishings package ready for installation.",
             "tagline_style": "body-md"
           },
           "blocks": {}
@@ -636,7 +636,7 @@
         "tagline_r4mfBx": {
           "type": "tagline",
           "settings": {
-            "content": "With thousands of individual items, hundreds of new product codes and a large number of bespoke elements, this home required detailed planning across product development, manufacturing, procurement, logistics and installation – a project that demonstrated not only the scale Furncare can deliver, but the level of coordination required behind the scenes to bring a detailed interior specification to site successfully.",
+            "content": "With thousands of individual items, hundreds of new product styles and a large number of bespoke elements, this home required detailed planning across product development, manufacturing, procurement, logistics and installation – a project that demonstrated not only the scale Furncare can deliver, but the level of coordination required behind the scenes to bring a detailed interior specification to site successfully.",
             "tagline_style": "body-md"
           },
           "blocks": {}
@@ -662,7 +662,7 @@
       "name": "Rich Text",
       "settings": {
         "id_anchor": "",
-        "max_width_desktop": 90,
+        "max_width_desktop": 95,
         "section_padding": "--spacing-4xl",
         "text_alignment": "left",
         "colour_scheme": "base-white-01",
@@ -681,7 +681,7 @@
           "settings": {
             "title": "",
             "title_size": "display",
-            "text": "Our involvement began while Stylesmith Interiors were developing the initial moodboards for Willow Lodge.\nStylesmith Interiors had established the creative vision for Willow Lodge, defining the schemes across the home. our role in this, was to turn that specification into a tangible furniture package, ensuring the final furniture closely reflected the designers’ original specification while meeting the practical requirements of the project. <br> <br> \nAcross a project of this size, even relatively small specification changes could have an impact across multiple rooms or product types. Keeping accurate records of every variation was therefore a substantial part of the process.\nBy the time the final specification had been built, more than 400 new product codes had been created for Willow Lodge alone.\nThese covered different furniture configurations, fabrics, finishes and bespoke details, allowing each item to be correctly identified, manufactured and allocated to its intended space.\nThe result was a final schedule comprising 2,319 individual items.",
+            "text": "Our involvement began while Stylesmith Interiors were developing the initial moodboards for Willow Lodge.\nThe designers established the creative vision for Willow Lodge, defining the schemes across the home. Our role in this was to turn that specification into a tangible furniture package, ensuring the final furniture closely reflected the designers’ original specification while meeting the practical requirements of a care environment. <br> <br> \nAcross a project of this size, even relatively small specification changes could have an impact across multiple rooms or product types. By the time the final specification had been built, more than 400 new product styles had been created for Willow Lodge alone.\nThese covered different furniture configurations, fabrics, finishes and bespoke details, allowing each item to fit perfectly into its intended space.\nThe result was a final schedule comprising 2,319 individual items.",
             "button_style": "primary",
             "button_text": "",
             "button_action": "link",
@@ -723,7 +723,7 @@
           "settings": {
             "title": "",
             "title_size": "display",
-            "text": "Rather than applying one standard furniture scheme throughout the building, the specification included a considerable amount of variation between different rooms and areas - bedrooms formed a major part of this, with fitted and freestanding pieces supplied across the home.\nOne of the more distinctive elements was the bespoke fitted bedroom furniture, including substantial 2.1m-high triple wardrobes in a cashmere finish. The scale of these pieces gave the bedrooms a strong, built-in appearance while also providing the perfect amount of storage required within each room.\nUnlike a straightforward freestanding furniture order, fitted elements also required closer coordination with the dimensions and layout of the building. Manufacturing tolerances, site measurements and final positioning all needed to align before installation could be completed.",
+            "text": "Rather than applying a standard scheme throughout the building, the specification included a considerable amount of variation between different rooms and areas - bedrooms formed a major part of this, with fitted and freestanding pieces supplied across the home. <br> <br>\nOne of the more distinctive elements was the bespoke fitted bedroom furniture, including substantial 2.1m-high triple wardrobes in a cashmere finish. The scale of these pieces gave the bedrooms a strong, built-in appearance while also providing the perfect amount of storage required within each room.\nUnlike a straightforward freestanding furniture order, fitted elements also required closer coordination with the dimensions and layout of the building. Manufacturing tolerances and site measurements needed to align before installation could be completed.",
             "button_style": "primary",
             "button_text": "",
             "button_action": "link",
