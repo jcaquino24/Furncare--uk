@@ -41,6 +41,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ page_description }}">
 
+    <script type="importmap">
+      {
+        "imports": {
+          "@theme/critical": "{{ 'critical.js' | asset_url }}",
+          "@theme/component": "{{ 'component.js' | asset_url }}",
+          "@theme/dialog": "{{ 'dialog.js' | asset_url }}",
+          "@theme/events": "{{ 'events.js' | asset_url }}",
+          "@theme/focus": "{{ 'focus.js' | asset_url }}",
+          "@theme/morph": "{{ 'morph.js' | asset_url }}",
+          "@theme/paginated-list": "{{ 'paginated-list.js' | asset_url }}",
+          "@theme/recently-viewed-products": "{{ 'recently-viewed-products.js' | asset_url }}",
+          "@theme/section-renderer": "{{ 'section-renderer.js' | asset_url }}",
+          "@theme/utilities": "{{ 'utilities.js' | asset_url }}"
+        }
+      }
+    </script>
+
     {%- liquid
       render 'vite-tag' with 'critical.css', preload_stylesheet: true
       render 'vite-tag' with 'main.css'
@@ -125,6 +142,7 @@
       aria-label="Cart"
       aria-roledescription="region"
     ></uwp-cart>
+    {% render 'search-modal' %}
     {% sections 'header-group' %}
 
     <!-- Megamenu overlay -->

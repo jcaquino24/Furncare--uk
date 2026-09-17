@@ -77,17 +77,15 @@
         <button
           class="header__action header__action--search hide-on-mobile"
           type="button"
-          js-header="open-search"
+          onclick="document.getElementById('search-modal')?.showDialog()"
+          aria-haspopup="dialog"
+          aria-controls="search-modal"
         >
           <span class="visually-hidden">Search</span>
           {% render 'icons', icon: 'search' %}
         </button>
 
-        {% render 'input-search',
-          id: 'header-search',
-          placeholder: 'What are you looking for?',
-          hide_on_mobile: true
-        %}
+        <span class="visually-hidden">Search is available from the search button.</span>
 
         {% if settings.enable_wishlist %}
           <a class="header__action header__wishlist" href="/pages/wishlist" aria-label="Wishlist">
@@ -127,10 +125,16 @@
   </div>
 
   <div class="container header__mobile-search hide-on-desktop">
-    {% render 'input-search',
-      id: 'header-search-mobile',
-      placeholder: 'What are you looking for?'
-    %}
+    <button
+      class="header__action header__action--search"
+      type="button"
+      onclick="document.getElementById('search-modal')?.showDialog()"
+      aria-haspopup="dialog"
+      aria-controls="search-modal"
+    >
+      <span class="visually-hidden">Search</span>
+      {% render 'icons', icon: 'search' %}
+    </button>
   </div>
 </uwp-header>
 

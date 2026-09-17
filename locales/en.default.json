@@ -10,6 +10,12 @@
 {
   "accessibility": {
     "skip_to_content": "Skip to content",
+    "search_results_count": "{{ count }} search results for {{ query }}",
+    "search_results_no_results": "No search results for {{ query }}",
+    "reset_search": "Clear search",
+    "slideshow_pause": "Pause slideshow",
+    "slideshow_play": "Play slideshow",
+    "slide_status": "Slide {{ index }} of {{ length }}",
     "close_modal": "Close (esc)",
     "access_account": "Access Account Area",
     "access_search": "Access Search",
@@ -34,6 +40,26 @@
       "clear_search": "Clear search",
       "search_placeholder": "What are you looking for?"
     }
+  },
+  "content": {
+    "search": "Search",
+    "search_input_label": "Search",
+    "search_input_placeholder": "What are you looking for?",
+    "search_results_label": "Search results",
+    "search_results_resource_products": "Products",
+    "search_results_resource_products_count": "{{ count }} products",
+    "search_results_resource_collections": "Collections",
+    "search_results_resource_pages": "Pages",
+    "search_results_resource_articles": "Articles",
+    "search_results_no_results": "No results found for {{ terms }}",
+    "search_results_no_results_check_spelling": "No results found for {{ terms }}. Check the spelling or try another search.",
+    "search_results_view_all": "View all results",
+    "recently_viewed_products": "Recently viewed products",
+    "no_products_found": "No products found",
+    "search_results": "Search results"
+  },
+  "actions": {
+    "clear": "Clear"
   },
   "footer": {
     "social_icons": "Follow us",
