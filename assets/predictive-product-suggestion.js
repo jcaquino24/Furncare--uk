@@ -1,5 +1,10 @@
 const nativeFetch = window.fetch.bind(window);
 const hasProductCards = (html) => /<article\b[^>]*class="[^"]*\bproduct-card\b/.test(html);
+const normalizeSearchQuery = (query) => {
+  const malformedQuery = query.match(/^title:(.+?)(?:\s+OR\s+variantssku.*|\*)$/i);
+
+  return malformedQuery ? malformedQuery[1].trim() : query;
+};
 
 const getSuggestedTerm = async (term) => {
   const response = await nativeFetch(`/search/suggest.json?q=${encodeURIComponent(term)}&resources[type]=query&resources[limit]=4`);
@@ -20,6 +25,12 @@ window.fetch = (input, init) => {
 
   const term = requestUrl.searchParams.get('q')?.trim();
   if (!term) return nativeFetch(input, init);
+
+  const normalizedTerm = normalizeSearchQuery(term);
+  if (normalizedTerm !== term) {
+    requestUrl.searchParams.set('q', normalizedTerm);
+    return nativeFetch(requestUrl.toString(), init);
+  }
 
   return nativeFetch(input, init).then(async (response) => {
     const responseBody = await response.clone().text();
