@@ -57,6 +57,25 @@
         "content_alignment": "center"
       }
     },
+    "blocks_Mkqmde": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_dhkrLw": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 50,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#F9F7F0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_dhkrLw"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
     "richtext_LTPVBd": {
       "type": "richtext",
       "blocks": {
@@ -87,7 +106,7 @@
       "settings": {
         "id_anchor": "",
         "max_width_desktop": 100,
-        "section_padding": "--spacing-4xl",
+        "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": true,
@@ -144,7 +163,7 @@
         "eyebrow": "",
         "heading": "",
         "background_gradient": "",
-        "background_color": "#F9F7F0",
+        "background_color": "#C3C0B0",
         "max_width": 1600,
         "gutter_desktop": 12,
         "gutter_mobile": 16,
@@ -178,17 +197,17 @@
         "eyebrow_transform": "uppercase",
         "eyebrow_margin_bottom": 16,
         "text_color": "#0c0a09",
-        "heading_color": "#C3C0B0",
-        "copy_color": "#C3C0B0",
-        "eyebrow_color": "#C3C0B0",
+        "heading_color": "#32412F",
+        "copy_color": "#32412F",
+        "eyebrow_color": "#32412F",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760,
-        "card_background": "#32412F",
-        "card_heading_color": "#C3C0B0",
-        "card_copy_color": "#C3C0B0",
-        "card_border_color": "#C3C0B0",
-        "card_border_width": 1,
+        "card_background": "#F9F7F0",
+        "card_heading_color": "#32412F",
+        "card_copy_color": "#32412F",
+        "card_border_color": "#F9F7F0",
+        "card_border_width": 4,
         "card_radius": 32,
         "card_padding": 28,
         "card_padding_mobile": 24,
@@ -211,8 +230,8 @@
         "icon_radius": 16,
         "icon_margin_bottom": 32,
         "icon_hover_scale": 108,
-        "stat_number_color": "#C3C0B0",
-        "stat_label_color": "#C3C0B0",
+        "stat_number_color": "#32412F",
+        "stat_label_color": "#32412F",
         "stat_number_size": 40,
         "stat_number_weight": 300,
         "stat_label_size": 16,
@@ -528,7 +547,7 @@
       "name": "Image text blocks",
       "settings": {
         "title": "",
-        "section_padding": "--spacing-4xl",
+        "section_padding": "--spacing-2xl",
         "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
@@ -1038,6 +1057,7 @@
   "order": [
     "main",
     "image_video_banner_n9JT9E",
+    "blocks_Mkqmde",
     "richtext_LTPVBd",
     "furncare_about_proof_DVGATz",
     "image_text_blocks_xYxbk8",
