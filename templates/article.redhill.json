@@ -892,21 +892,12 @@
           },
           "blocks": {}
         },
-        "tagline_FKeNf7": {
-          "type": "tagline",
-          "name": "Tagline",
-          "settings": {
-            "content": "Carl Southall",
-            "tagline_style": "body-xl"
-          },
-          "blocks": {}
-        },
         "tagline_qTwNja": {
           "type": "tagline",
           "name": "Tagline",
           "settings": {
-            "content": "MANAGING DIRECTOR",
-            "tagline_style": "body-xs"
+            "content": "CARL SOUTHALL, MANAGING DIRECTOR",
+            "tagline_style": "body-sm"
           },
           "blocks": {}
         }
@@ -914,7 +905,6 @@
       "block_order": [
         "tagline_6gWGMh",
         "heading_L8ntnV",
-        "tagline_FKeNf7",
         "tagline_qTwNja"
       ],
       "name": "Rich Text",
