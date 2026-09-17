@@ -82,7 +82,7 @@
         "heading_rzxmCK": {
           "type": "heading",
           "settings": {
-            "text": "Willow Lodge Care Home, Redhill | From Moodboard to Move-Ready:",
+            "text": "Willow Lodge Care Home, Redhill | From Moodboards to Move-Ready:",
             "heading_level": "h2",
             "heading_style": "title-xl"
           },
@@ -447,7 +447,7 @@
           "settings": {
             "number": "400",
             "label": "New Product Styles",
-            "copy": "A complex and bespoke specification, tailored to Willlow Lodge"
+            "copy": "A complex and bespoke specification, tailored to Willow Lodge"
           }
         },
         "stat_fc8rzV": {
@@ -461,7 +461,7 @@
         "stat_a6YXUX": {
           "type": "stat",
           "settings": {
-            "number": "2319",
+            "number": "2,319",
             "label": "Items Delivered",
             "copy": "Thousands of individual pieces managed across the project."
           }
@@ -589,7 +589,7 @@
         "tagline_BmC8Uy": {
           "type": "tagline",
           "settings": {
-            "content": "JUSTINE KIRKHAM, STYLESMITH INTERIORS",
+            "content": "JUSTINE KIRKHAM, DESIGN DIRECTOR AT STYLESMITH INTERIORS",
             "tagline_style": "body-sm"
           },
           "blocks": {}
@@ -648,7 +648,7 @@
         "tagline_CQ9Qpi": {
           "type": "tagline",
           "settings": {
-            "content": "Willow Lodge represents one of our largest and most detailed projects to date. Developed by Zephyr X and operated by EQ Care Group, the interior design for the home was led by Stylesmith Interiors. We became involved while the first moodboards were being developed, working alongside the wider team to turn the interior specification into a coordinated furniture and furnishings package ready for installation.",
+            "content": "A project developed by Zephyr X, operated by EQ Care Group, and designed by Stylesmith Interiors. Our involvement began while Stylesmith Interiors were developing the initial moodboards for Willow Lodge - the designers established the creative vision for Willow Lodge, defining the schemes across the home. Our role in this was to turn that specification into a tangible furniture package, ensuring the final furniture closely reflected the designers’ original specification while meeting the practical requirements of a care environment.",
             "tagline_style": "body-md"
           },
           "blocks": {}
@@ -682,51 +682,15 @@
       "name": "Rich Text",
       "settings": {
         "id_anchor": "",
-        "max_width_desktop": 95,
+        "max_width_desktop": 87,
         "section_padding": "--spacing-4xl",
-        "text_alignment": "left",
+        "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": false,
         "optional_richtext": "",
         "small_container": false,
         "enable_see_more": false,
         "see_more_max_height": 400
-      }
-    },
-    "image_text_zXnynf": {
-      "type": "image-text",
-      "blocks": {
-        "content_bWjPrR": {
-          "type": "content",
-          "settings": {
-            "title": "",
-            "title_size": "display",
-            "text": "Our involvement began while Stylesmith Interiors were developing the initial moodboards for Willow Lodge.\nThe designers established the creative vision for Willow Lodge, defining the schemes across the home. Our role in this was to turn that specification into a tangible furniture package, ensuring the final furniture closely reflected the designers’ original specification while meeting the practical requirements of a care environment. <br> <br> \nAcross a project of this size, even relatively small specification changes could have an impact across multiple rooms or product types. By the time the final specification had been built, more than 400 new product styles had been created for Willow Lodge alone.\nThese covered different furniture configurations, fabrics, finishes and bespoke details, allowing each item to fit perfectly into its intended space.\nThe result was a final schedule comprising 2,319 individual items.",
-            "button_style": "primary",
-            "button_text": "",
-            "button_action": "link",
-            "button_url": ""
-          }
-        },
-        "images_Qdr4kx": {
-          "type": "images",
-          "settings": {
-            "image_one": "shopify://shop_images/Willow_Lodge_Vol_3-46_a008ae34-bdd6-476f-bbed-a9de947278ad.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "content_bWjPrR",
-        "images_Qdr4kx"
-      ],
-      "name": "Image - Text",
-      "settings": {
-        "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl",
-        "contact_form_html": "",
-        "enable_reveal": true,
-        "reveal_distance": 32,
-        "reveal_duration": 760
       }
     },
     "image_text_BC7NQM": {
@@ -741,8 +705,8 @@
         "content_ANFq87": {
           "type": "content",
           "settings": {
-            "title": "",
-            "title_size": "display",
+            "title": "A Bespoke Specification",
+            "title_size": "xl",
             "text": "Rather than applying a standard scheme throughout the building, the specification included a considerable amount of variation between different rooms and areas - bedrooms formed a major part of this, with fitted and freestanding pieces supplied across the home. <br> <br>\nOne of the more distinctive elements was the bespoke fitted bedroom furniture, including substantial 2.1m-high triple wardrobes in a cashmere finish. The scale of these pieces gave the bedrooms a strong, built-in appearance while also providing the perfect amount of storage required within each room.\nUnlike a straightforward freestanding furniture order, fitted elements also required closer coordination with the dimensions and layout of the building. Manufacturing tolerances and site measurements needed to align before installation could be completed.",
             "button_style": "primary",
             "button_text": "",
@@ -772,8 +736,8 @@
           "type": "content",
           "settings": {
             "title": "The Finer Details",
-            "title_size": "display",
-            "text": "The bedroom furniture was only one part of the bespoke specification, as across Willow Lodge, a number of pieces required additional development to achieve the details set out within the interior scheme. Among the 130 windows across the home we dressed with bespoke curtains and blinds, a distinctive example was those in the café, where curved pelmets were produced. Rather than using a standard straight pelmet, the curved design highlighted the architecture and character of the interior, requiring a more bespoke approach to manufacture and installation. <br> <br>\nDecorating was being throughout parts of the home while installation was underway, and externally, the groundworks were still at a relatively early stage. This meant access, movement around the building and the availability of individual rooms had to be figured out as we went along, with some areas being ready earlier than others. The home required more than 30 van loads over the course of the project – resulting in more than 725 driver hours on site",
+            "title_size": "xl",
+            "text": "The bedroom furniture was only one part of the bespoke specification, as across Willow Lodge, a number of pieces required additional development to achieve the details set out within the interior scheme. Among the 130 windows across the home we dressed with bespoke curtains and blinds, a distinctive example was those in the café, where curved pelmets were produced. Rather than using a standard straight pelmet, the curved design highlighted the architecture and character of the interior, requiring a more bespoke approach to manufacture and installation. <br> <br>\nDecorating was being carried out  throughout parts of the home while installation was underway, and externally, the groundworks were still at a relatively early stage. This meant access, movement around the building and the availability of individual rooms had to be figured out as we went along, with some areas being ready earlier than others.",
             "button_style": "primary",
             "button_text": "",
             "button_action": "link",
@@ -790,6 +754,42 @@
       "block_order": [
         "content_6rxGTr",
         "images_gHUjBg"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
+      }
+    },
+    "image_text_P8d8bJ": {
+      "type": "image-text",
+      "blocks": {
+        "images_NqCAd6": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Willow_Lodge_Vol_2-14_46ea5ce0-e03a-4a46-8f0d-0da9593db8cb.jpg"
+          }
+        },
+        "content_ENmpa7": {
+          "type": "content",
+          "settings": {
+            "title": "Delivering At Scale",
+            "title_size": "xl",
+            "text": "With more than 2,300 individual items to bring to site, delivery and installation was a significant part of the project. More than 30 van loads were coordinated over the course of the fit-out, resulting in over 725 driver hours on site. <br> <br>\n\nInstallation took place while work was still progressing across the building, with decorating underway in some areas and external groundworks still at an early stage. As different rooms became available at different times, deliveries had to be carefully coordinated around the progress on site. <br> <br>\n\nOur white-glove delivery service meant the process continued further than getting furniture through the door - our drivers took items directly to their intended rooms, where they assembled the furniture and positioned it ready for use. Across a project of this scale, this approach ensured the smoothest install for the home.",
+            "button_style": "underline",
+            "button_text": "Our Delivery Service",
+            "button_action": "link",
+            "button_url": "shopify://pages/delivery"
+          }
+        }
+      },
+      "block_order": [
+        "images_NqCAd6",
+        "content_ENmpa7"
       ],
       "name": "Image - Text",
       "settings": {
@@ -915,7 +915,7 @@
           "type": "tagline",
           "name": "Tagline",
           "settings": {
-            "content": "CARL SOUTHALL, MANAGING DIRECTOR",
+            "content": "CARL SOUTHALL, MANAGING DIRECTOR AT FURNCARE",
             "tagline_style": "body-sm"
           },
           "blocks": {}
@@ -1065,9 +1065,9 @@
     "richtext_iHxNi7",
     "blocks_TDPceM",
     "richtext_7UE3tm",
-    "image_text_zXnynf",
     "image_text_BC7NQM",
     "image_text_nRYrfd",
+    "image_text_P8d8bJ",
     "image_text_FgCCAX",
     "richtext_G4pcHf",
     "richtext_ePAfkC",
