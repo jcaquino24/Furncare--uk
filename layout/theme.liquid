@@ -58,6 +58,8 @@
       }
     </script>
 
+    <script src="{{ 'search-query-fix.js' | asset_url }}" defer></script>
+
     {%- liquid
       render 'vite-tag' with 'critical.css', preload_stylesheet: true
       render 'vite-tag' with 'main.css'
