@@ -1,6 +1,7 @@
 const nativeFetch = window.fetch.bind(window);
 const buildSearchUrl = (term) => `${window.location.origin}/search?options[prefix]=last&q=${encodeURIComponent(term)}`;
 const hasProductCards = (html) => html.includes('product-card');
+const productSearchFields = 'title,product_type,variants.title,variants.sku,vendor';
 
 const getSuggestedTerms = async (term) => {
   const response = await nativeFetch(
@@ -21,6 +22,21 @@ const getSuggestedTerms = async (term) => {
   return terms || [];
 };
 
+const getSuggestedProducts = async (term) => {
+  const searchUrl = new URL('/search/suggest.json', window.location.origin);
+  searchUrl.searchParams.set('q', term);
+  searchUrl.searchParams.set('resources[type]', 'product');
+  searchUrl.searchParams.set('resources[fields]', productSearchFields);
+  searchUrl.searchParams.set('resources[limit]', '4');
+  searchUrl.searchParams.set('resources[unavailable_products]', 'hide');
+
+  const response = await nativeFetch(searchUrl.toString());
+  if (!response.ok) return [];
+
+  const data = await response.json();
+  return data.resources?.results?.products || [];
+};
+
 window.fetch = (input, init) => {
   const requestUrl = new URL(typeof input === 'string' ? input : input.url, window.location.origin);
 
@@ -38,6 +54,17 @@ window.fetch = (input, init) => {
         if (hasProductCards(responseBody)) return response;
 
         try {
+          const suggestedProducts = await getSuggestedProducts(term);
+
+          for (const product of suggestedProducts) {
+            if (!product.title) continue;
+
+            requestUrl.searchParams.set('q', product.title);
+            const productResponse = await nativeFetch(requestUrl.toString(), init);
+
+            if (hasProductCards(await productResponse.clone().text())) return productResponse;
+          }
+
           const suggestedTerms = await getSuggestedTerms(term);
 
           for (const suggestedTerm of suggestedTerms) {
