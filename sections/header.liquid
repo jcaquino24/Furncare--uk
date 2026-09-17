@@ -74,21 +74,16 @@
       {% endif %}
 
       <div class="header__actions">
-        <form class="header__search-form hide-on-mobile" action="{{ routes.search_url }}" method="get" role="search">
-          <label class="visually-hidden" for="HeaderSearch">{{ 'content.search_input_label' | t }}</label>
-          <input
-            id="HeaderSearch"
-            class="header__search-input"
-            type="search"
-            name="q"
-            placeholder="{{ 'content.search_input_placeholder' | t }}"
-            autocomplete="off"
-          >
-          <input name="options[prefix]" type="hidden" value="last">
-          <button class="header__search-submit" type="submit" aria-label="{{ 'content.search_input_label' | t }}">
-            {% render 'icons', icon: 'search' %}
-          </button>
-        </form>
+        {% render 'input-search',
+          id: 'header-search',
+          name: 'q',
+          value: '',
+          placeholder: 'What are you looking for?',
+          class: '',
+          attributes: '',
+          in_form: false,
+          hide_on_mobile: true
+        %}
 
         {% if settings.enable_wishlist %}
           <a class="header__action header__wishlist" href="/pages/wishlist" aria-label="Wishlist">
@@ -128,16 +123,16 @@
   </div>
 
   <div class="container header__mobile-search hide-on-desktop">
-    <button
-      class="header__action header__action--search"
-      type="button"
-      onclick="document.getElementById('search-modal')?.showDialog()"
-      aria-haspopup="dialog"
-      aria-controls="search-modal"
-    >
-      <span class="visually-hidden">Search</span>
-      {% render 'icons', icon: 'search' %}
-    </button>
+    {% render 'input-search',
+      id: 'header-search-mobile',
+      name: 'q',
+      value: '',
+      placeholder: 'What are you looking for?',
+      class: '',
+      attributes: '',
+      in_form: false,
+      hide_on_mobile: false
+    %}
   </div>
 </uwp-header>
 
@@ -146,60 +141,6 @@
   all_menu_promotions: all_menu_promotions,
   support_links: support_links
 %}
-
-{% stylesheet %}
-  .header__search-form {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: min(32vw, 360px);
-    min-width: 190px;
-  }
-
-  .header__search-input {
-    width: 100%;
-    min-height: 42px;
-    padding: 0 44px 0 14px;
-    border: 1px solid rgb(var(--color-foreground-rgb) / 0.35);
-    border-radius: 999px;
-    background: var(--color-background);
-    color: var(--color-foreground);
-    font: inherit;
-  }
-
-  .header__search-input:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 2px;
-  }
-
-  .header__search-submit {
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    display: grid;
-    width: 34px;
-    height: 34px;
-    padding: 0;
-    place-items: center;
-    border: 0;
-    border-radius: 50%;
-    background: transparent;
-    color: inherit;
-    cursor: pointer;
-    transform: translateY(-50%);
-  }
-
-  .header__search-submit svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  @media screen and (max-width: 749px) {
-    .header__search-form {
-      display: none;
-    }
-  }
-{% endstylesheet %}
 
 {% schema %}
 {
