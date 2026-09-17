@@ -10,7 +10,9 @@ const getSuggestedTerms = async (term) => {
   if (!response.ok) return [];
 
   const data = await response.json();
-  const terms = data.resources?.results
+  const results = data.resources?.results;
+  const suggestions = Array.isArray(results) ? results : results?.queries;
+  const terms = suggestions
     ?.map((result) => result.query || result.text || result.title)
     .filter(Boolean)
     .map((suggestion) => suggestion.trim())
