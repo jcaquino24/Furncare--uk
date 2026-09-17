@@ -478,7 +478,7 @@
         "eyebrow": "",
         "heading": "",
         "background_gradient": "",
-        "background_color": "#C3C0B0",
+        "background_color": "#c3c0b0",
         "max_width": 1280,
         "gutter_desktop": 24,
         "gutter_mobile": 16,
@@ -518,7 +518,7 @@
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760,
-        "card_background": "#FFFEF8",
+        "card_background": "#fffef8",
         "card_heading_color": "#0c0a09",
         "card_copy_color": "#57534e",
         "card_border_color": "#e7e5e4",
@@ -615,18 +615,54 @@
     "image_text_zXnynf": {
       "type": "image-text",
       "blocks": {
-        "images_Qdr4kx": {
-          "type": "images",
-          "settings": {
-            "image_one": "shopify://shop_images/Willow_Lodge_Vol_4-25_706e3189-1970-46de-b03e-77d22b4df093.jpg"
-          }
-        },
         "content_bWjPrR": {
           "type": "content",
           "settings": {
-            "title": "Our Approach",
+            "title": "",
             "title_size": "display",
-            "text": "When Willow Lodge was presented to us, it was still in the early stages of construction - this gave us plenty of time to work alongside StyleSmiths, to ensure no detail was missed in the specification. Shaping interiors that support everyday living and balance the practical demands of care takes time and precision. \n<br>\n<br>\nWorking closely with the project team, we delivered a complete FF&E package designed to support wellbeing and daily living across the home. Every element was chosen with comfort, durability and purpose in mind, ensuring bedrooms, lounges and dining spaces function seamlessly while still feeling warm and homely.\n<br>\n<br>\nThrough thoughtful, purposeful solutions, we helped these care environments feel more homely, supportive and uplifting, balancing practical requirements with warmth and familiarity. In doing so, we delivered on our commitment to transforming spaces and elevating lives, shaping environments that support wellbeing, dignity and everyday comfort within care settings.",
+            "text": "Our involvement began while Stylesmith Interiors were developing the initial moodboards for Willow Lodge.\nStylesmith Interiors had established the creative vision for Willow Lodge, defining the schemes across the home. our role in this, was to turn that specification into a tangible furniture package, ensuring the final furniture closely reflected the designers’ original specification while meeting the practical requirements of the project. <br> <br> \nAcross a project of this size, even relatively small specification changes could have an impact across multiple rooms or product types. Keeping accurate records of every variation was therefore a substantial part of the process.\nBy the time the final specification had been built, more than 400 new product codes had been created for Willow Lodge alone.\nThese covered different furniture configurations, fabrics, finishes and bespoke details, allowing each item to be correctly identified, manufactured and allocated to its intended space.\nThe result was a final schedule comprising 2,319 individual items.",
+            "button_style": "primary",
+            "button_text": "",
+            "button_action": "link",
+            "button_url": ""
+          }
+        },
+        "images_Qdr4kx": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Willow_Lodge_Vol_3-46_a008ae34-bdd6-476f-bbed-a9de947278ad.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "content_bWjPrR",
+        "images_Qdr4kx"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
+      }
+    },
+    "image_text_BC7NQM": {
+      "type": "image-text",
+      "blocks": {
+        "images_wVPABn": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/Willow_Lodge_Vol_3-27_5808cc59-c367-4c5d-ba53-7a2cd59b5e54.jpg"
+          }
+        },
+        "content_ANFq87": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "title_size": "display",
+            "text": "Rather than applying one standard furniture scheme throughout the building, the specification included a considerable amount of variation between different rooms and areas - bedrooms formed a major part of this, with fitted and freestanding pieces supplied across the home.\nOne of the more distinctive elements was the bespoke fitted bedroom furniture, including substantial 2.1m-high triple wardrobes in a cashmere finish. The scale of these pieces gave the bedrooms a strong, built-in appearance while also providing the perfect amount of storage required within each room.\nUnlike a straightforward freestanding furniture order, fitted elements also required closer coordination with the dimensions and layout of the building. Manufacturing tolerances, site measurements and final positioning all needed to align before installation could be completed.",
             "button_style": "primary",
             "button_text": "",
             "button_action": "link",
@@ -635,8 +671,8 @@
         }
       },
       "block_order": [
-        "images_Qdr4kx",
-        "content_bWjPrR"
+        "images_wVPABn",
+        "content_ANFq87"
       ],
       "name": "Image - Text",
       "settings": {
@@ -654,9 +690,9 @@
         "content_6rxGTr": {
           "type": "content",
           "settings": {
-            "title": "What We Delivered",
+            "title": "The Finer Details",
             "title_size": "display",
-            "text": "<div style=\"white-space: pre-wrap; white-space: pre-line;\">◦ Fully furnished bedrooms, including cabinet furniture, seating, and soft furnishings.\n\n◦ Lounge and dining spaces designed for comfort, social interaction, and ease of movement.\n\n◦ Reception, staff, and office areas fitted out for daily use.\n\n◦ Curtains and drapes adding warmth and style throughout the home.\n\n◦ Finishing touches including artwork, accessories, and even eating utensils to bring Manor Park to life.</div>",
+            "text": "The bedroom furniture was only one part of the bespoke specification, as across Willow Lodge, a number of pieces required additional development to achieve the details set out within the interior scheme. Among the 130 windows across the home we dressed with bespoke curtains and blinds, a distinctive example was those in the café, where curved pelmets were produced. Rather than using a standard straight pelmet, the curved design highlighted the architecture and character of the interior, requiring a more bespoke approach to manufacture and installation. <br> <br>\nDecorating was being throughout parts of the home while installation was underway, and externally, the groundworks were still at a relatively early stage. This meant access, movement around the building and the availability of individual rooms had to be figured out as we went along, with some areas being ready earlier than others. The home required more than 30 van loads over the course of the project – resulting in more than 725 driver hours on site",
             "button_style": "primary",
             "button_text": "",
             "button_action": "link",
@@ -746,6 +782,58 @@
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
         "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
+      }
+    },
+    "richtext_G4pcHf": {
+      "type": "richtext",
+      "blocks": {
+        "heading_eHCNjF": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "We design furniture and interiors that are practical, safe, and welcoming. Our focus is creating spaces that support both residents and caregivers.",
+            "heading_level": "h2",
+            "heading_style": "title-xs"
+          },
+          "blocks": {}
+        },
+        "tagline_GPGiKm": {
+          "type": "tagline",
+          "settings": {
+            "content": "The completed home reflects the level of detail carried throughout the project, with each bedroom and communal space displaying its part of the overall scheme. For the team at Furncare, Willow Lodge demonstrates the scale and complexity we can support while maintaining the attention to detail required across every individual product and space.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_eDGHXL": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_eHCNjF",
+        "tagline_GPGiKm",
+        "button_eDGHXL"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "id_anchor": "",
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
         "optional_richtext": "",
         "small_container": false,
         "enable_see_more": false,
@@ -896,9 +984,11 @@
     "richtext_iHxNi7",
     "blocks_TDPceM",
     "image_text_zXnynf",
+    "image_text_BC7NQM",
     "image_text_nRYrfd",
     "image_text_FgCCAX",
     "richtext_JgQX8i",
+    "richtext_G4pcHf",
     "image_video_banner_YMmQ4a",
     "1784102920a76ec080",
     "1769170984a6172538",
