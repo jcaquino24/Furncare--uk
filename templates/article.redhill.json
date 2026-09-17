@@ -97,6 +97,129 @@
         "see_more_max_height": 400
       }
     },
+    "furncare_about_proof_DVGATz": {
+      "type": "furncare-about-proof",
+      "blocks": {
+        "stat_YHV4xk": {
+          "type": "stat",
+          "settings": {
+            "number": "80",
+            "label": "Bedrooms",
+            "copy": "Coordinated furniture supply across a large-scale care project."
+          }
+        },
+        "stat_UFfLjA": {
+          "type": "stat",
+          "settings": {
+            "number": "400",
+            "label": "New Product Styles",
+            "copy": "A complex and bespoke specification, tailored to Willlow Lodge"
+          }
+        },
+        "stat_fc8rzV": {
+          "type": "stat",
+          "settings": {
+            "number": "130",
+            "label": "Windows Dressed",
+            "copy": "Made-to-measure curtains and blinds installed throughout the home."
+          }
+        },
+        "stat_a6YXUX": {
+          "type": "stat",
+          "settings": {
+            "number": "2319",
+            "label": "Items Delivered",
+            "copy": "Thousands of individual pieces managed across the project."
+          }
+        }
+      },
+      "block_order": [
+        "stat_YHV4xk",
+        "stat_UFfLjA",
+        "stat_fc8rzV",
+        "stat_a6YXUX"
+      ],
+      "name": "Furncare proof advanced",
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "background_gradient": "",
+        "background_color": "#c3c0b0",
+        "max_width": 1340,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 32,
+        "padding_bottom": 96,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "left",
+        "section_border_color": "#e7e5e4",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 48,
+        "heading_size_mobile": 36,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 18,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 13,
+        "eyebrow_weight": 700,
+        "eyebrow_letter_spacing": 22,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 16,
+        "text_color": "#0c0a09",
+        "heading_color": "#0c0a09",
+        "copy_color": "#57534e",
+        "eyebrow_color": "#78716c",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "card_background": "#fffef8",
+        "card_heading_color": "#0c0a09",
+        "card_copy_color": "#57534e",
+        "card_border_color": "#e7e5e4",
+        "card_border_width": 1,
+        "card_radius": 32,
+        "card_padding": 28,
+        "card_padding_mobile": 24,
+        "card_shadow_opacity": 6,
+        "card_hover_shadow_opacity": 14,
+        "card_hover_lift": 4,
+        "card_title_size": 14,
+        "card_title_weight": 300,
+        "card_copy_size": 15,
+        "card_copy_line_height": 170,
+        "card_copy_margin_top": 16,
+        "grid_gap": 20,
+        "columns_desktop": "4",
+        "columns_tablet": "2",
+        "columns_mobile": "2",
+        "icon_background": "#f5f5f4",
+        "icon_color": "#292524",
+        "icon_size": 48,
+        "icon_svg_size": 23,
+        "icon_radius": 16,
+        "icon_margin_bottom": 32,
+        "icon_hover_scale": 108,
+        "stat_number_color": "#0c0a09",
+        "stat_label_color": "#292524",
+        "stat_number_size": 40,
+        "stat_number_weight": 300,
+        "stat_label_size": 16,
+        "stat_label_margin_top": 12,
+        "stat_copy_margin_top": 12
+      }
+    },
     "image_text_blocks_xYxbk8": {
       "type": "image-text-blocks",
       "blocks": {
@@ -405,7 +528,7 @@
       "name": "Image text blocks",
       "settings": {
         "title": "",
-        "section_padding": "--spacing-md",
+        "section_padding": "--spacing-4xl",
         "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
@@ -428,131 +551,9 @@
       "block_order": [
         "ai_gen_block_90768fd_YE9bam"
       ],
+      "disabled": true,
       "name": "Spacer",
       "settings": {}
-    },
-    "furncare_about_proof_DVGATz": {
-      "type": "furncare-about-proof",
-      "blocks": {
-        "stat_YHV4xk": {
-          "type": "stat",
-          "settings": {
-            "number": "80",
-            "label": "Bedrooms",
-            "copy": "Coordinated furniture supply across a large-scale care project."
-          }
-        },
-        "stat_UFfLjA": {
-          "type": "stat",
-          "settings": {
-            "number": "400",
-            "label": "New Product Styles",
-            "copy": "A complex and bespoke specification, tailored to Willlow Lodge"
-          }
-        },
-        "stat_fc8rzV": {
-          "type": "stat",
-          "settings": {
-            "number": "130",
-            "label": "Windows Dressed",
-            "copy": "Made-to-measure curtains and blinds installed throughout the home."
-          }
-        },
-        "stat_a6YXUX": {
-          "type": "stat",
-          "settings": {
-            "number": "2319",
-            "label": "Items Delivered",
-            "copy": "Thousands of individual pieces managed across the project."
-          }
-        }
-      },
-      "block_order": [
-        "stat_YHV4xk",
-        "stat_UFfLjA",
-        "stat_fc8rzV",
-        "stat_a6YXUX"
-      ],
-      "name": "Furncare proof advanced",
-      "settings": {
-        "eyebrow": "",
-        "heading": "",
-        "background_gradient": "",
-        "background_color": "#c3c0b0",
-        "max_width": 1340,
-        "gutter_desktop": 24,
-        "gutter_mobile": 16,
-        "padding_top": 32,
-        "padding_bottom": 96,
-        "padding_mobile": 72,
-        "padding_bottom_mobile": 72,
-        "section_gap": 48,
-        "section_gap_mobile": 36,
-        "header_max_width": 780,
-        "content_max_width": 960,
-        "text_alignment": "left",
-        "section_border_color": "#e7e5e4",
-        "border_top_width": 0,
-        "border_bottom_width": 0,
-        "heading_size_desktop": 48,
-        "heading_size_mobile": 36,
-        "heading_weight": 500,
-        "heading_line_height": 100,
-        "heading_letter_spacing": 0,
-        "heading_max_width": 1100,
-        "copy_size_desktop": 18,
-        "copy_size_mobile": 16,
-        "copy_weight": 400,
-        "copy_line_height": 170,
-        "copy_max_width": 760,
-        "copy_margin_top": 28,
-        "eyebrow_size": 13,
-        "eyebrow_weight": 700,
-        "eyebrow_letter_spacing": 22,
-        "eyebrow_transform": "uppercase",
-        "eyebrow_margin_bottom": 16,
-        "text_color": "#0c0a09",
-        "heading_color": "#0c0a09",
-        "copy_color": "#57534e",
-        "eyebrow_color": "#78716c",
-        "enable_reveal": true,
-        "reveal_distance": 32,
-        "reveal_duration": 760,
-        "card_background": "#fffef8",
-        "card_heading_color": "#0c0a09",
-        "card_copy_color": "#57534e",
-        "card_border_color": "#e7e5e4",
-        "card_border_width": 1,
-        "card_radius": 32,
-        "card_padding": 28,
-        "card_padding_mobile": 24,
-        "card_shadow_opacity": 6,
-        "card_hover_shadow_opacity": 14,
-        "card_hover_lift": 4,
-        "card_title_size": 14,
-        "card_title_weight": 300,
-        "card_copy_size": 15,
-        "card_copy_line_height": 170,
-        "card_copy_margin_top": 16,
-        "grid_gap": 20,
-        "columns_desktop": "4",
-        "columns_tablet": "2",
-        "columns_mobile": "2",
-        "icon_background": "#f5f5f4",
-        "icon_color": "#292524",
-        "icon_size": 48,
-        "icon_svg_size": 23,
-        "icon_radius": 16,
-        "icon_margin_bottom": 32,
-        "icon_hover_scale": 108,
-        "stat_number_color": "#0c0a09",
-        "stat_label_color": "#292524",
-        "stat_number_size": 40,
-        "stat_number_weight": 300,
-        "stat_label_size": 16,
-        "stat_label_margin_top": 12,
-        "stat_copy_margin_top": 12
-      }
     },
     "richtext_iHxNi7": {
       "type": "richtext",
@@ -1048,9 +1049,9 @@
     "main",
     "image_video_banner_n9JT9E",
     "richtext_LTPVBd",
+    "furncare_about_proof_DVGATz",
     "image_text_blocks_xYxbk8",
     "blocks_HErXQc",
-    "furncare_about_proof_DVGATz",
     "richtext_iHxNi7",
     "blocks_TDPceM",
     "richtext_7UE3tm",
