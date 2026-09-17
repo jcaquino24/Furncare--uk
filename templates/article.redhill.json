@@ -628,7 +628,15 @@
         "tagline_CQ9Qpi": {
           "type": "tagline",
           "settings": {
-            "content": "Willow Lodgei n Redhill represents one of our largest and most detailed projects to date. Developed by Zephyr X and operated by EQ Care Group, the interior design for the home was led by Stylesmith Interiors. We became involved while the first moodboards were being developed, working alongside the wider team to turn the interior specification into a coordinated furniture and furnishings package ready for installation. With thousands of individual items, hundreds of new product codes and a large number of bespoke elements, this home required detailed planning across product development, manufacturing, procurement, logistics and installation – a project that demonstrated not only the scale Furncare can deliver, but the level of coordination required behind the scenes to bring a detailed interior specification to site successfully.",
+            "content": "Willow Lodge in Redhill represents one of our largest and most detailed projects to date. Developed by Zephyr X and operated by EQ Care Group, the interior design for the home was led by Stylesmith Interiors. We became involved while the first moodboards were being developed, working alongside the wider team to turn the interior specification into a coordinated furniture and furnishings package ready for installation.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "tagline_r4mfBx": {
+          "type": "tagline",
+          "settings": {
+            "content": "With thousands of individual items, hundreds of new product codes and a large number of bespoke elements, this home required detailed planning across product development, manufacturing, procurement, logistics and installation – a project that demonstrated not only the scale Furncare can deliver, but the level of coordination required behind the scenes to bring a detailed interior specification to site successfully.",
             "tagline_style": "body-md"
           },
           "blocks": {}
@@ -648,14 +656,15 @@
       "block_order": [
         "heading_XaPUGL",
         "tagline_CQ9Qpi",
+        "tagline_r4mfBx",
         "button_YCRkd3"
       ],
       "name": "Rich Text",
       "settings": {
         "id_anchor": "",
-        "max_width_desktop": 100,
+        "max_width_desktop": 90,
         "section_padding": "--spacing-4xl",
-        "text_alignment": "center",
+        "text_alignment": "left",
         "colour_scheme": "base-white-01",
         "enable_animation": false,
         "optional_richtext": "",
@@ -809,37 +818,6 @@
         "reveal_duration": 760
       }
     },
-    "richtext_JgQX8i": {
-      "type": "richtext",
-      "blocks": {
-        "heading_UzRMmX": {
-          "type": "heading",
-          "settings": {
-            "text": "The newbuild was transformed into a welcoming, homely environment ready to receive residents immediately. The finished interior supports both quality of life and operational efficiency, helping Manor Park set a strong foundation for exceptional care from day one.",
-            "heading_level": "h2",
-            "heading_style": "title-lg"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "heading_UzRMmX"
-      ],
-      "disabled": true,
-      "name": "Rich Text",
-      "settings": {
-        "id_anchor": "",
-        "max_width_desktop": 100,
-        "section_padding": "--spacing-4xl",
-        "text_alignment": "center",
-        "colour_scheme": "warm-stone",
-        "enable_animation": true,
-        "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
-      }
-    },
     "richtext_G4pcHf": {
       "type": "richtext",
       "blocks": {
@@ -881,7 +859,7 @@
       "name": "Rich Text",
       "settings": {
         "id_anchor": "",
-        "max_width_desktop": 100,
+        "max_width_desktop": 95,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
@@ -892,24 +870,64 @@
         "see_more_max_height": 400
       }
     },
-    "image_video_banner_YMmQ4a": {
-      "type": "image-video-banner",
-      "name": "Image - Video Banner",
+    "richtext_ePAfkC": {
+      "type": "richtext",
+      "blocks": {
+        "tagline_6gWGMh": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "⠀⠀⠀⠀⠀",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "heading_L8ntnV": {
+          "type": "heading",
+          "settings": {
+            "text": "“Willow Lodge has been a fantastic project to be part of. Stylesmiths have designed something truly impressive, setting an incredibly high standard throughout, and we’re proud to have brought that vision to life.”",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_FKeNf7": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "Carl Southall",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_qTwNja": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "MANAGING DIRECTOR",
+            "tagline_style": "body-xs"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "tagline_6gWGMh",
+        "heading_L8ntnV",
+        "tagline_FKeNf7",
+        "tagline_qTwNja"
+      ],
+      "name": "Rich Text",
       "settings": {
-        "height_desktop": 540,
-        "height_mobile": 540,
-        "maintain_aspect_ratio": false,
-        "add_header_offset": false,
-        "media_type": "image",
-        "image_desktop": "shopify://shop_images/Willow_Lodge_Vol_2-20_0f00c045-7470-4b64-9dee-ae4a9fe56dee.jpg",
-        "show_controls": false,
-        "mute_video": true,
-        "autoplay_video": true,
-        "show_overlay": false,
-        "overlay_background": "",
-        "colour_scheme": "light",
-        "content_position": "center-center",
-        "content_alignment": "left"
+        "id_anchor": "",
+        "max_width_desktop": 88,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "1784102920a76ec080": {
@@ -934,6 +952,26 @@
       ],
       "disabled": true,
       "settings": {}
+    },
+    "image_video_banner_qe6Agh": {
+      "type": "image-video-banner",
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/VT_ZephyrX_Redhill_V1_FINAL03_LoRes-scaled-e1737734385491-1920x800.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "light",
+        "content_position": "center-center",
+        "content_alignment": "left"
+      }
     },
     "richtext_brEcwg": {
       "type": "richtext",
@@ -985,26 +1023,6 @@
         "see_more_max_height": 400
       }
     },
-    "image_video_banner_qe6Agh": {
-      "type": "image-video-banner",
-      "name": "Image - Video Banner",
-      "settings": {
-        "height_desktop": 540,
-        "height_mobile": 540,
-        "maintain_aspect_ratio": false,
-        "add_header_offset": false,
-        "media_type": "image",
-        "image_desktop": "shopify://shop_images/VT_ZephyrX_Redhill_V1_FINAL03_LoRes-scaled-e1737734385491-1920x800.jpg",
-        "show_controls": false,
-        "mute_video": true,
-        "autoplay_video": true,
-        "show_overlay": false,
-        "overlay_background": "",
-        "colour_scheme": "light",
-        "content_position": "center-center",
-        "content_alignment": "left"
-      }
-    },
     "blocks_bBDtmY": {
       "type": "_blocks",
       "blocks": {
@@ -1040,13 +1058,12 @@
     "image_text_BC7NQM",
     "image_text_nRYrfd",
     "image_text_FgCCAX",
-    "richtext_JgQX8i",
     "richtext_G4pcHf",
-    "image_video_banner_YMmQ4a",
+    "richtext_ePAfkC",
     "1784102920a76ec080",
     "1769170984a6172538",
-    "richtext_brEcwg",
     "image_video_banner_qe6Agh",
+    "richtext_brEcwg",
     "blocks_bBDtmY"
   ]
 }
