@@ -580,9 +580,9 @@
         "heading_Vwggf4": {
           "type": "heading",
           "settings": {
-            "text": "We design furniture and interiors that are practical, safe, and welcoming. Our focus is creating spaces that support both residents and caregivers.",
+            "text": "\"Stylesmith Interiors had a good experience working with Furncare on our recent care home project. The communication throughout the project has been key and our dedicated project manager has been responsive and helpful at each turn. The team work throughout the process made the process run smoothly and gave us confidence at each stage. The fit out team were professional and a pleasure to work with, nothing was too much trouble and they approached each adjustment and request positively and with a solutions focused attitude. We will be working with Furncare again!\"",
             "heading_level": "h2",
-            "heading_style": "title-xs"
+            "heading_style": "title-sm"
           },
           "blocks": {}
         },
@@ -602,7 +602,7 @@
       "name": "Rich Text",
       "settings": {
         "id_anchor": "",
-        "max_width_desktop": 100,
+        "max_width_desktop": 95,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "green-01",
