@@ -2,11 +2,17 @@ const nativeFetch = window.fetch.bind(window);
 const buildSearchUrl = (term) => `${window.location.origin}/search?options[prefix]=last&q=${encodeURIComponent(term)}`;
 const hasProductCards = (html) => html.includes('product-card');
 const productSearchFields = 'title,product_type,variants.title,variants.sku,vendor';
+const predictiveSearchCache = new Map();
+
+const getCached = (key, request) => {
+  if (!predictiveSearchCache.has(key)) predictiveSearchCache.set(key, request());
+  return predictiveSearchCache.get(key);
+};
 
 const getSuggestedTerms = async (term) => {
-  const response = await nativeFetch(
+  const response = await getCached(`queries:${term}`, () => nativeFetch(
     `/search/suggest.json?q=${encodeURIComponent(term)}&resources[type]=query&resources[limit]=4`,
-  );
+  ));
 
   if (!response.ok) return [];
 
@@ -23,14 +29,15 @@ const getSuggestedTerms = async (term) => {
 };
 
 const getSuggestedProducts = async (term) => {
-  const searchUrl = new URL('/search/suggest.json', window.location.origin);
-  searchUrl.searchParams.set('q', term);
-  searchUrl.searchParams.set('resources[type]', 'product');
-  searchUrl.searchParams.set('resources[fields]', productSearchFields);
-  searchUrl.searchParams.set('resources[limit]', '4');
-  searchUrl.searchParams.set('resources[unavailable_products]', 'hide');
-
-  const response = await nativeFetch(searchUrl.toString());
+  const response = await getCached(`products:${term}`, () => {
+    const searchUrl = new URL('/search/suggest.json', window.location.origin);
+    searchUrl.searchParams.set('q', term);
+    searchUrl.searchParams.set('resources[type]', 'product');
+    searchUrl.searchParams.set('resources[fields]', productSearchFields);
+    searchUrl.searchParams.set('resources[limit]', '4');
+    searchUrl.searchParams.set('resources[unavailable_products]', 'hide');
+    return nativeFetch(searchUrl.toString());
+  });
   if (!response.ok) return [];
 
   const data = await response.json();
@@ -47,6 +54,7 @@ window.fetch = (input, init) => {
       requestUrl.searchParams.set('type', 'product');
       requestUrl.searchParams.set('options[prefix]', 'last');
       requestUrl.searchParams.set('q', term);
+      const suggestedProductsPromise = getSuggestedProducts(term);
 
       return nativeFetch(requestUrl.toString(), init).then(async (response) => {
         const responseBody = await response.clone().text();
@@ -54,27 +62,40 @@ window.fetch = (input, init) => {
         if (hasProductCards(responseBody)) return response;
 
         try {
-          const suggestedProducts = await getSuggestedProducts(term);
+          const suggestedProducts = await suggestedProductsPromise;
 
-          for (const product of suggestedProducts) {
-            if (!product.title) continue;
+          const productResponses = await Promise.all(
+            suggestedProducts
+              .filter((product) => product.title)
+              .map((product) => {
+                const productUrl = new URL(requestUrl);
+                productUrl.searchParams.set('q', product.title);
+                return nativeFetch(productUrl.toString(), init).then(async (productResponse) => ({
+                  productResponse,
+                  hasCards: hasProductCards(await productResponse.clone().text()),
+                }));
+              }),
+          );
+          const productMatch = productResponses.find(({ hasCards }) => hasCards);
 
-            requestUrl.searchParams.set('q', product.title);
-            const productResponse = await nativeFetch(requestUrl.toString(), init);
-
-            if (hasProductCards(await productResponse.clone().text())) return productResponse;
-          }
+          if (productMatch) return productMatch.productResponse;
 
           const suggestedTerms = await getSuggestedTerms(term);
+          const suggestedResponses = await Promise.all(
+            suggestedTerms
+              .filter((suggestedTerm) => suggestedTerm.toLowerCase() !== term.toLowerCase())
+              .map((suggestedTerm) => {
+                const suggestedUrl = new URL(requestUrl);
+                suggestedUrl.searchParams.set('q', suggestedTerm);
+                return nativeFetch(suggestedUrl.toString(), init).then(async (suggestedResponse) => ({
+                  suggestedResponse,
+                  hasCards: hasProductCards(await suggestedResponse.clone().text()),
+                }));
+              }),
+          );
+          const suggestedMatch = suggestedResponses.find(({ hasCards }) => hasCards);
 
-          for (const suggestedTerm of suggestedTerms) {
-            if (suggestedTerm.toLowerCase() === term.toLowerCase()) continue;
-
-            requestUrl.searchParams.set('q', suggestedTerm);
-            const suggestedResponse = await nativeFetch(requestUrl.toString(), init);
-
-            if (hasProductCards(await suggestedResponse.clone().text())) return suggestedResponse;
-          }
+          if (suggestedMatch) return suggestedMatch.suggestedResponse;
         } catch {}
 
         requestUrl.searchParams.set('q', `variants.sku:${term}`);
