@@ -65,7 +65,7 @@
           "settings": {
             "spacer_height": 50,
             "spacer_height_mobile": 30,
-            "spacer_color": "#F9F7F0"
+            "spacer_color": "#f9f7f0"
           },
           "blocks": {}
         }
@@ -92,7 +92,7 @@
           "type": "tagline",
           "name": "Tagline",
           "settings": {
-            "content": "A purpose-built 80-bed care home in Redhill, Willow Lodge has been designed specifically for people living with dementia. Right from the first moodboards, we worked with StyleSmiths Interiors to translate the vision into bedroom and dining furniture that suited the home.",
+            "content": "A purpose-built 80-bed care home in Redhill, Willow Lodge has been designed specifically for people living with dementia. Right from the first moodboards, we worked with StyleSmith Interiors to translate the vision into bedroom and dining furniture that suited the home.",
             "tagline_style": "body-lg"
           },
           "blocks": {}
@@ -478,7 +478,7 @@
         "eyebrow": "",
         "heading": "",
         "background_gradient": "",
-        "background_color": "#C3C0B0",
+        "background_color": "#c3c0b0",
         "max_width": 1600,
         "gutter_desktop": 12,
         "gutter_mobile": 16,
@@ -512,16 +512,16 @@
         "eyebrow_transform": "uppercase",
         "eyebrow_margin_bottom": 16,
         "text_color": "#0c0a09",
-        "heading_color": "#32412F",
-        "copy_color": "#32412F",
-        "eyebrow_color": "#32412F",
+        "heading_color": "#32412f",
+        "copy_color": "#32412f",
+        "eyebrow_color": "#32412f",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760,
-        "card_background": "#F9F7F0",
-        "card_heading_color": "#32412F",
-        "card_copy_color": "#32412F",
-        "card_border_color": "#F9F7F0",
+        "card_background": "#f9f7f0",
+        "card_heading_color": "#32412f",
+        "card_copy_color": "#32412f",
+        "card_border_color": "#f9f7f0",
         "card_border_width": 4,
         "card_radius": 32,
         "card_padding": 28,
@@ -539,14 +539,14 @@
         "columns_tablet": "2",
         "columns_mobile": "2",
         "icon_background": "#f5f5f4",
-        "icon_color": "#C3C0B0",
+        "icon_color": "#c3c0b0",
         "icon_size": 48,
         "icon_svg_size": 23,
         "icon_radius": 16,
         "icon_margin_bottom": 32,
         "icon_hover_scale": 108,
-        "stat_number_color": "#32412F",
-        "stat_label_color": "#32412F",
+        "stat_number_color": "#32412f",
+        "stat_label_color": "#32412f",
         "stat_number_size": 40,
         "stat_number_weight": 300,
         "stat_label_size": 16,
