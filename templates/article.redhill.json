@@ -446,8 +446,8 @@
           "type": "stat",
           "settings": {
             "number": "400",
-            "label": "New Product Codes",
-            "copy": "A complex specification, all details carefully managed."
+            "label": "New Product Styles",
+            "copy": "A complex and bespoke specification, tailored to Willlow Lodge"
           }
         },
         "stat_fc8rzV": {
@@ -462,8 +462,8 @@
           "type": "stat",
           "settings": {
             "number": "2319",
-            "label": "Items Purchased",
-            "copy": ""
+            "label": "Items Delivered",
+            "copy": "Thousands of individual pieces managed across the project."
           }
         }
       },
