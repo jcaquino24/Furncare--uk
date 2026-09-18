@@ -243,7 +243,7 @@
             "minimum_height": 750,
             "media_height": 600,
             "mobile_media_height": 320,
-            "content_padding": 30,
+            "content_padding": 85,
             "mobile_content_padding": 25,
             "background_color": "#F9F7F0",
             "text_color": "#243222",
