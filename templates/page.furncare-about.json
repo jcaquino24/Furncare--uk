@@ -187,17 +187,19 @@
         "images_bXQ7Jz": {
           "type": "images",
           "settings": {
-            "image_one": "shopify://shop_images/StaffMeeting2026_Unedited-005_197a08d6-da9a-4d98-8d62-5f7b7026bae4.png"
+            "image_one": "shopify://shop_images/Untitled_-_September_18_2026_at_16.16.20.png",
+            "image_two": "shopify://shop_images/Screenshot_2026-05-15_at_14.18.10.png"
           }
         },
         "content_GFYVgY": {
           "type": "content",
           "settings": {
-            "title": "A team that <em>cares</em>.",
+            "title": "<em>Handcrafted</em> in Norfolk.",
             "title_size": "display",
-            "text": "Behind everything we do is a dedicated team of people who care about delivering the best support, service, and experience possible. With a mix of expertise, passion, and a hands-on approach, our team works together to make a real difference every day.",
+            "text": "We manufacture furniture with the realities of care environments in mind, giving us greater control over quality, consistency and finish from the very start.\n\nKeeping manufacturing close means we can respond more effectively to project requirements, maintain high standards and apply our specialist care-sector knowledge directly to the products we make.\n\nIt’s all part of giving our customers greater confidence in the furniture they specify, install and use every day.",
             "button_style": "primary",
-            "button_text": "Meet our team",
+            "button_text": "",
+            "button_action": "link",
             "button_url": "shopify://pages/our-people"
           }
         }
@@ -210,10 +212,58 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 80,
         "reveal_duration": 1400
       }
+    },
+    "blocks_EKCcUh": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_8c6d895_8QDpGh": {
+          "type": "ai_gen_block_8c6d895",
+          "settings": {
+            "video": "shopify://files/videos/Furncare Edit V6.mp4",
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "video_position": "last",
+            "eyebrow": "",
+            "heading": "Family is at the heart of everything we do.",
+            "text": "<p>As a family-run business, we’ve grown by staying close to our customers, our team and the values we started with. That means taking pride in what we do, building lasting relationships and caring about the details at every stage.</p>",
+            "button_label": "Meet our Team",
+            "button_link": "shopify://pages/our-people",
+            "desktop_width_percent": 100,
+            "vertical_alignment": "center",
+            "text_alignment": "left",
+            "gap": 50,
+            "mobile_gap": 25,
+            "minimum_height": 500,
+            "media_height": 500,
+            "mobile_media_height": 320,
+            "content_padding": 40,
+            "mobile_content_padding": 25,
+            "background_color": "#F7F5F1",
+            "text_color": "#243222",
+            "accent_color": "#6B4F3A",
+            "button_color": "#243222",
+            "button_text_color": "#F9F7F0",
+            "heading_size": 52,
+            "mobile_heading_size": 32,
+            "body_size": 16,
+            "media_radius": 0,
+            "button_radius": 6
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_8c6d895_8QDpGh"
+      ],
+      "name": "Video with text",
+      "settings": {}
     },
     "audience": {
       "type": "furncare-about-audience",
@@ -694,6 +744,7 @@
     },
     "proposition": {
       "type": "furncare-about-proposition",
+      "disabled": true,
       "settings": {
         "eyebrow": "our why",
         "heading": "The heart of what we do.",
@@ -791,6 +842,7 @@
     },
     "furncare_about_pathways_RVaAzR": {
       "type": "furncare-about-pathways",
+      "disabled": true,
       "settings": {
         "eyebrow": "OUR STORY SO FAR",
         "heading": "Furncare in 137 seconds.",
@@ -867,6 +919,7 @@
     },
     "image_video_banner_gfwFXG": {
       "type": "image-video-banner",
+      "disabled": true,
       "name": "Image - Video Banner",
       "settings": {
         "height_desktop": 800,
@@ -970,6 +1023,7 @@
     "hero",
     "statement",
     "image_text_KacAb9",
+    "blocks_EKCcUh",
     "audience",
     "process",
     "pathways",
