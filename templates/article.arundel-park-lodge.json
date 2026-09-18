@@ -9,8 +9,52 @@
  */
 {
   "sections": {
+    "image_video_banner_CbheQj": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_xKqBcA": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "case study",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_fbN4bE": {
+          "type": "title",
+          "settings": {
+            "text": "Arundel Park Lodge",
+            "title_element": "h1",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_xKqBcA",
+        "title_fbN4bE"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 600,
+        "height_mobile": 430,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/DSC_5960.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
     "main": {
       "type": "article",
+      "disabled": true,
       "settings": {}
     },
     "richtext_hLWh3Q": {
@@ -52,35 +96,17 @@
       "disabled": true,
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
-        "enable_animation": false
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
-    },
-    "blocks_6QCHbm": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_3260401_MDq8nb": {
-          "type": "ai_gen_block_3260401",
-          "settings": {
-            "spacing_size": "medium",
-            "small_height": 80,
-            "medium_height": 110,
-            "large_height": 200,
-            "small_height_mobile": 20,
-            "medium_height_mobile": 40,
-            "large_height_mobile": 60
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_3260401_MDq8nb"
-      ],
-      "name": "Spacer",
-      "settings": {}
     },
     "product_blocks_hr4bkw": {
       "type": "product-blocks",
@@ -123,7 +149,6 @@
         "product_block_fJtzXF",
         "product_block_HdNPmE"
       ],
-      "disabled": true,
       "name": "Product blocks",
       "settings": {
         "title": "Products featured in this case study",
@@ -172,9 +197,33 @@
       ],
       "name": "Form embed",
       "settings": {}
+    },
+    "blocks_6QCHbm": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_MDq8nb": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "medium",
+            "small_height": 80,
+            "medium_height": 110,
+            "large_height": 200,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_MDq8nb"
+      ],
+      "name": "Spacer",
+      "settings": {}
     }
   },
   "order": [
+    "image_video_banner_CbheQj",
     "main",
     "richtext_hLWh3Q",
     "product_blocks_hr4bkw",
