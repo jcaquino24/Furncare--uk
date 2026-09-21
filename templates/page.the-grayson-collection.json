@@ -1,0 +1,487 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_video_banner_tUQhjn": {
+      "type": "image-video-banner",
+      "blocks": {
+        "title_WYCUQG": {
+          "type": "title",
+          "settings": {
+            "text": "The Ryker Collection",
+            "title_element": "h1",
+            "title_size": "display",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "eyebrow_NfMeef": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "cabinet furniture for later living and challenging environments",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_aVJxk3": {
+          "type": "button",
+          "settings": {
+            "text": "Enquire Today",
+            "button_url": "shopify://pages/contact-us",
+            "new_tab": true,
+            "button_style": "underline"
+          }
+        },
+        "card_qwApKG": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/26001_1.jpg",
+            "title": "Later Living",
+            "tagline": "",
+            "button_text": "Shop now",
+            "button_url": "shopify://collections/garden-furniture",
+            "button_style": "underline",
+            "new_tab": true,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_kfiPGh": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/admin-ajax-5_2.jpg",
+            "title": "Challenging Environments",
+            "tagline": "",
+            "button_text": "Shop now",
+            "button_url": "shopify://collections/challenging-environments-garden-furniture",
+            "button_style": "underline",
+            "new_tab": true,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "title_WYCUQG",
+        "eyebrow_NfMeef",
+        "button_aVJxk3",
+        "card_qwApKG",
+        "card_kfiPGh"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 800,
+        "height_mobile": 800,
+        "maintain_aspect_ratio": true,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Ryker_Blue_and_walnut_PM.png",
+        "video_desktop": "shopify://files/videos/Garden Furn 2026 Landing Page.mp4",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": true,
+        "overlay_background": "",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_gkEqTF": {
+      "type": "richtext",
+      "blocks": {
+        "heading_XyUT67": {
+          "type": "heading",
+          "name": "Heading",
+          "settings": {
+            "text": "Download the Ryker Specifications Here",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "button_inXHdJ": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "Download",
+            "url": "https://publuu.com/flip-book/link/2248069",
+            "new_tab": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_XyUT67",
+        "button_inXHdJ"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": true
+      }
+    },
+    "content_blocks_QVU3xP": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_LVLLq3": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Opera_Walnut_1_1.jpg",
+            "text": "Walnut",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_txA4C7": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/image_9_1.png",
+            "text": "Sage",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_qrYEWB": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Lissa_Oak_1.jpg",
+            "text": "Oak",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_QntL6y": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/image_10_1.png",
+            "text": "Navy",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_jkQbz4": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/image_11_2.png",
+            "text": "Mussel",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_gM4AHE": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/Wenge_Timber_1_1.jpg",
+            "text": "Wenge",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_LVLLq3",
+        "tab1_txA4C7",
+        "tab1_qrYEWB",
+        "tab1_QntL6y",
+        "tab1_jkQbz4",
+        "tab1_gM4AHE"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "choose from a selection of contemporary finishes",
+        "section_padding": "--spacing-2xl",
+        "tab1_title": "Wood Colours",
+        "tab1_handle": "Wood Colours",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "Handles",
+        "tab2_handle": "Handles",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    },
+    "image_text_RqyGcY": {
+      "type": "image-text",
+      "blocks": {
+        "content_68CTk6": {
+          "type": "content",
+          "settings": {
+            "title": "Every Detail Matters",
+            "title_size": "display",
+            "text": "Why stop at selecting your bespoke wood finish? Complete your piece with the perfect handle to suit your space. Designed for both modern and traditional care home interiors, each piece comes as standard with a sleek, durable silver handle. For a more personalised look, upgrade to our premium handle options, available in gold, silver, black, or rose gold. These high-quality finishes not only enhance the overall aesthetic but also offer a practical, long-lasting solution for care home furniture and other high-use settings, allowing you to customise every detail while maintaining a refined look.",
+            "button_style": "primary",
+            "button_text": "View the range",
+            "button_url": "https://www.furncare.co.uk/products/ryker-large-sideboard"
+          }
+        },
+        "images_bb9BLn": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/handle_renders_removed_background.png"
+          }
+        }
+      },
+      "block_order": [
+        "content_68CTk6",
+        "images_bb9BLn"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-md"
+      }
+    },
+    "content_blocks_FX6f8U": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_EyFgVJ": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/71bc882d-2d87-494c-a4ff-4d3d15320993_f0e5b912-fd43-4dfd-ad85-fe1586d92198.jpg",
+            "text": "Standard Handle",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_MTMgPm": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/6c17ea69-343c-4f5b-96a0-09924ee365d6.jpg",
+            "text": "Premium Handle",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_EyFgVJ",
+        "tab1_MTMgPm"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "",
+        "section_padding": "--spacing-md",
+        "tab1_title": "",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
+      }
+    },
+    "blocks_rzpUwy": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_800d78e_9LkBpn": {
+          "type": "ai_gen_block_800d78e",
+          "settings": {
+            "accordion_heading": "Request a quote",
+            "default_open": false,
+            "desktop_width_percent": 100,
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"d13cb61a-817e-42e1-baa9-08d63b586063\" data-portal-id=\"145723791\"></div>",
+            "min_form_height": 200,
+            "heading_size": 32,
+            "heading_color": "#f9f7f0",
+            "header_background_color": "#c3c0b0",
+            "header_hover_color": "#243222",
+            "header_padding": 40,
+            "icon_size": 28,
+            "icon_color": "#f9f7f0",
+            "background_color": "#f9f7f0",
+            "content_padding": 50,
+            "border_width": 5,
+            "border_color": "#c3c0b0",
+            "border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_800d78e_9LkBpn"
+      ],
+      "name": "Form accordion",
+      "settings": {}
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "show_title": false
+      }
+    },
+    "product_blocks_NVTciR": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_8Ut98d": {
+          "type": "product_block",
+          "settings": {
+            "title": "Our favourites",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [
+              "ryker-large-bookcase",
+              "ryker-large-sideboard",
+              "ryker-large-dresser",
+              "ryker-tv-unit",
+              "ryker-small-dresser",
+              "ryker-console-table",
+              "ryker-small-bookcase",
+              "ryker-small-sideboard"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_8Ut98d"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "browse the collection",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "image_text_hPbjgh": {
+      "type": "image-text",
+      "blocks": {
+        "images_tdN9WY": {
+          "type": "images",
+          "settings": {
+            "image_one": "shopify://shop_images/ChatGPT_Image_Apr_21_2026_08_15_22_AM.png"
+          }
+        },
+        "content_QbbHRd": {
+          "type": "content",
+          "settings": {
+            "title": "Elevating Care Home Lounges.",
+            "title_size": "xl",
+            "text": "<h4>A refined design</h4>\n\nSoftly sculpted curved legs introduce a refined sense of sophistication, serving as a distinctive design feature while maintaining exceptional strength and stability.\n\n<h4>Contemporary finishes</h4>\n\nOffered in several handpicked finishes, allowing for greater design flexibility, creating a tailored, personalised feel while ensuring the piece sits beautifully within both classic and contemporary spaces.\n\n<h4>Ergonomics front and centre </h4>\n\nModern, streamlined handles crafted with smooth, softened edges for a seamless touch, they offer both comfort and sophistication, with a generous 203mm length ensuring effortless usability.",
+            "button_style": "underline",
+            "button_text": "Download the spec sheet",
+            "button_url": "https://publuu.com/flip-book/link/2248069"
+          }
+        }
+      },
+      "block_order": [
+        "images_tdN9WY",
+        "content_QbbHRd"
+      ],
+      "name": "Image - Text",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "blocks_Dipxg4": {
+      "type": "_blocks",
+      "name": "Image",
+      "settings": {}
+    },
+    "blocks_gzkyCP": {
+      "type": "_blocks",
+      "name": "Image with text overlay",
+      "settings": {}
+    },
+    "blocks_3pXGmt": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3e4b0ee_rLpd6A": {
+          "type": "ai_gen_block_3e4b0ee",
+          "settings": {
+            "spacing_size": "small"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3e4b0ee_rLpd6A"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "richtext_PPG4Ye": {
+      "type": "richtext",
+      "blocks": {
+        "heading_BFXAxz": {
+          "type": "heading",
+          "settings": {
+            "text": "Any Questions?",
+            "heading_level": "h2",
+            "heading_style": "title-display"
+          },
+          "blocks": {}
+        },
+        "tagline_aVLFXn": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "Get in touch with our expert team who are more than happy to assist.",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_BFXAxz",
+        "tagline_aVLFXn"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": true
+      }
+    },
+    "blocks_wxNUjq": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_pWpyha": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 50,
+            "alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_pWpyha"
+      ],
+      "name": "Form embed",
+      "settings": {}
+    }
+  },
+  "order": [
+    "image_video_banner_tUQhjn",
+    "richtext_gkEqTF",
+    "content_blocks_QVU3xP",
+    "image_text_RqyGcY",
+    "content_blocks_FX6f8U",
+    "blocks_rzpUwy",
+    "main",
+    "product_blocks_NVTciR",
+    "image_text_hPbjgh",
+    "blocks_Dipxg4",
+    "blocks_gzkyCP",
+    "blocks_3pXGmt",
+    "richtext_PPG4Ye",
+    "blocks_wxNUjq"
+  ]
+}
