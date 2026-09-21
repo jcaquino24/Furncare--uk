@@ -15,7 +15,7 @@
         "title_WYCUQG": {
           "type": "title",
           "settings": {
-            "text": "The Ryker Collection",
+            "text": "The Grayson Collection",
             "title_element": "h1",
             "title_size": "display",
             "text_color": "#f9f7f0"
@@ -24,7 +24,7 @@
         "eyebrow_NfMeef": {
           "type": "eyebrow",
           "settings": {
-            "text": "cabinet furniture for later living and challenging environments",
+            "text": "contemporary table designs for care interiors",
             "eyebrow_size": "sm",
             "text_color": "#f9f7f0"
           }
@@ -35,7 +35,13 @@
             "text": "Enquire Today",
             "button_url": "shopify://pages/contact-us",
             "new_tab": true,
-            "button_style": "underline"
+            "button_style": "underline",
+            "button_font_size": 16,
+            "button_font_color": "#ffffff",
+            "button_background": "#1f1f1f",
+            "button_border_width": 1,
+            "button_border_color": "#ffffff",
+            "button_padding": 12
           }
         },
         "card_qwApKG": {
@@ -100,7 +106,7 @@
           "type": "heading",
           "name": "Heading",
           "settings": {
-            "text": "Download the Ryker Specifications Here",
+            "text": "Download the Grayson Specifications Here",
             "heading_level": "h2",
             "heading_style": "title-display"
           },
@@ -123,11 +129,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
-        "enable_animation": true
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "content_blocks_QVU3xP": {
@@ -138,6 +149,12 @@
           "settings": {
             "image": "shopify://shop_images/Opera_Walnut_1_1.jpg",
             "text": "Walnut",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "",
             "gradient_overlay": "dark"
           }
@@ -147,6 +164,12 @@
           "settings": {
             "image": "shopify://shop_images/image_9_1.png",
             "text": "Sage",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "",
             "gradient_overlay": "dark"
           }
@@ -156,6 +179,12 @@
           "settings": {
             "image": "shopify://shop_images/Lissa_Oak_1.jpg",
             "text": "Oak",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "",
             "gradient_overlay": "dark"
           }
@@ -165,6 +194,12 @@
           "settings": {
             "image": "shopify://shop_images/image_10_1.png",
             "text": "Navy",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "",
             "gradient_overlay": "dark"
           }
@@ -174,6 +209,12 @@
           "settings": {
             "image": "shopify://shop_images/image_11_2.png",
             "text": "Mussel",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "",
             "gradient_overlay": "dark"
           }
@@ -183,6 +224,12 @@
           "settings": {
             "image": "shopify://shop_images/Wenge_Timber_1_1.jpg",
             "text": "Wenge",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "",
             "gradient_overlay": "dark"
           }
@@ -219,6 +266,7 @@
             "text": "Why stop at selecting your bespoke wood finish? Complete your piece with the perfect handle to suit your space. Designed for both modern and traditional care home interiors, each piece comes as standard with a sleek, durable silver handle. For a more personalised look, upgrade to our premium handle options, available in gold, silver, black, or rose gold. These high-quality finishes not only enhance the overall aesthetic but also offer a practical, long-lasting solution for care home furniture and other high-use settings, allowing you to customise every detail while maintaining a refined look.",
             "button_style": "primary",
             "button_text": "View the range",
+            "button_action": "link",
             "button_url": "https://www.furncare.co.uk/products/ryker-large-sideboard"
           }
         },
@@ -236,7 +284,11 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-md"
+        "section_padding": "--spacing-md",
+        "contact_form_html": "",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "content_blocks_FX6f8U": {
@@ -247,6 +299,12 @@
           "settings": {
             "image": "shopify://shop_images/71bc882d-2d87-494c-a4ff-4d3d15320993_f0e5b912-fd43-4dfd-ad85-fe1586d92198.jpg",
             "text": "Standard Handle",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "",
             "gradient_overlay": "dark"
           }
@@ -256,6 +314,12 @@
           "settings": {
             "image": "shopify://shop_images/6c17ea69-343c-4f5b-96a0-09924ee365d6.jpg",
             "text": "Premium Handle",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "16px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
             "link": "",
             "gradient_overlay": "dark"
           }
@@ -327,14 +391,14 @@
             "handle": "best-sellers",
             "product_feed_source": "product_list",
             "products": [
-              "ryker-large-bookcase",
-              "ryker-large-sideboard",
-              "ryker-large-dresser",
-              "ryker-tv-unit",
-              "ryker-small-dresser",
-              "ryker-console-table",
-              "ryker-small-bookcase",
-              "ryker-small-sideboard"
+              "grayson-circular-2-seater-table-cross-base",
+              "grayson-rectangular-6-seater-table-curve-base",
+              "grayson-square-4-seater-table-curve-base",
+              "grayson-circular-2-seater-table-curve",
+              "grayson-circular-2-seater-table-curve-base",
+              "grayson-circular-4-seater-table-cross-base",
+              "grayson-rectangular-6-seater-table-cross-base",
+              "grayson-square-4-seater-table-cross-base"
             ],
             "collection": "",
             "seed_product": "",
@@ -370,6 +434,7 @@
             "text": "<h4>A refined design</h4>\n\nSoftly sculpted curved legs introduce a refined sense of sophistication, serving as a distinctive design feature while maintaining exceptional strength and stability.\n\n<h4>Contemporary finishes</h4>\n\nOffered in several handpicked finishes, allowing for greater design flexibility, creating a tailored, personalised feel while ensuring the piece sits beautifully within both classic and contemporary spaces.\n\n<h4>Ergonomics front and centre </h4>\n\nModern, streamlined handles crafted with smooth, softened edges for a seamless touch, they offer both comfort and sophistication, with a generous 203mm length ensuring effortless usability.",
             "button_style": "underline",
             "button_text": "Download the spec sheet",
+            "button_action": "link",
             "button_url": "https://publuu.com/flip-book/link/2248069"
           }
         }
@@ -381,7 +446,11 @@
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760
       }
     },
     "blocks_Dipxg4": {
@@ -439,11 +508,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
-        "enable_animation": true
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "blocks_wxNUjq": {
