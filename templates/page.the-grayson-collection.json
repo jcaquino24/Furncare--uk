@@ -297,11 +297,11 @@
         "tab1_EyFgVJ": {
           "type": "tab1",
           "settings": {
-            "image": "shopify://shop_images/71bc882d-2d87-494c-a4ff-4d3d15320993_f0e5b912-fd43-4dfd-ad85-fe1586d92198.jpg",
-            "text": "Standard Handle",
+            "image": "shopify://shop_images/close_up_curve_f.png",
+            "text": "Curve Base",
             "richtext": "",
             "richtext_color": "#000000",
-            "richtext_font_size": "16px",
+            "richtext_font_size": "18px",
             "richtext_font_weight": "400",
             "richtext_text_transform": "none",
             "richtext_letter_spacing": "normal",
@@ -312,11 +312,11 @@
         "tab1_MTMgPm": {
           "type": "tab1",
           "settings": {
-            "image": "shopify://shop_images/6c17ea69-343c-4f5b-96a0-09924ee365d6.jpg",
-            "text": "Premium Handle",
+            "image": "shopify://shop_images/close_up_cross_f.png",
+            "text": "Cross Base",
             "richtext": "",
             "richtext_color": "#000000",
-            "richtext_font_size": "16px",
+            "richtext_font_size": "20px",
             "richtext_font_weight": "400",
             "richtext_text_transform": "none",
             "richtext_letter_spacing": "normal",
@@ -423,7 +423,7 @@
         "images_tdN9WY": {
           "type": "images",
           "settings": {
-            "image_one": "shopify://shop_images/ChatGPT_Image_Apr_21_2026_08_15_22_AM.png"
+            "image_one": "shopify://shop_images/Close_up_curve2_440cc56b-1fd7-45e1-b45b-1c3275387557.png"
           }
         },
         "content_QbbHRd": {
