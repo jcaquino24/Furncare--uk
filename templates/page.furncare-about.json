@@ -188,7 +188,7 @@
           "type": "images",
           "settings": {
             "image_one": "shopify://shop_images/Untitled_-_September_18_2026_at_16.16.20.png",
-            "image_two": "shopify://shop_images/Screenshot_2026-05-15_at_14.18.10.png"
+            "image_two": "shopify://shop_images/Untitled_-_September_21_2026_at_15.57.50.png"
           }
         },
         "content_GFYVgY": {
@@ -245,11 +245,11 @@
             "mobile_media_height": 320,
             "content_padding": 100,
             "mobile_content_padding": 25,
-            "background_color": "#F9F7F0",
+            "background_color": "#f9f7f0",
             "text_color": "#243222",
-            "accent_color": "#6B4F3A",
+            "accent_color": "#6b4f3a",
             "button_color": "#243222",
-            "button_text_color": "#F9F7F0",
+            "button_text_color": "#f9f7f0",
             "heading_size": 52,
             "mobile_heading_size": 32,
             "body_size": 16,
