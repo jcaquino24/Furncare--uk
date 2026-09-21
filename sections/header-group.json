@@ -48,7 +48,7 @@
       "disabled": true,
       "settings": {
         "autoplay": true,
-        "autoplay_speed": 3,
+        "autoplay_speed": 4,
         "theme": "light"
       }
     },
