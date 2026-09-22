@@ -18,7 +18,7 @@
             "text": "The Grayson Collection",
             "title_element": "h1",
             "title_size": "display",
-            "text_color": "#f9f7f0"
+            "text_color": "#243222"
           }
         },
         "eyebrow_NfMeef": {
@@ -26,7 +26,7 @@
           "settings": {
             "text": "contemporary table designs for care interiors",
             "eyebrow_size": "sm",
-            "text_color": "#f9f7f0"
+            "text_color": "#243222"
           }
         },
         "button_aVJxk3": {
@@ -93,7 +93,7 @@
         "mute_video": true,
         "autoplay_video": true,
         "show_overlay": true,
-        "overlay_background": "",
+        "overlay_background": "radial-gradient(rgba(48, 48, 48, 0.4), rgba(48, 48, 48, 0.1) 100%)",
         "colour_scheme": "dark",
         "content_position": "center-center",
         "content_alignment": "center"
