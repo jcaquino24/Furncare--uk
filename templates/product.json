@@ -559,6 +559,7 @@
         },
         "cross_sell_fVLhCR": {
           "type": "cross_sell",
+          "disabled": true,
           "settings": {
             "product_source": "rules",
             "trigger_products": [
