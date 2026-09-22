@@ -192,11 +192,7 @@
   {% endcapture %}
   {% comment %} theme-check-enable {% endcomment %}
 
-  {%
-    render 'modal' with
-    content: localization_modal,
-    modal_name: 'localization',
-  %}
+  {% render 'modal' with content, content: localization_modal, modal_name: 'localization' %}
 </uwp-localization-ui>
 
 {% schema %}
@@ -204,3 +200,19 @@
   "name": "Localization UI"
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+        render 'modal' with
+        content: localization_modal,
+        modal_name: 'localization',
+      %}
+  to: "{% render 'modal' with content, content: localization_modal, modal_name: 'localization'
+    %}"
+  position: 6431..6521
+{% endcomment %}

@@ -165,12 +165,7 @@
 
       <div class="featured-blocks__lightbox-gallery">
         <div class="featured-blocks__lightbox-thumbnails-wrapper">
-          {% render 'swiper-nav',
-            section_id: section.id | append: '-thumbs',
-            direction: 'vertical',
-            layout: 'inline',
-            class: 'featured-blocks__lightbox-thumbs-nav'
-          %}
+          {% render 'swiper-nav', section_id: section.id, append: '-thumbs', direction: 'vertical', layout: 'inline', class: 'featured-blocks__lightbox-thumbs-nav' %}
           <swiper-container
             class="featured-blocks__lightbox-thumbnails"
             id="featured-blocks-lightbox-thumbs-{{ section.id }}"
@@ -378,3 +373,20 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {% render 'swiper-nav',
+                section_id: section.id | append: '-thumbs',
+                direction: 'vertical',
+                layout: 'inline',
+                class: 'featured-blocks__lightbox-thumbs-nav'
+              %}
+  to: "{% render 'swiper-nav', section_id: section.id, append: '-thumbs', direction:
+    'vertical', layout: 'inline', class: 'featured-blocks__lightbox-thumbs-nav' %}"
+  position: 5755..5911
+{% endcomment %}

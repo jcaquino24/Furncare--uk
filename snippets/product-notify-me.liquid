@@ -7,7 +7,7 @@
         class="{{ base_class }}__notify-modal__close"
         onclick="toggleNotifyModal()"
       >
-        {% render : 'icon', icon: 'close' %}
+        {% render 'icon', icon: 'close' %}
       </button>
     </div>
     <div class="{{ base_class }}__notify-modal__body">
@@ -121,3 +121,13 @@
       });
   };
 </script>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render : 'icon', icon: 'close' %}"
+  to: "{% render 'icon', icon: 'close' %}"
+  position: 377..411
+{% endcomment %}

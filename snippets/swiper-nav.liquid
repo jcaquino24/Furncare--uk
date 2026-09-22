@@ -33,7 +33,7 @@
   aria-label="Previous slide"
 >
   {% capture icon_html %}
-    {% render 'icons', icon: 'arrow-left' | replace: '<svg', '<svg aria-hidden="true" tabindex="-1"' %}
+    {% render 'icons', icon: 'arrow-left', replace: '<svg' %}
   {% endcapture %}
   {{ icon_html | replace: '<svg', '<svg aria-hidden="true" tabindex="-1"' }}
 </button>
@@ -51,7 +51,7 @@
   aria-label="Next slide"
 >
   {% capture icon_html %}
-    {% render 'icons', icon: 'arrow-right' | replace: '<svg', '<svg aria-hidden="true" tabindex="-1"' %}
+    {% render 'icons', icon: 'arrow-right', replace: '<svg' %}
   {% endcapture %}
   {{ icon_html | replace: '<svg', '<svg aria-hidden="true" tabindex="-1"' }}
 </button>
@@ -59,3 +59,18 @@
 {% if layout == 'inline' %}
   </div>
 {% endif %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''icons'', icon: ''arrow-left'' | replace: ''<svg'', ''<svg aria-hidden="true"
+    tabindex="-1"'' %}'
+  to: "{% render 'icons', icon: 'arrow-left', replace: '<svg' %}"
+  position: 970..1027
+- from: '{% render ''icons'', icon: ''arrow-right'' | replace: ''<svg'', ''<svg aria-hidden="true"
+    tabindex="-1"'' %}'
+  to: "{% render 'icons', icon: 'arrow-right', replace: '<svg' %}"
+  position: 1441..1499
+{% endcomment %}

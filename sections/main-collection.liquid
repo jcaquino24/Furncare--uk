@@ -15,7 +15,7 @@
 
   assign has_active_filters = false
 
-  for filter in [request.page_type].filters
+  for filter in self[request.page_type].filters
     if filter.active_values.size > 0
       assign has_active_filters = true
       break
@@ -384,3 +384,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "  for filter in [request.page_type].filters"
+  to: "  for filter in self[request.page_type].filters"
+  position: 545..592
+{% endcomment %}

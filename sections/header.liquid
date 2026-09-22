@@ -7,7 +7,7 @@
     assign is_transparent = true
   endif
 
-  if [request.page_type].metafields.custom.transparent_header == true
+  if self[request.page_type].metafields.custom.transparent_header == true
     assign is_transparent = true
   endif
 
@@ -249,3 +249,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "  if [request.page_type].metafields.custom.transparent_header == true"
+  to: "  if self[request.page_type].metafields.custom.transparent_header == true"
+  position: 302..375
+{% endcomment %}
