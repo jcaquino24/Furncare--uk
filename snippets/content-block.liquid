@@ -15,11 +15,7 @@
         class: 'background-image'
     }}
   {% else %}
-    {%
-      render 'placeholder-image',
-      is_background: true,
-      background_color: 'var(--color-surface-primary')
-    %}
+    {% render 'placeholder-image', is_background: true, background_color: 'var(--color-surface-primary' %}
   {% endif %}
 
   {% if title != blank %}
@@ -28,3 +24,19 @@
     </span>
   {% endif %}
 </{{ element }}>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+          render 'placeholder-image',
+          is_background: true,
+          background_color: 'var(--color-surface-primary')
+        %}
+  to: "{% render 'placeholder-image', is_background: true, background_color: 'var(--color-surface-primary'
+    %}"
+  position: 450..552
+{% endcomment %}

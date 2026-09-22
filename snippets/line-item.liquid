@@ -2,13 +2,7 @@
   <div class="line-item__item__image-column">
     <div class="line-item__item__image-container">
       <a href="{{ item.product.url }}">
-        {%
-          render 'responsive-image' with
-          image: item.image,
-          max_width: '72px',
-          initial_size: '72x',
-          block_class: 'line-item__item-image'
-        %}
+        {% render 'responsive-image' with image, image: item.image, max_width: '72px', initial_size: '72x', block_class: 'line-item__item-image' %}
       </a>
     </div>
   </div>
@@ -72,3 +66,21 @@
     </div>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+              render 'responsive-image' with
+              image: item.image,
+              max_width: '72px',
+              initial_size: '72x',
+              block_class: 'line-item__item-image'
+            %}
+  to: "{% render 'responsive-image' with image, image: item.image, max_width: '72px',
+    initial_size: '72x', block_class: 'line-item__item-image' %}"
+  position: 175..314
+{% endcomment %}

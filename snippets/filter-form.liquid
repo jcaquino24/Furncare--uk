@@ -1,5 +1,5 @@
 {%- liquid
-  assign sort_by = [request.page_type].sort_by | default: [request.page_type].default_sort_by
+  assign sort_by = self[request.page_type].sort_by | default: self[request.page_type].default_sort_by
 
   # Use results_count (filtered) instead of products_count (total)
   if template.name == 'search'
@@ -61,7 +61,7 @@
       </div>
 
       <div class="filter-form__applied-filters-wrapper">
-        {%- for filter in [request.page_type].filters -%}
+        {%- for filter in self[request.page_type].filters -%}
           {%- for value in filter.active_values -%}
             <button
               class="filter-form__applied-filter button button--secondary"
@@ -99,7 +99,7 @@
         </summary>
 
         <div class="filter-form__filter-body">
-          {% for option in [request.page_type].sort_options %}
+          {% for option in self[request.page_type].sort_options %}
             <label
               class="filter-form__filter-item input-checkbox input-checkbox--light"
               for="Sort-{{ option.value }}"
@@ -128,7 +128,7 @@
         </div>
       </details>
 
-      {%- for filter in [request.page_type].filters -%}
+      {%- for filter in self[request.page_type].filters -%}
         {% if filter.label != "Fabric Type"
   or collection.handle != "find-your-perfect-curtain-fabric"
   and collection.handle != "upholstery-fabrics" and collection.handle != "in-stock-curtain-fabrics" %}
@@ -415,3 +415,22 @@
     </div>
   </form>
 </uwp-filter-form>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: 'assign sort_by = [request.page_type].sort_by | default: [request.page_type].default_sort_by'
+  to: 'assign sort_by = self[request.page_type].sort_by | default: self[request.page_type].default_sort_by'
+  position: 13..112
+- from: "{%- for filter in [request.page_type].filters -%}"
+  to: "{%- for filter in self[request.page_type].filters -%}"
+  position: 2041..2094
+- from: "{% for option in [request.page_type].sort_options %}"
+  to: "{% for option in self[request.page_type].sort_options %}"
+  position: 3236..3292
+- from: "{%- for filter in [request.page_type].filters -%}"
+  to: "{%- for filter in self[request.page_type].filters -%}"
+  position: 4128..4181
+{% endcomment %}

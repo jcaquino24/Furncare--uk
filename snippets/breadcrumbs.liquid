@@ -69,7 +69,7 @@
             {{- product.title | split: '|' | first -}}
           </a>
         </li>
-      {%- when 'collection' and collection.handle -%}
+      {%- when 'collection' -%}
         {%- if current_tags -%}
           <li class="breadcrumbs__item">
             {% render 'icons', icon: 'chevron-right' %}
@@ -166,3 +166,13 @@
     {%- endcase -%}
   </ol>
 </nav>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- when 'collection' and collection.handle -%}"
+  to: "{%- when 'collection' -%}"
+  position: 2323..2348
+{% endcomment %}
