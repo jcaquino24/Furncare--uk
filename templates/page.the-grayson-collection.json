@@ -14,6 +14,7 @@
       "blocks": {
         "title_WYCUQG": {
           "type": "title",
+          "disabled": true,
           "settings": {
             "text": "The Grayson Collection",
             "title_element": "h1",
@@ -23,6 +24,7 @@
         },
         "eyebrow_NfMeef": {
           "type": "eyebrow",
+          "disabled": true,
           "settings": {
             "text": "a contemporary table range, designed for care interiors",
             "eyebrow_size": "sm",
@@ -31,6 +33,7 @@
         },
         "button_aVJxk3": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "text": "Enquire Today",
             "button_url": "shopify://pages/contact-us",
@@ -87,11 +90,12 @@
         "maintain_aspect_ratio": true,
         "add_header_offset": false,
         "media_type": "image",
+        "image_desktop": "shopify://shop_images/grayson_banner_4853bf61-6799-4bb4-82ca-5d21316825ec.jpg",
         "video_desktop": "shopify://files/videos/Garden Furn 2026 Landing Page.mp4",
         "show_controls": false,
         "mute_video": true,
         "autoplay_video": true,
-        "show_overlay": true,
+        "show_overlay": false,
         "overlay_background": "radial-gradient(rgba(249, 247, 240, 1), rgba(249, 247, 240, 1) 100%)",
         "colour_scheme": "light",
         "content_position": "center-center",
@@ -312,47 +316,17 @@
             "link": "https://www.furncare.co.uk/products/wenge",
             "gradient_overlay": "dark"
           }
-        },
-        "tab1_c66C7W": {
-          "type": "tab1",
-          "settings": {
-            "text": "",
-            "richtext": "",
-            "richtext_color": "#000000",
-            "richtext_font_size": "16px",
-            "richtext_font_weight": "400",
-            "richtext_text_transform": "none",
-            "richtext_letter_spacing": "normal",
-            "link": "",
-            "gradient_overlay": "dark"
-          }
-        },
-        "tab1_yVtyhd": {
-          "type": "tab1",
-          "settings": {
-            "text": "",
-            "richtext": "",
-            "richtext_color": "#000000",
-            "richtext_font_size": "16px",
-            "richtext_font_weight": "400",
-            "richtext_text_transform": "none",
-            "richtext_letter_spacing": "normal",
-            "link": "",
-            "gradient_overlay": "dark"
-          }
         }
       },
       "block_order": [
         "tab1_LVLLq3",
         "tab1_qrYEWB",
-        "tab1_gM4AHE",
-        "tab1_c66C7W",
-        "tab1_yVtyhd"
+        "tab1_gM4AHE"
       ],
       "name": "Content blocks",
       "settings": {
-        "title": "choose from a selection of contemporary finishes",
-        "section_padding": "--spacing-2xl",
+        "title": "",
+        "section_padding": "--spacing-md",
         "tab1_title": "Wood Colours",
         "tab1_handle": "Wood Colours",
         "tab1_colour_scheme": "base-white-01",
@@ -360,6 +334,77 @@
         "tab2_handle": "Handles",
         "tab2_colour_scheme": "warm-stone"
       }
+    },
+    "richtext_weaYTK": {
+      "type": "richtext",
+      "blocks": {
+        "heading_VLNaz8": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "We design furniture and interiors that are practical, safe, and welcoming. Our focus is creating spaces that support both residents and caregivers.",
+            "heading_level": "h2",
+            "heading_style": "title-xs"
+          },
+          "blocks": {}
+        },
+        "tagline_639UV7": {
+          "type": "tagline",
+          "settings": {
+            "content": "From the refined under-chamfered edge to the sculptural pedestal base, every element of Grayson has been considered to create a clean, architectural silhouette. Available in oak, walnut and wenge finishes, the collection can be tailored to complement a wide range of interior schemes.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_jn76GD": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_VLNaz8",
+        "tagline_639UV7",
+        "button_jn76GD"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "id_anchor": "",
+        "max_width_desktop": 99,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "left",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
+      }
+    },
+    "blocks_xB84Kk": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_LhDN38": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 70,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#F9F7F0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_LhDN38"
+      ],
+      "name": "Spacer",
+      "settings": {}
     },
     "image_text_hPbjgh": {
       "type": "image-text",
@@ -597,6 +642,8 @@
     "content_blocks_FX6f8U",
     "richtext_gkEqTF",
     "content_blocks_QVU3xP",
+    "richtext_weaYTK",
+    "blocks_xB84Kk",
     "image_text_hPbjgh",
     "blocks_rzpUwy",
     "main",
