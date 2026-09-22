@@ -241,6 +241,7 @@
         },
         "button_inXHdJ": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "style": "primary",
             "text": "Download",
@@ -352,7 +353,7 @@
           "type": "tagline",
           "settings": {
             "content": "From the refined under-chamfered edge to the sculptural pedestal base, every element of Grayson has been considered to create a clean, architectural silhouette. Available in oak, walnut and wenge finishes, the collection can be tailored to complement a wide range of interior schemes.",
-            "tagline_style": "body-md"
+            "tagline_style": "body-lg"
           },
           "blocks": {}
         },
@@ -523,6 +524,7 @@
       "blocks": {
         "content_68CTk6": {
           "type": "content",
+          "disabled": true,
           "settings": {
             "title": "Every Detail Matters",
             "title_size": "display",
@@ -641,11 +643,11 @@
     "richtext_xryYUQ",
     "content_blocks_FX6f8U",
     "richtext_gkEqTF",
+    "blocks_rzpUwy",
     "content_blocks_QVU3xP",
     "richtext_weaYTK",
     "blocks_xB84Kk",
     "image_text_hPbjgh",
-    "blocks_rzpUwy",
     "main",
     "product_blocks_NVTciR",
     "image_text_RqyGcY",
