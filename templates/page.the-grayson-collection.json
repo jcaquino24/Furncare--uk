@@ -24,7 +24,7 @@
         "eyebrow_NfMeef": {
           "type": "eyebrow",
           "settings": {
-            "text": "contemporary table designs for care interiors",
+            "text": "a contemporary table range, designed for care interiors",
             "eyebrow_size": "sm",
             "text_color": "#243222"
           }
@@ -83,20 +83,143 @@
       "name": "Image - Video Banner",
       "settings": {
         "height_desktop": 800,
-        "height_mobile": 800,
+        "height_mobile": 570,
         "maintain_aspect_ratio": true,
         "add_header_offset": false,
         "media_type": "image",
-        "image_desktop": "shopify://shop_images/Grayson_Dining_Table_Lifestyle_3.jpg",
         "video_desktop": "shopify://files/videos/Garden Furn 2026 Landing Page.mp4",
         "show_controls": false,
         "mute_video": true,
         "autoplay_video": true,
         "show_overlay": true,
-        "overlay_background": "radial-gradient(rgba(48, 48, 48, 0.4), rgba(48, 48, 48, 0.1) 100%)",
-        "colour_scheme": "dark",
+        "overlay_background": "radial-gradient(rgba(249, 247, 240, 1), rgba(249, 247, 240, 1) 100%)",
+        "colour_scheme": "light",
         "content_position": "center-center",
         "content_alignment": "center"
+      }
+    },
+    "richtext_xryYUQ": {
+      "type": "richtext",
+      "blocks": {
+        "heading_qNdWeW": {
+          "type": "heading",
+          "settings": {
+            "text": "Defined by sculptural forms and considered detailing, the Grayson collection brings a <em>refined </em>architectural feel to dining spaces.",
+            "heading_level": "h2",
+            "heading_style": "title-xs"
+          },
+          "blocks": {}
+        },
+        "heading_fpzDVr": {
+          "type": "heading",
+          "name": "Heading",
+          "settings": {
+            "text": "Crafted from solid wood, each table features a softly chamfered edge and a choice of two pedestal bases: a clean cross base for a more timeless look, or a curved sculptural base for a stronger contemporary statement.",
+            "heading_level": "h2",
+            "heading_style": "title-xs"
+          },
+          "blocks": {}
+        },
+        "heading_N3t68w": {
+          "type": "heading",
+          "name": "Heading",
+          "settings": {
+            "text": "Available in a range of sizes, Grayson balances elegant proportions with a confident, design-led finish.",
+            "heading_level": "h2",
+            "heading_style": "title-xs"
+          },
+          "blocks": {}
+        },
+        "tagline_4UiEpi": {
+          "type": "tagline",
+          "disabled": true,
+          "settings": {
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_bxBYJN": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_qNdWeW",
+        "heading_fpzDVr",
+        "heading_N3t68w",
+        "tagline_4UiEpi",
+        "button_bxBYJN"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "id_anchor": "",
+        "max_width_desktop": 94,
+        "section_padding": "--spacing-6xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
+      }
+    },
+    "content_blocks_FX6f8U": {
+      "type": "content-blocks",
+      "blocks": {
+        "tab1_EyFgVJ": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/close_up_curve_f.png",
+            "text": "Curve Base",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "18px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        },
+        "tab1_MTMgPm": {
+          "type": "tab1",
+          "settings": {
+            "image": "shopify://shop_images/close_up_cross_f.png",
+            "text": "Cross Base",
+            "richtext": "",
+            "richtext_color": "#000000",
+            "richtext_font_size": "20px",
+            "richtext_font_weight": "400",
+            "richtext_text_transform": "none",
+            "richtext_letter_spacing": "normal",
+            "link": "",
+            "gradient_overlay": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "tab1_EyFgVJ",
+        "tab1_MTMgPm"
+      ],
+      "name": "Content blocks",
+      "settings": {
+        "title": "available in two base configurations",
+        "section_padding": "--spacing-2xl",
+        "tab1_title": "",
+        "tab1_handle": "collection-1",
+        "tab1_colour_scheme": "base-white-01",
+        "tab2_title": "",
+        "tab2_handle": "collection-2",
+        "tab2_colour_scheme": "warm-stone"
       }
     },
     "richtext_gkEqTF": {
@@ -127,6 +250,7 @@
         "heading_XyUT67",
         "button_inXHdJ"
       ],
+      "disabled": true,
       "name": "Rich Text",
       "settings": {
         "id_anchor": "",
@@ -155,7 +279,7 @@
             "richtext_font_weight": "400",
             "richtext_text_transform": "none",
             "richtext_letter_spacing": "normal",
-            "link": "",
+            "link": "https://www.furncare.co.uk/products/walnut",
             "gradient_overlay": "dark"
           }
         },
@@ -170,7 +294,7 @@
             "richtext_font_weight": "400",
             "richtext_text_transform": "none",
             "richtext_letter_spacing": "normal",
-            "link": "",
+            "link": "https://www.furncare.co.uk/products/winchester-oak",
             "gradient_overlay": "dark"
           }
         },
@@ -185,7 +309,7 @@
             "richtext_font_weight": "400",
             "richtext_text_transform": "none",
             "richtext_letter_spacing": "normal",
-            "link": "",
+            "link": "https://www.furncare.co.uk/products/wenge",
             "gradient_overlay": "dark"
           }
         },
@@ -237,90 +361,40 @@
         "tab2_colour_scheme": "warm-stone"
       }
     },
-    "image_text_RqyGcY": {
+    "image_text_hPbjgh": {
       "type": "image-text",
       "blocks": {
-        "content_68CTk6": {
-          "type": "content",
-          "settings": {
-            "title": "Every Detail Matters",
-            "title_size": "display",
-            "text": "Why stop at selecting your bespoke wood finish? Complete your piece with the perfect handle to suit your space. Designed for both modern and traditional care home interiors, each piece comes as standard with a sleek, durable silver handle. For a more personalised look, upgrade to our premium handle options, available in gold, silver, black, or rose gold. These high-quality finishes not only enhance the overall aesthetic but also offer a practical, long-lasting solution for care home furniture and other high-use settings, allowing you to customise every detail while maintaining a refined look.",
-            "button_style": "primary",
-            "button_text": "View the range",
-            "button_action": "link",
-            "button_url": "https://www.furncare.co.uk/products/ryker-large-sideboard"
-          }
-        },
-        "images_bb9BLn": {
+        "images_tdN9WY": {
           "type": "images",
           "settings": {
-            "image_one": "shopify://shop_images/handle_renders_removed_background.png"
+            "image_one": "shopify://shop_images/Grayson_Dining_Table_Lifestyle_3.jpg"
+          }
+        },
+        "content_QbbHRd": {
+          "type": "content",
+          "settings": {
+            "title": "Elevating Dining in Care Interiors",
+            "title_size": "xl",
+            "text": "<h4>Exclusive to Furncare </h4>\n\nModern, streamlined handles crafted with smooth, softened edges for a seamless touch, they offer both comfort and sophistication, with a generous 203mm length ensuring effortless usability.\n\n\n<h4>A refined design</h4>\n\nSoftly sculpted curved legs introduce a refined sense of sophistication, serving as a distinctive design feature while maintaining exceptional strength and stability.\n\n<h4>Contemporary finishes</h4>\n\nOffered in several handpicked finishes, allowing for greater design flexibility and creating a tailored feel while ensuring the piece sits beautifully alongside both classic and contemporary furniture.",
+            "button_style": "underline",
+            "button_text": "Download the spec sheet",
+            "button_action": "link",
+            "button_url": "https://publuu.com/flip-book/link/2248069"
           }
         }
       },
       "block_order": [
-        "content_68CTk6",
-        "images_bb9BLn"
+        "images_tdN9WY",
+        "content_QbbHRd"
       ],
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-md",
+        "section_padding": "--spacing-2xl",
         "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
-      }
-    },
-    "content_blocks_FX6f8U": {
-      "type": "content-blocks",
-      "blocks": {
-        "tab1_EyFgVJ": {
-          "type": "tab1",
-          "settings": {
-            "image": "shopify://shop_images/close_up_curve_f.png",
-            "text": "Curve Base",
-            "richtext": "",
-            "richtext_color": "#000000",
-            "richtext_font_size": "18px",
-            "richtext_font_weight": "400",
-            "richtext_text_transform": "none",
-            "richtext_letter_spacing": "normal",
-            "link": "",
-            "gradient_overlay": "dark"
-          }
-        },
-        "tab1_MTMgPm": {
-          "type": "tab1",
-          "settings": {
-            "image": "shopify://shop_images/close_up_cross_f.png",
-            "text": "Cross Base",
-            "richtext": "",
-            "richtext_color": "#000000",
-            "richtext_font_size": "20px",
-            "richtext_font_weight": "400",
-            "richtext_text_transform": "none",
-            "richtext_letter_spacing": "normal",
-            "link": "",
-            "gradient_overlay": "dark"
-          }
-        }
-      },
-      "block_order": [
-        "tab1_EyFgVJ",
-        "tab1_MTMgPm"
-      ],
-      "name": "Content blocks",
-      "settings": {
-        "title": "",
-        "section_padding": "--spacing-md",
-        "tab1_title": "",
-        "tab1_handle": "collection-1",
-        "tab1_colour_scheme": "base-white-01",
-        "tab2_title": "",
-        "tab2_handle": "collection-2",
-        "tab2_colour_scheme": "warm-stone"
       }
     },
     "blocks_rzpUwy": {
@@ -399,36 +473,29 @@
         "section_padding": "--spacing-2xl"
       }
     },
-    "image_text_hPbjgh": {
+    "image_text_RqyGcY": {
       "type": "image-text",
       "blocks": {
-        "images_tdN9WY": {
-          "type": "images",
-          "settings": {
-            "image_one": "shopify://shop_images/Close_up_curve2_440cc56b-1fd7-45e1-b45b-1c3275387557.png"
-          }
-        },
-        "content_QbbHRd": {
+        "content_68CTk6": {
           "type": "content",
           "settings": {
-            "title": "Elevating Care Home Lounges.",
-            "title_size": "xl",
-            "text": "<h4>A refined design</h4>\n\nSoftly sculpted curved legs introduce a refined sense of sophistication, serving as a distinctive design feature while maintaining exceptional strength and stability.\n\n<h4>Contemporary finishes</h4>\n\nOffered in several handpicked finishes, allowing for greater design flexibility, creating a tailored, personalised feel while ensuring the piece sits beautifully within both classic and contemporary spaces.\n\n<h4>Ergonomics front and centre </h4>\n\nModern, streamlined handles crafted with smooth, softened edges for a seamless touch, they offer both comfort and sophistication, with a generous 203mm length ensuring effortless usability.",
-            "button_style": "underline",
-            "button_text": "Download the spec sheet",
+            "title": "Every Detail Matters",
+            "title_size": "display",
+            "text": "Designed to suit high-end interiors, the Grayson range is a unique solid wood dining table range, exclusive to Furncare. Available in a choice of sizes, each table features a beautifully crafted solid wood top with a refined under-chamfered edge, enhancing its elegant, contemporary profile. Choose from two distinctive pedestal base options: the straight cross base offers a classic, timeless aesthetic, while the thicker curved base presents a more contemporary interpretation, with sculpted lines that create a lighter, more open silhouette. Combining elegant design with exceptional stability, the curved base delivers a premium statement piece for today's interiors.\n<br><br>",
+            "button_style": "primary",
+            "button_text": "View the range",
             "button_action": "link",
-            "button_url": "https://publuu.com/flip-book/link/2248069"
+            "button_url": "https://www.furncare.co.uk/products/ryker-large-sideboard"
           }
         }
       },
       "block_order": [
-        "images_tdN9WY",
-        "content_QbbHRd"
+        "content_68CTk6"
       ],
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl",
+        "section_padding": "--spacing-md",
         "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
@@ -526,14 +593,15 @@
   },
   "order": [
     "image_video_banner_tUQhjn",
+    "richtext_xryYUQ",
+    "content_blocks_FX6f8U",
     "richtext_gkEqTF",
     "content_blocks_QVU3xP",
-    "image_text_RqyGcY",
-    "content_blocks_FX6f8U",
+    "image_text_hPbjgh",
     "blocks_rzpUwy",
     "main",
     "product_blocks_NVTciR",
-    "image_text_hPbjgh",
+    "image_text_RqyGcY",
     "blocks_Dipxg4",
     "blocks_gzkyCP",
     "blocks_3pXGmt",
