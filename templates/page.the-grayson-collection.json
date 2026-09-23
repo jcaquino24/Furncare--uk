@@ -270,6 +270,39 @@
         "see_more_max_height": 400
       }
     },
+    "blocks_rzpUwy": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_800d78e_9LkBpn": {
+          "type": "ai_gen_block_800d78e",
+          "settings": {
+            "accordion_heading": "Request a quote",
+            "default_open": false,
+            "desktop_width_percent": 100,
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"d13cb61a-817e-42e1-baa9-08d63b586063\" data-portal-id=\"145723791\"></div>",
+            "min_form_height": 200,
+            "heading_size": 32,
+            "heading_color": "#f9f7f0",
+            "header_background_color": "#c3c0b0",
+            "header_hover_color": "#243222",
+            "header_padding": 40,
+            "icon_size": 28,
+            "icon_color": "#f9f7f0",
+            "background_color": "#f9f7f0",
+            "content_padding": 50,
+            "border_width": 5,
+            "border_color": "#c3c0b0",
+            "border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_800d78e_9LkBpn"
+      ],
+      "name": "Form accordion",
+      "settings": {}
+    },
     "content_blocks_QVU3xP": {
       "type": "content-blocks",
       "blocks": {
@@ -423,7 +456,7 @@
             "title_size": "xl",
             "text": "<h4>Exclusive to Furncare </h4>\n\nModern, streamlined handles crafted with smooth, softened edges for a seamless touch, they offer both comfort and sophistication, with a generous 203mm length ensuring effortless usability.\n\n\n<h4>A refined design</h4>\n\nSoftly sculpted curved legs introduce a refined sense of sophistication, serving as a distinctive design feature while maintaining exceptional strength and stability.\n\n<h4>Contemporary finishes</h4>\n\nOffered in several handpicked finishes, allowing for greater design flexibility and creating a tailored feel while ensuring the piece sits beautifully alongside both classic and contemporary furniture.",
             "button_style": "underline",
-            "button_text": "Download the spec sheet",
+            "button_text": "",
             "button_action": "link",
             "button_url": "https://publuu.com/flip-book/link/2248069"
           }
@@ -442,39 +475,6 @@
         "reveal_distance": 32,
         "reveal_duration": 760
       }
-    },
-    "blocks_rzpUwy": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_800d78e_9LkBpn": {
-          "type": "ai_gen_block_800d78e",
-          "settings": {
-            "accordion_heading": "Request a quote",
-            "default_open": false,
-            "desktop_width_percent": 100,
-            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"d13cb61a-817e-42e1-baa9-08d63b586063\" data-portal-id=\"145723791\"></div>",
-            "min_form_height": 200,
-            "heading_size": 32,
-            "heading_color": "#f9f7f0",
-            "header_background_color": "#c3c0b0",
-            "header_hover_color": "#243222",
-            "header_padding": 40,
-            "icon_size": 28,
-            "icon_color": "#f9f7f0",
-            "background_color": "#f9f7f0",
-            "content_padding": 50,
-            "border_width": 5,
-            "border_color": "#c3c0b0",
-            "border_radius": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_800d78e_9LkBpn"
-      ],
-      "name": "Form accordion",
-      "settings": {}
     },
     "main": {
       "type": "page",
@@ -506,7 +506,7 @@
             "seed_product": "",
             "use_current_product": false,
             "recommendation_intent": "related",
-            "colour_scheme": "base-white-01"
+            "colour_scheme": "warm-stone"
           }
         }
       },
