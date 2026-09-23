@@ -2368,7 +2368,7 @@ section[id*="__image_text_blocks"]
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 9999;
+  z-index: calc(var(--z-index-sticky) + 1);
   background: var(--color-brand-01-60, rgba(50, 53, 55, 0.6));
   justify-content: center;
   align-items: center;
@@ -2444,11 +2444,10 @@ section[id*="__image_text_blocks"]
   gap: 4px;
   overflow-x: auto;
   overflow-y: hidden;
-  cursor: grab;
-  scrollbar-width: thin;
+  scrollbar-width: none;
 }
-.image-text-blocks__lightbox-thumbnails.is-dragging {
-  cursor: grabbing;
+.image-text-blocks__lightbox-thumbnails::-webkit-scrollbar {
+  display: none;
 }
 .image-text-blocks__lightbox-thumbnails-slide {
   all: unset;
