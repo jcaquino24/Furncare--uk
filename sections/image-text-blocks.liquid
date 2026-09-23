@@ -245,29 +245,25 @@
 
         <div class="image-text-blocks__lightbox-gallery">
           <div class="image-text-blocks__lightbox-thumbnails-wrapper">
-            <swiper-container
+            <div
               class="image-text-blocks__lightbox-thumbnails"
-              id="image-text-blocks-lightbox-thumbs-{{ fallback_section_id }}"
               js-image-text-blocks="lightbox-thumbnails"
-              slides-per-view="auto"
-              loop="false"
-              space-between="4"
-              breakpoints='
-                {
-                  "1024": {
-                    "direction": "vertical"
-                  }
-                }
-              '
               role="region"
               aria-label="Image text blocks thumbnails"
               aria-roledescription="carousel"
             >
+              {% assign lb_slide_index = 0 %}
               {% for block in block_images %}
                 {% if block.settings.image != blank %}
                   {% assign lb_image = block.settings.lightbox_image | default: block.settings.image %}
                   {% assign lb_alt = block.settings.title | default: block.settings.subtitle %}
-                  <swiper-slide class="image-text-blocks__lightbox-thumbnails-slide">
+                  <button
+                    type="button"
+                    class="image-text-blocks__lightbox-thumbnails-slide"
+                    js-image-text-blocks="lightbox-thumb"
+                    data-index="{{ lb_slide_index }}"
+                    aria-label="{{ 'accessibility.view_larger_image' | t }}"
+                  >
                     {{
                       lb_image
                       | image_url: width: 200
@@ -275,47 +271,44 @@
                         alt: lb_alt,
                         loading: 'lazy'
                     }}
-                  </swiper-slide>
+                  </button>
+                  {% assign lb_slide_index = lb_slide_index | plus: 1 %}
                 {% endif %}
               {% endfor %}
-            </swiper-container>
+            </div>
           </div>
 
           <div class="image-text-blocks__lightbox-main image-text-blocks__lightbox-main--{{ fallback_section_id }}">
             <div class="image-text-blocks__lightbox-main-wrapper">
-              <div class="image-text-blocks__lightbox-main-carousel">
-                <swiper-container
-                  js-image-text-blocks="lightbox-swiper"
-                  navigation-prev-el=".image-text-blocks__lightbox-main--{{ fallback_section_id }} .swiper-button-prev"
-                  navigation-next-el=".image-text-blocks__lightbox-main--{{ fallback_section_id }} .swiper-button-next"
-                  slides-per-view="1"
-                  direction="horizontal"
-                  keyboard="true"
-                  thumbs-swiper="#image-text-blocks-lightbox-thumbs-{{ fallback_section_id }}"
-                  role="region"
-                  aria-label="Image text blocks lightbox"
-                  aria-roledescription="carousel"
-                >
-                  {% for block in block_images %}
-                    {% if block.settings.image != blank %}
-                      {% assign lb_image = block.settings.lightbox_image | default: block.settings.image %}
-                      {% assign lb_alt = block.settings.title | default: block.settings.subtitle %}
-                      <swiper-slide
-                        class="image-text-blocks__lightbox-slide"
-                        data-caption="{{ block.settings.lightbox_caption | escape }}"
-                      >
-                        {{
-                          lb_image
-                          | image_url: width: 1200
-                          | image_tag:
-                            alt: lb_alt,
-                            class: 'image-text-blocks__lightbox-image',
-                            loading: 'lazy'
-                        }}
-                      </swiper-slide>
-                    {% endif %}
-                  {% endfor %}
-                </swiper-container>
+              <div
+                class="image-text-blocks__lightbox-main-carousel"
+                role="region"
+                aria-label="Image text blocks lightbox"
+                aria-roledescription="carousel"
+              >
+                {% assign lb_slide_index = 0 %}
+                {% for block in block_images %}
+                  {% if block.settings.image != blank %}
+                    {% assign lb_image = block.settings.lightbox_image | default: block.settings.image %}
+                    {% assign lb_alt = block.settings.title | default: block.settings.subtitle %}
+                    <div
+                      class="image-text-blocks__lightbox-slide"
+                      js-image-text-blocks="lightbox-slide"
+                      data-index="{{ lb_slide_index }}"
+                      data-caption="{{ block.settings.lightbox_caption | escape }}"
+                    >
+                      {{
+                        lb_image
+                        | image_url: width: 1200
+                        | image_tag:
+                          alt: lb_alt,
+                          class: 'image-text-blocks__lightbox-image',
+                          loading: 'lazy'
+                      }}
+                    </div>
+                    {% assign lb_slide_index = lb_slide_index | plus: 1 %}
+                  {% endif %}
+                {% endfor %}
               </div>
 
               {% assign lb_nav_section_id = fallback_section_id | append: '-lb' %}
