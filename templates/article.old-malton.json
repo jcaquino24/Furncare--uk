@@ -903,7 +903,7 @@
         "colour_scheme": "base-white-01",
         "text_position": "over_image",
         "mobile_layout": "swiper",
-        "enable_lightbox": false
+        "enable_lightbox": true
       }
     },
     "richtext_TDcVxF": {
