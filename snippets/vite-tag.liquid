@@ -6,7 +6,7 @@
 {% if path == "/frontend/entrypoints/critical.css" or path == "critical.css" %}
   {{ 'uwp.critical.DLj9qVjH.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
 {% elsif path == "/frontend/entrypoints/main.css" or path == "main.css" %}
-  {{ 'uwp.main.DdluWbOa.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
+  {{ 'uwp.main.DdluWbOa-v2.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
 {% elsif path == "/frontend/entrypoints/main.ts" or path == "main.ts" %}
   <script src="{{ 'uwp.main.bCRper3M.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
 {% elsif path == "/frontend/src/ts/sections/address-form.ts" or path == "../src/ts/sections/address-form.ts" %}
@@ -31,7 +31,7 @@
   <script src="{{ 'uwp.hotspots.xnsMGeWo.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
   {{ 'uwp.hotspots.BHH8rdGj.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
 {% elsif path == "/frontend/src/ts/sections/image-text-blocks.ts" or path == "../src/ts/sections/image-text-blocks.ts" %}
-  <script src="{{ 'uwp.image-text-blocks.BT2TQdP_.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script src="{{ 'uwp.image-text-blocks.BT2TQdP_-v2.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
 {% elsif path == "/frontend/src/ts/sections/image-video-banner.ts" or path == "../src/ts/sections/image-video-banner.ts" %}
   <script src="{{ 'uwp.image-video-banner.DNMkv46a.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
 {% elsif path == "/frontend/src/ts/sections/localization-ui.ts" or path == "../src/ts/sections/localization-ui.ts" %}

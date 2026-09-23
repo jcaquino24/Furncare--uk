@@ -15,7 +15,10 @@
     assign video_mobile = video
   endif
 
-
+  assign primary_loading = 'lazy'
+  if image_index <= 2
+    assign primary_loading = 'eager'
+  endif
 %}
 
 {% capture image_text_block_content %} 
@@ -62,9 +65,17 @@
     {% endif %}
     {% if image != blank %}
       <span class="image-text-block__primary-image">
-        {{ image | image_url: width: 1100, height: nil | image_tag: class: 'image-text-block__image-desktop hide-on-mobile' }}
+        {{
+          image
+          | image_url: width: 1100, height: nil
+          | image_tag: class: 'image-text-block__image-desktop hide-on-mobile', loading: primary_loading
+        }}
         {% if image_mobile != blank %}
-          {{ image_mobile | image_url: width: 400, height: nil | image_tag: class: 'image-text-block__image-mobile hide-on-desktop' }}
+          {{
+            image_mobile
+            | image_url: width: 400, height: nil
+            | image_tag: class: 'image-text-block__image-mobile hide-on-desktop', loading: primary_loading
+          }}
         {% endif %}
       </span>
     {% else %}
@@ -72,9 +83,17 @@
     {% endif %}
 
     <span class="image-text-block__hover-image">
-      {{ hover_image | image_url: width: 1100, height: nil | image_tag: class: 'image-text-block__hover-image-desktop hide-on-mobile' }}
+      {{
+        hover_image
+        | image_url: width: 1100, height: nil
+        | image_tag: class: 'image-text-block__hover-image-desktop hide-on-mobile', loading: 'lazy'
+      }}
       {% if hover_image_mobile != blank %}
-        {{ hover_image_mobile | image_url: width: 400, height: nil | image_tag: class: 'image-text-block__hover-image-mobile hide-on-desktop' }}
+        {{
+          hover_image_mobile
+          | image_url: width: 400, height: nil
+          | image_tag: class: 'image-text-block__hover-image-mobile hide-on-desktop', loading: 'lazy'
+        }}
       {% endif %}
     </span>
     {% if enable_lightbox %}
