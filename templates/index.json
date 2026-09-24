@@ -503,7 +503,14 @@
             "description": ""
           }
         },
-        "image_ikKcCK": {
+        "image_nVWRi7": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_herwKP": {
           "type": "image",
           "settings": {
             "heading": "",
@@ -513,6 +520,7 @@
         "image_EW997x": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-07-21_at_08.27.28.png",
             "heading": "",
             "description": ""
           }
@@ -526,22 +534,23 @@
         "image_8KPLiV",
         "image_ppCn3W",
         "image_x9EcAR",
-        "image_ikKcCK",
+        "image_nVWRi7",
+        "image_herwKP",
         "image_EW997x"
       ],
       "name": "Media gallery",
       "settings": {
         "heading": "Gallery",
-        "layout": "slider",
+        "layout": "grid",
         "enable_lightbox": true,
         "description_position": "bottom",
         "image_aspect_ratio": "1/1",
         "image_max_height": 80,
         "image_fit": "contain",
-        "columns_desktop": 5,
+        "columns_desktop": 10,
         "gap": 0,
         "autoplay": true,
-        "autoplay_speed": 10,
+        "autoplay_speed": 5,
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl"
       }
