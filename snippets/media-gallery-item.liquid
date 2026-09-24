@@ -26,7 +26,8 @@
       <button
         type="button"
         class="media-gallery__zoom-trigger"
-        on:click="#{{ lightbox_id }}/openAt/{{ slide_index }}"
+        data-media-gallery-open="{{ lightbox_id }}"
+        data-media-gallery-index="{{ slide_index }}"
         aria-label="{{ 'accessibility.view_larger_image' | t }}"
       >
     {% endif %}

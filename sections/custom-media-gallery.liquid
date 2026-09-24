@@ -156,123 +156,150 @@
       {% endif %}
     {% endfor %}
 
-    <script type="module">
-      import { DialogComponent } from '@theme/dialog';
+    <script>
+      (function () {
+        var dialog = document.getElementById('{{ lightbox_id }}');
+        if (!dialog) return;
 
-      class MediaGalleryLightbox extends DialogComponent {
-        openAt = (index) => {
-          const target = Number(index) || 0;
-          const swiperEl = this.refs.mainSwiper;
+        function goToSlide(index) {
+          var swiperEl = dialog.querySelector('.media-gallery-lightbox__main-swiper');
+          var target = Number(index) || 0;
+          if (!swiperEl) return;
 
-          if (swiperEl?.swiper) {
+          if (swiperEl.swiper) {
             swiperEl.swiper.slideTo(target, 0);
-          } else {
-            swiperEl?.addEventListener('swiperinit', () => swiperEl.swiper?.slideTo(target, 0), { once: true });
+            return;
           }
 
-          this.showDialog();
-        };
-      }
+          swiperEl.addEventListener(
+            'swiperinit',
+            function () {
+              if (swiperEl.swiper) swiperEl.swiper.slideTo(target, 0);
+            },
+            { once: true }
+          );
+        }
 
-      if (!customElements.get('media-gallery-lightbox')) {
-        customElements.define('media-gallery-lightbox', MediaGalleryLightbox);
-      }
+        function openLightbox(index) {
+          goToSlide(index);
+          if (typeof dialog.showModal === 'function') dialog.showModal();
+        }
+
+        function closeLightbox() {
+          if (dialog.open) dialog.close();
+        }
+
+        document.addEventListener('click', function (event) {
+          var trigger = event.target.closest('[data-media-gallery-open="{{ lightbox_id }}"]');
+          if (trigger) {
+            event.preventDefault();
+            openLightbox(trigger.getAttribute('data-media-gallery-index'));
+            return;
+          }
+
+          if (event.target.closest('[data-media-gallery-close="{{ lightbox_id }}"]')) {
+            closeLightbox();
+            return;
+          }
+
+          if (event.target === dialog) closeLightbox();
+        });
+
+        dialog.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape') closeLightbox();
+        });
+      })();
     </script>
 
-    <media-gallery-lightbox id="{{ lightbox_id }}" class="media-gallery-lightbox">
-      <dialog
-        ref="dialog"
-        on:click="/closeDialogOnClickOutside"
-        on:keydown="/closeDialogOnEscapePress"
-        class="media-gallery-lightbox__dialog dialog-modal"
-        scroll-lock
-        aria-label="{{ 'accessibility.view_larger_image' | t }}"
+    <dialog
+      id="{{ lightbox_id }}"
+      class="media-gallery-lightbox__dialog dialog-modal"
+      scroll-lock
+      aria-label="{{ 'accessibility.view_larger_image' | t }}"
+    >
+      <button
+        type="button"
+        class="media-gallery-lightbox__close"
+        data-media-gallery-close="{{ lightbox_id }}"
+        aria-label="{{ 'accessibility.close_dialog' | t }}"
       >
-        <button
-          type="button"
-          class="media-gallery-lightbox__close"
-          on:click="/closeDialog"
-          aria-label="{{ 'accessibility.close_dialog' | t }}"
-        >
-          {% render 'icons', icon: 'close' %}
-        </button>
+        {% render 'icons', icon: 'close' %}
+      </button>
 
-        <div class="media-gallery-lightbox__body media-gallery-lightbox__body--{{ section.settings.lightbox_thumbnails_position }}">
-          <div class="media-gallery-lightbox__main">
-            <swiper-container
-              ref="mainSwiper"
-              class="media-gallery-lightbox__main-swiper"
-              slides-per-view="1"
-              space-between="0"
-              {% if lightbox_image_count > 1 %}
-                thumbs-swiper=".{{ lightbox_thumbs_class }}"
-                navigation-prev-el="#swiper-button-prev-{{ lightbox_nav_id }}"
-                navigation-next-el="#swiper-button-next-{{ lightbox_nav_id }}"
+      <div class="media-gallery-lightbox__body media-gallery-lightbox__body--{{ section.settings.lightbox_thumbnails_position }}">
+        <div class="media-gallery-lightbox__main">
+          <swiper-container
+            class="media-gallery-lightbox__main-swiper"
+            slides-per-view="1"
+            space-between="0"
+            {% if lightbox_image_count > 1 %}
+              thumbs-swiper=".{{ lightbox_thumbs_class }}"
+              navigation-prev-el="#swiper-button-prev-{{ lightbox_nav_id }}"
+              navigation-next-el="#swiper-button-next-{{ lightbox_nav_id }}"
+            {% endif %}
+            role="region"
+            aria-label="{{ 'accessibility.view_larger_image' | t }}"
+            aria-roledescription="carousel"
+          >
+            {% assign lb_slide_index = 0 %}
+            {% for block in blocks %}
+              {% if block.settings.image != blank %}
+                <swiper-slide class="media-gallery-lightbox__main-slide">
+                  {{
+                    block.settings.image
+                    | image_url: width: 1600
+                    | image_tag:
+                      alt: block.settings.heading,
+                      class: 'media-gallery-lightbox__image',
+                      loading: 'lazy'
+                  }}
+                  {% if block.settings.heading != blank %}
+                    <p class="media-gallery-lightbox__caption">{{ block.settings.heading }}</p>
+                  {% endif %}
+                </swiper-slide>
+                {% assign lb_slide_index = lb_slide_index | plus: 1 %}
               {% endif %}
-              role="region"
-              aria-label="{{ 'accessibility.view_larger_image' | t }}"
-              aria-roledescription="carousel"
+            {% endfor %}
+          </swiper-container>
+
+          {% if lb_slide_index > 1 %}
+            {% render 'swiper-nav',
+              section_id: lightbox_nav_id,
+              direction: 'horizontal',
+              layout: 'edges'
+            %}
+          {% endif %}
+        </div>
+
+        {% if lb_slide_index > 1 %}
+          <div class="media-gallery-lightbox__thumbs">
+            <swiper-container
+              class="media-gallery-lightbox__thumbs-swiper {{ lightbox_thumbs_class }}"
+              slides-per-view="auto"
+              space-between="8"
+              free-mode="true"
+              watch-slides-progress="true"
+              breakpoints='{"1024":{"direction":"{% if section.settings.lightbox_thumbnails_position == 'side' %}vertical{% else %}horizontal{% endif %}"}}'
             >
-              {% assign lb_slide_index = 0 %}
               {% for block in blocks %}
                 {% if block.settings.image != blank %}
-                  <swiper-slide class="media-gallery-lightbox__main-slide">
+                  <swiper-slide class="media-gallery-lightbox__thumb-slide">
                     {{
                       block.settings.image
-                      | image_url: width: 1600
+                      | image_url: width: 200
                       | image_tag:
                         alt: block.settings.heading,
-                        class: 'media-gallery-lightbox__image',
+                        class: 'media-gallery-lightbox__thumb-image',
                         loading: 'lazy'
                     }}
-                    {% if block.settings.heading != blank %}
-                      <p class="media-gallery-lightbox__caption">{{ block.settings.heading }}</p>
-                    {% endif %}
                   </swiper-slide>
-                  {% assign lb_slide_index = lb_slide_index | plus: 1 %}
                 {% endif %}
               {% endfor %}
             </swiper-container>
-
-            {% if lb_slide_index > 1 %}
-              {% render 'swiper-nav',
-                section_id: lightbox_nav_id,
-                direction: 'horizontal',
-                layout: 'edges'
-              %}
-            {% endif %}
           </div>
-
-          {% if lb_slide_index > 1 %}
-            <div class="media-gallery-lightbox__thumbs">
-              <swiper-container
-                class="media-gallery-lightbox__thumbs-swiper {{ lightbox_thumbs_class }}"
-                slides-per-view="auto"
-                space-between="8"
-                free-mode="true"
-                watch-slides-progress="true"
-                breakpoints='{"1024":{"direction":"{% if section.settings.lightbox_thumbnails_position == 'side' %}vertical{% else %}horizontal{% endif %}"}}'
-              >
-                {% for block in blocks %}
-                  {% if block.settings.image != blank %}
-                    <swiper-slide class="media-gallery-lightbox__thumb-slide">
-                      {{
-                        block.settings.image
-                        | image_url: width: 200
-                        | image_tag:
-                          alt: block.settings.heading,
-                          class: 'media-gallery-lightbox__thumb-image',
-                          loading: 'lazy'
-                      }}
-                    </swiper-slide>
-                  {% endif %}
-                {% endfor %}
-              </swiper-container>
-            </div>
-          {% endif %}
-        </div>
-      </dialog>
-    </media-gallery-lightbox>
+        {% endif %}
+      </div>
+    </dialog>
   {% endif %}
 </div>
 
