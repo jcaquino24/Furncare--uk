@@ -12,8 +12,13 @@
   assign autoplay_speed = section.settings.autoplay_speed
   assign lightbox_id = 'MediaGalleryLightbox-' | append: section.id
 
+  assign use_marquee = false
+  if layout == 'slider' and autoplay
+    assign use_marquee = true
+  endif
+
   assign show_nav = false
-  if layout == 'slider' and blocks.size > 1
+  if layout == 'slider' and blocks.size > 1 and use_marquee == false
     assign show_nav = true
   endif
 
@@ -21,6 +26,8 @@
   if image_max_height > 0
     assign image_max_height_css = image_max_height | append: 'px'
   endif
+
+  assign marquee_duration = autoplay_speed | times: blocks.size
 %}
 
 <div
@@ -31,6 +38,7 @@
     --media-gallery-columns: {{ columns_desktop }};
     --media-gallery-image-fit: {{ image_fit }};
     --media-gallery-image-max-height: {{ image_max_height_css }};
+    --media-gallery-marquee-duration: {{ marquee_duration }}s;
   "
 >
   <div class="container">
@@ -47,7 +55,37 @@
     {% endif %}
 
     {% if blocks.size > 0 %}
-      {% if layout == 'slider' %}
+      {% if use_marquee %}
+        <div class="media-gallery__marquee">
+          {% for copy in (1..2) %}
+            <div class="media-gallery__marquee-track" {% if copy == 2 %}aria-hidden="true"{% endif %}>
+              {% assign slide_index = 0 %}
+              {% assign item_enable_lightbox = enable_lightbox %}
+              {% if copy == 2 %}
+                {% assign item_enable_lightbox = false %}
+              {% endif %}
+              {% for block in blocks %}
+                <div class="media-gallery__marquee-item">
+                  {% render 'media-gallery-item',
+                    image: block.settings.image,
+                    image_mobile: block.settings.image_mobile,
+                    heading: block.settings.heading,
+                    description: block.settings.description,
+                    description_position: description_position,
+                    enable_lightbox: item_enable_lightbox,
+                    lightbox_id: lightbox_id,
+                    slide_index: slide_index,
+                    aspect_ratio: aspect_ratio
+                  %}
+                </div>
+                {% if block.settings.image != blank %}
+                  {% assign slide_index = slide_index | plus: 1 %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
+      {% elsif layout == 'slider' %}
         <div class="media-gallery__slider-wrapper">
           <swiper-container
             class="media-gallery__swiper"
@@ -56,11 +94,6 @@
             breakpoints='{"750":{"slidesPerView":2,"spaceBetween":{{ gap }}},"1024":{"slidesPerView":{{ columns_desktop }},"spaceBetween":{{ gap }}}}'
             navigation-prev-el="#swiper-button-prev-{{ section.id }}"
             navigation-next-el="#swiper-button-next-{{ section.id }}"
-            {% if autoplay %}
-              autoplay="true"
-              autoplay-delay="{{ autoplay_speed | times: 1000 }}"
-              loop="true"
-            {% endif %}
             role="region"
             aria-label="{{ section.settings.heading | default: 'Media gallery' }} carousel"
             aria-roledescription="carousel"
@@ -244,6 +277,50 @@
 
   .media-gallery__slide {
     height: auto;
+  }
+
+  .media-gallery__marquee {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--media-gallery-gap, 16px);
+  }
+
+  .media-gallery__marquee-track {
+    flex-shrink: 0;
+    display: flex;
+    gap: var(--media-gallery-gap, 16px);
+    min-width: 100%;
+    animation: media-gallery-scroll var(--media-gallery-marquee-duration, 30s) linear infinite;
+  }
+
+  .media-gallery__marquee:hover .media-gallery__marquee-track {
+    animation-play-state: paused;
+  }
+
+  .media-gallery__marquee-item {
+    flex: 0 0 auto;
+    width: calc(
+      (100% - (var(--media-gallery-columns, 3) - 1) * var(--media-gallery-gap, 16px)) /
+        var(--media-gallery-columns, 3)
+    );
+  }
+
+  @media screen and (max-width: 749px) {
+    .media-gallery__marquee-item {
+      width: 80%;
+    }
+  }
+
+  @keyframes media-gallery-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-100% - var(--media-gallery-gap, 16px)));
+    }
   }
 
   .media-gallery__item {
@@ -549,7 +626,7 @@
       "label": "Columns (desktop)",
       "info": "Used for both grid and slider layouts.",
       "min": 2,
-      "max": 5,
+      "max": 10,
       "step": 1,
       "default": 3
     },
@@ -571,13 +648,14 @@
       "type": "checkbox",
       "id": "autoplay",
       "label": "Autoplay",
-      "info": "Only applies when layout is set to Slider.",
+      "info": "Only applies when layout is set to Slider. Blocks scroll continuously in an infinite loop instead of stepping between slides.",
       "default": false
     },
     {
       "type": "range",
       "id": "autoplay_speed",
       "label": "Autoplay speed",
+      "info": "Seconds it takes each block to scroll past. Lower is faster.",
       "min": 1,
       "max": 10,
       "step": 1,
