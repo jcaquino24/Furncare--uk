@@ -538,7 +538,7 @@
         "image_fit": "contain",
         "columns_desktop": 8,
         "gap": 0,
-        "autoplay": false,
+        "autoplay": true,
         "autoplay_speed": 5,
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl"
