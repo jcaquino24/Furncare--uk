@@ -541,15 +541,15 @@
       "name": "Media gallery",
       "settings": {
         "heading": "Gallery",
-        "layout": "grid",
+        "layout": "slider",
         "enable_lightbox": true,
         "description_position": "bottom",
         "image_aspect_ratio": "1/1",
         "image_max_height": 80,
         "image_fit": "contain",
-        "columns_desktop": 10,
+        "columns_desktop": 5,
         "gap": 0,
-        "autoplay": true,
+        "autoplay": false,
         "autoplay_speed": 5,
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl"
