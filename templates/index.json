@@ -478,6 +478,7 @@
         "image_fqtEca": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/HomeSmiths-revised-logo_1.webp",
             "heading": "",
             "description": ""
           }
@@ -485,6 +486,7 @@
         "image_8KPLiV": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Blocc_interiors_Copy_2a0f80bb57a2c808f23a45641600bac9.png",
             "heading": "",
             "description": ""
           }
@@ -492,6 +494,7 @@
         "image_ppCn3W": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/jen-bernard-logo-charcoal.svg",
             "heading": "",
             "description": ""
           }
@@ -499,20 +502,7 @@
         "image_x9EcAR": {
           "type": "image",
           "settings": {
-            "heading": "",
-            "description": ""
-          }
-        },
-        "image_nVWRi7": {
-          "type": "image",
-          "settings": {
-            "heading": "",
-            "description": ""
-          }
-        },
-        "image_herwKP": {
-          "type": "image",
-          "settings": {
+            "image": "shopify://shop_images/Untitled_-_June_02_2026_at_09.50.40.png",
             "heading": "",
             "description": ""
           }
@@ -534,8 +524,6 @@
         "image_8KPLiV",
         "image_ppCn3W",
         "image_x9EcAR",
-        "image_nVWRi7",
-        "image_herwKP",
         "image_EW997x"
       ],
       "name": "Media gallery",
@@ -543,11 +531,12 @@
         "heading": "Gallery",
         "layout": "slider",
         "enable_lightbox": true,
+        "lightbox_thumbnails_position": "side",
         "description_position": "bottom",
         "image_aspect_ratio": "1/1",
         "image_max_height": 80,
         "image_fit": "contain",
-        "columns_desktop": 5,
+        "columns_desktop": 8,
         "gap": 0,
         "autoplay": false,
         "autoplay_speed": 5,
