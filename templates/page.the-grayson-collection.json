@@ -282,16 +282,16 @@
             "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"d13cb61a-817e-42e1-baa9-08d63b586063\" data-portal-id=\"145723791\"></div>",
             "min_form_height": 200,
             "heading_size": 32,
-            "heading_color": "#32412F",
-            "header_background_color": "#F7F7F5",
+            "heading_color": "#32412f",
+            "header_background_color": "#f7f7f5",
             "header_hover_color": "#839488",
             "header_padding": 40,
             "icon_size": 28,
-            "icon_color": "#32412F",
+            "icon_color": "#32412f",
             "background_color": "#f9f7f0",
             "content_padding": 50,
             "border_width": 5,
-            "border_color": "#F9F7F0",
+            "border_color": "#f9f7f0",
             "border_radius": 0
           },
           "blocks": {}
@@ -429,7 +429,7 @@
           "settings": {
             "spacer_height": 70,
             "spacer_height_mobile": 30,
-            "spacer_color": "#F9F7F0"
+            "spacer_color": "#f9f7f0"
           },
           "blocks": {}
         }
@@ -455,7 +455,7 @@
           "settings": {
             "title": "Elevating Dining in Care Interiors",
             "title_size": "xl",
-            "text": "<h4>Exclusive to Furncare </h4>\n\nModern, streamlined handles crafted with smooth, softened edges for a seamless touch, they offer both comfort and sophistication, with a generous 203mm length ensuring effortless usability.\n\n\n<h4>A refined design</h4>\n\nSoftly sculpted curved legs introduce a refined sense of sophistication, serving as a distinctive design feature while maintaining exceptional strength and stability.\n\n<h4>Contemporary finishes</h4>\n\nOffered in several handpicked finishes, allowing for greater design flexibility and creating a tailored feel while ensuring the piece sits beautifully alongside both classic and contemporary furniture.",
+            "text": "<h4>Exclusive to Furncare </h4>\n\nUnique to Furncare, the Grayson range has been developed with a distinctive design language, defined by elegant detailing and a distinctive contemporary character.\n\n\n<h4>A refined design</h4>\n\nSoftly sculpted curved legs introduce a refined sense of sophistication, serving as a distinctive design feature while maintaining exceptional strength and stability, and reducing damage points. \n\n<h4>Contemporary finishes</h4>\n\nOffered in several handpicked finishes, allowing for greater design flexibility and creating a tailored feel while ensuring the piece sits beautifully alongside both classic and contemporary furniture.",
             "button_style": "underline",
             "button_text": "",
             "button_action": "link",
@@ -485,7 +485,7 @@
           "settings": {
             "spacer_height": 70,
             "spacer_height_mobile": 30,
-            "spacer_color": "#F9F7F0"
+            "spacer_color": "#f9f7f0"
           },
           "blocks": {}
         }
