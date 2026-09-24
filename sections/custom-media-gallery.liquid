@@ -146,32 +146,32 @@
   </div>
 
   {% if enable_lightbox %}
+    {% assign lightbox_nav_id = section.id | append: '-lightbox' %}
+    {% assign lightbox_thumbs_class = 'media-gallery-lightbox__thumbs-swiper-' | append: section.id %}
+
+    {% assign lightbox_image_count = 0 %}
+    {% for block in blocks %}
+      {% if block.settings.image != blank %}
+        {% assign lightbox_image_count = lightbox_image_count | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+
     <script type="module">
       import { DialogComponent } from '@theme/dialog';
 
       class MediaGalleryLightbox extends DialogComponent {
         openAt = (index) => {
-          this.#show(index);
+          const target = Number(index) || 0;
+          const swiperEl = this.refs.mainSwiper;
+
+          if (swiperEl?.swiper) {
+            swiperEl.swiper.slideTo(target, 0);
+          } else {
+            swiperEl?.addEventListener('swiperinit', () => swiperEl.swiper?.slideTo(target, 0), { once: true });
+          }
+
           this.showDialog();
         };
-
-        next = () => this.#show(this.#activeIndex + 1);
-        prev = () => this.#show(this.#activeIndex - 1);
-
-        get #slides() {
-          return Array.from(this.querySelectorAll('[data-lightbox-slide]'));
-        }
-
-        get #activeIndex() {
-          return this.#slides.findIndex((slide) => slide.classList.contains('is-active'));
-        }
-
-        #show(index) {
-          const slides = this.#slides;
-          if (!slides.length) return;
-          const nextIndex = ((index % slides.length) + slides.length) % slides.length;
-          slides.forEach((slide, i) => slide.classList.toggle('is-active', i === nextIndex));
-        }
       }
 
       if (!customElements.get('media-gallery-lightbox')) {
@@ -197,50 +197,80 @@
           {% render 'icons', icon: 'close' %}
         </button>
 
-        <div class="media-gallery-lightbox__stage">
-          {% assign lb_slide_index = 0 %}
-          {% for block in blocks %}
-            {% if block.settings.image != blank %}
-              <div
-                class="media-gallery-lightbox__slide{% if lb_slide_index == 0 %} is-active{% endif %}"
-                data-lightbox-slide
-                data-index="{{ lb_slide_index }}"
-              >
-                {{
-                  block.settings.image
-                  | image_url: width: 1600
-                  | image_tag:
-                    alt: block.settings.heading,
-                    class: 'media-gallery-lightbox__image',
-                    loading: 'lazy'
-                }}
-                {% if block.settings.heading != blank %}
-                  <p class="media-gallery-lightbox__caption">{{ block.settings.heading }}</p>
+        <div class="media-gallery-lightbox__body media-gallery-lightbox__body--{{ section.settings.lightbox_thumbnails_position }}">
+          <div class="media-gallery-lightbox__main">
+            <swiper-container
+              ref="mainSwiper"
+              class="media-gallery-lightbox__main-swiper"
+              slides-per-view="1"
+              space-between="0"
+              {% if lightbox_image_count > 1 %}
+                thumbs-swiper=".{{ lightbox_thumbs_class }}"
+                navigation-prev-el="#swiper-button-prev-{{ lightbox_nav_id }}"
+                navigation-next-el="#swiper-button-next-{{ lightbox_nav_id }}"
+              {% endif %}
+              role="region"
+              aria-label="{{ 'accessibility.view_larger_image' | t }}"
+              aria-roledescription="carousel"
+            >
+              {% assign lb_slide_index = 0 %}
+              {% for block in blocks %}
+                {% if block.settings.image != blank %}
+                  <swiper-slide class="media-gallery-lightbox__main-slide">
+                    {{
+                      block.settings.image
+                      | image_url: width: 1600
+                      | image_tag:
+                        alt: block.settings.heading,
+                        class: 'media-gallery-lightbox__image',
+                        loading: 'lazy'
+                    }}
+                    {% if block.settings.heading != blank %}
+                      <p class="media-gallery-lightbox__caption">{{ block.settings.heading }}</p>
+                    {% endif %}
+                  </swiper-slide>
+                  {% assign lb_slide_index = lb_slide_index | plus: 1 %}
                 {% endif %}
-              </div>
-              {% assign lb_slide_index = lb_slide_index | plus: 1 %}
-            {% endif %}
-          {% endfor %}
-        </div>
+              {% endfor %}
+            </swiper-container>
 
-        {% if lb_slide_index > 1 %}
-          <button
-            type="button"
-            class="media-gallery-lightbox__nav media-gallery-lightbox__nav--prev"
-            on:click="/prev"
-            aria-label="{{ 'carousel.previous' | t }}"
-          >
-            {% render 'icons', icon: 'arrow-left' %}
-          </button>
-          <button
-            type="button"
-            class="media-gallery-lightbox__nav media-gallery-lightbox__nav--next"
-            on:click="/next"
-            aria-label="{{ 'carousel.next' | t }}"
-          >
-            {% render 'icons', icon: 'arrow-right' %}
-          </button>
-        {% endif %}
+            {% if lb_slide_index > 1 %}
+              {% render 'swiper-nav',
+                section_id: lightbox_nav_id,
+                direction: 'horizontal',
+                layout: 'edges'
+              %}
+            {% endif %}
+          </div>
+
+          {% if lb_slide_index > 1 %}
+            <div class="media-gallery-lightbox__thumbs">
+              <swiper-container
+                class="media-gallery-lightbox__thumbs-swiper {{ lightbox_thumbs_class }}"
+                slides-per-view="auto"
+                space-between="8"
+                free-mode="true"
+                watch-slides-progress="true"
+                breakpoints='{"1024":{"direction":"{% if section.settings.lightbox_thumbnails_position == 'side' %}vertical{% else %}horizontal{% endif %}"}}'
+              >
+                {% for block in blocks %}
+                  {% if block.settings.image != blank %}
+                    <swiper-slide class="media-gallery-lightbox__thumb-slide">
+                      {{
+                        block.settings.image
+                        | image_url: width: 200
+                        | image_tag:
+                          alt: block.settings.heading,
+                          class: 'media-gallery-lightbox__thumb-image',
+                          loading: 'lazy'
+                      }}
+                    </swiper-slide>
+                  {% endif %}
+                {% endfor %}
+              </swiper-container>
+            </div>
+          {% endif %}
+        </div>
       </dialog>
     </media-gallery-lightbox>
   {% endif %}
@@ -427,9 +457,10 @@
     position: fixed;
     inset: 0;
     margin: auto;
-    width: min(90vw, 1100px);
+    width: min(94vw, 1200px);
     max-width: none;
-    max-height: 90vh;
+    height: min(90vh, 900px);
+    max-height: none;
     border: none;
     padding: 0;
     background: transparent;
@@ -448,25 +479,51 @@
     background: none;
     cursor: pointer;
     color: #fff;
+    z-index: 1;
   }
 
-  .media-gallery-lightbox__stage {
-    position: relative;
+  .media-gallery-lightbox__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
     width: 100%;
+    height: 100%;
   }
 
-  .media-gallery-lightbox__slide {
-    display: none;
+  .media-gallery-lightbox__body--side {
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .media-gallery-lightbox__body--side {
+      flex-direction: row;
+    }
+  }
+
+  .media-gallery-lightbox__main {
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .media-gallery-lightbox__main-swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .media-gallery-lightbox__main-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     text-align: center;
-  }
-
-  .media-gallery-lightbox__slide.is-active {
-    display: block;
   }
 
   .media-gallery-lightbox__image {
     max-width: 100%;
-    max-height: 80vh;
+    max-height: 100%;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -477,32 +534,44 @@
     margin-top: var(--spacing-sm);
   }
 
-  .media-gallery-lightbox__nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    background: none;
+  .media-gallery-lightbox__thumbs {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .media-gallery-lightbox__body--side .media-gallery-lightbox__thumbs {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .media-gallery-lightbox__body--side .media-gallery-lightbox__thumbs {
+      width: 120px;
+      height: 100%;
+    }
+  }
+
+  .media-gallery-lightbox__thumbs-swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .media-gallery-lightbox__thumb-slide {
+    width: 80px;
+    height: 80px;
+    opacity: 0.5;
     cursor: pointer;
-    color: #fff;
+    transition: opacity 0.2s ease;
   }
 
-  .media-gallery-lightbox__nav--prev {
-    left: -56px;
+  .media-gallery-lightbox__thumb-slide.swiper-slide-thumb-active {
+    opacity: 1;
   }
 
-  .media-gallery-lightbox__nav--next {
-    right: -56px;
-  }
-
-  @media screen and (max-width: 749px) {
-    .media-gallery-lightbox__nav--prev {
-      left: 8px;
-    }
-
-    .media-gallery-lightbox__nav--next {
-      right: 8px;
-    }
+  .media-gallery-lightbox__thumb-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 {% endstylesheet %}
 
@@ -539,6 +608,22 @@
       "id": "enable_lightbox",
       "label": "Enable lightbox on click",
       "default": true
+    },
+    {
+      "type": "select",
+      "id": "lightbox_thumbnails_position",
+      "label": "Lightbox thumbnails position",
+      "default": "bottom",
+      "options": [
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "side",
+          "label": "Side"
+        }
+      ]
     },
     {
       "type": "header",
