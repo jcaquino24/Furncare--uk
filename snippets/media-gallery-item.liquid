@@ -1,0 +1,65 @@
+{% comment %}
+  Renders a single media gallery block: an image, optionally paired with a heading/description.
+  Accepts: image, image_mobile, heading, description, description_position, enable_lightbox,
+  lightbox_id, slide_index, aspect_ratio.
+{% endcomment %}
+
+{% liquid
+  if image_mobile == blank
+    assign image_mobile = image
+  endif
+
+  assign has_description = false
+  if description != blank
+    assign has_description = true
+  endif
+%}
+
+<div
+  class="
+    media-gallery__item media-gallery__item--{{ description_position }}
+    {% unless has_description or heading != blank %} media-gallery__item--image-only{% endunless %}
+  "
+>
+  <div class="media-gallery__media">
+    {% if enable_lightbox and image != blank %}
+      <button
+        type="button"
+        class="media-gallery__zoom-trigger"
+        on:click="#{{ lightbox_id }}/openAt/{{ slide_index }}"
+        aria-label="{{ 'accessibility.view_larger_image' | t }}"
+      >
+    {% endif %}
+
+    {% render 'responsive-image',
+      image: image,
+      aspect_ratio: aspect_ratio,
+      block_class: 'media-gallery__image hide-on-mobile',
+      sizes: '(max-width: 749px) 100vw, 33vw'
+    %}
+    {% render 'responsive-image',
+      image: image_mobile,
+      aspect_ratio: aspect_ratio,
+      block_class: 'media-gallery__image hide-on-desktop',
+      sizes: '100vw'
+    %}
+
+    {% if enable_lightbox and image != blank %}
+        <span class="media-gallery__zoom-icon" aria-hidden="true">
+          {% render 'icons', icon: 'expand' %}
+        </span>
+      </button>
+    {% endif %}
+  </div>
+
+  {% if heading != blank or has_description %}
+    <div class="media-gallery__content">
+      {% if heading != blank %}
+        <h3 class="media-gallery__item-heading title-2xs">{{ heading }}</h3>
+      {% endif %}
+      {% if has_description %}
+        <div class="media-gallery__description body-md">{{ description }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>

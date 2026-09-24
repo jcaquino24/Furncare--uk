@@ -1,0 +1,614 @@
+{% liquid
+  assign blocks = section.blocks
+  assign layout = section.settings.layout
+  assign enable_lightbox = section.settings.enable_lightbox
+  assign description_position = section.settings.description_position
+  assign aspect_ratio = section.settings.image_aspect_ratio
+  assign columns_desktop = section.settings.columns_desktop
+  assign gap = section.settings.gap
+  assign lightbox_id = 'MediaGalleryLightbox-' | append: section.id
+
+  assign show_nav = false
+  if layout == 'slider' and blocks.size > 1
+    assign show_nav = true
+  endif
+%}
+
+<div
+  class="media-gallery colour-scheme--{{ section.settings.colour_scheme }}"
+  style="
+    --media-gallery-section-padding: var({{ section.settings.section_padding }});
+    --media-gallery-gap: {{ gap }}px;
+    --media-gallery-columns: {{ columns_desktop }};
+  "
+>
+  <div class="container">
+    {% if section.settings.heading != blank %}
+      <div class="media-gallery__header">
+        {% render 'title-with-nav',
+          title: section.settings.heading,
+          heading_level: 'h2',
+          heading_style: 'title-xs',
+          show_nav: show_nav,
+          section_id: section.id
+        %}
+      </div>
+    {% endif %}
+
+    {% if blocks.size > 0 %}
+      {% if layout == 'slider' %}
+        <div class="media-gallery__slider-wrapper">
+          <swiper-container
+            init="false"
+            class="media-gallery__swiper"
+            slides-per-view="1.15"
+            space-between="{{ gap }}"
+            breakpoints='{"750":{"slidesPerView":2,"spaceBetween":{{ gap }}},"1024":{"slidesPerView":{{ columns_desktop }},"spaceBetween":{{ gap }}}}'
+            navigation-prev-el="#swiper-button-prev-{{ section.id }}"
+            navigation-next-el="#swiper-button-next-{{ section.id }}"
+            role="region"
+            aria-label="{{ section.settings.heading | default: 'Media gallery' }} carousel"
+            aria-roledescription="carousel"
+          >
+            {% assign slide_index = 0 %}
+            {% for block in blocks %}
+              <swiper-slide class="media-gallery__slide" {{ block.shopify_attributes }}>
+                {% render 'media-gallery-item',
+                  image: block.settings.image,
+                  image_mobile: block.settings.image_mobile,
+                  heading: block.settings.heading,
+                  description: block.settings.description,
+                  description_position: description_position,
+                  enable_lightbox: enable_lightbox,
+                  lightbox_id: lightbox_id,
+                  slide_index: slide_index,
+                  aspect_ratio: aspect_ratio
+                %}
+              </swiper-slide>
+              {% if block.settings.image != blank %}
+                {% assign slide_index = slide_index | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+          </swiper-container>
+        </div>
+      {% else %}
+        <div class="media-gallery__grid">
+          {% assign slide_index = 0 %}
+          {% for block in blocks %}
+            <div class="media-gallery__grid-item" {{ block.shopify_attributes }}>
+              {% render 'media-gallery-item',
+                image: block.settings.image,
+                image_mobile: block.settings.image_mobile,
+                heading: block.settings.heading,
+                description: block.settings.description,
+                description_position: description_position,
+                enable_lightbox: enable_lightbox,
+                lightbox_id: lightbox_id,
+                slide_index: slide_index,
+                aspect_ratio: aspect_ratio
+              %}
+            </div>
+            {% if block.settings.image != blank %}
+              {% assign slide_index = slide_index | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+
+  {% if enable_lightbox %}
+    <script type="module">
+      import { DialogComponent } from '@theme/dialog';
+
+      class MediaGalleryLightbox extends DialogComponent {
+        openAt = (index) => {
+          this.#show(index);
+          this.showDialog();
+        };
+
+        next = () => this.#show(this.#activeIndex + 1);
+        prev = () => this.#show(this.#activeIndex - 1);
+
+        get #slides() {
+          return Array.from(this.querySelectorAll('[data-lightbox-slide]'));
+        }
+
+        get #activeIndex() {
+          return this.#slides.findIndex((slide) => slide.classList.contains('is-active'));
+        }
+
+        #show(index) {
+          const slides = this.#slides;
+          if (!slides.length) return;
+          const nextIndex = ((index % slides.length) + slides.length) % slides.length;
+          slides.forEach((slide, i) => slide.classList.toggle('is-active', i === nextIndex));
+        }
+      }
+
+      if (!customElements.get('media-gallery-lightbox')) {
+        customElements.define('media-gallery-lightbox', MediaGalleryLightbox);
+      }
+    </script>
+
+    <media-gallery-lightbox id="{{ lightbox_id }}" class="media-gallery-lightbox">
+      <dialog
+        ref="dialog"
+        on:click="/closeDialogOnClickOutside"
+        on:keydown="/closeDialogOnEscapePress"
+        class="media-gallery-lightbox__dialog dialog-modal"
+        scroll-lock
+        aria-label="{{ 'accessibility.view_larger_image' | t }}"
+      >
+        <button
+          type="button"
+          class="media-gallery-lightbox__close"
+          on:click="/closeDialog"
+          aria-label="{{ 'accessibility.close_dialog' | t }}"
+        >
+          {% render 'icons', icon: 'close' %}
+        </button>
+
+        <div class="media-gallery-lightbox__stage">
+          {% assign lb_slide_index = 0 %}
+          {% for block in blocks %}
+            {% if block.settings.image != blank %}
+              <div
+                class="media-gallery-lightbox__slide{% if lb_slide_index == 0 %} is-active{% endif %}"
+                data-lightbox-slide
+                data-index="{{ lb_slide_index }}"
+              >
+                {{
+                  block.settings.image
+                  | image_url: width: 1600
+                  | image_tag:
+                    alt: block.settings.heading,
+                    class: 'media-gallery-lightbox__image',
+                    loading: 'lazy'
+                }}
+                {% if block.settings.heading != blank %}
+                  <p class="media-gallery-lightbox__caption">{{ block.settings.heading }}</p>
+                {% endif %}
+              </div>
+              {% assign lb_slide_index = lb_slide_index | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        {% if lb_slide_index > 1 %}
+          <button
+            type="button"
+            class="media-gallery-lightbox__nav media-gallery-lightbox__nav--prev"
+            on:click="/prev"
+            aria-label="{{ 'carousel.previous' | t }}"
+          >
+            {% render 'icons', icon: 'arrow-left' %}
+          </button>
+          <button
+            type="button"
+            class="media-gallery-lightbox__nav media-gallery-lightbox__nav--next"
+            on:click="/next"
+            aria-label="{{ 'carousel.next' | t }}"
+          >
+            {% render 'icons', icon: 'arrow-right' %}
+          </button>
+        {% endif %}
+      </dialog>
+    </media-gallery-lightbox>
+  {% endif %}
+</div>
+
+{% stylesheet %}
+  .media-gallery {
+    padding-block: var(--media-gallery-section-padding, var(--spacing-2xl));
+  }
+
+  .media-gallery__header {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .media-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--media-gallery-gap, 16px);
+  }
+
+  @media screen and (min-width: 750px) {
+    .media-gallery__grid {
+      grid-template-columns: repeat(var(--media-gallery-columns, 3), 1fr);
+    }
+  }
+
+  .media-gallery__slider-wrapper {
+    position: relative;
+  }
+
+  .media-gallery__swiper {
+    width: 100%;
+  }
+
+  .media-gallery__slide {
+    height: auto;
+  }
+
+  .media-gallery__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    height: 100%;
+  }
+
+  .media-gallery__item--top {
+    flex-direction: column-reverse;
+  }
+
+  .media-gallery__item--left,
+  .media-gallery__item--right {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .media-gallery__item--left {
+    flex-direction: row-reverse;
+  }
+
+  .media-gallery__item--left .media-gallery__media,
+  .media-gallery__item--left .media-gallery__content,
+  .media-gallery__item--right .media-gallery__media,
+  .media-gallery__item--right .media-gallery__content {
+    flex: 1 1 50%;
+    min-width: 0;
+  }
+
+  .media-gallery__item--image-only .media-gallery__content {
+    display: none;
+  }
+
+  .media-gallery__media {
+    position: relative;
+  }
+
+  .media-gallery__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .media-gallery__zoom-trigger {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: zoom-in;
+  }
+
+  .media-gallery__zoom-icon {
+    position: absolute;
+    bottom: var(--spacing-2xs);
+    right: var(--spacing-2xs);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-surface-primary);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .media-gallery__zoom-trigger:hover .media-gallery__zoom-icon,
+  .media-gallery__zoom-trigger:focus-visible .media-gallery__zoom-icon {
+    opacity: 1;
+  }
+
+  .media-gallery__item-heading {
+    margin: 0 0 var(--spacing-4xs);
+  }
+
+  .media-gallery__description {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .media-gallery__item--left,
+    .media-gallery__item--right {
+      flex-direction: column;
+    }
+
+    .media-gallery__item--left .media-gallery__media,
+    .media-gallery__item--left .media-gallery__content,
+    .media-gallery__item--right .media-gallery__media,
+    .media-gallery__item--right .media-gallery__content {
+      flex: initial;
+    }
+  }
+
+  .media-gallery-lightbox__dialog {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: min(90vw, 1100px);
+    max-width: none;
+    max-height: 90vh;
+    border: none;
+    padding: 0;
+    background: transparent;
+    overflow: visible;
+  }
+
+  .media-gallery-lightbox__dialog::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+  }
+
+  .media-gallery-lightbox__close {
+    position: absolute;
+    top: -44px;
+    right: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  .media-gallery-lightbox__stage {
+    position: relative;
+    width: 100%;
+  }
+
+  .media-gallery-lightbox__slide {
+    display: none;
+    text-align: center;
+  }
+
+  .media-gallery-lightbox__slide.is-active {
+    display: block;
+  }
+
+  .media-gallery-lightbox__image {
+    max-width: 100%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .media-gallery-lightbox__caption {
+    color: #fff;
+    margin-top: var(--spacing-sm);
+  }
+
+  .media-gallery-lightbox__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  .media-gallery-lightbox__nav--prev {
+    left: -56px;
+  }
+
+  .media-gallery-lightbox__nav--next {
+    right: -56px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .media-gallery-lightbox__nav--prev {
+      left: 8px;
+    }
+
+    .media-gallery-lightbox__nav--next {
+      right: 8px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Media gallery",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Gallery"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "grid",
+      "options": [
+        {
+          "value": "grid",
+          "label": "Grid"
+        },
+        {
+          "value": "slider",
+          "label": "Slider"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_lightbox",
+      "label": "Enable lightbox on click",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Blocks"
+    },
+    {
+      "type": "select",
+      "id": "description_position",
+      "label": "Description position",
+      "info": "Applies to every block that has a heading or description.",
+      "default": "bottom",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "Image aspect ratio",
+      "default": "1/1",
+      "options": [
+        {
+          "value": "1/1",
+          "label": "Square"
+        },
+        {
+          "value": "4/3",
+          "label": "Landscape"
+        },
+        {
+          "value": "3/4",
+          "label": "Portrait"
+        },
+        {
+          "value": "16/9",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns (desktop)",
+      "info": "Used for both grid and slider layouts.",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Section styles"
+    },
+    {
+      "type": "select",
+      "id": "colour_scheme",
+      "label": "Colour scheme",
+      "default": "base-white-01",
+      "options": [
+        {
+          "value": "base-white-01",
+          "label": "Base white 01"
+        },
+        {
+          "value": "base-white-02",
+          "label": "Base white 02"
+        },
+        {
+          "value": "warm-stone",
+          "label": "Warm stone"
+        },
+        {
+          "value": "duck-egg",
+          "label": "Duck Egg"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section padding",
+      "default": "--spacing-2xl",
+      "options": [
+        {
+          "value": "--spacing-md",
+          "label": "Narrow"
+        },
+        {
+          "value": "--spacing-2xl",
+          "label": "Default"
+        },
+        {
+          "value": "--spacing-4xl",
+          "label": "Wide"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Mobile image (optional)"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading (optional)"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description (optional)",
+          "info": "Leave blank to display the image only."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Media gallery",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
