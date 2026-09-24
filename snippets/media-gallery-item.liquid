@@ -35,12 +35,14 @@
       image: image,
       aspect_ratio: aspect_ratio,
       block_class: 'media-gallery__image hide-on-mobile',
+      image_class: 'media-gallery__image-el',
       sizes: '(max-width: 749px) 100vw, 33vw'
     %}
     {% render 'responsive-image',
       image: image_mobile,
       aspect_ratio: aspect_ratio,
       block_class: 'media-gallery__image hide-on-desktop',
+      image_class: 'media-gallery__image-el',
       sizes: '100vw'
     %}
 
