@@ -156,61 +156,6 @@
       {% endif %}
     {% endfor %}
 
-    <script>
-      (function () {
-        var dialog = document.getElementById('{{ lightbox_id }}');
-        if (!dialog) return;
-
-        function goToSlide(index) {
-          var swiperEl = dialog.querySelector('.media-gallery-lightbox__main-swiper');
-          var target = Number(index) || 0;
-          if (!swiperEl) return;
-
-          if (swiperEl.swiper) {
-            swiperEl.swiper.slideTo(target, 0);
-            return;
-          }
-
-          swiperEl.addEventListener(
-            'swiperinit',
-            function () {
-              if (swiperEl.swiper) swiperEl.swiper.slideTo(target, 0);
-            },
-            { once: true }
-          );
-        }
-
-        function openLightbox(index) {
-          goToSlide(index);
-          if (typeof dialog.showModal === 'function') dialog.showModal();
-        }
-
-        function closeLightbox() {
-          if (dialog.open) dialog.close();
-        }
-
-        document.addEventListener('click', function (event) {
-          var trigger = event.target.closest('[data-media-gallery-open="{{ lightbox_id }}"]');
-          if (trigger) {
-            event.preventDefault();
-            openLightbox(trigger.getAttribute('data-media-gallery-index'));
-            return;
-          }
-
-          if (event.target.closest('[data-media-gallery-close="{{ lightbox_id }}"]')) {
-            closeLightbox();
-            return;
-          }
-
-          if (event.target === dialog) closeLightbox();
-        });
-
-        dialog.addEventListener('keydown', function (event) {
-          if (event.key === 'Escape') closeLightbox();
-        });
-      })();
-    </script>
-
     <dialog
       id="{{ lightbox_id }}"
       class="media-gallery-lightbox__dialog dialog-modal"
@@ -300,6 +245,61 @@
         {% endif %}
       </div>
     </dialog>
+
+    <script>
+      (function () {
+        var dialog = document.getElementById('{{ lightbox_id }}');
+        if (!dialog) return;
+
+        function goToSlide(index) {
+          var swiperEl = dialog.querySelector('.media-gallery-lightbox__main-swiper');
+          var target = Number(index) || 0;
+          if (!swiperEl) return;
+
+          if (swiperEl.swiper) {
+            swiperEl.swiper.slideTo(target, 0);
+            return;
+          }
+
+          swiperEl.addEventListener(
+            'swiperinit',
+            function () {
+              if (swiperEl.swiper) swiperEl.swiper.slideTo(target, 0);
+            },
+            { once: true }
+          );
+        }
+
+        function openLightbox(index) {
+          goToSlide(index);
+          if (typeof dialog.showModal === 'function') dialog.showModal();
+        }
+
+        function closeLightbox() {
+          if (dialog.open) dialog.close();
+        }
+
+        document.addEventListener('click', function (event) {
+          var trigger = event.target.closest('[data-media-gallery-open="{{ lightbox_id }}"]');
+          if (trigger) {
+            event.preventDefault();
+            openLightbox(trigger.getAttribute('data-media-gallery-index'));
+            return;
+          }
+
+          if (event.target.closest('[data-media-gallery-close="{{ lightbox_id }}"]')) {
+            closeLightbox();
+            return;
+          }
+
+          if (event.target === dialog) closeLightbox();
+        });
+
+        dialog.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape') closeLightbox();
+        });
+      })();
+    </script>
   {% endif %}
 </div>
 
