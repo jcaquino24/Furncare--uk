@@ -155,10 +155,34 @@
             "lightbox_caption": ""
           }
         },
+        "image_card_m9eELH": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Willow_Lodge_Vol_3-6.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_77bj6m": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_3-10.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_ANkjmX": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Willow_Lodge_Vol_3-3.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -183,6 +207,30 @@
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_2-8.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_D4WdH8": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Willow_Lodge_Vol_2-26.jpg",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
+        "image_card_V7a4nX": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Willow_Lodge_Vol_3-10_e072051e-9a6e-4aa9-8f93-993bef1a9937.jpg",
             "title": "",
             "subtitle": "",
             "text": "",
@@ -400,9 +448,13 @@
         "image_card_G7eHnW",
         "image_card_aGhK6X",
         "image_card_b9yjtU",
+        "image_card_m9eELH",
         "image_card_77bj6m",
+        "image_card_ANkjmX",
         "image_card_pAFQdg",
         "image_card_kHPBgE",
+        "image_card_D4WdH8",
+        "image_card_V7a4nX",
         "image_card_kbt4JJ",
         "image_card_dVPxg3",
         "image_card_Qbya9f",
@@ -446,7 +498,7 @@
           "type": "stat",
           "settings": {
             "number": "400",
-            "label": "New Product Styles",
+            "label": "Bespoke Product Styles",
             "copy": "A complex and bespoke specification, tailored to Willow Lodge"
           }
         },
