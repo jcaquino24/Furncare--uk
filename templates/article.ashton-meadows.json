@@ -358,7 +358,7 @@
         "columns_desktop": 6,
         "gap": 16,
         "autoplay": false,
-        "autoplay_speed": 3,
+        "autoplay_speed": 1,
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl"
       }
