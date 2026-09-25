@@ -765,6 +765,7 @@
         "block_DCmeKF",
         "block_UcWRfd"
       ],
+      "disabled": true,
       "name": "Featured Blocks",
       "settings": {
         "colour_scheme": "base-white-01",
