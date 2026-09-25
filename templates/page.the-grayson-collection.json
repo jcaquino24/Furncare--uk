@@ -263,7 +263,7 @@
           "settings": {
             "image": "shopify://shop_images/Sable_Walnut.jpg",
             "heading": "",
-            "description": "<p>WALNUT</p>"
+            "description": ""
           }
         },
         "image_bK6ciQ": {
@@ -271,7 +271,7 @@
           "settings": {
             "image": "shopify://shop_images/Lissa_Oak_1.jpg",
             "heading": "",
-            "description": "<p>OAK</p>"
+            "description": ""
           }
         },
         "image_A9X9Fe": {
@@ -279,7 +279,7 @@
           "settings": {
             "image": "shopify://shop_images/Wenge_Timber_1_1.jpg",
             "heading": "",
-            "description": "<p>WENGE</p>"
+            "description": ""
           }
         }
       },
@@ -294,7 +294,7 @@
         "layout": "grid",
         "enable_lightbox": false,
         "lightbox_thumbnails_position": "side",
-        "description_position": "bottom",
+        "description_position": "top",
         "image_aspect_ratio": "4/3",
         "image_max_height": 420,
         "image_fit": "cover",
@@ -404,7 +404,16 @@
         "tagline_639UV7": {
           "type": "tagline",
           "settings": {
-            "content": "From the refined under-chamfered edge to the sculptural pedestal base, every element of Grayson has been considered to create a clean, architectural silhouette. Available in oak, walnut and wenge finishes, the collection can be tailored to complement a wide range of interior schemes.",
+            "content": "From the refined under-chamfered edge to the sculptural pedestal base, every element of Grayson has been considered to create a clean, architectural silhouette.&nbsp;",
+            "tagline_style": "body-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_ptrPBM": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "&nbsp;Available in oak, walnut and wenge finishes, the collection can be tailored to complement a wide range of interior schemes.&nbsp;",
             "tagline_style": "body-lg"
           },
           "blocks": {}
@@ -424,6 +433,7 @@
       "block_order": [
         "heading_VLNaz8",
         "tagline_639UV7",
+        "tagline_ptrPBM",
         "button_jn76GD"
       ],
       "name": "Rich Text",
