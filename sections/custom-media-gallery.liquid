@@ -1,0 +1,916 @@
+{% liquid
+  assign blocks = section.blocks
+  assign layout = section.settings.layout
+  assign enable_lightbox = section.settings.enable_lightbox
+  assign description_position = section.settings.description_position
+  assign aspect_ratio = section.settings.image_aspect_ratio
+  assign columns_desktop = section.settings.columns_desktop
+  assign gap = section.settings.gap
+  assign image_fit = section.settings.image_fit
+  assign image_max_height = section.settings.image_max_height
+  assign autoplay = section.settings.autoplay
+  assign autoplay_speed = section.settings.autoplay_speed
+  assign lightbox_id = 'MediaGalleryLightbox-' | append: section.id
+
+  assign use_marquee = false
+  if layout == 'slider' and autoplay
+    assign use_marquee = true
+  endif
+
+  assign show_nav = false
+  if layout == 'slider' and blocks.size > 1 and use_marquee == false
+    assign show_nav = true
+  endif
+
+  assign image_max_height_css = 'none'
+  if image_max_height > 0
+    assign image_max_height_css = image_max_height | append: 'px'
+  endif
+
+  assign marquee_duration = autoplay_speed | times: blocks.size
+%}
+
+<div
+  class="media-gallery colour-scheme--{{ section.settings.colour_scheme }}"
+  style="
+    --media-gallery-section-padding: var({{ section.settings.section_padding }});
+    --media-gallery-gap: {{ gap }}px;
+    --media-gallery-columns: {{ columns_desktop }};
+    --media-gallery-image-fit: {{ image_fit }};
+    --media-gallery-image-max-height: {{ image_max_height_css }};
+    --media-gallery-marquee-duration: {{ marquee_duration }}s;
+  "
+>
+  <div class="container">
+    {% if section.settings.heading != blank %}
+      <div class="media-gallery__header">
+        {% render 'title-with-nav',
+          title: section.settings.heading,
+          heading_level: 'h2',
+          heading_style: 'eyebrow-sm',
+          show_nav: show_nav,
+          section_id: section.id
+        %}
+      </div>
+    {% endif %}
+
+    {% if blocks.size > 0 %}
+      {% if use_marquee %}
+        <div class="media-gallery__marquee">
+          {% for copy in (1..2) %}
+            <div class="media-gallery__marquee-track" {% if copy == 2 %}aria-hidden="true"{% endif %}>
+              {% assign slide_index = 0 %}
+              {% assign item_enable_lightbox = enable_lightbox %}
+              {% if copy == 2 %}
+                {% assign item_enable_lightbox = false %}
+              {% endif %}
+              {% for block in blocks %}
+                <div class="media-gallery__marquee-item">
+                  {% render 'media-gallery-item',
+                    image: block.settings.image,
+                    image_mobile: block.settings.image_mobile,
+                    heading: block.settings.heading,
+                    description: block.settings.description,
+                    description_position: description_position,
+                    enable_lightbox: item_enable_lightbox,
+                    lightbox_id: lightbox_id,
+                    slide_index: slide_index,
+                    aspect_ratio: aspect_ratio
+                  %}
+                </div>
+                {% if block.settings.image != blank %}
+                  {% assign slide_index = slide_index | plus: 1 %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
+      {% elsif layout == 'slider' %}
+        <div class="media-gallery__slider-wrapper">
+          <swiper-container
+            class="media-gallery__swiper"
+            slides-per-view="1.15"
+            space-between="{{ gap }}"
+            breakpoints='{"750":{"slidesPerView":2,"spaceBetween":{{ gap }}},"1024":{"slidesPerView":{{ columns_desktop }},"spaceBetween":{{ gap }}}}'
+            navigation-prev-el="#swiper-button-prev-{{ section.id }}"
+            navigation-next-el="#swiper-button-next-{{ section.id }}"
+            role="region"
+            aria-label="{{ section.settings.heading | default: 'Media gallery' }} carousel"
+            aria-roledescription="carousel"
+          >
+            {% assign slide_index = 0 %}
+            {% for block in blocks %}
+              <swiper-slide class="media-gallery__slide" {{ block.shopify_attributes }}>
+                {% render 'media-gallery-item',
+                  image: block.settings.image,
+                  image_mobile: block.settings.image_mobile,
+                  heading: block.settings.heading,
+                  description: block.settings.description,
+                  description_position: description_position,
+                  enable_lightbox: enable_lightbox,
+                  lightbox_id: lightbox_id,
+                  slide_index: slide_index,
+                  aspect_ratio: aspect_ratio
+                %}
+              </swiper-slide>
+              {% if block.settings.image != blank %}
+                {% assign slide_index = slide_index | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+          </swiper-container>
+        </div>
+      {% else %}
+        <div class="media-gallery__grid">
+          {% assign slide_index = 0 %}
+          {% for block in blocks %}
+            <div class="media-gallery__grid-item" {{ block.shopify_attributes }}>
+              {% render 'media-gallery-item',
+                image: block.settings.image,
+                image_mobile: block.settings.image_mobile,
+                heading: block.settings.heading,
+                description: block.settings.description,
+                description_position: description_position,
+                enable_lightbox: enable_lightbox,
+                lightbox_id: lightbox_id,
+                slide_index: slide_index,
+                aspect_ratio: aspect_ratio
+              %}
+            </div>
+            {% if block.settings.image != blank %}
+              {% assign slide_index = slide_index | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+
+  {% if enable_lightbox %}
+    {% assign lightbox_nav_id = section.id | append: '-lightbox' %}
+    {% assign lightbox_thumbs_class = 'media-gallery-lightbox__thumbs-swiper-' | append: section.id %}
+
+    <dialog
+      id="{{ lightbox_id }}"
+      class="media-gallery-lightbox__dialog dialog-modal"
+      scroll-lock
+      aria-label="{{ 'accessibility.view_larger_image' | t }}"
+    >
+      <button
+        type="button"
+        class="media-gallery-lightbox__close"
+        data-media-gallery-close="{{ lightbox_id }}"
+        aria-label="{{ 'accessibility.close_dialog' | t }}"
+      >
+        {% render 'icons', icon: 'close' %}
+      </button>
+
+      <div class="media-gallery-lightbox__body media-gallery-lightbox__body--{{ section.settings.lightbox_thumbnails_position }}">
+        {% assign lb_slide_index = 0 %}
+        {% for block in blocks %}
+          {% if block.settings.image != blank %}
+            {% assign lb_slide_index = lb_slide_index | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+
+        {% capture lightbox_main %}
+          <div class="media-gallery-lightbox__main">
+            <swiper-container
+              class="media-gallery-lightbox__main-swiper"
+              slides-per-view="1"
+              space-between="0"
+              {% if lb_slide_index > 1 %}
+                thumbs-swiper=".{{ lightbox_thumbs_class }}"
+                navigation-prev-el="#swiper-button-prev-{{ lightbox_nav_id }}"
+                navigation-next-el="#swiper-button-next-{{ lightbox_nav_id }}"
+              {% endif %}
+              role="region"
+              aria-label="{{ 'accessibility.view_larger_image' | t }}"
+              aria-roledescription="carousel"
+            >
+              {% for block in blocks %}
+                {% if block.settings.image != blank %}
+                  <swiper-slide class="media-gallery-lightbox__main-slide">
+                    {{
+                      block.settings.image
+                      | image_url: width: 1600
+                      | image_tag:
+                        alt: block.settings.heading,
+                        class: 'media-gallery-lightbox__image',
+                        loading: 'lazy'
+                    }}
+                    {% if block.settings.heading != blank %}
+                      <p class="media-gallery-lightbox__caption">{{ block.settings.heading }}</p>
+                    {% endif %}
+                  </swiper-slide>
+                {% endif %}
+              {% endfor %}
+            </swiper-container>
+          </div>
+        {% endcapture %}
+
+        {% capture lightbox_thumbs %}
+          {% if lb_slide_index > 1 %}
+            <div class="media-gallery-lightbox__thumbs">
+              <swiper-container
+                class="media-gallery-lightbox__thumbs-swiper {{ lightbox_thumbs_class }}"
+                slides-per-view="auto"
+                space-between="8"
+                free-mode="true"
+                watch-slides-progress="true"
+                breakpoints='{"1024":{"direction":"{% if section.settings.lightbox_thumbnails_position == 'side' %}vertical{% else %}horizontal{% endif %}"}}'
+              >
+                {% for block in blocks %}
+                  {% if block.settings.image != blank %}
+                    <swiper-slide class="media-gallery-lightbox__thumb-slide">
+                      {{
+                        block.settings.image
+                        | image_url: width: 200
+                        | image_tag:
+                          alt: block.settings.heading,
+                          class: 'media-gallery-lightbox__thumb-image',
+                          loading: 'lazy'
+                      }}
+                    </swiper-slide>
+                  {% endif %}
+                {% endfor %}
+              </swiper-container>
+            </div>
+          {% endif %}
+        {% endcapture %}
+
+        {% if section.settings.lightbox_thumbnails_position == 'side' %}
+          {{ lightbox_thumbs }}{{ lightbox_main }}
+        {% else %}
+          {{ lightbox_main }}{{ lightbox_thumbs }}
+        {% endif %}
+      </div>
+
+      {% if lb_slide_index > 1 %}
+        {% render 'swiper-nav',
+          section_id: lightbox_nav_id,
+          direction: 'horizontal',
+          layout: 'edges'
+        %}
+      {% endif %}
+    </dialog>
+
+    <script>
+      (function () {
+        var dialog = document.getElementById('{{ lightbox_id }}');
+        if (!dialog) return;
+
+        function goToSlide(index) {
+          var swiperEl = dialog.querySelector('.media-gallery-lightbox__main-swiper');
+          var target = Number(index) || 0;
+          if (!swiperEl) return;
+
+          if (swiperEl.swiper) {
+            swiperEl.swiper.slideTo(target, 0);
+            return;
+          }
+
+          swiperEl.addEventListener(
+            'swiperinit',
+            function () {
+              if (swiperEl.swiper) swiperEl.swiper.slideTo(target, 0);
+            },
+            { once: true }
+          );
+        }
+
+        function openLightbox(index) {
+          goToSlide(index);
+          if (typeof dialog.showModal === 'function') dialog.showModal();
+        }
+
+        function closeLightbox() {
+          if (dialog.open) dialog.close();
+        }
+
+        document.addEventListener('click', function (event) {
+          var trigger = event.target.closest('[data-media-gallery-open="{{ lightbox_id }}"]');
+          if (trigger) {
+            event.preventDefault();
+            openLightbox(trigger.getAttribute('data-media-gallery-index'));
+            return;
+          }
+
+          if (event.target.closest('[data-media-gallery-close="{{ lightbox_id }}"]')) {
+            closeLightbox();
+            return;
+          }
+
+          if (event.target === dialog) closeLightbox();
+        });
+
+        dialog.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape') closeLightbox();
+        });
+      })();
+    </script>
+  {% endif %}
+</div>
+
+{% stylesheet %}
+  .media-gallery {
+    padding-block: var(--media-gallery-section-padding, var(--spacing-2xl));
+    overflow: hidden;
+  }
+
+  .media-gallery__header {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .media-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--media-gallery-gap, 16px);
+  }
+
+  @media screen and (min-width: 750px) {
+    .media-gallery__grid {
+      grid-template-columns: repeat(var(--media-gallery-columns, 3), 1fr);
+    }
+  }
+
+  .media-gallery__slider-wrapper {
+    position: relative;
+  }
+
+  .media-gallery__swiper {
+    width: 100%;
+  }
+
+  .media-gallery__slide {
+    height: auto;
+  }
+
+  .media-gallery__marquee {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--media-gallery-gap, 16px);
+  }
+
+  .media-gallery__marquee-track {
+    flex-shrink: 0;
+    display: flex;
+    gap: var(--media-gallery-gap, 16px);
+    min-width: 100%;
+    animation: media-gallery-scroll var(--media-gallery-marquee-duration, 30s) linear infinite;
+  }
+
+  .media-gallery__marquee:hover .media-gallery__marquee-track {
+    animation-play-state: paused;
+  }
+
+  .media-gallery__marquee-item {
+    flex: 0 0 auto;
+    width: calc(
+      (100% - (var(--media-gallery-columns, 3) - 1) * var(--media-gallery-gap, 16px)) /
+        var(--media-gallery-columns, 3)
+    );
+  }
+
+  @media screen and (max-width: 749px) {
+    .media-gallery__marquee-item {
+      width: 80%;
+    }
+  }
+
+  @keyframes media-gallery-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-100% - var(--media-gallery-gap, 16px)));
+    }
+  }
+
+  .media-gallery__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    height: 100%;
+  }
+
+  .media-gallery__item--top {
+    flex-direction: column-reverse;
+  }
+
+  .media-gallery__item--left,
+  .media-gallery__item--right {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .media-gallery__item--left {
+    flex-direction: row-reverse;
+  }
+
+  .media-gallery__item--left .media-gallery__media,
+  .media-gallery__item--left .media-gallery__content,
+  .media-gallery__item--right .media-gallery__media,
+  .media-gallery__item--right .media-gallery__content {
+    flex: 1 1 50%;
+    min-width: 0;
+  }
+
+  .media-gallery__item--image-only .media-gallery__content {
+    display: none;
+  }
+
+  .media-gallery__media {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .media-gallery__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: var(--media-gallery-image-max-height, none);
+  }
+
+  .media-gallery__image .media-gallery__image-el {
+    object-fit: var(--media-gallery-image-fit, cover);
+  }
+
+  .media-gallery__zoom-trigger {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: zoom-in;
+  }
+
+  .media-gallery__zoom-icon {
+    position: absolute;
+    bottom: var(--spacing-2xs);
+    right: var(--spacing-2xs);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-surface-primary);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .media-gallery__zoom-trigger:hover .media-gallery__zoom-icon,
+  .media-gallery__zoom-trigger:focus-visible .media-gallery__zoom-icon {
+    opacity: 1;
+  }
+
+  .media-gallery__item-heading {
+    margin: 0 0 var(--spacing-4xs);
+  }
+
+  .media-gallery__description {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .media-gallery__item--left,
+    .media-gallery__item--right {
+      flex-direction: column;
+    }
+
+    .media-gallery__item--left .media-gallery__media,
+    .media-gallery__item--left .media-gallery__content,
+    .media-gallery__item--right .media-gallery__media,
+    .media-gallery__item--right .media-gallery__content {
+      flex: initial;
+    }
+  }
+
+  .media-gallery-lightbox__dialog {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: 60%;
+    max-width: none;
+    height: 75vh;
+    max-height: none;
+    border: none;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .media-gallery-lightbox__dialog:not([open]) {
+    display: none;
+  }
+
+  .media-gallery-lightbox__dialog::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+  }
+
+  .media-gallery-lightbox__dialog > .swiper-button-prev--horizontal-edges {
+    left: 200px;
+  }
+
+  .media-gallery-lightbox__dialog > .swiper-button-next--horizontal-edges {
+    right: 50px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    .media-gallery-lightbox__dialog > .swiper-button-prev--horizontal-edges {
+      left: var(--spacing-xs);
+    }
+
+    .media-gallery-lightbox__dialog > .swiper-button-next--horizontal-edges {
+      right: var(--spacing-xs);
+    }
+  }
+
+  .media-gallery-lightbox__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #000;
+    z-index: 1;
+  }
+
+  .media-gallery-lightbox__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    width: 100%;
+    height: 100%;
+  }
+
+  .media-gallery-lightbox__body--side {
+    flex-direction: column;
+    padding: 10px;
+    background:#f9f7f0;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .media-gallery-lightbox__body--side {
+      flex-direction: row;
+    }
+  }
+
+  .media-gallery-lightbox__main {
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .media-gallery-lightbox__main-swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .media-gallery-lightbox__main-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+  }
+
+  .media-gallery-lightbox__image {
+    max-width: 80%;
+    max-height: 80%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .media-gallery-lightbox__caption {
+    color: #fff;
+    margin-top: var(--spacing-sm);
+  }
+
+  .media-gallery-lightbox__thumbs {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .media-gallery-lightbox__body--side .media-gallery-lightbox__thumbs {
+      width: 140px;
+      height: 100%;
+      overflow-y: auto;
+    }
+  }
+
+  .media-gallery-lightbox__thumbs-swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .media-gallery-lightbox__thumb-slide {
+    width: 80px;
+    height: 80px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .media-gallery-lightbox__body--side .media-gallery-lightbox__thumb-slide {
+      width: 100%;
+      height: 110px;
+      border: 1px solid #cecece;
+    }
+  }
+
+  .media-gallery-lightbox__thumb-slide.swiper-slide-thumb-active {
+    opacity: 1;
+  }
+
+  .media-gallery-lightbox__thumb-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-button-prev svg:focus, .swiper-button-next svg:focus {
+    outline: none !important;
+}
+
+
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Media gallery",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Gallery"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "grid",
+      "options": [
+        {
+          "value": "grid",
+          "label": "Grid"
+        },
+        {
+          "value": "slider",
+          "label": "Slider"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_lightbox",
+      "label": "Enable lightbox on click",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "lightbox_thumbnails_position",
+      "label": "Lightbox thumbnails position",
+      "default": "side",
+      "options": [
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "side",
+          "label": "Side"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Blocks"
+    },
+    {
+      "type": "select",
+      "id": "description_position",
+      "label": "Description position",
+      "info": "Applies to every block that has a heading or description.",
+      "default": "bottom",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "Image aspect ratio",
+      "default": "1/1",
+      "options": [
+        {
+          "value": "1/1",
+          "label": "Square"
+        },
+        {
+          "value": "4/3",
+          "label": "Landscape"
+        },
+        {
+          "value": "3/4",
+          "label": "Portrait"
+        },
+        {
+          "value": "16/9",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "image_max_height",
+      "label": "Image max height",
+      "info": "Set to 0 for no limit.",
+      "min": 0,
+      "max": 800,
+      "step": 20,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image fit",
+      "default": "cover",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover (crop to fill)"
+        },
+        {
+          "value": "contain",
+          "label": "Contain (show full image)"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns (desktop)",
+      "info": "Used for both grid and slider layouts.",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Slider"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "info": "Only applies when layout is set to Slider. Blocks scroll continuously in an infinite loop instead of stepping between slides.",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay speed",
+      "info": "Seconds it takes each block to scroll past. Lower is faster.",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Section styles"
+    },
+    {
+      "type": "select",
+      "id": "colour_scheme",
+      "label": "Colour scheme",
+      "default": "base-white-01",
+      "options": [
+        {
+          "value": "base-white-01",
+          "label": "Base white 01"
+        },
+        {
+          "value": "base-white-02",
+          "label": "Base white 02"
+        },
+        {
+          "value": "warm-stone",
+          "label": "Warm stone"
+        },
+        {
+          "value": "duck-egg",
+          "label": "Duck Egg"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section padding",
+      "default": "--spacing-2xl",
+      "options": [
+        {
+          "value": "--spacing-md",
+          "label": "Narrow"
+        },
+        {
+          "value": "--spacing-2xl",
+          "label": "Default"
+        },
+        {
+          "value": "--spacing-4xl",
+          "label": "Wide"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Mobile image (optional)"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading (optional)"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description (optional)",
+          "info": "Leave blank to display the image only."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Media gallery",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
