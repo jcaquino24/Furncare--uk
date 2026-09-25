@@ -69,7 +69,7 @@
           "type": "heading",
           "name": "Heading",
           "settings": {
-            "text": "Crafted from solid wood, each table features a softly chamfered edge and a choice of two pedestal bases: a clean cross base for a more timeless look, or a curved sculptural base for a stronger contemporary statement.",
+            "text": "Crafted from solid wood, the tables feature a softly chamfered edge and a choice of two pedestal bases: a clean cross base for a more timeless look, or a curved sculptural base for a stronger contemporary statement.",
             "heading_level": "h2",
             "heading_style": "title-xs"
           },
@@ -119,7 +119,7 @@
         "max_width_desktop": 94,
         "section_padding": "--spacing-6xl",
         "text_alignment": "center",
-        "colour_scheme": "green-01",
+        "colour_scheme": "base-white-01",
         "enable_animation": false,
         "optional_richtext": "",
         "small_container": false,
@@ -234,7 +234,7 @@
             "min_form_height": 200,
             "heading_size": 32,
             "heading_color": "#32412f",
-            "header_background_color": "#f7f7f5",
+            "header_background_color": "#C3C0B0",
             "header_hover_color": "#839488",
             "header_padding": 40,
             "icon_size": 28,
@@ -398,7 +398,7 @@
         "images_tdN9WY": {
           "type": "images",
           "settings": {
-            "image_one": "shopify://shop_images/Grayson_Dining_Table_Lifestyle_3.jpg"
+            "image_one": "shopify://shop_images/grayson_cut_out.jpg"
           }
         },
         "content_QbbHRd": {
