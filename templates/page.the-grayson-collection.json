@@ -24,7 +24,7 @@
         "eyebrow_NfMeef": {
           "type": "eyebrow",
           "settings": {
-            "text": "a contemporary table range, designed   for care interiors",
+            "text": "a contemporary table range, designed <br>  for care interiors",
             "eyebrow_size": "sm",
             "text_color": "#243222"
           }
