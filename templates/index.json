@@ -531,7 +531,7 @@
         "heading": "Gallery",
         "layout": "slider",
         "enable_lightbox": true,
-        "lightbox_thumbnails_position": "bottom",
+        "lightbox_thumbnails_position": "side",
         "description_position": "bottom",
         "image_aspect_ratio": "1/1",
         "image_max_height": 80,
