@@ -352,7 +352,7 @@
         "enable_lightbox": true,
         "lightbox_thumbnails_position": "side",
         "description_position": "bottom",
-        "image_aspect_ratio": "1/1",
+        "image_aspect_ratio": "3/4",
         "image_max_height": 0,
         "image_fit": "cover",
         "columns_desktop": 6,
