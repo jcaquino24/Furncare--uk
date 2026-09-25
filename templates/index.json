@@ -454,7 +454,7 @@
         "image_BFKAhC": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ivolve-og-image.png",
+            "image": "shopify://shop_images/mh-bedroom-2-98_d4248fdd-a993-47c0-9e4f-50371e47630a.jpg",
             "heading": "",
             "description": ""
           }
@@ -462,7 +462,7 @@
         "image_964KWf": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/CAreTech_2.png",
+            "image": "shopify://shop_images/Grayson_Dining_Table_Lifestyle_2.jpg",
             "heading": "",
             "description": ""
           }
@@ -470,7 +470,7 @@
         "image_PbRFCj": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Achieve-Together-Sized.png",
+            "image": "shopify://shop_images/DSC_5982.jpg",
             "heading": "",
             "description": ""
           }
@@ -478,7 +478,7 @@
         "image_fqtEca": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/HomeSmiths-revised-logo_1.webp",
+            "image": "shopify://shop_images/DSC_5960.jpg",
             "heading": "",
             "description": ""
           }
@@ -486,7 +486,7 @@
         "image_8KPLiV": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Blocc_interiors_Copy_2a0f80bb57a2c808f23a45641600bac9.png",
+            "image": "shopify://shop_images/meadow-lounge-118.jpg",
             "heading": "",
             "description": ""
           }
@@ -494,7 +494,7 @@
         "image_ppCn3W": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/jen-bernard-logo-charcoal.svg",
+            "image": "shopify://shop_images/b10-127.jpg",
             "heading": "",
             "description": ""
           }
@@ -502,7 +502,7 @@
         "image_x9EcAR": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Untitled_-_June_02_2026_at_09.50.40.png",
+            "image": "shopify://shop_images/meadow-common-area-112.jpg",
             "heading": "",
             "description": ""
           }
@@ -510,7 +510,47 @@
         "image_EW997x": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-07-21_at_08.27.28.png",
+            "image": "shopify://shop_images/Tilbury_small_roomshot.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_YJPBbr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Willow_Lodge_Vol_2-20_0f00c045-7470-4b64-9dee-ae4a9fe56dee.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_j9paK4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Willow_Lodge_Vol_3-38.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_J8wBig": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/V2_Willow_Lodge_Vol_1-12.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_ENPMre": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Willow_Lodge_Vol_1-22.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_Q6xcJ8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Willow_Lodge_Vol_3-54.jpg",
             "heading": "",
             "description": ""
           }
@@ -524,7 +564,12 @@
         "image_8KPLiV",
         "image_ppCn3W",
         "image_x9EcAR",
-        "image_EW997x"
+        "image_EW997x",
+        "image_YJPBbr",
+        "image_j9paK4",
+        "image_J8wBig",
+        "image_ENPMre",
+        "image_Q6xcJ8"
       ],
       "name": "Media gallery",
       "settings": {
