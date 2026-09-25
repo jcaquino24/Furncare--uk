@@ -355,7 +355,7 @@
         "image_aspect_ratio": "1/1",
         "image_max_height": 0,
         "image_fit": "cover",
-        "columns_desktop": 3,
+        "columns_desktop": 6,
         "gap": 16,
         "autoplay": false,
         "autoplay_speed": 3,
