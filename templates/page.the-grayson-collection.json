@@ -511,6 +511,7 @@
       "blocks": {
         "ai_gen_block_90768fd_kjKcjJ": {
           "type": "ai_gen_block_90768fd",
+          "disabled": true,
           "settings": {
             "spacer_height": 70,
             "spacer_height_mobile": 30,
