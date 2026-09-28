@@ -37,9 +37,11 @@
     </h1>
   {% endif %}
 
+<div class="product-info__sku eyebrow">
 {% if product.metafields.custom.additional_description.value != blank %}
 {{ product.metafields.custom.additional_description.value }}
 {% endif %}
+</div>
 
   {% comment %} Price {% endcomment %}
   {%- assign has_swatch_collections = product.metafields.custom.swatch_collections.value -%}
