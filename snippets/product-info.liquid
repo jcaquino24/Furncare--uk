@@ -37,6 +37,10 @@
     </h1>
   {% endif %}
 
+{% if product.metafields.custom.additional_description.value != blank %}
+{{ product.metafields.custom.additional_description.value }}
+{% endif %}
+
   {% comment %} Price {% endcomment %}
   {%- assign has_swatch_collections = product.metafields.custom.swatch_collections.value -%}
   {% if section.settings.show_price %}
