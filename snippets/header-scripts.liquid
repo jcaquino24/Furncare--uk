@@ -208,10 +208,13 @@
     }
 
     function navigateToTitleSearch(searchTerm) {
-      const query = getTitlePrefixQuery(searchTerm);
+      // The title:*prefix* syntax is only understood by the /search?view=condensed
+      // suggestion endpoint - the real results page must get the plain term or it
+      // returns 0 results, out of sync with what the dropdown just displayed.
+      const trimmedTerm = searchTerm.trim();
 
-      if (query) {
-        window.location.assign('/search?q=' + encodeURIComponent(query));
+      if (trimmedTerm) {
+        window.location.assign('/search?q=' + encodeURIComponent(trimmedTerm));
       }
     }
 
