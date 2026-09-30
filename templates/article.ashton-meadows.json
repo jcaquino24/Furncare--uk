@@ -108,6 +108,142 @@
     "custom_media_gallery_TfKJfB": {
       "type": "custom-media-gallery",
       "blocks": {
+        "image_aeNnD9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_7_4ed94e07-445c-4d96-9c84-8254c33c9f94.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_gHiC3r": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_1_f9e01691-4829-4e77-9bff-a0fb7b5fae0f.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_GfyTGr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_7_23a891a9-4e59-424f-ad64-b038e04ba3f7.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_qVJRDQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_8.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_kYxpRa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_13_9aaf6626-9be2-459e-aa26-f4ed38d930c7.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_HMAxyc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_18_3c8127cf-22e6-4416-a165-0f481b0cb5a6.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_yQkYG9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_20.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_rjVEbd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_29_f3ec75df-2307-40c5-b078-605b2a434e98.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_RJFbkc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_6_b4e238ed-2e38-45c8-8ab1-55d83e6f044c.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_bqj7ri": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_19.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_Vkbzw9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_3.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_AfJRgc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_25.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_6U7LDh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_30_7a340f81-0a70-4e04-81fc-68a3c2d04fb9.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_rhacjt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Two_6_4cd108b4-e1f3-41af-a636-5bcc0c3d1aab.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_6JJNWL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_15.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_hnr9XU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bedrooms_10.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_MRHTCd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bedrooms_1_074d5f2e-9955-423f-8ca5-3feb48814b60.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
         "image_JjhdVa": {
           "type": "image",
           "settings": {
@@ -318,6 +454,23 @@
         }
       },
       "block_order": [
+        "image_aeNnD9",
+        "image_gHiC3r",
+        "image_GfyTGr",
+        "image_qVJRDQ",
+        "image_kYxpRa",
+        "image_HMAxyc",
+        "image_yQkYG9",
+        "image_rjVEbd",
+        "image_RJFbkc",
+        "image_bqj7ri",
+        "image_Vkbzw9",
+        "image_AfJRgc",
+        "image_6U7LDh",
+        "image_rhacjt",
+        "image_6JJNWL",
+        "image_hnr9XU",
+        "image_MRHTCd",
         "image_JjhdVa",
         "image_JCtFk8",
         "image_GtPaed",
@@ -355,7 +508,7 @@
         "image_aspect_ratio": "3/4",
         "image_max_height": 0,
         "image_fit": "cover",
-        "columns_desktop": 6,
+        "columns_desktop": 5,
         "gap": 16,
         "autoplay": false,
         "autoplay_speed": 1,
