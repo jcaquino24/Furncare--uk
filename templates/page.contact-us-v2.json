@@ -65,11 +65,16 @@
       "custom_css": [],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
-        "enable_animation": false
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "17713390705f07af14": {
@@ -78,14 +83,14 @@
         "ai_gen_block_4c80cf9_zzFCEx": {
           "type": "ai_gen_block_4c80cf9",
           "settings": {
-            "map_embed_url": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.7912295078904!2d0.738398076922968!3d52.42828494301554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d83491837501b5%3A0xf8f3734b30880df2!2sFurncare%20Head%20Office%20and%20Showroom!5e1!3m2!1sen!2suk!4v1771339260920!5m2!1sen!2suk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-            "min_height": 450,
+            "map_embed_url": "<iframe width=\"100%\" height=\"650px\" frameborder=\"0\" style=\"border:0\" src=\"https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&amp;q=Furncare%20Head%20Office%20and%20Showroom%2C%20Wyatt%20Way%2C%20Fison%20Way%2C%20Thetford%2C%20UK&amp;maptype=satellite\" allowfullscreen=\"\"></iframe>",
+            "min_height": 350,
             "location_1_enabled": true,
             "location_1_title": "Head Office and Showroom",
             "location_1_address": "<p>Wyatt House, Wyatt Way</p><p>Fison Way Industrial Estate</p><p>Thetford, Norfolk, IP24 1HB</p><p>United Kingdom</p>",
-            "location_2_enabled": true,
+            "location_2_enabled": false,
             "location_2_title": "National Distribution Centre",
-            "location_2_address": "<p>Unit 6, Johnston Quarter</p><p>Harling Road</p><p>Snetterton, Norfolk, NR16 2JU</p><p>United Kingdom<br/><br/></p>",
+            "location_2_address": "",
             "desktop_width_percent": 100,
             "gap": 10,
             "address_gap": 60,
@@ -109,6 +114,80 @@
       ],
       "settings": {}
     },
+    "blocks_69wFte": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_4c80cf9_HJHbwb": {
+          "type": "ai_gen_block_4c80cf9",
+          "settings": {
+            "map_embed_url": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d644.2603195738783!2d0.9480430848020313!3d52.46875605092181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d9cf5d8a9554ab%3A0xda4103a545a486ff!2sFurncare%20Manufacturing%20Hub!5e1!3m2!1sen!2suk!4v1790772540226!5m2!1sen!2suk\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"strict-origin-when-cross-origin\"></iframe>",
+            "min_height": 350,
+            "location_1_enabled": false,
+            "location_1_title": "Head Office and Showroom",
+            "location_1_address": "<p>Wyatt House, Wyatt Way</p><p>Fison Way Industrial Estate</p><p>Thetford, Norfolk, IP24 1HB</p><p>United Kingdom</p>",
+            "location_2_enabled": true,
+            "location_2_title": "The Manufacturing Hub",
+            "location_2_address": "<p>Unit 5, Warton Point&nbsp;</p><p>Snetterton, Norfolk, NR16 2FQ&nbsp;</p><p>United Kingdom<br/><br/><br/><br/></p>",
+            "desktop_width_percent": 100,
+            "gap": 10,
+            "address_gap": 60,
+            "mobile_map_position": "1",
+            "mobile_addresses_position": "2",
+            "border_radius": 20,
+            "card_background": "#f9f7f0",
+            "card_border_color": "#f9f7f0",
+            "card_padding": 40,
+            "title_size": 20,
+            "title_color": "#333333",
+            "title_margin": 5,
+            "text_size": 14,
+            "text_color": "#333333"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_4c80cf9_HJHbwb"
+      ],
+      "settings": {}
+    },
+    "blocks_GLq8rf": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_4c80cf9_yKgyzr": {
+          "type": "ai_gen_block_4c80cf9",
+          "settings": {
+            "map_embed_url": "<iframe width=\"100%\" height=\"650px\" frameborder=\"0\" style=\"border:0\" src=\"https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&amp;q=Furncare%20National%20Distribution%20Centre%2C%20Harling%20Road%2C%20Eccles%2C%20Norwich%2C%20UK&amp;maptype=satellite\" allowfullscreen></iframe>",
+            "min_height": 350,
+            "location_1_enabled": true,
+            "location_1_title": "National Distribution Centre",
+            "location_1_address": "<p>Unit 6, Johnston Quarter</p><p>Harling Road</p><p>Snetterton, Norfolk, NR16 2JU</p><p>United Kingdom</p>",
+            "location_2_enabled": false,
+            "location_2_title": "The Manufacturing Hub",
+            "location_2_address": "<p>Unit 5, Warton Point&nbsp;</p><p>Snetterton, Norfolk, NR16 2FQ&nbsp;</p><p>United Kingdom<br/><br/><br/><br/></p>",
+            "desktop_width_percent": 100,
+            "gap": 10,
+            "address_gap": 60,
+            "mobile_map_position": "1",
+            "mobile_addresses_position": "2",
+            "border_radius": 20,
+            "card_background": "#f9f7f0",
+            "card_border_color": "#f9f7f0",
+            "card_padding": 40,
+            "title_size": 20,
+            "title_color": "#333333",
+            "title_margin": 5,
+            "text_size": 14,
+            "text_color": "#333333"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_4c80cf9_yKgyzr"
+      ],
+      "settings": {}
+    },
     "blocks_j6MjRD": {
       "type": "_blocks",
       "name": "Spacer",
@@ -119,6 +198,8 @@
     "main",
     "richtext_BnMHhk",
     "17713390705f07af14",
+    "blocks_69wFte",
+    "blocks_GLq8rf",
     "blocks_j6MjRD"
   ]
 }
