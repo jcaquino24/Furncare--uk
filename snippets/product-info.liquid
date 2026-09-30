@@ -37,11 +37,11 @@
     </h1>
   {% endif %}
 
-<div class="product-info__sku eyebrow-2xs">
 {% if product.metafields.custom.additional_description.value != blank %}
+<div class="product-info__sku eyebrow-2xs">
 {{ product.metafields.custom.additional_description.value }}
-{% endif %}
 </div>
+{% endif %}
 
   {% comment %} Price {% endcomment %}
   {%- assign has_swatch_collections = product.metafields.custom.swatch_collections.value -%}
@@ -58,6 +58,29 @@
     </div>
   {% endif %}
 
+  {% if product.metafields.custom.delivered_within.value != blank %}
+    <div class="delivered-within">
+    
+    {% if section.settings.lead_time_icon != blank %}
+      <div>
+
+        <img src="{{ section.settings.lead_time_icon | image_url: width: 40 }}" 
+          alt="Delivery Icon" 
+          loading="lazy"
+          width=""
+          height="" 
+        >
+
+      </div>
+    {% endif %}
+
+    <div class="eyebrow-2xs">
+      {{  section.settings.lead_time_text }} {{ product.metafields.custom.delivered_within.value }}
+    </div>
+
+    </div>
+  {% endif %}
+
   {% comment %} Description {% endcomment %}
   {% if product.description != blank %}
     <div class="product-info__description-wrapper">
@@ -70,6 +93,28 @@
     </div>
   {% endif %}
 
+  {% if product.metafields.custom.delivered_within.value != blank %}
+    <div class="delivered-within">
+    
+    {% if section.settings.lead_time_icon != blank %}
+      <div>
+
+        <img src="{{ section.settings.lead_time_icon | image_url: width: 40 }}" 
+          alt="Delivery Icon" 
+          loading="lazy"
+          width=""
+          height="" 
+        >
+
+      </div>
+    {% endif %}
+
+    <div class="eyebrow-2xs">
+      {{  section.settings.lead_time_text }} {{ product.metafields.custom.delivered_within.value }}
+    </div>
+
+    </div>
+  {% endif %}
   
 
   {% comment %} Product Swatch Information - Show if hubspot_form exists and not bespoke {% endcomment %}
@@ -104,28 +149,7 @@
 {% if section.settings.show_call_to_action %}
   {% comment %} Lead time {% endcomment %}
 
-  {% if product.metafields.custom.delivered_within.value != blank %}
-    <div class="delivered-within">
-    
-    {% if section.settings.lead_time_icon != blank %}
-      <div>
-
-        <img src="{{ section.settings.lead_time_icon | image_url: width: 40 }}" 
-          alt="Delivery Icon" 
-          loading="lazy"
-          width=""
-          height="" 
-        >
-
-      </div>
-    {% endif %}
-
-    <div class="eyebrow-2xs">
-      {{  section.settings.lead_time_text }} {{ product.metafields.custom.delivered_within.value }}
-    </div>
-
-    </div>
-  {% endif %}
+  
 
 
 {%- for block in section.blocks -%}
