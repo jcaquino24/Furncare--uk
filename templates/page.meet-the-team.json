@@ -386,19 +386,6 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_bRWV33": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1141052-B_W.jpg",
-            "hover_image": "shopify://shop_images/P1141052.jpg",
-            "title": "Kevin Langley",
-            "subtitle": "Head of Supply Chain",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_wKdEEm": {
           "type": "image_card",
           "settings": {
@@ -411,13 +398,26 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
+        },
+        "image_card_dKU8LC": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Lilly_Godfrey.jpg",
+            "hover_image": "shopify://shop_images/Lilly_Godfrey.png",
+            "title": "Lilly Godfrey",
+            "subtitle": "Logistics Coordinator",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
         "image_card_wT46fW",
         "image_card_jWhD7C",
-        "image_card_bRWV33",
-        "image_card_wKdEEm"
+        "image_card_wKdEEm",
+        "image_card_dKU8LC"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -432,19 +432,6 @@
     "image_text_blocks_ALbkEp": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_Nz7Ufz": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Lilly_Godfrey.jpg",
-            "hover_image": "shopify://shop_images/Lilly_Godfrey.png",
-            "title": "Lilly Godfrey",
-            "subtitle": "Logistics Coordinator",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_kxixx4": {
           "type": "image_card",
           "settings": {
@@ -483,13 +470,26 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
+        },
+        "image_card_MDykGK": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Mark_Flood.jpg",
+            "hover_image": "shopify://shop_images/Mark_Flood.png",
+            "title": "Mark Flood",
+            "subtitle": "Project Manager",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
-        "image_card_Nz7Ufz",
         "image_card_kxixx4",
         "image_card_Y8N4Gy",
-        "image_card_EKj48B"
+        "image_card_EKj48B",
+        "image_card_MDykGK"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -504,19 +504,6 @@
     "image_text_blocks_YWfmBd": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_gt7P3H": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Mark_Flood.jpg",
-            "hover_image": "shopify://shop_images/Mark_Flood.png",
-            "title": "Mark Flood",
-            "subtitle": "Project Manager",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_w7T9ic": {
           "type": "image_card",
           "settings": {
@@ -555,13 +542,26 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
+        },
+        "image_card_XPpGWU": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Paige_McLellan.png",
+            "hover_image": "shopify://shop_images/Paige_McLellan_11787850-ffe9-4105-aff8-f9a41a78755b.jpg",
+            "title": "Paige McLellan",
+            "subtitle": "PRODUCT DEVELOPMENT COORDINATOR",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
-        "image_card_gt7P3H",
         "image_card_w7T9ic",
         "image_card_xrVCtH",
-        "image_card_jeKqnp"
+        "image_card_jeKqnp",
+        "image_card_XPpGWU"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -576,19 +576,6 @@
     "image_text_blocks_Kj4trr": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_r8cgNT": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Paige_McLellan.png",
-            "hover_image": "shopify://shop_images/Paige_McLellan_11787850-ffe9-4105-aff8-f9a41a78755b.jpg",
-            "title": "Paige McLellan",
-            "subtitle": "PRODUCT DEVELOPMENT COORDINATOR",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_VVybKB": {
           "type": "image_card",
           "settings": {
@@ -627,13 +614,26 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
+        },
+        "image_card_YnLEtY": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Sheldon_Southall.jpg",
+            "hover_image": "shopify://shop_images/Sheldon_Southall.png",
+            "title": "Sheldon Southall",
+            "subtitle": "HEAD OF BUSINESS DEVELOPMENT",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
-        "image_card_r8cgNT",
         "image_card_VVybKB",
         "image_card_cgHqBM",
-        "image_card_Ccgrzd"
+        "image_card_Ccgrzd",
+        "image_card_YnLEtY"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -655,19 +655,6 @@
             "subtitle": "",
             "text": "",
             "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_RWnTF4": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Sheldon_Southall.jpg",
-            "hover_image": "shopify://shop_images/Sheldon_Southall.png",
-            "title": "Sheldon Southall",
-            "subtitle": "HEAD OF BUSINESS DEVELOPMENT",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
           }
@@ -697,10 +684,10 @@
       },
       "block_order": [
         "image_card_KGNzJ8",
-        "image_card_RWnTF4",
         "image_card_DjEkVF",
         "image_card_kCTBhT"
       ],
+      "disabled": true,
       "name": "Image text blocks",
       "settings": {
         "title": "",
@@ -710,6 +697,25 @@
         "mobile_layout": "grid",
         "enable_lightbox": false
       }
+    },
+    "blocks_wL3jgw": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_pcyf4D": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 105,
+            "spacer_height_mobile": 55,
+            "spacer_color": "#F9F7F0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_pcyf4D"
+      ],
+      "name": "Spacer",
+      "settings": {}
     }
   },
   "order": [
@@ -723,6 +729,7 @@
     "image_text_blocks_ALbkEp",
     "image_text_blocks_YWfmBd",
     "image_text_blocks_Kj4trr",
-    "image_text_blocks_DF3jXP"
+    "image_text_blocks_DF3jXP",
+    "blocks_wL3jgw"
   ]
 }
