@@ -93,28 +93,6 @@
     </div>
   {% endif %}
 
-  {% if product.metafields.custom.delivered_within.value != blank %}
-    <div class="delivered-within">
-    
-    {% if section.settings.lead_time_icon != blank %}
-      <div>
-
-        <img src="{{ section.settings.lead_time_icon | image_url: width: 40 }}" 
-          alt="Delivery Icon" 
-          loading="lazy"
-          width=""
-          height="" 
-        >
-
-      </div>
-    {% endif %}
-
-    <div class="eyebrow-2xs">
-      {{  section.settings.lead_time_text }} {{ product.metafields.custom.delivered_within.value }}
-    </div>
-
-    </div>
-  {% endif %}
   
 
   {% comment %} Product Swatch Information - Show if hubspot_form exists and not bespoke {% endcomment %}
