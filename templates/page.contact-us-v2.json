@@ -157,7 +157,7 @@
         "ai_gen_block_4c80cf9_yKgyzr": {
           "type": "ai_gen_block_4c80cf9",
           "settings": {
-            "map_embed_url": "<iframe width=\"100%\" height=\"650px\" frameborder=\"0\" style=\"border:0\" src=\"https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&amp;q=Furncare%20National%20Distribution%20Centre%2C%20Harling%20Road%2C%20Eccles%2C%20Norwich%2C%20UK&amp;maptype=satellite\" allowfullscreen></iframe>",
+            "map_embed_url": "<iframe width=\"100%\" height=\"650px\" frameborder=\"0\" style=\"border:0\" src=\"https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&amp;q=Furncare%20National%20Distribution%20Centre%2C%20Harling%20Road%2C%20Eccles%2C%20Norwich%2C%20UK&amp;maptype=satellite\" allowfullscreen=\"\"></iframe>",
             "min_height": 350,
             "location_1_enabled": true,
             "location_1_title": "National Distribution Centre",
@@ -173,11 +173,11 @@
             "border_radius": 20,
             "card_background": "#f9f7f0",
             "card_border_color": "#f9f7f0",
-            "card_padding": 40,
+            "card_padding": 50,
             "title_size": 20,
             "title_color": "#333333",
             "title_margin": 5,
-            "text_size": 14,
+            "text_size": 20,
             "text_color": "#333333"
           },
           "blocks": {}
