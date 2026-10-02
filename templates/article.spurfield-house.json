@@ -50,8 +50,8 @@
         "show_controls": false,
         "mute_video": true,
         "autoplay_video": false,
-        "show_overlay": false,
-        "overlay_background": "",
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(270deg, rgba(36, 50, 34, 0.28) 100%, rgba(249, 208, 163, 1) 100%)",
         "colour_scheme": "dark",
         "content_position": "center-center",
         "content_alignment": "center"
