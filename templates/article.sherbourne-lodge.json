@@ -41,7 +41,13 @@
             "text": "Button",
             "button_url": "",
             "new_tab": false,
-            "button_style": "primary"
+            "button_style": "primary",
+            "button_font_size": 16,
+            "button_font_color": "#ffffff",
+            "button_background": "#1f1f1f",
+            "button_border_width": 1,
+            "button_border_color": "#ffffff",
+            "button_padding": 12
           }
         },
         "card_GeUmxJ": {
@@ -203,14 +209,6 @@
             "lightbox_caption": ""
           }
         },
-        "block_DhNxNH": {
-          "type": "block",
-          "settings": {
-            "image": "shopify://shop_images/Untitled-7_540f5d2b-16f1-4aff-b95f-f09fdc807411.png",
-            "caption": "",
-            "lightbox_caption": ""
-          }
-        },
         "block_NJr8BG": {
           "type": "block",
           "settings": {
@@ -261,7 +259,6 @@
         "block_X4iqhW",
         "block_DjQYdY",
         "block_hddtnP",
-        "block_DhNxNH",
         "block_NJr8BG",
         "block_Cwkcp6",
         "block_C4Hjc7",
@@ -346,6 +343,7 @@
             "text": "Interior Design:\nThe property had been unoccupied for a year before incoming Directors Nihat Özdal and Oguz ‘Oz’ Goker started planning the refurbishment. In December 2023, they visited the Furncare Head Office & Showroom with architectural plans, but still had an open mind as to the interior design of the bedrooms and communal areas. Having seen the wide selection of interior themes and furniture ranges on display and agreed principles with Jade Eaglen, Furncare Projects Design Manager, the plans began to take shape. Jonathan Southall, Furncare Founding Director, surveyed the site, meaning that all the designs could be specified to a high level of detail in advance and uniquely tailored to each space.\n\nOperational Suitability:\nJade developed and presented exclusive, bespoke themes for each interior space. Whilst the Directors were well qualified to comment on the pure design aspects of the Furncare concepts, they relied on the experience of care professional Sophie to assess their operational suitability. Sophie is now the Manager at Sherbourne Lodge.",
             "button_style": "underline",
             "button_text": "",
+            "button_action": "link",
             "button_url": ""
           }
         }
@@ -358,6 +356,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-4xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -374,6 +373,7 @@
             "text": "The whole team then revisited Furncare just two weeks later to fine-tune the design details. In March they were ready to go, and were welcomed back to the Furncare Showrooms by MD Carl Southall and the Special Projects Management Team of Arnie Goodenough and Jade Eaglen to finalise and sign-off the project.\n\nCommunity Living\nThose soon to be living in the newly refurbished home are likely to be drawn from local neighbourhoods as the rooms are completed. Jade therefore made a point of factoring local influences into the 31 bedrooms, dining room, lounge, library, quiet room and reception interiors. She even included framed prints of local landmarks into the designs to make the home relevant, familiar and homely for elderly residents and those living with dementia.\n\nWhilst construction work on the remaining rooms is being completed, the focus is on the ‘Marketing Suite’ at Sherbourne Lodge. This fully furnished representative room set enables prospective residents and their families to appreciate the style and quality of the furniture, fixtures and fittings at the home prior to taking up residence.",
             "button_style": "primary",
             "button_text": "",
+            "button_action": "link",
             "button_url": ""
           }
         },
@@ -392,6 +392,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -477,7 +478,13 @@
             "text": "Button",
             "button_url": "",
             "new_tab": false,
-            "button_style": "primary"
+            "button_style": "primary",
+            "button_font_size": 16,
+            "button_font_color": "#ffffff",
+            "button_background": "#1f1f1f",
+            "button_border_width": 1,
+            "button_border_color": "#ffffff",
+            "button_padding": 12
           }
         },
         "card_e3GTdX": {
