@@ -191,7 +191,7 @@
             "subtitle": "E-Commerce Specialist",
             "text": "",
             "block_colour_scheme": "dark-mode",
-            "show_gradient": true,
+            "show_gradient": false,
             "lightbox_caption": ""
           }
         }
