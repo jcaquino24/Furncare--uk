@@ -549,7 +549,7 @@
             "image": "shopify://shop_images/Paige_McLellan.png",
             "hover_image": "shopify://shop_images/Paige_McLellan_11787850-ffe9-4105-aff8-f9a41a78755b.jpg",
             "title": "Paige McLellan",
-            "subtitle": "PRODUCT DEVELOPMENT COORDINATOR",
+            "subtitle": "PRODUCT DESIGN & DEVELOPMENT LEAD",
             "text": "",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
@@ -706,7 +706,7 @@
           "settings": {
             "spacer_height": 105,
             "spacer_height_mobile": 55,
-            "spacer_color": "#F9F7F0"
+            "spacer_color": "#f9f7f0"
           },
           "blocks": {}
         }
