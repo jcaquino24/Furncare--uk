@@ -214,7 +214,11 @@
       const trimmedTerm = searchTerm.trim();
 
       if (trimmedTerm) {
-        window.location.assign('/search?q=' + encodeURIComponent(trimmedTerm));
+        // Limit matching to key fields so descriptions/tags don't pull in unrelated products.
+        window.location.assign(
+          '/search?type=product&options[prefix]=last&options[fields]=title,product_type,variants.title,variants.sku,vendor&q=' +
+            encodeURIComponent(trimmedTerm)
+        );
       }
     }
 
