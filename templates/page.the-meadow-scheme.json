@@ -218,10 +218,22 @@
           "type": "hotspot",
           "settings": {
             "tab": "1",
-            "product": "livonia-small-traditional-circular-pedestal-table",
+            "product": "product-title-12",
             "description": "",
             "desktop_x": 13,
             "desktop_y": 67,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
+        "hotspot_LwHzLP": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "earlham-overchair-table",
+            "description": "",
+            "desktop_x": 35,
+            "desktop_y": 53,
             "mobile_x": 50,
             "mobile_y": 50
           }
@@ -288,6 +300,7 @@
         "hotspot_Qz7e4J",
         "hotspot_KAWcFn",
         "hotspot_EEaTD6",
+        "hotspot_LwHzLP",
         "hotspot_bDmF8M",
         "hotspot_qdBrMg",
         "hotspot_fbTwjG",
