@@ -35,7 +35,13 @@
             "text": "Enquire Today",
             "button_url": "shopify://pages/contact-us",
             "new_tab": true,
-            "button_style": "underline"
+            "button_style": "underline",
+            "button_font_size": 16,
+            "button_font_color": "#ffffff",
+            "button_background": "#1f1f1f",
+            "button_border_width": 1,
+            "button_border_color": "#ffffff",
+            "button_padding": 12
           }
         },
         "card_qwApKG": {
@@ -81,7 +87,7 @@
         "maintain_aspect_ratio": true,
         "add_header_offset": false,
         "media_type": "image",
-        "image_desktop": "shopify://shop_images/Ellington_CU_1e809bbc-3e10-42f5-abef-f608f2a03a8a.jpg",
+        "image_desktop": "shopify://shop_images/Ellington_CU_ab55b21d-2988-4d7c-9a78-730afbe8551e.jpg",
         "video_desktop": "shopify://files/videos/Garden Furn 2026 Landing Page.mp4",
         "show_controls": false,
         "mute_video": true,
@@ -164,6 +170,153 @@
         "see_more_max_height": 300
       }
     },
+    "custom_media_gallery_RwKUii": {
+      "type": "custom-media-gallery",
+      "blocks": {
+        "image_gqEbGR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/sable_walnut.png",
+            "heading": "",
+            "description": "<p>Sable Walnut</p>"
+          }
+        },
+        "image_KVQqLX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/northern_wenge.png",
+            "heading": "",
+            "description": "<p>Northern Wenge</p>"
+          }
+        },
+        "image_kw4EEX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bracken_sage.png",
+            "heading": "",
+            "description": "<p>Bracken Sage</p>"
+          }
+        },
+        "image_hAXGqW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/nera_oak_c13813a6-6615-41e1-bf7c-223be95626a5.png",
+            "heading": "",
+            "description": "<p>Nera Oak</p>"
+          }
+        },
+        "image_DFCetc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/mink_2_c3f3408b-9a5e-439a-ad66-982621969bb8.png",
+            "heading": "",
+            "description": "<p>Mink</p>"
+          }
+        },
+        "image_LpaYgg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/coastal_storm_2.png",
+            "heading": "",
+            "description": "<p>Coastal Storm</p>"
+          }
+        },
+        "image_edEVJa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/brushed_cashmere_2.png",
+            "heading": "",
+            "description": "<p>Brushed Cashmere</p>"
+          }
+        },
+        "image_3hhzNi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/arbor_oak.png",
+            "heading": "",
+            "description": "<p>Arbor Oak</p>"
+          }
+        },
+        "image_r7aCEd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/nordic_slate.png",
+            "heading": "",
+            "description": "<p>Nordic Slate</p>"
+          }
+        },
+        "image_eTFWF6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/moorland_char.png",
+            "heading": "",
+            "description": "<p>Moorland Char</p>"
+          }
+        },
+        "image_WWL8yF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/coastal_blue_2.png",
+            "heading": "",
+            "description": "<p>Coastal Blue</p>"
+          }
+        },
+        "image_T9FjTX": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_6ktKAj": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_Lk9iyX": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_gqEbGR",
+        "image_KVQqLX",
+        "image_kw4EEX",
+        "image_hAXGqW",
+        "image_DFCetc",
+        "image_LpaYgg",
+        "image_edEVJa",
+        "image_3hhzNi",
+        "image_r7aCEd",
+        "image_eTFWF6",
+        "image_WWL8yF",
+        "image_T9FjTX",
+        "image_6ktKAj",
+        "image_Lk9iyX"
+      ],
+      "name": "Media gallery",
+      "settings": {
+        "heading": "",
+        "layout": "slider",
+        "enable_lightbox": false,
+        "lightbox_thumbnails_position": "side",
+        "description_position": "bottom",
+        "image_aspect_ratio": "1/1",
+        "image_max_height": 0,
+        "image_fit": "contain",
+        "columns_desktop": 5,
+        "gap": 0,
+        "autoplay": false,
+        "autoplay_speed": 3,
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
     "blocks_zjXTry": {
       "type": "_blocks",
       "blocks": {
@@ -176,7 +329,7 @@
             "vertical_padding": 20,
             "border_radius": 20,
             "scroll_speed": 90,
-            "background_color": "#F9F7F0",
+            "background_color": "#f9f7f0",
             "image_1": "shopify://shop_images/brushedcashmere.png",
             "image_2": "shopify://shop_images/brackensage.png",
             "image_3": "shopify://shop_images/coastalstorm.png",
@@ -196,6 +349,7 @@
       "block_order": [
         "ai_gen_block_ed0e5ef_hCP88j"
       ],
+      "disabled": true,
       "name": "Image marquee",
       "settings": {}
     },
@@ -325,6 +479,7 @@
             "text": "Why stop at selecting your bespoke wood finish? Complete your piece with the perfect handle to suit your space. Designed for both modern and traditional care home interiors, each piece comes as standard with a sleek, durable silver handle. For a more personalised look, upgrade to our premium handle options, available in gold, silver, black, or rose gold. These high-quality finishes not only enhance the overall aesthetic but also offer a practical, long-lasting solution for care home furniture and other high-use settings, allowing you to customise every detail while maintaining a refined look.",
             "button_style": "primary",
             "button_text": "View the range",
+            "button_action": "link",
             "button_url": "https://www.furncare.co.uk/products/ryker-large-sideboard"
           }
         },
@@ -343,6 +498,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-md",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -357,7 +513,7 @@
             "image": "shopify://shop_images/Abbott_CU_e870aefe-03c5-4222-802d-f19ee1c96cc8.jpg",
             "text": "The Crosshatch Handle",
             "richtext": "<p>Tilbury & Abbot</p>",
-            "richtext_color": "#F9F7F0",
+            "richtext_color": "#f9f7f0",
             "richtext_font_size": "16px",
             "richtext_font_weight": "400",
             "richtext_text_transform": "none",
@@ -372,7 +528,7 @@
             "image": "shopify://shop_images/Ellington_CU_1e809bbc-3e10-42f5-abef-f608f2a03a8a.jpg",
             "text": "The Contour Handle",
             "richtext": "<p>Ellington & Galloway</p>",
-            "richtext_color": "#F9F7F0",
+            "richtext_color": "#f9f7f0",
             "richtext_font_size": "16px",
             "richtext_font_weight": "400",
             "richtext_text_transform": "none",
@@ -387,7 +543,7 @@
             "image": "shopify://shop_images/Bronson_CU_b24d1449-7ca7-4045-ac3d-78982065612f.jpg",
             "text": "The Core Handle",
             "richtext": "<p>Bronson</p>",
-            "richtext_color": "#F9F7F0",
+            "richtext_color": "#f9f7f0",
             "richtext_font_size": "16px",
             "richtext_font_weight": "400",
             "richtext_text_transform": "none",
@@ -507,6 +663,7 @@
             "text": "<h4>A refined design</h4>\n\nSoftly sculpted curved legs introduce a refined sense of sophistication, serving as a distinctive design feature while maintaining exceptional strength and stability.\n\n<h4>Contemporary finishes</h4>\n\nOffered in several handpicked finishes, allowing for greater design flexibility, creating a tailored, personalised feel while ensuring the piece sits beautifully within both classic and contemporary spaces.\n\n<h4>Ergonomics front and centre </h4>\n\nModern, streamlined handles crafted with smooth, softened edges for a seamless touch, they offer both comfort and sophistication, with a generous 203mm length ensuring effortless usability.",
             "button_style": "underline",
             "button_text": "Download the spec sheet",
+            "button_action": "link",
             "button_url": "https://publuu.com/flip-book/link/2248069"
           }
         }
@@ -519,6 +676,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -634,6 +792,7 @@
     "image_video_banner_tUQhjn",
     "richtext_gkEqTF",
     "richtext_rBN8BC",
+    "custom_media_gallery_RwKUii",
     "blocks_zjXTry",
     "content_blocks_QVU3xP",
     "image_text_RqyGcY",
