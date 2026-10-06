@@ -11,16 +11,31 @@
       break
     endif
   endfor
+
+  comment
+    Shopify search is fuzzy; keep only products whose title (or SKU) contains every typed word.
+    Field-scoped queries (e.g. variants.sku:X) are left unfiltered.
+  endcomment
+  assign clean_terms = search.terms | remove: 'title:' | remove: '*' | downcase | strip
+  assign term_words = clean_terms | split: ' '
+  if clean_terms contains ':'
+    assign term_words = blank
+  endif
 %}
 
 <div class="product-grid product-grid--condensed">
   {% if has_products %}
     {% for item in search.results %}
       {% if item.object_type == 'product' %}
-        {% render 'product-card',
-          product: item,
-          product_card_style: 'condensed'
-        %}
+        {% capture is_match %}
+          {%- render 'search-title-match', product: item, words: term_words -%}
+        {% endcapture %}
+        {% if is_match != blank %}
+          {% render 'product-card',
+            product: item,
+            product_card_style: 'condensed'
+          %}
+        {% endif %}
       {% endif %}
     {% endfor %}
   {% endif %}
