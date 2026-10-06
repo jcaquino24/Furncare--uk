@@ -214,6 +214,18 @@
             "mobile_y": 50
           }
         },
+        "hotspot_EEaTD6": {
+          "type": "hotspot",
+          "settings": {
+            "tab": "1",
+            "product": "livonia-small-traditional-circular-pedestal-table",
+            "description": "",
+            "desktop_x": 13,
+            "desktop_y": 67,
+            "mobile_x": 50,
+            "mobile_y": 50
+          }
+        },
         "hotspot_bDmF8M": {
           "type": "hotspot",
           "settings": {
@@ -275,6 +287,7 @@
         "hotspot_i3MjUc",
         "hotspot_Qz7e4J",
         "hotspot_KAWcFn",
+        "hotspot_EEaTD6",
         "hotspot_bDmF8M",
         "hotspot_qdBrMg",
         "hotspot_fbTwjG",
@@ -418,6 +431,7 @@
             "text": "Explore the full moodboard to see how each scheme comes together - from considered fabric pairings and contrast piping to coordinated accents, all curated for a cohesive, design-led finish and delivered within just 5 working days.",
             "button_style": "primary",
             "button_text": "Download the moodboards",
+            "button_action": "link",
             "button_url": "https://publuu.com/flip-book/link/2532705"
           }
         }
@@ -430,6 +444,7 @@
       "settings": {
         "colour_scheme": "warm-stone",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
