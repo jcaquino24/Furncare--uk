@@ -43,11 +43,20 @@
   endfor
 
   comment
-    The exact count is only known when every result fits on one page.
+    Results are relevance-sorted, so once a page contains a non-matching item the later pages hold only fuzzy matches.
   endcomment
   assign display_count = search.results_count
+  assign has_more_matches = paginate.next
+  assign is_relevance_sort = false
+  if search.sort_by == blank or search.sort_by == 'relevance'
+    assign is_relevance_sort = true
+  endif
   if paginate.pages == 1
     assign display_count = matched_count
+  elsif is_relevance_sort and matched_count < search.results.size
+    assign previous_items = paginate.current_page | minus: 1 | times: paginate.page_size
+    assign display_count = previous_items | plus: matched_count
+    assign has_more_matches = false
   endif
 -%}
 
@@ -211,7 +220,7 @@
                   }}
                 </p>
 
-                {%- if paginate.next -%}
+                {%- if has_more_matches -%}
                   <a
                     class="button button--secondary"
                     href="{{ paginate.next.url }}"
