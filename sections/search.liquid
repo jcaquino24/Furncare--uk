@@ -25,6 +25,32 @@
 
 -%}
 
+{%- paginate search.results by 50 -%}
+{%- liquid
+  assign term_words = search.terms | downcase | strip | split: ' '
+  assign matched_count = 0
+  for item in search.results
+    if item.object_type == 'product'
+      capture matched
+        render 'search-title-match', product: item, words: term_words
+      endcapture
+      if matched != blank
+        assign matched_count = matched_count | plus: 1
+      endif
+    else
+      assign matched_count = matched_count | plus: 1
+    endif
+  endfor
+
+  comment
+    The exact count is only known when every result fits on one page.
+  endcomment
+  assign display_count = search.results_count
+  if paginate.pages == 1
+    assign display_count = matched_count
+  endif
+-%}
+
 <div class="collection colour-scheme--light colour-scheme--base-white-01">
   <div class="collection__container container">
     <div class="collection__header collection__header--search">
@@ -42,7 +68,7 @@
             >
               {{
                 'search.results_for_with_count'
-                | t: count: search.results_count, terms: search.terms
+                | t: count: display_count, terms: search.terms
               }}
             </uwp-search-count>
           {%- endif -%}
@@ -56,7 +82,7 @@
           {{ 'search.no_results' | t: terms: search.terms }}
         </p>
       {%- else -%}
-        {%- paginate search.results by 12 -%}
+        {%- if true -%}
           <div class="collection__actions">
             <uwp-filter-toggle
               class="collection__filter-toggle"
@@ -103,7 +129,7 @@
               aria-label="Product count"
               aria-roledescription="region"
             >
-              {{ 'search.results_count' | t: count: search.results_count }}
+              {{ 'search.results_count' | t: count: display_count }}
             </uwp-product-count>
 
             <div class="collection__sort-wrapper">
@@ -130,7 +156,6 @@
               aria-roledescription="region"
             >
               <div class="collection__grid">
-                {%- assign term_words = search.terms | downcase | strip | split: ' ' -%}
                 {%- for item in search.results -%}
                   {%- case item.object_type -%}
                     {%- when 'product' -%}
@@ -143,29 +168,13 @@
                           assign preload = false
                         endif
 
-                        comment
-                          Shopify search is fuzzy; keep only products whose title (or a SKU) contains every typed word.
-                        endcomment
-                        assign show_product = true
-                        assign title_lc = item.title | downcase
-                        for word in term_words
-                          unless title_lc contains word
-                            assign sku_match = false
-                            for variant in item.variants
-                              assign sku_lc = variant.sku | downcase
-                              if sku_lc contains word
-                                assign sku_match = true
-                                break
-                              endif
-                            endfor
-                            unless sku_match
-                              assign show_product = false
-                            endunless
-                          endunless
-                        endfor
                       -%}
 
-                      {%- if show_product -%}
+                      {%- capture show_product -%}
+                        {%- render 'search-title-match', product: item, words: term_words -%}
+                      {%- endcapture -%}
+
+                      {%- if show_product != blank -%}
                         {%- render 'product-card',
                           product: item,
                           loading: loading,
@@ -193,12 +202,12 @@
                 <p class="body-md">
                   {%- liquid
                     assign to = paginate.page_size | times: paginate.current_page
-                    assign to = to | at_most: search.results_count
+                    assign to = to | at_most: display_count
                   -%}
 
                   {{
                     'search.items'
-                    | t: from: 1, to: to, count: search.results_count
+                    | t: from: 1, to: to, count: display_count
                   }}
                 </p>
 
@@ -213,11 +222,12 @@
               </uwp-load-more>
             </uwp-product-grid>
           </div>
-        {%- endpaginate -%}
+        {%- endif -%}
       {%- endif -%}
     {%- endif -%}
   </div>
 </div>
+{%- endpaginate -%}
 
 {% unless search.results_count == 0 %}
   <style>
