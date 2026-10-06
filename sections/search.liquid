@@ -130,6 +130,7 @@
               aria-roledescription="region"
             >
               <div class="collection__grid">
+                {%- assign term_words = search.terms | downcase | strip | split: ' ' -%}
                 {%- for item in search.results -%}
                   {%- case item.object_type -%}
                     {%- when 'product' -%}
@@ -141,13 +142,36 @@
                           assign loading = 'lazy'
                           assign preload = false
                         endif
+
+                        comment
+                          Shopify search is fuzzy; keep only products whose title (or a SKU) contains every typed word.
+                        endcomment
+                        assign show_product = true
+                        assign title_lc = item.title | downcase
+                        for word in term_words
+                          unless title_lc contains word
+                            assign sku_match = false
+                            for variant in item.variants
+                              assign sku_lc = variant.sku | downcase
+                              if sku_lc contains word
+                                assign sku_match = true
+                                break
+                              endif
+                            endfor
+                            unless sku_match
+                              assign show_product = false
+                            endunless
+                          endunless
+                        endfor
                       -%}
 
-                      {%- render 'product-card',
-                        product: item,
-                        loading: loading,
-                        preload: preload
-                      -%}
+                      {%- if show_product -%}
+                        {%- render 'product-card',
+                          product: item,
+                          loading: loading,
+                          preload: preload
+                        -%}
+                      {%- endif -%}
 
                     {%- when 'collection' -%}
                       {%- render 'collection-card', collection: item -%}
