@@ -141,14 +141,33 @@
         "see_more_max_height": 400
       }
     },
+    "blocks_CQQVyV": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_g9jE9m": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 50,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#F9F7F0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_g9jE9m"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
     "richtext_rBN8BC": {
       "type": "richtext",
       "blocks": {
         "tagline_aJMWGp": {
           "type": "tagline",
           "settings": {
-            "content": "CHOOSE FROM A LARGE SELECTION OF CONTEMPORARY FINISHES",
-            "tagline_style": "body-sm"
+            "content": "CHOOSE FROM 13 CONTEMPORARY FINISHES",
+            "tagline_style": "body-lg"
           },
           "blocks": {}
         }
@@ -161,7 +180,7 @@
         "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
-        "text_alignment": "left",
+        "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": true,
         "optional_richtext": "",
@@ -261,25 +280,12 @@
             "description": "<p>Coastal Blue</p>"
           }
         },
-        "image_T9FjTX": {
+        "image_VdEgxx": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/moorlandoak_5e07a376-e33e-4d64-9550-5b04f8efb2c3.png",
             "heading": "",
-            "description": ""
-          }
-        },
-        "image_6ktKAj": {
-          "type": "image",
-          "settings": {
-            "heading": "",
-            "description": ""
-          }
-        },
-        "image_Lk9iyX": {
-          "type": "image",
-          "settings": {
-            "heading": "",
-            "description": ""
+            "description": "<p>Moorland Oak</p>"
           }
         }
       },
@@ -295,9 +301,7 @@
         "image_r7aCEd",
         "image_eTFWF6",
         "image_WWL8yF",
-        "image_T9FjTX",
-        "image_6ktKAj",
-        "image_Lk9iyX"
+        "image_VdEgxx"
       ],
       "name": "Media gallery",
       "settings": {
@@ -510,7 +514,7 @@
         "tab1_mChUGV": {
           "type": "tab1",
           "settings": {
-            "image": "shopify://shop_images/Abbott_CU_e870aefe-03c5-4222-802d-f19ee1c96cc8.jpg",
+            "image": "shopify://shop_images/abbott_close_shot_mock_up_sunny.png",
             "text": "The Crosshatch Handle",
             "richtext": "<p>Tilbury & Abbot</p>",
             "richtext_color": "#f9f7f0",
@@ -525,7 +529,7 @@
         "tab1_EyFgVJ": {
           "type": "tab1",
           "settings": {
-            "image": "shopify://shop_images/Ellington_CU_1e809bbc-3e10-42f5-abef-f608f2a03a8a.jpg",
+            "image": "shopify://shop_images/Ellington_close_up_mock_up_sunny_1.png",
             "text": "The Contour Handle",
             "richtext": "<p>Ellington & Galloway</p>",
             "richtext_color": "#f9f7f0",
@@ -620,14 +624,15 @@
             "handle": "best-sellers",
             "product_feed_source": "product_list",
             "products": [
-              "ryker-large-bookcase",
-              "ryker-large-sideboard",
-              "ryker-large-dresser",
-              "ryker-tv-unit",
-              "ryker-small-dresser",
-              "ryker-console-table",
-              "ryker-small-bookcase",
-              "ryker-small-sideboard"
+              "ellington-3-drawer-bedside",
+              "bronson-3-drawer-chest-1",
+              "abbott-tall-wide-wardrobe",
+              "tilbury-6-drawer-desk",
+              "galloway-double-wardrobe",
+              "abbott-wide-wardrobe",
+              "ellington-single-wardrobe",
+              "tilbury-4-drawer-chest",
+              "galloway-3-drawer-desk"
             ],
             "collection": "",
             "seed_product": "",
@@ -652,7 +657,7 @@
         "images_tdN9WY": {
           "type": "images",
           "settings": {
-            "image_one": "shopify://shop_images/ChatGPT_Image_Apr_21_2026_08_15_22_AM.png"
+            "image_one": "shopify://shop_images/Tilbury_small_roomshot_1.jpg"
           }
         },
         "content_QbbHRd": {
@@ -791,6 +796,7 @@
   "order": [
     "image_video_banner_tUQhjn",
     "richtext_gkEqTF",
+    "blocks_CQQVyV",
     "richtext_rBN8BC",
     "custom_media_gallery_RwKUii",
     "blocks_zjXTry",
