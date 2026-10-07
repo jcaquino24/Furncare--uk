@@ -192,6 +192,14 @@
     "custom_media_gallery_RwKUii": {
       "type": "custom-media-gallery",
       "blocks": {
+        "image_HFVEex": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/moorland_cinder.png",
+            "heading": "",
+            "description": "<p>Moorland Cinder</p>"
+          }
+        },
         "image_gqEbGR": {
           "type": "image",
           "settings": {
@@ -290,6 +298,7 @@
         }
       },
       "block_order": [
+        "image_HFVEex",
         "image_gqEbGR",
         "image_KVQqLX",
         "image_kw4EEX",
@@ -517,9 +526,9 @@
             "image": "shopify://shop_images/abbott_close_shot_mock_up_sunny.png",
             "text": "The Crosshatch Handle",
             "richtext": "<p>Tilbury & Abbot</p>",
-            "richtext_color": "#f9f7f0",
+            "richtext_color": "#F9F7F0",
             "richtext_font_size": "16px",
-            "richtext_font_weight": "400",
+            "richtext_font_weight": "300",
             "richtext_text_transform": "none",
             "richtext_letter_spacing": "normal",
             "link": "",
@@ -534,7 +543,7 @@
             "richtext": "<p>Ellington & Galloway</p>",
             "richtext_color": "#f9f7f0",
             "richtext_font_size": "16px",
-            "richtext_font_weight": "400",
+            "richtext_font_weight": "300",
             "richtext_text_transform": "none",
             "richtext_letter_spacing": "normal",
             "link": "",
@@ -549,7 +558,7 @@
             "richtext": "<p>Bronson</p>",
             "richtext_color": "#f9f7f0",
             "richtext_font_size": "16px",
-            "richtext_font_weight": "400",
+            "richtext_font_weight": "300",
             "richtext_text_transform": "none",
             "richtext_letter_spacing": "normal",
             "link": "",
