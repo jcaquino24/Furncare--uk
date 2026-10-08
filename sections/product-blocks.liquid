@@ -1,4 +1,8 @@
 {% liquid
+  assign products_per_row = section.settings.products_per_row | default: 4
+  assign max_products = section.settings.max_products | default: 8
+  assign recommendations_limit = max_products | at_most: 10
+
   # Get products for each block based on their feed source
   assign tab1_products = ''
   assign tab2_products = ''
@@ -90,7 +94,7 @@
 
 {% assign show_nav = false %}
 
-{% if tab1_products.count > 4 or tab2_products.count > 4 %}
+{% if tab1_products.count > products_per_row or tab2_products.count > products_per_row %}
   {% assign show_nav = true %}
 {% endif %}
 
@@ -112,7 +116,7 @@
       assign product_id_1 = section.blocks[0].settings.seed_product.id
     endif
     if product_id_1
-      assign block1_rec_url = '/recommendations/products.json?product_id=' | append: product_id_1 | append: '&limit=8&intent=' | append: section.blocks[0].settings.recommendation_intent
+      assign block1_rec_url = '/recommendations/products.json?product_id=' | append: product_id_1 | append: '&limit=' | append: recommendations_limit | append: '&intent=' | append: section.blocks[0].settings.recommendation_intent
     endif
   endif
 
@@ -124,7 +128,7 @@
       assign product_id_2 = section.blocks[1].settings.seed_product.id
     endif
     if product_id_2
-      assign block2_rec_url = '/recommendations/products.json?product_id=' | append: product_id_2 | append: '&limit=8&intent=' | append: section.blocks[1].settings.recommendation_intent
+      assign block2_rec_url = '/recommendations/products.json?product_id=' | append: product_id_2 | append: '&limit=' | append: recommendations_limit | append: '&intent=' | append: section.blocks[1].settings.recommendation_intent
     endif
   endif
 %}
@@ -216,7 +220,7 @@
             js-content-blocks="tab-content"
             data-tab="{{ tab_name }}"
           >
-            {% if block_products.count > 0 and block_products.count > 4 %}
+            {% if block_products.count > 0 and block_products.count > products_per_row %}
               <swiper-container
                 class="content-blocks__swiper"
                 slides-per-view="{{ slides_per_view }}"
@@ -225,7 +229,7 @@
                   {
                     "768": {
                       "spaceBetween": 20,
-                      "slidesPerView": 4
+                      "slidesPerView": {{ products_per_row }}
                     }
                   }
                 '
@@ -242,7 +246,7 @@
 
                 {% if block.settings.product_feed_source == 'recommendations' %}
                   {% assign rendered_ids = ',' %}
-                  {% for rec_item in recommendations.products limit: 8 %}
+                  {% for rec_item in recommendations.products limit: max_products %}
                     {% assign id_token = ',' | append: rec_item.id | append: ',' %}
                     {% unless rendered_ids contains id_token or rec_item.id == product_id %}
                       {% assign card_loading = 'lazy' %}
@@ -257,7 +261,7 @@
                   {% endfor %}
                 {% else %}
                   {% assign rendered_ids = ',' %}
-                  {% for p_item in block_products limit: 8 %}
+                  {% for p_item in block_products limit: max_products %}
                     {% assign id_token = ',' | append: p_item.id | append: ',' %}
                     {% unless rendered_ids contains id_token or p_item.id == main_product_id %}
                       {% assign card_loading = 'lazy' %}
@@ -286,7 +290,7 @@
               <div class="content-blocks__grid">
                 {% if block.settings.product_feed_source == 'recommendations' %}
                   {% assign rendered_ids = ',' %}
-                  {% for rec_item in recommendations.products %}
+                  {% for rec_item in recommendations.products limit: max_products %}
                     {% assign id_token = ',' | append: rec_item.id | append: ',' %}
                     {% unless rendered_ids contains id_token or rec_item.id == product_id %}
                       {% assign card_loading = 'lazy' %}
@@ -299,7 +303,7 @@
                   {% endfor %}
                 {% else %}
                   {% assign rendered_ids = ',' %}
-                  {% for p_item in block_products %}
+                  {% for p_item in block_products limit: max_products %}
                     {% assign id_token = ',' | append: p_item.id | append: ',' %}
                     {% unless rendered_ids contains id_token or p_item.id == main_product_id %}
                       {% assign card_loading = 'lazy' %}
@@ -327,6 +331,14 @@
   </div>
 </uwp-content-blocks>
 
+<style>
+  @media (min-width: 768px) {
+    #shopify-section-{{ section.id }} .content-blocks__grid {
+      grid-template-columns: repeat({{ products_per_row }}, minmax(0, 1fr));
+    }
+  }
+</style>
+
 {% schema %}
 {
   "name": "Product blocks",
@@ -339,6 +351,26 @@
       "id": "title",
       "label": "Title",
       "default": "Featured Products"
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "label": "Products visible per row (desktop)",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4,
+      "info": "A slider is used when there are more products than this."
+    },
+    {
+      "type": "range",
+      "id": "max_products",
+      "label": "Maximum products to display",
+      "min": 4,
+      "max": 24,
+      "step": 1,
+      "default": 8,
+      "info": "Recommendations are capped at 10 by Shopify."
     },
     {
       "type": "select",
@@ -400,14 +432,14 @@
           "type": "product_list",
           "id": "products",
           "label": "Products",
-          "limit": 20,
+          "limit": 24,
           "info": "Used when Product feed source is set to 'Product list'"
         },
         {
           "type": "collection",
           "id": "collection",
           "label": "Collection",
-          "info": "First 8 products from this collection will be used"
+          "info": "Products from this collection, up to the section's maximum products setting"
         },
         {
           "type": "product",
