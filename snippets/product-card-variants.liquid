@@ -1,0 +1,109 @@
+{%- comment -%}
+  Small variant swatches for product cards: one row per Colour/Fabric/Finish option.
+  Params: product, limit (default 5)
+{%- endcomment -%}
+{%- assign swatch_limit = limit | default: 5 -%}
+
+{%- for swatch_option in product.options_with_values -%}
+  {%- liquid
+    assign option_name = swatch_option.name | downcase
+    assign is_finish = false
+    if option_name contains 'finish'
+      assign is_finish = true
+    endif
+    assign is_swatch_option = is_finish
+    if option_name contains 'colo'
+      assign is_swatch_option = true
+    endif
+    if option_name contains 'fabric'
+      assign is_swatch_option = true
+    endif
+    assign option_index = swatch_option.position | minus: 1
+  -%}
+
+  {%- if is_swatch_option and swatch_option.values.size > 1 -%}
+    <div class="product-card__variants" aria-label="{{ swatch_option.name | escape }}">
+      {%- for value in swatch_option.values limit: swatch_limit -%}
+        {%- liquid
+          assign swatch_variant = null
+          for variant in product.variants
+            assign variant_value = variant.options[option_index]
+            if variant_value == value.name
+              assign swatch_variant = variant
+              break
+            endif
+          endfor
+        -%}
+        <a
+          class="product-card__variant{% if value.selected %} is-selected{% endif %}{% if is_finish %} product-card__variant--text{% endif %}"
+          href="{{ product.url | split: '?' | first }}?variant={{ swatch_variant.id }}"
+          title="{{ value.name | escape }}"
+          aria-label="{{ value.name | escape }}"
+        >
+          {%- if value.swatch.image != blank -%}
+            {{ value.swatch.image | image_url: width: 64 | image_tag: width: 32, height: 32, loading: 'lazy', alt: value.name }}
+          {%- elsif value.swatch.color != blank -%}
+            <span class="product-card__variant-color" style="background-color: {{ value.swatch.color }}"></span>
+          {%- elsif is_finish -%}
+            {{ value.name }}
+          {%- elsif swatch_variant.featured_image != blank -%}
+            {{ swatch_variant.featured_image | image_url: width: 64 | image_tag: width: 32, height: 32, loading: 'lazy', alt: value.name }}
+          {%- else -%}
+            <span class="product-card__variant-text">{{ value.name | slice: 0, 2 }}</span>
+          {%- endif -%}
+        </a>
+      {%- endfor -%}
+      {%- assign extra_swatches = swatch_option.values.size | minus: swatch_limit -%}
+      {%- if extra_swatches > 0 -%}
+        <span class="product-card__variants-more body-sm">+{{ extra_swatches }}</span>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+{%- endfor -%}
+{% stylesheet %}
+  .product-card__variant--text {
+    width: auto;
+    height: auto;
+    padding: 2px 8px;
+    font-size: 12px;
+    line-height: 1.4;
+    text-decoration: none;
+  }
+  .product-card__variants {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-top: var(--spacing-2xs, 8px);
+  }
+
+  .product-card__variant {
+    display: block;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgb(0 0 0 / 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .product-card__variant.is-selected,
+  .product-card__variant:hover {
+    border-color: currentcolor;
+  }
+
+  .product-card__variant img,
+  .product-card__variant-color {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .product-card__variant-text {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+  }
+{% endstylesheet %}

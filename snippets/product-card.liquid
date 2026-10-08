@@ -310,6 +310,10 @@
         </div>
       {% endif %}
 
+      {% if product_card_style == 'default' and product.type != 'Swatch' and product.variants.size > 1 %}
+        {% render 'product-card-variants', product: product %}
+      {% endif %}
+
       {% if product.metafields.custom.available_in != blank %}
         <div class="product-card__available-in eyebrow-2xs">
           {{ product.metafields.custom.available_in }}
