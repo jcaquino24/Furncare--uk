@@ -30,6 +30,7 @@
         },
         "collection_popup_nUtbfX": {
           "type": "collection_popup",
+          "disabled": true,
           "settings": {
             "collection": "grayson-circular-tables-curve-base-size-options-copy",
             "button_text": "Browse Size Options",

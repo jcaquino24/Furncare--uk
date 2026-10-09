@@ -105,6 +105,417 @@
         "see_more_max_height": 400
       }
     },
+    "custom_media_gallery_TfKJfB": {
+      "type": "custom-media-gallery",
+      "blocks": {
+        "image_aeNnD9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_7_4ed94e07-445c-4d96-9c84-8254c33c9f94.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_gHiC3r": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_1_f9e01691-4829-4e77-9bff-a0fb7b5fae0f.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_GfyTGr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_7_23a891a9-4e59-424f-ad64-b038e04ba3f7.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_qVJRDQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_8.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_kYxpRa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_13_9aaf6626-9be2-459e-aa26-f4ed38d930c7.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_HMAxyc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_18_3c8127cf-22e6-4416-a165-0f481b0cb5a6.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_yQkYG9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_20.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_rjVEbd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_29_f3ec75df-2307-40c5-b078-605b2a434e98.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_RJFbkc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_6_b4e238ed-2e38-45c8-8ab1-55d83e6f044c.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_bqj7ri": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_19.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_Vkbzw9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_3.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_AfJRgc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_25.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_6U7LDh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_30_7a340f81-0a70-4e04-81fc-68a3c2d04fb9.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_rhacjt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Two_6_4cd108b4-e1f3-41af-a636-5bcc0c3d1aab.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_6JJNWL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bistro_Area_15.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_hnr9XU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bedrooms_10.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_MRHTCd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bedrooms_1_074d5f2e-9955-423f-8ca5-3feb48814b60.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_JjhdVa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Corridor_32.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_JCtFk8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Corridor_33.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_GtPaed": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/External_Front_3.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_UbCHkt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/External_Front_5.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_HNPQM6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/External_Front_7.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_4JzcMx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/External_Garden_7.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_GAgiXj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_21.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_yayqyh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_6.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_mhNC6X": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_8.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_YacyF6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_13.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_jymEmk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_15.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_PXhtmm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_18.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_e7q8Lt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_24.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_Jrwtnt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_One_27.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_4GVJje": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Three_4_jpg.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_9qTzj4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Three_3.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_RzE3RL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Two_4.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_FhJemy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Two_6.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_wwUVwj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Two_10.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_GrBjRz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Two_11.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_LdNyLm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Two_18.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_wKtkjn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lounge_Two_16.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_TMjY7J": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Sensory_Room_2.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_fAeVXc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Salon_2.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_UtUPy4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Reception_4.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_QYBNjn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Team_Reception_6.jpg",
+            "heading": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_aeNnD9",
+        "image_gHiC3r",
+        "image_GfyTGr",
+        "image_qVJRDQ",
+        "image_kYxpRa",
+        "image_HMAxyc",
+        "image_yQkYG9",
+        "image_rjVEbd",
+        "image_RJFbkc",
+        "image_bqj7ri",
+        "image_Vkbzw9",
+        "image_AfJRgc",
+        "image_6U7LDh",
+        "image_rhacjt",
+        "image_6JJNWL",
+        "image_hnr9XU",
+        "image_MRHTCd",
+        "image_JjhdVa",
+        "image_JCtFk8",
+        "image_GtPaed",
+        "image_UbCHkt",
+        "image_HNPQM6",
+        "image_4JzcMx",
+        "image_GAgiXj",
+        "image_yayqyh",
+        "image_mhNC6X",
+        "image_YacyF6",
+        "image_jymEmk",
+        "image_PXhtmm",
+        "image_e7q8Lt",
+        "image_Jrwtnt",
+        "image_4GVJje",
+        "image_9qTzj4",
+        "image_RzE3RL",
+        "image_FhJemy",
+        "image_wwUVwj",
+        "image_GrBjRz",
+        "image_LdNyLm",
+        "image_wKtkjn",
+        "image_TMjY7J",
+        "image_fAeVXc",
+        "image_UtUPy4",
+        "image_QYBNjn"
+      ],
+      "name": "Media gallery",
+      "settings": {
+        "heading": "Gallery",
+        "layout": "slider",
+        "enable_lightbox": true,
+        "lightbox_thumbnails_position": "side",
+        "description_position": "bottom",
+        "image_aspect_ratio": "3/4",
+        "image_max_height": 0,
+        "image_fit": "cover",
+        "columns_desktop": 5,
+        "gap": 16,
+        "autoplay": false,
+        "autoplay_speed": 1,
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
+    },
     "featured_blocks_QcyUqa": {
       "type": "featured-blocks",
       "blocks": {
@@ -507,6 +918,7 @@
         "block_DCmeKF",
         "block_UcWRfd"
       ],
+      "disabled": true,
       "name": "Featured Blocks",
       "settings": {
         "colour_scheme": "base-white-01",
@@ -582,6 +994,7 @@
             "text": "The Ashton Group employs around 360 staff across their various sites, including the new Ashton Meadows Nursing Home. Gaj Ragunathan was born in neighbouring Kingston Hospital and attended Tiffin’s Grammar School just a few hundred metres from the new nursing home.\n\n\nAward-winning, multi-disciplined studio, DesignLSM, were commissioned to design the interiors, boasting a glowing reputation of delivering inspiring concepts within the hospitality, leisure and senior living industries over the last 36 years.",
             "button_style": "underline",
             "button_text": "",
+            "button_action": "link",
             "button_url": ""
           }
         }
@@ -594,6 +1007,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -649,6 +1063,7 @@
             "text": "DesignLSM were already developing early concepts for the project when Bincy Mathew of the Ashton Group visited the Brighton Care Show in 2022. Having met Sheldon Southall on the Furncare stand, further meetings were arranged in London and Kingston over the next few months. A Furncare delivery vehicle loaded with sample furniture was taken to the site for first-hand assessment. Final specifications, bespoke upholstery designs, soft furnishings and budgets were then agreed. The final order was placed at the end of 2023, scheduled for spring and summer deliveries in time for an official opening event at the home in June this year.",
             "button_style": "primary",
             "button_text": "",
+            "button_action": "link",
             "button_url": ""
           }
         },
@@ -667,6 +1082,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -836,6 +1252,7 @@
     "main",
     "image_video_banner_Mx3q8g",
     "richtext_PhprEj",
+    "custom_media_gallery_TfKJfB",
     "featured_blocks_QcyUqa",
     "richtext_MbPqHF",
     "image_text_Rr8iJJ",

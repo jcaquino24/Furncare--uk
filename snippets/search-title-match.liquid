@@ -1,0 +1,25 @@
+{%- comment -%}
+  Outputs "1" when the product title (or a variant SKU) contains every word in `words`.
+{%- endcomment -%}
+{%- liquid
+  assign is_match = true
+  assign title_lc = product.title | downcase
+  for word in words
+    unless title_lc contains word
+      assign sku_match = false
+      for variant in product.variants
+        assign sku_lc = variant.sku | downcase
+        if sku_lc contains word
+          assign sku_match = true
+          break
+        endif
+      endfor
+      unless sku_match
+        assign is_match = false
+      endunless
+    endunless
+  endfor
+  if is_match
+    echo '1'
+  endif
+-%}

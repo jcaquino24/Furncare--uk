@@ -46,12 +46,12 @@
         "maintain_aspect_ratio": false,
         "add_header_offset": false,
         "media_type": "image",
-        "image_desktop": "shopify://shop_images/main-house-lounge-90.jpg",
+        "image_desktop": "shopify://shop_images/meadow-common-area-112_1.jpg",
         "show_controls": false,
         "mute_video": true,
         "autoplay_video": false,
-        "show_overlay": false,
-        "overlay_background": "",
+        "show_overlay": true,
+        "overlay_background": "linear-gradient(270deg, rgba(36, 50, 34, 0.28) 100%, rgba(249, 208, 163, 1) 100%)",
         "colour_scheme": "dark",
         "content_position": "center-center",
         "content_alignment": "center"
@@ -358,25 +358,6 @@
         "enable_lightbox": true
       }
     },
-    "blocks_tXUDYQ": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_5d6fd2d_KzrVim": {
-          "type": "ai_gen_block_5d6fd2d",
-          "settings": {
-            "image": "shopify://shop_images/out-nook-144.jpg",
-            "desktop_width_percent": 100,
-            "border_radius": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_5d6fd2d_KzrVim"
-      ],
-      "name": "Image",
-      "settings": {}
-    },
     "blocks_HErXQc": {
       "type": "_blocks",
       "blocks": {
@@ -665,7 +646,6 @@
     "image_video_banner_n9JT9E",
     "richtext_LTPVBd",
     "image_text_blocks_xYxbk8",
-    "blocks_tXUDYQ",
     "blocks_HErXQc",
     "image_text_zXnynf",
     "image_text_nRYrfd",

@@ -41,7 +41,13 @@
             "text": "Button",
             "button_url": "",
             "new_tab": false,
-            "button_style": "primary"
+            "button_style": "primary",
+            "button_font_size": 16,
+            "button_font_color": "#ffffff",
+            "button_background": "#1f1f1f",
+            "button_border_width": 1,
+            "button_border_color": "#ffffff",
+            "button_padding": 12
           }
         },
         "card_GeUmxJ": {
@@ -383,8 +389,204 @@
       "block_order": [
         "ai_gen_block_ed0e5ef_GBBC9G"
       ],
+      "disabled": true,
       "name": "Image marquee",
       "settings": {}
+    },
+    "custom_media_gallery_JBLYqW": {
+      "type": "custom-media-gallery",
+      "blocks": {
+        "image_AAYt9A": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2402.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_Nf3Dkk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2579.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_4YQrDN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2472.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_jUMEAm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2406.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_x9jqCx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2375.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_jxWLtp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2446.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_9w4F8d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2396.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_7GKCKG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2536.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_KLqDU9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2452.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_Ci8FD4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2468.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_rierkn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2487.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_XNk7UT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2521.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_XeWw4A": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2455.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_emhpM9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2451_94e26ec3-27c4-48f2-af68-5bc1057a2950.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_cyLdrA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2497.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_cYbnQQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2467.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_RFKQGh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2372.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_F9Y46j": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2398.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_QV7btG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PREG2378.jpg",
+            "heading": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_AAYt9A",
+        "image_Nf3Dkk",
+        "image_4YQrDN",
+        "image_jUMEAm",
+        "image_x9jqCx",
+        "image_jxWLtp",
+        "image_9w4F8d",
+        "image_7GKCKG",
+        "image_KLqDU9",
+        "image_Ci8FD4",
+        "image_rierkn",
+        "image_XNk7UT",
+        "image_XeWw4A",
+        "image_emhpM9",
+        "image_cyLdrA",
+        "image_cYbnQQ",
+        "image_RFKQGh",
+        "image_F9Y46j",
+        "image_QV7btG"
+      ],
+      "name": "Media gallery",
+      "settings": {
+        "heading": "Gallery",
+        "layout": "slider",
+        "enable_lightbox": true,
+        "lightbox_thumbnails_position": "side",
+        "description_position": "bottom",
+        "image_aspect_ratio": "3/4",
+        "image_max_height": 0,
+        "image_fit": "cover",
+        "columns_desktop": 3,
+        "gap": 16,
+        "autoplay": false,
+        "autoplay_speed": 3,
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
+      }
     },
     "image_text_t4XjPt": {
       "type": "image-text",
@@ -403,6 +605,7 @@
             "text": "Elm Lodge is a state-of-the-art, 60-bed luxury residential care home nestled in \nthree acres of beautiful grounds in the picturesque Hampshire \ncountryside. As part of the Forest Care group, it offers residents over 43 years of dedicated care experience and five-star hospitality, all guided by residents' \npreferences. This brand-new, eco-friendly facility creates a genuinely welcoming place to live. From the cosy lounge areas to the stylish yet practical restaurant and café bar, every detail has been designed with care.",
             "button_style": "primary",
             "button_text": "",
+            "button_action": "link",
             "button_url": ""
           }
         }
@@ -415,6 +618,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -489,6 +693,7 @@
             "text": "All furniture supplied by Furncare is specifically designed and manufactured for the care home and later living sector. Aesthetics are fundamental, but never at the expense of safety and ease of use.<br>\n<br>\nFrom supportive, stylish seating to carefully specified bedroom and dining furniture, every element has been crafted to meet the everyday needs of care home residents. The result is furniture that caters to every requirement of the care home, keeping residents safe - but most importantly, comfortable.  <br>\n<br>",
             "button_style": "underline",
             "button_text": "Browse our best sellers",
+            "button_action": "link",
             "button_url": "https://www.furncare.co.uk/collections/best-sellers"
           }
         }
@@ -502,6 +707,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-4xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -518,6 +724,7 @@
             "text": "Bright Bay Design expertly balanced the high-quality design aesthetic with \nrobust interiors which meet the complex demands of a care home, creating a \nstylish, comfortable and tranquil atmosphere conducive to both relaxation \nand functionality. <br>\n<br>\nBy integrating durable materials with a cohesive and contemporary scheme, the result is care home furniture that feels both sophisticated and welcoming. Fabrics are selected for heavy contract use, furniture is engineered for strength and stability, and circulation spaces are planned to support both residents and care teams. These practical decisions sit alongside a confident, contemporary design approach, ensuring the home feels considered and well executed. <br>\n<br>\nThe result is a care home interior that works as hard as the people in it - robust, compliant and designed specifically for the realities of later living.",
             "button_style": "underline",
             "button_text": "",
+            "button_action": "link",
             "button_url": "https://brightbaydesign.co.uk/elm-lodge/"
           }
         },
@@ -536,6 +743,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -558,6 +766,7 @@
             "text": "Furncare’s commitment to sustainability underpins every stage of the project. Responsibly sourced materials and carefully selected finishes ensure Elm Lodge’s interiors are environmentally conscious while meeting the rigorous demands of a care home setting.<br>\n<br>\nBuilt to withstand daily use, the furniture and fittings are designed for long-term performance in later living environments. This focus on quality and responsible procurement ensures the interiors remain both visually impressive and operationally effective for years to come, reducing the need for replacement and ongoing material waste and supporting operational efficiency - also lowering the environmental impact of the project. <br>\n<br>\nBy combining robust specification with considered procurement, the result is a care home interior that performs consistently, supports sustainable principles and is built to last.",
             "button_style": "primary",
             "button_text": "",
+            "button_action": "link",
             "button_url": ""
           }
         }
@@ -570,6 +779,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -688,7 +898,13 @@
             "text": "Button",
             "button_url": "",
             "new_tab": false,
-            "button_style": "primary"
+            "button_style": "primary",
+            "button_font_size": 16,
+            "button_font_color": "#ffffff",
+            "button_background": "#1f1f1f",
+            "button_border_width": 1,
+            "button_border_color": "#ffffff",
+            "button_padding": 12
           }
         },
         "card_e3GTdX": {
@@ -852,6 +1068,7 @@
     "richtext_PhprEj",
     "featured_blocks_QcyUqa",
     "blocks_YXGqD9",
+    "custom_media_gallery_JBLYqW",
     "image_text_t4XjPt",
     "richtext_EW6cqY",
     "image_text_Rr8iJJ",

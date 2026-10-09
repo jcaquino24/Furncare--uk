@@ -82,7 +82,7 @@
         "heading_rzxmCK": {
           "type": "heading",
           "settings": {
-            "text": "Willow Lodge Care Home, Redhill | From Moodboards to Move-Ready:",
+            "text": "Willow Lodge Care Home, Redhill | Bringing StyleSmiths’ vision to life&nbsp;",
             "heading_level": "h2",
             "heading_style": "title-xl"
           },
@@ -116,319 +116,253 @@
         "see_more_max_height": 400
       }
     },
-    "image_text_blocks_xYxbk8": {
-      "type": "image-text-blocks",
+    "custom_media_gallery_mXJgid": {
+      "type": "custom-media-gallery",
       "blocks": {
-        "image_card_G7eHnW": {
-          "type": "image_card",
+        "image_NxYeLp": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_6-1.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_aGhK6X": {
-          "type": "image_card",
+        "image_YKQUEy": {
+          "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Willow_Lodge_Vol_4-31_27df48dc-1090-4541-be5e-b73f36b1bf72.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "image": "shopify://shop_images/Willow_Lodge_Vol_4-31.jpg",
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_b9yjtU": {
-          "type": "image_card",
+        "image_acTBjt": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_2-32.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_77bj6m": {
-          "type": "image_card",
+        "image_BznbkL": {
+          "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Willow_Lodge_Vol_3-10.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "image": "shopify://shop_images/Willow_Lodge_Vol_3-10_e072051e-9a6e-4aa9-8f93-993bef1a9937.jpg",
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_pAFQdg": {
-          "type": "image_card",
+        "image_PY3TJ7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Willow_Lodge_Vol_3-6.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_ypYf3q": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_1-31.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_kHPBgE": {
-          "type": "image_card",
+        "image_V6A9nF": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_2-8.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_kbt4JJ": {
-          "type": "image_card",
+        "image_3riBpG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Willow_Lodge_Vol_2-26.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_xbPJUD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Willow_Lodge_Vol_3-3.jpg",
+            "heading": "",
+            "description": ""
+          }
+        },
+        "image_DgjLVx": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_1-26.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_dVPxg3": {
-          "type": "image_card",
+        "image_4wYiY9": {
+          "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Willow_Lodge_Vol_3-26.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "image": "shopify://shop_images/Willow_Lodge_Vol_3-26_d813c1c2-7099-4ff8-ab71-c87e8270a29c.jpg",
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_Qbya9f": {
-          "type": "image_card",
+        "image_DnbwmK": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_1-22.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_hDgfqr": {
-          "type": "image_card",
+        "image_qtbryg": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_1-23.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_J8ww48": {
-          "type": "image_card",
+        "image_8PKGLX": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_4-25_706e3189-1970-46de-b03e-77d22b4df093.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_jFyyKJ": {
-          "type": "image_card",
+        "image_MRehXJ": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_1-4.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_rWBf87": {
-          "type": "image_card",
+        "image_njDEWt": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_3-49.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_eDKRk7": {
-          "type": "image_card",
+        "image_gUHTaJ": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/V2_Willow_Lodge_Vol_5-28.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_Y3afJi": {
-          "type": "image_card",
+        "image_tNRYT9": {
+          "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Willow_Lodge_Vol_1-14.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "image": "shopify://shop_images/Willow_Lodge_Vol_1-14_2f901e4c-6345-44fa-9494-36a9c565b774.jpg",
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_LMDJAP": {
-          "type": "image_card",
+        "image_3maPAw": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_1-7.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_c9Eg9W": {
-          "type": "image_card",
+        "image_LMpeJx": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_5-19.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_GDNdXW": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Willow_Lodge_Vol_2-27.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_QWgDNK": {
-          "type": "image_card",
+        "image_qgcyPW": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_5-30.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_JLbtCr": {
-          "type": "image_card",
+        "image_EPcN8J": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_6-3.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_UFmX3W": {
-          "type": "image_card",
+        "image_PX64j9": {
+          "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Willow_Lodge_Vol_3-46.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "image": "shopify://shop_images/Willow_Lodge_Vol_3-46_a008ae34-bdd6-476f-bbed-a9de947278ad.jpg",
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_HedqtB": {
-          "type": "image_card",
+        "image_cMTL4A": {
+          "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Willow_Lodge_Vol_4-22.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "image": "shopify://shop_images/Willow_Lodge_Vol_4-22_1b0d1494-2a65-4547-8c02-c5e57883f85f.jpg",
+            "heading": "",
+            "description": ""
           }
         },
-        "image_card_QAR9yP": {
-          "type": "image_card",
+        "image_jRfc6W": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_4-38.jpg",
-            "title": "",
-            "subtitle": "",
-            "text": "",
-            "block_colour_scheme": "light-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
+            "heading": "",
+            "description": ""
           }
         }
       },
       "block_order": [
-        "image_card_G7eHnW",
-        "image_card_aGhK6X",
-        "image_card_b9yjtU",
-        "image_card_77bj6m",
-        "image_card_pAFQdg",
-        "image_card_kHPBgE",
-        "image_card_kbt4JJ",
-        "image_card_dVPxg3",
-        "image_card_Qbya9f",
-        "image_card_hDgfqr",
-        "image_card_J8ww48",
-        "image_card_jFyyKJ",
-        "image_card_rWBf87",
-        "image_card_eDKRk7",
-        "image_card_Y3afJi",
-        "image_card_LMDJAP",
-        "image_card_c9Eg9W",
-        "image_card_GDNdXW",
-        "image_card_QWgDNK",
-        "image_card_JLbtCr",
-        "image_card_UFmX3W",
-        "image_card_HedqtB",
-        "image_card_QAR9yP"
+        "image_NxYeLp",
+        "image_YKQUEy",
+        "image_acTBjt",
+        "image_BznbkL",
+        "image_PY3TJ7",
+        "image_ypYf3q",
+        "image_V6A9nF",
+        "image_3riBpG",
+        "image_xbPJUD",
+        "image_DgjLVx",
+        "image_4wYiY9",
+        "image_DnbwmK",
+        "image_qtbryg",
+        "image_8PKGLX",
+        "image_MRehXJ",
+        "image_njDEWt",
+        "image_gUHTaJ",
+        "image_tNRYT9",
+        "image_3maPAw",
+        "image_LMpeJx",
+        "image_qgcyPW",
+        "image_EPcN8J",
+        "image_PX64j9",
+        "image_cMTL4A",
+        "image_jRfc6W"
       ],
-      "name": "Image text blocks",
+      "name": "Media gallery",
       "settings": {
-        "title": "",
-        "section_padding": "--spacing-2xl",
+        "heading": "Gallery",
+        "layout": "slider",
+        "enable_lightbox": true,
+        "lightbox_thumbnails_position": "side",
+        "description_position": "bottom",
+        "image_aspect_ratio": "3/4",
+        "image_max_height": 620,
+        "image_fit": "cover",
+        "columns_desktop": 4,
+        "gap": 16,
+        "autoplay": false,
+        "autoplay_speed": 3,
         "colour_scheme": "base-white-01",
-        "text_position": "over_image",
-        "mobile_layout": "swiper",
-        "enable_lightbox": true
+        "section_padding": "--spacing-2xl"
       }
     },
     "furncare_about_proof_DVGATz": {
@@ -446,7 +380,7 @@
           "type": "stat",
           "settings": {
             "number": "400",
-            "label": "New Product Styles",
+            "label": "Bespoke Product Styles",
             "copy": "A complex and bespoke specification, tailored to Willow Lodge"
           }
         },
@@ -1059,7 +993,7 @@
     "image_video_banner_n9JT9E",
     "blocks_Mkqmde",
     "richtext_LTPVBd",
-    "image_text_blocks_xYxbk8",
+    "custom_media_gallery_mXJgid",
     "furncare_about_proof_DVGATz",
     "blocks_HErXQc",
     "richtext_iHxNi7",

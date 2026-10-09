@@ -1,12 +1,28 @@
 {% comment %}
   Renders a single media gallery block: an image, optionally paired with a heading/description.
   Accepts: image, image_mobile, heading, description, description_position, enable_lightbox,
-  lightbox_id, slide_index, aspect_ratio.
+  lightbox_id, slide_index, aspect_ratio, block (for per-block text size/alignment settings).
 {% endcomment %}
 
 {% liquid
   if image_mobile == blank
     assign image_mobile = image
+  endif
+
+  assign heading_style = ''
+  if block.settings.heading_size > 0
+    assign heading_style = heading_style | append: 'font-size: ' | append: block.settings.heading_size | append: 'px;'
+  endif
+  if block.settings.heading_align != blank
+    assign heading_style = heading_style | append: 'text-align: ' | append: block.settings.heading_align | append: ';'
+  endif
+
+  assign description_style = ''
+  if block.settings.description_size > 0
+    assign description_style = description_style | append: 'font-size: ' | append: block.settings.description_size | append: 'px;'
+  endif
+  if block.settings.description_align != blank
+    assign description_style = description_style | append: 'text-align: ' | append: block.settings.description_align | append: ';'
   endif
 
   assign has_description = false
@@ -58,10 +74,10 @@
   {% if heading != blank or has_description %}
     <div class="media-gallery__content">
       {% if heading != blank %}
-        <h3 class="media-gallery__item-heading title-2xs">{{ heading }}</h3>
+        <h3 class="media-gallery__item-heading title-2xs" {% if heading_style != blank %}style="{{ heading_style }}"{% endif %}>{{ heading }}</h3>
       {% endif %}
       {% if has_description %}
-        <div class="media-gallery__description body-md">{{ description }}</div>
+        <div class="media-gallery__description body-md{% if description_style != blank %} media-gallery__description--custom{% endif %}" {% if description_style != blank %}style="{{ description_style }}"{% endif %}>{{ description }}</div>
       {% endif %}
     </div>
   {% endif %}

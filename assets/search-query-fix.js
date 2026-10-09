@@ -1,7 +1,7 @@
 const nativeFetch = window.fetch.bind(window);
-const buildSearchUrl = (term) => `${window.location.origin}/search?options[prefix]=last&q=${encodeURIComponent(term)}`;
-const hasProductCards = (html) => html.includes('product-card');
 const productSearchFields = 'title,product_type,variants.title,variants.sku,vendor';
+const buildSearchUrl = (term) => `${window.location.origin}/search?type=product&options[prefix]=last&options[fields]=${productSearchFields}&q=${encodeURIComponent(term)}`;
+const hasProductCards = (html) => html.includes('product-card');
 const predictiveSearchCache = new Map();
 
 const getCached = (key, request) => {

@@ -30,6 +30,7 @@
         },
         "collection_popup_nUtbfX": {
           "type": "collection_popup",
+          "disabled": true,
           "settings": {
             "collection": "grayson-circular-tables-cross-base",
             "button_text": "Browse Size Options",
