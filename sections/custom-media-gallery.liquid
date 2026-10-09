@@ -75,7 +75,8 @@
                     enable_lightbox: item_enable_lightbox,
                     lightbox_id: lightbox_id,
                     slide_index: slide_index,
-                    aspect_ratio: aspect_ratio
+                    aspect_ratio: aspect_ratio,
+                    block: block
                   %}
                 </div>
                 {% if block.settings.image != blank %}
@@ -110,7 +111,8 @@
                   enable_lightbox: enable_lightbox,
                   lightbox_id: lightbox_id,
                   slide_index: slide_index,
-                  aspect_ratio: aspect_ratio
+                  aspect_ratio: aspect_ratio,
+                  block: block
                 %}
               </swiper-slide>
               {% if block.settings.image != blank %}
@@ -133,7 +135,8 @@
                 enable_lightbox: enable_lightbox,
                 lightbox_id: lightbox_id,
                 slide_index: slide_index,
-                aspect_ratio: aspect_ratio
+                aspect_ratio: aspect_ratio,
+                block: block
               %}
             </div>
             {% if block.settings.image != blank %}
@@ -904,10 +907,54 @@
           "label": "Heading (optional)"
         },
         {
+          "type": "range",
+          "id": "heading_size",
+          "label": "Heading font size",
+          "min": 0,
+          "max": 60,
+          "step": 2,
+          "unit": "px",
+          "default": 0,
+          "info": "0 uses the theme default."
+        },
+        {
+          "type": "select",
+          "id": "heading_align",
+          "label": "Heading alignment",
+          "default": "left",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ]
+        },
+        {
           "type": "richtext",
           "id": "description",
           "label": "Description (optional)",
           "info": "Leave blank to display the image only."
+        },
+        {
+          "type": "range",
+          "id": "description_size",
+          "label": "Description font size",
+          "min": 0,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "default": 0,
+          "info": "0 uses the theme default."
+        },
+        {
+          "type": "select",
+          "id": "description_align",
+          "label": "Description alignment",
+          "default": "left",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ]
         }
       ]
     }
