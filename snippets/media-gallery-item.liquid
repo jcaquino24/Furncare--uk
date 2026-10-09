@@ -77,7 +77,7 @@
         <h3 class="media-gallery__item-heading title-2xs" {% if heading_style != blank %}style="{{ heading_style }}"{% endif %}>{{ heading }}</h3>
       {% endif %}
       {% if has_description %}
-        <div class="media-gallery__description body-md" {% if description_style != blank %}style="{{ description_style }}"{% endif %}>{{ description }}</div>
+        <div class="media-gallery__description body-md{% if description_style != blank %} media-gallery__description--custom{% endif %}" {% if description_style != blank %}style="{{ description_style }}"{% endif %}>{{ description }}</div>
       {% endif %}
     </div>
   {% endif %}
