@@ -56,6 +56,7 @@
 
     {% comment %} 2. Dimensions {% endcomment %}
     {% if has_dimensions %}
+       {% render 'accordion', title: 'Dimensions', content: dimensions_content %}
       {% capture dimensions_content %}
         <div class="product-dimensions">
           {% if dimensions.image != blank %}
