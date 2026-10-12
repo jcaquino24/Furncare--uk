@@ -87,21 +87,31 @@
           var placeholder = document.getElementById('contact-form-placeholder');
           var frame = source && source.querySelector('[data-form-id]');
           if (!frame || !placeholder) return false;
+          if (!window.hbspt || !window.hbspt.forms || typeof window.hbspt.forms.create !== 'function') return false;
 
-          frame.style.display = 'block';
-          placeholder.appendChild(frame);
+          // A rendered HubSpot iframe reloads blank when moved, so build a fresh one in the drawer.
+          var target = document.createElement('div');
+          target.id = 'contact-form-alt-target';
+          placeholder.appendChild(target);
+
+          window.hbspt.forms.create({
+            region: frame.getAttribute('data-region') || 'eu1',
+            portalId: frame.getAttribute('data-portal-id'),
+            formId: frame.getAttribute('data-form-id'),
+            target: '#' + target.id
+          });
+          frame.remove();
           return true;
         }
 
         if (moveForm()) return;
 
-        var observer = new MutationObserver(function () {
-          if (moveForm()) observer.disconnect();
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
+        var poll = setInterval(function () {
+          if (moveForm()) clearInterval(poll);
+        }, 300);
         setTimeout(function () {
-          observer.disconnect();
-        }, 10000);
+          clearInterval(poll);
+        }, 15000);
       })();
     </script>
   {% endif %}
