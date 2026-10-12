@@ -125,7 +125,8 @@
       {% assign specifications_content = product.metafields.custom.specifications
         | metafield_tag
       %}
-      {% render 'accordion', title: 'Specifications', content: specifications_content %}
+      {% assign specifications_title = section.settings.specifications_title | default: 'Specifications' %}
+      {% render 'accordion', title: specifications_title, content: specifications_content %}
     {% endif %}
 
     {% comment %} 4. Care Instructions {% endcomment %}
