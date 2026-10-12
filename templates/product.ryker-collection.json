@@ -164,6 +164,7 @@
         "contact_form_html": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
         "lead_time_icon": "shopify://shop_images/dark-delivery-icon.svg",
         "lead_time_text": "Delivered",
+        "specifications_title": "Dimensions",
         "product_swatch_information": "<p>Experience the quality and texture of our finishes before you decide. Order a free sample swatch today and find the perfect match for your space with confidence.</p>",
         "show_thumbnails": true,
         "zoom": true,
@@ -245,6 +246,8 @@
       "name": "Product blocks",
       "settings": {
         "title": "You may also like",
+        "products_per_row": 4,
+        "max_products": 8,
         "section_padding": "--spacing-2xl"
       }
     },
