@@ -74,9 +74,37 @@
   </script>
 
   {% comment %} Render the form HTML directly on page (hidden) {% endcomment %}
-  <div style="display: none;">
+  <div style="display: none;" id="contact-form-source">
     {{ active_contact_form_html }}
   </div>
+
+  {% comment %} The compiled product bundle only relocates the default form ID, so move the alternate form here. {% endcomment %}
+  {% if active_contact_form_html != section.settings.contact_form_html %}
+    <script>
+      (function () {
+        function moveForm() {
+          var source = document.getElementById('contact-form-source');
+          var placeholder = document.getElementById('contact-form-placeholder');
+          var frame = source && source.querySelector('[data-form-id]');
+          if (!frame || !placeholder) return false;
+
+          frame.style.display = 'block';
+          placeholder.appendChild(frame);
+          return true;
+        }
+
+        if (moveForm()) return;
+
+        var observer = new MutationObserver(function () {
+          if (moveForm()) observer.disconnect();
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+        setTimeout(function () {
+          observer.disconnect();
+        }, 10000);
+      })();
+    </script>
+  {% endif %}
 {% endif %}
 
 {% render 'breadcrumbs', show_home: true, show_back_arrow: false %}
