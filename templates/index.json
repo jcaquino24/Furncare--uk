@@ -575,12 +575,10 @@
             "handle": "new-arrivals",
             "product_feed_source": "product_list",
             "products": [
-              "essentials-bundle",
-              "kora-coffee-table",
-              "struan-wingback-chair",
-              "emmi-lowered-arm-chair",
-              "langdon-rectangular-8-seater-dining-table-copy",
-              "thetford-small-side-table"
+              "somerton-bedroom-furniture-bundle",
+              "grayson-curve-d-end-6-seater-table",
+              "grayson-circular-2-seater-table-curve-base",
+              "grayson-square-4-seater-table-curve-base"
             ],
             "collection": "",
             "seed_product": "",
@@ -596,11 +594,12 @@
             "handle": "best-sellers",
             "product_feed_source": "product_list",
             "products": [
-              "ellington-3-drawer-bedside",
-              "abbott-3-drawer-bedside",
-              "bronson-3-drawer-bedside",
-              "tilbury-3-drawer-bedside",
-              "galloway-3-drawer-bedside"
+              "ottilie-bar-stool",
+              "ellington-bedroom-furniture-bundle",
+              "galloway-bedroom-furniture-bundle",
+              "bronson-bedroom-furniture-bundle",
+              "tilbury-bedroom-furniture-bundle",
+              "abbott-bedroom-furniture-bundle"
             ],
             "collection": "the-origins-collection",
             "seed_product": "",
@@ -617,6 +616,8 @@
       "name": "Product blocks",
       "settings": {
         "title": "explore our products",
+        "products_per_row": 4,
+        "max_products": 8,
         "section_padding": "--spacing-2xl"
       }
     },
