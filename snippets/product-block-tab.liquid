@@ -23,21 +23,6 @@
       endunless
 
     when 'custom_collection'
-      assign target_product = nil
-      if block.settings.use_current_product and product
-        assign target_product = product
-      elsif block.settings.seed_product != blank
-        assign target_product = block.settings.seed_product
-      elsif product
-        assign target_product = product
-      endif
-
-      if target_product
-        assign exclude_id = target_product.id
-      endif
-
-      assign custom_col = target_product.metafields.custom.collection.value | default: target_product.metafields.custom.collection
-      assign custom_col_handle = custom_col | handleize
       if custom_col.products != blank and custom_col.products.size > 0
         assign block_products = custom_col.products
       elsif custom_col.first.products != blank and custom_col.first.products.size > 0
@@ -50,28 +35,15 @@
         assign block_products = target_product.collections.first.products
       endif
 
+    when 'similar_names'
+      assign is_similar_request = true
+
     when 'recommendations'
-      assign target_product = nil
-      if block.settings.use_current_product and product
-        assign target_product = product
-      elsif block.settings.seed_product != blank
-        assign target_product = block.settings.seed_product
-      elsif product
-        assign target_product = product
-      endif
-
-      if target_product
-        assign exclude_id = target_product.id
-      endif
-
-      assign custom_col = target_product.metafields.custom.collection.value | default: target_product.metafields.custom.collection
-      assign custom_col_handle = custom_col | handleize
-
-      if block.settings.use_custom_collection and custom_col != blank
+      if block.settings.match_similar_names
+        assign is_similar_request = true
+      elsif block.settings.use_custom_collection and custom_col != blank
         if custom_col.products != blank and custom_col.products.size > 0
           assign block_products = custom_col.products
-        elsif custom_col.first.products != blank and custom_col.first.products.size > 0
-          assign block_products = custom_col.first.products
         elsif custom_col_handle != blank and collections[custom_col_handle] != blank and collections[custom_col_handle].products.size > 0
           assign block_products = collections[custom_col_handle].products
         endif
@@ -84,10 +56,6 @@
       else
         if custom_col.products != blank and custom_col.products.size > 0
           assign block_products = custom_col.products
-        elsif custom_col.first.products != blank and custom_col.first.products.size > 0
-          assign block_products = custom_col.first.products
-        elsif custom_col_handle != blank and collections[custom_col_handle] != blank and collections[custom_col_handle].products.size > 0
-          assign block_products = collections[custom_col_handle].products
         elsif block.settings.collection != blank and block.settings.collection.products.size > 0
           assign block_products = block.settings.collection.products
         elsif target_product.metafields.custom.ai_related_products.value != blank
@@ -110,12 +78,61 @@
       endif
   endcase
 
+  if is_similar_request
+    assign base_name = target_product.metafields.custom.product_family_text.value | default: ''
+    if base_name == blank
+      assign raw_title = target_product.title | split: '|' | first | strip
+      assign base_name = raw_title | split: ' ' | first | strip
+    endif
+    assign base_name_down = base_name | downcase
+
+    assign candidate_pool = ''
+    if block.settings.collection != blank and block.settings.collection.products.size > 0
+      assign candidate_pool = block.settings.collection.products
+    elsif custom_col.products != blank and custom_col.products.size > 0
+      assign candidate_pool = custom_col.products
+    elsif custom_col_handle != blank and collections[custom_col_handle] != blank and collections[custom_col_handle].products.size > 0
+      assign candidate_pool = collections[custom_col_handle].products
+    elsif target_product and target_product.collections.size > 0
+      for col in target_product.collections
+        unless col.handle == 'all' or col.handle == 'frontpage'
+          if col.products_count > 1
+            assign candidate_pool = col.products
+            break
+          endif
+        endunless
+      endfor
+      if candidate_pool == blank or candidate_pool.size == 0
+        assign candidate_pool = target_product.collections.first.products
+      endif
+    endif
+
+    assign matching_handles = ','
+    if candidate_pool != blank and base_name_down != blank
+      for item in candidate_pool
+        assign item_title_down = item.title | downcase
+        assign item_family_down = item.metafields.custom.product_family_text.value | downcase
+        if item_title_down contains base_name_down or item_family_down == base_name_down
+          assign matching_handles = matching_handles | append: item.handle | append: ','
+        endif
+      endfor
+    endif
+
+    assign block_products = candidate_pool
+  endif
+
   assign valid_products_count = 0
   assign check_ids = ','
   if block_products != blank and block_products != empty
     for p_item in block_products
       if exclude_id and p_item.id == exclude_id
         continue
+      endif
+      if matching_handles != blank and matching_handles != ','
+        assign handle_token = ',' | append: p_item.handle | append: ','
+        unless matching_handles contains handle_token
+          continue
+        endunless
       endif
       assign id_token = ',' | append: p_item.id | append: ','
       if check_ids contains id_token
@@ -155,29 +172,13 @@
         aria-label="Product carousel"
         aria-roledescription="carousel"
       >
-        {% assign rendered_ids = ',' %}
-        {% assign rendered_count = 0 %}
-        {% for p_item in block_products %}
-          {% if exclude_id and p_item.id == exclude_id %}
-            {% continue %}
-          {% endif %}
-          {% assign id_token = ',' | append: p_item.id | append: ',' %}
-          {% if rendered_ids contains id_token %}
-            {% continue %}
-          {% endif %}
-          {% assign rendered_ids = rendered_ids | append: p_item.id | append: ',' %}
-          {% assign card_loading = 'lazy' %}
-          {% if rendered_count < 2 %}
-            {% assign card_loading = 'eager' %}
-          {% endif %}
-          <swiper-slide class="content-blocks__slide">
-            {% render 'product-card', product: p_item, loading: card_loading %}
-          </swiper-slide>
-          {% assign rendered_count = rendered_count | plus: 1 %}
-          {% if rendered_count >= max_products %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
+        {% render 'product-block-loop',
+          block_products: block_products,
+          exclude_id: exclude_id,
+          matching_handles: matching_handles,
+          max_products: max_products,
+          is_slide: true
+        %}
       </swiper-container>
       {% if has_tabs %}
         {% assign section_id_with_tab = fallback_section_id
@@ -191,27 +192,13 @@
       {% endif %}
     {% elsif valid_products_count > 0 %}
       <div class="content-blocks__grid">
-        {% assign rendered_ids = ',' %}
-        {% assign rendered_count = 0 %}
-        {% for p_item in block_products %}
-          {% if exclude_id and p_item.id == exclude_id %}
-            {% continue %}
-          {% endif %}
-          {% assign id_token = ',' | append: p_item.id | append: ',' %}
-          {% if rendered_ids contains id_token %}
-            {% continue %}
-          {% endif %}
-          {% assign rendered_ids = rendered_ids | append: p_item.id | append: ',' %}
-          {% assign card_loading = 'lazy' %}
-          {% if rendered_count < 2 %}
-            {% assign card_loading = 'eager' %}
-          {% endif %}
-          {% render 'product-card', product: p_item, loading: card_loading %}
-          {% assign rendered_count = rendered_count | plus: 1 %}
-          {% if rendered_count >= max_products %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
+        {% render 'product-block-loop',
+          block_products: block_products,
+          exclude_id: exclude_id,
+          matching_handles: matching_handles,
+          max_products: max_products,
+          is_slide: false
+        %}
       </div>
     {% endif %}
   </div>

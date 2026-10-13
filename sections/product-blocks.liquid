@@ -49,7 +49,7 @@
   assign block1_rec_url = ''
   assign block2_rec_url = ''
 
-  if section.blocks[0].settings.product_feed_source == 'recommendations' and section.blocks[0].settings.use_custom_collection != true
+  if section.blocks[0].settings.product_feed_source == 'recommendations' and section.blocks[0].settings.use_custom_collection != true and section.blocks[0].settings.match_similar_names != true
     assign product_id_1 = false
     if section.blocks[0].settings.use_current_product and product
       assign product_id_1 = product.id
@@ -61,7 +61,7 @@
     endif
   endif
 
-  if section.blocks[1].settings.product_feed_source == 'recommendations' and section.blocks[1].settings.use_custom_collection != true
+  if section.blocks[1].settings.product_feed_source == 'recommendations' and section.blocks[1].settings.use_custom_collection != true and section.blocks[1].settings.match_similar_names != true
     assign product_id_2 = false
     if section.blocks[1].settings.use_current_product and product
       assign product_id_2 = product.id
@@ -241,6 +241,10 @@
             {
               "value": "custom_collection",
               "label": "Custom collection (custom.collection)"
+            },
+            {
+              "value": "similar_names",
+              "label": "Similar names (e.g. Linetta)"
             }
           ]
         },
@@ -250,6 +254,13 @@
           "label": "Use custom.collection metafield",
           "default": false,
           "info": "Display products from the custom.collection metafield when set to Recommendations or Custom collection"
+        },
+        {
+          "type": "checkbox",
+          "id": "match_similar_names",
+          "label": "Match similar names / family",
+          "default": false,
+          "info": "Show products that share the base name prefix (e.g. 'Linetta') from the product's collection or store"
         },
         {
           "type": "product_list",
