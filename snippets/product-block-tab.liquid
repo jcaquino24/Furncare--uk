@@ -22,6 +22,34 @@
         endif
       endunless
 
+    when 'custom_collection'
+      assign target_product = nil
+      if block.settings.use_current_product and product
+        assign target_product = product
+      elsif block.settings.seed_product != blank
+        assign target_product = block.settings.seed_product
+      elsif product
+        assign target_product = product
+      endif
+
+      if target_product
+        assign exclude_id = target_product.id
+      endif
+
+      assign custom_col = target_product.metafields.custom.collection.value | default: target_product.metafields.custom.collection
+      assign custom_col_handle = custom_col | handleize
+      if custom_col.products != blank and custom_col.products.size > 0
+        assign block_products = custom_col.products
+      elsif custom_col.first.products != blank and custom_col.first.products.size > 0
+        assign block_products = custom_col.first.products
+      elsif custom_col_handle != blank and collections[custom_col_handle] != blank and collections[custom_col_handle].products.size > 0
+        assign block_products = collections[custom_col_handle].products
+      elsif block.settings.collection != blank
+        assign block_products = block.settings.collection.products
+      elsif target_product and target_product.collections.size > 0
+        assign block_products = target_product.collections.first.products
+      endif
+
     when 'recommendations'
       assign target_product = nil
       if block.settings.use_current_product and product
@@ -36,14 +64,31 @@
         assign exclude_id = target_product.id
       endif
 
-      if recommendations.performed
+      assign custom_col = target_product.metafields.custom.collection.value | default: target_product.metafields.custom.collection
+      assign custom_col_handle = custom_col | handleize
+
+      if block.settings.use_custom_collection and custom_col != blank
+        if custom_col.products != blank and custom_col.products.size > 0
+          assign block_products = custom_col.products
+        elsif custom_col.first.products != blank and custom_col.first.products.size > 0
+          assign block_products = custom_col.first.products
+        elsif custom_col_handle != blank and collections[custom_col_handle] != blank and collections[custom_col_handle].products.size > 0
+          assign block_products = collections[custom_col_handle].products
+        endif
+      elsif recommendations.performed
         if recommendations.products_count > 0 and block.settings.recommendation_intent == recommendations.intent
           assign block_products = recommendations.products
         else
           assign block_products = ''
         endif
       else
-        if block.settings.collection != blank and block.settings.collection.products.size > 0
+        if custom_col.products != blank and custom_col.products.size > 0
+          assign block_products = custom_col.products
+        elsif custom_col.first.products != blank and custom_col.first.products.size > 0
+          assign block_products = custom_col.first.products
+        elsif custom_col_handle != blank and collections[custom_col_handle] != blank and collections[custom_col_handle].products.size > 0
+          assign block_products = collections[custom_col_handle].products
+        elsif block.settings.collection != blank and block.settings.collection.products.size > 0
           assign block_products = block.settings.collection.products
         elsif target_product.metafields.custom.ai_related_products.value != blank
           assign block_products = target_product.metafields.custom.ai_related_products.value
