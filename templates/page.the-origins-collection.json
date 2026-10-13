@@ -24,7 +24,7 @@
         "eyebrow_NfMeef": {
           "type": "eyebrow",
           "settings": {
-            "text": "later living ____________",
+            "text": "contemporary cabinet furniture for later living",
             "eyebrow_size": "sm",
             "text_color": "#f9f7f0"
           }
@@ -87,7 +87,7 @@
         "maintain_aspect_ratio": true,
         "add_header_offset": false,
         "media_type": "image",
-        "image_desktop": "shopify://shop_images/Ellington_CU_ab55b21d-2988-4d7c-9a78-730afbe8551e.jpg",
+        "image_desktop": "shopify://shop_images/CareShow26-174.jpg",
         "video_desktop": "shopify://files/videos/Garden Furn 2026 Landing Page.mp4",
         "show_controls": false,
         "mute_video": true,
@@ -149,7 +149,7 @@
           "settings": {
             "spacer_height": 50,
             "spacer_height_mobile": 30,
-            "spacer_color": "#F9F7F0"
+            "spacer_color": "#f9f7f0"
           },
           "blocks": {}
         }
@@ -197,7 +197,11 @@
           "settings": {
             "image": "shopify://shop_images/moorland_cinder.png",
             "heading": "",
-            "description": "<p>Moorland Cinder</p>"
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "<p>Moorland Cinder</p>",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_gqEbGR": {
@@ -205,7 +209,11 @@
           "settings": {
             "image": "shopify://shop_images/sable_walnut.png",
             "heading": "",
-            "description": "<p>Sable Walnut</p>"
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "<p>Sable Walnut</p>",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_KVQqLX": {
@@ -213,7 +221,11 @@
           "settings": {
             "image": "shopify://shop_images/northern_wenge.png",
             "heading": "",
-            "description": "<p>Northern Wenge</p>"
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "<p>Northern Wenge</p>",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_kw4EEX": {
@@ -221,7 +233,11 @@
           "settings": {
             "image": "shopify://shop_images/bracken_sage.png",
             "heading": "",
-            "description": "<p>Bracken Sage</p>"
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "<p>Bracken Sage</p>",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_hAXGqW": {
@@ -229,7 +245,11 @@
           "settings": {
             "image": "shopify://shop_images/nera_oak_c13813a6-6615-41e1-bf7c-223be95626a5.png",
             "heading": "",
-            "description": "<p>Nera Oak</p>"
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "<p>Nera Oak</p>",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_DFCetc": {
@@ -237,7 +257,11 @@
           "settings": {
             "image": "shopify://shop_images/mink_2_c3f3408b-9a5e-439a-ad66-982621969bb8.png",
             "heading": "",
-            "description": "<p>Mink</p>"
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "<p>Mink</p>",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_LpaYgg": {
@@ -245,7 +269,11 @@
           "settings": {
             "image": "shopify://shop_images/coastal_storm_2.png",
             "heading": "",
-            "description": "<p>Coastal Storm</p>"
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "<p>Coastal Storm</p>",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_edEVJa": {
@@ -253,7 +281,11 @@
           "settings": {
             "image": "shopify://shop_images/brushed_cashmere_2.png",
             "heading": "",
-            "description": "<p>Brushed Cashmere</p>"
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "<p>Brushed Cashmere</p>",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_3hhzNi": {
@@ -261,7 +293,11 @@
           "settings": {
             "image": "shopify://shop_images/arbor_oak.png",
             "heading": "",
-            "description": "<p>Arbor Oak</p>"
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "<p>Arbor Oak</p>",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_r7aCEd": {
@@ -269,7 +305,11 @@
           "settings": {
             "image": "shopify://shop_images/nordic_slate.png",
             "heading": "",
-            "description": "<p>Nordic Slate</p>"
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "<p>Nordic Slate</p>",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_eTFWF6": {
@@ -277,7 +317,11 @@
           "settings": {
             "image": "shopify://shop_images/moorland_char.png",
             "heading": "",
-            "description": "<p>Moorland Char</p>"
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "<p>Moorland Char</p>",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_WWL8yF": {
@@ -285,7 +329,11 @@
           "settings": {
             "image": "shopify://shop_images/coastal_blue_2.png",
             "heading": "",
-            "description": "<p>Coastal Blue</p>"
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "<p>Coastal Blue</p>",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_VdEgxx": {
@@ -293,7 +341,11 @@
           "settings": {
             "image": "shopify://shop_images/moorlandoak_5e07a376-e33e-4d64-9550-5b04f8efb2c3.png",
             "heading": "",
-            "description": "<p>Moorland Oak</p>"
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "<p>Moorland Oak</p>",
+            "description_size": 0,
+            "description_align": "left"
           }
         }
       },
@@ -526,7 +578,7 @@
             "image": "shopify://shop_images/abbott_close_shot_mock_up_sunny.png",
             "text": "The Crosshatch Handle",
             "richtext": "<p>Tilbury & Abbot</p>",
-            "richtext_color": "#F9F7F0",
+            "richtext_color": "#f9f7f0",
             "richtext_font_size": "16px",
             "richtext_font_weight": "300",
             "richtext_text_transform": "none",
@@ -657,6 +709,8 @@
       "name": "Product blocks",
       "settings": {
         "title": "browse the collection",
+        "products_per_row": 4,
+        "max_products": 8,
         "section_padding": "--spacing-2xl"
       }
     },
