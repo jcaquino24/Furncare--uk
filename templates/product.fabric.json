@@ -48,7 +48,8 @@
           "settings": {
             "title": "New Arrivals",
             "handle": "new-arrivals",
-            "product_feed_source": "recommendations",
+            "product_feed_source": "custom_collection",
+            "use_custom_collection": true,
             "products": [],
             "collection": "",
             "seed_product": "",
@@ -64,6 +65,7 @@
             "title": "Best Sellers",
             "handle": "best-sellers",
             "product_feed_source": "product_list",
+            "use_custom_collection": false,
             "products": [],
             "collection": "",
             "seed_product": "",
