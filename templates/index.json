@@ -568,6 +568,28 @@
     "product_blocks_yKwTgA": {
       "type": "product-blocks",
       "blocks": {
+        "product_block_JNYNeX": {
+          "type": "product_block",
+          "settings": {
+            "title": "Coming Soon",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [
+              "ottilie-bar-stool",
+              "ottilie-arm-chair",
+              "ellington-bedroom-furniture-bundle",
+              "galloway-bedroom-furniture-bundle",
+              "abbott-bedroom-furniture-bundle",
+              "bronson-bedroom-furniture-bundle",
+              "tilbury-bedroom-furniture-bundle"
+            ],
+            "collection": "the-origins-collection",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        },
         "product_block_7Ycz3A": {
           "type": "product_block",
           "settings": {
@@ -586,32 +608,11 @@
             "recommendation_intent": "related",
             "colour_scheme": "warm-stone"
           }
-        },
-        "product_block_JNYNeX": {
-          "type": "product_block",
-          "settings": {
-            "title": "Coming Soon",
-            "handle": "best-sellers",
-            "product_feed_source": "product_list",
-            "products": [
-              "ottilie-bar-stool",
-              "ellington-bedroom-furniture-bundle",
-              "galloway-bedroom-furniture-bundle",
-              "bronson-bedroom-furniture-bundle",
-              "tilbury-bedroom-furniture-bundle",
-              "abbott-bedroom-furniture-bundle"
-            ],
-            "collection": "the-origins-collection",
-            "seed_product": "",
-            "use_current_product": false,
-            "recommendation_intent": "related",
-            "colour_scheme": "warm-stone"
-          }
         }
       },
       "block_order": [
-        "product_block_7Ycz3A",
-        "product_block_JNYNeX"
+        "product_block_JNYNeX",
+        "product_block_7Ycz3A"
       ],
       "name": "Product blocks",
       "settings": {
