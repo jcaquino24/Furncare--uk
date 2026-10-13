@@ -3,60 +3,6 @@
   assign max_products = section.settings.max_products | default: 8
   assign recommendations_limit = max_products | at_most: 10
 
-  # Get products for each block based on their feed source
-  assign tab1_products = ''
-  assign tab2_products = ''
-
-  # Tab 1 products
-  case section.blocks[0].settings.product_feed_source
-    when 'product_list'
-      assign tab1_products = section.blocks[0].settings.products
-    when 'collection'
-      if section.blocks[0].settings.collection != blank
-        assign tab1_products = section.blocks[0].settings.collection.products
-      elsif section.blocks[0].settings.use_current_product and product and product.collections.size > 0
-        assign tab1_products = product.collections[0].products
-      endif
-    when 'recommendations'
-      assign product_id = false
-      if section.blocks[0].settings.use_current_product and product
-        assign product_id = product.id
-      elsif section.blocks[0].settings.seed_product
-        assign product_id = section.blocks[0].settings.seed_product.id
-      endif
-      if product_id and recommendations.performed and recommendations.products_count > 0
-        assign tab1_products = recommendations.products
-      else
-        assign tab1_products = ''
-      endif
-  endcase
-
-  # Tab 2 products
-  case section.blocks[1].settings.product_feed_source
-    when 'product_list'
-      assign tab2_products = section.blocks[1].settings.products
-    when 'collection'
-      if section.blocks[1].settings.collection != blank
-        assign tab2_products = section.blocks[1].settings.collection.products
-      elsif section.blocks[1].settings.use_current_product and product and product.collections.size > 0
-        assign tab2_products = product.collections[0].products
-      endif
-    when 'recommendations'
-      assign product_id = false
-      if section.blocks[1].settings.use_current_product and product
-        assign product_id = product.id
-      elsif section.blocks[1].settings.seed_product
-        assign product_id = section.blocks[1].settings.seed_product.id
-      endif
-      if product_id and recommendations.performed and recommendations.products_count > 0
-        assign tab2_products = recommendations.products
-      else
-        assign tab2_products = ''
-      endif
-  endcase
-
-  assign has_tabs = false
-
   assign fallback_section_id = section.id | default: 'product-blocks'
   if fallback_section_id == blank or fallback_section_id == empty
     assign fallback_section_id = 'product-blocks'
@@ -92,12 +38,7 @@
   {% endif %}
 {% endcapture %}
 
-{% assign show_nav = false %}
-
-{% if tab1_products.count > products_per_row or tab2_products.count > products_per_row %}
-  {% assign show_nav = true %}
-{% endif %}
-
+{% assign show_nav = true %}
 {% assign title_classes = 'title-with-nav__nav' %}
 {% if show_nav and tabs_html != blank %}
   {% assign title_classes = 'hide-on-mobile title-with-nav__nav' %}
@@ -112,11 +53,11 @@
     assign product_id_1 = false
     if section.blocks[0].settings.use_current_product and product
       assign product_id_1 = product.id
-    elsif section.blocks[0].settings.seed_product
+    elsif section.blocks[0].settings.seed_product != blank
       assign product_id_1 = section.blocks[0].settings.seed_product.id
     endif
     if product_id_1
-      assign block1_rec_url = '/recommendations/products.json?product_id=' | append: product_id_1 | append: '&limit=' | append: recommendations_limit | append: '&intent=' | append: section.blocks[0].settings.recommendation_intent
+      assign block1_rec_url = routes.product_recommendations_url | append: '?section_id=' | append: section.id | append: '&product_id=' | append: product_id_1 | append: '&limit=' | append: recommendations_limit | append: '&intent=' | append: section.blocks[0].settings.recommendation_intent
     endif
   endif
 
@@ -124,11 +65,11 @@
     assign product_id_2 = false
     if section.blocks[1].settings.use_current_product and product
       assign product_id_2 = product.id
-    elsif section.blocks[1].settings.seed_product
+    elsif section.blocks[1].settings.seed_product != blank
       assign product_id_2 = section.blocks[1].settings.seed_product.id
     endif
     if product_id_2
-      assign block2_rec_url = '/recommendations/products.json?product_id=' | append: product_id_2 | append: '&limit=' | append: recommendations_limit | append: '&intent=' | append: section.blocks[1].settings.recommendation_intent
+      assign block2_rec_url = routes.product_recommendations_url | append: '?section_id=' | append: section.id | append: '&product_id=' | append: product_id_2 | append: '&limit=' | append: recommendations_limit | append: '&intent=' | append: section.blocks[1].settings.recommendation_intent
     endif
   endif
 %}
@@ -175,34 +116,6 @@
         {% assign tab_classes = 'content-blocks__tab' %}
         {% assign slides_per_view = '2' %}
 
-        {% comment %} Determine product source based on feed type {% endcomment %}
-        {% assign block_products = '' %}
-        {% case block.settings.product_feed_source %}
-          {% when 'product_list' %}
-            {% assign block_products = block.settings.products %}
-          {% when 'collection' %}
-            {% if block.settings.collection != blank %}
-              {% assign block_products = block.settings.collection.products %}
-            {% elsif block.settings.use_current_product and product and product.collections.size > 0 %}
-              {% assign block_products = product.collections[0].products %}
-            {% endif %}
-          {% when 'recommendations' %}
-            {% assign product_id = false %}
-            {% if block.settings.use_current_product and product %}
-              {% assign product_id = product.id %}
-            {% elsif block.settings.seed_product %}
-              {% assign product_id = block.settings.seed_product.id %}
-            {% endif %}
-            {% if product_id
-              and recommendations.performed
-              and recommendations.products_count > 0
-            %}
-              {% assign block_products = recommendations.products %}
-            {% else %}
-              {% assign block_products = '' %}
-            {% endif %}
-        {% endcase %}
-
         {% if forloop.first %}
           {% assign tab_classes = tab_classes | append: ' is-active' %}
         {% elsif forloop.index == 2 and has_tabs == false %}
@@ -213,119 +126,18 @@
           {% assign slides_per_view = '1.75' %}
         {% endif %}
 
-        {% comment %} Always render tabs for debugging {% endcomment %}
-        {% if block.settings.title != blank %}
-          <div
-            class="{{ tab_classes }}"
-            js-content-blocks="tab-content"
-            data-tab="{{ tab_name }}"
-          >
-            {% if block_products.count > 0 and block_products.count > products_per_row %}
-              <swiper-container
-                class="content-blocks__swiper"
-                slides-per-view="{{ slides_per_view }}"
-                space-between="12"
-                breakpoints='
-                  {
-                    "768": {
-                      "spaceBetween": 20,
-                      "slidesPerView": {{ products_per_row }}
-                    }
-                  }
-                '
-                navigation-prev-el="#swiper-button-prev-{{ fallback_section_id }}-{{ tab_name }}"
-                navigation-next-el="#swiper-button-next-{{ fallback_section_id }}-{{ tab_name }}"
-                role="region"
-                aria-label="Product carousel"
-                aria-roledescription="carousel"
-              >
-                {% assign main_product_id = false %}
-                {% if product %}
-                  {% assign main_product_id = product.id %}
-                {% endif %}
-
-                {% if block.settings.product_feed_source == 'recommendations' %}
-                  {% assign rendered_ids = ',' %}
-                  {% for rec_item in recommendations.products limit: max_products %}
-                    {% assign id_token = ',' | append: rec_item.id | append: ',' %}
-                    {% unless rendered_ids contains id_token or rec_item.id == product_id %}
-                      {% assign card_loading = 'lazy' %}
-                      {% if forloop.index <= 2 %}
-                        {% assign card_loading = 'eager' %}
-                      {% endif %}
-                      <swiper-slide class="content-blocks__slide">
-                        {% render 'product-card', product: rec_item, loading: card_loading %}
-                      </swiper-slide>
-                      {% assign rendered_ids = rendered_ids | append: rec_item.id | append: ',' %}
-                    {% endunless %}
-                  {% endfor %}
-                {% else %}
-                  {% assign rendered_ids = ',' %}
-                  {% for p_item in block_products limit: max_products %}
-                    {% assign id_token = ',' | append: p_item.id | append: ',' %}
-                    {% unless rendered_ids contains id_token or p_item.id == main_product_id %}
-                      {% assign card_loading = 'lazy' %}
-                      {% if forloop.index <= 2 %}
-                        {% assign card_loading = 'eager' %}
-                      {% endif %}
-                      <swiper-slide class="content-blocks__slide">
-                        {% render 'product-card', product: p_item, loading: card_loading %}
-                      </swiper-slide>
-                      {% assign rendered_ids = rendered_ids | append: p_item.id | append: ',' %}
-                    {% endunless %}
-                  {% endfor %}
-                {% endif %}
-              </swiper-container>
-              {% if tabs_html != blank %}
-                {% assign section_id_with_tab = fallback_section_id
-                  | append: '-'
-                  | append: tab_name
-                %}
-                {% render 'swiper-nav',
-                  class: 'hide-on-desktop content-blocks__swiper-nav',
-                  section_id: section_id_with_tab
-                %}
-              {% endif %}
-            {% elsif block_products.count > 0 %}
-              <div class="content-blocks__grid">
-                {% if block.settings.product_feed_source == 'recommendations' %}
-                  {% assign rendered_ids = ',' %}
-                  {% for rec_item in recommendations.products limit: max_products %}
-                    {% assign id_token = ',' | append: rec_item.id | append: ',' %}
-                    {% unless rendered_ids contains id_token or rec_item.id == product_id %}
-                      {% assign card_loading = 'lazy' %}
-                      {% if forloop.index <= 2 %}
-                        {% assign card_loading = 'eager' %}
-                      {% endif %}
-                      {% render 'product-card', product: rec_item, loading: card_loading %}
-                      {% assign rendered_ids = rendered_ids | append: rec_item.id | append: ',' %}
-                    {% endunless %}
-                  {% endfor %}
-                {% else %}
-                  {% assign rendered_ids = ',' %}
-                  {% for p_item in block_products limit: max_products %}
-                    {% assign id_token = ',' | append: p_item.id | append: ',' %}
-                    {% unless rendered_ids contains id_token or p_item.id == main_product_id %}
-                      {% assign card_loading = 'lazy' %}
-                      {% if forloop.index <= 2 %}
-                        {% assign card_loading = 'eager' %}
-                      {% endif %}
-                      {% render 'product-card', product: p_item, loading: card_loading %}
-                      {% assign rendered_ids = rendered_ids | append: p_item.id | append: ',' %}
-                    {% endunless %}
-                  {% endfor %}
-                {% endif %}
-              </div>
-            {% else %}
-              {% comment %} Show loading placeholders for recommendations {% endcomment %}
-              <div class="content-blocks__grid">
-                {% for i in (1..8) %}
-                  {% render 'product-card', is_loading: true %}
-                {% endfor %}
-              </div>
-            {% endif %}
-          </div>
-        {% endif %}
+        {% render 'product-block-tab',
+          block: block,
+          tab_name: tab_name,
+          tab_classes: tab_classes,
+          slides_per_view: slides_per_view,
+          products_per_row: products_per_row,
+          max_products: max_products,
+          fallback_section_id: fallback_section_id,
+          has_tabs: has_tabs,
+          product: product,
+          recommendations: recommendations
+        %}
       {% endfor %}
     </div>
   </div>

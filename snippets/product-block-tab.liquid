@@ -1,0 +1,173 @@
+{% liquid
+  assign block_products = ''
+  assign exclude_id = false
+  if product
+    assign exclude_id = product.id
+  elsif block.settings.seed_product != blank
+    assign exclude_id = block.settings.seed_product.id
+  endif
+
+  case block.settings.product_feed_source
+    when 'product_list'
+      unless recommendations.performed
+        assign block_products = block.settings.products
+      endunless
+
+    when 'collection'
+      unless recommendations.performed
+        if block.settings.collection != blank
+          assign block_products = block.settings.collection.products
+        elsif block.settings.use_current_product and product and product.collections.size > 0
+          assign block_products = product.collections[0].products
+        endif
+      endunless
+
+    when 'recommendations'
+      assign target_product = nil
+      if block.settings.use_current_product and product
+        assign target_product = product
+      elsif block.settings.seed_product != blank
+        assign target_product = block.settings.seed_product
+      elsif product
+        assign target_product = product
+      endif
+
+      if target_product
+        assign exclude_id = target_product.id
+      endif
+
+      if recommendations.performed
+        if recommendations.products_count > 0 and block.settings.recommendation_intent == recommendations.intent
+          assign block_products = recommendations.products
+        else
+          assign block_products = ''
+        endif
+      else
+        if block.settings.collection != blank and block.settings.collection.products.size > 0
+          assign block_products = block.settings.collection.products
+        elsif target_product.metafields.custom.ai_related_products.value != blank
+          assign block_products = target_product.metafields.custom.ai_related_products.value
+        elsif target_product and target_product.collections.size > 0
+          for col in target_product.collections
+            unless col.handle == 'all' or col.handle == 'frontpage'
+              if col.products_count > 1
+                assign block_products = col.products
+                break
+              endif
+            endunless
+          endfor
+          if block_products == blank or block_products.size == 0
+            assign block_products = target_product.collections.first.products
+          endif
+        else
+          assign block_products = collections['all'].products
+        endif
+      endif
+  endcase
+
+  assign valid_products_count = 0
+  assign check_ids = ','
+  if block_products != blank and block_products != empty
+    for p_item in block_products
+      if exclude_id and p_item.id == exclude_id
+        continue
+      endif
+      assign id_token = ',' | append: p_item.id | append: ','
+      if check_ids contains id_token
+        continue
+      endif
+      assign check_ids = check_ids | append: p_item.id | append: ','
+      assign valid_products_count = valid_products_count | plus: 1
+      if valid_products_count >= max_products
+        break
+      endif
+    endfor
+  endif
+%}
+
+{% if block.settings.title != blank %}
+  <div
+    class="{{ tab_classes }}"
+    js-content-blocks="tab-content"
+    data-tab="{{ tab_name }}"
+  >
+    {% if valid_products_count > products_per_row %}
+      <swiper-container
+        class="content-blocks__swiper"
+        slides-per-view="{{ slides_per_view }}"
+        space-between="12"
+        breakpoints='
+          {
+            "768": {
+              "spaceBetween": 20,
+              "slidesPerView": {{ products_per_row }}
+            }
+          }
+        '
+        navigation-prev-el="#swiper-button-prev-{{ fallback_section_id }}-{{ tab_name }}"
+        navigation-next-el="#swiper-button-next-{{ fallback_section_id }}-{{ tab_name }}"
+        role="region"
+        aria-label="Product carousel"
+        aria-roledescription="carousel"
+      >
+        {% assign rendered_ids = ',' %}
+        {% assign rendered_count = 0 %}
+        {% for p_item in block_products %}
+          {% if exclude_id and p_item.id == exclude_id %}
+            {% continue %}
+          {% endif %}
+          {% assign id_token = ',' | append: p_item.id | append: ',' %}
+          {% if rendered_ids contains id_token %}
+            {% continue %}
+          {% endif %}
+          {% assign rendered_ids = rendered_ids | append: p_item.id | append: ',' %}
+          {% assign card_loading = 'lazy' %}
+          {% if rendered_count < 2 %}
+            {% assign card_loading = 'eager' %}
+          {% endif %}
+          <swiper-slide class="content-blocks__slide">
+            {% render 'product-card', product: p_item, loading: card_loading %}
+          </swiper-slide>
+          {% assign rendered_count = rendered_count | plus: 1 %}
+          {% if rendered_count >= max_products %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      </swiper-container>
+      {% if has_tabs %}
+        {% assign section_id_with_tab = fallback_section_id
+          | append: '-'
+          | append: tab_name
+        %}
+        {% render 'swiper-nav',
+          class: 'hide-on-desktop content-blocks__swiper-nav',
+          section_id: section_id_with_tab
+        %}
+      {% endif %}
+    {% elsif valid_products_count > 0 %}
+      <div class="content-blocks__grid">
+        {% assign rendered_ids = ',' %}
+        {% assign rendered_count = 0 %}
+        {% for p_item in block_products %}
+          {% if exclude_id and p_item.id == exclude_id %}
+            {% continue %}
+          {% endif %}
+          {% assign id_token = ',' | append: p_item.id | append: ',' %}
+          {% if rendered_ids contains id_token %}
+            {% continue %}
+          {% endif %}
+          {% assign rendered_ids = rendered_ids | append: p_item.id | append: ',' %}
+          {% assign card_loading = 'lazy' %}
+          {% if rendered_count < 2 %}
+            {% assign card_loading = 'eager' %}
+          {% endif %}
+          {% render 'product-card', product: p_item, loading: card_loading %}
+          {% assign rendered_count = rendered_count | plus: 1 %}
+          {% if rendered_count >= max_products %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

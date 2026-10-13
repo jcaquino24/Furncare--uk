@@ -159,7 +159,26 @@
   {% endif %}
 {% endcapture %}
 
-{% if product %}
+{% if is_loading %}
+  <div
+    class="product-card is-loading"
+    aria-busy="true"
+    tabindex="-1"
+    aria-hidden="true"
+    role="presentation"
+  >
+    <!-- Render skeleton loading UI for product card -->
+    <div class="product-card__rollover-images">
+      <div class="product-card__original-image">
+        <div class="product-card__skeleton-image is-loading__skeleton"></div>
+      </div>
+    </div>
+    <div class="product-card__info">
+      <div class="product-card__title is-loading__skeleton"></div>
+      <div class="product-card__div"></div>
+    </div>
+  </div>
+{% elsif product %}
   {%- liquid
     comment
       Variant price in pounds (backend) for collection price filter.
@@ -340,23 +359,4 @@
       {{ button_content }}
     </div>
   </article>
-{% elsif is_loading %}
-  <div
-    class="product-card is-loading"
-    aria-busy="true"
-    tabindex="-1"
-    aria-hidden="true"
-    role="presentation"
-  >
-    <!-- Render skeleton loading UI for product card -->
-    <div class="product-card__rollover-images">
-      <div class="product-card__original-image">
-        <div class="product-card__skeleton-image is-loading__skeleton"></div>
-      </div>
-    </div>
-    <div class="product-card__info">
-      <div class="product-card__title is-loading__skeleton"></div>
-      <div class="product-card__div"></div>
-    </div>
-  </div>
 {% endif %}
