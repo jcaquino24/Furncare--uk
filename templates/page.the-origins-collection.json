@@ -306,9 +306,9 @@
       ],
       "name": "Media gallery",
       "settings": {
-        "heading": "",
+        "heading": "⠀ ",
         "layout": "slider",
-        "enable_lightbox": true,
+        "enable_lightbox": false,
         "lightbox_thumbnails_position": "side",
         "description_position": "bottom",
         "image_aspect_ratio": "1/1",
