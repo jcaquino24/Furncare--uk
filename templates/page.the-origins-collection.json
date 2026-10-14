@@ -308,8 +308,8 @@
       "settings": {
         "heading": "",
         "layout": "slider",
-        "enable_lightbox": false,
-        "lightbox_thumbnails_position": "bottom",
+        "enable_lightbox": true,
+        "lightbox_thumbnails_position": "side",
         "description_position": "bottom",
         "image_aspect_ratio": "1/1",
         "image_max_height": 0,
