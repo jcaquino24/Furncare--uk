@@ -43,42 +43,12 @@
             "button_border_color": "#ffffff",
             "button_padding": 12
           }
-        },
-        "card_qwApKG": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/26001_1.jpg",
-            "title": "Later Living",
-            "tagline": "",
-            "button_text": "Shop now",
-            "button_url": "shopify://collections/garden-furniture",
-            "button_style": "underline",
-            "new_tab": true,
-            "card_style": "base-white-01"
-          }
-        },
-        "card_kfiPGh": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/admin-ajax-5_2.jpg",
-            "title": "Challenging Environments",
-            "tagline": "",
-            "button_text": "Shop now",
-            "button_url": "shopify://collections/challenging-environments-garden-furniture",
-            "button_style": "underline",
-            "new_tab": true,
-            "card_style": "base-white-01"
-          }
         }
       },
       "block_order": [
         "title_WYCUQG",
         "eyebrow_NfMeef",
-        "button_aVJxk3",
-        "card_qwApKG",
-        "card_kfiPGh"
+        "button_aVJxk3"
       ],
       "name": "Image - Video Banner",
       "settings": {
@@ -87,7 +57,7 @@
         "maintain_aspect_ratio": true,
         "add_header_offset": false,
         "media_type": "image",
-        "image_desktop": "shopify://shop_images/CareShow26-174.jpg",
+        "image_desktop": "shopify://shop_images/Ellington_CU_ab55b21d-2988-4d7c-9a78-730afbe8551e.jpg",
         "video_desktop": "shopify://files/videos/Garden Furn 2026 Landing Page.mp4",
         "show_controls": false,
         "mute_video": true,
@@ -97,48 +67,6 @@
         "colour_scheme": "dark",
         "content_position": "center-center",
         "content_alignment": "center"
-      }
-    },
-    "richtext_gkEqTF": {
-      "type": "richtext",
-      "blocks": {
-        "heading_XyUT67": {
-          "type": "heading",
-          "name": "Heading",
-          "settings": {
-            "text": "Download the Ryker Specifications Here",
-            "heading_level": "h2",
-            "heading_style": "title-display"
-          },
-          "blocks": {}
-        },
-        "button_inXHdJ": {
-          "type": "button",
-          "settings": {
-            "style": "primary",
-            "text": "Download",
-            "url": "https://publuu.com/flip-book/link/2248069",
-            "new_tab": true
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "heading_XyUT67",
-        "button_inXHdJ"
-      ],
-      "name": "Rich Text",
-      "settings": {
-        "id_anchor": "",
-        "max_width_desktop": 100,
-        "section_padding": "--spacing-4xl",
-        "text_alignment": "center",
-        "colour_scheme": "warm-stone",
-        "enable_animation": true,
-        "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
       }
     },
     "blocks_CQQVyV": {
@@ -163,6 +91,17 @@
     "richtext_rBN8BC": {
       "type": "richtext",
       "blocks": {
+        "heading_43cYqQ": {
+          "type": "heading",
+          "name": "Heading",
+          "disabled": true,
+          "settings": {
+            "text": "Choose from 13 Contemporary Finishes",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
         "tagline_aJMWGp": {
           "type": "tagline",
           "settings": {
@@ -173,6 +112,7 @@
         }
       },
       "block_order": [
+        "heading_43cYqQ",
         "tagline_aJMWGp"
       ],
       "name": "Rich Text",
@@ -201,7 +141,7 @@
             "heading_align": "left",
             "description": "<p>Moorland Cinder</p>",
             "description_size": 0,
-            "description_align": "left"
+            "description_align": "center"
           }
         },
         "image_gqEbGR": {
@@ -213,7 +153,7 @@
             "heading_align": "left",
             "description": "<p>Sable Walnut</p>",
             "description_size": 0,
-            "description_align": "left"
+            "description_align": "center"
           }
         },
         "image_KVQqLX": {
@@ -225,7 +165,7 @@
             "heading_align": "left",
             "description": "<p>Northern Wenge</p>",
             "description_size": 0,
-            "description_align": "left"
+            "description_align": "center"
           }
         },
         "image_kw4EEX": {
@@ -237,7 +177,7 @@
             "heading_align": "left",
             "description": "<p>Bracken Sage</p>",
             "description_size": 0,
-            "description_align": "left"
+            "description_align": "center"
           }
         },
         "image_hAXGqW": {
@@ -249,7 +189,7 @@
             "heading_align": "left",
             "description": "<p>Nera Oak</p>",
             "description_size": 0,
-            "description_align": "left"
+            "description_align": "center"
           }
         },
         "image_DFCetc": {
@@ -261,7 +201,7 @@
             "heading_align": "left",
             "description": "<p>Mink</p>",
             "description_size": 0,
-            "description_align": "left"
+            "description_align": "center"
           }
         },
         "image_LpaYgg": {
@@ -273,7 +213,7 @@
             "heading_align": "left",
             "description": "<p>Coastal Storm</p>",
             "description_size": 0,
-            "description_align": "left"
+            "description_align": "center"
           }
         },
         "image_edEVJa": {
@@ -285,7 +225,7 @@
             "heading_align": "left",
             "description": "<p>Brushed Cashmere</p>",
             "description_size": 0,
-            "description_align": "left"
+            "description_align": "center"
           }
         },
         "image_3hhzNi": {
@@ -297,7 +237,7 @@
             "heading_align": "left",
             "description": "<p>Arbor Oak</p>",
             "description_size": 0,
-            "description_align": "left"
+            "description_align": "center"
           }
         },
         "image_r7aCEd": {
@@ -309,7 +249,7 @@
             "heading_align": "left",
             "description": "<p>Nordic Slate</p>",
             "description_size": 0,
-            "description_align": "left"
+            "description_align": "center"
           }
         },
         "image_eTFWF6": {
@@ -321,7 +261,7 @@
             "heading_align": "left",
             "description": "<p>Moorland Char</p>",
             "description_size": 0,
-            "description_align": "left"
+            "description_align": "center"
           }
         },
         "image_WWL8yF": {
@@ -333,7 +273,7 @@
             "heading_align": "left",
             "description": "<p>Coastal Blue</p>",
             "description_size": 0,
-            "description_align": "left"
+            "description_align": "center"
           }
         },
         "image_VdEgxx": {
@@ -345,7 +285,7 @@
             "heading_align": "left",
             "description": "<p>Moorland Oak</p>",
             "description_size": 0,
-            "description_align": "left"
+            "description_align": "center"
           }
         }
       },
@@ -369,7 +309,7 @@
         "heading": "",
         "layout": "slider",
         "enable_lightbox": false,
-        "lightbox_thumbnails_position": "side",
+        "lightbox_thumbnails_position": "bottom",
         "description_position": "bottom",
         "image_aspect_ratio": "1/1",
         "image_max_height": 0,
@@ -381,6 +321,25 @@
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl"
       }
+    },
+    "blocks_mQDCjE": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_VajUwR": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 75,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#F9F7F0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_VajUwR"
+      ],
+      "name": "Spacer",
+      "settings": {}
     },
     "blocks_zjXTry": {
       "type": "_blocks",
@@ -533,15 +492,55 @@
         "tab2_colour_scheme": "warm-stone"
       }
     },
+    "richtext_jx7j3t": {
+      "type": "richtext",
+      "blocks": {
+        "heading_KggxHd": {
+          "type": "heading",
+          "settings": {
+            "text": "&nbsp;Every Detail Matters&nbsp;",
+            "heading_level": "h2",
+            "heading_style": "title-lg"
+          },
+          "blocks": {}
+        },
+        "tagline_ciGHGL": {
+          "type": "tagline",
+          "settings": {
+            "content": "Why stop at selecting your bespoke wood finish? Complete your piece with the perfect handle to suit your space. Designed for both modern and traditional care home interiors, these high-quality finishes not only enhance the overall aesthetic but also offer a practical, long-lasting solution for care home furniture and other high-use settings, allowing you to customise every detail while maintaining a refined look.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_KggxHd",
+        "tagline_ciGHGL"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "id_anchor": "",
+        "max_width_desktop": 79,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
+      }
+    },
     "image_text_RqyGcY": {
       "type": "image-text",
       "blocks": {
         "content_68CTk6": {
           "type": "content",
+          "disabled": true,
           "settings": {
-            "title": "Every Detail Matters",
+            "title": "",
             "title_size": "display",
-            "text": "Why stop at selecting your bespoke wood finish? Complete your piece with the perfect handle to suit your space. Designed for both modern and traditional care home interiors, each piece comes as standard with a sleek, durable silver handle. For a more personalised look, upgrade to our premium handle options, available in gold, silver, black, or rose gold. These high-quality finishes not only enhance the overall aesthetic but also offer a practical, long-lasting solution for care home furniture and other high-use settings, allowing you to customise every detail while maintaining a refined look.",
+            "text": "",
             "button_style": "primary",
             "button_text": "View the range",
             "button_action": "link",
@@ -550,6 +549,7 @@
         },
         "images_bb9BLn": {
           "type": "images",
+          "disabled": true,
           "settings": {
             "image_one": "shopify://shop_images/handle_renders_removed_background.png"
           }
@@ -559,6 +559,7 @@
         "content_68CTk6",
         "images_bb9BLn"
       ],
+      "disabled": true,
       "name": "Image - Text",
       "settings": {
         "colour_scheme": "base-white-01",
@@ -569,70 +570,67 @@
         "reveal_duration": 760
       }
     },
-    "content_blocks_FX6f8U": {
-      "type": "content-blocks",
+    "custom_media_gallery_t7GpDt": {
+      "type": "custom-media-gallery",
       "blocks": {
-        "tab1_mChUGV": {
-          "type": "tab1",
+        "image_ENtkfj": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/abbott_close_shot_mock_up_sunny.png",
-            "text": "The Crosshatch Handle",
-            "richtext": "<p>Tilbury & Abbot</p>",
-            "richtext_color": "#f9f7f0",
-            "richtext_font_size": "16px",
-            "richtext_font_weight": "300",
-            "richtext_text_transform": "none",
-            "richtext_letter_spacing": "normal",
-            "link": "",
-            "gradient_overlay": "dark"
+            "heading": "The Crosshatch Handle",
+            "heading_size": 24,
+            "heading_align": "center",
+            "description": "<p>Compatible with Tilbury & Abbott</p>",
+            "description_size": 0,
+            "description_align": "center"
           }
         },
-        "tab1_EyFgVJ": {
-          "type": "tab1",
-          "settings": {
-            "image": "shopify://shop_images/Ellington_close_up_mock_up_sunny_1.png",
-            "text": "The Contour Handle",
-            "richtext": "<p>Ellington & Galloway</p>",
-            "richtext_color": "#f9f7f0",
-            "richtext_font_size": "16px",
-            "richtext_font_weight": "300",
-            "richtext_text_transform": "none",
-            "richtext_letter_spacing": "normal",
-            "link": "",
-            "gradient_overlay": "dark"
-          }
-        },
-        "tab1_MTMgPm": {
-          "type": "tab1",
+        "image_cMQCzm": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Bronson_CU_b24d1449-7ca7-4045-ac3d-78982065612f.jpg",
-            "text": "The Core Handle",
-            "richtext": "<p>Bronson</p>",
-            "richtext_color": "#f9f7f0",
-            "richtext_font_size": "16px",
-            "richtext_font_weight": "300",
-            "richtext_text_transform": "none",
-            "richtext_letter_spacing": "normal",
-            "link": "",
-            "gradient_overlay": "dark"
+            "heading": "The Core Handle",
+            "heading_size": 24,
+            "heading_align": "center",
+            "description": "<p>Compatible with Bronson</p>",
+            "description_size": 0,
+            "description_align": "center"
+          }
+        },
+        "image_3H78Rx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Ellington_close_up_mock_up_sunny_1.png",
+            "heading": "The Contour Handle",
+            "heading_size": 24,
+            "heading_align": "center",
+            "description": "<p>Compatible with Ellington & Galloway</p>",
+            "description_size": 0,
+            "description_align": "center"
           }
         }
       },
       "block_order": [
-        "tab1_mChUGV",
-        "tab1_EyFgVJ",
-        "tab1_MTMgPm"
+        "image_ENtkfj",
+        "image_cMQCzm",
+        "image_3H78Rx"
       ],
-      "name": "Content blocks",
+      "name": "Media gallery",
       "settings": {
-        "title": "",
-        "section_padding": "--spacing-md",
-        "tab1_title": "",
-        "tab1_handle": "collection-1",
-        "tab1_colour_scheme": "base-white-01",
-        "tab2_title": "",
-        "tab2_handle": "collection-2",
-        "tab2_colour_scheme": "warm-stone"
+        "heading": "",
+        "layout": "grid",
+        "enable_lightbox": false,
+        "lightbox_thumbnails_position": "side",
+        "description_position": "top",
+        "image_aspect_ratio": "1/1",
+        "image_max_height": 0,
+        "image_fit": "cover",
+        "columns_desktop": 3,
+        "gap": 16,
+        "autoplay": false,
+        "autoplay_speed": 3,
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
       }
     },
     "blocks_rzpUwy": {
@@ -675,6 +673,40 @@
         "show_title": false
       }
     },
+    "image_video_banner_7a9Jcj": {
+      "type": "image-video-banner",
+      "blocks": {
+        "title_zqTB9c": {
+          "type": "title",
+          "settings": {
+            "text": "Ellington",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        }
+      },
+      "block_order": [
+        "title_zqTB9c"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Lounge_One_19.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "light",
+        "content_position": "center-center",
+        "content_alignment": "left"
+      }
+    },
     "product_blocks_NVTciR": {
       "type": "product-blocks",
       "blocks": {
@@ -686,14 +718,16 @@
             "product_feed_source": "product_list",
             "products": [
               "ellington-3-drawer-bedside",
-              "bronson-3-drawer-chest-1",
-              "abbott-tall-wide-wardrobe",
-              "tilbury-6-drawer-desk",
-              "galloway-double-wardrobe",
-              "abbott-wide-wardrobe",
+              "ellington-3-drawer-chest-copy",
+              "ellington-4-drawer-chest",
+              "ellington-3-drawer-desk",
+              "ellington-4-drawer-desk",
               "ellington-single-wardrobe",
-              "tilbury-4-drawer-chest",
-              "galloway-3-drawer-desk"
+              "ellington-double-wardrobe",
+              "ellington-extra-tall-double-wardrobe",
+              "ellington-wide-wardrobe",
+              "ellington-tall-wide-wardrobe",
+              "ellington-bedroom-furniture-bundle"
             ],
             "collection": "",
             "seed_product": "",
@@ -708,9 +742,241 @@
       ],
       "name": "Product blocks",
       "settings": {
-        "title": "browse the collection",
-        "products_per_row": 4,
-        "max_products": 8,
+        "title": "the ellington collection",
+        "products_per_row": 6,
+        "max_products": 17,
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "image_video_banner_N9ChjQ": {
+      "type": "image-video-banner",
+      "blocks": {
+        "title_KgLjka": {
+          "type": "title",
+          "settings": {
+            "text": "Abbott",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        }
+      },
+      "block_order": [
+        "title_KgLjka"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Lounge_One_19.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "light",
+        "content_position": "center-center",
+        "content_alignment": "left"
+      }
+    },
+    "product_blocks_7xYzWd": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_LVQdcp": {
+          "type": "product_block",
+          "settings": {
+            "title": "Our favourites",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [
+              "abbott-3-drawer-bedside",
+              "abbott-3-drawer-chest",
+              "abbott-4-drawer-chest",
+              "abbott-3-drawer-desk",
+              "abbott-6-drawer-desk",
+              "abbott-single-wardrobe",
+              "abbott-double-wardrobe",
+              "abbott-extra-tall-double-wardrobe",
+              "abbott-wide-wardrobe",
+              "abbott-tall-wide-wardrobe",
+              "abbott-bedroom-furniture-bundle"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_LVQdcp"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "the abbott collection",
+        "products_per_row": 6,
+        "max_products": 17,
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "image_video_banner_hnTMw8": {
+      "type": "image-video-banner",
+      "blocks": {
+        "title_wp9w7x": {
+          "type": "title",
+          "settings": {
+            "text": "Tilbury",
+            "title_element": "h2",
+            "title_size": "xl",
+            "text_color": "#f9f7f0"
+          }
+        }
+      },
+      "block_order": [
+        "title_wp9w7x"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Lounge_One_19.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "light",
+        "content_position": "center-center",
+        "content_alignment": "left"
+      }
+    },
+    "product_blocks_6kJAUx": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_8Neeqr": {
+          "type": "product_block",
+          "settings": {
+            "title": "Our favourites",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [
+              "tilbury-3-drawer-bedside",
+              "tilbury-3-drawer-chest",
+              "tilbury-4-drawer-chest",
+              "tilbury-3-drawer-desk",
+              "tilbury-6-drawer-desk",
+              "tilbury-single-wardrobe",
+              "tilbury-double-wardrobe",
+              "tilbury-extra-tall-double-wardrobe",
+              "tilbury-wide-wardrobe",
+              "tilbury-tall-wide-wardrobe",
+              "tilbury-bedroom-furniture-bundle"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_8Neeqr"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "the tilbury collection",
+        "products_per_row": 6,
+        "max_products": 16,
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "product_blocks_xyDyEN": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_WMhUWL": {
+          "type": "product_block",
+          "settings": {
+            "title": "Our favourites",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [
+              "galloway-3-drawer-bedside",
+              "galloway-3-drawer-chest",
+              "galloway-4-drawer-chest",
+              "galloway-3-drawer-desk",
+              "galloway-6-drawer-desk",
+              "galloway-single-wardrobe",
+              "galloway-double-wardrobe",
+              "galloway-extra-tall-double-wardrobe",
+              "galloway-wide-wardrobe",
+              "galloway-tall-wide-wardrobe",
+              "galloway-bedroom-furniture-bundle"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_WMhUWL"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "the galloway collection",
+        "products_per_row": 6,
+        "max_products": 16,
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "product_blocks_cErtCV": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_hxCTpE": {
+          "type": "product_block",
+          "settings": {
+            "title": "Our favourites",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [
+              "bronson-3-drawer-bedside",
+              "bronson-3-drawer-chest-1",
+              "bronson-4-drawer-chest",
+              "bronson-3-drawer-desk",
+              "bronson-6-drawer-desk",
+              "bronson-single-wardrobe",
+              "bronson-double-wardrobe",
+              "bronson-extra-tall-double-wardrobe",
+              "bronson-wide-wardrobe",
+              "bronson-tall-wide-wardrobe",
+              "bronson-bedroom-furniture-bundle"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_hxCTpE"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "the bronson collection",
+        "products_per_row": 6,
+        "max_products": 16,
         "section_padding": "--spacing-2xl"
       }
     },
@@ -726,7 +992,7 @@
         "content_QbbHRd": {
           "type": "content",
           "settings": {
-            "title": "Elevating Care Home Lounges.",
+            "title": "&nbsp;32,955 Possible Combinations",
             "title_size": "xl",
             "text": "<h4>A refined design</h4>\n\nSoftly sculpted curved legs introduce a refined sense of sophistication, serving as a distinctive design feature while maintaining exceptional strength and stability.\n\n<h4>Contemporary finishes</h4>\n\nOffered in several handpicked finishes, allowing for greater design flexibility, creating a tailored, personalised feel while ensuring the piece sits beautifully within both classic and contemporary spaces.\n\n<h4>Ergonomics front and centre </h4>\n\nModern, streamlined handles crafted with smooth, softened edges for a seamless touch, they offer both comfort and sophistication, with a generous 203mm length ensuring effortless usability.",
             "button_style": "underline",
@@ -749,16 +1015,6 @@
         "reveal_distance": 32,
         "reveal_duration": 760
       }
-    },
-    "blocks_Dipxg4": {
-      "type": "_blocks",
-      "name": "Image",
-      "settings": {}
-    },
-    "blocks_gzkyCP": {
-      "type": "_blocks",
-      "name": "Image with text overlay",
-      "settings": {}
     },
     "blocks_3pXGmt": {
       "type": "_blocks",
@@ -858,20 +1114,26 @@
   },
   "order": [
     "image_video_banner_tUQhjn",
-    "richtext_gkEqTF",
     "blocks_CQQVyV",
     "richtext_rBN8BC",
     "custom_media_gallery_RwKUii",
+    "blocks_mQDCjE",
     "blocks_zjXTry",
     "content_blocks_QVU3xP",
+    "richtext_jx7j3t",
     "image_text_RqyGcY",
-    "content_blocks_FX6f8U",
+    "custom_media_gallery_t7GpDt",
     "blocks_rzpUwy",
     "main",
+    "image_video_banner_7a9Jcj",
     "product_blocks_NVTciR",
+    "image_video_banner_N9ChjQ",
+    "product_blocks_7xYzWd",
+    "image_video_banner_hnTMw8",
+    "product_blocks_6kJAUx",
+    "product_blocks_xyDyEN",
+    "product_blocks_cErtCV",
     "image_text_hPbjgh",
-    "blocks_Dipxg4",
-    "blocks_gzkyCP",
     "blocks_3pXGmt",
     "richtext_PPG4Ye",
     "blocks_wxNUjq",
