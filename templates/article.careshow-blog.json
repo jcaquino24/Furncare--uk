@@ -103,78 +103,6 @@
         "see_more_max_height": 400
       }
     },
-    "product_blocks_hr4bkw": {
-      "type": "product-blocks",
-      "blocks": {
-        "product_block_fJtzXF": {
-          "type": "product_block",
-          "settings": {
-            "title": "",
-            "handle": "",
-            "product_feed_source": "product_list",
-            "products": [],
-            "collection": "",
-            "seed_product": "",
-            "use_current_product": false,
-            "recommendation_intent": "related",
-            "colour_scheme": "base-white-01"
-          }
-        },
-        "product_block_HdNPmE": {
-          "type": "product_block",
-          "settings": {
-            "title": "New Arrivals",
-            "handle": "new-arrivals",
-            "product_feed_source": "product_list",
-            "products": [
-              "5164-maxwell-small-sideboard-finish-grey-oak",
-              "alpha-extreme-270-double-wardrobe-finish-mountain-oak-cashmere",
-              "alpha-extreme-3-drawer-chest-finish-mountain-oak-cashmere",
-              "alpha-extreme-3-drawer-bedside-top-drawer-with-lock-finish-mountain-oak-cashmere"
-            ],
-            "collection": "",
-            "seed_product": "",
-            "use_current_product": true,
-            "recommendation_intent": "related",
-            "colour_scheme": "base-white-01"
-          }
-        }
-      },
-      "block_order": [
-        "product_block_fJtzXF",
-        "product_block_HdNPmE"
-      ],
-      "disabled": true,
-      "name": "Product blocks",
-      "settings": {
-        "title": "Products featured in this case study",
-        "products_per_row": 4,
-        "max_products": 8,
-        "section_padding": "--spacing-4xl"
-      }
-    },
-    "17734008217d1e75ff": {
-      "type": "_blocks",
-      "blocks": {
-        "richtext_KnzTeq": {
-          "type": "richtext",
-          "name": "Rich Text",
-          "disabled": true,
-          "settings": {
-            "content": ""
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "richtext_KnzTeq"
-      ],
-      "settings": {}
-    },
-    "17734008399d1dd4b6": {
-      "type": "apps",
-      "settings": {}
-    },
     "custom_media_gallery_DjfVhx": {
       "type": "custom-media-gallery",
       "blocks": {
@@ -286,6 +214,18 @@
             "description_align": "left"
           }
         },
+        "image_bX3WFN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CareShow26-137_Custom.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
         "image_9GqkWC": {
           "type": "image",
           "settings": {
@@ -314,6 +254,18 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/CareShow26-069.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_RfL8gj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CareShow26-120.jpg",
             "heading": "",
             "heading_size": 0,
             "heading_align": "left",
@@ -467,10 +419,34 @@
             "description_align": "left"
           }
         },
+        "image_gjVjxL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CareShow26-003_Custom_a359ae01-632d-4444-9fa3-dadf14845574.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
         "image_iw3gW8": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/CareShow26-022_Custom.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_4EjTgH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CareShow26-089_Custom.jpg",
             "heading": "",
             "heading_size": 0,
             "heading_align": "left",
@@ -514,6 +490,30 @@
             "description_size": 0,
             "description_align": "left"
           }
+        },
+        "image_8PA7yi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CareShow26-093_Custom.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_E67QkP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CareShow26-146_Custom.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
         }
       },
       "block_order": [
@@ -526,9 +526,11 @@
         "image_LkQGLF",
         "image_CJe4fL",
         "image_tmLzyR",
+        "image_bX3WFN",
         "image_9GqkWC",
         "image_NK3B4e",
         "image_NaG7Um",
+        "image_RfL8gj",
         "image_NppdQA",
         "image_mqGEjM",
         "image_LN4TXA",
@@ -541,10 +543,14 @@
         "image_FG78N9",
         "image_iVaNDb",
         "image_DQMkaT",
+        "image_gjVjxL",
         "image_iw3gW8",
+        "image_4EjTgH",
         "image_Qj8DXx",
         "image_UQr7b6",
-        "image_YWFAxc"
+        "image_YWFAxc",
+        "image_8PA7yi",
+        "image_E67QkP"
       ],
       "name": "Media gallery",
       "settings": {
@@ -563,6 +569,78 @@
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl"
       }
+    },
+    "product_blocks_hr4bkw": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_fJtzXF": {
+          "type": "product_block",
+          "settings": {
+            "title": "",
+            "handle": "",
+            "product_feed_source": "product_list",
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        },
+        "product_block_HdNPmE": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "products": [
+              "5164-maxwell-small-sideboard-finish-grey-oak",
+              "alpha-extreme-270-double-wardrobe-finish-mountain-oak-cashmere",
+              "alpha-extreme-3-drawer-chest-finish-mountain-oak-cashmere",
+              "alpha-extreme-3-drawer-bedside-top-drawer-with-lock-finish-mountain-oak-cashmere"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": true,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_fJtzXF",
+        "product_block_HdNPmE"
+      ],
+      "disabled": true,
+      "name": "Product blocks",
+      "settings": {
+        "title": "Products featured in this case study",
+        "products_per_row": 4,
+        "max_products": 8,
+        "section_padding": "--spacing-4xl"
+      }
+    },
+    "17734008217d1e75ff": {
+      "type": "_blocks",
+      "blocks": {
+        "richtext_KnzTeq": {
+          "type": "richtext",
+          "name": "Rich Text",
+          "disabled": true,
+          "settings": {
+            "content": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "richtext_KnzTeq"
+      ],
+      "settings": {}
+    },
+    "17734008399d1dd4b6": {
+      "type": "apps",
+      "settings": {}
     },
     "blocks_6QCHbm": {
       "type": "_blocks",
