@@ -214,18 +214,6 @@
             "description_align": "left"
           }
         },
-        "image_tmLzyR": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/CareShow26-003_Custom.jpg",
-            "heading": "",
-            "heading_size": 0,
-            "heading_align": "left",
-            "description": "",
-            "description_size": 0,
-            "description_align": "left"
-          }
-        },
         "image_bX3WFN": {
           "type": "image",
           "settings": {
@@ -338,18 +326,6 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/CareShow26-070_Custom.jpg",
-            "heading": "",
-            "heading_size": 0,
-            "heading_align": "left",
-            "description": "",
-            "description_size": 0,
-            "description_align": "left"
-          }
-        },
-        "image_BHBnnk": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/CareShow26-085_Custom.jpg",
             "heading": "",
             "heading_size": 0,
             "heading_align": "left",
@@ -550,7 +526,6 @@
         "image_LkQGLF",
         "image_CJe4fL",
         "image_xxRbY9",
-        "image_tmLzyR",
         "image_bX3WFN",
         "image_9GqkWC",
         "image_NK3B4e",
@@ -561,7 +536,6 @@
         "image_LN4TXA",
         "image_U69gLg",
         "image_rkUHfF",
-        "image_BHBnnk",
         "image_9Ffk44",
         "image_grqQpt",
         "image_E9YRWV",
@@ -595,6 +569,66 @@
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl"
       }
+    },
+    "richtext_dRQ3MH": {
+      "type": "richtext",
+      "blocks": {
+        "heading_ML6aRn": {
+          "type": "heading",
+          "settings": {
+            "text": "Did you miss us at the show?",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_qpzdhA": {
+          "type": "tagline",
+          "settings": {
+            "content": "Get in touch with our team today!",
+            "tagline_style": "body-xl"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_ML6aRn",
+        "tagline_qpzdhA"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "id_anchor": "",
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
+      }
+    },
+    "blocks_QKbxX3": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8b1ae7_c3Niea": {
+          "type": "ai_gen_block_a8b1ae7",
+          "settings": {
+            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+            "desktop_width_percent": 65,
+            "alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8b1ae7_c3Niea"
+      ],
+      "name": "Form embed",
+      "settings": {}
     },
     "product_blocks_hr4bkw": {
       "type": "product-blocks",
@@ -698,6 +732,8 @@
     "main",
     "richtext_hLWh3Q",
     "custom_media_gallery_DjfVhx",
+    "richtext_dRQ3MH",
+    "blocks_QKbxX3",
     "product_blocks_hr4bkw",
     "17734008217d1e75ff",
     "17734008399d1dd4b6",
