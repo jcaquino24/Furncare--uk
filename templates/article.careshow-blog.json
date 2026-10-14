@@ -15,10 +15,10 @@
       "settings": {
         "height_desktop": 800,
         "height_mobile": 540,
-        "maintain_aspect_ratio": true,
+        "maintain_aspect_ratio": false,
         "add_header_offset": false,
         "media_type": "image",
-        "image_desktop": "shopify://shop_images/CareShow26-064_Custom_34969fcc-553d-4cc7-81ff-de253be9d07d.jpg",
+        "image_desktop": "shopify://shop_images/CareShow26-010_Custom.jpg",
         "show_controls": false,
         "mute_video": true,
         "autoplay_video": true,
@@ -593,10 +593,10 @@
     "blocks_TqApqe",
     "main",
     "richtext_hLWh3Q",
+    "custom_media_gallery_DjfVhx",
     "product_blocks_hr4bkw",
     "17734008217d1e75ff",
     "17734008399d1dd4b6",
-    "custom_media_gallery_DjfVhx",
     "blocks_6QCHbm"
   ]
 }
