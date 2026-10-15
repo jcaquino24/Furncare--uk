@@ -94,30 +94,13 @@
   endcase
 
   if is_similar_request
-    assign base_name = target_product.metafields.custom.product_family_text.value | default: ''
     assign raw_title = target_product.title | split: '|' | first | strip
-    assign title_words = raw_title | split: ' '
-    assign ignored_name_words = '|the|a|an|care|home|furniture|upholstered|upholstery|fabric|chair|chairs|bed|beds|table|tables|dining|lounge|collection|range|origins|black|white|grey|gray|blue|green|red|oak|walnut|'
-    assign title_base_name = ''
-    for title_word in title_words
-      assign title_word_down = title_word | downcase | strip
-      assign ignored_word_token = '|' | append: title_word_down | append: '|'
-      unless ignored_name_words contains ignored_word_token
-        assign title_base_name = title_word | strip
-        break
-      endunless
-    endfor
-    if title_base_name == blank
-      assign title_base_name = title_words.first | strip
-    endif
-    assign title_base_name_down = title_base_name | downcase
-    if base_name == blank
-      assign base_name = title_base_name
-    endif
-    assign base_name_down = base_name | downcase
+    assign first_title_word = raw_title | split: ' ' | first | strip
+    assign base_name_down = first_title_word | downcase
 
     assign candidate_pool = ''
     assign matching_handles = ','
+    assign used_default_category_fallback = false
     if block.settings.collection != blank and block.settings.collection.products.size > 0
       assign candidate_pool = block.settings.collection.products
     endif
@@ -135,12 +118,13 @@
           if col.products_count > 1
             assign collection_matches = false
             for item in col.products
-              assign item_title_down = item.title | downcase
-              assign item_family_down = item.metafields.custom.product_family_text.value | downcase
-              if item_title_down contains base_name_down or item_family_down == base_name_down or item_title_down contains title_base_name_down or item_family_down == title_base_name_down
-                assign collection_matches = true
-                break
-              endif
+              unless item.id == exclude_id
+                assign item_title_down = item.title | downcase
+                if item_title_down contains base_name_down
+                  assign collection_matches = true
+                  break
+                endif
+              endunless
             endfor
             if collection_matches
               assign candidate_pool = col.products
@@ -157,28 +141,21 @@
 
     if candidate_pool != blank and base_name_down != blank
       for item in candidate_pool
-        assign item_title_down = item.title | downcase
-        assign item_family_down = item.metafields.custom.product_family_text.value | downcase
-        if item_title_down contains base_name_down or item_family_down == base_name_down or item_title_down contains title_base_name_down or item_family_down == title_base_name_down
-          assign matching_handles = matching_handles | append: item.handle | append: ','
-        endif
+        unless item.id == exclude_id
+          assign item_title_down = item.title | downcase
+          if item_title_down contains base_name_down
+            assign matching_handles = matching_handles | append: item.handle | append: ','
+          endif
+        endunless
       endfor
     endif
 
-    if matching_handles == ',' and candidate_pool != collections['all'].products
-      assign candidate_pool = collections['all'].products
-      if candidate_pool != blank and base_name_down != blank
-        for item in candidate_pool
-          assign item_title_down = item.title | downcase
-          assign item_family_down = item.metafields.custom.product_family_text.value | downcase
-          if item_title_down contains base_name_down or item_family_down == base_name_down or item_title_down contains title_base_name_down or item_family_down == title_base_name_down
-            assign matching_handles = matching_handles | append: item.handle | append: ','
-          endif
-        endfor
-      endif
+    if matching_handles == ',' and target_product.collections.size > 0
+      assign candidate_pool = target_product.collections.first.products
+      assign used_default_category_fallback = true
     endif
 
-    if matching_handles == ','
+    if matching_handles == ',' and used_default_category_fallback == false
       assign matching_handles = ',__no_matches__,'
     endif
 
