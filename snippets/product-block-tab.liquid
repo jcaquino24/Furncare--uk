@@ -1,11 +1,23 @@
 {% liquid
   assign block_products = ''
-  assign exclude_id = false
-  if product
-    assign exclude_id = product.id
+  assign matching_handles = ','
+  assign is_similar_request = false
+  assign target_product = nil
+  if block.settings.use_current_product and product
+    assign target_product = product
   elsif block.settings.seed_product != blank
-    assign exclude_id = block.settings.seed_product.id
+    assign target_product = block.settings.seed_product
+  elsif product
+    assign target_product = product
   endif
+
+  assign exclude_id = false
+  if target_product
+    assign exclude_id = target_product.id
+  endif
+
+  assign custom_col = target_product.metafields.custom.collection.value | default: target_product.metafields.custom.collection
+  assign custom_col_handle = custom_col | handleize
 
   case block.settings.product_feed_source
     when 'product_list'
@@ -107,6 +119,10 @@
       endif
     endif
 
+    if candidate_pool == blank or candidate_pool.size == 0
+      assign candidate_pool = collections['all'].products
+    endif
+
     assign matching_handles = ','
     if candidate_pool != blank and base_name_down != blank
       for item in candidate_pool
@@ -116,6 +132,10 @@
           assign matching_handles = matching_handles | append: item.handle | append: ','
         endif
       endfor
+    endif
+
+    if matching_handles == ','
+      assign matching_handles = ',__no_matches__,'
     endif
 
     assign block_products = candidate_pool
