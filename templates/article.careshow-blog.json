@@ -37,7 +37,7 @@
           "settings": {
             "spacer_height": 65,
             "spacer_height_mobile": 30,
-            "spacer_color": "#F9F7F0"
+            "spacer_color": "#f9f7f0"
           },
           "blocks": {}
         }
@@ -142,18 +142,6 @@
             "description_align": "left"
           }
         },
-        "image_6NGX74": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/CareShow26-079_Custom.jpg",
-            "heading": "",
-            "heading_size": 0,
-            "heading_align": "left",
-            "description": "",
-            "description_size": 0,
-            "description_align": "left"
-          }
-        },
         "image_xTqCeP": {
           "type": "image",
           "settings": {
@@ -170,6 +158,18 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/CareShow26-147_Custom.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_tVdEUh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CareShow26-073_Custom.jpg",
             "heading": "",
             "heading_size": 0,
             "heading_align": "left",
@@ -302,6 +302,18 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/CareShow26-017_Custom.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_6NGX74": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CareShow26-079_Custom.jpg",
             "heading": "",
             "heading_size": 0,
             "heading_align": "left",
@@ -520,9 +532,9 @@
         "image_bCpzP9",
         "image_8BdUbg",
         "image_6ekjrh",
-        "image_6NGX74",
         "image_xTqCeP",
         "image_JKqDpr",
+        "image_tVdEUh",
         "image_LkQGLF",
         "image_CJe4fL",
         "image_xxRbY9",
@@ -534,6 +546,7 @@
         "image_NppdQA",
         "image_mqGEjM",
         "image_LN4TXA",
+        "image_6NGX74",
         "image_U69gLg",
         "image_rkUHfF",
         "image_9Ffk44",
