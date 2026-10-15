@@ -96,7 +96,20 @@
   if is_similar_request
     assign base_name = target_product.metafields.custom.product_family_text.value | default: ''
     assign raw_title = target_product.title | split: '|' | first | strip
-    assign title_base_name = raw_title | split: ' ' | first | strip
+    assign title_words = raw_title | split: ' '
+    assign ignored_name_words = '|the|a|an|care|home|furniture|upholstered|upholstery|fabric|chair|chairs|bed|beds|table|tables|dining|lounge|collection|range|origins|black|white|grey|gray|blue|green|red|oak|walnut|'
+    assign title_base_name = ''
+    for title_word in title_words
+      assign title_word_down = title_word | downcase | strip
+      assign ignored_word_token = '|' | append: title_word_down | append: '|'
+      unless ignored_name_words contains ignored_word_token
+        assign title_base_name = title_word | strip
+        break
+      endunless
+    endfor
+    if title_base_name == blank
+      assign title_base_name = title_words.first | strip
+    endif
     assign title_base_name_down = title_base_name | downcase
     if base_name == blank
       assign base_name = title_base_name
