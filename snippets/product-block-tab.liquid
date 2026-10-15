@@ -47,9 +47,6 @@
         assign block_products = target_product.collections.first.products
       endif
 
-    when 'similar_names'
-      assign is_similar_request = true
-
     when 'recommendations'
       if block.settings.match_similar_names
         assign is_similar_request = true
@@ -76,16 +73,22 @@
           for col in target_product.collections
             unless col.handle == 'all' or col.handle == 'frontpage'
               if col.products_count > 1
-                assign block_products = col.products
-                break
+                assign collection_matches = false
+                for item in col.products
+                  assign item_title_down = item.title | downcase
+                  assign item_family_down = item.metafields.custom.product_family_text.value | downcase
+                  if item_title_down contains base_name_down or item_family_down == base_name_down
+                    assign collection_matches = true
+                    break
+                  endif
+                endfor
+                if collection_matches
+                  assign block_products = col.products
+                  break
+                endif
               endif
             endunless
           endfor
-          if block_products == blank or block_products.size == 0
-            assign block_products = target_product.collections.first.products
-          endif
-        else
-          assign block_products = collections['all'].products
         endif
       endif
   endcase
@@ -99,31 +102,44 @@
     assign base_name_down = base_name | downcase
 
     assign candidate_pool = ''
+    assign matching_handles = ','
     if block.settings.collection != blank and block.settings.collection.products.size > 0
       assign candidate_pool = block.settings.collection.products
-    elsif custom_col.products != blank and custom_col.products.size > 0
+    endif
+
+    if candidate_pool == blank and custom_col.products != blank and custom_col.products.size > 0
       assign candidate_pool = custom_col.products
-    elsif custom_col_handle != blank and collections[custom_col_handle] != blank and collections[custom_col_handle].products.size > 0
+    endif
+    if candidate_pool == blank and custom_col_handle != blank and collections[custom_col_handle] != blank and collections[custom_col_handle].products.size > 0
       assign candidate_pool = collections[custom_col_handle].products
-    elsif target_product and target_product.collections.size > 0
+    endif
+
+    if target_product and target_product.collections.size > 0
       for col in target_product.collections
         unless col.handle == 'all' or col.handle == 'frontpage'
           if col.products_count > 1
-            assign candidate_pool = col.products
-            break
+            assign collection_matches = false
+            for item in col.products
+              assign item_title_down = item.title | downcase
+              assign item_family_down = item.metafields.custom.product_family_text.value | downcase
+              if item_title_down contains base_name_down or item_family_down == base_name_down
+                assign collection_matches = true
+                break
+              endif
+            endfor
+            if collection_matches
+              assign candidate_pool = col.products
+              break
+            endif
           endif
         endunless
       endfor
-      if candidate_pool == blank or candidate_pool.size == 0
-        assign candidate_pool = target_product.collections.first.products
-      endif
     endif
 
     if candidate_pool == blank or candidate_pool.size == 0
       assign candidate_pool = collections['all'].products
     endif
 
-    assign matching_handles = ','
     if candidate_pool != blank and base_name_down != blank
       for item in candidate_pool
         assign item_title_down = item.title | downcase
