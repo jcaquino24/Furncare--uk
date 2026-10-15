@@ -1044,3 +1044,8 @@ html.collection-popup-open .product-gallery__thumbnails-wrapper {
     border-radius: 20px;
   }
 }
+
+
+.article-main__meta-author.eyebrow-2xs.eyebrow-2xs--bold {
+    display: none;
+}
