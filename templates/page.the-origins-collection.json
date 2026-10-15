@@ -681,7 +681,7 @@
           "settings": {
             "text": "Ellington",
             "title_element": "h2",
-            "title_size": "xl",
+            "title_size": "display",
             "text_color": "#f9f7f0"
           }
         }
@@ -756,7 +756,7 @@
           "settings": {
             "text": "Abbott",
             "title_element": "h2",
-            "title_size": "xl",
+            "title_size": "display",
             "text_color": "#f9f7f0"
           }
         }
@@ -831,7 +831,7 @@
           "settings": {
             "text": "Tilbury",
             "title_element": "h2",
-            "title_size": "xl",
+            "title_size": "display",
             "text_color": "#f9f7f0"
           }
         }
