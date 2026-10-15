@@ -14,7 +14,7 @@
       "name": "Image - Video Banner",
       "settings": {
         "height_desktop": 730,
-        "height_mobile": 640,
+        "height_mobile": 540,
         "maintain_aspect_ratio": false,
         "add_header_offset": false,
         "media_type": "image",
