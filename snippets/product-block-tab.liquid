@@ -152,6 +152,19 @@
       endfor
     endif
 
+    if matching_handles == ',' and candidate_pool != collections['all'].products
+      assign candidate_pool = collections['all'].products
+      if candidate_pool != blank and base_name_down != blank
+        for item in candidate_pool
+          assign item_title_down = item.title | downcase
+          assign item_family_down = item.metafields.custom.product_family_text.value | downcase
+          if item_title_down contains base_name_down or item_family_down == base_name_down or item_title_down contains title_base_name_down or item_family_down == title_base_name_down
+            assign matching_handles = matching_handles | append: item.handle | append: ','
+          endif
+        endfor
+      endif
+    endif
+
     if matching_handles == ','
       assign matching_handles = ',__no_matches__,'
     endif
