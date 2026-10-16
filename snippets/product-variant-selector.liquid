@@ -128,6 +128,7 @@
               {% if variant.featured_media != blank %}data-variant-media-id="{{ variant.featured_media.id }}"{% endif %}
               data-variant-name="{{ variant.title | escape }}"
               data-variant-sku="{{ variant.sku | escape }}"
+              data-variant-custom-text="{{ variant.metafields.custom.custom_product_text.value | escape }}"
               data-variant-inventory="{{ variant.inventory_quantity }}"
               data-variant-price="{{ variant.price | money | escape }}"
               data-variant-compare-price="{% if variant.compare_at_price > variant.price %}{{ variant.compare_at_price | money | escape }}{% endif %}"
@@ -163,6 +164,7 @@
             "available": {{ variant.available | json }},
             "inventory_quantity": {{ variant.inventory_quantity | default: 0 }},
             "sku": {{ variant.sku | json }},
+            "custom_text": {{ variant.metafields.custom.custom_product_text.value | json }},
             "price": {{ variant.price | money | json }},
             "compare_at_price": {% if variant.compare_at_price > variant.price %}{{ variant.compare_at_price | money | json }}{% else %}null{% endif %},
             "featured_image": {% if variant_img %}{{ variant_img | image_url: width: 120 | json }}{% else %}null{% endif %},
@@ -201,6 +203,12 @@
             if (skuElement && skuValue) {
               skuValue.textContent = button.dataset.variantSku || '';
               skuElement.hidden = !button.dataset.variantSku;
+            }
+
+            var customTextEl = productRoot.querySelector('[data-product-custom-text]');
+            if (customTextEl) {
+              customTextEl.textContent = button.dataset.variantCustomText || '';
+              customTextEl.hidden = !button.dataset.variantCustomText;
             }
 
             var priceElement = productRoot.querySelector('[data-product-price] .price');
@@ -371,6 +379,12 @@
           if (skuElement && skuValue) {
             skuValue.textContent = variant.sku || '';
             skuElement.hidden = !variant.sku;
+          }
+
+          var customTextEl = productRoot.querySelector('[data-product-custom-text]');
+          if (customTextEl) {
+            customTextEl.textContent = variant.custom_text || '';
+            customTextEl.hidden = !variant.custom_text;
           }
 
           var priceElement = productRoot.querySelector('[data-product-price] .price');
