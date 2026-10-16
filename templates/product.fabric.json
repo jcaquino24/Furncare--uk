@@ -15,9 +15,13 @@
         "show_sku": true,
         "show_vat_badge": false,
         "show_free_sample_label": true,
+        "show_price": true,
+        "show_call_to_action": true,
+        "show_collection_popup": true,
         "contact_form_html": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
         "lead_time_icon": "shopify://shop_images/image_9fd74a0e-5f06-4dd9-aad9-b1e9b1ae39e7.png",
         "lead_time_text": "",
+        "specifications_title": "Specifications",
         "product_swatch_information": "<p>Experience the quality and texture of our finishes before you decide. Order a free sample swatch today and find the perfect match for your space with confidence.</p>",
         "show_thumbnails": true,
         "zoom": true,
@@ -30,7 +34,8 @@
         "design_services_url": "",
         "sustainability_content": "",
         "warranty_content": "",
-        "shipping_returns_content": ""
+        "shipping_returns_content": "",
+        "security_grading_title": ""
       }
     },
     "product_blocks_tncMV6": {
@@ -70,15 +75,34 @@
         "product_block_YAcrU9",
         "product_block_HCFHCd"
       ],
+      "disabled": true,
       "name": "Product blocks",
       "settings": {
         "title": "You may also like",
+        "products_per_row": 4,
+        "max_products": 8,
         "section_padding": "--spacing-2xl"
+      }
+    },
+    "similar_name_recommendation_DdhLK3": {
+      "type": "similar-name-recommendation",
+      "custom_css": [
+        "h2 {margin-bottom: 2%;}"
+      ],
+      "name": "Similar name products",
+      "settings": {
+        "heading": "You may also like",
+        "collection": "",
+        "products_to_show": 6,
+        "products_per_row": 6,
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "base-white-01"
       }
     }
   },
   "order": [
     "main",
-    "product_blocks_tncMV6"
+    "product_blocks_tncMV6",
+    "similar_name_recommendation_DdhLK3"
   ]
 }
