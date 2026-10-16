@@ -1,24 +1,58 @@
 {% liquid
-  assign similar_source_collection = section.settings.collection
-  if similar_source_collection == blank and product and product.collections.size > 0
-    assign similar_source_collection = product.collections.first
+  assign similar_first_word = ''
+  if product
+    assign similar_title = product.title | split: '|' | first | strip
+    assign similar_first_word = similar_title | split: ' ' | first | downcase | strip
   endif
-  if similar_source_collection == blank
-    assign similar_source_collection = collections['all']
-  endif
+
+  assign similar_count = 0
+  assign similar_seen_ids = ','
+  capture similar_products_markup
+    if section.settings.collection != blank
+      for candidate in section.settings.collection.products
+        assign candidate_title = candidate.title | downcase
+        assign candidate_id_token = ',' | append: candidate.id | append: ','
+        if candidate.id != product.id and candidate_title contains similar_first_word and similar_first_word != blank
+          unless similar_seen_ids contains candidate_id_token
+            render 'product-card', product: candidate
+            assign similar_seen_ids = similar_seen_ids | append: candidate.id | append: ','
+            assign similar_count = similar_count | plus: 1
+            if similar_count >= section.settings.products_to_show
+              break
+            endif
+          endunless
+        endif
+      endfor
+    elsif product
+      for source_collection in product.collections
+        for candidate in source_collection.products
+          assign candidate_title = candidate.title | downcase
+          assign candidate_id_token = ',' | append: candidate.id | append: ','
+          if candidate.id != product.id and candidate_title contains similar_first_word and similar_first_word != blank
+            unless similar_seen_ids contains candidate_id_token
+              render 'product-card', product: candidate
+              assign similar_seen_ids = similar_seen_ids | append: candidate.id | append: ','
+              assign similar_count = similar_count | plus: 1
+              if similar_count >= section.settings.products_to_show
+                break
+              endif
+            endunless
+          endif
+        endfor
+        if similar_count >= section.settings.products_to_show
+          break
+        endif
+      endfor
+    endif
+  endcapture
 %}
 
-{% if product and similar_source_collection != blank %}
+{% if product and similar_count > 0 %}
   <section
     id="SimilarNameRecommendation-{{ section.id }}"
     class="similar-name-recommendation colour-scheme--{{ section.settings.colour_scheme }}"
     style="--section-padding: var({{ section.settings.section_padding }});"
-    data-similar-name-recommendation
-    data-product-id="{{ product.id }}"
-    data-product-title="{{ product.title | escape }}"
-    data-limit="{{ section.settings.products_to_show }}"
     aria-labelledby="SimilarNameRecommendationHeading-{{ section.id }}"
-    hidden
   >
     <div class="container">
       {% if section.settings.heading != blank %}
@@ -27,21 +61,7 @@
         </h2>
       {% endif %}
 
-      <div class="similar-name-recommendation__grid" data-similar-name-grid>
-        {% for candidate in similar_source_collection.products %}
-          {% unless candidate.id == product.id %}
-            <div
-              class="similar-name-recommendation__item"
-              data-similar-name-item
-              data-product-id="{{ candidate.id }}"
-              data-product-title="{{ candidate.title | escape }}"
-              hidden
-            >
-              {% render 'product-card', product: candidate %}
-            </div>
-          {% endunless %}
-        {% endfor %}
-      </div>
+      <div class="similar-name-recommendation__grid">{{ similar_products_markup }}</div>
     </div>
   </section>
 {% endif %}
@@ -65,45 +85,6 @@
   }
 {% endstyle %}
 
-<script>
-  (() => {
-    const initializeSimilarNames = (scope = document) => {
-      const sections = [];
-      if (scope.matches?.('[data-similar-name-recommendation]')) sections.push(scope);
-      sections.push(...(scope.querySelectorAll?.('[data-similar-name-recommendation]') || []));
-
-      sections.forEach((container) => {
-        if (container.dataset.initialized === 'true') return;
-        container.dataset.initialized = 'true';
-
-        const firstWord = container.dataset.productTitle
-          ?.split('|')[0]
-          .trim()
-          .split(/\s+/)[0]
-          ?.toLocaleLowerCase();
-        const currentProductId = container.dataset.productId;
-        const limit = Number.parseInt(container.dataset.limit, 10) || 8;
-        if (!firstWord) return;
-
-        let visibleCount = 0;
-        container.querySelectorAll('[data-similar-name-item]').forEach((item) => {
-          const title = item.dataset.productTitle?.toLocaleLowerCase() || '';
-          const isMatch = item.dataset.productId !== currentProductId && title.includes(firstWord);
-          if (isMatch && visibleCount < limit) {
-            item.hidden = false;
-            visibleCount += 1;
-          }
-        });
-
-        if (visibleCount > 0) container.hidden = false;
-      });
-    };
-
-    initializeSimilarNames();
-    document.addEventListener('shopify:section:load', (event) => initializeSimilarNames(event.target));
-  })();
-</script>
-
 {% schema %}
 {
   "name": "Similar name products",
@@ -123,7 +104,7 @@
       "type": "collection",
       "id": "collection",
       "label": "Product source collection",
-      "info": "If blank, uses the current product's first collection, then the all-products collection."
+      "info": "If blank, searches all collections assigned to the current product."
     },
     {
       "type": "range",
