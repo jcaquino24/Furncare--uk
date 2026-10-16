@@ -88,10 +88,23 @@
         "max_products": 8,
         "section_padding": "--spacing-2xl"
       }
+    },
+    "similar_name_recommendation_HLhNeX": {
+      "type": "similar-name-recommendation",
+      "name": "Similar name products",
+      "settings": {
+        "heading": "YOU MAY ALSO LIKE",
+        "collection": "",
+        "products_to_show": 4,
+        "products_per_row": 4,
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "base-white-01"
+      }
     }
   },
   "order": [
     "main",
-    "product_blocks_tncMV6"
+    "product_blocks_tncMV6",
+    "similar_name_recommendation_HLhNeX"
   ]
 }
