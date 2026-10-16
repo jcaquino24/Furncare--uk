@@ -37,9 +37,10 @@
     </h1>
   {% endif %}
 
-{% if product.metafields.custom.additional_description.value != blank %}
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% if current_variant.metafields.custom.custom_product_text.value != blank %}
 <div class="product-info__sku eyebrow-2xs">
-{{ product.metafields.custom.additional_description.value }}
+{{ current_variant.metafields.custom.custom_product_text.value }}
 </div>
 {% endif %}
 
