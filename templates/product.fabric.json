@@ -81,6 +81,7 @@
         "product_block_YAcrU9",
         "product_block_HCFHCd"
       ],
+      "disabled": true,
       "name": "Product blocks",
       "settings": {
         "title": "You may also like",
@@ -88,10 +89,23 @@
         "max_products": 8,
         "section_padding": "--spacing-2xl"
       }
+    },
+    "similar_name_recommendation_HLhNeX": {
+      "type": "similar-name-recommendation",
+      "name": "Similar name products",
+      "settings": {
+        "heading": "Similar products",
+        "collection": "",
+        "products_to_show": 6,
+        "products_per_row": 6,
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "base-white-01"
+      }
     }
   },
   "order": [
     "main",
-    "product_blocks_tncMV6"
+    "product_blocks_tncMV6",
+    "similar_name_recommendation_HLhNeX"
   ]
 }
