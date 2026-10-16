@@ -1,0 +1,220 @@
+{% liquid
+  assign similar_first_word = ''
+  if product
+    assign similar_title = product.title | split: '|' | first | strip
+    assign similar_first_word = similar_title | split: ' ' | first | downcase | strip
+  endif
+
+  assign similar_count = 0
+  assign similar_seen_ids = ','
+  capture similar_products_markup
+    if section.settings.collection != blank
+      for candidate in section.settings.collection.products
+        assign candidate_title = candidate.title | downcase
+        assign candidate_id_token = ',' | append: candidate.id | append: ','
+        if candidate.id != product.id and candidate_title contains similar_first_word and similar_first_word != blank
+          unless similar_seen_ids contains candidate_id_token
+            render 'product-card', product: candidate
+            assign similar_seen_ids = similar_seen_ids | append: candidate.id | append: ','
+            assign similar_count = similar_count | plus: 1
+            if similar_count >= section.settings.products_to_show
+              break
+            endif
+          endunless
+        endif
+      endfor
+    elsif product
+      assign product_collection_reference = product.metafields.custom.collection.value | default: product.metafields.custom.collection
+      if product_collection_reference.products != blank
+        for candidate in product_collection_reference.products
+          assign candidate_title = candidate.title | downcase
+          assign candidate_id_token = ',' | append: candidate.id | append: ','
+          if candidate.id != product.id and candidate_title contains similar_first_word and similar_first_word != blank
+            unless similar_seen_ids contains candidate_id_token
+              render 'product-card', product: candidate
+              assign similar_seen_ids = similar_seen_ids | append: candidate.id | append: ','
+              assign similar_count = similar_count | plus: 1
+              if similar_count >= section.settings.products_to_show
+                break
+              endif
+            endunless
+          endif
+        endfor
+      elsif product_collection_reference.first.products != blank
+        for related_collection in product_collection_reference
+          for candidate in related_collection.products
+            assign candidate_title = candidate.title | downcase
+            assign candidate_id_token = ',' | append: candidate.id | append: ','
+            if candidate.id != product.id and candidate_title contains similar_first_word and similar_first_word != blank
+              unless similar_seen_ids contains candidate_id_token
+                render 'product-card', product: candidate
+                assign similar_seen_ids = similar_seen_ids | append: candidate.id | append: ','
+                assign similar_count = similar_count | plus: 1
+                if similar_count >= section.settings.products_to_show
+                  break
+                endif
+              endunless
+            endif
+          endfor
+          if similar_count >= section.settings.products_to_show
+            break
+          endif
+        endfor
+      endif
+
+      if similar_count < section.settings.products_to_show
+        assign swatch_collections = product.metafields.custom.swatch_collections.value
+        for related_collection in swatch_collections
+          for candidate in related_collection.products
+            assign candidate_title = candidate.title | downcase
+            assign candidate_id_token = ',' | append: candidate.id | append: ','
+            if candidate.id != product.id and candidate_title contains similar_first_word and similar_first_word != blank
+              unless similar_seen_ids contains candidate_id_token
+                render 'product-card', product: candidate
+                assign similar_seen_ids = similar_seen_ids | append: candidate.id | append: ','
+                assign similar_count = similar_count | plus: 1
+                if similar_count >= section.settings.products_to_show
+                  break
+                endif
+              endunless
+            endif
+          endfor
+          if similar_count >= section.settings.products_to_show
+            break
+          endif
+        endfor
+      endif
+
+      if similar_count < section.settings.products_to_show
+      for source_collection in product.collections
+        for candidate in source_collection.products
+          assign candidate_title = candidate.title | downcase
+          assign candidate_id_token = ',' | append: candidate.id | append: ','
+          if candidate.id != product.id and candidate_title contains similar_first_word and similar_first_word != blank
+            unless similar_seen_ids contains candidate_id_token
+              render 'product-card', product: candidate
+              assign similar_seen_ids = similar_seen_ids | append: candidate.id | append: ','
+              assign similar_count = similar_count | plus: 1
+              if similar_count >= section.settings.products_to_show
+                break
+              endif
+            endunless
+          endif
+        endfor
+        if similar_count >= section.settings.products_to_show
+          break
+        endif
+      endfor
+      endif
+    endif
+  endcapture
+%}
+
+{% if product and similar_count > 0 %}
+  <section
+    id="SimilarNameRecommendation-{{ section.id }}"
+    class="similar-name-recommendation colour-scheme--{{ section.settings.colour_scheme }}"
+    style="--section-padding: var({{ section.settings.section_padding }});"
+    aria-labelledby="SimilarNameRecommendationHeading-{{ section.id }}"
+  >
+    <div class="container">
+      {% if section.settings.heading != blank %}
+        <h2 id="SimilarNameRecommendationHeading-{{ section.id }}" class="eyebrow-sm">
+          {{ section.settings.heading | escape }}
+        </h2>
+      {% endif %}
+
+      <div class="similar-name-recommendation__grid">{{ similar_products_markup }}</div>
+    </div>
+  </section>
+{% endif %}
+
+{% style %}
+  #SimilarNameRecommendation-{{ section.id }} {
+    padding-block: var(--section-padding, var(--spacing-2xl));
+  }
+
+  #SimilarNameRecommendation-{{ section.id }} .similar-name-recommendation__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  @media (min-width: 768px) {
+    #SimilarNameRecommendation-{{ section.id }} .similar-name-recommendation__grid {
+      grid-template-columns: repeat({{ section.settings.products_per_row }}, minmax(0, 1fr));
+      gap: var(--spacing-lg);
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Similar name products",
+  "tag": "section",
+  "class": "section-similar-name-recommendation",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "More in this range"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Product source collection",
+      "info": "If blank, searches all collections assigned to the current product."
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Products to show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "label": "Products per row on desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section padding",
+      "default": "--spacing-2xl",
+      "options": [
+        { "value": "--spacing-md", "label": "Narrow" },
+        { "value": "--spacing-2xl", "label": "Default" },
+        { "value": "--spacing-4xl", "label": "Wide" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "colour_scheme",
+      "label": "Colour scheme",
+      "default": "base-white-01",
+      "options": [
+        { "value": "base-white-01", "label": "Base white 01" },
+        { "value": "base-white-02", "label": "Base white 02" },
+        { "value": "warm-stone", "label": "Warm stone" },
+        { "value": "duck-egg", "label": "Duck Egg" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Similar name products"
+    }
+  ]
+}
+{% endschema %}
