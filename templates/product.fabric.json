@@ -96,8 +96,8 @@
       "settings": {
         "heading": "Similar products",
         "collection": "",
-        "products_to_show": 6,
-        "products_per_row": 6,
+        "products_to_show": 4,
+        "products_per_row": 4,
         "section_padding": "--spacing-2xl",
         "colour_scheme": "base-white-01"
       }
