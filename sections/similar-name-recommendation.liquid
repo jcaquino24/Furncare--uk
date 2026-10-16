@@ -24,6 +24,68 @@
         endif
       endfor
     elsif product
+      assign product_collection_reference = product.metafields.custom.collection.value | default: product.metafields.custom.collection
+      if product_collection_reference.products != blank
+        for candidate in product_collection_reference.products
+          assign candidate_title = candidate.title | downcase
+          assign candidate_id_token = ',' | append: candidate.id | append: ','
+          if candidate.id != product.id and candidate_title contains similar_first_word and similar_first_word != blank
+            unless similar_seen_ids contains candidate_id_token
+              render 'product-card', product: candidate
+              assign similar_seen_ids = similar_seen_ids | append: candidate.id | append: ','
+              assign similar_count = similar_count | plus: 1
+              if similar_count >= section.settings.products_to_show
+                break
+              endif
+            endunless
+          endif
+        endfor
+      elsif product_collection_reference.first.products != blank
+        for related_collection in product_collection_reference
+          for candidate in related_collection.products
+            assign candidate_title = candidate.title | downcase
+            assign candidate_id_token = ',' | append: candidate.id | append: ','
+            if candidate.id != product.id and candidate_title contains similar_first_word and similar_first_word != blank
+              unless similar_seen_ids contains candidate_id_token
+                render 'product-card', product: candidate
+                assign similar_seen_ids = similar_seen_ids | append: candidate.id | append: ','
+                assign similar_count = similar_count | plus: 1
+                if similar_count >= section.settings.products_to_show
+                  break
+                endif
+              endunless
+            endif
+          endfor
+          if similar_count >= section.settings.products_to_show
+            break
+          endif
+        endfor
+      endif
+
+      if similar_count < section.settings.products_to_show
+        assign swatch_collections = product.metafields.custom.swatch_collections.value
+        for related_collection in swatch_collections
+          for candidate in related_collection.products
+            assign candidate_title = candidate.title | downcase
+            assign candidate_id_token = ',' | append: candidate.id | append: ','
+            if candidate.id != product.id and candidate_title contains similar_first_word and similar_first_word != blank
+              unless similar_seen_ids contains candidate_id_token
+                render 'product-card', product: candidate
+                assign similar_seen_ids = similar_seen_ids | append: candidate.id | append: ','
+                assign similar_count = similar_count | plus: 1
+                if similar_count >= section.settings.products_to_show
+                  break
+                endif
+              endunless
+            endif
+          endfor
+          if similar_count >= section.settings.products_to_show
+            break
+          endif
+        endfor
+      endif
+
+      if similar_count < section.settings.products_to_show
       for source_collection in product.collections
         for candidate in source_collection.products
           assign candidate_title = candidate.title | downcase
@@ -43,6 +105,7 @@
           break
         endif
       endfor
+      endif
     endif
   endcapture
 %}
