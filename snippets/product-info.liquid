@@ -37,11 +37,21 @@
     </h1>
   {% endif %}
 
-{% if product.metafields.custom.additional_description.value != blank %}
-<div class="product-info__sku eyebrow-2xs">
-{{ product.metafields.custom.additional_description.value }}
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign variant_custom_text = current_variant.metafields.custom.custom_product_text.value %}
+{% assign product_additional_description = product.metafields.custom.additional_description.value %}
+<div
+  class="product-info__sku eyebrow-2xs"
+  data-product-custom-text
+  data-product-custom-text-fallback="{{ product_additional_description | escape }}"
+  {% if variant_custom_text == blank and product_additional_description == blank %}hidden{% endif %}
+>
+  {% if variant_custom_text != blank %}
+    {{ variant_custom_text }}
+  {% else %}
+    {{ product_additional_description }}
+  {% endif %}
 </div>
-{% endif %}
 
   {% comment %} Price {% endcomment %}
   {%- assign has_swatch_collections = product.metafields.custom.swatch_collections.value -%}
