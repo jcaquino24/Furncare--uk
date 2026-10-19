@@ -404,7 +404,11 @@
           "settings": {
             "image": "shopify://shop_images/mh-bedroom-2-98_d4248fdd-a993-47c0-9e4f-50371e47630a.jpg",
             "heading": "",
-            "description": ""
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_964KWf": {
@@ -412,7 +416,11 @@
           "settings": {
             "image": "shopify://shop_images/Grayson_Dining_Table_Lifestyle_2.jpg",
             "heading": "",
-            "description": ""
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_PbRFCj": {
@@ -420,7 +428,11 @@
           "settings": {
             "image": "shopify://shop_images/DSC_5982.jpg",
             "heading": "",
-            "description": ""
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_fqtEca": {
@@ -428,7 +440,11 @@
           "settings": {
             "image": "shopify://shop_images/DSC_5960.jpg",
             "heading": "",
-            "description": ""
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_8KPLiV": {
@@ -436,7 +452,11 @@
           "settings": {
             "image": "shopify://shop_images/meadow-lounge-118.jpg",
             "heading": "",
-            "description": ""
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_ppCn3W": {
@@ -444,7 +464,11 @@
           "settings": {
             "image": "shopify://shop_images/b10-127.jpg",
             "heading": "",
-            "description": ""
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_x9EcAR": {
@@ -452,7 +476,11 @@
           "settings": {
             "image": "shopify://shop_images/meadow-common-area-112.jpg",
             "heading": "",
-            "description": ""
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_EW997x": {
@@ -460,7 +488,11 @@
           "settings": {
             "image": "shopify://shop_images/Tilbury_small_roomshot.jpg",
             "heading": "",
-            "description": ""
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_YJPBbr": {
@@ -468,7 +500,11 @@
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_2-20_0f00c045-7470-4b64-9dee-ae4a9fe56dee.jpg",
             "heading": "",
-            "description": ""
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_j9paK4": {
@@ -476,7 +512,11 @@
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_3-38.jpg",
             "heading": "",
-            "description": ""
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_J8wBig": {
@@ -484,7 +524,11 @@
           "settings": {
             "image": "shopify://shop_images/V2_Willow_Lodge_Vol_1-12.jpg",
             "heading": "",
-            "description": ""
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_ENPMre": {
@@ -492,7 +536,11 @@
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_1-22.jpg",
             "heading": "",
-            "description": ""
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
         "image_Q6xcJ8": {
@@ -500,7 +548,11 @@
           "settings": {
             "image": "shopify://shop_images/Willow_Lodge_Vol_3-54.jpg",
             "heading": "",
-            "description": ""
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         }
       },
@@ -519,6 +571,7 @@
         "image_ENPMre",
         "image_Q6xcJ8"
       ],
+      "disabled": true,
       "name": "Media gallery",
       "settings": {
         "heading": "Gallery",
@@ -715,6 +768,8 @@
             "title": "Coming Soon",
             "handle": "best-sellers",
             "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [
               "ottilie-bar-stool",
               "ottilie-arm-chair",
@@ -737,6 +792,8 @@
             "title": "Latest Additions",
             "handle": "new-arrivals",
             "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [
               "somerton-bedroom-furniture-bundle",
               "grayson-curve-d-end-6-seater-table",
