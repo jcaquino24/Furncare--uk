@@ -772,12 +772,28 @@
       "block_order": [
         "product_block_YAcrU9"
       ],
+      "disabled": true,
       "name": "Product blocks",
       "settings": {
         "title": "You may also like",
         "products_per_row": 4,
         "max_products": 8,
         "section_padding": "--spacing-2xl"
+      }
+    },
+    "similar_name_recommendation_LTaJTx": {
+      "type": "similar-name-recommendation",
+      "custom_css": [
+        "h2 {margin-bottom: 2%;}"
+      ],
+      "name": "Similar name products",
+      "settings": {
+        "heading": "You may also like",
+        "collection": "",
+        "products_to_show": 4,
+        "products_per_row": 4,
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "base-white-01"
       }
     },
     "178470538659a62a91": {
@@ -790,6 +806,7 @@
     "richtext_3XMDTT",
     "product_recommendation_6Wr3HQ",
     "product_blocks_tncMV6",
+    "similar_name_recommendation_LTaJTx",
     "178470538659a62a91"
   ]
 }
