@@ -982,7 +982,33 @@
         "ai_gen_block_90768fd_YE9bam"
       ],
       "name": "Spacer",
-      "settings": {}
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     },
     "image_text_zXnynf": {
       "type": "image-text",
@@ -1001,6 +1027,7 @@
             "text": "When Manor Park Care Home was handed over as a newbuild, the structure was complete, but the character of the home was still to be defined. Our role was to bring that character to life — shaping interiors that support everyday living and balance the practical demands of care with spaces that feel calm, welcoming and familiar.\n<br>\n<br>\nWorking closely with the project team, we delivered a complete FF&E package designed to support wellbeing and daily living across the home. Every element was chosen with comfort, durability and purpose in mind, ensuring bedrooms, lounges and dining spaces function seamlessly while still feeling warm and homely.\n<br>\n<br>\nThrough thoughtful, purposeful solutions, we helped these care environments feel more homely, supportive and uplifting, balancing practical requirements with warmth and familiarity. In doing so, we delivered on our commitment to transforming spaces and elevating lives, shaping environments that support wellbeing, dignity and everyday comfort within care settings.",
             "button_style": "primary",
             "button_text": "",
+            "button_action": "link",
             "button_url": ""
           }
         }
@@ -1013,6 +1040,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -1029,6 +1057,7 @@
             "text": "<div style=\"white-space: pre-wrap; white-space: pre-line;\">◦ Fully furnished bedrooms, including cabinet furniture, seating, and soft furnishings.\n\n◦ Lounge and dining spaces designed for comfort, social interaction, and ease of movement.\n\n◦ Reception, staff, and office areas fitted out for daily use.\n\n◦ Curtains and drapes adding warmth and style throughout the home.\n\n◦ Finishing touches including artwork, accessories, and even eating utensils to bring Manor Park to life.</div>",
             "button_style": "primary",
             "button_text": "",
+            "button_action": "link",
             "button_url": ""
           }
         },
@@ -1047,6 +1076,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -1069,6 +1099,7 @@
             "text": "From early planning through to final styling, our aim at Manor Park was to create a dementia-friendly environment that felt warm, calm and intuitive to navigate, without ever appearing clinical. Ahead of installation, we supported the client with site visits to previously completed projects alongside a full sampling process, helping shape a consistent look and feel across the 80-bedroom home — from communal areas through to staff offices. Working within a live newbuild meant close coordination with other trades throughout the installation. During installation, a Project Manager and Deputy Project Manager were on site throughout, overseeing a white glove fit-out that saw 5,500 items placed across the home in just 10 days, with zero damages. Our delivery team averaged 17,000 steps per person per day, placing each piece exactly where it was needed. \n<br>\n Beyond furniture supply, we completed the final layers too — installing curtains, artwork and accessories — transforming Manor Park from a blank canvas into a fully functioning, welcoming home ready to receive residents from day one.",
             "button_style": "underline",
             "button_text": "Our Delivery Service",
+            "button_action": "link",
             "button_url": "shopify://pages/delivery"
           }
         }
@@ -1081,6 +1112,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-2xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -1134,7 +1166,33 @@
       "block_order": [
         "ai_gen_block_94882ee_7PARYz"
       ],
-      "settings": {}
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     },
     "1769170984a6172538": {
       "type": "_blocks",
@@ -1153,7 +1211,33 @@
         "ai_gen_block_5d6fd2d_PWkt6q"
       ],
       "disabled": true,
-      "settings": {}
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     },
     "richtext_brEcwg": {
       "type": "richtext",
@@ -1222,7 +1306,33 @@
         "ai_gen_block_90768fd_FFFwfE"
       ],
       "name": "Spacer",
-      "settings": {}
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [

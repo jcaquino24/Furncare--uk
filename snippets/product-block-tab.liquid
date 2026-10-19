@@ -1,0 +1,246 @@
+{% liquid
+  assign block_products = ''
+  assign matching_handles = ','
+  assign is_similar_request = false
+  assign target_product = nil
+  if block.settings.use_current_product and product
+    assign target_product = product
+  elsif block.settings.seed_product != blank
+    assign target_product = block.settings.seed_product
+  elsif product
+    assign target_product = product
+  endif
+
+  assign exclude_id = false
+  if target_product
+    assign exclude_id = target_product.id
+  endif
+
+  assign custom_col = target_product.metafields.custom.collection.value | default: target_product.metafields.custom.collection
+  assign custom_col_handle = custom_col | handleize
+
+  case block.settings.product_feed_source
+    when 'product_list'
+      unless recommendations.performed
+        assign block_products = block.settings.products
+      endunless
+
+    when 'collection'
+      unless recommendations.performed
+        if block.settings.collection != blank
+          assign block_products = block.settings.collection.products
+        elsif block.settings.use_current_product and product and product.collections.size > 0
+          assign block_products = product.collections[0].products
+        endif
+      endunless
+
+    when 'custom_collection'
+      if custom_col.products != blank and custom_col.products.size > 0
+        assign block_products = custom_col.products
+      elsif custom_col.first.products != blank and custom_col.first.products.size > 0
+        assign block_products = custom_col.first.products
+      elsif custom_col_handle != blank and collections[custom_col_handle] != blank and collections[custom_col_handle].products.size > 0
+        assign block_products = collections[custom_col_handle].products
+      elsif block.settings.collection != blank
+        assign block_products = block.settings.collection.products
+      elsif target_product and target_product.collections.size > 0
+        assign block_products = target_product.collections.first.products
+      endif
+
+    when 'recommendations'
+      if block.settings.match_similar_names
+        assign is_similar_request = true
+      elsif block.settings.use_custom_collection and custom_col != blank
+        if custom_col.products != blank and custom_col.products.size > 0
+          assign block_products = custom_col.products
+        elsif custom_col_handle != blank and collections[custom_col_handle] != blank and collections[custom_col_handle].products.size > 0
+          assign block_products = collections[custom_col_handle].products
+        endif
+      elsif recommendations.performed
+        if recommendations.products_count > 0 and block.settings.recommendation_intent == recommendations.intent
+          assign block_products = recommendations.products
+        else
+          assign block_products = ''
+        endif
+      else
+        if custom_col.products != blank and custom_col.products.size > 0
+          assign block_products = custom_col.products
+        elsif block.settings.collection != blank and block.settings.collection.products.size > 0
+          assign block_products = block.settings.collection.products
+        elsif target_product.metafields.custom.ai_related_products.value != blank
+          assign block_products = target_product.metafields.custom.ai_related_products.value
+        elsif target_product and target_product.collections.size > 0
+          for col in target_product.collections
+            unless col.handle == 'all' or col.handle == 'frontpage'
+              if col.products_count > 1
+                assign collection_matches = false
+                for item in col.products
+                  assign item_title_down = item.title | downcase
+                  assign item_family_down = item.metafields.custom.product_family_text.value | downcase
+                  if item_title_down contains base_name_down or item_family_down == base_name_down
+                    assign collection_matches = true
+                    break
+                  endif
+                endfor
+                if collection_matches
+                  assign block_products = col.products
+                  break
+                endif
+              endif
+            endunless
+          endfor
+        endif
+      endif
+  endcase
+
+  if is_similar_request
+    assign raw_title = target_product.title | split: '|' | first | strip
+    assign first_title_word = raw_title | split: ' ' | first | strip
+    assign base_name_down = first_title_word | downcase
+
+    assign candidate_pool = ''
+    assign matching_handles = ','
+    assign used_default_category_fallback = false
+    if block.settings.collection != blank and block.settings.collection.products.size > 0
+      assign candidate_pool = block.settings.collection.products
+    endif
+
+    if candidate_pool == blank and custom_col.products != blank and custom_col.products.size > 0
+      assign candidate_pool = custom_col.products
+    endif
+    if candidate_pool == blank and custom_col_handle != blank and collections[custom_col_handle] != blank and collections[custom_col_handle].products.size > 0
+      assign candidate_pool = collections[custom_col_handle].products
+    endif
+
+    if target_product and target_product.collections.size > 0
+      for col in target_product.collections
+        unless col.handle == 'all' or col.handle == 'frontpage'
+          if col.products_count > 1
+            assign collection_matches = false
+            for item in col.products
+              unless item.id == exclude_id
+                assign item_title_down = item.title | downcase
+                if item_title_down contains base_name_down
+                  assign collection_matches = true
+                  break
+                endif
+              endunless
+            endfor
+            if collection_matches
+              assign candidate_pool = col.products
+              break
+            endif
+          endif
+        endunless
+      endfor
+    endif
+
+    if candidate_pool == blank or candidate_pool.size == 0
+      assign candidate_pool = collections['all'].products
+    endif
+
+    if candidate_pool != blank and base_name_down != blank
+      for item in candidate_pool
+        unless item.id == exclude_id
+          assign item_title_down = item.title | downcase
+          if item_title_down contains base_name_down
+            assign matching_handles = matching_handles | append: item.handle | append: ','
+          endif
+        endunless
+      endfor
+    endif
+
+    if matching_handles == ',' and target_product.collections.size > 0
+      assign candidate_pool = target_product.collections.first.products
+      assign used_default_category_fallback = true
+    endif
+
+    if matching_handles == ',' and used_default_category_fallback == false
+      assign matching_handles = ',__no_matches__,'
+    endif
+
+    assign block_products = candidate_pool
+  endif
+
+  assign valid_products_count = 0
+  assign check_ids = ','
+  if block_products != blank and block_products != empty
+    for p_item in block_products
+      if exclude_id and p_item.id == exclude_id
+        continue
+      endif
+      if matching_handles != blank and matching_handles != ','
+        assign handle_token = ',' | append: p_item.handle | append: ','
+        unless matching_handles contains handle_token
+          continue
+        endunless
+      endif
+      assign id_token = ',' | append: p_item.id | append: ','
+      if check_ids contains id_token
+        continue
+      endif
+      assign check_ids = check_ids | append: p_item.id | append: ','
+      assign valid_products_count = valid_products_count | plus: 1
+      if valid_products_count >= max_products
+        break
+      endif
+    endfor
+  endif
+%}
+
+{% if block.settings.title != blank %}
+  <div
+    class="{{ tab_classes }}"
+    js-content-blocks="tab-content"
+    data-tab="{{ tab_name }}"
+  >
+    {% if valid_products_count > products_per_row %}
+      <swiper-container
+        class="content-blocks__swiper"
+        slides-per-view="{{ slides_per_view }}"
+        space-between="12"
+        breakpoints='
+          {
+            "768": {
+              "spaceBetween": 20,
+              "slidesPerView": {{ products_per_row }}
+            }
+          }
+        '
+        navigation-prev-el="#swiper-button-prev-{{ fallback_section_id }}-{{ tab_name }}"
+        navigation-next-el="#swiper-button-next-{{ fallback_section_id }}-{{ tab_name }}"
+        role="region"
+        aria-label="Product carousel"
+        aria-roledescription="carousel"
+      >
+        {% render 'product-block-loop',
+          block_products: block_products,
+          exclude_id: exclude_id,
+          matching_handles: matching_handles,
+          max_products: max_products,
+          is_slide: true
+        %}
+      </swiper-container>
+      {% if has_tabs %}
+        {% assign section_id_with_tab = fallback_section_id
+          | append: '-'
+          | append: tab_name
+        %}
+        {% render 'swiper-nav',
+          class: 'hide-on-desktop content-blocks__swiper-nav',
+          section_id: section_id_with_tab
+        %}
+      {% endif %}
+    {% elsif valid_products_count > 0 %}
+      <div class="content-blocks__grid">
+        {% render 'product-block-loop',
+          block_products: block_products,
+          exclude_id: exclude_id,
+          matching_handles: matching_handles,
+          max_products: max_products,
+          is_slide: false
+        %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

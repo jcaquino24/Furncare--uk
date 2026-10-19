@@ -25,6 +25,10 @@
     assign has_contact_form = true
   endif
 
+  capture use_alt_form
+    render 'alt-contact-form-active', product: product, section: section
+  endcapture
+
   if section
     assign show_design_services = section.settings.show_design_services
     if section.settings.design_services_text != blank
@@ -36,7 +40,18 @@
 
 <div class="product-actions">
   {% comment %} Need Help? Contact Us - Only shows if contact form HTML is defined {% endcomment %}
-  {% if has_contact_form %}
+  {% if use_alt_form != blank %}
+    <button
+      type="button"
+      class="product-actions__button"
+      data-action="contact"
+      data-alt-contact-trigger
+    >
+      {% render 'icons', icon: 'envelope' %}
+      <span class="eyebrow-2xs">Need help? Contact us</span>
+      {% render 'icons', icon: 'arrow-right' %}
+    </button>
+  {% elsif has_contact_form %}
     <button
       type="button"
       class="product-actions__button"

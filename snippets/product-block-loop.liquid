@@ -1,0 +1,44 @@
+{% comment %}
+  Product Block Render Loop
+  Iterates over block_products, filters by exclude_id, matching_handles, and deduplicates.
+  Params:
+    - block_products: array of products
+    - exclude_id: id of product to exclude (or false)
+    - matching_handles: comma-separated list of allowed handles
+    - max_products: maximum number to output
+    - is_slide: boolean (true for swiper-slide, false for grid)
+{% endcomment %}
+
+{% assign rendered_ids = ',' %}
+{% assign rendered_count = 0 %}
+{% for p_item in block_products %}
+  {% if exclude_id and p_item.id == exclude_id %}
+    {% continue %}
+  {% endif %}
+  {% if matching_handles != blank and matching_handles != ',' %}
+    {% assign handle_token = ',' | append: p_item.handle | append: ',' %}
+    {% unless matching_handles contains handle_token %}
+      {% continue %}
+    {% endunless %}
+  {% endif %}
+  {% assign id_token = ',' | append: p_item.id | append: ',' %}
+  {% if rendered_ids contains id_token %}
+    {% continue %}
+  {% endif %}
+  {% assign rendered_ids = rendered_ids | append: p_item.id | append: ',' %}
+  {% assign card_loading = 'lazy' %}
+  {% if rendered_count < 2 %}
+    {% assign card_loading = 'eager' %}
+  {% endif %}
+  {% if is_slide %}
+    <swiper-slide class="content-blocks__slide">
+      {% render 'product-card', product: p_item, loading: card_loading %}
+    </swiper-slide>
+  {% else %}
+    {% render 'product-card', product: p_item, loading: card_loading %}
+  {% endif %}
+  {% assign rendered_count = rendered_count | plus: 1 %}
+  {% if rendered_count >= max_products %}
+    {% break %}
+  {% endif %}
+{% endfor %}

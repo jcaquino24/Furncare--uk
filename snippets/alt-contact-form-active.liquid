@@ -1,0 +1,22 @@
+{%- comment -%}
+  Outputs "1" when the alternate contact form is set and the product has one of its tags.
+  Params: product, section
+{%- endcomment -%}
+{%- liquid
+  if section.settings.alt_contact_form_html != blank and section.settings.alt_contact_form_tags != blank
+    assign alt_form_tags = section.settings.alt_contact_form_tags | downcase | split: ','
+    assign is_active = false
+    for product_tag in product.tags
+      assign product_tag_lc = product_tag | downcase | strip
+      for alt_tag in alt_form_tags
+        assign alt_tag_clean = alt_tag | strip
+        if alt_tag_clean == product_tag_lc
+          assign is_active = true
+        endif
+      endfor
+    endfor
+    if is_active
+      echo '1'
+    endif
+  endif
+-%}

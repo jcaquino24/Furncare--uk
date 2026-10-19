@@ -205,10 +205,11 @@
               skuElement.hidden = !button.dataset.variantSku;
             }
 
-            var customTextEl = productRoot.querySelector('[data-product-custom-text]');
-            if (customTextEl) {
-              customTextEl.textContent = button.dataset.variantCustomText || '';
-              customTextEl.hidden = !button.dataset.variantCustomText;
+            var customTextElement = productRoot.querySelector('[data-product-custom-text]');
+            if (customTextElement) {
+              var customText = button.dataset.variantCustomText || customTextElement.dataset.productCustomTextFallback || '';
+              customTextElement.textContent = customText;
+              customTextElement.hidden = !customText;
             }
 
             var priceElement = productRoot.querySelector('[data-product-price] .price');
@@ -381,10 +382,11 @@
             skuElement.hidden = !variant.sku;
           }
 
-          var customTextEl = productRoot.querySelector('[data-product-custom-text]');
-          if (customTextEl) {
-            customTextEl.textContent = variant.custom_text || '';
-            customTextEl.hidden = !variant.custom_text;
+          var customTextElement = productRoot.querySelector('[data-product-custom-text]');
+          if (customTextElement) {
+            var customText = variant.custom_text || customTextElement.dataset.productCustomTextFallback || '';
+            customTextElement.textContent = customText;
+            customTextElement.hidden = !customText;
           }
 
           var priceElement = productRoot.querySelector('[data-product-price] .price');
