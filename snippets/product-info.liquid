@@ -38,11 +38,18 @@
   {% endif %}
 
   {% assign current_variant = product.selected_or_first_available_variant %}
-  <div
-    class="product-info__sku eyebrow-2xs"
-    data-product-custom-text
-    {% if current_variant.metafields.custom.custom_product_text.value == blank %}hidden{% endif %}
-  >{{ current_variant.metafields.custom.custom_product_text.value }}</div>
+{% assign text = product.metafields.custom.additional_description.value %}
+
+{% if current_variant.metafields.custom.custom_product_text.value != blank %}
+  {% assign text = current_variant.metafields.custom.custom_product_text.value %}
+{% endif %}
+
+{% if text != blank %}
+  <div class="product-info__sku eyebrow-2xs">
+    {{ text }}
+  </div>
+{% endif %}
+
 
   {% comment %} Price {% endcomment %}
   {%- assign has_swatch_collections = product.metafields.custom.swatch_collections.value -%}
