@@ -920,6 +920,12 @@
     "blog_article_row_8MhRNW": {
       "type": "blog-article-row",
       "blocks": {
+        "article_tEF9Ve": {
+          "type": "article",
+          "settings": {
+            "article": "news/willow-lodge-care-home"
+          }
+        },
         "article_Aqdf9K": {
           "type": "article",
           "settings": {
@@ -937,19 +943,13 @@
           "settings": {
             "article": "news/furncare-teams-up-with-bright-bay-design-to-furnish-stunning-new-care-home-elm-lodge"
           }
-        },
-        "article_tEF9Ve": {
-          "type": "article",
-          "settings": {
-            "article": "news/dementia-and-nursing-care-at-letcombe-regis"
-          }
         }
       },
       "block_order": [
+        "article_tEF9Ve",
         "article_Aqdf9K",
         "article_HgyWKR",
-        "article_JyLBK7",
-        "article_tEF9Ve"
+        "article_JyLBK7"
       ],
       "name": "Blog article row",
       "settings": {
