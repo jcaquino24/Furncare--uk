@@ -50,6 +50,10 @@
           href="{{ product.url | split: '?' | first }}?variant={{ swatch_variant.id }}"
           title="{{ value.name | escape }}"
           aria-label="{{ value.name | escape }}"
+          {%- if swatch_variant.featured_image != blank %}
+          data-card-image-src="{{ swatch_variant.featured_image | image_url: width: 800 }}"
+          data-card-image-srcset="{{ swatch_variant.featured_image | image_url: width: 400 }} 400w, {{ swatch_variant.featured_image | image_url: width: 800 }} 800w"
+          {%- endif %}
         >
           {%- if swatch_image != blank -%}
             {{ swatch_image | image_url: width: 64 | image_tag: width: 32, height: 32, loading: 'lazy', alt: value.name }}
@@ -73,6 +77,29 @@
     Available in {{ variant_option_count }} variant option{% if variant_option_count > 1 %}s{% endif %}
   </div>
 {%- endif -%}
+
+<script>
+  (function () {
+    if (window.__cardVariantSwap) return;
+    window.__cardVariantSwap = true;
+    document.addEventListener('click', function (event) {
+      var swatch = event.target.closest('.product-card__variant[data-card-image-src]');
+      if (!swatch) return;
+      var card = swatch.closest('.product-card');
+      var img = card && card.querySelector('.product-card__original-image img');
+      if (!img) return;
+      event.preventDefault();
+      img.src = swatch.dataset.cardImageSrc;
+      img.srcset = swatch.dataset.cardImageSrcset;
+      card.querySelectorAll('.product-card__variant').forEach(function (el) {
+        el.classList.toggle('is-selected', el === swatch);
+      });
+      card.querySelectorAll('.product-card__image a, .product-card__title a').forEach(function (link) {
+        link.href = swatch.href;
+      });
+    });
+  })();
+</script>
 
 {% stylesheet %}
   .product-card__variants {
