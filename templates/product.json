@@ -687,6 +687,8 @@
         "show_call_to_action": true,
         "show_collection_popup": true,
         "contact_form_html": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+        "alt_contact_form_tags": "Bespoke,bespoke",
+        "alt_contact_form_html": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script> <div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"c81574fc-65ec-431e-845f-40d18f62a6f2\" data-portal-id=\"145723791\"></div>",
         "lead_time_icon": "shopify://shop_images/dark-delivery-icon.svg",
         "lead_time_text": "Delivered",
         "specifications_title": "Dimensions",
@@ -756,6 +758,8 @@
             "title": "New Arrivals",
             "handle": "new-arrivals",
             "product_feed_source": "recommendations",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [],
             "collection": "",
             "seed_product": "",
@@ -768,12 +772,28 @@
       "block_order": [
         "product_block_YAcrU9"
       ],
+      "disabled": true,
       "name": "Product blocks",
       "settings": {
         "title": "You may also like",
         "products_per_row": 4,
         "max_products": 8,
         "section_padding": "--spacing-2xl"
+      }
+    },
+    "similar_name_recommendation_LTaJTx": {
+      "type": "similar-name-recommendation",
+      "custom_css": [
+        "h2 {margin-bottom: 2%;}"
+      ],
+      "name": "Similar name products",
+      "settings": {
+        "heading": "You may also like",
+        "collection": "",
+        "products_to_show": 4,
+        "products_per_row": 4,
+        "section_padding": "--spacing-2xl",
+        "colour_scheme": "base-white-01"
       }
     },
     "178470538659a62a91": {
@@ -786,6 +806,7 @@
     "richtext_3XMDTT",
     "product_recommendation_6Wr3HQ",
     "product_blocks_tncMV6",
+    "similar_name_recommendation_LTaJTx",
     "178470538659a62a91"
   ]
 }
