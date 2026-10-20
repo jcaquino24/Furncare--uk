@@ -11,6 +11,18 @@
   "sections": {
     "main": {
       "type": "main-collection",
+      "blocks": {
+        "swatch_colour_Cahep3": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Teal",
+            "colour": "#2800F2"
+          }
+        }
+      },
+      "block_order": [
+        "swatch_colour_Cahep3"
+      ],
       "settings": {
         "grid_style": "default",
         "promo_block": "inspiration",
@@ -22,6 +34,7 @@
       "type": "richtext",
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "left",
