@@ -11,18 +11,6 @@
   "sections": {
     "main": {
       "type": "main-collection",
-      "blocks": {
-        "swatch_colour_Cahep3": {
-          "type": "swatch_colour",
-          "settings": {
-            "value_name": "",
-            "colour": "#CBA8D7"
-          }
-        }
-      },
-      "block_order": [
-        "swatch_colour_Cahep3"
-      ],
       "settings": {
         "grid_style": "default",
         "promo_block": "inspiration",
