@@ -335,7 +335,7 @@
 
       {% capture card_variants_html %}
         {%- if product_card_style == 'default' and product.type != 'Swatch' and product.variants.size > 1 -%}
-          {%- render 'product-card-variants', product: product -%}
+          {%- render 'product-card-variants', product: product, swatch_blocks: swatch_blocks -%}
         {%- endif -%}
       {% endcapture %}
 

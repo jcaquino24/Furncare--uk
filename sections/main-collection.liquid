@@ -283,7 +283,8 @@
                 product: product,
                 loading: loading,
                 preload: preload,
-                product_card_style: section.settings.grid_style
+                product_card_style: section.settings.grid_style,
+                swatch_blocks: section.blocks
               -%}
             {%- endfor -%}
 
@@ -380,6 +381,25 @@
       "id": "collection_catalog_max_price",
       "label": "Catalog max price (override)",
       "info": "Upper limit for the price slider, in major units (e.g. 1424.47). Same basis as product prices in admin. Use when this collection has more than 50 products so the theme cannot scan the full catalog. Leave blank to use the highest price among the first 50 products."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "swatch_colour",
+      "name": "Fabric / Finish swatch",
+      "settings": [
+        {
+          "type": "text",
+          "id": "value_name",
+          "label": "Fabric / Finish value name",
+          "info": "Must match the option value exactly (case-insensitive), e.g. Duck Egg. Cards show this colour for Fabric and Finish options; values without a swatch use the variant image."
+        },
+        {
+          "type": "color",
+          "id": "colour",
+          "label": "Swatch colour"
+        }
+      ]
     }
   ]
 }

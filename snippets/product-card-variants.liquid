@@ -1,6 +1,6 @@
 {%- comment -%}
   Variant swatches + "Available in N variant options" for product cards (Colour/Fabric/Finish options).
-  Params: product, limit (default 5)
+  Params: product, limit (default 5), swatch_blocks (collection section blocks mapping Fabric/Finish values to colours)
 {%- endcomment -%}
 {%- assign swatch_limit = limit | default: 5 -%}
 {%- assign variant_option_count = 0 -%}
@@ -19,6 +19,10 @@
       assign is_swatch_option = true
     endif
     assign option_index = swatch_option.position | minus: 1
+    assign is_custom_colour_option = false
+    if option_name contains 'fabric' or option_name contains 'finish'
+      assign is_custom_colour_option = true
+    endif
   -%}
 
   {%- if is_swatch_option and swatch_option.values.size > 1 -%}
@@ -37,16 +41,30 @@
             endif
           endfor
 
-          assign swatch_image = value.swatch.image
-          if swatch_image == blank and value.swatch.color == blank
-            assign swatch_image = swatch_variant.featured_image
+          assign swatch_image = null
+          assign swatch_color = null
+          if is_custom_colour_option
+            assign value_key = value.name | downcase | strip
+            for swatch_block in swatch_blocks
+              assign block_key = swatch_block.settings.value_name | downcase | strip
+              if swatch_block.type == 'swatch_colour' and block_key == value_key
+                assign swatch_color = swatch_block.settings.colour
+                break
+              endif
+            endfor
           endif
-          if swatch_image == blank and value.swatch.color == blank and swatch_variant.image != blank
-            assign swatch_image = swatch_variant.image
+          if swatch_color == blank
+            assign swatch_color = value.swatch.color
+          endif
+          if swatch_color == blank
+            assign swatch_image = value.swatch.image
+          endif
+          if swatch_color == blank and swatch_image == blank
+            assign swatch_image = swatch_variant.featured_image
           endif
         -%}
         <a
-          class="product-card__variant{% if value.selected %} is-selected{% endif %}{% if swatch_image == blank and value.swatch.color == blank %} product-card__variant--text{% endif %}"
+          class="product-card__variant{% if value.selected %} is-selected{% endif %}{% if swatch_color == blank and swatch_image == blank %} product-card__variant--text{% endif %}"
           href="{{ product.url | split: '?' | first }}?variant={{ swatch_variant.id }}"
           title="{{ value.name | escape }}"
           aria-label="{{ value.name | escape }}"
@@ -55,10 +73,10 @@
           data-card-image-srcset="{{ swatch_variant.featured_image | image_url: width: 400 }} 400w, {{ swatch_variant.featured_image | image_url: width: 800 }} 800w"
           {%- endif %}
         >
-          {%- if swatch_image != blank -%}
+          {%- if swatch_color != blank -%}
+            <span class="product-card__variant-color" style="background-color: {{ swatch_color }}"></span>
+          {%- elsif swatch_image != blank -%}
             {{ swatch_image | image_url: width: 64 | image_tag: width: 32, height: 32, loading: 'lazy', alt: value.name }}
-          {%- elsif value.swatch.color != blank -%}
-            <span class="product-card__variant-color" style="background-color: {{ value.swatch.color }}"></span>
           {%- else -%}
             {{ value.name }}
           {%- endif -%}
