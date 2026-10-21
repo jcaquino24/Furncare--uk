@@ -11,6 +11,19 @@
   "sections": {
     "main": {
       "type": "main-collection",
+      "blocks": {
+        "swatch_colour_GjRmVn": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "",
+            "swatch_type": "image",
+            "colour": ""
+          }
+        }
+      },
+      "block_order": [
+        "swatch_colour_GjRmVn"
+      ],
       "settings": {
         "grid_style": "default",
         "promo_block": "inspiration",
