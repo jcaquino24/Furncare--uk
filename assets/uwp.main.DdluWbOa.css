@@ -3542,7 +3542,7 @@ section[id*="__image_text_blocks"]
   border-radius: var(--radius-sm, 4px);
   display: flex;
   gap: 8px;
-  height: 500px;
+  height: auto;
   object-fit: cover;
   width: 100%;
 }
