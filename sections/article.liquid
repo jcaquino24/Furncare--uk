@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <div class="article-main__content rte">
+    <div class="article-main__content article-main__content--ratio-{{ section.settings.image_aspect_ratio | default: 'natural' }} rte">
       {% capture custom_content %}
         {% render 'article-custom-content' %}
       {% endcapture %}
@@ -43,9 +43,43 @@
   </div>
 </div>
 
+{% stylesheet %}
+  .article-main__content--ratio-square img,
+  .article-main__content--ratio-four-three img,
+  .article-main__content--ratio-sixteen-nine img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .article-main__content--ratio-square img {
+    aspect-ratio: 1 / 1;
+  }
+
+  .article-main__content--ratio-four-three img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .article-main__content--ratio-sixteen-nine img {
+    aspect-ratio: 16 / 9;
+  }
+{% endstylesheet %}
+
 {% schema %}
 {
   "name": "Article",
-  "settings": []
+  "settings": [
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "Article image aspect ratio",
+      "options": [
+        { "value": "natural", "label": "Natural" },
+        { "value": "square", "label": "Square (1:1)" },
+        { "value": "four-three", "label": "Landscape (4:3)" },
+        { "value": "sixteen-nine", "label": "Widescreen (16:9)" }
+      ],
+      "default": "natural"
+    }
+  ]
 }
 {% endschema %}
