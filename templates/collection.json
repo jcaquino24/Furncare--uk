@@ -12,16 +12,186 @@
     "main": {
       "type": "main-collection",
       "blocks": {
+        "swatch_colour_eUeBC3": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Alba Wheat",
+            "swatch_type": "colour",
+            "colour": "#E0D2B4"
+          }
+        },
+        "swatch_colour_FR9N9q": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Riva Chablis",
+            "swatch_type": "colour",
+            "colour": "#B69F81"
+          }
+        },
+        "swatch_colour_thJQaJ": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Butterscotch",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/Butterscotch.png"
+          }
+        },
+        "swatch_colour_THkp9R": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Ocean",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/Ocean_01d08094-657e-4bad-9f36-e14f469c30f8.png"
+          }
+        },
+        "swatch_colour_MdFepP": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Riva Nutmeg",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/Riva_Nutmeg.png"
+          }
+        },
+        "swatch_colour_FT3Paz": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Pewter",
+            "swatch_type": "colour",
+            "colour": "#7C7D6A"
+          }
+        },
+        "swatch_colour_dkFMRJ": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Juniper",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/Juniper_c1b5a774-687c-42ad-bb59-49ae6667cbb6.png"
+          }
+        },
+        "swatch_colour_kQMHUX": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Lismore Almond",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/Lismore_Almond.png"
+          }
+        },
+        "swatch_colour_nEMw7z": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Duck Egg",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/Duck_Egg.png"
+          }
+        },
+        "swatch_colour_DRr3UE": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Lime/Steel",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/LimeSteel.png"
+          }
+        },
+        "swatch_colour_nTEmeJ": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Grape/Mink",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/GrapeMink.png"
+          }
+        },
+        "swatch_colour_tzQbNw": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Elm",
+            "swatch_type": "colour",
+            "colour": "#425443"
+          }
+        },
+        "swatch_colour_Jm3we8": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Peacock",
+            "swatch_type": "colour",
+            "colour": "#225264"
+          }
+        },
+        "swatch_colour_tCwc8X": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Teal",
+            "swatch_type": "colour",
+            "colour": "#195354"
+          }
+        },
+        "swatch_colour_7RH4xM": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Marna Hessian",
+            "swatch_type": "colour",
+            "colour": "#A6937B"
+          }
+        },
+        "swatch_colour_j6Fjgk": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Ryde Oyster",
+            "swatch_type": "colour",
+            "colour": "#E6D5C2"
+          }
+        },
+        "swatch_colour_RAaGcJ": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Luxe Indigo",
+            "swatch_type": "colour",
+            "colour": "#39485E"
+          }
+        },
+        "swatch_colour_3knWin": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Kilda Graphite",
+            "swatch_type": "colour",
+            "colour": "#9F9F9F"
+          }
+        },
         "swatch_colour_GjRmVn": {
           "type": "swatch_colour",
           "settings": {
-            "value_name": "",
-            "swatch_type": "image",
-            "colour": ""
+            "value_name": "Ryde Flint",
+            "swatch_type": "colour",
+            "colour": "#6E6153"
           }
         }
       },
       "block_order": [
+        "swatch_colour_eUeBC3",
+        "swatch_colour_FR9N9q",
+        "swatch_colour_thJQaJ",
+        "swatch_colour_THkp9R",
+        "swatch_colour_MdFepP",
+        "swatch_colour_FT3Paz",
+        "swatch_colour_dkFMRJ",
+        "swatch_colour_kQMHUX",
+        "swatch_colour_nEMw7z",
+        "swatch_colour_DRr3UE",
+        "swatch_colour_nTEmeJ",
+        "swatch_colour_tzQbNw",
+        "swatch_colour_Jm3we8",
+        "swatch_colour_tCwc8X",
+        "swatch_colour_7RH4xM",
+        "swatch_colour_j6Fjgk",
+        "swatch_colour_RAaGcJ",
+        "swatch_colour_3knWin",
         "swatch_colour_GjRmVn"
       ],
       "settings": {
