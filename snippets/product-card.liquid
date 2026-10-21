@@ -54,6 +54,8 @@
 
   unless settings.enable_card_hover
     assign additional_classes = additional_classes | append: ' product-card--no-hover'
+  elsif settings.product_card_hover_mode == 'buttons_only'
+    assign additional_classes = additional_classes | append: ' product-card--hover-buttons-only'
   endunless
 
   assign product_card_title = product.title | split: '|' | first | strip
@@ -366,6 +368,10 @@
 {% endif %}
 
 {% stylesheet %}
+  .product-card.product-card--hover-buttons-only:hover .product-card__alternate-image {
+    opacity: 0;
+  }
+
   .product-card--no-hover:hover .product-card__alternate-image {
     opacity: 0;
   }
