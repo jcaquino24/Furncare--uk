@@ -44,16 +44,25 @@
 </div>
 
 {% stylesheet %}
+  .article-main .article-main__content.article-main__content--ratio-square,
+  .article-main .article-main__content.article-main__content--ratio-four-three,
+  .article-main .article-main__content.article-main__content--ratio-sixteen-nine {
+    container-type: inline-size;
+  }
+
   .article-main .article-main__content.article-main__content--ratio-square img {
-    aspect-ratio: 1 / 1;
+    height: 100cqi;
+    object-fit: cover;
   }
 
   .article-main .article-main__content.article-main__content--ratio-four-three img {
-    aspect-ratio: 4 / 3;
+    height: 75cqi;
+    object-fit: cover;
   }
 
   .article-main .article-main__content.article-main__content--ratio-sixteen-nine img {
-    aspect-ratio: 16 / 9;
+    height: 56.25cqi;
+    object-fit: cover;
   }
 {% endstylesheet %}
 
