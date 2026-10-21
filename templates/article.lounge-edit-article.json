@@ -11,7 +11,9 @@
   "sections": {
     "main": {
       "type": "article",
-      "settings": {}
+      "settings": {
+        "image_aspect_ratio": "square"
+      }
     },
     "richtext_hLWh3Q": {
       "type": "richtext",
@@ -53,13 +55,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 41,
         "section_padding": "--spacing-2xl",
         "text_alignment": "center",
         "colour_scheme": "base-white-01",
         "enable_animation": false,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "blocks_mdCkbP": {
@@ -124,13 +129,16 @@
       ],
       "name": "Rich Text",
       "settings": {
+        "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-4xl",
         "text_alignment": "center",
         "colour_scheme": "warm-stone",
         "enable_animation": false,
         "optional_richtext": "",
-        "small_container": false
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
       }
     },
     "product_blocks_hr4bkw": {
@@ -142,6 +150,8 @@
             "title": "",
             "handle": "",
             "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [],
             "collection": "",
             "seed_product": "",
@@ -156,6 +166,8 @@
             "title": "New Arrivals",
             "handle": "new-arrivals",
             "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [
               "5164-maxwell-small-sideboard-finish-grey-oak",
               "alpha-extreme-270-double-wardrobe-finish-mountain-oak-cashmere",
@@ -178,6 +190,8 @@
       "name": "Product blocks",
       "settings": {
         "title": "Products featured in this case study",
+        "products_per_row": 4,
+        "max_products": 8,
         "section_padding": "--spacing-4xl"
       }
     },
