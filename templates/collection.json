@@ -12,6 +12,57 @@
     "main": {
       "type": "main-collection",
       "blocks": {
+        "swatch_colour_CeM3Dg": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Alba Taupe",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/Alba_Taupe.png"
+          }
+        },
+        "swatch_colour_Ty7rjn": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Olive",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/Olive_b74f2e99-3ff0-45a6-9296-216c22e5f487.png"
+          }
+        },
+        "swatch_colour_qQ3wzh": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Mist",
+            "swatch_type": "colour",
+            "colour": "#BDCDC0"
+          }
+        },
+        "swatch_colour_YdRMrz": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Chablis",
+            "swatch_type": "colour",
+            "colour": "#C5B493"
+          }
+        },
+        "swatch_colour_NBe6Df": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Taupe",
+            "swatch_type": "colour",
+            "colour": "#8C7C64"
+          }
+        },
+        "swatch_colour_pmCR7w": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Arabesque Teal",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/arabesque_teal.png"
+          }
+        },
         "swatch_colour_eUeBC3": {
           "type": "swatch_colour",
           "settings": {
@@ -174,6 +225,12 @@
         }
       },
       "block_order": [
+        "swatch_colour_CeM3Dg",
+        "swatch_colour_Ty7rjn",
+        "swatch_colour_qQ3wzh",
+        "swatch_colour_YdRMrz",
+        "swatch_colour_NBe6Df",
+        "swatch_colour_pmCR7w",
         "swatch_colour_eUeBC3",
         "swatch_colour_FR9N9q",
         "swatch_colour_thJQaJ",
