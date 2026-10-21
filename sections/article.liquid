@@ -44,22 +44,15 @@
 </div>
 
 {% stylesheet %}
-  .article-main__content--ratio-square img,
-  .article-main__content--ratio-four-three img,
-  .article-main__content--ratio-sixteen-nine img {
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .article-main__content--ratio-square img {
+  .article-main .article-main__content.article-main__content--ratio-square img {
     aspect-ratio: 1 / 1;
   }
 
-  .article-main__content--ratio-four-three img {
+  .article-main .article-main__content.article-main__content--ratio-four-three img {
     aspect-ratio: 4 / 3;
   }
 
-  .article-main__content--ratio-sixteen-nine img {
+  .article-main .article-main__content.article-main__content--ratio-sixteen-nine img {
     aspect-ratio: 16 / 9;
   }
 {% endstylesheet %}
