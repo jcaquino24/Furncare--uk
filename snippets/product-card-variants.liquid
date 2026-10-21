@@ -48,17 +48,19 @@
             for swatch_block in swatch_blocks
               assign block_key = swatch_block.settings.value_name | downcase | strip
               if swatch_block.type == 'swatch_colour' and block_key == value_key
-                assign swatch_color = swatch_block.settings.colour
+                if swatch_block.settings.swatch_type == 'image'
+                  assign swatch_image = swatch_block.settings.swatch_image
+                else
+                  assign swatch_color = swatch_block.settings.colour
+                endif
                 break
               endif
             endfor
           endif
-          if swatch_color == blank
+          unless is_custom_colour_option
             assign swatch_color = value.swatch.color
-          endif
-          if swatch_color == blank
             assign swatch_image = value.swatch.image
-          endif
+          endunless
           if swatch_color == blank and swatch_image == blank
             assign swatch_image = swatch_variant.featured_image
           endif

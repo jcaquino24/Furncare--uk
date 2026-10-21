@@ -395,9 +395,26 @@
           "info": "Must match the option value exactly (case-insensitive), e.g. Duck Egg. Cards show this colour for Fabric and Finish options; values without a swatch use the variant image."
         },
         {
+          "type": "select",
+          "id": "swatch_type",
+          "label": "Swatch display",
+          "options": [
+            { "value": "colour", "label": "Colour" },
+            { "value": "image", "label": "Image" }
+          ],
+          "default": "colour"
+        },
+        {
           "type": "color",
           "id": "colour",
-          "label": "Swatch colour"
+          "label": "Swatch colour",
+          "visible_if": "{{ block.settings.swatch_type == 'colour' }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "swatch_image",
+          "label": "Swatch image",
+          "visible_if": "{{ block.settings.swatch_type == 'image' }}"
         }
       ]
     }
