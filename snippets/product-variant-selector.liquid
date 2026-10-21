@@ -5,7 +5,7 @@
   endif
   assign first_option_as_dropdown = block.settings.first_option_as_dropdown | default: false
   assign display_mode = block.settings.display_mode | default: 'image_text'
-  assign current_variant = product.selected_or_first_available_variant
+  assign current_variant = product.selected_variant | default: product.selected_or_first_available_variant
 -%}
 
 {% if product.variants.size > 1 %}
