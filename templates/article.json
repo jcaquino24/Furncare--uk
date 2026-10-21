@@ -12,7 +12,7 @@
     "main": {
       "type": "article",
       "settings": {
-        "image_aspect_ratio": "natural"
+        "image_aspect_ratio": "square"
       }
     },
     "article_products": {
