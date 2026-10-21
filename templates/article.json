@@ -11,7 +11,9 @@
   "sections": {
     "main": {
       "type": "article",
-      "settings": {}
+      "settings": {
+        "image_aspect_ratio": "square"
+      }
     },
     "article_products": {
       "type": "article-products",
