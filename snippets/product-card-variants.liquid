@@ -12,15 +12,18 @@
     if option_name contains 'finish'
       assign is_swatch_option = true
     endif
-    if option_name contains 'colo'
+    if option_name contains 'color'
       assign is_swatch_option = true
     endif
     if option_name contains 'fabric'
       assign is_swatch_option = true
     endif
+    if option_name contains 'colour'
+      assign is_swatch_option = true
+    endif
     assign option_index = swatch_option.position | minus: 1
     assign is_custom_colour_option = false
-    if option_name contains 'fabric' or option_name contains 'finish'
+    if option_name contains 'fabric' or option_name contains 'finish' or option_name contains 'color' or option_name contains 'colour'
       assign is_custom_colour_option = true
     endif
   -%}
