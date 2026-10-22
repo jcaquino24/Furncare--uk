@@ -5,7 +5,7 @@
   endif
   assign first_option_as_dropdown = block.settings.first_option_as_dropdown | default: false
   assign display_mode = block.settings.display_mode | default: 'image_text'
-  assign current_variant = product.selected_variant | default: product.selected_or_first_available_variant
+  assign current_variant = product.selected_or_first_available_variant
 -%}
 
 {% if product.variants.size > 1 %}
@@ -14,13 +14,12 @@
     data-product-variant-selector
     data-split-options="{{ split_options }}"
     data-first-option-as-dropdown="{{ first_option_as_dropdown }}"
-    data-selected-variant-id="{{ current_variant.id }}"
   >
     {% if split_options and product.options_with_values.size > 0 %}
       {% for option in product.options_with_values %}
         {% assign option_index = forloop.index0 %}
         {% assign is_first_option = forloop.first %}
-        {% assign selected_value = current_variant.options[option_index] %}
+        {% assign selected_value = option.selected_value %}
 
         <fieldset
           class="product-variant-selector__group"
@@ -272,7 +271,7 @@
 
         // Initialize current selected options state
         var currentVariantIdInput = productRoot.querySelector('input[name="id"]');
-        var currentVariantId = selector.dataset.selectedVariantId || (currentVariantIdInput ? currentVariantIdInput.value : null);
+        var currentVariantId = currentVariantIdInput ? currentVariantIdInput.value : null;
         var initialVariant = variants.find(function(v) { return String(v.id) === String(currentVariantId); }) || variants[0];
         var selectedOptions = initialVariant ? Array.from(initialVariant.options) : [];
 

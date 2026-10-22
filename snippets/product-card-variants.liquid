@@ -1,6 +1,5 @@
 {%- comment -%}
-  Variant swatches + "Available in N variant options" for product cards (Colour/Fabric/Finish options).
-  Params: product, limit (default 5), swatch_blocks (collection section blocks mapping Fabric/Finish values to colours)
+  Variant swatches + "Available in N variant options" for product cards.
 {%- endcomment -%}
 {%- assign swatch_limit = limit | default: 5 -%}
 {%- assign variant_option_count = 0 -%}
@@ -9,19 +8,13 @@
   {%- liquid
     assign option_name = swatch_option.name | downcase
     assign is_swatch_option = false
-    if option_name contains 'finish'
-      assign is_swatch_option = true
-    endif
-    if option_name contains 'colo'
-      assign is_swatch_option = true
-    endif
-    if option_name contains 'fabric'
+    if option_name contains 'finish' or option_name contains 'colo' or option_name contains 'fabric'
       assign is_swatch_option = true
     endif
     assign option_index = swatch_option.position | minus: 1
-    assign is_custom_colour_option = false
-    if option_name contains 'fabric' or option_name contains 'finish'
-      assign is_custom_colour_option = true
+    assign is_custom_swatch_option = false
+    if option_name contains 'finish' or option_name contains 'colo' or option_name contains 'fabric'
+      assign is_custom_swatch_option = true
     endif
   -%}
 
@@ -41,13 +34,16 @@
             endif
           endfor
 
-          assign swatch_image = null
-          assign swatch_color = null
-          if is_custom_colour_option
+          assign swatch_color = blank
+          assign swatch_image = blank
+          assign swatch_mapping_found = false
+
+          if is_custom_swatch_option
             assign value_key = value.name | downcase | strip
             for swatch_block in swatch_blocks
               assign block_key = swatch_block.settings.value_name | downcase | strip
               if swatch_block.type == 'swatch_colour' and block_key == value_key
+                assign swatch_mapping_found = true
                 if swatch_block.settings.swatch_type == 'image'
                   assign swatch_image = swatch_block.settings.swatch_image
                 else
@@ -57,28 +53,26 @@
               endif
             endfor
           endif
-          unless is_custom_colour_option
+
+          unless swatch_mapping_found
             assign swatch_color = value.swatch.color
             assign swatch_image = value.swatch.image
           endunless
+
           if swatch_color == blank and swatch_image == blank
-            assign swatch_image = swatch_variant.featured_image
+            assign swatch_image = swatch_variant.featured_image | default: swatch_variant.image
           endif
         -%}
         <a
-          class="product-card__variant{% if value.selected %} is-selected{% endif %}{% if swatch_color == blank and swatch_image == blank %} product-card__variant--text{% endif %}"
+          class="product-card__variant{% if value.selected %} is-selected{% endif %}{% if swatch_image == blank and swatch_color == blank %} product-card__variant--text{% endif %}"
           href="{{ product.url | split: '?' | first }}?variant={{ swatch_variant.id }}"
           title="{{ value.name | escape }}"
           aria-label="{{ value.name | escape }}"
-          {%- if swatch_variant.featured_image != blank %}
-          data-card-image-src="{{ swatch_variant.featured_image | image_url: width: 800 }}"
-          data-card-image-srcset="{{ swatch_variant.featured_image | image_url: width: 400 }} 400w, {{ swatch_variant.featured_image | image_url: width: 800 }} 800w"
-          {%- endif %}
         >
-          {%- if swatch_color != blank -%}
-            <span class="product-card__variant-color" style="background-color: {{ swatch_color }}"></span>
-          {%- elsif swatch_image != blank -%}
+          {%- if swatch_image != blank -%}
             {{ swatch_image | image_url: width: 64 | image_tag: width: 32, height: 32, loading: 'lazy', alt: value.name }}
+          {%- elsif swatch_color != blank -%}
+            <span class="product-card__variant-color" style="background-color: {{ swatch_color }}"></span>
           {%- else -%}
             {{ value.name }}
           {%- endif -%}
@@ -97,29 +91,6 @@
     Available in {{ variant_option_count }} variant option{% if variant_option_count > 1 %}s{% endif %}
   </div>
 {%- endif -%}
-
-<script>
-  (function () {
-    if (window.__cardVariantSwap) return;
-    window.__cardVariantSwap = true;
-    document.addEventListener('click', function (event) {
-      var swatch = event.target.closest('.product-card__variant[data-card-image-src]');
-      if (!swatch) return;
-      var card = swatch.closest('.product-card');
-      var img = card && card.querySelector('.product-card__original-image img');
-      if (!img) return;
-      event.preventDefault();
-      img.src = swatch.dataset.cardImageSrc;
-      img.srcset = swatch.dataset.cardImageSrcset;
-      card.querySelectorAll('.product-card__variant').forEach(function (el) {
-        el.classList.toggle('is-selected', el === swatch);
-      });
-      card.querySelectorAll('.product-card__image a, .product-card__title a').forEach(function (link) {
-        link.href = swatch.href;
-      });
-    });
-  })();
-</script>
 
 {% stylesheet %}
   .product-card__variants {

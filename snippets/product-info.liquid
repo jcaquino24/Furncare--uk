@@ -13,7 +13,6 @@
 
 {%- liquid
   assign section_id = section_id | default: 'product'
-  assign current_variant = product.selected_variant | default: product.selected_or_first_available_variant
 -%}
 
 <div class="product-info">
@@ -24,10 +23,10 @@
     <div
       class="product-info__sku eyebrow-2xs"
       data-product-sku
-      {% if current_variant.sku == blank %}hidden{% endif %}
+      {% if product.selected_or_first_available_variant.sku == blank %}hidden{% endif %}
     >
       {{ 'product.product_sku' | t }}:
-      <span data-product-sku-value>{{ current_variant.sku }}</span>
+      <span data-product-sku-value>{{ product.selected_or_first_available_variant.sku }}</span>
     </div>
   {% endif %}
 
@@ -38,6 +37,7 @@
     </h1>
   {% endif %}
 
+{% assign current_variant = product.selected_or_first_available_variant %}
 {% assign variant_custom_text = current_variant.metafields.custom.custom_product_text.value %}
 {% assign product_additional_description = product.metafields.custom.additional_description.value %}
 <div

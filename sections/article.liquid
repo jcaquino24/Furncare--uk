@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <div class="article-main__content article-main__content--ratio-{{ section.settings.image_aspect_ratio | default: 'natural' }} rte">
+    <div class="article-main__content rte">
       {% capture custom_content %}
         {% render 'article-custom-content' %}
       {% endcapture %}
@@ -43,45 +43,9 @@
   </div>
 </div>
 
-{% stylesheet %}
-  .article-main .article-main__content.article-main__content--ratio-square,
-  .article-main .article-main__content.article-main__content--ratio-four-three,
-  .article-main .article-main__content.article-main__content--ratio-sixteen-nine {
-    container-type: inline-size;
-  }
-
-  .article-main .article-main__content.article-main__content--ratio-square img {
-    height: 100cqi;
-    object-fit: cover;
-  }
-
-  .article-main .article-main__content.article-main__content--ratio-four-three img {
-    height: 75cqi;
-    object-fit: cover;
-  }
-
-  .article-main .article-main__content.article-main__content--ratio-sixteen-nine img {
-    height: 56.25cqi;
-    object-fit: cover;
-  }
-{% endstylesheet %}
-
 {% schema %}
 {
   "name": "Article",
-  "settings": [
-    {
-      "type": "select",
-      "id": "image_aspect_ratio",
-      "label": "Article image aspect ratio",
-      "options": [
-        { "value": "natural", "label": "Natural" },
-        { "value": "square", "label": "Square (1:1)" },
-        { "value": "four-three", "label": "Landscape (4:3)" },
-        { "value": "sixteen-nine", "label": "Widescreen (16:9)" }
-      ],
-      "default": "natural"
-    }
-  ]
+  "settings": []
 }
 {% endschema %}

@@ -14,11 +14,6 @@
   @param {string} [button_border_color] - Optional border color for the custom button style
   @param {number} [button_border_width] - Optional border width in px for the custom button style
   @param {number} [button_padding] - Optional padding in px for the custom button style
-  @param {number} [button_padding_x] - Optional horizontal padding in px, overrides the sides of button_padding for the custom button style
-  @param {number} [button_font_weight] - Optional font weight for the custom button style
-  @param {number} [button_border_radius] - Optional border radius in px for the custom button style
-  @param {string} [button_text_transform] - Optional text transform for the custom button style
-  @param {number} [button_letter_spacing] - Optional letter spacing in px for the custom button style
   @param {string} [icon] - Optional icon to display, refer to icons.liquid snippet and pass in the icon name only
   @param {boolean} [icon_only] - Toggle to show only the icon without text. A label is still required for accessibility. Only for primary and secondary styles.
   @param {string} [button_type] - Optional button type (button, submit, reset)
@@ -74,21 +69,6 @@
 {%- assign custom_styles = blank -%}
 {%- if style == 'custom' -%}
   {%- assign custom_styles = 'font-size: ' | append: button_font_size | append: 'px; color: ' | append: button_font_color | append: '; background: ' | append: button_background | append: '; border: ' | append: button_border_width | append: 'px solid ' | append: button_border_color | append: '; padding: ' | append: button_padding | append: 'px;' -%}
-  {%- if button_padding_x != blank -%}
-    {%- assign custom_styles = custom_styles | append: ' padding-inline: ' | append: button_padding_x | append: 'px;' -%}
-  {%- endif -%}
-  {%- if button_font_weight != blank -%}
-    {%- assign custom_styles = custom_styles | append: ' font-weight: ' | append: button_font_weight | append: ';' -%}
-  {%- endif -%}
-  {%- if button_border_radius != blank -%}
-    {%- assign custom_styles = custom_styles | append: ' border-radius: ' | append: button_border_radius | append: 'px;' -%}
-  {%- endif -%}
-  {%- if button_text_transform != blank -%}
-    {%- assign custom_styles = custom_styles | append: ' text-transform: ' | append: button_text_transform | append: ';' -%}
-  {%- endif -%}
-  {%- if button_letter_spacing != blank -%}
-    {%- assign custom_styles = custom_styles | append: ' letter-spacing: ' | append: button_letter_spacing | append: 'px;' -%}
-  {%- endif -%}
 {%- endif -%}
 
 <{{ element }}

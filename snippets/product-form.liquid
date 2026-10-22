@@ -13,7 +13,6 @@
 
 {% liquid
   assign base_class = 'product'
-  assign current_variant = product.selected_variant | default: product.selected_or_first_available_variant
   assign show_notify_modal = false
   assign section_id = section_id | default: 'product'
   assign hubspot_form = product.metafields.custom.hubspot_form
@@ -91,7 +90,7 @@
   -%}
   
     {%- comment -%} Hidden input for variant ID - required for add to cart {%- endcomment -%}
-    <input type="hidden" name="id" value="{{ current_variant.id }}">
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 
     {% if show_data_sheet %}
       <div class="{{ base_class }}__data-sheet">
@@ -115,7 +114,7 @@
             step: 1,
             min: 1,
             max: 10,
-            variant: current_variant
+            variant: product.selected_or_first_available_variant
           %}
         </div>
 
@@ -133,7 +132,7 @@
           >
             <span style="justify-content:center;">
               {{ 'product.add_to_cart' | t }} -
-              <span data-atc-price>{{ current_variant.price | money }}</span>
+              <span data-atc-price>{{ product.selected_or_first_available_variant.price | money }}</span>
               {% render 'icons', icon: 'cart' %}
             </span>
           </button>
