@@ -4,7 +4,7 @@
   assign is_transparent = false
   assign header_menu_handle = section.settings.menu
 
-  if template.suffix contains 'portal'
+  if customer.current_company.name == 'Furncare Test'
     assign header_menu_handle = 'portal-menu'
   endif
 
