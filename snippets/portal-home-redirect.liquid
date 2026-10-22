@@ -1,0 +1,15 @@
+{%- comment -%} Sends Furncare Test members from the homepage (e.g. account "Shop now") to the portal, once per session. {%- endcomment -%}
+{%- assign portal_company_name = 'Furncare Test' -%}
+{%- if template.name == 'index' and customer.current_company.name == portal_company_name and pages['portal-home'] != blank -%}
+  <script>
+    (function () {
+      try {
+        if (sessionStorage.getItem('portalRedirected')) return;
+        sessionStorage.setItem('portalRedirected', '1');
+      } catch (e) {}
+      if (!(window.Shopify && Shopify.designMode)) {
+        window.location.replace({{ pages['portal-home'].url | json }});
+      }
+    })();
+  </script>
+{%- endif -%}
