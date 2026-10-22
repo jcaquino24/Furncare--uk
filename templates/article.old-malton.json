@@ -12,7 +12,9 @@
     "main": {
       "type": "article",
       "disabled": true,
-      "settings": {}
+      "settings": {
+        "image_aspect_ratio": "natural"
+      }
     },
     "image_video_banner_n9JT9E": {
       "type": "image-video-banner",
@@ -687,6 +689,150 @@
             "description_size": 0,
             "description_align": "left"
           }
+        },
+        "image_P3HDQq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/P1090845.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_pJNqkx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/P1090854-2-HDR.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_7rbMii": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/P1049336.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_7agdKK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/P1090866-2-HDR.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_C9GFtH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/P1049358_9e0df66f-052c-48ed-8059-52339596aa38.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_iJHLXC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/P1090885-2-HDR.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_gq7eAY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/P1049436_4ad67847-60dd-4de6-9598-efdd2b5e9e1c.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_9reqk8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/P1049410.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_47w7ye": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/P1049341.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_kKPaHW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/P1049337_d3685974-01d7-4bc9-ba6c-bc9a0948309e.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_CfNEhX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/P1049344.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_pnWb7f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/P1049408_7d917098-a363-4933-ae90-5195c3dfbcdb.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
         }
       },
       "block_order": [
@@ -738,19 +884,31 @@
         "image_Dbiqep",
         "image_NN9VYA",
         "image_prWwCB",
-        "image_UVj3DK"
+        "image_UVj3DK",
+        "image_P3HDQq",
+        "image_pJNqkx",
+        "image_7rbMii",
+        "image_7agdKK",
+        "image_C9GFtH",
+        "image_iJHLXC",
+        "image_gq7eAY",
+        "image_9reqk8",
+        "image_47w7ye",
+        "image_kKPaHW",
+        "image_CfNEhX",
+        "image_pnWb7f"
       ],
       "name": "Media gallery",
       "settings": {
         "heading": "Gallery",
-        "layout": "grid",
+        "layout": "slider",
         "enable_lightbox": true,
         "lightbox_thumbnails_position": "side",
         "description_position": "bottom",
-        "image_aspect_ratio": "1/1",
+        "image_aspect_ratio": "3/4",
         "image_max_height": 0,
         "image_fit": "cover",
-        "columns_desktop": 3,
+        "columns_desktop": 5,
         "gap": 16,
         "autoplay": false,
         "autoplay_speed": 3,
@@ -1557,6 +1715,7 @@
         "image_card_NLXzDG",
         "image_card_QAR9yP"
       ],
+      "disabled": true,
       "name": "Image text blocks",
       "settings": {
         "title": "",
