@@ -1,0 +1,97 @@
+{%- liquid
+  assign menu = linklists[section.settings.menu]
+  assign company_name = customer.current_company.name
+-%}
+
+<header class="portal-header" style="--portal-bg: {{ section.settings.color_background }}; --portal-text: {{ section.settings.color_text }};">
+  <div class="portal-header__inner">
+    <a class="portal-header__logo" href="{{ routes.root_url }}">
+      {%- if section.settings.logo != blank -%}
+        {{ section.settings.logo | image_url: width: 400 | image_tag: height: 40, alt: shop.name, loading: 'eager' }}
+      {%- else -%}
+        <span>{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+
+    {%- if company_name != blank -%}
+      <span class="portal-header__company">{{ company_name }}</span>
+    {%- endif -%}
+
+    {%- if menu != blank -%}
+      <nav class="portal-header__nav" aria-label="Portal">
+        <ul>
+          {%- for link in menu.links -%}
+            <li>
+              <a href="{{ link.url }}"{% if link.active %} aria-current="page"{% endif %}>{{ link.title }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+    {%- endif -%}
+
+    <div class="portal-header__actions">
+      <a href="{{ routes.account_url }}">Account</a>
+      <a href="{{ routes.cart_url }}">Cart ({{ cart.item_count }})</a>
+      <a href="{{ routes.root_url }}">Main site</a>
+    </div>
+  </div>
+</header>
+
+{% stylesheet %}
+  .portal-header {
+    background: var(--portal-bg, #fff);
+    color: var(--portal-text, #222);
+    border-bottom: 1px solid rgb(0 0 0 / 10%);
+  }
+  .portal-header__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-md, 1rem) var(--spacing-xl, 2rem);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-md, 1rem) var(--spacing-lg, 1.5rem);
+  }
+  .portal-header a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .portal-header a:hover,
+  .portal-header a[aria-current='page'] {
+    text-decoration: underline;
+  }
+  .portal-header__company {
+    padding: 0.25rem 0.75rem;
+    border: 1px solid currentcolor;
+    border-radius: 999px;
+    font-size: 0.8125rem;
+  }
+  .portal-header__nav {
+    flex: 1;
+  }
+  .portal-header__nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg, 1.5rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .portal-header__actions {
+    display: flex;
+    gap: var(--spacing-lg, 1.5rem);
+    margin-left: auto;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Portal header",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo" },
+    { "type": "link_list", "id": "menu", "label": "Portal menu" },
+    { "type": "color", "id": "color_background", "label": "Background", "default": "#ffffff" },
+    { "type": "color", "id": "color_text", "label": "Text", "default": "#222222" }
+  ]
+}
+{% endschema %}

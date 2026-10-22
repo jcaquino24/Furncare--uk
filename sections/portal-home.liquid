@@ -1,0 +1,83 @@
+<section class="portal-home" style="--section-padding: var({{ section.settings.section_padding }})">
+  <div class="portal-home__inner">
+    <h1>{{ section.settings.heading }}{% if customer.current_company.name != blank %}, {{ customer.current_company.name }}{% endif %}</h1>
+    {%- if section.settings.text != blank -%}
+      <div class="portal-home__text">{{ section.settings.text }}</div>
+    {%- endif -%}
+
+    <ul class="portal-home__links">
+      {%- for block in section.blocks -%}
+        <li {{ block.shopify_attributes }}>
+          <a href="{{ block.settings.link | default: '#' }}">
+            <strong>{{ block.settings.title }}</strong>
+            <span>{{ block.settings.description }}</span>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% stylesheet %}
+  .portal-home {
+    padding: var(--section-padding, 4rem) var(--spacing-lg, 1.5rem);
+  }
+  .portal-home__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .portal-home__links {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--spacing-lg, 1.5rem);
+    margin: var(--spacing-2xl, 3rem) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .portal-home__links a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 100%;
+    padding: var(--spacing-lg, 1.5rem);
+    border: 1px solid rgb(0 0 0 / 15%);
+    color: inherit;
+    text-decoration: none;
+  }
+  .portal-home__links a:hover {
+    border-color: currentcolor;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Portal home",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Welcome" },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section padding",
+      "options": [
+        { "value": "--spacing-md", "label": "Small" },
+        { "value": "--spacing-2xl", "label": "Medium" },
+        { "value": "--spacing-4xl", "label": "Large" }
+      ],
+      "default": "--spacing-2xl"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Link card",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Catalog" },
+        { "type": "text", "id": "description", "label": "Description" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Portal home" }]
+}
+{% endschema %}

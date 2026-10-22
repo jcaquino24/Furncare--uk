@@ -1,0 +1,22 @@
+{%- comment -%} Client-side gate only; real catalog restriction comes from the Shopify B2B catalog. {%- endcomment -%}
+{%- assign portal_company_name = 'Furncare Test' -%}
+{%- assign portal_allowed = false -%}
+{%- if request.design_mode -%}
+  {%- assign portal_allowed = true -%}
+{%- elsif customer.current_company.name == portal_company_name -%}
+  {%- assign portal_allowed = true -%}
+{%- endif -%}
+
+{%- unless portal_allowed -%}
+  <style>
+    body {
+      display: none !important;
+    }
+  </style>
+  <script>
+    window.location.replace({{ routes.root_url | json }});
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url={{ routes.root_url }}">
+  </noscript>
+{%- endunless -%}

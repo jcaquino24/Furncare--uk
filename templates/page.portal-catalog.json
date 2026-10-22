@@ -1,0 +1,12 @@
+{
+  "layout": "customer-portal",
+  "sections": {
+    "main": {
+      "type": "portal-catalog",
+      "settings": {
+        "heading": "Your catalog"
+      }
+    }
+  },
+  "order": ["main"]
+}

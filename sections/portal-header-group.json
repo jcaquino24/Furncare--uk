@@ -1,0 +1,11 @@
+{
+  "type": "header",
+  "name": "Portal header",
+  "sections": {
+    "portal-header": {
+      "type": "portal-header",
+      "settings": {}
+    }
+  },
+  "order": ["portal-header"]
+}

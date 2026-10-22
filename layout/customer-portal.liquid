@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="{{ shop.locale }}">
+  <head>
+    {% render 'portal-access-gate' %}
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>{{ page_title | escape }}</title>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "@theme/critical": "{{ 'critical.js' | asset_url }}",
+          "@theme/component": "{{ 'component.js' | asset_url }}",
+          "@theme/dialog": "{{ 'dialog.js' | asset_url }}",
+          "@theme/events": "{{ 'events.js' | asset_url }}",
+          "@theme/focus": "{{ 'focus.js' | asset_url }}",
+          "@theme/morph": "{{ 'morph.js' | asset_url }}",
+          "@theme/paginated-list": "{{ 'paginated-list.js' | asset_url }}",
+          "@theme/recently-viewed-products": "{{ 'recently-viewed-products.js' | asset_url }}",
+          "@theme/section-renderer": "{{ 'section-renderer.js' | asset_url }}",
+          "@theme/utilities": "{{ 'utilities.js' | asset_url }}"
+        }
+      }
+    </script>
+
+    {%- liquid
+      render 'vite-tag' with 'critical.css', preload_stylesheet: true
+      render 'vite-tag' with 'main.css'
+      render 'vite-tag' with 'main.ts'
+    -%}
+
+    {% if settings.favicon != null %}
+      <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32 }}" type="image/png">
+    {% endif %}
+
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {% render 'header-scripts' %}
+    {% render 'theme-variables' %}
+    {% render 'theme-style-variables' %}
+    {% unless theme.role == 'development' %}
+      <style>
+        {{ 'uwp.critical.css' | inline_asset_content }}
+      </style>
+    {% endunless %}
+
+    {{ content_for_header }}
+  </head>
+
+  <body class="template-{{ template.name }} customer-portal">
+    <a class="visually-hidden focusable skip-link" href="#main-content">
+      {{ 'accessibility.skip_to_content' | t }}
+    </a>
+
+    <uwp-cart role="region" aria-label="Cart" aria-roledescription="region"></uwp-cart>
+
+    {% sections 'portal-header-group' %}
+
+    <main id="main-content" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    {% sections 'footer-group' %}
+  </body>
+</html>

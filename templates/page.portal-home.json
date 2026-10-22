@@ -1,0 +1,22 @@
+{
+  "layout": "customer-portal",
+  "sections": {
+    "main": {
+      "type": "portal-home",
+      "blocks": {
+        "catalog": {
+          "type": "link",
+          "settings": {
+            "title": "Catalog",
+            "description": "Browse your company catalog"
+          }
+        }
+      },
+      "block_order": ["catalog"],
+      "settings": {
+        "heading": "Welcome"
+      }
+    }
+  },
+  "order": ["main"]
+}
