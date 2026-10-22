@@ -52,6 +52,12 @@
     assign title_class = 'title-2xs'
   endif
 
+  unless settings.enable_card_hover
+    assign additional_classes = additional_classes | append: ' product-card--no-hover'
+  elsif settings.product_card_hover_mode == 'buttons_only'
+    assign additional_classes = additional_classes | append: ' product-card--hover-buttons-only'
+  endunless
+
   assign product_card_title = product.title | split: '|' | first | strip
   if product_card_style == 'condensed' and product.title contains '|'
     assign product_card_title = product.title | split: '|' | last | strip
@@ -360,3 +366,21 @@
     </div>
   </article>
 {% endif %}
+
+{% stylesheet %}
+  .product-card.product-card--hover-buttons-only:hover .product-card__alternate-image {
+    opacity: 0;
+  }
+
+  .product-card--no-hover:hover .product-card__alternate-image {
+    opacity: 0;
+  }
+
+  .product-card--no-hover:hover .product-card__button-container {
+    transform: translateY(100%);
+  }
+
+  .product-card--no-hover:hover .product-card__badges {
+    transform: translateY(0);
+  }
+{% endstylesheet %}

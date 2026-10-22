@@ -48,7 +48,7 @@
       data-alt-contact-trigger
     >
       {% render 'icons', icon: 'envelope' %}
-      <span class="eyebrow-2xs">Need help? Contact us</span>
+      <span class="eyebrow-2xs">{{ section.settings.alt_contact_trigger_text | default: 'Need help? Contact us' }}</span>
       {% render 'icons', icon: 'arrow-right' %}
     </button>
   {% elsif has_contact_form %}
@@ -60,7 +60,7 @@
       data-contact-trigger
     >
       {% render 'icons', icon: 'envelope' %}
-      <span class="eyebrow-2xs">Need help? Contact us</span>
+      <span class="eyebrow-2xs">{{ section.settings.contact_trigger_text | default: 'Need help? Contact us' }}</span>
       {% render 'icons', icon: 'arrow-right' %}
     </button>
   {% endif %}

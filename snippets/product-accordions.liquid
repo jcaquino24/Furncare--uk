@@ -167,7 +167,7 @@
 
 
     
-    {% if section.settings.security_grading_title != blank %}  
+    {% if section.settings.security_grading_title != blank and product.tags contains 'Challenging Environments' %}
     {% assign title = section.settings.security_grading_title %}
     {% capture security_grading %}
       {% render 'security-grading' %}

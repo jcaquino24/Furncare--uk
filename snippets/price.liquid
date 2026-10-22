@@ -13,7 +13,7 @@
 {% endcomment %}
 {%- liquid
   if use_variant
-    assign target = product.selected_or_first_available_variant
+    assign target = product.selected_variant | default: product.selected_or_first_available_variant
   else
     assign target = product
   endif

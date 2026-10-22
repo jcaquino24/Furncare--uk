@@ -37,6 +37,29 @@
         "label": "Enable wishlist",
         "default": true,
         "info": "Show wishlist buttons and the wishlist link in the header."
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_card_hover",
+        "label": "Enable product card hover effect",
+        "default": true,
+        "info": "Show the alternate image and quick-add button when hovering a product card."
+      },
+      {
+        "type": "select",
+        "id": "product_card_hover_mode",
+        "label": "Product card hover content",
+        "options": [
+          {
+            "value": "second_image",
+            "label": "Show second image and buttons"
+          },
+          {
+            "value": "buttons_only",
+            "label": "Show buttons only"
+          }
+        ],
+        "default": "second_image"
       }
     ]
   },
