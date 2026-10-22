@@ -2,6 +2,11 @@
   assign support_links = section.blocks | where: 'type', 'support_link'
   assign all_menu_promotions = section.blocks | where: 'type', 'menu_promotions'
   assign is_transparent = false
+  assign header_menu_handle = section.settings.menu
+
+  if template.suffix contains 'portal'
+    assign header_menu_handle = 'portal-menu'
+  endif
 
   if template.name == 'index' and section.settings.transparent
     assign is_transparent = true
@@ -64,9 +69,9 @@
     </div>
 
     <div class="header__bottom-bar">
-      {% if section.settings.menu != blank %}
+      {% if header_menu_handle != blank %}
         {% render 'megamenu',
-          menu: linklists[section.settings.menu],
+          menu: linklists[header_menu_handle],
           all_menu_promotions: all_menu_promotions,
           support_links: support_links,
           hide_on_mobile: true
@@ -137,7 +142,7 @@
 </uwp-header>
 
 {% render 'mobile-menu',
-  menu: linklists[section.settings.menu],
+  menu: linklists[header_menu_handle],
   all_menu_promotions: all_menu_promotions,
   support_links: support_links
 %}

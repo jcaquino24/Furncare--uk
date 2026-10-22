@@ -57,7 +57,10 @@
 
     <uwp-cart role="region" aria-label="Cart" aria-roledescription="region"></uwp-cart>
 
-    {% sections 'portal-header-group' %}
+    {% render 'search-modal' %}
+    {% sections 'header-group' %}
+
+    <div class="megamenu-overlay" js-megamenu="overlay"></div>
 
     <main id="main-content" role="main" tabindex="-1">
       {{ content_for_layout }}
