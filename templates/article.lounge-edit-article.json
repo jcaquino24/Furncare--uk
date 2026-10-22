@@ -12,7 +12,7 @@
     "main": {
       "type": "article",
       "settings": {
-        "image_aspect_ratio": "square"
+        "image_aspect_ratio": "natural"
       }
     },
     "richtext_hLWh3Q": {
