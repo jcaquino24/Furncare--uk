@@ -12,7 +12,9 @@
     "main": {
       "type": "article",
       "disabled": true,
-      "settings": {}
+      "settings": {
+        "image_aspect_ratio": "natural"
+      }
     },
     "image_video_banner_Mx3q8g": {
       "type": "image-video-banner",
@@ -41,7 +43,13 @@
             "text": "Button",
             "button_url": "",
             "new_tab": false,
-            "button_style": "primary"
+            "button_style": "primary",
+            "button_font_size": 16,
+            "button_font_color": "#ffffff",
+            "button_background": "#1f1f1f",
+            "button_border_width": 1,
+            "button_border_color": "#ffffff",
+            "button_padding": 12
           }
         },
         "card_GeUmxJ": {
@@ -135,100 +143,145 @@
         "see_more_max_height": 400
       }
     },
-    "featured_blocks_QcyUqa": {
-      "type": "featured-blocks",
+    "custom_media_gallery_CyqWn9": {
+      "type": "custom-media-gallery",
       "blocks": {
-        "block_WB6nUy": {
-          "type": "block",
+        "image_8jJzcT": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Untitled-1.png",
-            "caption": "",
-            "lightbox_caption": ""
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
-        "block_KWGGtg": {
-          "type": "block",
+        "image_nzzYfy": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Untitled-3.png",
-            "caption": "",
-            "lightbox_caption": ""
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
-        "block_eTrEcG": {
-          "type": "block",
+        "image_PBCyYY": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Untitled-6.png",
-            "caption": "",
-            "lightbox_caption": ""
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
-        "block_Ad8rHB": {
-          "type": "block",
+        "image_xeN3Vp": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Untitled-8.png",
-            "caption": "",
-            "lightbox_caption": ""
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
-        "block_EwtUPP": {
-          "type": "block",
+        "image_DzDdAz": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Untitled-2.png",
-            "caption": "",
-            "lightbox_caption": ""
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
-        "block_Y6EamE": {
-          "type": "block",
+        "image_EQzQNn": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Untitled-7.png",
-            "caption": "",
-            "lightbox_caption": ""
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
-        "block_HcUa8h": {
-          "type": "block",
+        "image_6MmRBy": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Untitled-9.png",
-            "caption": "",
-            "lightbox_caption": ""
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
-        "block_XUpzFc": {
-          "type": "block",
+        "image_CCbnfH": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Untitled-4.png",
-            "caption": "",
-            "lightbox_caption": ""
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         },
-        "block_tftheH": {
-          "type": "block",
+        "image_mFVeQ9": {
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/Untitled-5.png",
-            "caption": "",
-            "lightbox_caption": ""
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
           }
         }
       },
       "block_order": [
-        "block_WB6nUy",
-        "block_KWGGtg",
-        "block_eTrEcG",
-        "block_Ad8rHB",
-        "block_EwtUPP",
-        "block_Y6EamE",
-        "block_HcUa8h",
-        "block_XUpzFc",
-        "block_tftheH"
+        "image_8jJzcT",
+        "image_nzzYfy",
+        "image_PBCyYY",
+        "image_xeN3Vp",
+        "image_DzDdAz",
+        "image_EQzQNn",
+        "image_6MmRBy",
+        "image_CCbnfH",
+        "image_mFVeQ9"
       ],
-      "name": "Featured Blocks",
+      "name": "Media gallery",
       "settings": {
+        "heading": "Gallery",
+        "layout": "slider",
+        "enable_lightbox": true,
+        "lightbox_thumbnails_position": "side",
+        "description_position": "bottom",
+        "image_aspect_ratio": "1/1",
+        "image_max_height": 0,
+        "image_fit": "cover",
+        "columns_desktop": 3,
+        "gap": 16,
+        "autoplay": false,
+        "autoplay_speed": 3,
         "colour_scheme": "base-white-01",
-        "title": "",
-        "padding": "wide",
-        "layout": "line_grid",
-        "enable_lightbox": true
+        "section_padding": "--spacing-2xl"
       }
     },
     "richtext_EW6cqY": {
@@ -310,6 +363,7 @@
             "text": "The brief focused on creating safe, stylish, and long-lasting bedroom spaces that support both resident wellbeing and the day-to-day operations of care staff. Working closely with the client, we delivered:\n\n• Bespoke dressing tables and chests\n• Triple wardrobes with integrated storage\n• Coordinated bedside units\n• Custom TV panels designed for seamless wall integration\n• Full delivery and professional installation across all rooms\n\nEach piece was made to order, with attention to finish, form, and function. From internal layouts and hardware choices to external detailing, every element was specified with care in mind.",
             "button_style": "underline",
             "button_text": "",
+            "button_action": "link",
             "button_url": ""
           }
         }
@@ -322,6 +376,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-4xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -405,6 +460,8 @@
             "title": "New Arrivals",
             "handle": "new-arrivals",
             "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [
               "the-3p-fulfilled-snowboard",
               "the-collection-snowboard-liquid",
@@ -427,6 +484,8 @@
       "name": "Product blocks",
       "settings": {
         "title": "Products featured in this case study",
+        "products_per_row": 4,
+        "max_products": 8,
         "section_padding": "--spacing-2xl"
       }
     }
@@ -435,7 +494,7 @@
     "main",
     "image_video_banner_Mx3q8g",
     "richtext_PhprEj",
-    "featured_blocks_QcyUqa",
+    "custom_media_gallery_CyqWn9",
     "richtext_EW6cqY",
     "image_text_Rr8iJJ",
     "richtext_TJAtU7",
