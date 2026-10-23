@@ -3,9 +3,11 @@
   assign all_menu_promotions = section.blocks | where: 'type', 'menu_promotions'
   assign is_transparent = false
   assign header_menu_handle = section.settings.menu
+  assign left_menu_handle = section.settings.menu
 
   if customer.current_company.name == 'Furncare Test'
     assign header_menu_handle = 'portal-menu'
+    assign left_menu_handle = 'alternate-menu'
   endif
 
   if template.name == 'index' and section.settings.transparent
@@ -69,9 +71,9 @@
     </div>
 
     <div class="header__bottom-bar">
-      {% if section.settings.menu != blank %}
+      {% if left_menu_handle != blank %}
         {% render 'megamenu',
-          menu: linklists[section.settings.menu],
+          menu: linklists[left_menu_handle],
           all_menu_promotions: all_menu_promotions,
           support_links: support_links,
           hide_on_mobile: true
