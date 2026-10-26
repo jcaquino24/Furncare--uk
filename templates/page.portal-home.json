@@ -10,6 +10,14 @@
 {
   "layout": "customer-portal",
   "sections": {
+    "main": {
+      "type": "portal-home",
+      "settings": {
+        "heading": "Welcome",
+        "text": "",
+        "section_padding": "--spacing-md"
+      }
+    },
     "catalog_cards_pb8Bbt": {
       "type": "catalog-cards",
       "blocks": {
@@ -37,7 +45,7 @@
       ],
       "name": "Catalog cards",
       "settings": {
-        "title": "Catalogs"
+        "title": ""
       }
     },
     "koz_dynamic_grid_Xgrrmb": {
@@ -250,6 +258,7 @@
         "item_GxiegM",
         "item_PjhBLE"
       ],
+      "disabled": true,
       "name": "Kozler Grid",
       "settings": {
         "body_columns": "6",
@@ -278,15 +287,6 @@
         "lazy": true
       }
     },
-    "main": {
-      "type": "portal-home",
-      "disabled": true,
-      "settings": {
-        "heading": "Welcome",
-        "text": "",
-        "section_padding": "--spacing-2xl"
-      }
-    },
     "portal_catalog_YDfrQi": {
       "type": "portal-catalog",
       "name": "Portal catalog",
@@ -299,9 +299,9 @@
     }
   },
   "order": [
+    "main",
     "catalog_cards_pb8Bbt",
     "koz_dynamic_grid_Xgrrmb",
-    "main",
     "portal_catalog_YDfrQi"
   ]
 }
