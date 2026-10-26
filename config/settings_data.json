@@ -112,6 +112,11 @@
           "enableCustomLoginUrl": false,
           "customLoginUrl": "/account/login"
         }
+      },
+      "16212576608872179499": {
+        "type": "shopify://apps/sa-request-a-quote/blocks/app-embed-block/56d84fcb-37c7-4592-bb51-641b7ec5eef0",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
