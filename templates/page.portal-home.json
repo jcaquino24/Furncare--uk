@@ -10,6 +10,36 @@
 {
   "layout": "customer-portal",
   "sections": {
+    "catalog_cards_pb8Bbt": {
+      "type": "catalog-cards",
+      "blocks": {
+        "catalog_cnBPMg": {
+          "type": "catalog",
+          "settings": {
+            "link": "",
+            "title": "Dark Products",
+            "image": "shopify://shop_images/Ocean_01d08094-657e-4bad-9f36-e14f469c30f8.png",
+            "collection": ""
+          }
+        },
+        "catalog_VGMJLM": {
+          "type": "catalog",
+          "settings": {
+            "link": "",
+            "title": "",
+            "collection": "beds"
+          }
+        }
+      },
+      "block_order": [
+        "catalog_cnBPMg",
+        "catalog_VGMJLM"
+      ],
+      "name": "Catalog cards",
+      "settings": {
+        "title": "Catalogs"
+      }
+    },
     "koz_dynamic_grid_Xgrrmb": {
       "type": "koz-dynamic-grid",
       "blocks": {
@@ -269,6 +299,7 @@
     }
   },
   "order": [
+    "catalog_cards_pb8Bbt",
     "koz_dynamic_grid_Xgrrmb",
     "main",
     "portal_catalog_YDfrQi"
