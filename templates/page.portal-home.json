@@ -16,7 +16,7 @@
         "catalog_cnBPMg": {
           "type": "catalog",
           "settings": {
-            "link": "",
+            "link": "shopify://collections/best-sellers",
             "title": "Dark Products",
             "image": "shopify://shop_images/Ocean_01d08094-657e-4bad-9f36-e14f469c30f8.png",
             "collection": ""
