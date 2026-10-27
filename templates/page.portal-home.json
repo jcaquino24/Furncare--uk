@@ -12,10 +12,73 @@
   "sections": {
     "main": {
       "type": "portal-home",
+      "disabled": true,
       "settings": {
         "heading": "Welcome",
         "text": "",
         "section_padding": "--spacing-md"
+      }
+    },
+    "image_video_banner_bxUyR8": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_7cgjLG": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "Retirement furniture",
+            "eyebrow_size": "sm",
+            "text_color": "#FFFFFF"
+          }
+        },
+        "title_a86Uah": {
+          "type": "title",
+          "settings": {
+            "text": "Designed for Comfort, Built for <em>Care</em>.",
+            "title_element": "h1",
+            "title_size": "display",
+            "text_color": "#FFFFFF"
+          }
+        },
+        "button_NQMC36": {
+          "type": "button",
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": true,
+            "button_style": "custom",
+            "button_font_size": 16,
+            "button_font_color": "#ffffff",
+            "button_background": "",
+            "button_border_width": 1,
+            "button_border_color": "#ffffff",
+            "button_padding": 12
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_7cgjLG",
+        "title_a86Uah",
+        "button_NQMC36"
+      ],
+      "custom_css": [
+        ".background-image: {object-fit: contain;}"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 300,
+        "height_mobile": 300,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/care_uk_cover.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "dark",
+        "content_position": "left-bottom",
+        "content_alignment": "left"
       }
     },
     "catalog_cards_pb8Bbt": {
@@ -301,6 +364,7 @@
   },
   "order": [
     "main",
+    "image_video_banner_bxUyR8",
     "catalog_cards_pb8Bbt",
     "koz_dynamic_grid_Xgrrmb",
     "portal_catalog_YDfrQi"
