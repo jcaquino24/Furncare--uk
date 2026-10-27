@@ -61,7 +61,7 @@
         "button_NQMC36"
       ],
       "custom_css": [
-        ".background-image: {object-fit: contain;}"
+        ".background-image {object-fit: contain;}"
       ],
       "name": "Image - Video Banner",
       "settings": {
