@@ -13,14 +13,6 @@
     "main": {
       "type": "portal-home",
       "blocks": {
-        "link_z3LGcf": {
-          "type": "link",
-          "settings": {
-            "title": "Catalog",
-            "description": "",
-            "link": ""
-          }
-        },
         "link_mWxXKH": {
           "type": "link",
           "settings": {
@@ -28,11 +20,19 @@
             "description": "",
             "link": "https://furncare.co.uk"
           }
+        },
+        "link_z3LGcf": {
+          "type": "link",
+          "settings": {
+            "title": "Contact Us",
+            "description": "",
+            "link": "shopify://pages/contact-us"
+          }
         }
       },
       "block_order": [
-        "link_z3LGcf",
-        "link_mWxXKH"
+        "link_mWxXKH",
+        "link_z3LGcf"
       ],
       "settings": {
         "heading": "Welcome",
