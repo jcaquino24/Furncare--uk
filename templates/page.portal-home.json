@@ -10,6 +10,39 @@
 {
   "layout": "customer-portal",
   "sections": {
+    "featured_blocks_kEJTiG": {
+      "type": "featured-blocks",
+      "blocks": {
+        "block_fQQn84": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Furncare-logo-charcoal.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        },
+        "block_9UVM3c": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/careuk.png",
+            "caption": "",
+            "lightbox_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_fQQn84",
+        "block_9UVM3c"
+      ],
+      "name": "Featured Blocks",
+      "settings": {
+        "colour_scheme": "base-white-01",
+        "title": "",
+        "padding": "wide",
+        "layout": "line_grid",
+        "enable_lightbox": false
+      }
+    },
     "main": {
       "type": "portal-home",
       "blocks": {
@@ -335,6 +368,7 @@
     }
   },
   "order": [
+    "featured_blocks_kEJTiG",
     "main",
     "catalog_cards_pb8Bbt",
     "koz_dynamic_grid_Xgrrmb",
