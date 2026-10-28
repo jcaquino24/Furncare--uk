@@ -12,6 +12,28 @@
   "sections": {
     "main": {
       "type": "portal-home",
+      "blocks": {
+        "link_z3LGcf": {
+          "type": "link",
+          "settings": {
+            "title": "Catalog",
+            "description": "",
+            "link": ""
+          }
+        },
+        "link_mWxXKH": {
+          "type": "link",
+          "settings": {
+            "title": "Go to main website",
+            "description": "",
+            "link": "https://furncare.co.uk"
+          }
+        }
+      },
+      "block_order": [
+        "link_z3LGcf",
+        "link_mWxXKH"
+      ],
       "settings": {
         "heading": "Welcome",
         "text": "",
