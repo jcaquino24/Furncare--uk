@@ -10,61 +10,12 @@
 {
   "layout": "customer-portal",
   "sections": {
-    "exit_intent_popup_RhXmDA": {
-      "type": "exit-intent-popup",
-      "name": "Exit intent popup",
-      "settings": {
-        "admin_label": "Exit intent popup section",
-        "heading": "Wait! Before you go 👀",
-        "description": "Get 10% off your first order when you join our newsletter.",
-        "email_placeholder": "Enter your email",
-        "button_label": "Get Discount",
-        "success_message": "Thanks! Check your email for the discount 🎉"
-      }
-    },
     "main": {
       "type": "portal-home",
-      "disabled": true,
       "settings": {
         "heading": "Welcome",
         "text": "",
         "section_padding": "--spacing-md"
-      }
-    },
-    "image_video_banner_bxUyR8": {
-      "type": "image-video-banner",
-      "blocks": {
-        "eyebrow_kGgPhV": {
-          "type": "eyebrow",
-          "settings": {
-            "text": "Care UK Portal",
-            "eyebrow_size": "sm",
-            "text_color": "#f9f7f0"
-          }
-        }
-      },
-      "block_order": [
-        "eyebrow_kGgPhV"
-      ],
-      "custom_css": [
-        ".background-image {object-fit: contain;}"
-      ],
-      "name": "Image - Video Banner",
-      "settings": {
-        "height_desktop": 300,
-        "height_mobile": 300,
-        "maintain_aspect_ratio": false,
-        "add_header_offset": false,
-        "media_type": "image",
-        "image_desktop": "shopify://shop_images/care_uk_cover.jpg",
-        "show_controls": false,
-        "mute_video": true,
-        "autoplay_video": true,
-        "show_overlay": false,
-        "overlay_background": "",
-        "colour_scheme": "dark",
-        "content_position": "center-bottom",
-        "content_alignment": "left"
       }
     },
     "catalog_cards_pb8Bbt": {
@@ -346,14 +297,26 @@
         "products_per_page": 24,
         "section_padding": "--spacing-2xl"
       }
+    },
+    "exit_intent_popup_RhXmDA": {
+      "type": "exit-intent-popup",
+      "disabled": true,
+      "name": "Exit intent popup",
+      "settings": {
+        "admin_label": "Exit intent popup section",
+        "heading": "Wait! Before you go 👀",
+        "description": "Would you like us to connect with you?",
+        "email_placeholder": "Enter your email",
+        "button_label": "Keep in touch",
+        "success_message": "Thanks! We will contact you shortly"
+      }
     }
   },
   "order": [
-    "exit_intent_popup_RhXmDA",
     "main",
-    "image_video_banner_bxUyR8",
     "catalog_cards_pb8Bbt",
     "koz_dynamic_grid_Xgrrmb",
-    "portal_catalog_YDfrQi"
+    "portal_catalog_YDfrQi",
+    "exit_intent_popup_RhXmDA"
   ]
 }
