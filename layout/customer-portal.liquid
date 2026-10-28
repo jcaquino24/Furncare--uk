@@ -57,15 +57,18 @@
 
     <uwp-cart role="region" aria-label="Cart" aria-roledescription="region"></uwp-cart>
 
-    {% render 'search-modal' %}
-    {% sections 'header-group' %}
-
-    <div class="megamenu-overlay" js-megamenu="overlay"></div>
+    {% unless template.suffix == 'portal-home' %}
+      {% render 'search-modal' %}
+      {% sections 'header-group' %}
+      <div class="megamenu-overlay" js-megamenu="overlay"></div>
+    {% endunless %}
 
     <main id="main-content" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
 
-    {% sections 'footer-group' %}
+    {% unless template.suffix == 'portal-home' %}
+      {% sections 'footer-group' %}
+    {% endunless %}
   </body>
 </html>
