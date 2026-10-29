@@ -30,6 +30,7 @@
         },
         "collection_popup_nUtbfX": {
           "type": "collection_popup",
+          "disabled": true,
           "settings": {
             "collection": "create-your-perfect-ryker-look-handles",
             "button_text": "Browse Handle Options",
@@ -162,6 +163,10 @@
         "show_call_to_action": true,
         "show_collection_popup": true,
         "contact_form_html": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+        "contact_trigger_text": "Need help? Contact us",
+        "alt_contact_trigger_text": "Need help? Contact us",
+        "alt_contact_form_tags": "",
+        "alt_contact_form_html": "",
         "lead_time_icon": "shopify://shop_images/dark-delivery-icon.svg",
         "lead_time_text": "Delivered",
         "specifications_title": "Dimensions",
@@ -231,6 +236,8 @@
             "title": "New Arrivals",
             "handle": "new-arrivals",
             "product_feed_source": "recommendations",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [],
             "collection": "",
             "seed_product": "",
