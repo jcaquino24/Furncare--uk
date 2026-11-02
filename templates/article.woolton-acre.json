@@ -12,7 +12,9 @@
     "main": {
       "type": "article",
       "disabled": true,
-      "settings": {}
+      "settings": {
+        "image_aspect_ratio": "natural"
+      }
     },
     "image_video_banner_Mx3q8g": {
       "type": "image-video-banner",
@@ -94,6 +96,303 @@
         "small_container": false,
         "enable_see_more": false,
         "see_more_max_height": 400
+      }
+    },
+    "custom_media_gallery_JNYrtL": {
+      "type": "custom-media-gallery",
+      "blocks": {
+        "image_PTxcRH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Small_Lounge_7_of_48.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_AQdVaC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Small_Lounge_13_of_48.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_GkwyTT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Small_Lounge_33_of_48.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_W9eUQ8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_One_19_of_26.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_eXRkd6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Seven_17_of_20.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_EeM3Xw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Six_20_of_27.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_4apYNC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Six_9_of_27.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_4jfMTY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Six_23_of_27.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_amjpdb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Six_12_of_27.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_GNNWGt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Three_21_of_28.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_PEtkJi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Three_10_of_28.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_mHeYDE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bedroom_Three_11_of_28.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_WLKbzR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Corridor_3_of_31.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_LAXQBd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Corridor_21_of_31.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_LfjxLD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Corridor_11_of_31.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_tV7W6n": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Large_Lounge_Dining_Room_38_of_54.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_yPrMma": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Large_Lounge_Dining_Room_47_of_54.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_rEkXVr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Large_Lounge_Dining_Room_30_of_54.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_8zzAMY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Large_Lounge_Dining_Room_22_of_54.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_YfgaTV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Large_Lounge_Dining_Room_14_of_54.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        },
+        "image_MCpX7R": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Large_Lounge_Dining_Room_5_of_54.jpg",
+            "heading": "",
+            "heading_size": 0,
+            "heading_align": "left",
+            "description": "",
+            "description_size": 0,
+            "description_align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "image_PTxcRH",
+        "image_AQdVaC",
+        "image_GkwyTT",
+        "image_W9eUQ8",
+        "image_eXRkd6",
+        "image_EeM3Xw",
+        "image_4apYNC",
+        "image_4jfMTY",
+        "image_amjpdb",
+        "image_GNNWGt",
+        "image_PEtkJi",
+        "image_mHeYDE",
+        "image_WLKbzR",
+        "image_LAXQBd",
+        "image_LfjxLD",
+        "image_tV7W6n",
+        "image_yPrMma",
+        "image_rEkXVr",
+        "image_8zzAMY",
+        "image_YfgaTV",
+        "image_MCpX7R"
+      ],
+      "name": "Media gallery",
+      "settings": {
+        "heading": "Gallery",
+        "layout": "slider",
+        "enable_lightbox": true,
+        "lightbox_thumbnails_position": "side",
+        "description_position": "bottom",
+        "image_aspect_ratio": "1/1",
+        "image_max_height": 0,
+        "image_fit": "cover",
+        "columns_desktop": 3,
+        "gap": 16,
+        "autoplay": false,
+        "autoplay_speed": 3,
+        "colour_scheme": "base-white-01",
+        "section_padding": "--spacing-2xl"
       }
     },
     "featured_blocks_QcyUqa": {
@@ -291,6 +590,7 @@
         "block_e86KDr",
         "block_fR46EX"
       ],
+      "disabled": true,
       "name": "Featured Blocks",
       "settings": {
         "colour_scheme": "base-white-01",
@@ -368,6 +668,7 @@
             "text": "Unusually Short Timeframe\nWoolton Acre has been completed to exacting standards despite the unusually short timeframe available. Having acquired the property, the new owners completed the turnaround with minimum delay. In mid-December 2023, Furncare were invited to bid to furnish all 48 bedrooms and communal areas, including the lounges, dining rooms, day clinic, bar area, quiet rooms, isolation room and corridors.\n\nLook & Feel of a Bespoke Designer Solution\nDetailed interior design proposals were developed at Furncare and even suggested decorative specifications and lighting schematics to ensure every room was bright, light and safe. The plans had the look and feel of a bespoke designer solution, but all the care home interiors were from stock and guarantees were provided assuring delivery within days of confirmation.\n\nThe contract was signed in January 2024 and all 1,831 items ordered were delivered from the Furncare National Distribution Centre. The order was installed in each room just days later in the first week of February.",
             "button_style": "underline",
             "button_text": "",
+            "button_action": "link",
             "button_url": ""
           }
         }
@@ -380,6 +681,7 @@
       "settings": {
         "colour_scheme": "base-white-01",
         "section_padding": "--spacing-4xl",
+        "contact_form_html": "",
         "enable_reveal": true,
         "reveal_distance": 32,
         "reveal_duration": 760
@@ -476,7 +778,13 @@
             "text": "Button",
             "button_url": "",
             "new_tab": false,
-            "button_style": "primary"
+            "button_style": "primary",
+            "button_font_size": 16,
+            "button_font_color": "#ffffff",
+            "button_background": "#1f1f1f",
+            "button_border_width": 1,
+            "button_border_color": "#ffffff",
+            "button_padding": 12
           }
         },
         "card_e3GTdX": {
@@ -592,6 +900,8 @@
             "title": "New Arrivals",
             "handle": "new-arrivals",
             "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [
               "the-3p-fulfilled-snowboard",
               "the-collection-snowboard-liquid",
@@ -614,6 +924,8 @@
       "name": "Product blocks",
       "settings": {
         "title": "Products featured in this case study",
+        "products_per_row": 4,
+        "max_products": 8,
         "section_padding": "--spacing-2xl"
       }
     }
@@ -622,6 +934,7 @@
     "main",
     "image_video_banner_Mx3q8g",
     "richtext_PhprEj",
+    "custom_media_gallery_JNYrtL",
     "featured_blocks_QcyUqa",
     "richtext_EW6cqY",
     "image_text_Rr8iJJ",
