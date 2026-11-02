@@ -13,6 +13,27 @@
     render 'vite-tag' with '@sections/featured-blocks.ts'
   endif
 %}
+{% style %}
+  #shopify-section-{{ section.id }} .featured-blocks--marquee .featured-blocks__marquee {
+    --fb-gap: var(--spacing-md, 24px);
+    gap: var(--fb-gap);
+  }
+  @media (width >= 768px) {
+    #shopify-section-{{ section.id }} .featured-blocks--marquee .featured-blocks__marquee {
+      --fb-gap: var(--spacing-xl, 40px);
+    }
+  }
+  #shopify-section-{{ section.id }} .featured-blocks--marquee .featured-blocks__marquee-track {
+    flex-shrink: 0;
+    min-width: 100%;
+    justify-content: space-around;
+    gap: var(--fb-gap);
+    animation: featured-blocks-marquee-loop 24s linear infinite;
+  }
+  @keyframes featured-blocks-marquee-loop {
+    to { transform: translateX(calc(-100% - var(--fb-gap))); }
+  }
+{% endstyle %}
 <uwp-featured-blocks-lightbox>
 <div
   class="
