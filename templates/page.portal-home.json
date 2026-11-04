@@ -46,44 +46,44 @@
     "main": {
       "type": "portal-home",
       "blocks": {
+        "link_ETmqag": {
+          "type": "link",
+          "settings": {
+            "title": "My Schemes",
+            "description": "",
+            "link": ""
+          }
+        },
         "link_jcR3nD": {
           "type": "link",
           "settings": {
-            "title": "Catalog",
+            "title": "All Products",
             "description": "",
             "link": ""
-          }
-        },
-        "link_aDFfTN": {
-          "type": "link",
-          "settings": {
-            "title": "Catalog",
-            "description": "",
-            "link": ""
-          }
-        },
-        "link_mWxXKH": {
-          "type": "link",
-          "settings": {
-            "title": "Go to main website",
-            "description": "",
-            "link": "https://furncare.co.uk"
           }
         },
         "link_z3LGcf": {
           "type": "link",
           "settings": {
-            "title": "Contact Us",
+            "title": "Contact Account Manager",
             "description": "",
             "link": "shopify://pages/contact-us"
+          }
+        },
+        "link_mWxXKH": {
+          "type": "link",
+          "settings": {
+            "title": "Portal Settings",
+            "description": "",
+            "link": "https://furncare.co.uk"
           }
         }
       },
       "block_order": [
+        "link_ETmqag",
         "link_jcR3nD",
-        "link_aDFfTN",
-        "link_mWxXKH",
-        "link_z3LGcf"
+        "link_z3LGcf",
+        "link_mWxXKH"
       ],
       "settings": {
         "heading": "Welcome, User",
