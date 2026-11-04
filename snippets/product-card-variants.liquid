@@ -1,6 +1,7 @@
 {%- comment -%}
   Variant swatches + "Available in N variant options" for product cards (Colour/Fabric/Finish options).
-  Params: product, limit (default 5), swatch_blocks (collection section blocks mapping Fabric/Finish values to colours)
+  Params: product, limit (default 5), swatch_blocks (optional legacy fallback from collection section blocks)
+  Swatches come from the fabric_finish_swatch metaobject; entry handle = option value handleized (e.g. duck-egg).
 {%- endcomment -%}
 {%- assign swatch_limit = limit | default: 5 -%}
 {%- assign variant_option_count = 0 -%}
@@ -48,17 +49,27 @@
           assign swatch_color = null
           if is_custom_colour_option
             assign value_key = value.name | downcase | strip
-            for swatch_block in swatch_blocks
-              assign block_key = swatch_block.settings.value_name | downcase | strip
-              if swatch_block.type == 'swatch_colour' and block_key == value_key
-                if swatch_block.settings.swatch_type == 'image'
-                  assign swatch_image = swatch_block.settings.swatch_image
-                else
-                  assign swatch_color = swatch_block.settings.colour
-                endif
-                break
+            assign swatch_entry = shop.metaobjects.fabric_finish_swatch[value.name | handleize]
+            if swatch_entry != blank
+              if swatch_entry.image != blank
+                assign swatch_image = swatch_entry.image.value
+              elsif swatch_entry.colour != blank
+                assign swatch_color = swatch_entry.colour.value
               endif
-            endfor
+            endif
+            if swatch_color == blank and swatch_image == blank
+              for swatch_block in swatch_blocks
+                assign block_key = swatch_block.settings.value_name | downcase | strip
+                if swatch_block.type == 'swatch_colour' and block_key == value_key
+                  if swatch_block.settings.swatch_type == 'image'
+                    assign swatch_image = swatch_block.settings.swatch_image
+                  else
+                    assign swatch_color = swatch_block.settings.colour
+                  endif
+                  break
+                endif
+              endfor
+            endif
           endif
           unless is_custom_colour_option
             assign swatch_color = value.swatch.color
