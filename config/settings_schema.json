@@ -57,6 +57,10 @@
           {
             "value": "buttons_only",
             "label": "Show buttons only"
+          },
+          {
+            "value": "by_variants",
+            "label": "Second image if no variants, buttons only if variants"
           }
         ],
         "default": "second_image"
