@@ -56,6 +56,8 @@
     assign additional_classes = additional_classes | append: ' product-card--no-hover'
   elsif settings.product_card_hover_mode == 'buttons_only'
     assign additional_classes = additional_classes | append: ' product-card--hover-buttons-only'
+  elsif settings.product_card_hover_mode == 'by_variants' and product.has_only_default_variant == false
+    assign additional_classes = additional_classes | append: ' product-card--hover-buttons-only'
   endunless
 
   assign product_card_title = product.title | split: '|' | first | strip
