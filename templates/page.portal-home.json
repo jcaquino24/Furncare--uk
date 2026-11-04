@@ -16,7 +16,7 @@
         "block_fQQn84": {
           "type": "block",
           "settings": {
-            "image": "shopify://shop_images/Furncare-logo-charcoal.png",
+            "image": "shopify://shop_images/icon-logo.svg",
             "caption": "",
             "lightbox_caption": ""
           }
@@ -46,6 +46,22 @@
     "main": {
       "type": "portal-home",
       "blocks": {
+        "link_jcR3nD": {
+          "type": "link",
+          "settings": {
+            "title": "Catalog",
+            "description": "",
+            "link": ""
+          }
+        },
+        "link_aDFfTN": {
+          "type": "link",
+          "settings": {
+            "title": "Catalog",
+            "description": "",
+            "link": ""
+          }
+        },
         "link_mWxXKH": {
           "type": "link",
           "settings": {
@@ -64,11 +80,13 @@
         }
       },
       "block_order": [
+        "link_jcR3nD",
+        "link_aDFfTN",
         "link_mWxXKH",
         "link_z3LGcf"
       ],
       "settings": {
-        "heading": "Welcome",
+        "heading": "Welcome, User",
         "text": "",
         "section_padding": "--spacing-md"
       }
