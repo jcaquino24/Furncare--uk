@@ -774,7 +774,6 @@
       "block_order": [
         "product_block_YAcrU9"
       ],
-      "disabled": true,
       "name": "Product blocks",
       "settings": {
         "title": "You may also like",
@@ -785,6 +784,7 @@
     },
     "similar_name_recommendation_LTaJTx": {
       "type": "similar-name-recommendation",
+      "disabled": true,
       "custom_css": [
         "h2 {margin-bottom: 2%;}"
       ],
