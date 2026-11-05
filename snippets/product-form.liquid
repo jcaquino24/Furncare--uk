@@ -17,6 +17,7 @@
   assign show_notify_modal = false
   assign section_id = section_id | default: 'product'
   assign hubspot_form = product.metafields.custom.hubspot_form
+  assign is_bespoke = product.metafields.custom.is_bespoke_product.value
   assign swatch_collections = product.metafields.custom.swatch_collections.value
   assign data_sheet = product.metafields.custom.data_sheet
   assign show_call_to_action = true
@@ -44,39 +45,30 @@
 
 {% if swatch_collections != blank %}
   {% render 'product-collection-swatches', product: product %}
+{% endif %}
+
 {% if show_data_sheet %}
-      <div class="{{ base_class }}__data-sheet">
-        <a
-          href="{{ data_sheet | file_url }}"
-          download
-          class="{{ base_class }}__data-sheet-button button button--outlined button--full-width button--sm"
-        >
-          {{ 'product.download_data_sheet' | t }}
-          {% render 'icons', icon: 'download' %}
-        </a>
-      </div>
-    {% endif %}
-  
-  {% if hubspot_form != blank and template.suffix != 'fabric' %}
+  <div class="{{ base_class }}__data-sheet">
+    <a
+      href="{{ data_sheet | file_url }}"
+      download
+      class="{{ base_class }}__data-sheet-button button button--outlined button--full-width button--sm"
+    >
+      {{ 'product.download_data_sheet' | t }}
+      {% render 'icons', icon: 'download' %}
+    </a>
+  </div>
+{% endif %}
+
+{% if swatch_collections != blank %}
+  {% if hubspot_form != blank and template.suffix != 'fabric' and is_bespoke != true %}
     {% if template.suffix != 'no-price' or template.suffix != 'fabric' %}
-    <div class="{{ base_class }}__hubspot-form">
-      {{ hubspot_form }}
-    </div>
+      <div class="{{ base_class }}__hubspot-form">
+        {{ hubspot_form }}
+      </div>
     {% endif %}
   {% endif %}
-{% elsif hubspot_form != blank and template.suffix != 'fabric' %}
-  {% if show_data_sheet %}
-      <div class="{{ base_class }}__data-sheet">
-        <a
-          href="{{ data_sheet | file_url }}"
-          download
-          class="{{ base_class }}__data-sheet-button button button--outlined button--full-width button--sm"
-        >
-          {{ 'product.download_data_sheet' | t }}
-          {% render 'icons', icon: 'download' %}
-        </a>
-      </div>
-    {% endif %}
+{% elsif hubspot_form != blank and template.suffix != 'fabric' and is_bespoke != true %}
     {% if template.suffix != 'no-price' or template.suffix != 'fabric' %}
       <div class="{{ base_class }}__hubspot-form">
         {{ hubspot_form }}
@@ -84,6 +76,7 @@
     {% endif %}
 {% else %}
   {% if template.suffix != 'no-price' or template.suffix != 'fabric' %}
+    {% unless is_bespoke == true %}
   {%- form 'product',
     product,
     class: 'ProductForm',
@@ -92,19 +85,6 @@
   
     {%- comment -%} Hidden input for variant ID - required for add to cart {%- endcomment -%}
     <input type="hidden" name="id" value="{{ current_variant.id }}">
-
-    {% if show_data_sheet %}
-      <div class="{{ base_class }}__data-sheet">
-        <a
-          href="{{ data_sheet | file_url }}"
-          download
-          class="{{ base_class }}__data-sheet-button button button--outlined button--full-width button--sm"
-        >
-          {{ 'product.download_data_sheet' | t }}
-          {% render 'icons', icon: 'download' %}
-        </a>
-      </div>
-    {% endif %}
 
     {% if show_call_to_action %}
       <div class="{{ base_class }}__button__wrapper">
@@ -186,6 +166,7 @@
       <span class="body-sm body-sm--bold"></span>
     </div>
   {%- endform -%}
+    {% endunless %}
 {% endif %}
 {% endif %}
 
