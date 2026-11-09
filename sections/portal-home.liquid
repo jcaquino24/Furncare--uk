@@ -1,6 +1,6 @@
 <section class="portal-home" style="--section-padding: var({{ section.settings.section_padding }})">
   <div class="portal-home__inner">
-    <h1>{{ section.settings.heading }}{% if customer.current_company.name != blank %}, {{ customer.current_company.name }}{% endif %}</h1>
+    <h1>{{ section.settings.heading }}{% if customer.first_name != blank %}, {{ customer.first_name | escape }}{% endif %}{% if customer.current_company.name != blank %}, {{ customer.current_company.name | escape }}{% endif %}</h1>
     {%- if section.settings.text != blank -%}
       <div class="portal-home__text">{{ section.settings.text }}</div>
     {%- endif -%}

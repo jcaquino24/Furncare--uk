@@ -1,5 +1,5 @@
-{%- comment -%} Sends Furncare Test members from the homepage (e.g. account "Shop now") to the portal, once per session. {%- endcomment -%}
-{%- assign portal_company_name = 'Furncare Test' -%}
+{%- comment -%} Sends portal company members from the homepage (e.g. account "Shop now") to the portal, once per session. {%- endcomment -%}
+{%- assign portal_company_name = settings.portal_company_name | default: 'Furncare Test' -%}
 {%- if template.name == 'index' and customer.current_company.name == portal_company_name and pages['portal-home'] != blank -%}
   <script>
     (function () {

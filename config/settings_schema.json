@@ -68,6 +68,23 @@
     ]
   },
   {
+    "name": "Customer Portal",
+    "settings": [
+      {
+        "type": "text",
+        "id": "portal_company_name",
+        "label": "Portal company name",
+        "default": "Furncare Test"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_portal_header_footer",
+        "label": "Hide header and footer for portal company",
+        "default": true
+      }
+    ]
+  },
+  {
     "name": "Instant Search",
     "settings": [
       {

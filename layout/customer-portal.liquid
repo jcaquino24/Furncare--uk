@@ -1,3 +1,10 @@
+{% liquid
+  assign portal_company_name = settings.portal_company_name | default: 'Furncare Test'
+  assign hide_portal_chrome = false
+  if settings.hide_portal_header_footer and customer.current_company.name == portal_company_name
+    assign hide_portal_chrome = true
+  endif
+%}
 <!doctype html>
 <html lang="{{ shop.locale }}">
   <head>
@@ -57,7 +64,7 @@
 
     <uwp-cart role="region" aria-label="Cart" aria-roledescription="region"></uwp-cart>
 
-    {% unless template.suffix == 'portal-home' %}
+    {% unless hide_portal_chrome %}
       {% render 'search-modal' %}
       {% sections 'header-group' %}
       <div class="megamenu-overlay" js-megamenu="overlay"></div>
@@ -67,7 +74,7 @@
       {{ content_for_layout }}
     </main>
 
-    {% unless template.suffix == 'portal-home' %}
+    {% unless hide_portal_chrome %}
       {% sections 'footer-group' %}
     {% endunless %}
   </body>

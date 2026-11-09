@@ -1,5 +1,5 @@
 {%- comment -%} Client-side gate only; real catalog restriction comes from the Shopify B2B catalog. {%- endcomment -%}
-{%- assign portal_company_name = 'Furncare Test' -%}
+{%- assign portal_company_name = settings.portal_company_name | default: 'Furncare Test' -%}
 {%- assign portal_allowed = false -%}
 {%- if request.design_mode -%}
   {%- assign portal_allowed = true -%}
