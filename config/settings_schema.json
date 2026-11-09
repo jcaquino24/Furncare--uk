@@ -73,7 +73,8 @@
       {
         "type": "text",
         "id": "portal_company_name",
-        "label": "Portal company name",
+        "label": "Portal company names",
+        "info": "Enter exact B2B company names separated by commas.",
         "default": "Furncare Test"
       },
       {
