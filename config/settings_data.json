@@ -114,15 +114,6 @@
           "enableCustomLoginUrl": false,
           "customLoginUrl": "/account/login"
         }
-      },
-      "12114535774474823149": {
-        "type": "shopify://apps/approvecart-b2b/blocks/approval-cart-actions/019e6e82-f0a1-7769-85d6-40d2b6aecc27",
-        "disabled": false,
-        "settings": {
-          "cart_notice_enabled": true,
-          "request_label": "Request approval",
-          "pending_label": "View request"
-        }
       }
     }
   },
