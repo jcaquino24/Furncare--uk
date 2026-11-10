@@ -680,6 +680,8 @@
         "cross_sell_fVLhCR"
       ],
       "settings": {
+        "title_font_size": 32,
+        "title_font_size_mobile": 0,
         "show_sku": true,
         "show_vat_badge": true,
         "show_free_sample_label": true,
@@ -693,6 +695,7 @@
         "alt_contact_form_html": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script> <div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"c81574fc-65ec-431e-845f-40d18f62a6f2\" data-portal-id=\"145723791\"></div>",
         "lead_time_icon": "shopify://shop_images/dark-delivery-icon.svg",
         "lead_time_text": "Delivered",
+        "show_accordions": true,
         "specifications_title": "Dimensions",
         "product_swatch_information": "<p>Experience the quality and texture of our finishes before you decide. Order a free sample swatch today and find the perfect match for your space with confidence.</p>",
         "show_thumbnails": true,
