@@ -306,7 +306,9 @@
 
     <div class="product__accordions">
       {% comment %} Product Accordions - desktop: below gallery, mobile: below swatches {% endcomment %}
-      {% render 'product-accordions', product: product, section: section %}
+      {% if section.settings.show_accordions %}
+        {% render 'product-accordions', product: product, section: section %}
+      {% endif %}
     </div>
   </div>
 </uwp-product>
@@ -320,6 +322,28 @@
     {
       "type": "header",
       "content": "Product Info Settings"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Product title size (desktop)",
+      "min": 0,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "info": "0 uses the theme default."
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_mobile",
+      "label": "Product title size (mobile)",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "info": "0 uses the theme default."
     },
     {
       "type": "checkbox",
@@ -415,6 +439,12 @@
     {
       "type": "header",
       "content": "Product Accordions"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_accordions",
+      "label": "Show accordions below image",
+      "default": true
     },
     {
       "type": "text",

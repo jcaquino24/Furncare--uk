@@ -33,6 +33,18 @@
 
   {% comment %} Title {% endcomment %}
   {% if product.title %}
+    {% if section.settings.title_font_size > 0 or section.settings.title_font_size_mobile > 0 %}
+      {% style %}
+        {% if section.settings.title_font_size_mobile > 0 %}
+          #shopify-section-{{ section_id }} .product-info__title { font-size: {{ section.settings.title_font_size_mobile }}px; }
+        {% endif %}
+        {% if section.settings.title_font_size > 0 %}
+          @media (width >= 768px) {
+            #shopify-section-{{ section_id }} .product-info__title { font-size: {{ section.settings.title_font_size }}px; }
+          }
+        {% endif %}
+      {% endstyle %}
+    {% endif %}
     <h1 class="product-info__title title-sm">
       {{ product.title | split: '|' | first }}
     </h1>
@@ -175,7 +187,7 @@
 
   {% comment %} Product Form {% endcomment %}
    
-      {% render 'prodnuct-form', product: product, section_id: section_id, section: section %}
+      {% render 'product-form', product: product, section_id: section_id, section: section %}
       
 
 {% endif %}
