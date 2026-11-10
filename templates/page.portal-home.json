@@ -85,10 +85,55 @@
         "link_z3LGcf",
         "link_mWxXKH"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Welcome",
         "text": "",
         "section_padding": "--spacing-md"
+      }
+    },
+    "portal_tabs_QcQP8n": {
+      "type": "portal-tabs",
+      "blocks": {
+        "catalogs_VgQLc8": {
+          "type": "catalogs",
+          "settings": {
+            "title": "My Schemes",
+            "collections": [
+              "challenging-environments-accessories",
+              "overbed-overchair-tables",
+              "challenging-environments-bedroom-sets",
+              "challenging-environments-in-stock-beds-mattresses"
+            ]
+          }
+        },
+        "products_DPqDp6": {
+          "type": "products",
+          "settings": {
+            "title": "All Products",
+            "collection": "",
+            "product_limit": 24
+          }
+        },
+        "contact_nbMeGr": {
+          "type": "contact",
+          "settings": {
+            "title": "Contact Account Manager",
+            "text": "<p>Please contact Molly Tinker or Candace Turner</p>",
+            "button_label": "Contact Us",
+            "button_link": "shopify://pages/contact-us"
+          }
+        }
+      },
+      "block_order": [
+        "catalogs_VgQLc8",
+        "products_DPqDp6",
+        "contact_nbMeGr"
+      ],
+      "name": "Portal tabs",
+      "settings": {
+        "heading": "Welcome",
+        "section_padding": "--spacing-2xl"
       }
     },
     "catalog_cards_pb8Bbt": {
@@ -116,6 +161,7 @@
         "catalog_cnBPMg",
         "catalog_VGMJLM"
       ],
+      "disabled": true,
       "name": "Catalog cards",
       "settings": {
         "title": ""
@@ -388,6 +434,7 @@
   "order": [
     "featured_blocks_kEJTiG",
     "main",
+    "portal_tabs_QcQP8n",
     "catalog_cards_pb8Bbt",
     "koz_dynamic_grid_Xgrrmb",
     "portal_catalog_YDfrQi",
