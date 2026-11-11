@@ -55,9 +55,9 @@
           "settings": {
             "font_size": 40,
             "font_size_mobile": 0,
-            "font_family_choice": "theme",
+            "font_family_choice": "heading",
             "font_weight": "300",
-            "font_style": "normal",
+            "font_style": "theme",
             "use_custom_spacing": true,
             "margin_top": 0,
             "margin_right": 0,
