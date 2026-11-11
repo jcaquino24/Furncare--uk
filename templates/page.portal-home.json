@@ -100,6 +100,8 @@
           "settings": {
             "title": "My Schemes",
             "card_eyebrow": "Scheme",
+            "columns_desktop": 4,
+            "columns_mobile": 2,
             "collections": [
               "challenging-environments-in-stock-beds-mattresses",
               "challenging-environments-bedroom-sets",
@@ -123,6 +125,8 @@
           "type": "products",
           "settings": {
             "title": "All Products",
+            "columns_desktop": 4,
+            "columns_mobile": 2,
             "collection": "",
             "product_limit": 24
           }
