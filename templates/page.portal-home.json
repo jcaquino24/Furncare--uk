@@ -135,12 +135,20 @@
             "button_label": "Contact Us",
             "button_link": "shopify://pages/contact-us"
           }
+        },
+        "link_p8mLnL": {
+          "type": "link",
+          "settings": {
+            "title": "Portal Settings",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "catalogs_VgQLc8",
         "products_DPqDp6",
-        "contact_nbMeGr"
+        "contact_nbMeGr",
+        "link_p8mLnL"
       ],
       "name": "Portal tabs",
       "settings": {
