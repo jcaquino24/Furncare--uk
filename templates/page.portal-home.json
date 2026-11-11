@@ -101,10 +101,10 @@
             "title": "My Schemes",
             "card_eyebrow": "Scheme",
             "collections": [
-              "overbed-overchair-tables",
-              "challenging-environments-bedroom-sets",
               "challenging-environments-in-stock-beds-mattresses",
-              "sensory-activity-rooms"
+              "challenging-environments-bedroom-sets",
+              "overbed-overchair-tables",
+              "challenging-environments-bedside-tables"
             ],
             "title_font_family": "heading",
             "title_font_size": 18,
