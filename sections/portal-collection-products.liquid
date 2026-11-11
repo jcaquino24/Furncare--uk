@@ -1,0 +1,22 @@
+{%- comment -%}
+  Rendered on demand via the Section Rendering API (?sections=portal-collection-products) from the portal tabs section.
+{%- endcomment -%}
+<div class="portal-tabs__results">
+  <h2 class="portal-tabs__results-title">{{ collection.title }}</h2>
+
+  {%- if collection.products.size > 0 -%}
+    <div class="portal-tabs__products">
+      {%- for product in collection.products limit: 48 -%}
+        {% render 'product-card', product: product, loading: 'lazy' %}
+      {%- endfor -%}
+    </div>
+  {%- else -%}
+    <p>No products available.</p>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Portal collection products"
+}
+{% endschema %}

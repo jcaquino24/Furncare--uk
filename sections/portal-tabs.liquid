@@ -53,18 +53,26 @@
         {%- case block.type -%}
           {%- when 'catalogs' -%}
             {%- if block.settings.collections.size > 0 -%}
-              <ul class="list-collections__list">
-                {%- for collection in block.settings.collections -%}
-                  <li class="list-collections__item">
-                    {% render 'content-block',
-                      blocks_size: 4,
-                      title: collection.title,
-                      image: collection.image,
-                      url: collection.url
-                    %}
-                  </li>
-                {%- endfor -%}
-              </ul>
+              <div data-portal-catalog-list>
+                <ul class="list-collections__list">
+                  {%- for collection in block.settings.collections -%}
+                    <li class="list-collections__item">
+                      {% render 'content-block',
+                        blocks_size: 4,
+                        title: collection.title,
+                        image: collection.image,
+                        url: collection.url
+                      %}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+              <div data-portal-catalog-results hidden>
+                <button type="button" class="button button--secondary portal-tabs__back" data-portal-back>
+                  &larr; Back to catalogs
+                </button>
+                <div data-portal-results-body aria-live="polite"></div>
+              </div>
             {%- else -%}
               <p>No catalogs available.</p>
             {%- endif -%}
@@ -121,6 +129,55 @@
       var id = (window.location.hash || '').replace('#portal-tab-', '');
       if (id) activate(root, id, false);
     }
+
+    // Catalog card: load that collection's products into the same panel.
+    var catalogCache = {};
+
+    function showCatalogList(panel) {
+      panel.querySelector('[data-portal-catalog-list]').hidden = false;
+      panel.querySelector('[data-portal-catalog-results]').hidden = true;
+    }
+
+    function openCatalog(panel, url) {
+      var list = panel.querySelector('[data-portal-catalog-list]');
+      var results = panel.querySelector('[data-portal-catalog-results]');
+      var body = results.querySelector('[data-portal-results-body]');
+      list.hidden = true;
+      results.hidden = false;
+      body.textContent = 'Loading...';
+      results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      var request = catalogCache[url] || (catalogCache[url] = fetch(url.split('?')[0] + '?sections=portal-collection-products', { credentials: 'same-origin' })
+        .then(function (response) {
+          if (!response.ok) throw new Error('Request failed');
+          return response.json();
+        })
+        .then(function (data) {
+          var html = data['portal-collection-products'];
+          if (!html) throw new Error('Empty response');
+          return html;
+        }));
+
+      request.then(function (html) {
+        body.innerHTML = html;
+      }).catch(function () {
+        delete catalogCache[url];
+        window.location.href = url;
+      });
+    }
+
+    document.addEventListener('click', function (event) {
+      var back = event.target.closest('[data-portal-back]');
+      if (back) {
+        showCatalogList(back.closest('.portal-tabs__panel'));
+        return;
+      }
+
+      var link = event.target.closest('[data-portal-catalog-list] a');
+      if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+      event.preventDefault();
+      openCatalog(link.closest('.portal-tabs__panel'), link.href);
+    });
 
     document.addEventListener('click', function (event) {
       var tab = event.target.closest('[data-portal-tab]');
@@ -201,8 +258,15 @@
   .portal-tabs__tab.is-active {
     background: #fff;
   }
-  .portal-tabs__panel[hidden] {
+  .portal-tabs__panel[hidden],
+  .portal-tabs [hidden] {
     display: none;
+  }
+  .portal-tabs__back {
+    margin-bottom: var(--spacing-lg, 1.5rem);
+  }
+  .portal-tabs__results-title {
+    margin: 0 0 var(--spacing-lg, 1.5rem);
   }
   .portal-tabs__products {
     display: grid;
