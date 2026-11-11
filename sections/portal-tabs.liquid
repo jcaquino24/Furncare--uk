@@ -53,16 +53,33 @@
         {%- case block.type -%}
           {%- when 'catalogs' -%}
             {%- if block.settings.collections.size > 0 -%}
+              {%- liquid
+                assign scheme_title_font = 'var(--font-heading-family)'
+                if block.settings.title_font_family == 'body'
+                  assign scheme_title_font = 'var(--font-body-family)'
+                elsif block.settings.title_font_family == 'theme'
+                  assign scheme_title_font = 'inherit'
+                endif
+              -%}
               <div data-portal-catalog-list>
-                <ul class="list-collections__list">
+                <ul
+                  class="portal-tabs__scheme-list"
+                  style="--scheme-card-gap: {{ block.settings.card_gap }}px; --scheme-card-padding: {{ block.settings.card_padding }}px; --scheme-card-border-width: {{ block.settings.card_border_width }}px; --scheme-card-border-color: {{ block.settings.card_border_color }}; --scheme-card-radius: {{ block.settings.card_border_radius }}px; --scheme-title-font: {{ scheme_title_font }}; --scheme-title-size: {{ block.settings.title_font_size }}px; --scheme-title-weight: {{ block.settings.title_font_weight }}; --scheme-title-style: {{ block.settings.title_font_style }}"
+                >
                   {%- for collection in block.settings.collections -%}
-                    <li class="list-collections__item">
-                      {% render 'content-block',
-                        blocks_size: 4,
-                        title: collection.title,
-                        image: collection.image,
-                        url: collection.url
-                      %}
+                    <li>
+                      <a class="portal-tabs__scheme-card" href="{{ collection.url }}">
+                        {%- if collection.image != blank -%}
+                          {{ collection.image | image_url: width: 1000 | image_tag: class: 'portal-tabs__scheme-image', loading: 'lazy', alt: collection.title }}
+                        {%- endif -%}
+                        <span class="portal-tabs__scheme-overlay" aria-hidden="true"></span>
+                        <span class="portal-tabs__scheme-copy">
+                          {%- if block.settings.card_eyebrow != blank -%}
+                            <span class="portal-tabs__scheme-eyebrow">{{ block.settings.card_eyebrow | escape }}</span>
+                          {%- endif -%}
+                          <span class="portal-tabs__scheme-title">{{ collection.title | escape }}</span>
+                        </span>
+                      </a>
                     </li>
                   {%- endfor -%}
                 </ul>
@@ -268,6 +285,69 @@
   .portal-tabs__results-title {
     margin: 0 0 var(--spacing-lg, 1.5rem);
   }
+  .portal-tabs__scheme-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: var(--scheme-card-gap, 24px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .portal-tabs__scheme-card {
+    position: relative;
+    display: block;
+    aspect-ratio: 1.6;
+    overflow: hidden;
+    border: var(--scheme-card-border-width, 1px) solid var(--scheme-card-border-color, #d0d0d0);
+    border-radius: var(--scheme-card-radius, 8px);
+    color: #fff;
+    background: #454744;
+    text-decoration: none;
+  }
+  .portal-tabs__scheme-card:focus-visible {
+    outline: 2px solid currentcolor;
+    outline-offset: 3px;
+  }
+  .portal-tabs__scheme-image,
+  .portal-tabs__scheme-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .portal-tabs__scheme-image {
+    object-fit: cover;
+    transition: transform 240ms ease;
+  }
+  .portal-tabs__scheme-card:hover .portal-tabs__scheme-image {
+    transform: scale(1.03);
+  }
+  .portal-tabs__scheme-overlay {
+    background: linear-gradient(180deg, rgb(0 0 0 / 0) 25%, rgb(0 0 0 / 58%) 100%);
+  }
+  .portal-tabs__scheme-copy {
+    position: absolute;
+    z-index: 1;
+    inset-inline: var(--scheme-card-padding, 24px);
+    bottom: var(--scheme-card-padding, 24px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .portal-tabs__scheme-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  .portal-tabs__scheme-title {
+    font-family: var(--scheme-title-font, var(--font-heading-family));
+    font-size: var(--scheme-title-size, 28px);
+    font-weight: var(--scheme-title-weight, 500);
+    font-style: var(--scheme-title-style, normal);
+    line-height: 1.15;
+  }
   .portal-tabs__products {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -315,13 +395,33 @@
       "name": "Tab: Catalog cards",
       "settings": [
         { "type": "text", "id": "title", "label": "Tab title", "default": "My Schemes" },
+        { "type": "text", "id": "card_eyebrow", "label": "Card eyebrow", "default": "Scheme" },
         {
           "type": "collection_list",
           "id": "collections",
           "label": "Collections",
           "limit": 50,
           "info": "Shown as cards when this tab is open."
-        }
+        },
+        {
+          "type": "select",
+          "id": "title_font_family",
+          "label": "Card title font family",
+          "default": "heading",
+          "options": [
+            { "value": "theme", "label": "Theme default" },
+            { "value": "body", "label": "Body font" },
+            { "value": "heading", "label": "Heading font" }
+          ]
+        },
+        { "type": "range", "id": "title_font_size", "label": "Card title font size", "min": 16, "max": 48, "step": 1, "unit": "px", "default": 28 },
+        { "type": "select", "id": "title_font_weight", "label": "Card title font weight", "default": "500", "options": [ { "value": "400", "label": "Regular" }, { "value": "500", "label": "Medium" }, { "value": "600", "label": "Semi-bold" }, { "value": "700", "label": "Bold" }, { "value": "800", "label": "Extra-bold" } ] },
+        { "type": "select", "id": "title_font_style", "label": "Card title font style", "default": "normal", "options": [ { "value": "normal", "label": "Normal" }, { "value": "italic", "label": "Italic" } ] },
+        { "type": "range", "id": "card_padding", "label": "Text inset", "min": 0, "max": 64, "step": 2, "unit": "px", "default": 24 },
+        { "type": "range", "id": "card_border_width", "label": "Card border width", "min": 0, "max": 8, "step": 1, "unit": "px", "default": 1 },
+        { "type": "color", "id": "card_border_color", "label": "Card border color", "default": "#d0d0d0" },
+        { "type": "range", "id": "card_border_radius", "label": "Card corner radius", "min": 0, "max": 32, "step": 2, "unit": "px", "default": 8 },
+        { "type": "range", "id": "card_gap", "label": "Gap between cards", "min": 8, "max": 48, "step": 2, "unit": "px", "default": 24 }
       ]
     },
     {
