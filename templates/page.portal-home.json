@@ -99,11 +99,21 @@
           "type": "catalogs",
           "settings": {
             "title": "My Schemes",
+            "card_eyebrow": "Scheme",
             "collections": [
               "overbed-overchair-tables",
               "challenging-environments-bedroom-sets",
               "challenging-environments-in-stock-beds-mattresses"
-            ]
+            ],
+            "title_font_family": "heading",
+            "title_font_size": 18,
+            "title_font_weight": "500",
+            "title_font_style": "normal",
+            "card_padding": 24,
+            "card_border_width": 1,
+            "card_border_color": "#d0d0d0",
+            "card_border_radius": 8,
+            "card_gap": 24
           }
         },
         "products_DPqDp6": {
