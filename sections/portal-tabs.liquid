@@ -64,7 +64,7 @@
               <div data-portal-catalog-list>
                 <ul
                   class="portal-tabs__scheme-list"
-                  style="--scheme-card-gap: {{ block.settings.card_gap }}px; --scheme-card-padding: {{ block.settings.card_padding }}px; --scheme-card-border-width: {{ block.settings.card_border_width }}px; --scheme-card-border-color: {{ block.settings.card_border_color }}; --scheme-card-radius: {{ block.settings.card_border_radius }}px; --scheme-title-font: {{ scheme_title_font }}; --scheme-title-size: {{ block.settings.title_font_size }}px; --scheme-title-weight: {{ block.settings.title_font_weight }}; --scheme-title-style: {{ block.settings.title_font_style }}"
+                  style="--scheme-card-gap: {{ block.settings.card_gap }}px; --scheme-card-height: {% if block.settings.card_height > 0 %}{{ block.settings.card_height }}px{% else %}auto{% endif %}; --scheme-card-padding: {{ block.settings.card_padding }}px; --scheme-card-border-width: {{ block.settings.card_border_width }}px; --scheme-card-border-color: {{ block.settings.card_border_color }}; --scheme-card-radius: {{ block.settings.card_border_radius }}px; --scheme-title-font: {{ scheme_title_font }}; --scheme-title-size: {{ block.settings.title_font_size }}px; --scheme-title-weight: {{ block.settings.title_font_weight }}; --scheme-title-style: {{ block.settings.title_font_style }}; --scheme-eyebrow-size: {{ block.settings.eyebrow_font_size }}px"
                 >
                   {%- for collection in block.settings.collections -%}
                     <li>
@@ -297,6 +297,7 @@
     position: relative;
     display: block;
     aspect-ratio: 1.6;
+    height: var(--scheme-card-height, auto);
     overflow: hidden;
     border: var(--scheme-card-border-width, 1px) solid var(--scheme-card-border-color, #d0d0d0);
     border-radius: var(--scheme-card-radius, 8px);
@@ -336,7 +337,7 @@
     gap: 6px;
   }
   .portal-tabs__scheme-eyebrow {
-    font-size: 12px;
+    font-size: var(--scheme-eyebrow-size, 12px);
     font-weight: 600;
     line-height: 1.2;
     text-transform: uppercase;
@@ -415,13 +416,15 @@
           ]
         },
         { "type": "range", "id": "title_font_size", "label": "Card title font size", "min": 16, "max": 48, "step": 1, "unit": "px", "default": 28 },
+        { "type": "range", "id": "eyebrow_font_size", "label": "Card eyebrow font size", "min": 8, "max": 24, "step": 1, "unit": "px", "default": 12 },
         { "type": "select", "id": "title_font_weight", "label": "Card title font weight", "default": "500", "options": [ { "value": "400", "label": "Regular" }, { "value": "500", "label": "Medium" }, { "value": "600", "label": "Semi-bold" }, { "value": "700", "label": "Bold" }, { "value": "800", "label": "Extra-bold" } ] },
         { "type": "select", "id": "title_font_style", "label": "Card title font style", "default": "normal", "options": [ { "value": "normal", "label": "Normal" }, { "value": "italic", "label": "Italic" } ] },
         { "type": "range", "id": "card_padding", "label": "Text inset", "min": 0, "max": 64, "step": 2, "unit": "px", "default": 24 },
         { "type": "range", "id": "card_border_width", "label": "Card border width", "min": 0, "max": 8, "step": 1, "unit": "px", "default": 1 },
         { "type": "color", "id": "card_border_color", "label": "Card border color", "default": "#d0d0d0" },
         { "type": "range", "id": "card_border_radius", "label": "Card corner radius", "min": 0, "max": 32, "step": 2, "unit": "px", "default": 8 },
-        { "type": "range", "id": "card_gap", "label": "Gap between cards", "min": 8, "max": 48, "step": 2, "unit": "px", "default": 24 }
+        { "type": "range", "id": "card_gap", "label": "Gap between cards", "min": 8, "max": 48, "step": 2, "unit": "px", "default": 24 },
+        { "type": "range", "id": "card_height", "label": "Card height", "min": 0, "max": 600, "step": 10, "unit": "px", "default": 0, "info": "0 keeps the current proportional height." }
       ]
     },
     {
