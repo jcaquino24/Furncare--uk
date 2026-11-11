@@ -53,7 +53,7 @@
         "title_pi0003": {
           "type": "title",
           "settings": {
-            "font_size": 35,
+            "font_size": 38,
             "font_size_mobile": 0,
             "font_family_choice": "heading",
             "font_weight": "300",
@@ -118,7 +118,7 @@
             "font_weight": "theme",
             "font_style": "theme",
             "use_custom_spacing": true,
-            "margin_top": 20,
+            "margin_top": 14,
             "margin_right": 0,
             "margin_bottom": 0,
             "margin_left": 0,
