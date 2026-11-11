@@ -24,7 +24,7 @@
           "settings": {
             "text": "Meet the Furncare Team",
             "heading_level": "h1",
-            "heading_style": "title-xl"
+            "heading_style": "title-display"
           },
           "blocks": {}
         },
@@ -56,11 +56,11 @@
       "name": "Rich Text",
       "settings": {
         "id_anchor": "",
-        "max_width_desktop": 45,
+        "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
-        "text_alignment": "center",
+        "text_alignment": "left",
         "colour_scheme": "base-white-01",
-        "enable_animation": false,
+        "enable_animation": true,
         "optional_richtext": "",
         "small_container": false,
         "enable_see_more": false,
