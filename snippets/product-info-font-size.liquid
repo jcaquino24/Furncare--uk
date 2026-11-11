@@ -1,0 +1,28 @@
+{%- comment -%}
+  Scoped font-size override for a product info block. 0 means use the theme default.
+  Params: block, section_id, children (optional comma-separated descendant selectors that should resize too)
+{%- endcomment -%}
+{%- liquid
+  assign desktop_size = block.settings.font_size | default: 0
+  assign mobile_size = block.settings.font_size_mobile | default: 0
+  assign base_selector = '#shopify-section-' | append: section_id | append: ' .product-info__block-' | append: block.id
+  assign selectors = base_selector
+  if children != blank
+    assign child_list = children | split: ','
+    for child in child_list
+      assign selectors = selectors | append: ', ' | append: base_selector | append: ' ' | append: child | strip
+    endfor
+  endif
+-%}
+{%- if desktop_size > 0 or mobile_size > 0 -%}
+  {% style %}
+    {% if mobile_size > 0 %}
+      {{ selectors }} { font-size: {{ mobile_size }}px; }
+    {% endif %}
+    {% if desktop_size > 0 %}
+      @media (width >= 768px) {
+        {{ selectors }} { font-size: {{ desktop_size }}px; }
+      }
+    {% endif %}
+  {% endstyle %}
+{%- endif -%}

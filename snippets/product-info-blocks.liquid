@@ -1,0 +1,103 @@
+{%- comment -%}
+  Renders the product info text blocks in editor order (used when the section's "Use blocks" setting is on).
+  Params: product, section, section_id
+{%- endcomment -%}
+{%- liquid
+  assign current_variant = product.selected_variant | default: product.selected_or_first_available_variant
+  assign has_swatch_collections = product.metafields.custom.swatch_collections.value
+  assign has_hubspot_form = false
+  if product.metafields.custom.hubspot_form != blank
+    assign has_hubspot_form = true
+  endif
+  assign is_bespoke = false
+  if product.metafields.custom.is_bespoke_product.value == true
+    assign is_bespoke = true
+  endif
+-%}
+
+{%- for block in section.blocks -%}
+  {%- case block.type -%}
+    {%- when 'badges' -%}
+      <div style="display: contents;" {{ block.shopify_attributes }}>
+        {% render 'badge', product: product %}
+      </div>
+
+    {%- when 'sku' -%}
+      {% render 'product-info-font-size', block: block, section_id: section_id %}
+      <div
+        class="product-info__sku eyebrow-2xs product-info__block-{{ block.id }}"
+        data-product-sku
+        {% if current_variant.sku == blank %}hidden{% endif %}
+        {{ block.shopify_attributes }}
+      >
+        {{ 'product.product_sku' | t }}:
+        <span data-product-sku-value>{{ current_variant.sku }}</span>
+      </div>
+
+    {%- when 'title' -%}
+      {% render 'product-info-font-size', block: block, section_id: section_id %}
+      <h1 class="product-info__title title-sm product-info__block-{{ block.id }}" {{ block.shopify_attributes }}>
+        {{ product.title | split: '|' | first }}
+      </h1>
+
+    {%- when 'custom_text' -%}
+      {%- liquid
+        assign variant_custom_text = current_variant.metafields.custom.custom_product_text.value
+        assign product_additional_description = product.metafields.custom.additional_description.value
+      -%}
+      {% render 'product-info-font-size', block: block, section_id: section_id, children: 'p, li' %}
+      <div
+        class="product-info__sku eyebrow-2xs product-info__block-{{ block.id }}"
+        data-product-custom-text
+        data-product-custom-text-fallback="{{ product_additional_description | escape }}"
+        {% if variant_custom_text == blank and product_additional_description == blank %}hidden{% endif %}
+        {{ block.shopify_attributes }}
+      >
+        {% if variant_custom_text != blank %}
+          {{ variant_custom_text }}
+        {% else %}
+          {{ product_additional_description }}
+        {% endif %}
+      </div>
+
+    {%- when 'price' -%}
+      {% render 'product-info-font-size', block: block, section_id: section_id, children: '.price__item' %}
+      <div class="product-info__block-{{ block.id }}" data-product-price {{ block.shopify_attributes }}>
+        {% render 'price',
+          product: product,
+          use_variant: true,
+          show_compare_at_price: true,
+          show_vat_badge: block.settings.show_vat_badge,
+          show_free_sample_label: block.settings.show_free_sample_label,
+          force_from_price: has_swatch_collections
+        %}
+      </div>
+
+    {%- when 'description' -%}
+      {%- if product.description != blank -%}
+        {% render 'product-info-font-size', block: block, section_id: section_id, children: 'p, li' %}
+        <div class="product-info__description-wrapper" {{ block.shopify_attributes }}>
+          <div
+            class="product-info__description body-md rte product-info__block-{{ block.id }}"
+            js-product-info="description"
+          >
+            {{ product.description }}
+          </div>
+        </div>
+      {%- endif -%}
+
+    {%- when 'swatch_information' -%}
+      {%- if has_hubspot_form and is_bespoke == false and block.settings.text != blank -%}
+        {% render 'product-info-font-size', block: block, section_id: section_id, children: 'p, li' %}
+        <div
+          class="product-info__swatch-information body-sm body-sm--bold rte product-info__block-{{ block.id }}"
+          {{ block.shopify_attributes }}
+        >
+          {{ block.settings.text }}
+        </div>
+      {%- endif -%}
+
+    {%- when 'variant_selector' -%}
+      {% render 'product-variant-selector', product: product, block: block %}
+  {%- endcase -%}
+{%- endfor -%}

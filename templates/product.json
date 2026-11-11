@@ -12,6 +12,55 @@
     "main": {
       "type": "product",
       "blocks": {
+        "badges_pi0001": {
+          "type": "badges",
+          "settings": {}
+        },
+        "sku_pi0002": {
+          "type": "sku",
+          "settings": {
+            "font_size": 0,
+            "font_size_mobile": 0
+          }
+        },
+        "title_pi0003": {
+          "type": "title",
+          "settings": {
+            "font_size": 32,
+            "font_size_mobile": 0
+          }
+        },
+        "custom_text_pi0004": {
+          "type": "custom_text",
+          "settings": {
+            "font_size": 0,
+            "font_size_mobile": 0
+          }
+        },
+        "price_pi0005": {
+          "type": "price",
+          "settings": {
+            "show_vat_badge": true,
+            "show_free_sample_label": true,
+            "font_size": 0,
+            "font_size_mobile": 0
+          }
+        },
+        "description_pi0006": {
+          "type": "description",
+          "settings": {
+            "font_size": 0,
+            "font_size_mobile": 0
+          }
+        },
+        "swatch_information_pi0007": {
+          "type": "swatch_information",
+          "settings": {
+            "text": "<p>Experience the quality and texture of our finishes before you decide. Order a free sample swatch today and find the perfect match for your space with confidence.</p>",
+            "font_size": 0,
+            "font_size_mobile": 0
+          }
+        },
         "variant_selector_fzAgh3": {
           "type": "variant_selector",
           "settings": {
@@ -671,6 +720,13 @@
         }
       },
       "block_order": [
+        "badges_pi0001",
+        "sku_pi0002",
+        "title_pi0003",
+        "custom_text_pi0004",
+        "price_pi0005",
+        "description_pi0006",
+        "swatch_information_pi0007",
         "variant_selector_fzAgh3",
         "cross_sell_nQKcQ6",
         "cross_sell_9jQAdq",
@@ -680,8 +736,7 @@
         "cross_sell_fVLhCR"
       ],
       "settings": {
-        "title_font_size": 32,
-        "title_font_size_mobile": 0,
+        "use_text_blocks": true,
         "show_sku": true,
         "show_vat_badge": true,
         "show_free_sample_label": true,

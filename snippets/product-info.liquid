@@ -17,6 +17,9 @@
 -%}
 
 <div class="product-info">
+{% if section.settings.use_text_blocks %}
+  {% render 'product-info-blocks', product: product, section: section, section_id: section_id %}
+{% else %}
   {% comment %} Badges {% endcomment %}
   {% render 'badge', product: product %}
 
@@ -33,18 +36,6 @@
 
   {% comment %} Title {% endcomment %}
   {% if product.title %}
-    {% if section.settings.title_font_size > 0 or section.settings.title_font_size_mobile > 0 %}
-      {% style %}
-        {% if section.settings.title_font_size_mobile > 0 %}
-          #shopify-section-{{ section_id }} .product-info__title { font-size: {{ section.settings.title_font_size_mobile }}px; }
-        {% endif %}
-        {% if section.settings.title_font_size > 0 %}
-          @media (width >= 768px) {
-            #shopify-section-{{ section_id }} .product-info__title { font-size: {{ section.settings.title_font_size }}px; }
-          }
-        {% endif %}
-      {% endstyle %}
-    {% endif %}
     <h1 class="product-info__title title-sm">
       {{ product.title | split: '|' | first }}
     </h1>
@@ -124,6 +115,7 @@
     {% render 'product-variant-selector', product: product, block: block %}
   {%- endif -%}
 {%- endfor -%}
+{% endif %}
 
 {% if section.settings.show_call_to_action %}
   {% comment %} Lead time {% endcomment %}

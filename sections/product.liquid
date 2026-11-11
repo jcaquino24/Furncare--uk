@@ -324,26 +324,11 @@
       "content": "Product Info Settings"
     },
     {
-      "type": "range",
-      "id": "title_font_size",
-      "label": "Product title size (desktop)",
-      "min": 0,
-      "max": 64,
-      "step": 2,
-      "unit": "px",
-      "default": 0,
-      "info": "0 uses the theme default."
-    },
-    {
-      "type": "range",
-      "id": "title_font_size_mobile",
-      "label": "Product title size (mobile)",
-      "min": 0,
-      "max": 48,
-      "step": 2,
-      "unit": "px",
-      "default": 0,
-      "info": "0 uses the theme default."
+      "type": "checkbox",
+      "id": "use_text_blocks",
+      "label": "Use blocks for product info text",
+      "default": false,
+      "info": "When on, badges, SKU, title, extra text, price, description and swatch information come from the blocks below (reorder, hide and size them there). The SKU, price and swatch settings below are then ignored."
     },
     {
       "type": "checkbox",
@@ -568,6 +553,69 @@
   ],
   
 "blocks": [
+{
+      "type": "badges",
+      "name": "Badges",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "sku",
+      "name": "SKU",
+      "limit": 1,
+      "settings": [
+        { "type": "range", "id": "font_size", "label": "Font size (desktop)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
+        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1,
+      "settings": [
+        { "type": "range", "id": "font_size", "label": "Font size (desktop)", "min": 0, "max": 72, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
+        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 56, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." }
+      ]
+    },
+    {
+      "type": "custom_text",
+      "name": "Extra text",
+      "limit": 1,
+      "settings": [
+        { "type": "range", "id": "font_size", "label": "Font size (desktop)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
+        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." }
+      ]
+    },
+    {
+      "type": "price",
+      "name": "Price",
+      "limit": 1,
+      "settings": [
+        { "type": "checkbox", "id": "show_vat_badge", "label": "Show VAT badge", "default": true, "info": "Display the 'Including VAT' badge next to the price" },
+        { "type": "checkbox", "id": "show_free_sample_label", "label": "Show free sample label", "default": true, "info": "Display the free sample label when the product price is 0" },
+        { "type": "range", "id": "font_size", "label": "Font size (desktop)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
+        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1,
+      "settings": [
+        { "type": "range", "id": "font_size", "label": "Font size (desktop)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
+        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." }
+      ]
+    },
+    {
+      "type": "swatch_information",
+      "name": "Swatch information",
+      "limit": 1,
+      "settings": [
+        { "type": "richtext", "id": "text", "label": "Text", "info": "Shown on products with a HubSpot form that aren't bespoke." },
+        { "type": "range", "id": "font_size", "label": "Font size (desktop)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
+        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." }
+      ]
+    },
 {
       "type": "variant_selector",
       "name": "Variant selector",
