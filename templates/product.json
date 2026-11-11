@@ -14,27 +14,78 @@
       "blocks": {
         "badges_pi0001": {
           "type": "badges",
-          "settings": {}
-        },
-        "title_pi0003": {
-          "type": "title",
           "settings": {
-            "font_size": 38,
-            "font_size_mobile": 0
+            "font_size": 0,
+            "font_size_mobile": 0,
+            "font_family_choice": "theme",
+            "font_weight": "theme",
+            "font_style": "theme",
+            "use_custom_spacing": true,
+            "margin_top": 0,
+            "margin_right": 80,
+            "margin_bottom": 0,
+            "margin_left": 0,
+            "padding_top": 0,
+            "padding_right": 0,
+            "padding_bottom": 0,
+            "padding_left": 0
           }
         },
         "sku_pi0002": {
           "type": "sku",
           "settings": {
             "font_size": 0,
-            "font_size_mobile": 0
+            "font_size_mobile": 0,
+            "font_family_choice": "theme",
+            "font_weight": "theme",
+            "font_style": "theme",
+            "use_custom_spacing": false,
+            "margin_top": 0,
+            "margin_right": 0,
+            "margin_bottom": 0,
+            "margin_left": 0,
+            "padding_top": 0,
+            "padding_right": 0,
+            "padding_bottom": 0,
+            "padding_left": 0
+          }
+        },
+        "title_pi0003": {
+          "type": "title",
+          "settings": {
+            "font_size": 38,
+            "font_size_mobile": 0,
+            "font_family_choice": "heading",
+            "font_weight": "300",
+            "font_style": "theme",
+            "use_custom_spacing": true,
+            "margin_top": 0,
+            "margin_right": 0,
+            "margin_bottom": 0,
+            "margin_left": 0,
+            "padding_top": 0,
+            "padding_right": 0,
+            "padding_bottom": 0,
+            "padding_left": 0
           }
         },
         "custom_text_pi0004": {
           "type": "custom_text",
           "settings": {
             "font_size": 0,
-            "font_size_mobile": 0
+            "font_size_mobile": 0,
+            "font_family_choice": "theme",
+            "font_weight": "theme",
+            "font_style": "theme",
+            "use_custom_spacing": true,
+            "margin_top": 0,
+            "margin_right": 0,
+            "margin_bottom": 0,
+            "margin_left": 0,
+            "padding_top": 0,
+            "padding_right": 0,
+            "padding_bottom": 0,
+            "padding_left": 0
           }
         },
         "price_pi0005": {
@@ -43,14 +94,38 @@
             "show_vat_badge": true,
             "show_free_sample_label": true,
             "font_size": 0,
-            "font_size_mobile": 0
+            "font_size_mobile": 0,
+            "font_family_choice": "theme",
+            "font_weight": "theme",
+            "font_style": "theme",
+            "use_custom_spacing": true,
+            "margin_top": 8,
+            "margin_right": 0,
+            "margin_bottom": 0,
+            "margin_left": 0,
+            "padding_top": 0,
+            "padding_right": 0,
+            "padding_bottom": 0,
+            "padding_left": 0
           }
         },
         "description_pi0006": {
           "type": "description",
           "settings": {
             "font_size": 0,
-            "font_size_mobile": 0
+            "font_size_mobile": 0,
+            "font_family_choice": "theme",
+            "font_weight": "theme",
+            "font_style": "theme",
+            "use_custom_spacing": true,
+            "margin_top": 14,
+            "margin_right": 0,
+            "margin_bottom": 0,
+            "margin_left": 0,
+            "padding_top": 0,
+            "padding_right": 0,
+            "padding_bottom": 20,
+            "padding_left": 0
           }
         },
         "swatch_information_pi0007": {
@@ -58,7 +133,19 @@
           "settings": {
             "text": "<p>Experience the quality and texture of our finishes before you decide. Order a free sample swatch today and find the perfect match for your space with confidence.</p>",
             "font_size": 0,
-            "font_size_mobile": 0
+            "font_size_mobile": 0,
+            "font_family_choice": "theme",
+            "font_weight": "theme",
+            "font_style": "theme",
+            "use_custom_spacing": true,
+            "margin_top": 0,
+            "margin_right": 80,
+            "margin_bottom": 0,
+            "margin_left": 0,
+            "padding_top": 0,
+            "padding_right": 0,
+            "padding_bottom": 0,
+            "padding_left": 0
           }
         },
         "variant_selector_fzAgh3": {
@@ -721,8 +808,8 @@
       },
       "block_order": [
         "badges_pi0001",
-        "title_pi0003",
         "sku_pi0002",
+        "title_pi0003",
         "custom_text_pi0004",
         "price_pi0005",
         "description_pi0006",
@@ -759,9 +846,9 @@
         "autoplay_speed": 5,
         "arrows": true,
         "enlarge": true,
-        "show_design_services": false,
-        "design_services_text": "Interior design services",
-        "design_services_url": "",
+        "show_design_services": true,
+        "design_services_text": "enquiring as part of a larger project?",
+        "design_services_url": "shopify://pages/about-us",
         "sustainability_content": "",
         "warranty_content": "",
         "shipping_returns_content": "",
