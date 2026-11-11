@@ -159,7 +159,7 @@
           "type": "video",
           "settings": {
             "video": "shopify://files/videos/Furncare_Warton Point Video.mp4",
-            "show_controls": false
+            "show_controls": true
           }
         },
         "content_fKdp36": {
