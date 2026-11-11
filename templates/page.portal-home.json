@@ -100,8 +100,6 @@
           "settings": {
             "title": "My Schemes",
             "card_eyebrow": "Scheme",
-            "columns_desktop": 4,
-            "columns_mobile": 2,
             "collections": [
               "challenging-environments-in-stock-beds-mattresses",
               "challenging-environments-bedroom-sets",
@@ -121,14 +119,12 @@
             "card_height": 350
           }
         },
-        "products_DPqDp6": {
+        "products_ebH7qW": {
           "type": "products",
           "settings": {
             "title": "All Products",
-            "columns_desktop": 4,
-            "columns_mobile": 2,
             "collection": "",
-            "product_limit": 24
+            "product_limit": 50
           }
         },
         "contact_nbMeGr": {
@@ -150,7 +146,7 @@
       },
       "block_order": [
         "catalogs_VgQLc8",
-        "products_DPqDp6",
+        "products_ebH7qW",
         "contact_nbMeGr",
         "link_p8mLnL"
       ],
