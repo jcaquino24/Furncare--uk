@@ -160,9 +160,10 @@
 
       request.then(function (html) {
         body.innerHTML = html;
-      }).catch(function () {
+      }).catch(function (error) {
         delete catalogCache[url];
-        window.location.href = url;
+        body.textContent = '';
+        console.error('Portal catalog load failed:', error);
       });
     }
 
