@@ -64,7 +64,7 @@
               <div data-portal-catalog-list>
                 <ul
                   class="portal-tabs__scheme-list"
-                  style="--scheme-card-gap: {{ block.settings.card_gap }}px; --scheme-card-height: {% if block.settings.card_height > 0 %}{{ block.settings.card_height }}px{% else %}auto{% endif %}; --scheme-card-padding: {{ block.settings.card_padding }}px; --scheme-card-border-width: {{ block.settings.card_border_width }}px; --scheme-card-border-color: {{ block.settings.card_border_color }}; --scheme-card-radius: {{ block.settings.card_border_radius }}px; --scheme-title-font: {{ scheme_title_font }}; --scheme-title-size: {{ block.settings.title_font_size }}px; --scheme-title-weight: {{ block.settings.title_font_weight }}; --scheme-title-style: {{ block.settings.title_font_style }}; --scheme-eyebrow-size: {{ block.settings.eyebrow_font_size }}px"
+                  style="--scheme-columns-desktop: {{ block.settings.columns_desktop }}; --scheme-columns-mobile: {{ block.settings.columns_mobile }}; --scheme-card-gap: {{ block.settings.card_gap }}px; --scheme-card-height: {% if block.settings.card_height > 0 %}{{ block.settings.card_height }}px{% else %}auto{% endif %}; --scheme-card-padding: {{ block.settings.card_padding }}px; --scheme-card-border-width: {{ block.settings.card_border_width }}px; --scheme-card-border-color: {{ block.settings.card_border_color }}; --scheme-card-radius: {{ block.settings.card_border_radius }}px; --scheme-title-font: {{ scheme_title_font }}; --scheme-title-size: {{ block.settings.title_font_size }}px; --scheme-title-weight: {{ block.settings.title_font_weight }}; --scheme-title-style: {{ block.settings.title_font_style }}; --scheme-eyebrow-size: {{ block.settings.eyebrow_font_size }}px"
                 >
                   {%- for collection in block.settings.collections -%}
                     <li>
@@ -97,7 +97,7 @@
           {%- when 'products' -%}
             {%- assign panel_collection = block.settings.collection | default: collections.all -%}
             {%- if panel_collection.products.size > 0 -%}
-              <div class="portal-tabs__products">
+              <div class="portal-tabs__products" style="--products-columns-desktop: {{ block.settings.columns_desktop }}; --products-columns-mobile: {{ block.settings.columns_mobile }}">
                 {%- for product in panel_collection.products limit: block.settings.product_limit -%}
                   {% render 'product-card', product: product, loading: 'lazy' %}
                 {%- endfor -%}
@@ -287,7 +287,7 @@
   }
   .portal-tabs__scheme-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    grid-template-columns: repeat(var(--scheme-columns-desktop, 4), minmax(0, 1fr));
     gap: var(--scheme-card-gap, 24px);
     margin: 0;
     padding: 0;
@@ -354,7 +354,7 @@
   }
   .portal-tabs__products {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(var(--products-columns-desktop, 4), minmax(0, 1fr));
     gap: var(--spacing-lg, 1.5rem);
   }
   .portal-tabs__contact {
@@ -365,6 +365,12 @@
     max-width: 720px;
   }
   @media (width < 768px) {
+    .portal-tabs__scheme-list {
+      grid-template-columns: repeat(var(--scheme-columns-mobile, 2), minmax(0, 1fr));
+    }
+    .portal-tabs__products {
+      grid-template-columns: repeat(var(--products-columns-mobile, 2), minmax(0, 1fr));
+    }
     .portal-tabs__list {
       grid-template-columns: repeat(2, 1fr);
       gap: var(--spacing-sm, 1rem);
@@ -400,6 +406,8 @@
       "settings": [
         { "type": "text", "id": "title", "label": "Tab title", "default": "My Schemes" },
         { "type": "text", "id": "card_eyebrow", "label": "Card eyebrow", "default": "Scheme" },
+        { "type": "range", "id": "columns_desktop", "label": "Cards per row (desktop)", "min": 1, "max": 6, "step": 1, "default": 4 },
+        { "type": "range", "id": "columns_mobile", "label": "Cards per row (mobile)", "min": 1, "max": 2, "step": 1, "default": 2 },
         {
           "type": "collection_list",
           "id": "collections",
@@ -435,6 +443,8 @@
       "name": "Tab: Products",
       "settings": [
         { "type": "text", "id": "title", "label": "Tab title", "default": "All Products" },
+        { "type": "range", "id": "columns_desktop", "label": "Products per row (desktop)", "min": 1, "max": 6, "step": 1, "default": 4 },
+        { "type": "range", "id": "columns_mobile", "label": "Products per row (mobile)", "min": 1, "max": 2, "step": 1, "default": 2 },
         {
           "type": "collection",
           "id": "collection",
