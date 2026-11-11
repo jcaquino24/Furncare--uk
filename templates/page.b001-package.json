@@ -141,7 +141,7 @@
           "type": "hotspot",
           "settings": {
             "tab": "1",
-            "product": "elm-tub-chair",
+            "product": "elm-tub-chair-ryde-flint",
             "description": "",
             "desktop_x": 63,
             "desktop_y": 56,
@@ -205,7 +205,7 @@
             "handle": "new-arrivals",
             "product_feed_source": "product_list",
             "products": [
-              "elm-tub-chair",
+              "elm-tub-chair-ryde-flint",
               "single-everly-bed-base",
               "luna-table-lamp",
               "jansson-side-chair-fabric-nevis-putty",
