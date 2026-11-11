@@ -107,13 +107,15 @@
             ],
             "title_font_family": "heading",
             "title_font_size": 18,
+            "eyebrow_font_size": 12,
             "title_font_weight": "500",
             "title_font_style": "normal",
             "card_padding": 24,
             "card_border_width": 1,
             "card_border_color": "#d0d0d0",
             "card_border_radius": 8,
-            "card_gap": 24
+            "card_gap": 24,
+            "card_height": 350
           }
         },
         "products_DPqDp6": {
