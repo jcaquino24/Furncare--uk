@@ -44,7 +44,7 @@
   or has_care_instructions
 %}
   <div class="product-accordions">
-    {% comment %} 1. Description {% endcomment %}
+    {% comment %} 1. Description 
     {% if has_description %}
       {% assign title = 'product.accordions.description' | t %}
       {% render 'accordion',
@@ -52,7 +52,7 @@
         content: product.description,
         open: true
       %}
-    {% endif %}
+    {% endif %}{% endcomment %}
 
     {% comment %} 2. Dimensions {% endcomment %}
     {% if has_dimensions %}
