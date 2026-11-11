@@ -90,7 +90,7 @@
             "hover_image": "shopify://shop_images/Arnie_Goodenough.png",
             "title": "Arnie Goodenough",
             "subtitle": "KEY ACCOUNT MANAGER",
-            "text": "",
+            "text": "<p>Contact Arnie: arnie.goodenough@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -103,7 +103,7 @@
             "hover_image": "shopify://shop_images/Beatrice_Turner.jpg",
             "title": "Beatrice Turner",
             "subtitle": "Logistics Assistant",
-            "text": "",
+            "text": "<p>Contact Beatrice: beatrice.turner@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -116,7 +116,7 @@
             "hover_image": "shopify://shop_images/Ben_Southall.png",
             "title": "Ben Southall",
             "subtitle": "FINANCE DIRECTOR",
-            "text": "",
+            "text": "<p>Contact Ben: ben.southall@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -150,7 +150,7 @@
             "hover_image": "shopify://shop_images/Candace_Turner.jpg",
             "title": "Candace Turner",
             "subtitle": "Content & Digital Marketing Executive",
-            "text": "",
+            "text": "<p>Contact Candace: candace.turner@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -163,7 +163,7 @@
             "hover_image": "shopify://shop_images/Carl_Southall.png",
             "title": "Carl Southall",
             "subtitle": "Managing Director",
-            "text": "",
+            "text": "<p>Contact Carl: carl.southall@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -174,7 +174,7 @@
           "settings": {
             "title": "Carson Hynd",
             "subtitle": "",
-            "text": "",
+            "text": "<p>Contact Carson: carson.hynd@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -187,7 +187,7 @@
             "hover_image": "shopify://shop_images/Clifford-Aquino_forweb.jpg",
             "title": "Clifford Aquino",
             "subtitle": "E-Commerce Specialist",
-            "text": "",
+            "text": "<p>Contact Clifford: clifford.aquino@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -220,7 +220,7 @@
             "hover_image": "shopify://shop_images/Damian_Temple.png",
             "title": "Damian Temple",
             "subtitle": "Business Development Manager",
-            "text": "",
+            "text": "<p>Contact Damian: damian.temple@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -233,7 +233,7 @@
             "hover_image": "shopify://shop_images/Debbie_Park.png",
             "title": "Debbie Park",
             "subtitle": "Finance Assistant",
-            "text": "",
+            "text": "<p>Contact Debbie: debbie.park@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -246,7 +246,7 @@
             "hover_image": "shopify://shop_images/Declan_Turner.png",
             "title": "Declan Turner",
             "subtitle": "Head of Client Relations",
-            "text": "",
+            "text": "<p>Contact Declan: declam.turner@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -259,7 +259,7 @@
             "hover_image": "shopify://shop_images/ChatGPT_Image_Aug_17_2026_07_56_02_AM_708e689c-4495-4373-95aa-44b19cdccb2e.png",
             "title": "Ella Pasion",
             "subtitle": "Client Support Executive",
-            "text": "",
+            "text": "<p>Contact Ella: jhuniela.pasion@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -293,7 +293,7 @@
             "hover_image": "shopify://shop_images/Emily_Kilkenny.png",
             "title": "Emily Kilkenny",
             "subtitle": "Sales Support Executive",
-            "text": "",
+            "text": "<p>Contact Emily: emily.kilkenny@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -306,7 +306,7 @@
             "hover_image": "shopify://shop_images/Ernie_Francis.png",
             "title": "Ernie Francis",
             "subtitle": "CLIENT RELATIONS MANAGER",
-            "text": "",
+            "text": "<p>Contact Ernie: ernie.francis@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -319,7 +319,7 @@
             "hover_image": "shopify://shop_images/Giedrius_Kukuris.png",
             "title": "Giedrius Kukuris",
             "subtitle": "Assistant Warehouse Manager",
-            "text": "",
+            "text": "<p>Contact Giedrius: giedrius.kukuris@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -332,7 +332,7 @@
             "hover_image": "shopify://shop_images/P1049918_28dd821b-d999-409b-a572-8a1350a5c5a0.jpg",
             "title": "Jade Eaglen",
             "subtitle": "Specification & FIt-Out Manager",
-            "text": "",
+            "text": "<p>Contact Jade: jade.eaglen@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -365,7 +365,7 @@
             "hover_image": "shopify://shop_images/Jo.png",
             "title": "Jo Hazelle Tadlas",
             "subtitle": "System Developer",
-            "text": "",
+            "text": "<p>Contact Jo: jo-hazelle.tadlas@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -378,7 +378,7 @@
             "hover_image": "shopify://shop_images/Jonathan_Southall.png",
             "title": "Jonathan Southall",
             "subtitle": "FOUNDING DIRECTOR",
-            "text": "",
+            "text": "<p>Contact Jonathan: jonathan.southall@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -391,7 +391,7 @@
             "hover_image": "shopify://shop_images/Laura_Bajor.png",
             "title": "Laura Bajor",
             "subtitle": "Purchasing Coordinator",
-            "text": "",
+            "text": "<p>Contact Laura: laura.bajor@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -404,7 +404,7 @@
             "hover_image": "shopify://shop_images/Lilly_Godfrey.png",
             "title": "Lilly Godfrey",
             "subtitle": "Logistics Coordinator",
-            "text": "",
+            "text": "<p>Contact Lilly: lilly.godfrey@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -437,7 +437,7 @@
             "hover_image": "shopify://shop_images/Lloyd_Bradley.png",
             "title": "Lloyd Bradley",
             "subtitle": "Production Supervisor",
-            "text": "",
+            "text": "<p>Contact Lloyd: lloyd.bradley@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -450,7 +450,7 @@
             "hover_image": "shopify://shop_images/Lola_Devine.png",
             "title": "Lola Devine",
             "subtitle": "Sales Support Executive",
-            "text": "",
+            "text": "<p>Contact Lola: lola.devine@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -463,7 +463,7 @@
             "hover_image": "shopify://shop_images/Mark_Flood.png",
             "title": "Mark Flood",
             "subtitle": "Project Manager",
-            "text": "",
+            "text": "<p>Contact Mark: mark.flood@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -476,7 +476,7 @@
             "hover_image": "shopify://shop_images/Michelle_Lawrence.jpg",
             "title": "Michelle Lawrence",
             "subtitle": "Category Buyer",
-            "text": "",
+            "text": "<p>Contact Michelle: michelle.lawrence@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -509,7 +509,7 @@
             "hover_image": "shopify://shop_images/Molly_Tinker.png",
             "title": "Molly Tinker",
             "subtitle": "Brand & Marketing Projects Coordinator",
-            "text": "",
+            "text": "<p>Contact Molly: molly.tinker@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -522,7 +522,7 @@
             "hover_image": "shopify://shop_images/Nick_Southall.jpg",
             "title": "Nick Southall",
             "subtitle": "Senior Buyer",
-            "text": "",
+            "text": "<p>Contact Nick: nick.southall@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -535,7 +535,7 @@
             "hover_image": "shopify://shop_images/Paige_McLellan_11787850-ffe9-4105-aff8-f9a41a78755b.jpg",
             "title": "Paige McLellan",
             "subtitle": "PRODUCT DESIGN & DEVELOPMENT LEAD",
-            "text": "",
+            "text": "<p>Contact Paige: paige.mclellan@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -548,7 +548,7 @@
             "hover_image": "shopify://shop_images/Paul_Sims.png",
             "title": "Paul Sims",
             "subtitle": "Warehouse & Production Manager",
-            "text": "",
+            "text": "<p>Contact Paul: paul.sims@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -592,7 +592,7 @@
             "hover_image": "shopify://shop_images/Randal_Southall.png",
             "title": "Randal Southall",
             "subtitle": "SALES & MARKETING DIRECTOR",
-            "text": "",
+            "text": "<p>Contact Randal: randal.southall@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -605,7 +605,7 @@
             "hover_image": "shopify://shop_images/Sarah_Hart.png",
             "title": "Sarah Hart",
             "subtitle": "MANAGEMENT ACCOUNTANT",
-            "text": "",
+            "text": "<p>Contact Sarah: sarah.hart@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
@@ -618,7 +618,7 @@
             "hover_image": "shopify://shop_images/Sheldon_Southall.png",
             "title": "Sheldon Southall",
             "subtitle": "HEAD OF BUSINESS DEVELOPMENT",
-            "text": "",
+            "text": "<p>Contact Sheldon: sheldon.southall@furncare.co.uk</p>",
             "block_colour_scheme": "dark-mode",
             "show_gradient": false,
             "lightbox_caption": ""
