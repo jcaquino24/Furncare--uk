@@ -83,19 +83,6 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_qbbyRb": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/P1050008_1_e5d81b3d-4a26-4ffd-b598-165e57fbdbb7.jpg",
-            "hover_image": "shopify://shop_images/P1050008-2_66119ee8-0246-47de-bd61-1ae7c702a906.jpg",
-            "title": "Anna Poczapinska",
-            "subtitle": "SALES SUPPORT EXECUTIVE",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_zg4VqD": {
           "type": "image_card",
           "settings": {
@@ -121,13 +108,26 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
+        },
+        "image_card_a6JPa7": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Ben_Southall_1a9d261d-04af-44c9-9992-d3c6ba3adcda.jpg",
+            "hover_image": "shopify://shop_images/Ben_Southall.png",
+            "title": "Ben Southall",
+            "subtitle": "FINANCE DIRECTOR",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
         "image_card_hnLrPL",
-        "image_card_qbbyRb",
         "image_card_zg4VqD",
-        "image_card_NetWXa"
+        "image_card_NetWXa",
+        "image_card_a6JPa7"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -142,19 +142,6 @@
     "image_text_blocks_8w6bAc": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_4jLb9h": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Ben_Southall_1a9d261d-04af-44c9-9992-d3c6ba3adcda.jpg",
-            "hover_image": "shopify://shop_images/Ben_Southall.png",
-            "title": "Ben Southall",
-            "subtitle": "FINANCE DIRECTOR",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_rb9WiY": {
           "type": "image_card",
           "settings": {
@@ -182,6 +169,17 @@
             "lightbox_caption": ""
           }
         },
+        "image_card_Ca33EY": {
+          "type": "image_card",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
+        },
         "image_card_CBJGJw": {
           "type": "image_card",
           "settings": {
@@ -197,9 +195,9 @@
         }
       },
       "block_order": [
-        "image_card_4jLb9h",
         "image_card_rb9WiY",
         "image_card_BkPkaF",
+        "image_card_Ca33EY",
         "image_card_CBJGJw"
       ],
       "name": "Image text blocks",
@@ -215,7 +213,7 @@
     "image_text_blocks_kTRnwi": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_VGKDDc": {
+        "image_card_TJ7z4D": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Damian_Temple_B_W.png",
@@ -269,7 +267,7 @@
         }
       },
       "block_order": [
-        "image_card_VGKDDc",
+        "image_card_TJ7z4D",
         "image_card_cnKgXx",
         "image_card_GFzrYz",
         "image_card_gzfknB"
@@ -287,7 +285,7 @@
     "image_text_blocks_8ERLYk": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_BzzWbt": {
+        "image_card_JWiwed": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Emily-Kilkenny_B_W-for-web.jpg",
@@ -342,7 +340,7 @@
         }
       },
       "block_order": [
-        "image_card_BzzWbt",
+        "image_card_JWiwed",
         "image_card_cNfiPK",
         "image_card_KpQgPx",
         "image_card_y49iGr"
@@ -360,7 +358,7 @@
     "image_text_blocks_bNU4RW": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_wT46fW": {
+        "image_card_TUGg3M": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Untitled_-_August_14_2026_at_15.12.56.png",
@@ -414,7 +412,7 @@
         }
       },
       "block_order": [
-        "image_card_wT46fW",
+        "image_card_TUGg3M",
         "image_card_jWhD7C",
         "image_card_wKdEEm",
         "image_card_dKU8LC"
@@ -432,7 +430,7 @@
     "image_text_blocks_ALbkEp": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_kxixx4": {
+        "image_card_Hz7TMH": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Lloyd-Bradley-B_W_for-web.jpg",
@@ -458,19 +456,6 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_EKj48B": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Marcella_Turner.jpg",
-            "hover_image": "shopify://shop_images/Marcella_Turner.png",
-            "title": "Marcella Turner",
-            "subtitle": "Executive Assistant",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_MDykGK": {
           "type": "image_card",
           "settings": {
@@ -483,13 +468,26 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
+        },
+        "image_card_7N3hTh": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Michelle_Lawrence-B_W.jpg",
+            "hover_image": "shopify://shop_images/Michelle_Lawrence.jpg",
+            "title": "Michelle Lawrence",
+            "subtitle": "Category Buyer",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
-        "image_card_kxixx4",
+        "image_card_Hz7TMH",
         "image_card_Y8N4Gy",
-        "image_card_EKj48B",
-        "image_card_MDykGK"
+        "image_card_MDykGK",
+        "image_card_7N3hTh"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -504,20 +502,7 @@
     "image_text_blocks_YWfmBd": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_w7T9ic": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Michelle_Lawrence-B_W.jpg",
-            "hover_image": "shopify://shop_images/Michelle_Lawrence.jpg",
-            "title": "Michelle Lawrence",
-            "subtitle": "Category Buyer",
-            "text": "",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
-        "image_card_xrVCtH": {
+        "image_card_dTg4xn": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Molly_Tinker.jpg",
@@ -555,13 +540,26 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
+        },
+        "image_card_J66CFh": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Paul_Sims.jpg",
+            "hover_image": "shopify://shop_images/Paul_Sims.png",
+            "title": "Paul Sims",
+            "subtitle": "Warehouse & Production Manager",
+            "text": "",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
-        "image_card_w7T9ic",
-        "image_card_xrVCtH",
+        "image_card_dTg4xn",
         "image_card_jeKqnp",
-        "image_card_XPpGWU"
+        "image_card_XPpGWU",
+        "image_card_J66CFh"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -576,20 +574,18 @@
     "image_text_blocks_Kj4trr": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_VVybKB": {
+        "image_card_6gXMEW": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Paul_Sims.jpg",
-            "hover_image": "shopify://shop_images/Paul_Sims.png",
-            "title": "Paul Sims",
-            "subtitle": "Warehouse & Production Manager",
+            "title": "",
+            "subtitle": "",
             "text": "",
-            "block_colour_scheme": "dark-mode",
+            "block_colour_scheme": "light-mode",
             "show_gradient": false,
             "lightbox_caption": ""
           }
         },
-        "image_card_cgHqBM": {
+        "image_card_hkaGwY": {
           "type": "image_card",
           "settings": {
             "image": "shopify://shop_images/Randal_Southall.jpg",
@@ -630,8 +626,8 @@
         }
       },
       "block_order": [
-        "image_card_VVybKB",
-        "image_card_cgHqBM",
+        "image_card_6gXMEW",
+        "image_card_hkaGwY",
         "image_card_Ccgrzd",
         "image_card_YnLEtY"
       ],
