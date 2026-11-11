@@ -147,14 +147,13 @@
       body.textContent = 'Loading...';
       results.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-      var request = catalogCache[url] || (catalogCache[url] = fetch(url.split('?')[0] + '?sections=portal-collection-products', { credentials: 'same-origin' })
+      var request = catalogCache[url] || (catalogCache[url] = fetch(url.split('?')[0] + '?view=portal-products', { credentials: 'same-origin' })
         .then(function (response) {
-          if (!response.ok) throw new Error('Request failed');
-          return response.json();
+          if (!response.ok) throw new Error('Request failed: ' + response.status);
+          return response.text();
         })
-        .then(function (data) {
-          var html = data['portal-collection-products'];
-          if (!html) throw new Error('Empty response');
+        .then(function (html) {
+          if (html.indexOf('portal-tabs__results') === -1) throw new Error('Unexpected response (portal-products template not found)');
           return html;
         }));
 

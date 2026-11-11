@@ -1,6 +1,4 @@
-{%- comment -%}
-  Rendered on demand via the Section Rendering API (?sections=portal-collection-products) from the portal tabs section.
-{%- endcomment -%}
+{%- layout none -%}
 <div class="portal-tabs__results">
   <h2 class="portal-tabs__results-title">{{ collection.title }}</h2>
 
@@ -14,9 +12,3 @@
     <p>No products available.</p>
   {%- endif -%}
 </div>
-
-{% schema %}
-{
-  "name": "Portal collection products"
-}
-{% endschema %}
