@@ -6,8 +6,8 @@
   {%- assign portal_allowed = true -%}
 {%- else -%}
   {%- for portal_company_name in portal_company_names -%}
-    {%- assign portal_company_name = portal_company_name | downcase | strip -%}
-    {%- if current_company_name != blank and current_company_name == portal_company_name -%}
+    {%- assign normalized_company_name = portal_company_name | downcase | strip -%}
+    {%- if current_company_name != blank and current_company_name == normalized_company_name -%}
       {%- assign portal_allowed = true -%}
       {%- break -%}
     {%- endif -%}
