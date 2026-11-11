@@ -1,12 +1,23 @@
-{%- comment -%}
-  Scoped font-size override for a product info block. 0 means use the theme default.
-  Params: block, section_id, children (optional comma-separated descendant selectors that should resize too)
-{%- endcomment -%}
 {%- liquid
   assign desktop_size = block.settings.font_size | default: 0
   assign mobile_size = block.settings.font_size_mobile | default: 0
   assign base_selector = '#shopify-section-' | append: section_id | append: ' .product-info__block-' | append: block.id
   assign selectors = base_selector
+  assign custom_font = block.settings.use_custom_font
+  assign font_family = block.settings.font_family
+  assign font_weight = block.settings.font_weight | default: 'theme'
+  assign font_style = block.settings.font_style | default: 'theme'
+  assign custom_spacing = block.settings.use_custom_spacing
+  assign has_styles = false
+  if desktop_size > 0 or mobile_size > 0 or custom_font or custom_spacing
+    assign has_styles = true
+  endif
+  if custom_font and font_family != blank and font_weight != 'theme'
+    assign font_family = font_family | font_modify: 'weight', font_weight
+  endif
+  if custom_font and font_family != blank and font_style != 'theme'
+    assign font_family = font_family | font_modify: 'style', font_style
+  endif
   if children != blank
     assign child_list = children | split: ','
     for child in child_list
@@ -14,14 +25,34 @@
     endfor
   endif
 -%}
-{%- if desktop_size > 0 or mobile_size > 0 -%}
+{%- if has_styles -%}
   {% style %}
+    {% if custom_font and font_family != blank %}
+      {{ font_family | font_face: font_display: 'swap' }}
+      {{ selectors }} {
+        font-family: {{ font_family.family }}, {{ font_family.fallback_families }};
+        {% if font_weight != 'theme' %}font-weight: {{ font_weight }};{% endif %}
+        {% if font_style != 'theme' %}font-style: {{ font_style }};{% endif %}
+      }
+    {% endif %}
     {% if mobile_size > 0 %}
       {{ selectors }} { font-size: {{ mobile_size }}px; }
     {% endif %}
     {% if desktop_size > 0 %}
       @media (width >= 768px) {
         {{ selectors }} { font-size: {{ desktop_size }}px; }
+      }
+    {% endif %}
+    {% if custom_spacing %}
+      {{ base_selector }} {
+        margin-top: {{ block.settings.margin_top }}px;
+        margin-right: {{ block.settings.margin_right }}px;
+        margin-bottom: {{ block.settings.margin_bottom }}px;
+        margin-left: {{ block.settings.margin_left }}px;
+        padding-top: {{ block.settings.padding_top }}px;
+        padding-right: {{ block.settings.padding_right }}px;
+        padding-bottom: {{ block.settings.padding_bottom }}px;
+        padding-left: {{ block.settings.padding_left }}px;
       }
     {% endif %}
   {% endstyle %}
