@@ -53,7 +53,7 @@
         "title_pi0003": {
           "type": "title",
           "settings": {
-            "font_size": 32,
+            "font_size": 40,
             "font_size_mobile": 0,
             "font_family_choice": "theme",
             "font_weight": "300",
