@@ -557,7 +557,25 @@
       "type": "badges",
       "name": "Badges",
       "limit": 1,
-      "settings": []
+      "settings": [
+        { "type": "range", "id": "font_size", "label": "Font size (desktop)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
+        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
+        { "type": "header", "content": "Typography" },
+        { "type": "checkbox", "id": "use_custom_font", "label": "Use custom font", "default": false },
+        { "type": "font_picker", "id": "font_family", "label": "Font family", "default": "red_hat_display_n4" },
+        { "type": "select", "id": "font_weight", "label": "Font weight", "default": "theme", "options": [ { "value": "theme", "label": "Theme default" }, { "value": "300", "label": "Light" }, { "value": "400", "label": "Regular" }, { "value": "500", "label": "Medium" }, { "value": "600", "label": "Semi-bold" }, { "value": "700", "label": "Bold" }, { "value": "800", "label": "Extra-bold" } ] },
+        { "type": "select", "id": "font_style", "label": "Font style", "default": "theme", "options": [ { "value": "theme", "label": "Theme default" }, { "value": "normal", "label": "Normal" }, { "value": "italic", "label": "Italic" } ] },
+        { "type": "header", "content": "Spacing" },
+        { "type": "checkbox", "id": "use_custom_spacing", "label": "Set custom margin and padding", "default": false },
+        { "type": "range", "id": "margin_top", "label": "Margin top", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_right", "label": "Margin right", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_bottom", "label": "Margin bottom", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_left", "label": "Margin left", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_right", "label": "Padding right", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_left", "label": "Padding left", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 }
+      ]
     },
     {
       "type": "sku",
@@ -565,7 +583,22 @@
       "limit": 1,
       "settings": [
         { "type": "range", "id": "font_size", "label": "Font size (desktop)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
-        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." }
+        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
+        { "type": "header", "content": "Typography" },
+        { "type": "checkbox", "id": "use_custom_font", "label": "Use custom font", "default": false },
+        { "type": "font_picker", "id": "font_family", "label": "Font family", "default": "red_hat_display_n4" },
+        { "type": "select", "id": "font_weight", "label": "Font weight", "default": "theme", "options": [ { "value": "theme", "label": "Theme default" }, { "value": "300", "label": "Light" }, { "value": "400", "label": "Regular" }, { "value": "500", "label": "Medium" }, { "value": "600", "label": "Semi-bold" }, { "value": "700", "label": "Bold" }, { "value": "800", "label": "Extra-bold" } ] },
+        { "type": "select", "id": "font_style", "label": "Font style", "default": "theme", "options": [ { "value": "theme", "label": "Theme default" }, { "value": "normal", "label": "Normal" }, { "value": "italic", "label": "Italic" } ] },
+        { "type": "header", "content": "Spacing" },
+        { "type": "checkbox", "id": "use_custom_spacing", "label": "Set custom margin and padding", "default": false },
+        { "type": "range", "id": "margin_top", "label": "Margin top", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_right", "label": "Margin right", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_bottom", "label": "Margin bottom", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_left", "label": "Margin left", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_right", "label": "Padding right", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_left", "label": "Padding left", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 }
       ]
     },
     {
@@ -574,7 +607,22 @@
       "limit": 1,
       "settings": [
         { "type": "range", "id": "font_size", "label": "Font size (desktop)", "min": 0, "max": 72, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
-        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 56, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." }
+        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 56, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
+        { "type": "header", "content": "Typography" },
+        { "type": "checkbox", "id": "use_custom_font", "label": "Use custom font", "default": false },
+        { "type": "font_picker", "id": "font_family", "label": "Font family", "default": "red_hat_display_n4" },
+        { "type": "select", "id": "font_weight", "label": "Font weight", "default": "theme", "options": [ { "value": "theme", "label": "Theme default" }, { "value": "300", "label": "Light" }, { "value": "400", "label": "Regular" }, { "value": "500", "label": "Medium" }, { "value": "600", "label": "Semi-bold" }, { "value": "700", "label": "Bold" }, { "value": "800", "label": "Extra-bold" } ] },
+        { "type": "select", "id": "font_style", "label": "Font style", "default": "theme", "options": [ { "value": "theme", "label": "Theme default" }, { "value": "normal", "label": "Normal" }, { "value": "italic", "label": "Italic" } ] },
+        { "type": "header", "content": "Spacing" },
+        { "type": "checkbox", "id": "use_custom_spacing", "label": "Set custom margin and padding", "default": false },
+        { "type": "range", "id": "margin_top", "label": "Margin top", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_right", "label": "Margin right", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_bottom", "label": "Margin bottom", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_left", "label": "Margin left", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_right", "label": "Padding right", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_left", "label": "Padding left", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 }
       ]
     },
     {
@@ -583,7 +631,22 @@
       "limit": 1,
       "settings": [
         { "type": "range", "id": "font_size", "label": "Font size (desktop)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
-        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." }
+        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
+        { "type": "header", "content": "Typography" },
+        { "type": "checkbox", "id": "use_custom_font", "label": "Use custom font", "default": false },
+        { "type": "font_picker", "id": "font_family", "label": "Font family", "default": "red_hat_display_n4" },
+        { "type": "select", "id": "font_weight", "label": "Font weight", "default": "theme", "options": [ { "value": "theme", "label": "Theme default" }, { "value": "300", "label": "Light" }, { "value": "400", "label": "Regular" }, { "value": "500", "label": "Medium" }, { "value": "600", "label": "Semi-bold" }, { "value": "700", "label": "Bold" }, { "value": "800", "label": "Extra-bold" } ] },
+        { "type": "select", "id": "font_style", "label": "Font style", "default": "theme", "options": [ { "value": "theme", "label": "Theme default" }, { "value": "normal", "label": "Normal" }, { "value": "italic", "label": "Italic" } ] },
+        { "type": "header", "content": "Spacing" },
+        { "type": "checkbox", "id": "use_custom_spacing", "label": "Set custom margin and padding", "default": false },
+        { "type": "range", "id": "margin_top", "label": "Margin top", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_right", "label": "Margin right", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_bottom", "label": "Margin bottom", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_left", "label": "Margin left", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_right", "label": "Padding right", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_left", "label": "Padding left", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 }
       ]
     },
     {
@@ -594,7 +657,22 @@
         { "type": "checkbox", "id": "show_vat_badge", "label": "Show VAT badge", "default": true, "info": "Display the 'Including VAT' badge next to the price" },
         { "type": "checkbox", "id": "show_free_sample_label", "label": "Show free sample label", "default": true, "info": "Display the free sample label when the product price is 0" },
         { "type": "range", "id": "font_size", "label": "Font size (desktop)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
-        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." }
+        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
+        { "type": "header", "content": "Typography" },
+        { "type": "checkbox", "id": "use_custom_font", "label": "Use custom font", "default": false },
+        { "type": "font_picker", "id": "font_family", "label": "Font family", "default": "red_hat_display_n4" },
+        { "type": "select", "id": "font_weight", "label": "Font weight", "default": "theme", "options": [ { "value": "theme", "label": "Theme default" }, { "value": "300", "label": "Light" }, { "value": "400", "label": "Regular" }, { "value": "500", "label": "Medium" }, { "value": "600", "label": "Semi-bold" }, { "value": "700", "label": "Bold" }, { "value": "800", "label": "Extra-bold" } ] },
+        { "type": "select", "id": "font_style", "label": "Font style", "default": "theme", "options": [ { "value": "theme", "label": "Theme default" }, { "value": "normal", "label": "Normal" }, { "value": "italic", "label": "Italic" } ] },
+        { "type": "header", "content": "Spacing" },
+        { "type": "checkbox", "id": "use_custom_spacing", "label": "Set custom margin and padding", "default": false },
+        { "type": "range", "id": "margin_top", "label": "Margin top", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_right", "label": "Margin right", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_bottom", "label": "Margin bottom", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_left", "label": "Margin left", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_right", "label": "Padding right", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_left", "label": "Padding left", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 }
       ]
     },
     {
@@ -603,7 +681,22 @@
       "limit": 1,
       "settings": [
         { "type": "range", "id": "font_size", "label": "Font size (desktop)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
-        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." }
+        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
+        { "type": "header", "content": "Typography" },
+        { "type": "checkbox", "id": "use_custom_font", "label": "Use custom font", "default": false },
+        { "type": "font_picker", "id": "font_family", "label": "Font family", "default": "red_hat_display_n4" },
+        { "type": "select", "id": "font_weight", "label": "Font weight", "default": "theme", "options": [ { "value": "theme", "label": "Theme default" }, { "value": "300", "label": "Light" }, { "value": "400", "label": "Regular" }, { "value": "500", "label": "Medium" }, { "value": "600", "label": "Semi-bold" }, { "value": "700", "label": "Bold" }, { "value": "800", "label": "Extra-bold" } ] },
+        { "type": "select", "id": "font_style", "label": "Font style", "default": "theme", "options": [ { "value": "theme", "label": "Theme default" }, { "value": "normal", "label": "Normal" }, { "value": "italic", "label": "Italic" } ] },
+        { "type": "header", "content": "Spacing" },
+        { "type": "checkbox", "id": "use_custom_spacing", "label": "Set custom margin and padding", "default": false },
+        { "type": "range", "id": "margin_top", "label": "Margin top", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_right", "label": "Margin right", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_bottom", "label": "Margin bottom", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_left", "label": "Margin left", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_right", "label": "Padding right", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_left", "label": "Padding left", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 }
       ]
     },
     {
@@ -613,7 +706,22 @@
       "settings": [
         { "type": "richtext", "id": "text", "label": "Text", "info": "Shown on products with a HubSpot form that aren't bespoke." },
         { "type": "range", "id": "font_size", "label": "Font size (desktop)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
-        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." }
+        { "type": "range", "id": "font_size_mobile", "label": "Font size (mobile)", "min": 0, "max": 48, "step": 1, "unit": "px", "default": 0, "info": "0 uses the theme default." },
+        { "type": "header", "content": "Typography" },
+        { "type": "checkbox", "id": "use_custom_font", "label": "Use custom font", "default": false },
+        { "type": "font_picker", "id": "font_family", "label": "Font family", "default": "red_hat_display_n4" },
+        { "type": "select", "id": "font_weight", "label": "Font weight", "default": "theme", "options": [ { "value": "theme", "label": "Theme default" }, { "value": "300", "label": "Light" }, { "value": "400", "label": "Regular" }, { "value": "500", "label": "Medium" }, { "value": "600", "label": "Semi-bold" }, { "value": "700", "label": "Bold" }, { "value": "800", "label": "Extra-bold" } ] },
+        { "type": "select", "id": "font_style", "label": "Font style", "default": "theme", "options": [ { "value": "theme", "label": "Theme default" }, { "value": "normal", "label": "Normal" }, { "value": "italic", "label": "Italic" } ] },
+        { "type": "header", "content": "Spacing" },
+        { "type": "checkbox", "id": "use_custom_spacing", "label": "Set custom margin and padding", "default": false },
+        { "type": "range", "id": "margin_top", "label": "Margin top", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_right", "label": "Margin right", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_bottom", "label": "Margin bottom", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "margin_left", "label": "Margin left", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_right", "label": "Padding right", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 },
+        { "type": "range", "id": "padding_left", "label": "Padding left", "min": 0, "max": 80, "step": 2, "unit": "px", "default": 0 }
       ]
     },
 {

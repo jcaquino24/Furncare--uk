@@ -18,7 +18,8 @@
 {%- for block in section.blocks -%}
   {%- case block.type -%}
     {%- when 'badges' -%}
-      <div style="display: contents;" {{ block.shopify_attributes }}>
+      {% render 'product-info-font-size', block: block, section_id: section_id, children: '.badge__label' %}
+      <div class="product-info__block-{{ block.id }}" style="display: contents;" {{ block.shopify_attributes }}>
         {% render 'badge', product: product %}
       </div>
 
