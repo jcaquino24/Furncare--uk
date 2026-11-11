@@ -16,17 +16,17 @@
           "type": "badges",
           "settings": {}
         },
+        "title_pi0003": {
+          "type": "title",
+          "settings": {
+            "font_size": 38,
+            "font_size_mobile": 0
+          }
+        },
         "sku_pi0002": {
           "type": "sku",
           "settings": {
             "font_size": 0,
-            "font_size_mobile": 0
-          }
-        },
-        "title_pi0003": {
-          "type": "title",
-          "settings": {
-            "font_size": 32,
             "font_size_mobile": 0
           }
         },
@@ -721,8 +721,8 @@
       },
       "block_order": [
         "badges_pi0001",
-        "sku_pi0002",
         "title_pi0003",
+        "sku_pi0002",
         "custom_text_pi0004",
         "price_pi0005",
         "description_pi0006",
