@@ -3,20 +3,13 @@
   assign mobile_size = block.settings.font_size_mobile | default: 0
   assign base_selector = '#shopify-section-' | append: section_id | append: ' .product-info__block-' | append: block.id
   assign selectors = base_selector
-  assign custom_font = block.settings.use_custom_font
-  assign font_family = block.settings.font_family
+  assign font_family = block.settings.font_family_choice | default: 'theme'
   assign font_weight = block.settings.font_weight | default: 'theme'
   assign font_style = block.settings.font_style | default: 'theme'
   assign custom_spacing = block.settings.use_custom_spacing
   assign has_styles = false
-  if desktop_size > 0 or mobile_size > 0 or custom_font or custom_spacing
+  if desktop_size > 0 or mobile_size > 0 or font_family != 'theme' or font_weight != 'theme' or font_style != 'theme' or custom_spacing
     assign has_styles = true
-  endif
-  if custom_font and font_family != blank and font_weight != 'theme'
-    assign font_family = font_family | font_modify: 'weight', font_weight
-  endif
-  if custom_font and font_family != blank and font_style != 'theme'
-    assign font_family = font_family | font_modify: 'style', font_style
   endif
   if children != blank
     assign child_list = children | split: ','
@@ -27,10 +20,10 @@
 -%}
 {%- if has_styles -%}
   {% style %}
-    {% if custom_font and font_family != blank %}
-      {{ font_family | font_face: font_display: 'swap' }}
+    {% if font_family != 'theme' or font_weight != 'theme' or font_style != 'theme' %}
       {{ selectors }} {
-        font-family: {{ font_family.family }}, {{ font_family.fallback_families }};
+        {% if font_family == 'body' %}font-family: var(--font-body-family);{% endif %}
+        {% if font_family == 'heading' %}font-family: var(--font-heading-family);{% endif %}
         {% if font_weight != 'theme' %}font-weight: {{ font_weight }};{% endif %}
         {% if font_style != 'theme' %}font-style: {{ font_style }};{% endif %}
       }
