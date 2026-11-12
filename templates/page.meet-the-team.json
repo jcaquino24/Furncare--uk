@@ -31,7 +31,7 @@
         "tagline_3jw7n4": {
           "type": "tagline",
           "settings": {
-            "content": "Meet the talented team behind our success. Each Furncare team member brings unique skills, passion, and dedication to delivering exceptional results for our clients and community.",
+            "content": "Meet the talented team behind our success. Each Furncare team member brings unique skills, passion, and dedication to delivering exceptional results for our clients and community. Interested in joining our team? <a href=\"/pages/careers\" target=\"_blank\" title=\"Careers\"><strong>We'd love to hear from you.</strong></a>",
             "tagline_style": "body-lg"
           },
           "blocks": {}
