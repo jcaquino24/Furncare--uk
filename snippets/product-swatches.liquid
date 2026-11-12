@@ -55,11 +55,14 @@
     <fieldset class="product-swatches__group">
       <legend class="product-swatches__label body-sm body-sm--bold">
         <span data-selected-swatch-label>
-          {%- if product_family_text != blank -%}
-            {{ product_family_text }}
-          {%- else -%}
-            {{ 'product.family' | t }}
-          {%- endif -%}
+          Available Configurations
+                {%comment %}
+                  {%- if product_family_text != blank -%}
+                    {{ product_family_text }}
+                  {%- else -%}
+                    {{ 'product.family' | t }}
+                  {%- endif -%}
+                {% endcomment %}
         </span>
       </legend>
 
