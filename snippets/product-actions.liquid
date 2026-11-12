@@ -39,6 +39,9 @@
     assign additional_action_text = section.settings.additional_action_text
     assign additional_action_url = section.settings.additional_action_url
     assign additional_action_icon = section.settings.additional_action_icon
+    if additional_action_icon == blank
+      assign additional_action_icon = 'address-book'
+    endif
   endif
 -%}
 
@@ -99,7 +102,7 @@
       class="product-actions__button"
       data-action="additional"
     >
-      {% render 'icons', icon: additional_action_icon | default: 'address-book' %}
+      {% render 'icons', icon: additional_action_icon %}
       <span class="eyebrow-2xs">{{ additional_action_text }}</span>
       {% render 'icons', icon: 'arrow-right' %}
     </a>
