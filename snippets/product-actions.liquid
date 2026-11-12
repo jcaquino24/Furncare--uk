@@ -35,6 +35,10 @@
       assign design_services_text = section.settings.design_services_text
     endif
     assign design_services_url = section.settings.design_services_url
+    assign show_additional_action = section.settings.show_additional_action
+    assign additional_action_text = section.settings.additional_action_text
+    assign additional_action_url = section.settings.additional_action_url
+    assign additional_action_icon = section.settings.additional_action_icon
   endif
 -%}
 
@@ -87,6 +91,18 @@
         {% render 'icons', icon: 'arrow-right' %}
       </button>
     {% endif %}
+  {% endif %}
+
+  {% if show_additional_action and additional_action_text != blank and additional_action_url != blank %}
+    <a
+      href="{{ additional_action_url }}"
+      class="product-actions__button"
+      data-action="additional"
+    >
+      {% render 'icons', icon: additional_action_icon | default: 'address-book' %}
+      <span class="eyebrow-2xs">{{ additional_action_text }}</span>
+      {% render 'icons', icon: 'arrow-right' %}
+    </a>
   {% endif %}
 
   {% if has_related_package %}
