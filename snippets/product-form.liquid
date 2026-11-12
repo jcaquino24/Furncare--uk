@@ -16,7 +16,7 @@
   assign current_variant = product.selected_variant | default: product.selected_or_first_available_variant
   assign show_notify_modal = false
   assign section_id = section_id | default: 'product'
-  assign hubspot_form = product.metafields.custom.hubspot_form
+  assign hubspot_form = product.metafields.custom.hubspot_formREMOVETHISFORFORM
   assign swatch_collections = product.metafields.custom.swatch_collections.value
   assign data_sheet = product.metafields.custom.data_sheet
   assign show_call_to_action = true
