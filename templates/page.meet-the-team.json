@@ -169,17 +169,6 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_Ca33EY": {
-          "type": "image_card",
-          "settings": {
-            "title": "Carson Hynd",
-            "subtitle": "",
-            "text": "<p>Contact Carson: carson.hynd@furncare.co.uk</p>",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_CBJGJw": {
           "type": "image_card",
           "settings": {
@@ -192,13 +181,26 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
+        },
+        "image_card_TQ4HWY": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Damian_Temple_B_W.png",
+            "hover_image": "shopify://shop_images/Damian_Temple.png",
+            "title": "Damian Temple",
+            "subtitle": "Business Development Manager",
+            "text": "<p>Contact Damian: damian.temple@furncare.co.uk</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
         "image_card_rb9WiY",
         "image_card_BkPkaF",
-        "image_card_Ca33EY",
-        "image_card_CBJGJw"
+        "image_card_CBJGJw",
+        "image_card_TQ4HWY"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -213,19 +215,6 @@
     "image_text_blocks_kTRnwi": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_TJ7z4D": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Damian_Temple_B_W.png",
-            "hover_image": "shopify://shop_images/Damian_Temple.png",
-            "title": "Damian Temple",
-            "subtitle": "Business Development Manager",
-            "text": "<p>Contact Damian: damian.temple@furncare.co.uk</p>",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_cnKgXx": {
           "type": "image_card",
           "settings": {
@@ -264,13 +253,27 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
+        },
+        "image_card_R7kHDH": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Emily-Kilkenny_B_W-for-web.jpg",
+            "image_mobile": "shopify://shop_images/Emily-Kilkenny_B_W-for-web.jpg",
+            "hover_image": "shopify://shop_images/Emily_Kilkenny.png",
+            "title": "Emily Kilkenny",
+            "subtitle": "Sales Support Executive",
+            "text": "<p>Contact Emily: emily.kilkenny@furncare.co.uk</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
-        "image_card_TJ7z4D",
         "image_card_cnKgXx",
         "image_card_GFzrYz",
-        "image_card_gzfknB"
+        "image_card_gzfknB",
+        "image_card_R7kHDH"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -285,20 +288,6 @@
     "image_text_blocks_8ERLYk": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_JWiwed": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Emily-Kilkenny_B_W-for-web.jpg",
-            "image_mobile": "shopify://shop_images/Emily-Kilkenny_B_W-for-web.jpg",
-            "hover_image": "shopify://shop_images/Emily_Kilkenny.png",
-            "title": "Emily Kilkenny",
-            "subtitle": "Sales Support Executive",
-            "text": "<p>Contact Emily: emily.kilkenny@furncare.co.uk</p>",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_cNfiPK": {
           "type": "image_card",
           "settings": {
@@ -337,13 +326,26 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
+        },
+        "image_card_krmdcC": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_-_August_14_2026_at_15.12.56.png",
+            "hover_image": "shopify://shop_images/Jo.png",
+            "title": "Jo Hazelle Tadlas",
+            "subtitle": "System Developer",
+            "text": "<p>Contact Jo: jo-hazelle.tadlas@furncare.co.uk</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
-        "image_card_JWiwed",
         "image_card_cNfiPK",
         "image_card_KpQgPx",
-        "image_card_y49iGr"
+        "image_card_y49iGr",
+        "image_card_krmdcC"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -358,19 +360,6 @@
     "image_text_blocks_bNU4RW": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_TUGg3M": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Untitled_-_August_14_2026_at_15.12.56.png",
-            "hover_image": "shopify://shop_images/Jo.png",
-            "title": "Jo Hazelle Tadlas",
-            "subtitle": "System Developer",
-            "text": "<p>Contact Jo: jo-hazelle.tadlas@furncare.co.uk</p>",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_jWhD7C": {
           "type": "image_card",
           "settings": {
@@ -409,13 +398,26 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
+        },
+        "image_card_UtEVXV": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Lloyd-Bradley-B_W_for-web.jpg",
+            "hover_image": "shopify://shop_images/Lloyd_Bradley.png",
+            "title": "Lloyd Bradley",
+            "subtitle": "Production Supervisor",
+            "text": "<p>Contact Lloyd: lloyd.bradley@furncare.co.uk</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
-        "image_card_TUGg3M",
         "image_card_jWhD7C",
         "image_card_wKdEEm",
-        "image_card_dKU8LC"
+        "image_card_dKU8LC",
+        "image_card_UtEVXV"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -430,19 +432,6 @@
     "image_text_blocks_ALbkEp": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_Hz7TMH": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Lloyd-Bradley-B_W_for-web.jpg",
-            "hover_image": "shopify://shop_images/Lloyd_Bradley.png",
-            "title": "Lloyd Bradley",
-            "subtitle": "Production Supervisor",
-            "text": "<p>Contact Lloyd: lloyd.bradley@furncare.co.uk</p>",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_Y8N4Gy": {
           "type": "image_card",
           "settings": {
@@ -481,13 +470,26 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
+        },
+        "image_card_PcJFJq": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Molly_Tinker.jpg",
+            "hover_image": "shopify://shop_images/Molly_Tinker.png",
+            "title": "Molly Tinker",
+            "subtitle": "Brand & Marketing Projects Coordinator",
+            "text": "<p>Contact Molly: molly.tinker@furncare.co.uk</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
-        "image_card_Hz7TMH",
         "image_card_Y8N4Gy",
         "image_card_MDykGK",
-        "image_card_7N3hTh"
+        "image_card_7N3hTh",
+        "image_card_PcJFJq"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -502,19 +504,6 @@
     "image_text_blocks_YWfmBd": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_dTg4xn": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/Molly_Tinker.jpg",
-            "hover_image": "shopify://shop_images/Molly_Tinker.png",
-            "title": "Molly Tinker",
-            "subtitle": "Brand & Marketing Projects Coordinator",
-            "text": "<p>Contact Molly: molly.tinker@furncare.co.uk</p>",
-            "block_colour_scheme": "dark-mode",
-            "show_gradient": false,
-            "lightbox_caption": ""
-          }
-        },
         "image_card_jeKqnp": {
           "type": "image_card",
           "settings": {
@@ -553,13 +542,26 @@
             "show_gradient": false,
             "lightbox_caption": ""
           }
+        },
+        "image_card_JxTThj": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify://shop_images/Randal_Southall.jpg",
+            "hover_image": "shopify://shop_images/Randal_Southall.png",
+            "title": "Randal Southall",
+            "subtitle": "SALES & MARKETING DIRECTOR",
+            "text": "<p>Contact Randal: randal.southall@furncare.co.uk</p>",
+            "block_colour_scheme": "dark-mode",
+            "show_gradient": false,
+            "lightbox_caption": ""
+          }
         }
       },
       "block_order": [
-        "image_card_dTg4xn",
         "image_card_jeKqnp",
         "image_card_XPpGWU",
-        "image_card_J66CFh"
+        "image_card_J66CFh",
+        "image_card_JxTThj"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -574,7 +576,7 @@
     "image_text_blocks_Kj4trr": {
       "type": "image-text-blocks",
       "blocks": {
-        "image_card_6gXMEW": {
+        "image_card_iYiXjQ": {
           "type": "image_card",
           "settings": {
             "title": "",
@@ -585,15 +587,13 @@
             "lightbox_caption": ""
           }
         },
-        "image_card_hkaGwY": {
+        "image_card_y3Nxfr": {
           "type": "image_card",
           "settings": {
-            "image": "shopify://shop_images/Randal_Southall.jpg",
-            "hover_image": "shopify://shop_images/Randal_Southall.png",
-            "title": "Randal Southall",
-            "subtitle": "SALES & MARKETING DIRECTOR",
-            "text": "<p>Contact Randal: randal.southall@furncare.co.uk</p>",
-            "block_colour_scheme": "dark-mode",
+            "title": "",
+            "subtitle": "",
+            "text": "",
+            "block_colour_scheme": "light-mode",
             "show_gradient": false,
             "lightbox_caption": ""
           }
@@ -626,8 +626,8 @@
         }
       },
       "block_order": [
-        "image_card_6gXMEW",
-        "image_card_hkaGwY",
+        "image_card_iYiXjQ",
+        "image_card_y3Nxfr",
         "image_card_Ccgrzd",
         "image_card_YnLEtY"
       ],
