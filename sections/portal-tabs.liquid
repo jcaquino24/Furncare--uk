@@ -64,7 +64,7 @@
               <div data-portal-catalog-list>
                 <ul
                   class="portal-tabs__scheme-list"
-                  style="--scheme-columns-desktop: {{ block.settings.columns_desktop }}; --scheme-columns-mobile: {{ block.settings.columns_mobile }}; --scheme-card-gap: {{ block.settings.card_gap }}px; --scheme-card-height: {% if block.settings.card_height > 0 %}{{ block.settings.card_height }}px{% else %}auto{% endif %}; --scheme-card-padding: {{ block.settings.card_padding }}px; --scheme-card-border-width: {{ block.settings.card_border_width }}px; --scheme-card-border-color: {{ block.settings.card_border_color }}; --scheme-card-radius: {{ block.settings.card_border_radius }}px; --scheme-title-font: {{ scheme_title_font }}; --scheme-title-size: {{ block.settings.title_font_size }}px; --scheme-title-weight: {{ block.settings.title_font_weight }}; --scheme-title-style: {{ block.settings.title_font_style }}; --scheme-eyebrow-size: {{ block.settings.eyebrow_font_size }}px"
+                  style="--scheme-columns-desktop: {{ section.settings.scheme_columns_desktop }}; --scheme-columns-mobile: {{ section.settings.scheme_columns_mobile }}; --scheme-card-gap: {{ block.settings.card_gap }}px; --scheme-card-height: {% if block.settings.card_height > 0 %}{{ block.settings.card_height }}px{% else %}auto{% endif %}; --scheme-card-padding: {{ block.settings.card_padding }}px; --scheme-card-border-width: {{ block.settings.card_border_width }}px; --scheme-card-border-color: {{ block.settings.card_border_color }}; --scheme-card-radius: {{ block.settings.card_border_radius }}px; --scheme-title-font: {{ scheme_title_font }}; --scheme-title-size: {{ block.settings.title_font_size }}px; --scheme-title-weight: {{ block.settings.title_font_weight }}; --scheme-title-style: {{ block.settings.title_font_style }}; --scheme-eyebrow-size: {{ block.settings.eyebrow_font_size }}px"
                 >
                   {%- for collection in block.settings.collections -%}
                     <li>
@@ -97,7 +97,7 @@
           {%- when 'products' -%}
             {%- assign panel_collection = block.settings.collection | default: collections.all -%}
             {%- if panel_collection.products.size > 0 -%}
-              <div class="portal-tabs__products" style="--products-columns-desktop: {{ block.settings.columns_desktop }}; --products-columns-mobile: {{ block.settings.columns_mobile }}">
+              <div class="portal-tabs__products" style="--products-columns-desktop: {{ section.settings.products_columns_desktop }}; --products-columns-mobile: {{ section.settings.products_columns_mobile }}">
                 {%- for product in panel_collection.products limit: block.settings.product_limit -%}
                   {% render 'product-card', product: product, loading: 'lazy' %}
                 {%- endfor -%}
@@ -397,7 +397,13 @@
         { "value": "--spacing-4xl", "label": "Large" }
       ],
       "default": "--spacing-2xl"
-    }
+    },
+    { "type": "header", "content": "Scheme grid" },
+    { "type": "range", "id": "scheme_columns_desktop", "label": "Cards per row (desktop)", "min": 1, "max": 6, "step": 1, "default": 4 },
+    { "type": "range", "id": "scheme_columns_mobile", "label": "Cards per row (mobile)", "min": 1, "max": 2, "step": 1, "default": 2 },
+    { "type": "header", "content": "Products grid" },
+    { "type": "range", "id": "products_columns_desktop", "label": "Products per row (desktop)", "min": 1, "max": 6, "step": 1, "default": 4 },
+    { "type": "range", "id": "products_columns_mobile", "label": "Products per row (mobile)", "min": 1, "max": 2, "step": 1, "default": 2 }
   ],
   "blocks": [
     {
@@ -406,8 +412,6 @@
       "settings": [
         { "type": "text", "id": "title", "label": "Tab title", "default": "My Schemes" },
         { "type": "text", "id": "card_eyebrow", "label": "Card eyebrow", "default": "Scheme" },
-        { "type": "range", "id": "columns_desktop", "label": "Cards per row (desktop)", "min": 1, "max": 6, "step": 1, "default": 4 },
-        { "type": "range", "id": "columns_mobile", "label": "Cards per row (mobile)", "min": 1, "max": 2, "step": 1, "default": 2 },
         {
           "type": "collection_list",
           "id": "collections",
@@ -443,8 +447,6 @@
       "name": "Tab: Products",
       "settings": [
         { "type": "text", "id": "title", "label": "Tab title", "default": "All Products" },
-        { "type": "range", "id": "columns_desktop", "label": "Products per row (desktop)", "min": 1, "max": 6, "step": 1, "default": 4 },
-        { "type": "range", "id": "columns_mobile", "label": "Products per row (mobile)", "min": 1, "max": 2, "step": 1, "default": 2 },
         {
           "type": "collection",
           "id": "collection",

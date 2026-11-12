@@ -153,7 +153,11 @@
       "name": "Portal tabs",
       "settings": {
         "heading": "Welcome",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-2xl",
+        "scheme_columns_desktop": 4,
+        "scheme_columns_mobile": 2,
+        "products_columns_desktop": 4,
+        "products_columns_mobile": 2
       }
     },
     "catalog_cards_pb8Bbt": {
