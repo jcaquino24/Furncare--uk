@@ -31,25 +31,6 @@
             "padding_left": 0
           }
         },
-        "title_pi0003": {
-          "type": "title",
-          "settings": {
-            "font_size": 32,
-            "font_size_mobile": 0,
-            "font_family_choice": "body",
-            "font_weight": "300",
-            "font_style": "normal",
-            "use_custom_spacing": true,
-            "margin_top": 0,
-            "margin_right": 0,
-            "margin_bottom": 0,
-            "margin_left": 0,
-            "padding_top": 48,
-            "padding_right": 52,
-            "padding_bottom": 44,
-            "padding_left": 0
-          }
-        },
         "sku_pi0002": {
           "type": "sku",
           "settings": {
@@ -66,6 +47,25 @@
             "padding_top": 0,
             "padding_right": 0,
             "padding_bottom": 0,
+            "padding_left": 0
+          }
+        },
+        "title_pi0003": {
+          "type": "title",
+          "settings": {
+            "font_size": 32,
+            "font_size_mobile": 0,
+            "font_family_choice": "heading",
+            "font_weight": "300",
+            "font_style": "normal",
+            "use_custom_spacing": true,
+            "margin_top": 0,
+            "margin_right": 0,
+            "margin_bottom": 0,
+            "margin_left": 0,
+            "padding_top": 48,
+            "padding_right": 52,
+            "padding_bottom": 44,
             "padding_left": 0
           }
         },
@@ -808,8 +808,8 @@
       },
       "block_order": [
         "badges_pi0001",
-        "title_pi0003",
         "sku_pi0002",
+        "title_pi0003",
         "custom_text_pi0004",
         "price_pi0005",
         "description_pi0006",
