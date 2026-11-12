@@ -834,7 +834,7 @@
         "contact_trigger_text": "Need help? Contact us",
         "alt_contact_trigger_text": "Would you like to purchase this item? Contact us",
         "alt_contact_form_tags": "Bespoke,bespoke",
-        "alt_contact_form_html": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script> <div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"c81574fc-65ec-431e-845f-40d18f62a6f2\" data-portal-id=\"145723791\"></div>",
+        "alt_contact_form_html": "",
         "lead_time_icon": "shopify://shop_images/dark-delivery-icon.svg",
         "lead_time_text": "Delivered",
         "show_accordions": true,
