@@ -2,7 +2,7 @@
   class="portal-tabs"
   id="portal-tabs-{{ section.id }}"
   data-portal-tabs
-  style="--section-padding: var({{ section.settings.section_padding }})"
+  style="--section-padding: var({{ section.settings.section_padding }}); --portal-tab-font-size: {{ section.settings.tab_font_size }}px; --portal-tab-font-weight: {{ section.settings.tab_font_weight }}; --portal-tab-padding-x: {{ section.settings.tab_padding_x }}px; --portal-tab-padding-y: {{ section.settings.tab_padding_y }}px"
 >
   <div class="portal-tabs__inner">
     {%- if section.settings.heading != blank -%}
@@ -247,33 +247,50 @@
     margin: 0 auto;
   }
   .portal-tabs__list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-lg, 1.5rem);
-    margin: var(--spacing-2xl, 3rem) 0 var(--spacing-2xl, 3rem);
+    display: flex;
+    align-items: stretch;
+    gap: var(--spacing-2xs, 8px);
+    margin: var(--spacing-xl, 2rem) 0 var(--spacing-2xl, 3rem);
     padding: 0;
     list-style: none;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--color-border-secondary, #e5e5e5);
+  }
+  .portal-tabs__list li {
+    flex: 0 0 auto;
   }
   .portal-tabs__tab {
     display: flex;
     align-items: center;
-    width: 100%;
-    min-height: 5.25rem;
-    padding: var(--spacing-lg, 1.5rem);
-    border: 1px solid rgb(0 0 0 / 15%);
+    width: auto;
+    min-height: 3.75rem;
+    padding: var(--portal-tab-padding-y, 14px) var(--portal-tab-padding-x, 20px);
+    border: 0;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
     background: transparent;
     color: inherit;
-    font: inherit;
-    text-align: left;
+    font-family: var(--font-body-family);
+    font-size: var(--portal-tab-font-size, 16px);
+    font-weight: var(--portal-tab-font-weight, 500);
+    line-height: 1.25;
+    text-align: center;
     text-decoration: none;
     cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 160ms ease, border-color 160ms ease;
   }
-  .portal-tabs__tab:hover,
-  .portal-tabs__tab.is-active {
-    border-color: currentcolor;
+  .portal-tabs__tab:hover {
+    background: #ededed;
   }
   .portal-tabs__tab.is-active {
-    background: #fff;
+    border-bottom-color: #1457d9;
+    color: #1457d9;
+    background: transparent;
+  }
+  .portal-tabs__tab:focus-visible {
+    outline: 2px solid currentcolor;
+    outline-offset: -2px;
   }
   .portal-tabs__panel[hidden],
   .portal-tabs [hidden] {
@@ -371,13 +388,8 @@
     .portal-tabs__products {
       grid-template-columns: repeat(var(--products-columns-mobile, 2), minmax(0, 1fr));
     }
-    .portal-tabs__list {
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--spacing-sm, 1rem);
-    }
     .portal-tabs__tab {
-      min-height: 4rem;
-      padding: var(--spacing-sm, 1rem);
+      min-height: 3.25rem;
     }
   }
 {% endstylesheet %}
@@ -398,6 +410,11 @@
       ],
       "default": "--spacing-2xl"
     },
+    { "type": "header", "content": "Tab appearance" },
+    { "type": "range", "id": "tab_font_size", "label": "Tab font size", "min": 12, "max": 24, "step": 1, "unit": "px", "default": 16 },
+    { "type": "select", "id": "tab_font_weight", "label": "Tab font weight", "default": "500", "options": [ { "value": "400", "label": "Regular" }, { "value": "500", "label": "Medium" }, { "value": "600", "label": "Semi-bold" }, { "value": "700", "label": "Bold" } ] },
+    { "type": "range", "id": "tab_padding_x", "label": "Tab horizontal padding", "min": 8, "max": 40, "step": 2, "unit": "px", "default": 20 },
+    { "type": "range", "id": "tab_padding_y", "label": "Tab vertical padding", "min": 8, "max": 32, "step": 2, "unit": "px", "default": 14 },
     { "type": "header", "content": "Scheme grid" },
     { "type": "range", "id": "scheme_columns_desktop", "label": "Cards per row (desktop)", "min": 1, "max": 6, "step": 1, "default": 4 },
     { "type": "range", "id": "scheme_columns_mobile", "label": "Cards per row (mobile)", "min": 1, "max": 3, "step": 1, "default": 2 },
