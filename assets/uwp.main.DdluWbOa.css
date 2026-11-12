@@ -7879,7 +7879,6 @@ uwp-product-gallery.loading .product-gallery__wrapper {
   uwp-product-gallery .product-gallery__wrapper {
     display: flex;
     gap: var(--spacing-sm, 20px);
-    max-width: 730px;
     position: relative;
   }
   uwp-product-gallery .product-gallery__main {
