@@ -576,7 +576,7 @@
         "image_ENtkfj": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/abbott_close_shot_mock_up_sunny.png",
+            "image": "shopify://shop_images/crosshatchgold.png",
             "heading": "The Crosshatch Handle",
             "heading_size": 24,
             "heading_align": "center",
@@ -588,7 +588,7 @@
         "image_cMQCzm": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Bronson_CU_b24d1449-7ca7-4045-ac3d-78982065612f.jpg",
+            "image": "shopify://shop_images/coregold.png",
             "heading": "The Core Handle",
             "heading_size": 24,
             "heading_align": "center",
@@ -600,7 +600,7 @@
         "image_3H78Rx": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Ellington_close_up_mock_up_sunny_1.png",
+            "image": "shopify://shop_images/contourgold.png",
             "heading": "The Contour Handle",
             "heading_size": 24,
             "heading_align": "center",
