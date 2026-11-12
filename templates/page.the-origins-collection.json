@@ -673,6 +673,25 @@
         "show_title": false
       }
     },
+    "blocks_yBgxQA": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_90768fd_3hkDP9": {
+          "type": "ai_gen_block_90768fd",
+          "settings": {
+            "spacer_height": 50,
+            "spacer_height_mobile": 30,
+            "spacer_color": "#F9F7F0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_90768fd_3hkDP9"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
     "image_video_banner_7a9Jcj": {
       "type": "image-video-banner",
       "blocks": {
@@ -716,6 +735,8 @@
             "title": "Our favourites",
             "handle": "best-sellers",
             "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [
               "ellington-3-drawer-bedside",
               "ellington-3-drawer-chest-copy",
@@ -791,6 +812,8 @@
             "title": "Our favourites",
             "handle": "best-sellers",
             "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [
               "abbott-3-drawer-bedside",
               "abbott-3-drawer-chest",
@@ -866,6 +889,8 @@
             "title": "Our favourites",
             "handle": "best-sellers",
             "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [
               "tilbury-3-drawer-bedside",
               "tilbury-3-drawer-chest",
@@ -898,6 +923,40 @@
         "section_padding": "--spacing-2xl"
       }
     },
+    "image_video_banner_QgCynL": {
+      "type": "image-video-banner",
+      "blocks": {
+        "title_kCjkkB": {
+          "type": "title",
+          "settings": {
+            "text": "Galloway",
+            "title_element": "h2",
+            "title_size": "display",
+            "text_color": "#f9f7f0"
+          }
+        }
+      },
+      "block_order": [
+        "title_kCjkkB"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Lounge_One_19.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "light",
+        "content_position": "center-center",
+        "content_alignment": "left"
+      }
+    },
     "product_blocks_xyDyEN": {
       "type": "product-blocks",
       "blocks": {
@@ -907,6 +966,8 @@
             "title": "Our favourites",
             "handle": "best-sellers",
             "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [
               "galloway-3-drawer-bedside",
               "galloway-3-drawer-chest",
@@ -939,6 +1000,40 @@
         "section_padding": "--spacing-2xl"
       }
     },
+    "image_video_banner_4fDbRN": {
+      "type": "image-video-banner",
+      "blocks": {
+        "title_jABEgj": {
+          "type": "title",
+          "settings": {
+            "text": "Bronson",
+            "title_element": "h2",
+            "title_size": "display",
+            "text_color": "#f9f7f0"
+          }
+        }
+      },
+      "block_order": [
+        "title_jABEgj"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 540,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Lounge_One_19.jpg",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "light",
+        "content_position": "center-center",
+        "content_alignment": "left"
+      }
+    },
     "product_blocks_cErtCV": {
       "type": "product-blocks",
       "blocks": {
@@ -948,6 +1043,8 @@
             "title": "Our favourites",
             "handle": "best-sellers",
             "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [
               "bronson-3-drawer-bedside",
               "bronson-3-drawer-chest-1",
@@ -1016,100 +1113,71 @@
         "reveal_duration": 760
       }
     },
-    "blocks_3pXGmt": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_3e4b0ee_rLpd6A": {
-          "type": "ai_gen_block_3e4b0ee",
-          "settings": {
-            "spacing_size": "small"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_3e4b0ee_rLpd6A"
-      ],
-      "name": "Spacer",
-      "settings": {}
-    },
-    "richtext_PPG4Ye": {
-      "type": "richtext",
-      "blocks": {
-        "heading_BFXAxz": {
-          "type": "heading",
-          "settings": {
-            "text": "Any Questions?",
-            "heading_level": "h2",
-            "heading_style": "title-display"
-          },
-          "blocks": {}
-        },
-        "tagline_aVLFXn": {
-          "type": "tagline",
-          "name": "Tagline",
-          "settings": {
-            "content": "Get in touch with our expert team who are more than happy to assist.",
-            "tagline_style": "body-lg"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "heading_BFXAxz",
-        "tagline_aVLFXn"
-      ],
-      "name": "Rich Text",
+    "flexible_content_image_gRRD6J": {
+      "type": "flexible-content-image",
+      "name": "Flexible Media & CTA",
       "settings": {
-        "id_anchor": "",
-        "max_width_desktop": 100,
-        "section_padding": "--spacing-2xl",
-        "text_alignment": "center",
-        "colour_scheme": "base-white-01",
-        "enable_animation": true,
-        "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
+        "center_content_mode": false,
+        "cta_max_width": 800,
+        "custom_class": "",
+        "heading_size": "h2",
+        "button_style_secondary": false,
+        "section_bg_color": "#F9F7F0",
+        "bg_overlay_opacity": 0,
+        "image_position": "left",
+        "desktop_layout_invert": false,
+        "content_width": 50,
+        "heading": "&nbsp;Planning a care-sector furniture project? Let's make it easier.&nbsp;",
+        "color_heading": "#252520",
+        "heading_font_size": 40,
+        "heading_weight": "400",
+        "subheading": "start the conversation",
+        "color_subheading": "#252520",
+        "subheading_size": 14,
+        "subheading_weight": "600",
+        "text": "<p>Bring Furncare in early and we'll help you shape a furniture scheme that works for your space, your users, your timeline and your budget.</p>",
+        "color_text": "#252520",
+        "text_size": 18,
+        "text_weight": "400",
+        "content_alignment": "center",
+        "stack_gap_tablet": 32,
+        "heading_font_size_mobile": 28,
+        "color_heading_mobile": "#4a5486",
+        "heading_weight_mobile": "700",
+        "subheading_size_mobile": 12,
+        "color_subheading_mobile": "#8e94a7",
+        "subheading_weight_mobile": "600",
+        "text_size_mobile": 16,
+        "color_text_mobile": "#7a7a7a",
+        "text_weight_mobile": "400",
+        "content_gap_mobile": 16,
+        "content_alignment_mobile": "center",
+        "button_margin_top_mobile": 21,
+        "button_bg_color_mobile": "#4a5486",
+        "button_text_color_mobile": "#ffffff",
+        "button_secondary_text_color_mobile": "#4a5486",
+        "button_secondary_border_color_mobile": "#e5e8f0",
+        "button_label": "Contact Us",
+        "button_link": "shopify://pages/contact-us",
+        "show_button_arrow": true,
+        "button_label_2": "Request a brochure",
+        "button_link_2": "shopify://pages/brochure-request",
+        "show_button_arrow_2": true,
+        "button_bg_color": "#243222",
+        "button_text_color": "#F9F7F0",
+        "button_secondary_text_color": "#243222",
+        "button_secondary_border_color": "#243222",
+        "button_margin_top": 33,
+        "content_gap": 20,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0
       }
-    },
-    "blocks_wxNUjq": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_a8b1ae7_pWpyha": {
-          "type": "ai_gen_block_a8b1ae7",
-          "settings": {
-            "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
-            "desktop_width_percent": 50,
-            "alignment": "center",
-            "padding_top": 0,
-            "padding_bottom": 40
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_a8b1ae7_pWpyha"
-      ],
-      "name": "Form embed",
-      "settings": {}
-    },
-    "blocks_jWrm4R": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_3e4b0ee_JYWYd4": {
-          "type": "ai_gen_block_3e4b0ee",
-          "settings": {
-            "spacing_size": "medium"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_3e4b0ee_JYWYd4"
-      ],
-      "name": "Spacer",
-      "settings": {}
     }
   },
   "order": [
@@ -1125,18 +1193,18 @@
     "custom_media_gallery_t7GpDt",
     "blocks_rzpUwy",
     "main",
+    "blocks_yBgxQA",
     "image_video_banner_7a9Jcj",
     "product_blocks_NVTciR",
     "image_video_banner_N9ChjQ",
     "product_blocks_7xYzWd",
     "image_video_banner_hnTMw8",
     "product_blocks_6kJAUx",
+    "image_video_banner_QgCynL",
     "product_blocks_xyDyEN",
+    "image_video_banner_4fDbRN",
     "product_blocks_cErtCV",
     "image_text_hPbjgh",
-    "blocks_3pXGmt",
-    "richtext_PPG4Ye",
-    "blocks_wxNUjq",
-    "blocks_jWrm4R"
+    "flexible_content_image_gRRD6J"
   ]
 }
