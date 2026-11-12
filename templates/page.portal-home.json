@@ -99,12 +99,12 @@
           "type": "catalogs",
           "settings": {
             "title": "My Schemes",
-            "card_eyebrow": "Scheme",
+            "card_eyebrow": "SCHEME",
             "collections": [
-              "challenging-environments-in-stock-beds-mattresses",
-              "challenging-environments-bedroom-sets",
+              "care-uk-scheme-c",
+              "challenging-environments-accessories",
               "overbed-overchair-tables",
-              "challenging-environments-bedside-tables"
+              "challenging-environments-bedroom-sets"
             ],
             "title_font_family": "heading",
             "title_font_size": 18,
@@ -154,6 +154,10 @@
       "settings": {
         "heading": "Welcome",
         "section_padding": "--spacing-2xl",
+        "tab_font_size": 16,
+        "tab_font_weight": "500",
+        "tab_padding_x": 20,
+        "tab_padding_y": 14,
         "scheme_columns_desktop": 2,
         "scheme_columns_mobile": 1,
         "products_columns_desktop": 4,
