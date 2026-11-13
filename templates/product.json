@@ -851,7 +851,7 @@
         "design_services_url": "shopify://pages/about-us",
         "show_additional_action": true,
         "additional_action_text": "not found what you're looking for?",
-        "additional_action_url": "shopify://pages/careers",
+        "additional_action_url": "shopify://pages/contact-us",
         "additional_action_icon": "overview",
         "sustainability_content": "",
         "warranty_content": "",
