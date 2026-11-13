@@ -12,6 +12,7 @@
 {%- enddoc -%}
 
 {% liquid
+  assign blocked_customers = "11281543004496,11696191635792,11859408912720" | split: ","
   assign base_class = 'product'
   assign current_variant = product.selected_variant | default: product.selected_or_first_available_variant
   assign show_notify_modal = false
