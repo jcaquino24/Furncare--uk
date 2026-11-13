@@ -124,7 +124,7 @@
       
 
 <div class="button_container">
-
+{% unless customer and customer.id == 11859408912720 %}
 {%- form 'product',
   product,
   class: 'ProductForm product-card__form',
@@ -143,6 +143,7 @@
   </button>
 
 {%- endform -%}
+{% endunless %}
       
         <a
           aria-label="Visit {{ product.title }}"
