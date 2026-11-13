@@ -681,7 +681,7 @@
           "settings": {
             "spacer_height": 50,
             "spacer_height_mobile": 30,
-            "spacer_color": "#F9F7F0"
+            "spacer_color": "#f9f7f0"
           },
           "blocks": {}
         }
@@ -1018,12 +1018,12 @@
       ],
       "name": "Image - Video Banner",
       "settings": {
-        "height_desktop": 540,
+        "height_desktop": 800,
         "height_mobile": 540,
         "maintain_aspect_ratio": false,
         "add_header_offset": false,
         "media_type": "image",
-        "image_desktop": "shopify://shop_images/Lounge_One_19.jpg",
+        "image_desktop": "shopify://shop_images/bronson.jpg",
         "show_controls": false,
         "mute_video": true,
         "autoplay_video": true,
@@ -1122,8 +1122,9 @@
         "custom_class": "",
         "heading_size": "h2",
         "button_style_secondary": false,
-        "section_bg_color": "#F9F7F0",
+        "section_bg_color": "#f9f7f0",
         "bg_overlay_opacity": 0,
+        "video_url": "",
         "image_position": "left",
         "desktop_layout_invert": false,
         "content_width": 50,
@@ -1164,7 +1165,7 @@
         "button_link_2": "shopify://pages/brochure-request",
         "show_button_arrow_2": true,
         "button_bg_color": "#243222",
-        "button_text_color": "#F9F7F0",
+        "button_text_color": "#f9f7f0",
         "button_secondary_text_color": "#243222",
         "button_secondary_border_color": "#243222",
         "button_margin_top": 33,
