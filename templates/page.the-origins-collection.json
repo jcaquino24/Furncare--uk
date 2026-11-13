@@ -695,6 +695,14 @@
     "image_video_banner_7a9Jcj": {
       "type": "image-video-banner",
       "blocks": {
+        "eyebrow_MBMrRy": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "fluted detail fronts",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
         "title_zqTB9c": {
           "type": "title",
           "settings": {
@@ -706,6 +714,7 @@
         }
       },
       "block_order": [
+        "eyebrow_MBMrRy",
         "title_zqTB9c"
       ],
       "name": "Image - Video Banner",
@@ -723,7 +732,7 @@
         "overlay_background": "",
         "colour_scheme": "light",
         "content_position": "center-center",
-        "content_alignment": "left"
+        "content_alignment": "center"
       }
     },
     "product_blocks_NVTciR": {
@@ -772,6 +781,14 @@
     "image_video_banner_N9ChjQ": {
       "type": "image-video-banner",
       "blocks": {
+        "eyebrow_eethqx": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "classic shaker style fronts",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
         "title_KgLjka": {
           "type": "title",
           "settings": {
@@ -783,6 +800,7 @@
         }
       },
       "block_order": [
+        "eyebrow_eethqx",
         "title_KgLjka"
       ],
       "name": "Image - Video Banner",
@@ -800,7 +818,7 @@
         "overlay_background": "",
         "colour_scheme": "light",
         "content_position": "center-center",
-        "content_alignment": "left"
+        "content_alignment": "center"
       }
     },
     "product_blocks_7xYzWd": {
@@ -849,6 +867,14 @@
     "image_video_banner_hnTMw8": {
       "type": "image-video-banner",
       "blocks": {
+        "eyebrow_PjeXV9": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "soft routed fronts",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
         "title_wp9w7x": {
           "type": "title",
           "settings": {
@@ -860,6 +886,7 @@
         }
       },
       "block_order": [
+        "eyebrow_PjeXV9",
         "title_wp9w7x"
       ],
       "name": "Image - Video Banner",
@@ -877,7 +904,7 @@
         "overlay_background": "",
         "colour_scheme": "light",
         "content_position": "center-center",
-        "content_alignment": "left"
+        "content_alignment": "center"
       }
     },
     "product_blocks_6kJAUx": {
@@ -926,6 +953,14 @@
     "image_video_banner_QgCynL": {
       "type": "image-video-banner",
       "blocks": {
+        "eyebrow_wRFj4e": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "Traditional moulded fronts",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
         "title_kCjkkB": {
           "type": "title",
           "settings": {
@@ -937,6 +972,7 @@
         }
       },
       "block_order": [
+        "eyebrow_wRFj4e",
         "title_kCjkkB"
       ],
       "name": "Image - Video Banner",
@@ -954,7 +990,7 @@
         "overlay_background": "",
         "colour_scheme": "light",
         "content_position": "center-center",
-        "content_alignment": "left"
+        "content_alignment": "center"
       }
     },
     "product_blocks_xyDyEN": {
@@ -1003,6 +1039,14 @@
     "image_video_banner_4fDbRN": {
       "type": "image-video-banner",
       "blocks": {
+        "eyebrow_hxaK7c": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "Contemporary slab style front",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
         "title_jABEgj": {
           "type": "title",
           "settings": {
@@ -1014,6 +1058,7 @@
         }
       },
       "block_order": [
+        "eyebrow_hxaK7c",
         "title_jABEgj"
       ],
       "name": "Image - Video Banner",
@@ -1031,7 +1076,7 @@
         "overlay_background": "",
         "colour_scheme": "light",
         "content_position": "center-center",
-        "content_alignment": "left"
+        "content_alignment": "center"
       }
     },
     "product_blocks_cErtCV": {
