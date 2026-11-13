@@ -75,7 +75,7 @@
         "ai_gen_block_90768fd_g9jE9m": {
           "type": "ai_gen_block_90768fd",
           "settings": {
-            "spacer_height": 50,
+            "spacer_height": 80,
             "spacer_height_mobile": 30,
             "spacer_color": "#f9f7f0"
           },
@@ -88,13 +88,51 @@
       "name": "Spacer",
       "settings": {}
     },
+    "richtext_jx7j3t": {
+      "type": "richtext",
+      "blocks": {
+        "heading_KggxHd": {
+          "type": "heading",
+          "settings": {
+            "text": "&nbsp;Every Detail Matters&nbsp;",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_ciGHGL": {
+          "type": "tagline",
+          "settings": {
+            "content": "Why stop at selecting a bespoke wood finish? Complete your piece with the perfect handle to suit your space. Designed for both modern and traditional care home interiors, our high-quality finishes and handles will not only enhance the overall aesthetic but also offer a practical, long-lasting solution for high-use settings, allowing you to customise every detail while maintaining a polished look.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_KggxHd",
+        "tagline_ciGHGL"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "id_anchor": "",
+        "max_width_desktop": 79,
+        "section_padding": "--spacing-2xl",
+        "text_alignment": "center",
+        "colour_scheme": "base-white-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
+      }
+    },
     "richtext_rBN8BC": {
       "type": "richtext",
       "blocks": {
         "heading_43cYqQ": {
           "type": "heading",
           "name": "Heading",
-          "disabled": true,
           "settings": {
             "text": "Choose from 13 Contemporary Finishes",
             "heading_level": "h2",
@@ -115,6 +153,7 @@
         "heading_43cYqQ",
         "tagline_aJMWGp"
       ],
+      "disabled": true,
       "name": "Rich Text",
       "settings": {
         "id_anchor": "",
@@ -314,12 +353,12 @@
         "image_aspect_ratio": "1/1",
         "image_max_height": 0,
         "image_fit": "contain",
-        "columns_desktop": 5,
+        "columns_desktop": 4,
         "gap": 0,
         "autoplay": false,
         "autoplay_speed": 3,
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-md"
       }
     },
     "blocks_mQDCjE": {
@@ -338,6 +377,7 @@
       "block_order": [
         "ai_gen_block_90768fd_VajUwR"
       ],
+      "disabled": true,
       "name": "Spacer",
       "settings": {}
     },
@@ -492,45 +532,6 @@
         "tab2_colour_scheme": "warm-stone"
       }
     },
-    "richtext_jx7j3t": {
-      "type": "richtext",
-      "blocks": {
-        "heading_KggxHd": {
-          "type": "heading",
-          "settings": {
-            "text": "&nbsp;Every Detail Matters&nbsp;",
-            "heading_level": "h2",
-            "heading_style": "title-lg"
-          },
-          "blocks": {}
-        },
-        "tagline_ciGHGL": {
-          "type": "tagline",
-          "settings": {
-            "content": "Why stop at selecting your bespoke wood finish? Complete your piece with the perfect handle to suit your space. Designed for both modern and traditional care home interiors, these high-quality finishes not only enhance the overall aesthetic but also offer a practical, long-lasting solution for care home furniture and other high-use settings, allowing you to customise every detail while maintaining a refined look.",
-            "tagline_style": "body-md"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "heading_KggxHd",
-        "tagline_ciGHGL"
-      ],
-      "name": "Rich Text",
-      "settings": {
-        "id_anchor": "",
-        "max_width_desktop": 79,
-        "section_padding": "--spacing-2xl",
-        "text_alignment": "center",
-        "colour_scheme": "base-white-01",
-        "enable_animation": false,
-        "optional_richtext": "",
-        "small_container": false,
-        "enable_see_more": false,
-        "see_more_max_height": 400
-      }
-    },
     "image_text_RqyGcY": {
       "type": "image-text",
       "blocks": {
@@ -630,7 +631,7 @@
         "autoplay": false,
         "autoplay_speed": 3,
         "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl"
+        "section_padding": "--spacing-4xl"
       }
     },
     "blocks_rzpUwy": {
@@ -644,7 +645,7 @@
             "desktop_width_percent": 100,
             "form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"d13cb61a-817e-42e1-baa9-08d63b586063\" data-portal-id=\"145723791\"></div>",
             "min_form_height": 200,
-            "heading_size": 32,
+            "heading_size": 24,
             "heading_color": "#f9f7f0",
             "header_background_color": "#c3c0b0",
             "header_hover_color": "#243222",
@@ -729,7 +730,7 @@
         "mute_video": true,
         "autoplay_video": true,
         "show_overlay": true,
-        "overlay_background": "linear-gradient(180deg, rgba(195, 192, 176, 0.41), rgba(195, 192, 176, 0.4) 99%)",
+        "overlay_background": "linear-gradient(180deg, rgba(195, 192, 176, 0.45), rgba(195, 192, 176, 0.5) 99%)",
         "colour_scheme": "light",
         "content_position": "center-center",
         "content_alignment": "center"
@@ -1216,11 +1217,11 @@
         "button_margin_top": 33,
         "content_gap": 20,
         "padding_top": 60,
-        "padding_bottom": 60,
+        "padding_bottom": 118,
         "padding_left": 0,
         "padding_right": 0,
-        "padding_top_mobile": 60,
-        "padding_bottom_mobile": 60,
+        "padding_top_mobile": 64,
+        "padding_bottom_mobile": 80,
         "padding_left_mobile": 0,
         "padding_right_mobile": 0
       }
@@ -1229,12 +1230,12 @@
   "order": [
     "image_video_banner_tUQhjn",
     "blocks_CQQVyV",
+    "richtext_jx7j3t",
     "richtext_rBN8BC",
     "custom_media_gallery_RwKUii",
     "blocks_mQDCjE",
     "blocks_zjXTry",
     "content_blocks_QVU3xP",
-    "richtext_jx7j3t",
     "image_text_RqyGcY",
     "custom_media_gallery_t7GpDt",
     "blocks_rzpUwy",
