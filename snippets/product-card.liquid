@@ -16,6 +16,7 @@
 
 {% liquid
   assign blocked_customers = "11281543004496,11696191635792,11859408912720" | split: ","
+  assign customer_id = customer.id | append: ""
   assign title_class = 'title-2xs'
   assign image_loading = loading | default: 'lazy'
   assign image_fetchpriority = 'auto'
@@ -125,7 +126,7 @@
       
 
 <div class="button_container">
-{% unless customer and customer.id == 11696191635792 %}
+{% unless customer and blocked_customers contains customer_id %}
 {%- form 'product',
   product,
   class: 'ProductForm product-card__form',
