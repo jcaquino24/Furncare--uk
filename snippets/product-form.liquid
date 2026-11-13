@@ -13,6 +13,7 @@
 
 {% liquid
   assign blocked_customers = "11281543004496,11696191635792,11859408912720" | split: ","
+  assign customer_id = customer.id | append: ""
   assign base_class = 'product'
   assign current_variant = product.selected_variant | default: product.selected_or_first_available_variant
   assign show_notify_modal = false
@@ -121,7 +122,7 @@
           If product has sold out variants then we need to toggle the notify me modal CTA when a sold out swatch is selected
         {% endcomment %}
         
-{% unless customer and customer.id == 11696191635792 %}
+{% unless customer and blocked_customers contains customer_id %}
         {% if product.available %}
           <button
             type="submit"
