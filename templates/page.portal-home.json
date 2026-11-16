@@ -143,7 +143,9 @@
           "settings": {
             "title": "Bedroom Schemes",
             "card_eyebrow": "Scheme",
-            "collections": [],
+            "collections": [
+              "care-uk-scheme-c"
+            ],
             "title_font_family": "heading",
             "title_font_size": 28,
             "eyebrow_font_size": 12,
