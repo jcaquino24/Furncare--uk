@@ -95,6 +95,24 @@
     "portal_tabs_QcQP8n": {
       "type": "portal-tabs",
       "blocks": {
+        "catalog_node_U7GBze": {
+          "type": "catalog_node",
+          "settings": {
+            "catalog_id": "catalog1",
+            "parent_id": "",
+            "title": "Scheme 1",
+            "link_url": ""
+          }
+        },
+        "catalog_node_peV4Bb": {
+          "type": "catalog_node",
+          "settings": {
+            "catalog_id": "",
+            "parent_id": "catalog1",
+            "title": "scheme2",
+            "link_url": ""
+          }
+        },
         "catalogs_VgQLc8": {
           "type": "catalogs",
           "settings": {
@@ -113,52 +131,11 @@
             "card_height": 350
           }
         },
-<<<<<<< HEAD
-        "node_care_uk_scheme_c": {
-          "type": "catalog_node",
-          "settings": {
-            "catalog_id": "care_uk_scheme_c",
-            "parent_id": "",
-            "title": "",
-            "image": "",
-            "link_url": "shopify://collections/care-uk-scheme-c"
-          }
-        },
-        "node_challenging_accessories": {
-          "type": "catalog_node",
-          "settings": {
-            "catalog_id": "challenging_environments_accessories",
-            "parent_id": "",
-            "title": "",
-            "image": "",
-            "link_url": "shopify://collections/challenging-environments-accessories"
-          }
-        },
-        "node_overbed_tables": {
-          "type": "catalog_node",
-          "settings": {
-            "catalog_id": "overbed_overchair_tables",
-            "parent_id": "",
-            "title": "",
-            "image": "",
-            "link_url": "shopify://collections/overbed-overchair-tables"
-          }
-        },
-        "node_challenging_bedroom_sets": {
-          "type": "catalog_node",
-          "settings": {
-            "catalog_id": "challenging_environments_bedroom_sets",
-            "parent_id": "",
-            "title": "",
-            "image": "",
-            "link_url": "shopify://collections/challenging-environments-bedroom-sets"
-=======
         "catalogs_A9fycj": {
           "type": "catalogs",
           "settings": {
             "title": "Communal Schemes",
             "card_eyebrow": "Scheme",
-            "collections": [],
             "title_font_family": "heading",
             "title_font_size": 28,
             "eyebrow_font_size": 12,
@@ -177,9 +154,6 @@
           "settings": {
             "title": "Bedroom Schemes",
             "card_eyebrow": "Scheme",
-            "collections": [
-              "care-uk-scheme-c"
-            ],
             "title_font_family": "heading",
             "title_font_size": 28,
             "eyebrow_font_size": 12,
@@ -191,7 +165,6 @@
             "card_border_radius": 8,
             "card_gap": 24,
             "card_height": 0
->>>>>>> 8e214c941942021e542ba124a127ba783380a266
           }
         },
         "products_ebH7qW": {
@@ -220,16 +193,11 @@
         }
       },
       "block_order": [
+        "catalog_node_U7GBze",
+        "catalog_node_peV4Bb",
         "catalogs_VgQLc8",
-<<<<<<< HEAD
-        "node_care_uk_scheme_c",
-        "node_challenging_accessories",
-        "node_overbed_tables",
-        "node_challenging_bedroom_sets",
-=======
         "catalogs_A9fycj",
         "catalogs_TfbtH3",
->>>>>>> 8e214c941942021e542ba124a127ba783380a266
         "products_ebH7qW",
         "contact_nbMeGr",
         "link_p8mLnL"
