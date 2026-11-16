@@ -195,7 +195,7 @@
         "heading": "Welcome",
         "section_padding": "--spacing-2xl",
         "tab_font_size": 16,
-        "tab_font_weight": "500",
+        "tab_font_weight": "400",
         "tab_padding_x": 20,
         "tab_padding_y": 14,
         "scheme_columns_desktop": 2,
