@@ -100,12 +100,6 @@
           "settings": {
             "title": "My Schemes",
             "card_eyebrow": "SCHEME",
-            "collections": [
-              "care-uk-scheme-c",
-              "challenging-environments-accessories",
-              "overbed-overchair-tables",
-              "challenging-environments-bedroom-sets"
-            ],
             "title_font_family": "heading",
             "title_font_size": 18,
             "eyebrow_font_size": 12,
@@ -117,6 +111,46 @@
             "card_border_radius": 8,
             "card_gap": 24,
             "card_height": 350
+          }
+        },
+        "node_care_uk_scheme_c": {
+          "type": "catalog_node",
+          "settings": {
+            "catalog_id": "care_uk_scheme_c",
+            "parent_id": "",
+            "title": "",
+            "image": "",
+            "link_url": "shopify://collections/care-uk-scheme-c"
+          }
+        },
+        "node_challenging_accessories": {
+          "type": "catalog_node",
+          "settings": {
+            "catalog_id": "challenging_environments_accessories",
+            "parent_id": "",
+            "title": "",
+            "image": "",
+            "link_url": "shopify://collections/challenging-environments-accessories"
+          }
+        },
+        "node_overbed_tables": {
+          "type": "catalog_node",
+          "settings": {
+            "catalog_id": "overbed_overchair_tables",
+            "parent_id": "",
+            "title": "",
+            "image": "",
+            "link_url": "shopify://collections/overbed-overchair-tables"
+          }
+        },
+        "node_challenging_bedroom_sets": {
+          "type": "catalog_node",
+          "settings": {
+            "catalog_id": "challenging_environments_bedroom_sets",
+            "parent_id": "",
+            "title": "",
+            "image": "",
+            "link_url": "shopify://collections/challenging-environments-bedroom-sets"
           }
         },
         "products_ebH7qW": {
@@ -146,6 +180,10 @@
       },
       "block_order": [
         "catalogs_VgQLc8",
+        "node_care_uk_scheme_c",
+        "node_challenging_accessories",
+        "node_overbed_tables",
+        "node_challenging_bedroom_sets",
         "products_ebH7qW",
         "contact_nbMeGr",
         "link_p8mLnL"
