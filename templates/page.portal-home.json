@@ -98,7 +98,7 @@
         "catalogs_VgQLc8": {
           "type": "catalogs",
           "settings": {
-            "title": "My Schemes",
+            "title": "All Schemes",
             "card_eyebrow": "SCHEME",
             "title_font_family": "heading",
             "title_font_size": 18,
@@ -113,6 +113,7 @@
             "card_height": 350
           }
         },
+<<<<<<< HEAD
         "node_care_uk_scheme_c": {
           "type": "catalog_node",
           "settings": {
@@ -151,6 +152,46 @@
             "title": "",
             "image": "",
             "link_url": "shopify://collections/challenging-environments-bedroom-sets"
+=======
+        "catalogs_A9fycj": {
+          "type": "catalogs",
+          "settings": {
+            "title": "Communal Schemes",
+            "card_eyebrow": "Scheme",
+            "collections": [],
+            "title_font_family": "heading",
+            "title_font_size": 28,
+            "eyebrow_font_size": 12,
+            "title_font_weight": "500",
+            "title_font_style": "normal",
+            "card_padding": 24,
+            "card_border_width": 1,
+            "card_border_color": "#d0d0d0",
+            "card_border_radius": 8,
+            "card_gap": 24,
+            "card_height": 0
+          }
+        },
+        "catalogs_TfbtH3": {
+          "type": "catalogs",
+          "settings": {
+            "title": "Bedroom Schemes",
+            "card_eyebrow": "Scheme",
+            "collections": [
+              "care-uk-scheme-c"
+            ],
+            "title_font_family": "heading",
+            "title_font_size": 28,
+            "eyebrow_font_size": 12,
+            "title_font_weight": "500",
+            "title_font_style": "normal",
+            "card_padding": 24,
+            "card_border_width": 1,
+            "card_border_color": "#d0d0d0",
+            "card_border_radius": 8,
+            "card_gap": 24,
+            "card_height": 0
+>>>>>>> 8e214c941942021e542ba124a127ba783380a266
           }
         },
         "products_ebH7qW": {
@@ -180,10 +221,15 @@
       },
       "block_order": [
         "catalogs_VgQLc8",
+<<<<<<< HEAD
         "node_care_uk_scheme_c",
         "node_challenging_accessories",
         "node_overbed_tables",
         "node_challenging_bedroom_sets",
+=======
+        "catalogs_A9fycj",
+        "catalogs_TfbtH3",
+>>>>>>> 8e214c941942021e542ba124a127ba783380a266
         "products_ebH7qW",
         "contact_nbMeGr",
         "link_p8mLnL"
@@ -193,7 +239,7 @@
         "heading": "Welcome",
         "section_padding": "--spacing-2xl",
         "tab_font_size": 16,
-        "tab_font_weight": "500",
+        "tab_font_weight": "400",
         "tab_padding_x": 20,
         "tab_padding_y": 14,
         "scheme_columns_desktop": 2,
