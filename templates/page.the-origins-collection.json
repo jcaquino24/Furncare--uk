@@ -12,20 +12,20 @@
     "image_video_banner_tUQhjn": {
       "type": "image-video-banner",
       "blocks": {
+        "eyebrow_NfMeef": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "32,955 possible configurations",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
         "title_WYCUQG": {
           "type": "title",
           "settings": {
             "text": "The Origins Collection",
             "title_element": "h1",
             "title_size": "display",
-            "text_color": "#f9f7f0"
-          }
-        },
-        "eyebrow_NfMeef": {
-          "type": "eyebrow",
-          "settings": {
-            "text": "contemporary cabinet furniture for later living",
-            "eyebrow_size": "sm",
             "text_color": "#f9f7f0"
           }
         },
@@ -46,25 +46,25 @@
         }
       },
       "block_order": [
-        "title_WYCUQG",
         "eyebrow_NfMeef",
+        "title_WYCUQG",
         "button_aVJxk3"
       ],
       "name": "Image - Video Banner",
       "settings": {
         "height_desktop": 800,
         "height_mobile": 490,
-        "maintain_aspect_ratio": false,
+        "maintain_aspect_ratio": true,
         "add_header_offset": false,
         "media_type": "image",
-        "image_desktop": "shopify://shop_images/Ellington_CU_ab55b21d-2988-4d7c-9a78-730afbe8551e.jpg",
+        "image_desktop": "shopify://shop_images/Untitled_design_16.gif",
         "video_desktop": "shopify://files/videos/Garden Furn 2026 Landing Page.mp4",
         "show_controls": false,
         "mute_video": true,
         "autoplay_video": true,
         "show_overlay": true,
-        "overlay_background": "",
-        "colour_scheme": "dark",
+        "overlay_background": "linear-gradient(180deg, rgba(195, 192, 176, 0.4), rgba(195, 192, 176, 0.4) 100%)",
+        "colour_scheme": "light",
         "content_position": "center-center",
         "content_alignment": "center"
       }
@@ -75,7 +75,7 @@
         "ai_gen_block_90768fd_g9jE9m": {
           "type": "ai_gen_block_90768fd",
           "settings": {
-            "spacer_height": 65,
+            "spacer_height": 60,
             "spacer_height_mobile": 30,
             "spacer_color": "#f9f7f0"
           },
