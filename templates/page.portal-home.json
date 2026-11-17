@@ -92,6 +92,71 @@
         "section_padding": "--spacing-md"
       }
     },
+    "portal_catalog_hierarchy_ekPPLh": {
+      "type": "portal-catalog-hierarchy",
+      "blocks": {
+        "catalog_LfLfiW": {
+          "type": "catalog",
+          "settings": {
+            "node_id": "catalogs",
+            "parent_id": "",
+            "title": "Catalogs",
+            "link_url": "",
+            "collections": []
+          }
+        },
+        "catalog_JN6cNb": {
+          "type": "catalog",
+          "settings": {
+            "node_id": "catalog1",
+            "parent_id": "catalogs",
+            "title": "Catalog 1",
+            "link_url": "",
+            "collections": []
+          }
+        },
+        "catalog_hAtLdy": {
+          "type": "catalog",
+          "settings": {
+            "node_id": "",
+            "parent_id": "catalog1",
+            "title": "Catalog321",
+            "link_url": "",
+            "collections": []
+          }
+        },
+        "catalog_yaTYPC": {
+          "type": "catalog",
+          "settings": {
+            "node_id": "",
+            "parent_id": "catalog1",
+            "title": "Catalog123",
+            "link_url": "",
+            "collections": []
+          }
+        }
+      },
+      "block_order": [
+        "catalog_LfLfiW",
+        "catalog_JN6cNb",
+        "catalog_hAtLdy",
+        "catalog_yaTYPC"
+      ],
+      "name": "Portal catalog hierarchy",
+      "settings": {
+        "heading": "Browse catalogs",
+        "intro": "",
+        "columns_desktop": 3,
+        "columns_mobile": 1,
+        "card_gap": 24,
+        "card_height": 0,
+        "card_padding": 24,
+        "card_border_width": 1,
+        "card_border_color": "#d0d0d0",
+        "card_border_radius": 8,
+        "overlay_opacity": 60
+      }
+    },
     "portal_tabs_QcQP8n": {
       "type": "portal-tabs",
       "blocks": {
@@ -502,6 +567,7 @@
   "order": [
     "featured_blocks_kEJTiG",
     "main",
+    "portal_catalog_hierarchy_ekPPLh",
     "portal_tabs_QcQP8n",
     "catalog_cards_pb8Bbt",
     "koz_dynamic_grid_Xgrrmb",
