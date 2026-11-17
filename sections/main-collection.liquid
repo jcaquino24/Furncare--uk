@@ -36,8 +36,37 @@
       endif
     endfor
   endif
+
+  assign is_portal_private_collection = false
+  for private_collection in settings.portal_private_collections
+    if private_collection.id == collection.id
+      assign is_portal_private_collection = true
+      break
+    endif
+  endfor
+
+  assign portal_company_names = settings.portal_company_name | default: 'Furncare Test' | split: ','
+  assign current_company_name = customer.current_company.name | downcase | strip
+  assign is_portal_company = false
+  if request.design_mode
+    assign is_portal_company = true
+  else
+    for portal_company_name in portal_company_names
+      assign normalized_company_name = portal_company_name | downcase | strip
+      if current_company_name != blank and current_company_name == normalized_company_name
+        assign is_portal_company = true
+        break
+      endif
+    endfor
+  endif
 -%}
 
+{% if is_portal_private_collection and is_portal_company == false %}
+  <div class="collection__access-denied" role="alert">
+    <p>This collection is not available.</p>
+    <a href="{{ routes.root_url }}">Continue to the store</a>
+  </div>
+{% else %}
 <div class="collection collection--{{ section.settings.grid_style }} colour-scheme--light colour-scheme--base-white-01">
   <div class="collection__container container">
     <div class="collection__header">
@@ -97,6 +126,8 @@
               navigation-next-el="#swiper-button-next-{{ section.id }}-subcollections"
             >
               {% for subcollection in collection.metafields.custom.subcollections.value %}
+                {% capture is_private_subcollection %}{% render 'portal-private-collection-link', link: subcollection %}{% endcapture %}
+                {% unless is_private_subcollection contains 'private' %}
                 {%- liquid
                   assign is_active = false
                   assign element = 'a'
@@ -127,12 +158,15 @@
                     </span>
                   </{{ element }}>
                 </swiper-slide>
+                {% endunless %}
               {% endfor %}
             </swiper-container>
           </div>
         {% else %}
           <div class="collection__header-subcollections">
             {% for subcollection in collection.metafields.custom.subcollections.value %}
+              {% capture is_private_subcollection %}{% render 'portal-private-collection-link', link: subcollection %}{% endcapture %}
+              {% unless is_private_subcollection contains 'private' %}
               {%- liquid
                 assign is_active = false
                 assign element = 'a'
@@ -161,6 +195,7 @@
                   {{ subcollection.title }}
                 </span>
               </{{ element }}>
+              {% endunless %}
             {% endfor %}
           </div>
         {% endif %}
@@ -330,6 +365,7 @@
     {%- endpaginate -%}
   </div>
 </div>
+{% endif %}
 
 {% schema %}
 {

@@ -131,11 +131,14 @@
               {% assign links = block.settings.link_list.links %}
               <ul class="footer__list">
                 {% for link in links %}
+                  {% capture is_private_link %}{% render 'portal-private-collection-link', link: link %}{% endcapture %}
+                  {% unless is_private_link contains 'private' %}
                   <li class="footer__list-item">
                     <a href="{{ link.url }}" class="footer__list-link">
                       {{- link.title -}}
                     </a>
                   </li>
+                  {% endunless %}
                 {% endfor %}
               </ul>
             {%- endif -%}

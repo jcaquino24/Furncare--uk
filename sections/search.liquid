@@ -192,7 +192,12 @@
                       {%- endif -%}
 
                     {%- when 'collection' -%}
-                      {%- render 'collection-card', collection: item -%}
+                      {%- capture is_private_collection_link -%}
+                        {%- render 'portal-private-collection-link', link: item -%}
+                      {%- endcapture -%}
+                      {%- unless is_private_collection_link contains 'private' -%}
+                        {%- render 'collection-card', collection: item -%}
+                      {%- endunless -%}
                     {%- when 'article' -%}
                       {%- render 'article-card', article: item -%}
                     {%- when 'page' -%}

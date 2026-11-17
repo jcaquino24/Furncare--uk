@@ -80,7 +80,9 @@
     {% endunless %}
 
     <main id="main-content" role="main" tabindex="-1">
-      {{ content_for_layout }}
+      {% if is_portal_company or request.design_mode %}
+        {{ content_for_layout }}
+      {% endif %}
     </main>
 
     {% unless hide_portal_chrome %}

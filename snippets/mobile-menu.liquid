@@ -1,9 +1,9 @@
 {%- doc -%}
   @description Mobile menu component
 
-  @param {Object} menu - The menu to display
-  @param {Object} all_menu_promotions - All menu promotions
-  @param {Object} support_links - Support links
+  @param menu - The menu to display
+  @param all_menu_promotions - All menu promotions
+  @param support_links - Support links
 
   @example
   {% render 'mobile-menu',
@@ -61,6 +61,8 @@
 >
   <div class="mobile-menu__menu-primary">
     {% for link in menu.links %}
+      {% capture is_private_link %}{% render 'portal-private-collection-link', link: link %}{% endcapture %}
+      {% unless is_private_link contains 'private' %}
       {% if link.links.size > 0 %}
         <button
           class="mobile-menu__link mobile-menu__link--trigger body-md"
@@ -80,6 +82,7 @@
           {{ link.title }}
         </a>
       {% endif %}
+      {% endunless %}
     {% endfor %}
   </div>
 
@@ -88,6 +91,10 @@
   </div>
 
   {% for link in menu.links %}
+    {% capture is_private_link %}{% render 'portal-private-collection-link', link: link %}{% endcapture %}
+    {% if is_private_link contains 'private' %}
+      {% continue %}
+    {% endif %}
     {%- liquid
       unless link.links.size > 0
         continue
@@ -138,6 +145,8 @@
 
         <div class="mobile-menu__submenu-menu">
           {% for child_link in link.links %}
+            {% capture is_private_child_link %}{% render 'portal-private-collection-link', link: child_link %}{% endcapture %}
+            {% unless is_private_child_link contains 'private' %}
             <details class="mobile-menu__sublink-wrapper">
               <summary class="mobile-menu__sublink-trigger">
                 <p class="body-md body-md--bold">
@@ -150,15 +159,19 @@
 
               <div class="mobile-menu__submenu-content">
                 {% for grandchild_link in child_link.links %}
-                  <a
-                    class="mobile-menu__sublink-link body-md"
-                    href="{{ grandchild_link.url }}"
-                  >
-                    {{ grandchild_link.title }}
-                  </a>
+                  {% capture is_private_grandchild_link %}{% render 'portal-private-collection-link', link: grandchild_link %}{% endcapture %}
+                  {% unless is_private_grandchild_link contains 'private' %}
+                    <a
+                      class="mobile-menu__sublink-link body-md"
+                      href="{{ grandchild_link.url }}"
+                    >
+                      {{ grandchild_link.title }}
+                    </a>
+                  {% endunless %}
                 {% endfor %}
               </div>
             </details>
+            {% endunless %}
           {% endfor %}
         </div>
 

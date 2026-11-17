@@ -3,7 +3,7 @@
 
   @param menu - {Object} The menu to display
   @param all_menu_promotions - {Object} The menu promotions to display
-  @param support_links - {Object} The support links to display
+  @param hide_on_mobile - Whether to hide the menu on mobile
 
   @example
   {% render 'megamenu',
@@ -16,6 +16,8 @@
 
 <nav class="megamenu {% if hide_on_mobile %}hide-on-mobile{% endif %}">
   {% for link in menu.links %}
+    {% capture is_private_link %}{% render 'portal-private-collection-link', link: link %}{% endcapture %}
+    {% unless is_private_link contains 'private' %}
     {%- liquid
       assign package_limit = 2
       assign menu_packages = blank
@@ -58,6 +60,8 @@
               <div class="megamenu__megamenu-submenu">
                 <div class="megamenu__megamenu-submenu-links">
                   {% for child_link in link.links %}
+                    {% capture is_private_child_link %}{% render 'portal-private-collection-link', link: child_link %}{% endcapture %}
+                    {% unless is_private_child_link contains 'private' %}
                     <div class="megamenu__megamenu-parent-link-wrapper">
                       <a
                         class="megamenu__megamenu-parent-link body-md body-md--bold"
@@ -68,15 +72,19 @@
 
                       <div class="megamenu__megamenu-sublinks">
                         {% for grandchild_link in child_link.links %}
-                          <a
-                            class="megamenu__megamenu-sublink"
-                            href="{{ grandchild_link.url }}"
-                          >
-                            {{ grandchild_link.title }}
-                          </a>
+                          {% capture is_private_grandchild_link %}{% render 'portal-private-collection-link', link: grandchild_link %}{% endcapture %}
+                          {% unless is_private_grandchild_link contains 'private' %}
+                            <a
+                              class="megamenu__megamenu-sublink"
+                              href="{{ grandchild_link.url }}"
+                            >
+                              {{ grandchild_link.title }}
+                            </a>
+                          {% endunless %}
                         {% endfor %}
                       </div>
                     </div>
+                    {% endunless %}
                   {% endfor %}
                 </div>
 
@@ -170,5 +178,6 @@
         </a>
       {% endif %}
     </div>
+    {% endunless %}
   {% endfor %}
 </nav>

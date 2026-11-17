@@ -81,7 +81,6 @@
         {% render 'megamenu',
           menu: linklists[left_menu_handle],
           all_menu_promotions: all_menu_promotions,
-          support_links: support_links,
           hide_on_mobile: true
         %}
       {% endif %}
@@ -101,7 +100,10 @@
         {% if header_menu_handle == 'portal-menu' %}
           <nav class="header__portal-nav hide-on-mobile" aria-label="Portal">
             {% for link in linklists['portal-menu'].links %}
+              {% capture is_private_link %}{% render 'portal-private-collection-link', link: link %}{% endcapture %}
+              {% unless is_private_link contains 'private' %}
               <a href="{{ link.url }}"{% if link.active %} aria-current="page"{% endif %}>{{ link.title }}</a>
+              {% endunless %}
             {% endfor %}
           </nav>
         {% endif %}

@@ -1,0 +1,16 @@
+{%- doc -%}
+  @param {link} link - Navigation link to check against portal-only collections.
+{%- enddoc -%}
+
+{%- assign normalized_link_url = link.url | remove: shop.url | split: '?' | first -%}
+{%- for private_collection in settings.portal_private_collections -%}
+  {%- if link.object != blank and link.object.id == private_collection.id -%}
+    private
+    {%- break -%}
+  {%- endif -%}
+  {%- assign normalized_collection_url = private_collection.url | split: '?' | first -%}
+  {%- if normalized_link_url == normalized_collection_url -%}
+    private
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}

@@ -78,6 +78,13 @@
         "default": "Furncare Test"
       },
       {
+        "type": "collection_list",
+        "id": "portal_private_collections",
+        "label": "Portal-only collections",
+        "limit": 50,
+        "info": "Collections to exclude from public collection listings and navigation. Configure Shopify B2B catalogs separately to enforce access."
+      },
+      {
         "type": "checkbox",
         "id": "hide_portal_header_footer",
         "label": "Hide header and footer for portal company",

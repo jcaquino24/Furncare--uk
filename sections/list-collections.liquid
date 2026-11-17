@@ -15,20 +15,14 @@
     {% if section.settings.collections_linklist != blank %}
       <ul class="list-collections__list">
         {% for collection in collections %}
-          <li class="list-collections__item">
-            {% render 'content-block',
-              blocks_size: 4,
-              title: collection.title,
-              image: collection.image,
-              url: collection.url
-            %}
-          </li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      {% paginate collections by 24 %}
-        <ul class="list-collections__list">
-          {% for collection in collections %}
+          {%- assign is_portal_private_collection = false -%}
+          {%- for private_collection in settings.portal_private_collections -%}
+            {%- if private_collection.id == collection.id -%}
+              {%- assign is_portal_private_collection = true -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- unless is_portal_private_collection -%}
             <li class="list-collections__item">
               {% render 'content-block',
                 blocks_size: 4,
@@ -37,6 +31,30 @@
                 url: collection.url
               %}
             </li>
+          {%- endunless -%}
+        {% endfor %}
+      </ul>
+    {% else %}
+      {% paginate collections by 24 %}
+        <ul class="list-collections__list">
+          {% for collection in collections %}
+            {%- assign is_portal_private_collection = false -%}
+            {%- for private_collection in settings.portal_private_collections -%}
+              {%- if private_collection.id == collection.id -%}
+                {%- assign is_portal_private_collection = true -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+            {%- unless is_portal_private_collection -%}
+              <li class="list-collections__item">
+                {% render 'content-block',
+                  blocks_size: 4,
+                  title: collection.title,
+                  image: collection.image,
+                  url: collection.url
+                %}
+              </li>
+            {%- endunless -%}
           {% endfor %}
         </ul>
 

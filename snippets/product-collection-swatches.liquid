@@ -30,6 +30,14 @@
     <fieldset class="product-swatches__group">
       <div class="product-swatches__items">
         {%- for swatch_collection in swatch_collections -%}
+          {%- assign is_portal_private_collection = false -%}
+          {%- for private_collection in settings.portal_private_collections -%}
+            {%- if private_collection.id == swatch_collection.id -%}
+              {%- assign is_portal_private_collection = true -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- unless is_portal_private_collection -%}
           {%- liquid
             assign swatch_label = swatch_collection.metafields.custom.swatch_title | default: swatch_collection.title
             assign swatch_image = swatch_collection.metafields.custom.swatch_image
@@ -53,6 +61,7 @@
               {% render 'icons', icon: 'directional-arrow-right' %}
             </span>
           </a>
+          {%- endunless -%}
         {%- endfor -%}
       </div>
     </fieldset>

@@ -22,7 +22,15 @@
         assign collection = settings.empty_state_collection | default: collections.all
         assign default_title = 'content.search_results_resource_products' | t
         assign title = settings.empty_state_collection.title | default: default_title
+        assign is_portal_private_collection = false
+        for private_collection in settings.portal_private_collections
+          if private_collection.id == collection.id
+            assign is_portal_private_collection = true
+            break
+          endif
+        endfor
       %}
+      {% unless is_portal_private_collection %}
       {% paginate collection.products by 4 %}
         {% assign products = collection.products %}
         {% comment %} Only show products section if there are products to display {% endcomment %}
@@ -39,6 +47,7 @@
           </div>
         {% endif %}
       {% endpaginate %}
+      {% endunless %}
     </div>
   {% endif %}
 </div>

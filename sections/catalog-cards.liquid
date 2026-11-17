@@ -13,15 +13,30 @@
           assign card_title = block.settings.title | default: collection.title
           assign card_image = block.settings.image | default: collection.image
           assign card_url = block.settings.link | default: collection.url
+          assign is_portal_private_collection = false
+          for private_collection in settings.portal_private_collections
+            if block.settings.collection != blank
+              if block.settings.collection.id == private_collection.id
+                assign is_portal_private_collection = true
+                break
+              endif
+            endif
+            if card_url == private_collection.url
+              assign is_portal_private_collection = true
+              break
+            endif
+          endfor
         -%}
-        <li class="list-collections__item" {{ block.shopify_attributes }}>
-          {% render 'content-block',
-            blocks_size: 4,
-            title: card_title,
-            image: card_image,
-            url: card_url
-          %}
-        </li>
+        {%- unless is_portal_private_collection -%}
+          <li class="list-collections__item" {{ block.shopify_attributes }}>
+            {% render 'content-block',
+              blocks_size: 4,
+              title: card_title,
+              image: card_image,
+              url: card_url
+            %}
+          </li>
+        {%- endunless -%}
       {% endfor %}
     </ul>
   </div>
