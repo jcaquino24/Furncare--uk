@@ -12,6 +12,60 @@
     "main": {
       "type": "main-collection",
       "blocks": {
+        "swatch_colour_E6bqPR": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Nera Oak",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/nera_oak_e899955f-ae2b-4b9e-b803-dcba732dc4b6.png"
+          }
+        },
+        "swatch_colour_xwPgph": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Natural Beech",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/beech_bea0b7cd-280b-4b3b-8e2f-a08f50deb8fb.png"
+          }
+        },
+        "swatch_colour_iPJx9K": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Beech",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/beech_bea0b7cd-280b-4b3b-8e2f-a08f50deb8fb.png"
+          }
+        },
+        "swatch_colour_LUhGJz": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Wenge",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/wenge_e2836b74-75c1-4884-a7a1-dc0dae7690af.png"
+          }
+        },
+        "swatch_colour_pp8yak": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Walnut",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/walnut_a3c52412-eb39-4454-9471-a0a37a09756d.png"
+          }
+        },
+        "swatch_colour_mwKEqJ": {
+          "type": "swatch_colour",
+          "settings": {
+            "value_name": "Oak",
+            "swatch_type": "image",
+            "colour": "",
+            "swatch_image": "shopify://shop_images/oak_cd6c01e7-0002-442b-a166-cc662597d482.png"
+          }
+        },
         "swatch_colour_CeM3Dg": {
           "type": "swatch_colour",
           "settings": {
@@ -225,6 +279,12 @@
         }
       },
       "block_order": [
+        "swatch_colour_E6bqPR",
+        "swatch_colour_xwPgph",
+        "swatch_colour_iPJx9K",
+        "swatch_colour_LUhGJz",
+        "swatch_colour_pp8yak",
+        "swatch_colour_mwKEqJ",
         "swatch_colour_CeM3Dg",
         "swatch_colour_Ty7rjn",
         "swatch_colour_qQ3wzh",
