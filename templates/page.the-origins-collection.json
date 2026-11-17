@@ -75,7 +75,7 @@
         "ai_gen_block_90768fd_g9jE9m": {
           "type": "ai_gen_block_90768fd",
           "settings": {
-            "spacer_height": 80,
+            "spacer_height": 65,
             "spacer_height_mobile": 30,
             "spacer_color": "#f9f7f0"
           },
@@ -1002,21 +1002,6 @@
     "image_video_banner_QgCynL": {
       "type": "image-video-banner",
       "blocks": {
-        "button_JkLniQ": {
-          "type": "button",
-          "settings": {
-            "text": "Order yours",
-            "button_url": "",
-            "new_tab": false,
-            "button_style": "underline",
-            "button_font_size": 16,
-            "button_font_color": "#ffffff",
-            "button_background": "#1f1f1f",
-            "button_border_width": 1,
-            "button_border_color": "#ffffff",
-            "button_padding": 12
-          }
-        },
         "eyebrow_wRFj4e": {
           "type": "eyebrow",
           "settings": {
@@ -1033,12 +1018,27 @@
             "title_size": "display",
             "text_color": "#f9f7f0"
           }
+        },
+        "button_JkLniQ": {
+          "type": "button",
+          "settings": {
+            "text": "Order yours",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "underline",
+            "button_font_size": 16,
+            "button_font_color": "#ffffff",
+            "button_background": "#1f1f1f",
+            "button_border_width": 1,
+            "button_border_color": "#ffffff",
+            "button_padding": 12
+          }
         }
       },
       "block_order": [
-        "button_JkLniQ",
         "eyebrow_wRFj4e",
-        "title_kCjkkB"
+        "title_kCjkkB",
+        "button_JkLniQ"
       ],
       "name": "Image - Video Banner",
       "settings": {
@@ -1120,11 +1120,27 @@
             "title_size": "display",
             "text_color": "#f9f7f0"
           }
+        },
+        "button_kVmrgp": {
+          "type": "button",
+          "settings": {
+            "text": "Order yours",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "underline",
+            "button_font_size": 16,
+            "button_font_color": "#ffffff",
+            "button_background": "#1f1f1f",
+            "button_border_width": 1,
+            "button_border_color": "#ffffff",
+            "button_padding": 12
+          }
         }
       },
       "block_order": [
         "eyebrow_hxaK7c",
-        "title_jABEgj"
+        "title_jABEgj",
+        "button_kVmrgp"
       ],
       "name": "Image - Video Banner",
       "settings": {
