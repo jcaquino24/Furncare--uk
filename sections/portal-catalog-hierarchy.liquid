@@ -1,0 +1,356 @@
+{%- assign catalog_nodes = section.blocks | where: 'type', 'catalog' -%}
+
+<section
+  class="portal-catalog-hierarchy"
+  id="portal-catalog-hierarchy-{{ section.id }}"
+  data-portal-catalog-hierarchy
+  style="--catalog-columns-desktop: {{ section.settings.columns_desktop }}; --catalog-columns-mobile: {{ section.settings.columns_mobile }}; --catalog-card-gap: {{ section.settings.card_gap }}px; --catalog-card-height: {% if section.settings.card_height > 0 %}{{ section.settings.card_height }}px{% else %}auto{% endif %}; --catalog-card-padding: {{ section.settings.card_padding }}px; --catalog-card-radius: {{ section.settings.card_border_radius }}px; --catalog-card-border-width: {{ section.settings.card_border_width }}px; --catalog-card-border-color: {{ section.settings.card_border_color }}; --catalog-overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }}"
+>
+  <div class="portal-catalog-hierarchy__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="portal-catalog-hierarchy__heading">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+    {%- if section.settings.intro != blank -%}
+      <div class="portal-catalog-hierarchy__intro rte">{{ section.settings.intro }}</div>
+    {%- endif -%}
+
+    <div class="portal-catalog-hierarchy__root" data-hierarchy-root>
+      <ul class="portal-catalog-hierarchy__grid">
+        {%- for node in catalog_nodes -%}
+          {%- if node.settings.parent_id != blank -%}
+            {%- continue -%}
+          {%- endif -%}
+          {%- assign node_id = node.settings.node_id | default: node.id -%}
+          {%- assign node_image = node.settings.card_image -%}
+          {%- if node_image == blank and node.settings.collections.size > 0 -%}
+            {%- assign first_collection = node.settings.collections | first -%}
+            {%- assign node_image = first_collection.image -%}
+          {%- endif -%}
+          {%- assign node_has_children = false -%}
+          {%- for child in catalog_nodes -%}
+            {%- if node.settings.node_id != blank and child.settings.parent_id == node.settings.node_id -%}
+              {%- assign node_has_children = true -%}
+            {%- endif -%}
+          {%- endfor -%}
+          <li>
+            {%- if node_has_children or node.settings.collections.size > 0 or node.settings.link_url == blank -%}
+              <button
+                class="portal-catalog-hierarchy__card portal-catalog-hierarchy__card--button"
+                type="button"
+                data-hierarchy-open="{{ node_id | escape }}"
+                aria-controls="portal-catalog-panel-{{ node.id }}"
+                aria-expanded="false"
+              >
+                {%- if node_image != blank -%}
+                  {{ node_image | image_url: width: 1000 | image_tag: class: 'portal-catalog-hierarchy__image', loading: 'lazy', alt: node.settings.title }}
+                {%- endif -%}
+                <span class="portal-catalog-hierarchy__overlay" aria-hidden="true"></span>
+                <span class="portal-catalog-hierarchy__card-copy">
+                  <span class="portal-catalog-hierarchy__card-title">{{ node.settings.title | escape }}</span>
+                </span>
+              </button>
+            {%- else -%}
+              <a class="portal-catalog-hierarchy__card" href="{{ node.settings.link_url }}">
+                {%- if node_image != blank -%}
+                  {{ node_image | image_url: width: 1000 | image_tag: class: 'portal-catalog-hierarchy__image', loading: 'lazy', alt: node.settings.title }}
+                {%- endif -%}
+                <span class="portal-catalog-hierarchy__overlay" aria-hidden="true"></span>
+                <span class="portal-catalog-hierarchy__card-copy">
+                  <span class="portal-catalog-hierarchy__card-title">{{ node.settings.title | escape }}</span>
+                </span>
+              </a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+
+    {%- for node in catalog_nodes -%}
+      {%- assign node_id = node.settings.node_id | default: node.id -%}
+      {%- assign has_children = false -%}
+      {%- for child in catalog_nodes -%}
+        {%- if node.settings.node_id != blank and child.settings.parent_id == node.settings.node_id -%}
+          {%- assign has_children = true -%}
+        {%- endif -%}
+      {%- endfor -%}
+      <div
+        class="portal-catalog-hierarchy__panel"
+        id="portal-catalog-panel-{{ node.id }}"
+        data-hierarchy-panel="{{ node_id | escape }}"
+        data-parent-node-id="{{ node.settings.parent_id | escape }}"
+        aria-live="polite"
+        {{ node.shopify_attributes }}
+        hidden
+      >
+        <button class="portal-catalog-hierarchy__back" type="button" data-hierarchy-back>
+          <span aria-hidden="true">&larr;</span> Back
+        </button>
+        <h3 class="portal-catalog-hierarchy__panel-heading">{{ node.settings.title | escape }}</h3>
+
+        {%- if node.settings.link_url != blank -%}
+          <p class="portal-catalog-hierarchy__destination">
+            <a href="{{ node.settings.link_url }}">Open {{ node.settings.title | escape }}</a>
+          </p>
+        {%- endif -%}
+
+        {%- if has_children -%}
+          <ul class="portal-catalog-hierarchy__grid">
+            {%- for child in catalog_nodes -%}
+              {%- if child.settings.parent_id != node.settings.node_id -%}
+                {%- continue -%}
+              {%- endif -%}
+              {%- assign child_id = child.settings.node_id | default: child.id -%}
+              {%- assign child_image = child.settings.card_image -%}
+              {%- if child_image == blank and child.settings.collections.size > 0 -%}
+                {%- assign first_collection = child.settings.collections | first -%}
+                {%- assign child_image = first_collection.image -%}
+              {%- endif -%}
+              {%- assign child_has_children = false -%}
+              {%- for grandchild in catalog_nodes -%}
+                {%- if child.settings.node_id != blank and grandchild.settings.parent_id == child.settings.node_id -%}
+                  {%- assign child_has_children = true -%}
+                {%- endif -%}
+              {%- endfor -%}
+              <li>
+                {%- if child_has_children or child.settings.collections.size > 0 or child.settings.link_url == blank -%}
+                  <button
+                    class="portal-catalog-hierarchy__card portal-catalog-hierarchy__card--button"
+                    type="button"
+                    data-hierarchy-open="{{ child_id | escape }}"
+                    aria-controls="portal-catalog-panel-{{ child.id }}"
+                    aria-expanded="false"
+                  >
+                    {%- if child_image != blank -%}
+                      {{ child_image | image_url: width: 1000 | image_tag: class: 'portal-catalog-hierarchy__image', loading: 'lazy', alt: child.settings.title }}
+                    {%- endif -%}
+                    <span class="portal-catalog-hierarchy__overlay" aria-hidden="true"></span>
+                    <span class="portal-catalog-hierarchy__card-copy">
+                      <span class="portal-catalog-hierarchy__card-title">{{ child.settings.title | escape }}</span>
+                    </span>
+                  </button>
+                {%- else -%}
+                  <a class="portal-catalog-hierarchy__card" href="{{ child.settings.link_url }}">
+                    {%- if child_image != blank -%}
+                      {{ child_image | image_url: width: 1000 | image_tag: class: 'portal-catalog-hierarchy__image', loading: 'lazy', alt: child.settings.title }}
+                    {%- endif -%}
+                    <span class="portal-catalog-hierarchy__overlay" aria-hidden="true"></span>
+                    <span class="portal-catalog-hierarchy__card-copy">
+                      <span class="portal-catalog-hierarchy__card-title">{{ child.settings.title | escape }}</span>
+                    </span>
+                  </a>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- if node.settings.collections.size > 0 -%}
+          <ul class="portal-catalog-hierarchy__grid portal-catalog-hierarchy__collections">
+            {%- for collection in node.settings.collections -%}
+              <li>
+                <a class="portal-catalog-hierarchy__card" href="{{ collection.url }}">
+                  {%- if collection.image != blank -%}
+                    {{ collection.image | image_url: width: 1000 | image_tag: class: 'portal-catalog-hierarchy__image', loading: 'lazy', alt: collection.title }}
+                  {%- endif -%}
+                  <span class="portal-catalog-hierarchy__overlay" aria-hidden="true"></span>
+                  <span class="portal-catalog-hierarchy__card-copy">
+                    <span class="portal-catalog-hierarchy__card-title">{{ collection.title | escape }}</span>
+                  </span>
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- elsif has_children == false and node.settings.link_url == blank -%}
+          <p class="portal-catalog-hierarchy__empty">No catalogs available.</p>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('portal-catalog-hierarchy-{{ section.id }}');
+    if (!root) return;
+
+    var rootPanel = root.querySelector('[data-hierarchy-root]');
+
+    function showNode(nodeId) {
+      rootPanel.hidden = nodeId !== '';
+      root.querySelectorAll('[data-hierarchy-panel]').forEach(function (panel) {
+        panel.hidden = panel.getAttribute('data-hierarchy-panel') !== nodeId;
+      });
+      root.querySelectorAll('[data-hierarchy-open]').forEach(function (button) {
+        button.setAttribute('aria-expanded', button.getAttribute('data-hierarchy-open') === nodeId ? 'true' : 'false');
+      });
+    }
+
+    root.addEventListener('click', function (event) {
+      var openButton = event.target.closest('[data-hierarchy-open]');
+      if (openButton && root.contains(openButton)) {
+        showNode(openButton.getAttribute('data-hierarchy-open'));
+        return;
+      }
+
+      var backButton = event.target.closest('[data-hierarchy-back]');
+      if (backButton && root.contains(backButton)) {
+        var panel = backButton.closest('[data-hierarchy-panel]');
+        showNode(panel.getAttribute('data-parent-node-id') || '');
+      }
+    });
+  })();
+</script>
+
+{% stylesheet %}
+  .portal-catalog-hierarchy {
+    padding: var(--section-padding, 4rem) var(--spacing-lg, 1.5rem);
+  }
+  .portal-catalog-hierarchy__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .portal-catalog-hierarchy__heading,
+  .portal-catalog-hierarchy__panel-heading {
+    margin: 0 0 var(--spacing-lg, 1.5rem);
+  }
+  .portal-catalog-hierarchy__intro {
+    margin-bottom: var(--spacing-xl, 2rem);
+  }
+  .portal-catalog-hierarchy__grid {
+    display: grid;
+    grid-template-columns: repeat(var(--catalog-columns-desktop, 3), minmax(0, 1fr));
+    gap: var(--catalog-card-gap, 24px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .portal-catalog-hierarchy__card {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    aspect-ratio: 1.6;
+    height: var(--catalog-card-height, auto);
+    overflow: hidden;
+    border: var(--catalog-card-border-width, 1px) solid var(--catalog-card-border-color, #d0d0d0);
+    border-radius: var(--catalog-card-radius, 8px);
+    color: #fff;
+    background: #454744;
+    text-decoration: none;
+  }
+  .portal-catalog-hierarchy__card--button {
+    padding: 0;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+  .portal-catalog-hierarchy__card:focus-visible,
+  .portal-catalog-hierarchy__back:focus-visible {
+    outline: 2px solid currentcolor;
+    outline-offset: 3px;
+  }
+  .portal-catalog-hierarchy__image,
+  .portal-catalog-hierarchy__overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .portal-catalog-hierarchy__image {
+    object-fit: cover;
+    transition: transform 240ms ease;
+  }
+  .portal-catalog-hierarchy__card:hover .portal-catalog-hierarchy__image {
+    transform: scale(1.03);
+  }
+  .portal-catalog-hierarchy__overlay {
+    background: linear-gradient(180deg, rgb(0 0 0 / 0) 25%, rgb(0 0 0 / var(--catalog-overlay-opacity, 0.58)) 100%);
+  }
+  .portal-catalog-hierarchy__card-copy {
+    position: absolute;
+    z-index: 1;
+    inset-inline: var(--catalog-card-padding, 24px);
+    bottom: var(--catalog-card-padding, 24px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .portal-catalog-hierarchy__card-title {
+    font-family: var(--font-heading-family);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.15;
+  }
+  .portal-catalog-hierarchy__back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2xs, 8px);
+    margin: 0 0 var(--spacing-lg, 1.5rem);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    cursor: pointer;
+  }
+  .portal-catalog-hierarchy__destination {
+    margin: 0 0 var(--spacing-lg, 1.5rem);
+  }
+  .portal-catalog-hierarchy__collections {
+    margin-top: var(--spacing-xl, 2rem);
+  }
+  .portal-catalog-hierarchy [hidden] {
+    display: none;
+  }
+  @media (width < 768px) {
+    .portal-catalog-hierarchy__grid {
+      grid-template-columns: repeat(var(--catalog-columns-mobile, 1), minmax(0, 1fr));
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Portal catalog hierarchy",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Browse catalogs" },
+    { "type": "richtext", "id": "intro", "label": "Introduction" },
+    { "type": "range", "id": "columns_desktop", "label": "Cards per row (desktop)", "min": 1, "max": 6, "step": 1, "default": 3 },
+    { "type": "range", "id": "columns_mobile", "label": "Cards per row (mobile)", "min": 1, "max": 2, "step": 1, "default": 1 },
+    { "type": "range", "id": "card_gap", "label": "Card gap", "min": 8, "max": 48, "step": 2, "unit": "px", "default": 24 },
+    { "type": "range", "id": "card_height", "label": "Card height", "min": 0, "max": 600, "step": 10, "unit": "px", "default": 0, "info": "0 keeps the cards proportional." },
+    { "type": "range", "id": "card_padding", "label": "Card text inset", "min": 0, "max": 64, "step": 2, "unit": "px", "default": 24 },
+    { "type": "range", "id": "card_border_width", "label": "Card border width", "min": 0, "max": 8, "step": 1, "unit": "px", "default": 1 },
+    { "type": "color", "id": "card_border_color", "label": "Card border color", "default": "#d0d0d0" },
+    { "type": "range", "id": "card_border_radius", "label": "Card corner radius", "min": 0, "max": 32, "step": 2, "unit": "px", "default": 8 },
+    { "type": "range", "id": "overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 90, "step": 5, "unit": "%", "default": 60 }
+  ],
+  "blocks": [
+    {
+      "type": "catalog",
+      "name": "Catalog node",
+      "settings": [
+        { "type": "text", "id": "node_id", "label": "Node ID", "info": "Use a unique ID. Child catalogs use this value as their Parent ID." },
+        { "type": "text", "id": "parent_id", "label": "Parent ID", "info": "Leave blank for a top-level catalog." },
+        { "type": "text", "id": "title", "label": "Card title", "default": "Catalog" },
+        { "type": "url", "id": "link_url", "label": "Link URL", "info": "Used for direct links and as an optional destination inside a catalog." },
+        { "type": "image_picker", "id": "card_image", "label": "Card image" },
+        { "type": "collection_list", "id": "collections", "label": "Catalog cards", "limit": 50, "info": "Choose collection cards to show when this node is selected." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Portal catalog hierarchy",
+      "blocks": [
+        { "type": "catalog", "settings": { "node_id": "catalogs", "title": "Catalogs" } },
+        { "type": "catalog", "settings": { "node_id": "catalog1", "parent_id": "catalogs", "title": "Catalog 1" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
