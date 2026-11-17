@@ -95,6 +95,15 @@
     "portal_tabs_QcQP8n": {
       "type": "portal-tabs",
       "blocks": {
+        "catalog_node_Ew4XGt": {
+          "type": "catalog_node",
+          "settings": {
+            "catalog_id": "",
+            "parent_id": "catalog2",
+            "title": "Catalog3",
+            "link_url": ""
+          }
+        },
         "catalog_node_U7GBze": {
           "type": "catalog_node",
           "settings": {
@@ -107,7 +116,7 @@
         "catalog_node_peV4Bb": {
           "type": "catalog_node",
           "settings": {
-            "catalog_id": "",
+            "catalog_id": "catalog2",
             "parent_id": "catalog1",
             "title": "scheme2",
             "link_url": ""
@@ -142,6 +151,7 @@
           "settings": {
             "title": "Communal Schemes",
             "card_eyebrow": "Scheme",
+            "collections": [],
             "title_font_family": "heading",
             "title_font_size": 28,
             "eyebrow_font_size": 12,
@@ -160,6 +170,7 @@
           "settings": {
             "title": "Bedroom Schemes",
             "card_eyebrow": "Scheme",
+            "collections": [],
             "title_font_family": "heading",
             "title_font_size": 28,
             "eyebrow_font_size": 12,
@@ -199,6 +210,7 @@
         }
       },
       "block_order": [
+        "catalog_node_Ew4XGt",
         "catalog_node_U7GBze",
         "catalog_node_peV4Bb",
         "catalogs_VgQLc8",
