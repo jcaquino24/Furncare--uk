@@ -35,7 +35,7 @@
           "settings": {
             "value_name": "Mist",
             "swatch_type": "colour",
-            "colour": "#BDCDC0"
+            "colour": "#bdcdc0"
           }
         },
         "swatch_colour_YdRMrz": {
@@ -43,7 +43,7 @@
           "settings": {
             "value_name": "Chablis",
             "swatch_type": "colour",
-            "colour": "#C5B493"
+            "colour": "#c5b493"
           }
         },
         "swatch_colour_NBe6Df": {
@@ -51,7 +51,7 @@
           "settings": {
             "value_name": "Taupe",
             "swatch_type": "colour",
-            "colour": "#8C7C64"
+            "colour": "#8c7c64"
           }
         },
         "swatch_colour_pmCR7w": {
@@ -68,7 +68,7 @@
           "settings": {
             "value_name": "Alba Wheat",
             "swatch_type": "colour",
-            "colour": "#E0D2B4"
+            "colour": "#e0d2b4"
           }
         },
         "swatch_colour_FR9N9q": {
@@ -76,7 +76,7 @@
           "settings": {
             "value_name": "Riva Chablis",
             "swatch_type": "colour",
-            "colour": "#B69F81"
+            "colour": "#b69f81"
           }
         },
         "swatch_colour_thJQaJ": {
@@ -111,7 +111,7 @@
           "settings": {
             "value_name": "Pewter",
             "swatch_type": "colour",
-            "colour": "#7C7D6A"
+            "colour": "#7c7d6a"
           }
         },
         "swatch_colour_dkFMRJ": {
@@ -188,15 +188,15 @@
           "settings": {
             "value_name": "Marna Hessian",
             "swatch_type": "colour",
-            "colour": "#A6937B"
+            "colour": "#a6937b"
           }
         },
         "swatch_colour_j6Fjgk": {
           "type": "swatch_colour",
           "settings": {
-            "value_name": "Ryde Oyster",
+            "value_name": "Ryde Oyster Faux Leather",
             "swatch_type": "colour",
-            "colour": "#E6D5C2"
+            "colour": "#e6d5c2"
           }
         },
         "swatch_colour_RAaGcJ": {
@@ -204,7 +204,7 @@
           "settings": {
             "value_name": "Luxe Indigo",
             "swatch_type": "colour",
-            "colour": "#39485E"
+            "colour": "#39485e"
           }
         },
         "swatch_colour_3knWin": {
@@ -212,15 +212,15 @@
           "settings": {
             "value_name": "Kilda Graphite",
             "swatch_type": "colour",
-            "colour": "#9F9F9F"
+            "colour": "#9f9f9f"
           }
         },
         "swatch_colour_GjRmVn": {
           "type": "swatch_colour",
           "settings": {
-            "value_name": "Ryde Flint",
+            "value_name": "Ryde Flint Faux Leather",
             "swatch_type": "colour",
-            "colour": "#6E6153"
+            "colour": "#6e6153"
           }
         }
       },
