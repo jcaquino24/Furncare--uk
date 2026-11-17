@@ -712,11 +712,27 @@
             "title_size": "display",
             "text_color": "#f9f7f0"
           }
+        },
+        "button_6AUQw4": {
+          "type": "button",
+          "settings": {
+            "text": "Order yours",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "underline",
+            "button_font_size": 16,
+            "button_font_color": "#243222",
+            "button_background": "",
+            "button_border_width": 1,
+            "button_border_color": "#243222",
+            "button_padding": 12
+          }
         }
       },
       "block_order": [
         "eyebrow_MBMrRy",
-        "title_zqTB9c"
+        "title_zqTB9c",
+        "button_6AUQw4"
       ],
       "name": "Image - Video Banner",
       "settings": {
@@ -798,11 +814,27 @@
             "title_size": "display",
             "text_color": "#f9f7f0"
           }
+        },
+        "button_CPJQUx": {
+          "type": "button",
+          "settings": {
+            "text": "Order yours",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "underline",
+            "button_font_size": 16,
+            "button_font_color": "#ffffff",
+            "button_background": "#1f1f1f",
+            "button_border_width": 1,
+            "button_border_color": "#ffffff",
+            "button_padding": 12
+          }
         }
       },
       "block_order": [
         "eyebrow_eethqx",
-        "title_KgLjka"
+        "title_KgLjka",
+        "button_CPJQUx"
       ],
       "name": "Image - Video Banner",
       "settings": {
@@ -884,11 +916,27 @@
             "title_size": "display",
             "text_color": "#f9f7f0"
           }
+        },
+        "button_Lgedcc": {
+          "type": "button",
+          "settings": {
+            "text": "Order yours",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "underline",
+            "button_font_size": 16,
+            "button_font_color": "#ffffff",
+            "button_background": "#1f1f1f",
+            "button_border_width": 1,
+            "button_border_color": "#ffffff",
+            "button_padding": 12
+          }
         }
       },
       "block_order": [
         "eyebrow_PjeXV9",
-        "title_wp9w7x"
+        "title_wp9w7x",
+        "button_Lgedcc"
       ],
       "name": "Image - Video Banner",
       "settings": {
@@ -954,6 +1002,21 @@
     "image_video_banner_QgCynL": {
       "type": "image-video-banner",
       "blocks": {
+        "button_JkLniQ": {
+          "type": "button",
+          "settings": {
+            "text": "Order yours",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "underline",
+            "button_font_size": 16,
+            "button_font_color": "#ffffff",
+            "button_background": "#1f1f1f",
+            "button_border_width": 1,
+            "button_border_color": "#ffffff",
+            "button_padding": 12
+          }
+        },
         "eyebrow_wRFj4e": {
           "type": "eyebrow",
           "settings": {
@@ -973,6 +1036,7 @@
         }
       },
       "block_order": [
+        "button_JkLniQ",
         "eyebrow_wRFj4e",
         "title_kCjkkB"
       ],
@@ -1135,13 +1199,13 @@
         "content_QbbHRd": {
           "type": "content",
           "settings": {
-            "title": "&nbsp;32,955 Possible Combinations",
+            "title": "&nbsp;32,955 Possible Configurations",
             "title_size": "xl",
-            "text": "<h4>A refined design</h4>\n\nSoftly sculpted curved legs introduce a refined sense of sophistication, serving as a distinctive design feature while maintaining exceptional strength and stability.\n\n<h4>Contemporary finishes</h4>\n\nOffered in several handpicked finishes, allowing for greater design flexibility, creating a tailored, personalised feel while ensuring the piece sits beautifully within both classic and contemporary spaces.\n\n<h4>Ergonomics front and centre </h4>\n\nModern, streamlined handles crafted with smooth, softened edges for a seamless touch, they offer both comfort and sophistication, with a generous 203mm length ensuring effortless usability.",
+            "text": "<h4>Crafted for <i>everyday</i> care</h4>\n\nCombining durable materials with practical styles, Origins is designed to meet the demands of high use care interiors. With soft-close mechanisms, easy-clean surfaces and a 10 year guarantee, every detail is made to last!\n\n<h4>Five distinctive styles </h4>\n\nFrom classic framed fronts to clean, contemporary designs, the Origins Collection offers five individual styles to complement a large range of interior schemes, each with the ability to be personalised with your choice of finish and handle.\n\n\n<h4>One collection, <i> every </i> scheme </h4>\n\nThe flexibility of this range ensures that every scheme can have individuality and difference, but maintaining a cohesive, harmonious feel across the wider .",
             "button_style": "underline",
-            "button_text": "Download the spec sheet",
+            "button_text": "Enquire now!",
             "button_action": "link",
-            "button_url": "https://publuu.com/flip-book/link/2248069"
+            "button_url": "shopify://pages/contact-us"
           }
         }
       },
