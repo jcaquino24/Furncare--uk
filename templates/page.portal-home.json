@@ -95,33 +95,6 @@
     "portal_tabs_QcQP8n": {
       "type": "portal-tabs",
       "blocks": {
-        "catalog_node_Ew4XGt": {
-          "type": "catalog_node",
-          "settings": {
-            "catalog_id": "",
-            "parent_id": "catalog2",
-            "title": "Catalog3",
-            "link_url": ""
-          }
-        },
-        "catalog_node_U7GBze": {
-          "type": "catalog_node",
-          "settings": {
-            "catalog_id": "catalog1",
-            "parent_id": "",
-            "title": "Scheme 1",
-            "link_url": ""
-          }
-        },
-        "catalog_node_peV4Bb": {
-          "type": "catalog_node",
-          "settings": {
-            "catalog_id": "catalog2",
-            "parent_id": "catalog1",
-            "title": "scheme2",
-            "link_url": ""
-          }
-        },
         "catalogs_VgQLc8": {
           "type": "catalogs",
           "settings": {
@@ -210,9 +183,6 @@
         }
       },
       "block_order": [
-        "catalog_node_Ew4XGt",
-        "catalog_node_U7GBze",
-        "catalog_node_peV4Bb",
         "catalogs_VgQLc8",
         "catalogs_A9fycj",
         "catalogs_TfbtH3",
