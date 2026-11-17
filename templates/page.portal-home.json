@@ -118,6 +118,12 @@
           "settings": {
             "title": "All Schemes",
             "card_eyebrow": "SCHEME",
+            "collections": [
+              "care-uk-scheme-c",
+              "challenging-environments-accessories",
+              "overbed-overchair-tables",
+              "challenging-environments-bedroom-sets"
+            ],
             "title_font_family": "heading",
             "title_font_size": 18,
             "eyebrow_font_size": 12,

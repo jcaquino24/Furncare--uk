@@ -13,8 +13,22 @@
       </h1>
     {%- endif -%}
 
+      {%- assign first_tab_index = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'catalog_node' -%}
+          {%- if block.settings.parent_id == blank and first_tab_index == 0 -%}
+            {%- assign first_tab_index = forloop.index -%}
+          {%- endif -%}
+        {%- elsif block.type != 'link' and first_tab_index == 0 -%}
+          {%- assign first_tab_index = forloop.index -%}
+        {%- endif -%}
+      {%- endfor -%}
+
     <ul class="portal-tabs__list" role="tablist" aria-label="{{ section.settings.heading | escape }}">
       {%- for block in section.blocks -%}
+          {%- if block.type == 'catalog_node' and block.settings.parent_id != blank -%}
+            {%- continue -%}
+          {%- endif -%}
         <li role="presentation" {{ block.shopify_attributes }}>
           {%- if block.type == 'link' -%}
             <a class="portal-tabs__tab" href="{{ block.settings.link | default: '#' }}">
@@ -24,12 +38,12 @@
             <button
               type="button"
               role="tab"
-              class="portal-tabs__tab{% if forloop.first %} is-active{% endif %}"
+              class="portal-tabs__tab{% if forloop.index == first_tab_index %} is-active{% endif %}"
               id="portal-tab-{{ block.id }}"
               data-portal-tab="{{ block.id }}"
               aria-controls="portal-panel-{{ block.id }}"
-              aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-              tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+              aria-selected="{% if forloop.index == first_tab_index %}true{% else %}false{% endif %}"
+              tabindex="{% if forloop.index == first_tab_index %}0{% else %}-1{% endif %}"
             >
               {{- block.settings.title -}}
             </button>
@@ -42,90 +56,88 @@
       {%- if block.type == 'link' -%}
         {%- continue -%}
       {%- endif -%}
+      {%- if block.type == 'catalog_node' and block.settings.parent_id != blank -%}
+        {%- continue -%}
+      {%- endif -%}
 
       <div
         class="portal-tabs__panel"
         role="tabpanel"
         id="portal-panel-{{ block.id }}"
         aria-labelledby="portal-tab-{{ block.id }}"
-        {% unless forloop.first %}hidden{% endunless %}
+        {% unless forloop.index == first_tab_index %}hidden{% endunless %}
       >
         {%- case block.type -%}
-          {%- when 'catalogs' -%}
-            {%- liquid
-              assign scheme_title_font = 'var(--font-heading-family)'
-              if block.settings.title_font_family == 'body'
-                assign scheme_title_font = 'var(--font-body-family)'
-              elsif block.settings.title_font_family == 'theme'
-                assign scheme_title_font = 'inherit'
-              endif
-            -%}
-            <div data-portal-catalog-browser data-current-parent="" data-trail="[]">
-              <div class="portal-tabs__catalog-breadcrumb" data-catalog-breadcrumb hidden>
-                <button type="button" class="button button--secondary" data-catalog-up>&larr; Back</button>
-                <span data-catalog-trail></span>
-              </div>
-              <div
-                style="--scheme-columns-desktop: {{ section.settings.scheme_columns_desktop }}; --scheme-columns-mobile: {{ section.settings.scheme_columns_mobile }}; --scheme-card-gap: {{ block.settings.card_gap }}px; --scheme-card-height: {% if block.settings.card_height > 0 %}{{ block.settings.card_height }}px{% else %}auto{% endif %}; --scheme-card-padding: {{ block.settings.card_padding }}px; --scheme-card-border-width: {{ block.settings.card_border_width }}px; --scheme-card-border-color: {{ block.settings.card_border_color }}; --scheme-card-radius: {{ block.settings.card_border_radius }}px; --scheme-title-font: {{ scheme_title_font }}; --scheme-title-size: {{ block.settings.title_font_size }}px; --scheme-title-weight: {{ block.settings.title_font_weight }}; --scheme-title-style: {{ block.settings.title_font_style }}; --scheme-eyebrow-size: {{ block.settings.eyebrow_font_size }}px"
-              >
-                <ul class="portal-tabs__scheme-list" data-portal-node-list>
-                  {%- for node in section.blocks -%}
-                    {%- if node.type != 'catalog_node' -%}{%- continue -%}{%- endif -%}
-                    {%- liquid
-                      assign node_id = node.settings.catalog_id | strip
-                      assign node_parent_id = node.settings.parent_id | strip
-                      assign node_link_url = node.settings.link_url
-                      assign node_collection = blank
-                      if node_link_url contains '/collections/'
-                        assign node_collection_handle = node_link_url | split: '/collections/' | last | split: '?' | first | split: '#' | first
-                        assign node_collection = collections[node_collection_handle]
-                      endif
-                      assign node_title = node.settings.title | default: node_collection.title
-                      assign node_image = node.settings.image | default: node_collection.image
-                      assign node_has_children = false
-                      if node_id != blank
-                        for child_node in section.blocks
-                          assign child_parent_id = child_node.settings.parent_id | strip
-                          if child_node.type == 'catalog_node' and child_parent_id == node_id
-                            assign node_has_children = true
-                            break
-                          endif
-                        endfor
-                      endif
-                    -%}
-                    {%- if node_link_url != blank or node_has_children -%}
-                      <li data-portal-catalog-node data-node-id="{{ node_id | escape }}" data-parent-id="{{ node_parent_id | escape }}" hidden>
-                        {%- if node_link_url != blank -%}
-                          <a class="portal-tabs__scheme-card" href="{{ node_link_url }}" data-catalog-link data-catalog-title="{{ node_title | escape }}">
-                            {%- if node_image != blank -%}{{ node_image | image_url: width: 1000 | image_tag: class: 'portal-tabs__scheme-image', loading: 'lazy', alt: node_title }}{%- endif -%}
-                            <span class="portal-tabs__scheme-overlay" aria-hidden="true"></span>
-                            <span class="portal-tabs__scheme-copy">
-                              {%- if block.settings.card_eyebrow != blank -%}<span class="portal-tabs__scheme-eyebrow">{{ block.settings.card_eyebrow | escape }}</span>{%- endif -%}
-                              <span class="portal-tabs__scheme-title">{{ node_title | escape }}</span>
-                            </span>
-                          </a>
-                        {%- elsif node_has_children -%}
-                          <button type="button" class="portal-tabs__scheme-card" data-catalog-drill data-node-id="{{ node_id | escape }}" data-node-title="{{ node_title | escape }}">
-                            {%- if node_image != blank -%}{{ node_image | image_url: width: 1000 | image_tag: class: 'portal-tabs__scheme-image', loading: 'lazy', alt: node_title }}{%- endif -%}
-                            <span class="portal-tabs__scheme-overlay" aria-hidden="true"></span>
-                            <span class="portal-tabs__scheme-copy">
-                              {%- if block.settings.card_eyebrow != blank -%}<span class="portal-tabs__scheme-eyebrow">{{ block.settings.card_eyebrow | escape }}</span>{%- endif -%}
-                              <span class="portal-tabs__scheme-title">{{ node_title | escape }}</span>
-                            </span>
-                          </button>
-                        {%- endif -%}
-                      </li>
+          {%- when 'catalog_node' -%}
+            {%- if block.settings.link_url != blank -%}
+              <p><a href="{{ block.settings.link_url }}">Open {{ block.settings.title | escape }}</a></p>
+            {%- endif -%}
+            {%- assign catalog_nodes = section.blocks | where: 'type', 'catalog_node' -%}
+            {%- assign has_catalog_children = false -%}
+            {%- for node in catalog_nodes -%}
+              {%- if node.settings.parent_id == block.settings.catalog_id -%}
+                {%- assign has_catalog_children = true -%}
+              {%- endif -%}
+            {%- endfor -%}
+            {%- if has_catalog_children -%}
+              <ul class="portal-tabs__tree">
+                {%- for node in catalog_nodes -%}
+                  {%- if node.settings.parent_id != block.settings.catalog_id -%}
+                    {%- continue -%}
+                  {%- endif -%}
+                  <li>
+                    {%- if node.settings.link_url != blank -%}
+                      <a href="{{ node.settings.link_url }}">{{ node.settings.title | escape }}</a>
+                    {%- else -%}
+                      <span class="portal-tabs__tree-label">{{ node.settings.title | escape }}</span>
                     {%- endif -%}
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+
+          {%- when 'catalogs' -%}
+            {%- if block.settings.collections.size > 0 -%}
+              {%- liquid
+                assign scheme_title_font = 'var(--font-heading-family)'
+                if block.settings.title_font_family == 'body'
+                  assign scheme_title_font = 'var(--font-body-family)'
+                elsif block.settings.title_font_family == 'theme'
+                  assign scheme_title_font = 'inherit'
+                endif
+              -%}
+              <div data-portal-catalog-list>
+                <ul
+                  class="portal-tabs__scheme-list"
+                  style="--scheme-columns-desktop: {{ section.settings.scheme_columns_desktop }}; --scheme-columns-mobile: {{ section.settings.scheme_columns_mobile }}; --scheme-card-gap: {{ block.settings.card_gap }}px; --scheme-card-height: {% if block.settings.card_height > 0 %}{{ block.settings.card_height }}px{% else %}auto{% endif %}; --scheme-card-padding: {{ block.settings.card_padding }}px; --scheme-card-border-width: {{ block.settings.card_border_width }}px; --scheme-card-border-color: {{ block.settings.card_border_color }}; --scheme-card-radius: {{ block.settings.card_border_radius }}px; --scheme-title-font: {{ scheme_title_font }}; --scheme-title-size: {{ block.settings.title_font_size }}px; --scheme-title-weight: {{ block.settings.title_font_weight }}; --scheme-title-style: {{ block.settings.title_font_style }}; --scheme-eyebrow-size: {{ block.settings.eyebrow_font_size }}px"
+                >
+                  {%- for collection in block.settings.collections -%}
+                    <li>
+                      <a class="portal-tabs__scheme-card" href="{{ collection.url }}">
+                        {%- if collection.image != blank -%}
+                          {{ collection.image | image_url: width: 1000 | image_tag: class: 'portal-tabs__scheme-image', loading: 'lazy', alt: collection.title }}
+                        {%- endif -%}
+                        <span class="portal-tabs__scheme-overlay" aria-hidden="true"></span>
+                        <span class="portal-tabs__scheme-copy">
+                          {%- if block.settings.card_eyebrow != blank -%}
+                            <span class="portal-tabs__scheme-eyebrow">{{ block.settings.card_eyebrow | escape }}</span>
+                          {%- endif -%}
+                          <span class="portal-tabs__scheme-title">{{ collection.title | escape }}</span>
+                        </span>
+                      </a>
+                    </li>
                   {%- endfor -%}
                 </ul>
               </div>
-            </div>
-            <div data-portal-catalog-results hidden>
-              <button type="button" class="button button--secondary portal-tabs__back" data-portal-back>
-                &larr; Back to catalogs
-              </button>
-              <div data-portal-results-body aria-live="polite"></div>
-            </div>
+              <div data-portal-catalog-results hidden>
+                <button type="button" class="button button--secondary portal-tabs__back" data-portal-back>
+                  &larr; Back to catalogs
+                </button>
+                <div data-portal-results-body aria-live="polite"></div>
+              </div>
+            {%- else -%}
+              <p>No catalogs available.</p>
+            {%- endif -%}
 
           {%- when 'products' -%}
             {%- assign panel_collection = block.settings.collection | default: collections.all -%}
@@ -180,52 +192,21 @@
       if (id) activate(root, id, false);
     }
 
+    // Catalog card: load that collection's products into the same panel.
     var catalogCache = {};
 
-    function catalogTrail(browser) {
-      try {
-        return JSON.parse(browser.dataset.trail || '[]');
-      } catch (error) {
-        return [];
-      }
-    }
-
-    function renderCatalogBrowser(browser) {
-      var parentId = browser.dataset.currentParent || '';
-      var trail = catalogTrail(browser);
-      var nodeList = browser.querySelector('[data-portal-node-list]');
-      var visibleNodes = 0;
-
-      nodeList.querySelectorAll('[data-portal-catalog-node]').forEach(function (node) {
-        var visible = (node.dataset.parentId || '') === parentId;
-        node.hidden = !visible;
-        if (visible) visibleNodes += 1;
-      });
-      nodeList.hidden = visibleNodes === 0;
-
-      var breadcrumb = browser.querySelector('[data-catalog-breadcrumb]');
-      breadcrumb.hidden = trail.length === 0;
-      breadcrumb.querySelector('[data-catalog-trail]').textContent = trail.map(function (item) {
-        return item.title;
-      }).join(' / ');
-    }
-
     function showCatalogList(panel) {
-      var browser = panel.querySelector('[data-portal-catalog-browser]');
-      browser.hidden = false;
+      panel.querySelector('[data-portal-catalog-list]').hidden = false;
       panel.querySelector('[data-portal-catalog-results]').hidden = true;
-      renderCatalogBrowser(browser);
     }
 
-    function openCatalog(panel, url, title) {
-      var browser = panel.querySelector('[data-portal-catalog-browser]');
+    function openCatalog(panel, url) {
+      var list = panel.querySelector('[data-portal-catalog-list]');
       var results = panel.querySelector('[data-portal-catalog-results]');
       var body = results.querySelector('[data-portal-results-body]');
-      browser.hidden = true;
+      list.hidden = true;
       results.hidden = false;
       body.textContent = 'Loading...';
-      var resultsTitle = results.querySelector('[data-portal-results-title]');
-      if (resultsTitle && title) resultsTitle.textContent = title;
       results.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
       var request = catalogCache[url] || (catalogCache[url] = fetch(url.split('?')[0] + '?view=portal-products', { credentials: 'same-origin' })
@@ -248,49 +229,16 @@
     }
 
     document.addEventListener('click', function (event) {
-      var up = event.target.closest('[data-catalog-up]');
-      if (up) {
-        var browser = up.closest('[data-portal-catalog-browser]');
-        var trail = catalogTrail(browser);
-        var current = trail.pop();
-        browser.dataset.trail = JSON.stringify(trail);
-        browser.dataset.currentParent = current ? current.parentId : '';
-        renderCatalogBrowser(browser);
-        return;
-      }
-
       var back = event.target.closest('[data-portal-back]');
       if (back) {
         showCatalogList(back.closest('.portal-tabs__panel'));
         return;
       }
 
-      var drill = event.target.closest('[data-catalog-drill]');
-      if (drill) {
-        var drillBrowser = drill.closest('[data-portal-catalog-browser]');
-        var drillTrail = catalogTrail(drillBrowser);
-        drillTrail.push({
-          nodeId: drill.dataset.nodeId,
-          parentId: drillBrowser.dataset.currentParent || '',
-          title: drill.dataset.nodeTitle || ''
-        });
-        drillBrowser.dataset.currentParent = drill.dataset.nodeId;
-        drillBrowser.dataset.trail = JSON.stringify(drillTrail);
-        renderCatalogBrowser(drillBrowser);
-        return;
-      }
-
-      var catalogLink = event.target.closest('[data-catalog-link]');
-      if (!catalogLink || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
-      var destination = new URL(catalogLink.href, window.location.origin);
-      if (destination.pathname.indexOf('/collections/') !== -1) {
-        event.preventDefault();
-        openCatalog(
-          catalogLink.closest('.portal-tabs__panel'),
-          catalogLink.href,
-          catalogLink.dataset.catalogTitle
-        );
-      }
+      var link = event.target.closest('[data-portal-catalog-list] a');
+      if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+      event.preventDefault();
+      openCatalog(link.closest('.portal-tabs__panel'), link.href);
     });
 
     document.addEventListener('click', function (event) {
@@ -328,12 +276,8 @@
     });
 
     function initAll() {
-      document.querySelectorAll('[data-portal-tabs]').forEach(function (root) {
-        fromHash(root);
-        root.querySelectorAll('[data-portal-catalog-browser]').forEach(renderCatalogBrowser);
-      });
+      document.querySelectorAll('[data-portal-tabs]').forEach(fromHash);
     }
-    initAll();
     document.addEventListener('DOMContentLoaded', initAll);
     document.addEventListener('shopify:section:load', initAll);
   })();
@@ -399,14 +343,28 @@
   .portal-tabs__back {
     margin-bottom: var(--spacing-lg, 1.5rem);
   }
-  .portal-tabs__catalog-breadcrumb {
-    display: flex;
-    align-items: center;
+  .portal-tabs__tree,
+  .portal-tabs__tree-children {
+    display: grid;
     gap: var(--spacing-sm, 12px);
-    margin-bottom: var(--spacing-lg, 1.5rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
-  .portal-tabs__catalog-breadcrumb[hidden] {
-    display: none;
+  .portal-tabs__tree-children {
+    margin: var(--spacing-sm, 12px) 0 0 var(--spacing-lg, 1.5rem);
+  }
+  .portal-tabs__tree summary,
+  .portal-tabs__tree a,
+  .portal-tabs__tree-label {
+    color: inherit;
+    font-weight: 500;
+  }
+  .portal-tabs__tree summary {
+    cursor: pointer;
+  }
+  .portal-tabs__tree a {
+    text-underline-offset: 0.2em;
   }
   .portal-tabs__results-title {
     margin: 0 0 var(--spacing-lg, 1.5rem);
@@ -533,11 +491,28 @@
   ],
   "blocks": [
     {
+      "type": "catalog_node",
+      "name": "Catalog hierarchy node",
+      "settings": [
+        { "type": "text", "id": "catalog_id", "label": "Node ID", "info": "Unique ID used by child nodes as their parent." },
+        { "type": "text", "id": "parent_id", "label": "Parent node ID", "info": "Leave blank to make this a top-level tab." },
+        { "type": "text", "id": "title", "label": "Title", "default": "Catalog" },
+        { "type": "url", "id": "link_url", "label": "Destination link", "info": "Optional link shown inside this node." }
+      ]
+    },
+    {
       "type": "catalogs",
       "name": "Tab: Catalog cards",
       "settings": [
         { "type": "text", "id": "title", "label": "Tab title", "default": "My Schemes" },
         { "type": "text", "id": "card_eyebrow", "label": "Card eyebrow", "default": "Scheme" },
+        {
+          "type": "collection_list",
+          "id": "collections",
+          "label": "Collections",
+          "limit": 50,
+          "info": "Shown as cards when this tab is open."
+        },
         {
           "type": "select",
           "id": "title_font_family",
@@ -559,17 +534,6 @@
         { "type": "range", "id": "card_border_radius", "label": "Card corner radius", "min": 0, "max": 32, "step": 2, "unit": "px", "default": 8 },
         { "type": "range", "id": "card_gap", "label": "Gap between cards", "min": 8, "max": 48, "step": 2, "unit": "px", "default": 24 },
         { "type": "range", "id": "card_height", "label": "Card height", "min": 0, "max": 600, "step": 10, "unit": "px", "default": 0, "info": "0 keeps the current proportional height." }
-      ]
-    },
-    {
-      "type": "catalog_node",
-      "name": "Catalog node",
-      "settings": [
-        { "type": "text", "id": "catalog_id", "label": "Catalog ID", "info": "Unique ID, e.g. scheme_one. Parent IDs must match this exactly." },
-        { "type": "text", "id": "parent_id", "label": "Parent ID", "info": "Leave blank for a root choice. Otherwise enter the parent Catalog ID." },
-        { "type": "text", "id": "title", "label": "Card title" },
-        { "type": "image_picker", "id": "image", "label": "Card image" },
-        { "type": "url", "id": "link_url", "label": "Link URL", "info": "If this is a collection link, its products open inline. Other URLs open directly. A link takes priority over child nodes." }
       ]
     },
     {
