@@ -98,7 +98,7 @@
         "catalog_hierarchy_p7aXsW": {
           "type": "catalog_hierarchy",
           "settings": {
-            "title": "My Schemes"
+            "title": "All Schemes"
           }
         },
         "catalog_LfLfiW": {
@@ -106,9 +106,9 @@
           "settings": {
             "catalog_id": "catalogs",
             "parent_id": "",
-            "title": "Catalogs",
+            "title": "Hazel Bedroom Scheme",
             "link_url": "",
-            "card_image": "",
+            "card_image": "shopify://shop_images/Screenshot_2026-11-12_at_16.08.30.png",
             "collections": []
           }
         },
@@ -117,31 +117,18 @@
           "settings": {
             "catalog_id": "catalog1",
             "parent_id": "catalogs",
-            "title": "Catalog 1",
+            "title": "Tables",
             "link_url": "",
-            "card_image": "",
             "collections": []
           }
         },
         "catalog_hAtLdy": {
           "type": "catalog_node",
           "settings": {
-            "catalog_id": "catalog321",
-            "parent_id": "catalog1",
-            "title": "Catalog321",
+            "catalog_id": "catalog2",
+            "parent_id": "catalogs",
+            "title": "Chairs",
             "link_url": "",
-            "card_image": "",
-            "collections": []
-          }
-        },
-        "catalog_yaTYPC": {
-          "type": "catalog_node",
-          "settings": {
-            "catalog_id": "catalog123",
-            "parent_id": "catalog1",
-            "title": "Catalog123",
-            "link_url": "",
-            "card_image": "",
             "collections": []
           }
         },
@@ -237,7 +224,6 @@
         "catalog_LfLfiW",
         "catalog_JN6cNb",
         "catalog_hAtLdy",
-        "catalog_yaTYPC",
         "catalogs_VgQLc8",
         "catalogs_A9fycj",
         "catalogs_TfbtH3",
