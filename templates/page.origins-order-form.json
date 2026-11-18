@@ -1,0 +1,450 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_video_banner_jA89he": {
+      "type": "image-video-banner",
+      "blocks": {
+        "eyebrow_WLja8F": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "scroll down to request the brochure",
+            "eyebrow_size": "sm",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "title_cxMJHe": {
+          "type": "title",
+          "settings": {
+            "text": "The Quick Delivery Collection",
+            "title_element": "h1",
+            "title_size": "display",
+            "text_color": "#f9f7f0"
+          }
+        },
+        "button_frkFzV": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Button",
+            "button_url": "",
+            "new_tab": false,
+            "button_style": "primary",
+            "button_font_size": 16,
+            "button_font_color": "#ffffff",
+            "button_background": "#1f1f1f",
+            "button_border_width": 1,
+            "button_border_color": "#ffffff",
+            "button_padding": 12
+          }
+        },
+        "card_DAgXcH": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        },
+        "card_X6QNNG": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "Card Title",
+            "tagline": "Card tagline",
+            "button_text": "Shop now",
+            "button_url": "",
+            "button_style": "primary",
+            "new_tab": false,
+            "card_style": "base-white-01"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_WLja8F",
+        "title_cxMJHe",
+        "button_frkFzV",
+        "card_DAgXcH",
+        "card_X6QNNG"
+      ],
+      "name": "Image - Video Banner",
+      "settings": {
+        "height_desktop": 800,
+        "height_mobile": 540,
+        "maintain_aspect_ratio": false,
+        "add_header_offset": false,
+        "media_type": "image",
+        "image_desktop": "shopify://shop_images/Bistro_Area_17.jpg",
+        "video_desktop": "shopify://files/videos/Brochure.mp4",
+        "show_controls": false,
+        "mute_video": true,
+        "autoplay_video": true,
+        "show_overlay": false,
+        "overlay_background": "",
+        "colour_scheme": "dark",
+        "content_position": "center-center",
+        "content_alignment": "center"
+      }
+    },
+    "richtext_DTqTkT": {
+      "type": "richtext",
+      "blocks": {
+        "heading_aeGq6E": {
+          "type": "heading",
+          "settings": {
+            "text": "Discover how we can make a difference. See our offerings, understand our approach, and get inspired by what’s possible.",
+            "heading_level": "h1",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "tagline_iURFwK": {
+          "type": "tagline",
+          "disabled": true,
+          "settings": {
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        },
+        "button_cgwtzF": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "primary",
+            "text": "Button",
+            "url": "#",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_aeGq6E",
+        "tagline_iURFwK",
+        "button_cgwtzF"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "id_anchor": "",
+        "max_width_desktop": 87,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "warm-stone",
+        "enable_animation": true,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
+      }
+    },
+    "blocks_BkKJKG": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_5d6fd2d_iDqFUW": {
+          "type": "ai_gen_block_5d6fd2d",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/banner-2.jpg",
+            "desktop_width_percent": 100,
+            "border_radius": 0
+          },
+          "blocks": {}
+        },
+        "richtext_qxpknd": {
+          "type": "richtext",
+          "name": "Rich Text",
+          "settings": {
+            "content": ""
+          },
+          "blocks": {}
+        },
+        "tagline_MYBEPf": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_5d6fd2d_iDqFUW",
+        "richtext_qxpknd",
+        "tagline_MYBEPf"
+      ],
+      "name": "Image",
+      "settings": {}
+    },
+    "blocks_L3JrDV": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_MnmhVY": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "medium",
+            "small_height": 30,
+            "medium_height": 60,
+            "large_height": 100,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_MnmhVY"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "main": {
+      "type": "contact",
+      "blocks": {
+        "forms_inline_LYdNT4": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "disabled": true,
+          "settings": {
+            "form_id": "639372",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#ffffff",
+            "links_color": "#1878b9",
+            "errors_color": "#e02229",
+            "text_alignment": "left",
+            "form_alignment": "flex-start",
+            "padding_top": 64,
+            "padding_bottom": 64,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_LYdNT4"
+      ],
+      "settings": {
+        "title": "Request a brochure",
+        "intro_text": "<p> </p><p>Select the brochure most relevant to you and complete the form on the right to request your copy. Choose from our our digital and physical brochure options. Once submitted, a member of our team will be in touch to provide your brochure and answer any questions about your furniture requirements.</p>",
+        "success_message": "",
+        "phone": "01603664900",
+        "phone_icon": "shopify://shop_images/Phone_f4b0d652-6e2d-4972-8b79-3fee1c34b42d.svg",
+        "email": "sales@furncare.co.uk",
+        "email_icon": "shopify://shop_images/Enveloppe_9440784c-af0a-43f4-8f42-462a9a7043e6.svg",
+        "show_social_icons": true,
+        "hubspot_form_embed_code": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"2d993bad-eb03-4d9b-9eb4-6a6880f7e773\" data-portal-id=\"145723791\"></div>"
+      }
+    },
+    "blocks_8cC7Mf": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3260401_WJzeQB": {
+          "type": "ai_gen_block_3260401",
+          "settings": {
+            "spacing_size": "large",
+            "small_height": 30,
+            "medium_height": 60,
+            "large_height": 100,
+            "small_height_mobile": 20,
+            "medium_height_mobile": 40,
+            "large_height_mobile": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3260401_WJzeQB"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "richtext_Y8TeQn": {
+      "type": "richtext",
+      "blocks": {
+        "heading_hRaPty": {
+          "type": "heading",
+          "settings": {
+            "text": "Already know what you need?",
+            "heading_level": "h2",
+            "heading_style": "title-xl"
+          },
+          "blocks": {}
+        },
+        "button_pmpVzJ": {
+          "type": "button",
+          "name": "Button",
+          "settings": {
+            "style": "secondary",
+            "text": "Explore Our Stock Range",
+            "url": "shopify://collections/quick-delivery-products",
+            "new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_hRaPty",
+        "button_pmpVzJ"
+      ],
+      "name": "Rich Text",
+      "settings": {
+        "id_anchor": "",
+        "max_width_desktop": 100,
+        "section_padding": "--spacing-4xl",
+        "text_alignment": "center",
+        "colour_scheme": "green-01",
+        "enable_animation": false,
+        "optional_richtext": "",
+        "small_container": false,
+        "enable_see_more": false,
+        "see_more_max_height": 400
+      }
+    },
+    "product_blocks_8Yn8VF": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_dEPWiA": {
+          "type": "product_block",
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "products": [
+              "cambourne-high-back-chair-lismore-almond",
+              "aurora-electric-rise-and-recliner-brookland-dove",
+              "freja-2-seater-sofa",
+              "lavia-chair-with-arms-stone",
+              "karsson-bedroom-furniture-bundle",
+              "lingwood-tub-chair-1",
+              "livonia-oval-coffee-table",
+              "venice-visitor-chair-seat-stone-back-taupe",
+              "earlwood-square-2-seater-dining-table",
+              "dawson-bedroom-furniture-bundle",
+              "cambourne-wingback",
+              "portland-bedroom-furniture-bundle"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_dEPWiA"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "browse the collection",
+        "section_padding": "--spacing-2xl"
+      }
+    },
+    "furncare_about_final_cta_3BLpXG": {
+      "type": "furncare-about-final-cta",
+      "disabled": true,
+      "name": "Furncare final CTA",
+      "settings": {
+        "eyebrow": "Start the conversation",
+        "heading": "Planning a care-sector furniture project? Let's make it easier.",
+        "copy": "Bring Furncare in early and we'll help you shape a furniture scheme that works for your space, your users, your timeline and your budget.",
+        "primary_label": "Start a project",
+        "primary_link": "",
+        "secondary_label": "Request a brochure",
+        "secondary_link": "",
+        "background_gradient": "",
+        "background_color": "#f9f7f0",
+        "max_width": 1600,
+        "gutter_desktop": 24,
+        "gutter_mobile": 16,
+        "padding_top": 144,
+        "padding_bottom": 168,
+        "padding_mobile": 72,
+        "padding_bottom_mobile": 72,
+        "section_gap": 48,
+        "section_gap_mobile": 36,
+        "header_max_width": 780,
+        "content_max_width": 960,
+        "text_alignment": "center",
+        "section_border_color": "#f9f7f0",
+        "border_top_width": 0,
+        "border_bottom_width": 0,
+        "heading_size_desktop": 45,
+        "heading_size_mobile": 40,
+        "heading_weight": 500,
+        "heading_line_height": 100,
+        "heading_letter_spacing": 0,
+        "heading_max_width": 1100,
+        "copy_size_desktop": 15,
+        "copy_size_mobile": 16,
+        "copy_weight": 400,
+        "copy_line_height": 170,
+        "copy_max_width": 760,
+        "copy_margin_top": 28,
+        "eyebrow_size": 13,
+        "eyebrow_weight": 700,
+        "eyebrow_letter_spacing": 22,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_margin_bottom": 16,
+        "text_color": "#262520",
+        "heading_color": "#262520",
+        "copy_color": "#243222",
+        "eyebrow_color": "#243222",
+        "enable_reveal": true,
+        "reveal_distance": 32,
+        "reveal_duration": 760,
+        "button_radius": 900,
+        "button_padding_x": 24,
+        "button_padding_y": 14,
+        "button_min_height": 54,
+        "button_font_size": 12,
+        "button_weight": 700,
+        "button_text_transform": "none",
+        "button_gap": 12,
+        "button_margin_top": 32,
+        "button_border_width": 1,
+        "button_hover_lift": 1,
+        "button_hover_shadow_opacity": 12,
+        "buttons_full_width_mobile": true,
+        "primary_button_bg": "#c3c0b0",
+        "primary_button_color": "#f9f7f0",
+        "primary_button_border": "#c3c0b0",
+        "primary_button_hover_bg": "#243222",
+        "primary_button_hover_color": "#f9f7f0",
+        "primary_button_hover_border": "#243222",
+        "secondary_button_bg": "#243222",
+        "secondary_button_bg_opacity": 44,
+        "secondary_button_color": "#f9f7f0",
+        "secondary_button_border": "#f9f7f0",
+        "secondary_button_hover_bg": "#f9f7f0",
+        "secondary_button_hover_color": "#0c0a09",
+        "secondary_button_hover_border": "#f9f7f0"
+      }
+    }
+  },
+  "order": [
+    "image_video_banner_jA89he",
+    "richtext_DTqTkT",
+    "blocks_BkKJKG",
+    "blocks_L3JrDV",
+    "main",
+    "blocks_8cC7Mf",
+    "richtext_Y8TeQn",
+    "product_blocks_8Yn8VF",
+    "furncare_about_final_cta_3BLpXG"
+  ]
+}
