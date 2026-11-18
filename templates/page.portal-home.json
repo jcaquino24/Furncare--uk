@@ -92,74 +92,59 @@
         "section_padding": "--spacing-md"
       }
     },
-    "portal_catalog_hierarchy_ekPPLh": {
-      "type": "portal-catalog-hierarchy",
+    "portal_tabs_QcQP8n": {
+      "type": "portal-tabs",
       "blocks": {
-        "catalog_LfLfiW": {
-          "type": "catalog",
+        "catalog_hierarchy_p7aXsW": {
+          "type": "catalog_hierarchy",
           "settings": {
-            "node_id": "catalogs",
+            "title": "My Schemes"
+          }
+        },
+        "catalog_LfLfiW": {
+          "type": "catalog_node",
+          "settings": {
+            "catalog_id": "catalogs",
             "parent_id": "",
             "title": "Catalogs",
             "link_url": "",
+            "card_image": "",
             "collections": []
           }
         },
         "catalog_JN6cNb": {
-          "type": "catalog",
+          "type": "catalog_node",
           "settings": {
-            "node_id": "catalog1",
+            "catalog_id": "catalog1",
             "parent_id": "catalogs",
             "title": "Catalog 1",
             "link_url": "",
+            "card_image": "",
             "collections": []
           }
         },
         "catalog_hAtLdy": {
-          "type": "catalog",
+          "type": "catalog_node",
           "settings": {
-            "node_id": "",
+            "catalog_id": "catalog321",
             "parent_id": "catalog1",
             "title": "Catalog321",
             "link_url": "",
+            "card_image": "",
             "collections": []
           }
         },
         "catalog_yaTYPC": {
-          "type": "catalog",
+          "type": "catalog_node",
           "settings": {
-            "node_id": "",
+            "catalog_id": "catalog123",
             "parent_id": "catalog1",
             "title": "Catalog123",
             "link_url": "",
+            "card_image": "",
             "collections": []
           }
-        }
-      },
-      "block_order": [
-        "catalog_LfLfiW",
-        "catalog_JN6cNb",
-        "catalog_hAtLdy",
-        "catalog_yaTYPC"
-      ],
-      "name": "Portal catalog hierarchy",
-      "settings": {
-        "heading": "Browse catalogs",
-        "intro": "",
-        "columns_desktop": 3,
-        "columns_mobile": 1,
-        "card_gap": 24,
-        "card_height": 0,
-        "card_padding": 24,
-        "card_border_width": 1,
-        "card_border_color": "#d0d0d0",
-        "card_border_radius": 8,
-        "overlay_opacity": 60
-      }
-    },
-    "portal_tabs_QcQP8n": {
-      "type": "portal-tabs",
-      "blocks": {
+        },
         "catalogs_VgQLc8": {
           "type": "catalogs",
           "settings": {
@@ -248,6 +233,11 @@
         }
       },
       "block_order": [
+        "catalog_hierarchy_p7aXsW",
+        "catalog_LfLfiW",
+        "catalog_JN6cNb",
+        "catalog_hAtLdy",
+        "catalog_yaTYPC",
         "catalogs_VgQLc8",
         "catalogs_A9fycj",
         "catalogs_TfbtH3",
@@ -567,7 +557,6 @@
   "order": [
     "featured_blocks_kEJTiG",
     "main",
-    "portal_catalog_hierarchy_ekPPLh",
     "portal_tabs_QcQP8n",
     "catalog_cards_pb8Bbt",
     "koz_dynamic_grid_Xgrrmb",

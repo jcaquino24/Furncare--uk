@@ -15,20 +15,16 @@
 
       {%- assign first_tab_index = 0 -%}
       {%- for block in section.blocks -%}
-        {%- if block.type == 'catalog_node' -%}
-          {%- if block.settings.parent_id == blank and first_tab_index == 0 -%}
-            {%- assign first_tab_index = forloop.index -%}
-          {%- endif -%}
-        {%- elsif block.type != 'link' and first_tab_index == 0 -%}
+        {%- if block.type != 'link' and block.type != 'catalog_node' and first_tab_index == 0 -%}
           {%- assign first_tab_index = forloop.index -%}
         {%- endif -%}
       {%- endfor -%}
 
     <ul class="portal-tabs__list" role="tablist" aria-label="{{ section.settings.heading | escape }}">
       {%- for block in section.blocks -%}
-          {%- if block.type == 'catalog_node' and block.settings.parent_id != blank -%}
-            {%- continue -%}
-          {%- endif -%}
+        {%- if block.type == 'catalog_node' -%}
+          {%- continue -%}
+        {%- endif -%}
         <li role="presentation" {{ block.shopify_attributes }}>
           {%- if block.type == 'link' -%}
             <a class="portal-tabs__tab" href="{{ block.settings.link | default: '#' }}">
@@ -44,6 +40,7 @@
               aria-controls="portal-panel-{{ block.id }}"
               aria-selected="{% if forloop.index == first_tab_index %}true{% else %}false{% endif %}"
               tabindex="{% if forloop.index == first_tab_index %}0{% else %}-1{% endif %}"
+              {% if block.type == 'catalog_hierarchy' %}data-portal-hierarchy-tab{% endif %}
             >
               {{- block.settings.title -}}
             </button>
@@ -56,7 +53,7 @@
       {%- if block.type == 'link' -%}
         {%- continue -%}
       {%- endif -%}
-      {%- if block.type == 'catalog_node' and block.settings.parent_id != blank -%}
+      {%- if block.type == 'catalog_node' -%}
         {%- continue -%}
       {%- endif -%}
 
@@ -68,32 +65,150 @@
         {% unless forloop.index == first_tab_index %}hidden{% endunless %}
       >
         {%- case block.type -%}
-          {%- when 'catalog_node' -%}
-            {%- if block.settings.link_url != blank -%}
-              <p><a href="{{ block.settings.link_url }}">Open {{ block.settings.title | escape }}</a></p>
-            {%- endif -%}
+          {%- when 'catalog_hierarchy' -%}
             {%- assign catalog_nodes = section.blocks | where: 'type', 'catalog_node' -%}
-            {%- assign has_catalog_children = false -%}
-            {%- for node in catalog_nodes -%}
-              {%- if node.settings.parent_id == block.settings.catalog_id -%}
-                {%- assign has_catalog_children = true -%}
-              {%- endif -%}
-            {%- endfor -%}
-            {%- if has_catalog_children -%}
-              <ul class="portal-tabs__tree">
+            {%- if catalog_nodes.size > 0 -%}
+              <div class="portal-tabs__hierarchy" data-portal-hierarchy>
+                <div data-hierarchy-root>
+                  <ul class="portal-tabs__scheme-list" style="--scheme-columns-desktop: {{ section.settings.scheme_columns_desktop }}; --scheme-columns-mobile: {{ section.settings.scheme_columns_mobile }}; --scheme-card-gap: 24px; --scheme-card-padding: 24px; --scheme-card-border-width: 1px; --scheme-card-border-color: #d0d0d0; --scheme-card-radius: 8px; --scheme-title-font: var(--font-heading-family); --scheme-title-size: 24px; --scheme-title-weight: 500; --scheme-title-style: normal; --scheme-eyebrow-size: 12px">
+                    {%- for node in catalog_nodes -%}
+                      {%- if node.settings.parent_id != blank -%}
+                        {%- continue -%}
+                      {%- endif -%}
+                      {%- assign node_id = node.settings.node_id | default: node.settings.catalog_id | default: node.id -%}
+                      {%- assign node_image = node.settings.card_image -%}
+                      {%- if node_image == blank and node.settings.collections.size > 0 -%}
+                        {%- assign first_collection = node.settings.collections | first -%}
+                        {%- assign node_image = first_collection.image -%}
+                      {%- endif -%}
+                      {%- assign node_has_children = false -%}
+                      {%- for child in catalog_nodes -%}
+                        {%- assign child_parent_id = child.settings.parent_id -%}
+                        {%- if child_parent_id == node_id -%}
+                          {%- assign node_has_children = true -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                      <li data-hierarchy-node-block {{ node.shopify_attributes }}>
+                        {%- if node_has_children or node.settings.collections.size > 0 or node.settings.link_url == blank -%}
+                          <button class="portal-tabs__scheme-card portal-tabs__scheme-card--button" type="button" data-hierarchy-open="{{ node.id }}" aria-controls="portal-hierarchy-panel-{{ node.id }}" aria-expanded="false">
+                            {%- if node_image != blank -%}
+                              {{ node_image | image_url: width: 1000 | image_tag: class: 'portal-tabs__scheme-image', loading: 'lazy', alt: node.settings.title }}
+                            {%- endif -%}
+                            <span class="portal-tabs__scheme-overlay" aria-hidden="true"></span>
+                            <span class="portal-tabs__scheme-copy">
+                              <span class="portal-tabs__scheme-title">{{ node.settings.title | escape }}</span>
+                            </span>
+                          </button>
+                        {%- else -%}
+                          <a class="portal-tabs__scheme-card" href="{{ node.settings.link_url }}">
+                            {%- if node_image != blank -%}
+                              {{ node_image | image_url: width: 1000 | image_tag: class: 'portal-tabs__scheme-image', loading: 'lazy', alt: node.settings.title }}
+                            {%- endif -%}
+                            <span class="portal-tabs__scheme-overlay" aria-hidden="true"></span>
+                            <span class="portal-tabs__scheme-copy">
+                              <span class="portal-tabs__scheme-title">{{ node.settings.title | escape }}</span>
+                            </span>
+                          </a>
+                        {%- endif -%}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </div>
+
                 {%- for node in catalog_nodes -%}
-                  {%- if node.settings.parent_id != block.settings.catalog_id -%}
-                    {%- continue -%}
-                  {%- endif -%}
-                  <li>
-                    {%- if node.settings.link_url != blank -%}
-                      <a href="{{ node.settings.link_url }}">{{ node.settings.title | escape }}</a>
-                    {%- else -%}
-                      <span class="portal-tabs__tree-label">{{ node.settings.title | escape }}</span>
+                  {%- assign node_id = node.settings.node_id | default: node.settings.catalog_id | default: node.id -%}
+                  {%- assign parent_panel_id = '' -%}
+                  {%- for candidate in catalog_nodes -%}
+                    {%- assign candidate_node_id = candidate.settings.node_id | default: candidate.settings.catalog_id | default: candidate.id -%}
+                    {%- if candidate_node_id == node.settings.parent_id -%}
+                      {%- assign parent_panel_id = candidate.id -%}
+                      {%- break -%}
                     {%- endif -%}
-                  </li>
+                  {%- endfor -%}
+                  {%- assign node_has_children = false -%}
+                  {%- for child in catalog_nodes -%}
+                    {%- if child.settings.parent_id == node_id -%}
+                      {%- assign node_has_children = true -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                  <div class="portal-tabs__hierarchy-panel" id="portal-hierarchy-panel-{{ node.id }}" data-hierarchy-panel="{{ node.id }}" data-hierarchy-parent="{{ parent_panel_id }}" hidden>
+                    <button class="button button--secondary portal-tabs__back" type="button" data-hierarchy-back="{{ parent_panel_id }}">
+                      <span aria-hidden="true">&larr;</span> Back
+                    </button>
+                    <h3 class="portal-tabs__results-title">{{ node.settings.title | escape }}</h3>
+                    {%- if node.settings.link_url != blank -%}
+                      <p><a href="{{ node.settings.link_url }}">Open {{ node.settings.title | escape }}</a></p>
+                    {%- endif -%}
+
+                    {%- if node_has_children -%}
+                      <ul class="portal-tabs__scheme-list" style="--scheme-columns-desktop: {{ section.settings.scheme_columns_desktop }}; --scheme-columns-mobile: {{ section.settings.scheme_columns_mobile }}; --scheme-card-gap: 24px; --scheme-card-padding: 24px; --scheme-card-border-width: 1px; --scheme-card-border-color: #d0d0d0; --scheme-card-radius: 8px; --scheme-title-font: var(--font-heading-family); --scheme-title-size: 24px; --scheme-title-weight: 500; --scheme-title-style: normal; --scheme-eyebrow-size: 12px">
+                        {%- for child in catalog_nodes -%}
+                          {%- if child.settings.parent_id != node_id -%}
+                            {%- continue -%}
+                          {%- endif -%}
+                          {%- assign child_id = child.settings.node_id | default: child.settings.catalog_id | default: child.id -%}
+                          {%- assign child_image = child.settings.card_image -%}
+                          {%- if child_image == blank and child.settings.collections.size > 0 -%}
+                            {%- assign first_collection = child.settings.collections | first -%}
+                            {%- assign child_image = first_collection.image -%}
+                          {%- endif -%}
+                          {%- assign child_has_children = false -%}
+                          {%- for grandchild in catalog_nodes -%}
+                            {%- if grandchild.settings.parent_id == child_id -%}
+                              {%- assign child_has_children = true -%}
+                            {%- endif -%}
+                          {%- endfor -%}
+                          <li data-hierarchy-node-block {{ child.shopify_attributes }}>
+                            {%- if child_has_children or child.settings.collections.size > 0 or child.settings.link_url == blank -%}
+                              <button class="portal-tabs__scheme-card portal-tabs__scheme-card--button" type="button" data-hierarchy-open="{{ child.id }}" aria-controls="portal-hierarchy-panel-{{ child.id }}" aria-expanded="false">
+                                {%- if child_image != blank -%}
+                                  {{ child_image | image_url: width: 1000 | image_tag: class: 'portal-tabs__scheme-image', loading: 'lazy', alt: child.settings.title }}
+                                {%- endif -%}
+                                <span class="portal-tabs__scheme-overlay" aria-hidden="true"></span>
+                                <span class="portal-tabs__scheme-copy">
+                                  <span class="portal-tabs__scheme-title">{{ child.settings.title | escape }}</span>
+                                </span>
+                              </button>
+                            {%- else -%}
+                              <a class="portal-tabs__scheme-card" href="{{ child.settings.link_url }}">
+                                {%- if child_image != blank -%}
+                                  {{ child_image | image_url: width: 1000 | image_tag: class: 'portal-tabs__scheme-image', loading: 'lazy', alt: child.settings.title }}
+                                {%- endif -%}
+                                <span class="portal-tabs__scheme-overlay" aria-hidden="true"></span>
+                                <span class="portal-tabs__scheme-copy">
+                                  <span class="portal-tabs__scheme-title">{{ child.settings.title | escape }}</span>
+                                </span>
+                              </a>
+                            {%- endif -%}
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+
+                    {%- if node.settings.collections.size > 0 -%}
+                      <ul class="portal-tabs__scheme-list portal-tabs__hierarchy-collections" style="--scheme-columns-desktop: {{ section.settings.scheme_columns_desktop }}; --scheme-columns-mobile: {{ section.settings.scheme_columns_mobile }}; --scheme-card-gap: 24px; --scheme-card-padding: 24px; --scheme-card-border-width: 1px; --scheme-card-border-color: #d0d0d0; --scheme-card-radius: 8px; --scheme-title-font: var(--font-heading-family); --scheme-title-size: 24px; --scheme-title-weight: 500; --scheme-title-style: normal; --scheme-eyebrow-size: 12px">
+                        {%- for collection in node.settings.collections -%}
+                          <li>
+                            <a class="portal-tabs__scheme-card" href="{{ collection.url }}">
+                              {%- if collection.image != blank -%}
+                                {{ collection.image | image_url: width: 1000 | image_tag: class: 'portal-tabs__scheme-image', loading: 'lazy', alt: collection.title }}
+                              {%- endif -%}
+                              <span class="portal-tabs__scheme-overlay" aria-hidden="true"></span>
+                              <span class="portal-tabs__scheme-copy">
+                                <span class="portal-tabs__scheme-title">{{ collection.title | escape }}</span>
+                              </span>
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- elsif node_has_children == false and node.settings.link_url == blank -%}
+                      <p>No catalogs available.</p>
+                    {%- endif -%}
+                  </div>
                 {%- endfor -%}
-              </ul>
+              </div>
+            {%- else -%}
+              <p>No catalogs available.</p>
             {%- endif -%}
 
           {%- when 'catalogs' -%}
@@ -228,7 +343,32 @@
       });
     }
 
+    function showHierarchyNode(hierarchy, panelId) {
+      var rootPanel = hierarchy.querySelector('[data-hierarchy-root]');
+      rootPanel.hidden = panelId !== '';
+      hierarchy.querySelectorAll('[data-hierarchy-panel]').forEach(function (panel) {
+        panel.hidden = panel.getAttribute('data-hierarchy-panel') !== panelId;
+      });
+      hierarchy.querySelectorAll('[data-hierarchy-open]').forEach(function (button) {
+        button.setAttribute('aria-expanded', button.getAttribute('data-hierarchy-open') === panelId ? 'true' : 'false');
+      });
+    }
+
     document.addEventListener('click', function (event) {
+      var hierarchyOpen = event.target.closest('[data-hierarchy-open]');
+      if (hierarchyOpen) {
+        var hierarchy = hierarchyOpen.closest('[data-portal-hierarchy]');
+        if (hierarchy) showHierarchyNode(hierarchy, hierarchyOpen.getAttribute('data-hierarchy-open'));
+        return;
+      }
+
+      var hierarchyBack = event.target.closest('[data-hierarchy-back]');
+      if (hierarchyBack) {
+        var hierarchy = hierarchyBack.closest('[data-portal-hierarchy]');
+        if (hierarchy) showHierarchyNode(hierarchy, hierarchyBack.getAttribute('data-hierarchy-back') || '');
+        return;
+      }
+
       var back = event.target.closest('[data-portal-back]');
       if (back) {
         showCatalogList(back.closest('.portal-tabs__panel'));
@@ -272,6 +412,9 @@
     document.addEventListener('shopify:block:select', function (event) {
       var tab = event.target.querySelector && event.target.querySelector('[data-portal-tab]');
       var root = event.target.closest && event.target.closest('[data-portal-tabs]');
+      if (!tab && root && event.target.closest('[data-hierarchy-node-block]')) {
+        tab = root.querySelector('[data-portal-hierarchy-tab]');
+      }
       if (tab && root) activate(root, tab.getAttribute('data-portal-tab'), false);
     });
 
@@ -343,6 +486,9 @@
   .portal-tabs__back {
     margin-bottom: var(--spacing-lg, 1.5rem);
   }
+  .portal-tabs__hierarchy-collections {
+    margin-top: var(--spacing-xl, 2rem);
+  }
   .portal-tabs__tree,
   .portal-tabs__tree-children {
     display: grid;
@@ -391,6 +537,12 @@
     color: #fff;
     background: #454744;
     text-decoration: none;
+  }
+  .portal-tabs__scheme-card--button {
+    padding: 0;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
   }
   .portal-tabs__scheme-card:focus-visible {
     outline: 2px solid currentcolor;
@@ -491,13 +643,23 @@
   ],
   "blocks": [
     {
+      "type": "catalog_hierarchy",
+      "name": "Tab: Catalog hierarchy",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "title", "label": "Tab title", "default": "My Schemes" }
+      ]
+    },
+    {
       "type": "catalog_node",
       "name": "Catalog hierarchy node",
       "settings": [
         { "type": "text", "id": "catalog_id", "label": "Node ID", "info": "Unique ID used by child nodes as their parent." },
-        { "type": "text", "id": "parent_id", "label": "Parent node ID", "info": "Leave blank to make this a top-level tab." },
+        { "type": "text", "id": "parent_id", "label": "Parent ID", "info": "Leave blank to make this a top-level catalog card." },
         { "type": "text", "id": "title", "label": "Title", "default": "Catalog" },
-        { "type": "url", "id": "link_url", "label": "Destination link", "info": "Optional link shown inside this node." }
+        { "type": "url", "id": "link_url", "label": "Link URL", "info": "Used by terminal catalog cards and shown as an optional destination inside parent cards." },
+        { "type": "image_picker", "id": "card_image", "label": "Card image" },
+        { "type": "collection_list", "id": "collections", "label": "Catalog cards", "limit": 50, "info": "Collections shown as cards when this node is selected." }
       ]
     },
     {
@@ -582,6 +744,9 @@
     {
       "name": "Portal tabs",
       "blocks": [
+        { "type": "catalog_hierarchy" },
+        { "type": "catalog_node", "settings": { "catalog_id": "catalogs", "title": "Catalogs" } },
+        { "type": "catalog_node", "settings": { "catalog_id": "catalog1", "parent_id": "catalogs", "title": "Catalog 1" } },
         { "type": "catalogs" },
         { "type": "products" },
         { "type": "contact" }
