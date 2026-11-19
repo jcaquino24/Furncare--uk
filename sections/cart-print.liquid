@@ -5,6 +5,9 @@
       <button type="button" class="cart-print__btn" onclick="window.print()">
         {{ section.settings.print_label }}
       </button>
+      <button type="button" class="cart-print__btn" data-save-pdf>
+        {{ section.settings.pdf_label }}
+      </button>
       <a href="{{ routes.cart_url }}" class="cart-print__btn cart-print__btn--ghost">Back to cart</a>
     </div>
   </header>
@@ -62,6 +65,62 @@
   {% endif %}
 </section>
 
+<script>
+  (function () {
+    var LIB = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
+
+    function loadLib() {
+      if (window.html2pdf) return Promise.resolve();
+      return new Promise(function (resolve, reject) {
+        var s = document.createElement('script');
+        s.src = LIB;
+        s.onload = resolve;
+        s.onerror = function () { reject(new Error('Could not load PDF library')); };
+        document.head.appendChild(s);
+      });
+    }
+
+    document.addEventListener('click', function (event) {
+      var btn = event.target.closest('[data-save-pdf]');
+      if (!btn) return;
+
+      var target = btn.closest('.cart-print');
+      var label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Preparing PDF…';
+
+      loadLib()
+        .then(function () {
+          return window.html2pdf()
+            .set({
+              margin: 10,
+              filename: 'quote-' + new Date().toISOString().slice(0, 10) + '.pdf',
+              image: { type: 'jpeg', quality: 0.95 },
+              html2canvas: {
+                scale: 2,
+                useCORS: true,
+                ignoreElements: function (el) {
+                  return el.classList && el.classList.contains('cart-print__actions');
+                }
+              },
+              jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+              pagebreak: { mode: ['css', 'legacy'], avoid: 'tr' }
+            })
+            .from(target)
+            .save();
+        })
+        .catch(function () {
+          // Fallback: browser print dialog (choose "Save as PDF")
+          window.print();
+        })
+        .finally(function () {
+          btn.disabled = false;
+          btn.textContent = label;
+        });
+    });
+  })();
+</script>
+
 {% style %}
   .cart-print { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
   .cart-print__header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
@@ -98,7 +157,8 @@
   "name": "Cart print",
   "settings": [
     { "type": "text", "id": "title", "label": "Title", "default": "Room order summary" },
-    { "type": "text", "id": "print_label", "label": "Print button label", "default": "Print" }
+    { "type": "text", "id": "print_label", "label": "Print button label", "default": "Print" },
+    { "type": "text", "id": "pdf_label", "label": "Save as PDF button label", "default": "Save as PDF" }
   ],
   "presets": [{ "name": "Cart print" }]
 }
