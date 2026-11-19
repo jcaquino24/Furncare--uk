@@ -1,0 +1,70 @@
+{%- doc -%}
+  Add to Quote button. Adds the current product (variant, quantity, Room Number)
+  to the cart, then opens the printable quote page (/cart?view=print).
+
+  Render INSIDE the product <form>.
+
+  @param {string} [label] - Button label
+
+  @example
+  {% render 'add-to-quote-button' %}
+{%- enddoc -%}
+
+<button
+  type="button"
+  class="add-to-quote button button--secondary button--full-width button--md"
+  data-add-to-quote
+  data-print-url="{{ routes.cart_url }}?view=print"
+>
+  <span>{{ label | default: 'Add to quote' }}</span>
+</button>
+
+<p class="add-to-quote__error body-sm" role="alert" hidden data-add-to-quote-error></p>
+
+<script>
+  (function () {
+    if (window.__addToQuoteInit) return;
+    window.__addToQuoteInit = true;
+
+    document.addEventListener('click', async function (event) {
+      var btn = event.target.closest('[data-add-to-quote]');
+      if (!btn) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      var form = btn.closest('form');
+      if (!form) return;
+
+      var errorEl = form.querySelector('[data-add-to-quote-error]');
+      if (errorEl) errorEl.hidden = true;
+
+      // Enforces the required Room Number input
+      if (!form.reportValidity()) return;
+
+      var data = new FormData(form);
+      btn.disabled = true;
+
+      try {
+        var response = await fetch('{{ routes.cart_add_url }}.js', {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' }
+        });
+        var result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.description || result.message || 'Could not add to quote.');
+        }
+
+        window.location.href = btn.dataset.printUrl;
+      } catch (err) {
+        if (errorEl) {
+          errorEl.textContent = err.message;
+          errorEl.hidden = false;
+        }
+        btn.disabled = false;
+      }
+    });
+  })();
+</script>
