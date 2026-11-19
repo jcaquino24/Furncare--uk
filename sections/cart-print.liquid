@@ -1,0 +1,105 @@
+<section class="cart-print">
+  <header class="cart-print__header">
+    <h1 class="cart-print__title">{{ section.settings.title }}</h1>
+    <div class="cart-print__actions">
+      <button type="button" class="cart-print__btn" onclick="window.print()">
+        {{ section.settings.print_label }}
+      </button>
+      <a href="{{ routes.cart_url }}" class="cart-print__btn cart-print__btn--ghost">Back to cart</a>
+    </div>
+  </header>
+
+  <p class="cart-print__meta">{{ 'now' | date: '%d %b %Y' }}</p>
+
+  {% if cart.item_count == 0 %}
+    <p>Your basket is empty.</p>
+  {% else %}
+    <table class="cart-print__table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Room Number</th>
+          <th class="num">Price</th>
+          <th class="num">Qty</th>
+          <th class="num">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in cart.items %}
+          <tr>
+            <td class="cart-print__product">
+              {% if item.image %}
+                <img
+                  src="{{ item.image | image_url: width: 160 }}"
+                  alt="{{ item.image.alt | escape }}"
+                  width="80"
+                  height="80"
+                  loading="eager"
+                >
+              {% endif %}
+              <div>
+                <strong>{{ item.product.title | split: '|' | first }}</strong>
+                {% unless item.product.has_only_default_variant %}
+                  <div class="cart-print__variant">{{ item.variant.title }}</div>
+                {% endunless %}
+                {% if item.sku != blank %}<div class="cart-print__variant">SKU: {{ item.sku }}</div>{% endif %}
+              </div>
+            </td>
+            <td>{{ item.properties['Room Number'] | default: '—' }}</td>
+            <td class="num">{{ item.final_price | money }}</td>
+            <td class="num">{{ item.quantity }}</td>
+            <td class="num">{{ item.final_line_price | money }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" class="num"><strong>Subtotal</strong></td>
+          <td class="num"><strong>{{ cart.total_price | money }}</strong></td>
+        </tr>
+      </tfoot>
+    </table>
+  {% endif %}
+</section>
+
+{% style %}
+  .cart-print { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  .cart-print__header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .cart-print__title { margin: 0; }
+  .cart-print__meta { color: #666; margin-block: 8px 24px; }
+  .cart-print__actions { display: flex; gap: 8px; }
+  .cart-print__btn {
+    padding: 12px 20px; border: 1px solid #1f3854; background: #1f3854; color: #fff;
+    font: inherit; cursor: pointer; text-decoration: none;
+  }
+  .cart-print__btn--ghost { background: #fff; color: #1f3854; }
+  .cart-print__table { width: 100%; border-collapse: collapse; }
+  .cart-print__table th, .cart-print__table td { padding: 12px 8px; border-bottom: 1px solid #d9dde3; text-align: left; vertical-align: middle; }
+  .cart-print__table .num { text-align: right; white-space: nowrap; }
+  .cart-print__product { display: flex; align-items: center; gap: 12px; }
+  .cart-print__product img { width: 80px; height: 80px; object-fit: cover; }
+  .cart-print__variant { font-size: 0.85em; color: #666; }
+
+  @media (max-width: 640px) {
+    .cart-print__table th:nth-child(3), .cart-print__table td:nth-child(3) { display: none; }
+  }
+
+  @media print {
+    header, footer, nav, .breadcrumbs, [id*="header"], [id*="footer"], .cart-print__actions { display: none !important; }
+    .cart-print { max-width: none; padding: 0; }
+    .cart-print__table tr { break-inside: avoid; }
+    .cart-print__table th:nth-child(3), .cart-print__table td:nth-child(3) { display: table-cell; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Cart print",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Room order summary" },
+    { "type": "text", "id": "print_label", "label": "Print button label", "default": "Print" }
+  ],
+  "presets": [{ "name": "Cart print" }]
+}
+{% endschema %}
