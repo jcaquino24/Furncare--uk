@@ -1,10 +1,10 @@
 {%- doc -%}
   Add to Quote button. Adds the current product (variant, quantity, Room Number)
-  to the cart, then opens the printable quote page (/cart?view=print).
-
-  Render INSIDE the product <form>.
+  to the cart / quote list and stays on the product page.
+  Styled like the Add to cart button. Render INSIDE the product <form>.
 
   @param {string} [label] - Button label
+  @param {string} [added_label] - Label shown briefly after a successful add
 
   @example
   {% render 'add-to-quote-button' %}
@@ -12,14 +12,17 @@
 
 <button
   type="button"
-  class="add-to-quote button button--secondary button--full-width button--md"
+  class="product__atc-button button button--primary button--full-width button--md"
   data-add-to-quote
-  data-print-url="{{ routes.cart_url }}?view=print"
+  data-added-label="{{ added_label | default: 'Added to quote' }}"
 >
-  <span>{{ label | default: 'Add to quote' }}</span>
+  <span style="justify-content:center;" data-add-to-quote-label>
+    {{ label | default: 'Add to quote' }}
+    {% render 'icons', icon: 'cart' %}
+  </span>
 </button>
 
-<p class="add-to-quote__error body-sm" role="alert" hidden data-add-to-quote-error></p>
+<p class="add-to-quote__message body-sm body-sm--bold" role="status" aria-live="polite" hidden data-add-to-quote-message></p>
 
 <script>
   (function () {
@@ -36,19 +39,28 @@
       var form = btn.closest('form');
       if (!form) return;
 
-      var errorEl = form.querySelector('[data-add-to-quote-error]');
-      if (errorEl) errorEl.hidden = true;
+      var message = form.querySelector('[data-add-to-quote-message]');
+      var labelEl = btn.querySelector('[data-add-to-quote-label]');
+      var originalHtml = labelEl.innerHTML;
+
+      function showMessage(text, isError) {
+        if (!message) return;
+        message.textContent = text;
+        message.hidden = false;
+        message.style.color = isError ? '#b42318' : 'inherit';
+      }
+
+      if (message) message.hidden = true;
 
       // Enforces the required Room Number input
       if (!form.reportValidity()) return;
 
-      var data = new FormData(form);
       btn.disabled = true;
 
       try {
         var response = await fetch('{{ routes.cart_add_url }}.js', {
           method: 'POST',
-          body: data,
+          body: new FormData(form),
           headers: { Accept: 'application/json' }
         });
         var result = await response.json();
@@ -57,12 +69,15 @@
           throw new Error(result.description || result.message || 'Could not add to quote.');
         }
 
-        window.location.href = btn.dataset.printUrl;
+        labelEl.textContent = btn.dataset.addedLabel;
+        showMessage(btn.dataset.addedLabel + ' ✓', false);
+        setTimeout(function () {
+          labelEl.innerHTML = originalHtml;
+          btn.disabled = false;
+          if (message) message.hidden = true;
+        }, 2500);
       } catch (err) {
-        if (errorEl) {
-          errorEl.textContent = err.message;
-          errorEl.hidden = false;
-        }
+        showMessage(err.message, true);
         btn.disabled = false;
       }
     });
