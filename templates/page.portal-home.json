@@ -231,11 +231,10 @@
             "product_limit": 50
           }
         },
-        "contact_nbMeGr": {
+        "contact_TPcLmM": {
           "type": "contact",
           "settings": {
             "title": "Contact Account Manager",
-            "text": "<h3>Please contact Randal Southall for queries<br/>Phone: 07384 796549<br/>Email: Randal.Southall@furncare.co.uk</h3>",
             "button_label": "",
             "button_link": ""
           }
@@ -260,7 +259,7 @@
         "catalogs_A9fycj",
         "catalogs_TfbtH3",
         "products_ebH7qW",
-        "contact_nbMeGr",
+        "contact_TPcLmM",
         "link_p8mLnL"
       ],
       "name": "Portal tabs",
