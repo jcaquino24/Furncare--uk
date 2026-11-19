@@ -235,7 +235,7 @@
           "type": "contact",
           "settings": {
             "title": "Contact Account Manager",
-            "text": "<p>Please contact Molly Tinker or Candace Turner</p>",
+            "text": "<h3>Please contact Randal Southall for queries<br/>Phone: 07384 796549<br/>Email: Randal.Southall@furncare.co.uk</h3>",
             "button_label": "",
             "button_link": ""
           }

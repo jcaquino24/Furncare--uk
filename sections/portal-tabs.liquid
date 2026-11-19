@@ -268,10 +268,10 @@
 
           {%- when 'contact' -%}
             <div class="portal-tabs__contact rte">
-              {{ block.settings.text }}
+              {{ block.settings.custom_html }}
               {%- if block.settings.button_link != blank and block.settings.button_label != blank -%}
                 <a class="button button--primary" href="{{ block.settings.button_link }}">
-                  {{- block.settings.button_label -}}
+                  {{ block.settings.button_label }}
                 </a>
               {%- endif -%}
             </div>
