@@ -167,68 +167,6 @@
             "collections": []
           }
         },
-        "catalogs_VgQLc8": {
-          "type": "catalogs",
-          "settings": {
-            "title": "All Schemes",
-            "card_eyebrow": "SCHEME",
-            "collections": [
-              "care-uk-scheme-c",
-              "challenging-environments-accessories",
-              "overbed-overchair-tables",
-              "challenging-environments-bedroom-sets"
-            ],
-            "title_font_family": "heading",
-            "title_font_size": 18,
-            "eyebrow_font_size": 12,
-            "title_font_weight": "500",
-            "title_font_style": "normal",
-            "card_padding": 24,
-            "card_border_width": 1,
-            "card_border_color": "#d0d0d0",
-            "card_border_radius": 8,
-            "card_gap": 24,
-            "card_height": 350
-          }
-        },
-        "catalogs_A9fycj": {
-          "type": "catalogs",
-          "settings": {
-            "title": "Communal Schemes",
-            "card_eyebrow": "Scheme",
-            "collections": [],
-            "title_font_family": "heading",
-            "title_font_size": 28,
-            "eyebrow_font_size": 12,
-            "title_font_weight": "500",
-            "title_font_style": "normal",
-            "card_padding": 24,
-            "card_border_width": 1,
-            "card_border_color": "#d0d0d0",
-            "card_border_radius": 8,
-            "card_gap": 24,
-            "card_height": 0
-          }
-        },
-        "catalogs_TfbtH3": {
-          "type": "catalogs",
-          "settings": {
-            "title": "Bedroom Schemes",
-            "card_eyebrow": "Scheme",
-            "collections": [],
-            "title_font_family": "heading",
-            "title_font_size": 28,
-            "eyebrow_font_size": 12,
-            "title_font_weight": "500",
-            "title_font_style": "normal",
-            "card_padding": 24,
-            "card_border_width": 1,
-            "card_border_color": "#d0d0d0",
-            "card_border_radius": 8,
-            "card_gap": 24,
-            "card_height": 0
-          }
-        },
         "products_ebH7qW": {
           "type": "products",
           "settings": {
@@ -249,8 +187,8 @@
         "link_p8mLnL": {
           "type": "link",
           "settings": {
-            "title": "Manage Portal",
-            "link": ""
+            "title": "Quote Basket",
+            "link": "#"
           }
         }
       },
@@ -262,9 +200,6 @@
         "catalog_node_m3X8Gd",
         "catalog_node_ijP84x",
         "catalog_node_3rXnpc",
-        "catalogs_VgQLc8",
-        "catalogs_A9fycj",
-        "catalogs_TfbtH3",
         "products_ebH7qW",
         "contact_TPcLmM",
         "link_p8mLnL"
