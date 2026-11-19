@@ -101,33 +101,62 @@
             "title": "All Schemes"
           }
         },
-        "catalog_LfLfiW": {
+        "catalog_node_qk9kGj": {
           "type": "catalog_node",
           "settings": {
-            "catalog_id": "catalogs",
+            "catalog_id": "Bedrooms",
             "parent_id": "",
-            "title": "Hazel Bedroom Scheme",
-            "link_url": "",
-            "card_image": "shopify://shop_images/Screenshot_2026-11-12_at_16.08.30.png",
-            "collections": []
-          }
-        },
-        "catalog_JN6cNb": {
-          "type": "catalog_node",
-          "settings": {
-            "catalog_id": "catalog1",
-            "parent_id": "catalogs",
-            "title": "Tables",
+            "title": "Bedrooms",
             "link_url": "",
             "collections": []
           }
         },
-        "catalog_hAtLdy": {
+        "catalog_node_hM7pRj": {
           "type": "catalog_node",
           "settings": {
-            "catalog_id": "catalog2",
-            "parent_id": "catalogs",
-            "title": "Chairs",
+            "catalog_id": "Lounge",
+            "parent_id": "",
+            "title": "Lounge",
+            "link_url": "",
+            "collections": []
+          }
+        },
+        "catalog_node_EkRQLy": {
+          "type": "catalog_node",
+          "settings": {
+            "catalog_id": "Dining Room",
+            "parent_id": "",
+            "title": "Dining Room",
+            "link_url": "",
+            "collections": []
+          }
+        },
+        "catalog_node_m3X8Gd": {
+          "type": "catalog_node",
+          "settings": {
+            "catalog_id": "Cafe",
+            "parent_id": "",
+            "title": "Cafe",
+            "link_url": "",
+            "collections": []
+          }
+        },
+        "catalog_node_ijP84x": {
+          "type": "catalog_node",
+          "settings": {
+            "catalog_id": "Reception",
+            "parent_id": "",
+            "title": "Reception",
+            "link_url": "",
+            "collections": []
+          }
+        },
+        "catalog_node_3rXnpc": {
+          "type": "catalog_node",
+          "settings": {
+            "catalog_id": "HazelBedroom",
+            "parent_id": "Bedrooms",
+            "title": "Hazel Bedroom Scheeme",
             "link_url": "",
             "collections": []
           }
@@ -221,9 +250,12 @@
       },
       "block_order": [
         "catalog_hierarchy_p7aXsW",
-        "catalog_LfLfiW",
-        "catalog_JN6cNb",
-        "catalog_hAtLdy",
+        "catalog_node_qk9kGj",
+        "catalog_node_hM7pRj",
+        "catalog_node_EkRQLy",
+        "catalog_node_m3X8Gd",
+        "catalog_node_ijP84x",
+        "catalog_node_3rXnpc",
         "catalogs_VgQLc8",
         "catalogs_A9fycj",
         "catalogs_TfbtH3",
@@ -239,7 +271,7 @@
         "tab_font_weight": "400",
         "tab_padding_x": 20,
         "tab_padding_y": 14,
-        "scheme_columns_desktop": 2,
+        "scheme_columns_desktop": 3,
         "scheme_columns_mobile": 1,
         "products_columns_desktop": 4,
         "products_columns_mobile": 1
