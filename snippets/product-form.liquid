@@ -96,7 +96,8 @@
 
     {% if show_call_to_action %}
       {% render 'room-number-field', section_id: section_id %}
-    {% endif %}
+    {% render 'add-to-quote-button' %}
+{% endif %}
 
     {% if show_data_sheet %}
       <div class="{{ base_class }}__data-sheet">
