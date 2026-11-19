@@ -97,7 +97,6 @@
       "blocks": {
         "catalog_hierarchy_p7aXsW": {
           "type": "catalog_hierarchy",
-          "disabled": true,
           "settings": {
             "title": "All Schemes"
           }
@@ -208,8 +207,8 @@
           "settings": {
             "title": "Contact Account Manager",
             "text": "<p>Please contact Molly Tinker or Candace Turner</p>",
-            "button_label": "Contact Us",
-            "button_link": "shopify://pages/contact-us"
+            "button_label": "",
+            "button_link": ""
           }
         },
         "link_p8mLnL": {
