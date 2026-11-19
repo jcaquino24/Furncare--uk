@@ -100,5 +100,8 @@
 
     {%- when 'variant_selector' -%}
       {% render 'product-variant-selector', product: product, block: block %}
+
+    {%- when '@app' -%}
+      {% render block %}
   {%- endcase -%}
 {%- endfor -%}

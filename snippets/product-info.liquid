@@ -113,6 +113,8 @@
 {%- for block in section.blocks -%}
   {%- if block.type == 'variant_selector' -%}
     {% render 'product-variant-selector', product: product, block: block %}
+  {%- elsif block.type == '@app' -%}
+    {% render block %}
   {%- endif -%}
 {%- endfor -%}
 {% endif %}
