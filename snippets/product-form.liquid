@@ -94,6 +94,10 @@
     {%- comment -%} Hidden input for variant ID - required for add to cart {%- endcomment -%}
     <input type="hidden" name="id" value="{{ current_variant.id }}">
 
+    {% if show_call_to_action %}
+      {% render 'room-number-field', section_id: section_id %}
+    {% endif %}
+
     {% if show_data_sheet %}
       <div class="{{ base_class }}__data-sheet">
         <a
