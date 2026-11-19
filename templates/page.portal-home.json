@@ -163,6 +163,7 @@
         },
         "catalogs_VgQLc8": {
           "type": "catalogs",
+          "disabled": true,
           "settings": {
             "title": "All Schemes",
             "card_eyebrow": "SCHEME",
@@ -187,6 +188,7 @@
         },
         "catalogs_A9fycj": {
           "type": "catalogs",
+          "disabled": true,
           "settings": {
             "title": "Communal Schemes",
             "card_eyebrow": "Scheme",
@@ -206,6 +208,7 @@
         },
         "catalogs_TfbtH3": {
           "type": "catalogs",
+          "disabled": true,
           "settings": {
             "title": "Bedroom Schemes",
             "card_eyebrow": "Scheme",
