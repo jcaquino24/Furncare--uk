@@ -717,7 +717,7 @@
           "type": "button",
           "settings": {
             "text": "Order yours",
-            "button_url": "",
+            "button_url": "shopify://collections/the-ellington-collection",
             "new_tab": false,
             "button_style": "underline",
             "button_font_size": 16,
@@ -819,7 +819,7 @@
           "type": "button",
           "settings": {
             "text": "Order yours",
-            "button_url": "",
+            "button_url": "shopify://collections/the-abbott-collection",
             "new_tab": false,
             "button_style": "underline",
             "button_font_size": 16,
@@ -921,7 +921,7 @@
           "type": "button",
           "settings": {
             "text": "Order yours",
-            "button_url": "",
+            "button_url": "shopify://collections/the-tilbury-collection",
             "new_tab": false,
             "button_style": "underline",
             "button_font_size": 16,
@@ -1023,7 +1023,7 @@
           "type": "button",
           "settings": {
             "text": "Order yours",
-            "button_url": "",
+            "button_url": "shopify://collections/the-ellington-collection-copy",
             "new_tab": false,
             "button_style": "underline",
             "button_font_size": 16,
@@ -1125,7 +1125,7 @@
           "type": "button",
           "settings": {
             "text": "Order yours",
-            "button_url": "",
+            "button_url": "shopify://collections/the-bronson-collection",
             "new_tab": false,
             "button_style": "underline",
             "button_font_size": 16,
