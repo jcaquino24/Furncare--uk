@@ -29,6 +29,14 @@
     if (window.__addToQuoteInit) return;
     window.__addToQuoteInit = true;
 
+    document.addEventListener('submit', function (event) {
+      var btn = event.target.querySelector('[data-add-to-quote]');
+      if (!btn) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      if (!btn.disabled) btn.click();
+    }, true);
+
     document.addEventListener('click', async function (event) {
       var btn = event.target.closest('[data-add-to-quote]');
       if (!btn) return;

@@ -69,6 +69,17 @@
   endcomment
   assign show_button = show_button | default: true, allow_false: true
   assign button_text = button_text | default: 'product_card.view_product' | t
+  assign portal_company_names = settings.portal_company_name | default: 'Furncare Test' | split: ','
+  assign current_company_name = customer.current_company.name | downcase | strip
+  assign is_portal_company = false
+  for portal_company_name in portal_company_names
+    assign normalized_company_name = portal_company_name | downcase | strip
+    if current_company_name != blank and current_company_name == normalized_company_name
+      assign is_portal_company = true
+      assign button_text = 'Choose options for quote'
+      break
+    endif
+  endfor
   assign quickshop_enabled = quickshop_enabled | default: false, allow_false: true
   assign quickshop_button_text = quickshop_button_text | default: 'product_card.quick_shop' | t
 
@@ -125,6 +136,7 @@
 
 <div class="button_container">
 
+{% unless is_portal_company %}
 {%- form 'product',
   product,
   class: 'ProductForm product-card__form',
@@ -143,6 +155,7 @@
   </button>
 
 {%- endform -%}
+{% endunless %}
       
         <a
           aria-label="Visit {{ product.title }}"
@@ -283,7 +296,7 @@
       {% endfor %}
     </div>
 
-{% if customer %}  {% if customer.id == 11696191635792 or customer.id == 11063103160656 %}
+{% if customer and is_portal_company == false %}  {% if customer.id == 11696191635792 or customer.id == 11063103160656 %}
   
     <button
   id="mprfq-quote-{{ product.id }}"
