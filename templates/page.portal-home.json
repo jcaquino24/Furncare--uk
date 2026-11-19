@@ -108,6 +108,7 @@
             "parent_id": "",
             "title": "Bedrooms",
             "link_url": "",
+            "card_image": "shopify://shop_images/Bedrooms_10.jpg",
             "collections": []
           }
         },
@@ -118,6 +119,7 @@
             "parent_id": "",
             "title": "Lounge",
             "link_url": "",
+            "card_image": "shopify://shop_images/Willow_Lodge_Vol_2-22.jpg",
             "collections": []
           }
         },
@@ -128,6 +130,7 @@
             "parent_id": "",
             "title": "Dining Room",
             "link_url": "",
+            "card_image": "shopify://shop_images/Lounge_One_18_f89e957a-59d1-4b6e-8289-5e795ab0eaf4.jpg",
             "collections": []
           }
         },
@@ -138,6 +141,7 @@
             "parent_id": "",
             "title": "Cafe",
             "link_url": "",
+            "card_image": "shopify://shop_images/Cafe_with_blinds.png",
             "collections": []
           }
         },
@@ -148,6 +152,7 @@
             "parent_id": "",
             "title": "Reception",
             "link_url": "",
+            "card_image": "shopify://shop_images/PREG2375.jpg",
             "collections": []
           }
         },
@@ -163,7 +168,6 @@
         },
         "catalogs_VgQLc8": {
           "type": "catalogs",
-          "disabled": true,
           "settings": {
             "title": "All Schemes",
             "card_eyebrow": "SCHEME",
@@ -188,7 +192,6 @@
         },
         "catalogs_A9fycj": {
           "type": "catalogs",
-          "disabled": true,
           "settings": {
             "title": "Communal Schemes",
             "card_eyebrow": "Scheme",
@@ -208,7 +211,6 @@
         },
         "catalogs_TfbtH3": {
           "type": "catalogs",
-          "disabled": true,
           "settings": {
             "title": "Bedroom Schemes",
             "card_eyebrow": "Scheme",
@@ -238,7 +240,7 @@
           "type": "contact",
           "settings": {
             "title": "Contact Account Manager",
-            "custom_html": "<div class=\"contact-details\">\n  <p>If there are inquiries, please contact <strong>Randal Southall</strong>.</p>\n\n  <p>\n    <strong>Email:</strong>\n    <a href=\"mailto:Randal.southall@furncare.co.uk\">Randal.southall@furncare.co.uk</a>\n  </p>\n\n  <p>\n    <strong>Phone:</strong>\n    <a href=\"tel:07384796549\">07384 796549</a>\n  </p>\n</div>\n<style>\n.contact-details {\n \n  padding: 20px;\n  border-radius: 8px;\n  border-left: 4px solid #000;\n  margin: 20px 0;\n}\n\n.contact-details p {\n  margin: 0 0 10px;\n  line-height: 1.6;\n}\n\n.contact-details p:last-child {\n  margin-bottom: 0;\n}\n\n.contact-label {\n  font-weight: 600;\n}\n\n.contact-details a {\n  color: #000;\n  text-decoration: none;\n}\n\n.contact-details a:hover {\n  text-decoration: underline;\n}\n</style>",
+            "custom_html": "<div class=\"contact-details\">\n  <p>If there are inquiries, please contact <strong>Randal Southall</strong>.</p>\n\n  <p>\n    <strong>Email:</strong>\n    <a href=\"mailto:Randal.southall@furncare.co.uk\">Randal.southall@furncare.co.uk</a>\n  </p>\n\n  <p>\n    <strong>Phone:</strong>\n    <a href=\"tel:07384796549\">07384 796549</a>\n  </p>\n</div>\n<style>\n.contact-details {\n  background: #f8f8f8;\n  padding: 20px;\n  border-radius: 8px;\n  border-left: 4px solid #000;\n  margin: 20px 0;\n}\n\n.contact-details p {\n  margin: 0 0 10px;\n  line-height: 1.6;\n}\n\n.contact-details p:last-child {\n  margin-bottom: 0;\n}\n\n.contact-label {\n  font-weight: 600;\n}\n\n.contact-details a {\n  color: #000;\n  text-decoration: none;\n}\n\n.contact-details a:hover {\n  text-decoration: underline;\n}\n</style>",
             "button_label": "",
             "button_link": ""
           }
@@ -246,7 +248,7 @@
         "link_p8mLnL": {
           "type": "link",
           "settings": {
-            "title": "My Quotes",
+            "title": "Manage Portal",
             "link": ""
           }
         }
@@ -274,7 +276,7 @@
         "tab_font_weight": "400",
         "tab_padding_x": 20,
         "tab_padding_y": 14,
-        "scheme_columns_desktop": 2,
+        "scheme_columns_desktop": 3,
         "scheme_columns_mobile": 1,
         "products_columns_desktop": 4,
         "products_columns_mobile": 1
