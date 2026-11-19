@@ -1,0 +1,44 @@
+{%- doc -%}
+  Room Number line item property (added to every product).
+
+  @param {string} [form_id] - ID of the product <form>. Only needed if this snippet is rendered OUTSIDE the <form> element.
+  @param {string} [section_id] - Used for unique input IDs
+
+  @example
+  {% render 'room-number-field', form_id: form_id, section_id: section.id %}
+{%- enddoc -%}
+
+{%- liquid
+  assign section_id = section_id | default: 'product'
+  assign field_id = 'room-number-' | append: section_id
+-%}
+
+<div class="room-number-field">
+  <label for="{{ field_id }}" class="room-number-field__label eyebrow-2xs">
+    Room Number <span aria-hidden="true">*</span>
+  </label>
+  <input
+    type="text"
+    id="{{ field_id }}"
+    class="room-number-field__input"
+    name="properties[Room Number]"
+    {% if form_id != blank %}form="{{ form_id }}"{% endif %}
+    placeholder="e.g. 204"
+    autocomplete="off"
+    maxlength="40"
+    required
+  >
+</div>
+
+{% style %}
+  .room-number-field { margin-block: var(--spacing-2xs, 12px); }
+  .room-number-field__label { display: block; margin-block-end: 6px; }
+  .room-number-field__input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d9dde3;
+    background: #fff;
+    font: inherit;
+  }
+  .room-number-field__input:focus-visible { outline: 2px solid #243a53; outline-offset: 1px; }
+{% endstyle %}
