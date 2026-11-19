@@ -97,6 +97,7 @@
       "blocks": {
         "catalog_hierarchy_p7aXsW": {
           "type": "catalog_hierarchy",
+          "disabled": true,
           "settings": {
             "title": "All Schemes"
           }
