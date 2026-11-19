@@ -1,16 +1,24 @@
 <section class="cart-print">
   <header class="cart-print__header">
     <h1 class="cart-print__title">{{ section.settings.title }}</h1>
-    <div class="cart-print__actions">
-      <button type="button" class="cart-print__btn" onclick="window.print()">
-        {{ section.settings.print_label }}
-      </button>
-      <button type="button" class="cart-print__btn" data-save-pdf>
-        {{ section.settings.pdf_label }}
-      </button>
-      <a href="{{ routes.cart_url }}" class="cart-print__btn cart-print__btn--ghost">Back to cart</a>
+    <div class="cart-print__logo">
+      {%- if section.settings.logo != blank -%}
+        {{ section.settings.logo | image_url: width: 600 | image_tag: loading: 'eager', alt: shop.name, class: 'cart-print__logo-img' }}
+      {%- else -%}
+        <span class="cart-print__logo-text">{{ shop.name }}</span>
+      {%- endif -%}
     </div>
   </header>
+
+  <div class="cart-print__actions">
+    <button type="button" class="cart-print__btn" onclick="window.print()">
+      {{ section.settings.print_label }}
+    </button>
+    <button type="button" class="cart-print__btn" data-save-pdf>
+      {{ section.settings.pdf_label }}
+    </button>
+    <a href="{{ routes.cart_url }}" class="cart-print__btn cart-print__btn--ghost">Back to cart</a>
+  </div>
 
   <p class="cart-print__meta">{{ 'now' | date: '%d %b %Y' }}</p>
 
@@ -123,10 +131,13 @@
 
 {% style %}
   .cart-print { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
-  .cart-print__header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .cart-print__header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
   .cart-print__title { margin: 0; }
+  .cart-print__logo { display: flex; align-items: center; justify-content: flex-end; }
+  .cart-print__logo-img { width: auto; max-width: 100%; height: {{ section.settings.logo_height }}px; object-fit: contain; }
+  .cart-print__logo-text { font-weight: 700; font-size: 1.25rem; }
   .cart-print__meta { color: #666; margin-block: 8px 24px; }
-  .cart-print__actions { display: flex; gap: 8px; }
+  .cart-print__actions { display: flex; gap: 8px; flex-wrap: wrap; margin-block-start: 16px; }
   .cart-print__btn {
     padding: 12px 20px; border: 1px solid #1f3854; background: #1f3854; color: #fff;
     font: inherit; cursor: pointer; text-decoration: none;
@@ -156,7 +167,9 @@
 {
   "name": "Cart print",
   "settings": [
-    { "type": "text", "id": "title", "label": "Title", "default": "Room order summary" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Order Summary" },
+    { "type": "image_picker", "id": "logo", "label": "Store logo", "info": "Shown on the right of the title. Falls back to the store name." },
+    { "type": "range", "id": "logo_height", "label": "Logo height", "min": 24, "max": 120, "step": 4, "unit": "px", "default": 48 },
     { "type": "text", "id": "print_label", "label": "Print button label", "default": "Print" },
     { "type": "text", "id": "pdf_label", "label": "Save as PDF button label", "default": "Save as PDF" }
   ],
