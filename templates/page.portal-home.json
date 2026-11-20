@@ -161,7 +161,7 @@
           "type": "catalog_node",
           "settings": {
             "catalog_id": "HazelBedroom",
-            "parent_id": "Bedrooms",
+            "parent_id": "Bedroom",
             "title": "Hazel Bedroom Scheeme",
             "link_url": "",
             "card_image": "shopify://shop_images/Screenshot_2026-11-12_at_16.08.30.png",
