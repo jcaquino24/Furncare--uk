@@ -9,6 +9,10 @@
       break
     endif
   endfor
+  assign is_cart_print_template = false
+  if template.name == 'cart' and template.suffix == 'print'
+    assign is_cart_print_template = true
+  endif
 -%}
 <!doctype html>
 <html lang="{{ shop.locale }}">
@@ -152,24 +156,29 @@
       {{ 'accessibility.skip_to_content' | t }}
     </a>
 
-    {% unless is_portal_company %}
+    {% unless is_portal_company or is_cart_print_template %}
       <uwp-cart
         role="region"
         aria-label="Cart"
         aria-roledescription="region"
       ></uwp-cart>
     {% endunless %}
-    {% render 'search-modal' %}
-    {% sections 'header-group' %}
+    {% unless is_cart_print_template %}
+      {% render 'search-modal' %}
+      {% sections 'header-group' %}
+    {% endunless %}
 
-    <!-- Megamenu overlay -->
-    <div class="megamenu-overlay" js-megamenu="overlay"></div>
+    {% unless is_cart_print_template %}
+      <div class="megamenu-overlay" js-megamenu="overlay"></div>
+    {% endunless %}
 
     <main id="main-content" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
 
-    {% sections 'footer-group' %}
+    {% unless is_cart_print_template %}
+      {% sections 'footer-group' %}
+    {% endunless %}
 
     {% comment %} Global drawers - rendered at root level to avoid z-index issues {% endcomment %}
     <div id="global-drawers">
