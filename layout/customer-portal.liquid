@@ -74,10 +74,22 @@
     {% unless is_portal_company %}
       <uwp-cart role="region" aria-label="Cart" aria-roledescription="region"></uwp-cart>
     {% endunless %}
-
+    
+{% comment %}
     {% if hide_portal_chrome %}
-      
+      <nav class="portal-quote-navigation" aria-label="Portal actions">
+        <a href="{{ routes.cart_url }}?view=print" aria-label="Quote basket" title="Quote basket">
+          {% render 'icons', icon: 'basket' %}
+          <span>Quote basket</span>
+        </a>
+      </nav>
+      <style>
+        .portal-quote-navigation { display: flex; justify-content: flex-end; max-width: 1400px; margin: 0 auto; padding: 16px 24px; }
+        .portal-quote-navigation a { display: inline-flex; align-items: center; gap: 8px; color: inherit; text-decoration: none; }
+        .portal-quote-navigation a:hover { text-decoration: underline; }
+      </style>
     {% endif %}
+{% endcomment %}
 
     {% unless hide_portal_chrome %}
       {% render 'search-modal' %}
