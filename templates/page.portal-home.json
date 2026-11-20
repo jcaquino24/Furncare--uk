@@ -188,7 +188,7 @@
           "type": "link",
           "settings": {
             "title": "Quote Basket",
-            "link": "#"
+            "link": "/cart?view=print"
           }
         }
       },
