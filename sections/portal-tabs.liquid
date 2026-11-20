@@ -114,6 +114,9 @@
                     {%- endfor -%}
                   </ul>
                 </div>
+                <nav class="breadcrumbs portal-tabs__breadcrumbs" aria-label="Catalog breadcrumb" data-hierarchy-breadcrumbs hidden>
+                  <ol class="breadcrumbs__list"></ol>
+                </nav>
 
                 {%- for node in catalog_nodes -%}
                   {%- assign node_id = node.settings.node_id | default: node.settings.catalog_id | default: node.id -%}
@@ -132,9 +135,6 @@
                     {%- endif -%}
                   {%- endfor -%}
                   <div class="portal-tabs__hierarchy-panel" id="portal-hierarchy-panel-{{ node.id }}" data-hierarchy-panel="{{ node.id }}" data-hierarchy-parent="{{ parent_panel_id }}" hidden>
-                    <button class="button button--secondary portal-tabs__back" type="button" data-hierarchy-back="{{ parent_panel_id }}">
-                      <span aria-hidden="true">&larr;</span> Back
-                    </button>
                     <h3 class="portal-tabs__results-title">{{ node.settings.title | escape }}</h3>
                     {%- if node.settings.link_url != blank -%}
                       <p><a href="{{ node.settings.link_url }}">Open {{ node.settings.title | escape }}</a></p>
@@ -205,9 +205,9 @@
                           </ul>
                         </div>
                         <div data-portal-catalog-results hidden>
-                          <button type="button" class="button button--secondary portal-tabs__back" data-portal-back>
-                            &larr; Back to catalogs
-                          </button>
+                          <nav class="breadcrumbs portal-tabs__breadcrumbs" aria-label="Catalog breadcrumb" data-catalog-breadcrumbs>
+                            <ol class="breadcrumbs__list"></ol>
+                          </nav>
                           <div data-portal-results-body aria-live="polite"></div>
                         </div>
                       </div>
@@ -231,7 +231,8 @@
                   assign scheme_title_font = 'inherit'
                 endif
               -%}
-              <div data-portal-catalog-list>
+              <div data-portal-catalog-context>
+                <div data-portal-catalog-list>
                 <ul
                   class="portal-tabs__scheme-list"
                   style="--scheme-columns-desktop: {{ section.settings.scheme_columns_desktop }}; --scheme-columns-mobile: {{ section.settings.scheme_columns_mobile }}; --scheme-card-gap: {{ block.settings.card_gap }}px; --scheme-card-height: {% if block.settings.card_height > 0 %}{{ block.settings.card_height }}px{% else %}auto{% endif %}; --scheme-card-padding: {{ block.settings.card_padding }}px; --scheme-card-border-width: {{ block.settings.card_border_width }}px; --scheme-card-border-color: {{ block.settings.card_border_color }}; --scheme-card-radius: {{ block.settings.card_border_radius }}px; --scheme-title-font: {{ scheme_title_font }}; --scheme-title-size: {{ block.settings.title_font_size }}px; --scheme-title-weight: {{ block.settings.title_font_weight }}; --scheme-title-style: {{ block.settings.title_font_style }}; --scheme-eyebrow-size: {{ block.settings.eyebrow_font_size }}px"
@@ -253,12 +254,13 @@
                     </li>
                   {%- endfor -%}
                 </ul>
-              </div>
-              <div data-portal-catalog-results hidden>
-                <button type="button" class="button button--secondary portal-tabs__back" data-portal-back>
-                  &larr; Back to catalogs
-                </button>
-                <div data-portal-results-body aria-live="polite"></div>
+                </div>
+                <div data-portal-catalog-results hidden>
+                  <nav class="breadcrumbs portal-tabs__breadcrumbs" aria-label="Catalog breadcrumb" data-catalog-breadcrumbs>
+                    <ol class="breadcrumbs__list"></ol>
+                  </nav>
+                  <div data-portal-results-body aria-live="polite"></div>
+                </div>
               </div>
             {%- else -%}
               <p>No catalogs available.</p>
@@ -323,15 +325,135 @@
     function showCatalogList(panel) {
       panel.querySelector('[data-portal-catalog-list]').hidden = false;
       panel.querySelector('[data-portal-catalog-results]').hidden = true;
+      var hierarchy = panel.closest('[data-portal-hierarchy]');
+      var hierarchyPanel = panel.closest('[data-hierarchy-panel]');
+      if (hierarchy && hierarchyPanel) {
+        renderHierarchyBreadcrumbs(hierarchy, hierarchyPanel.getAttribute('data-hierarchy-panel'));
+      }
     }
 
-    function openCatalog(panel, url) {
+    function findHierarchyTrail(hierarchy, panelId) {
+      var panels = Array.prototype.slice.call(hierarchy.querySelectorAll('[data-hierarchy-panel]'));
+      var trail = [];
+      var currentId = panelId;
+      var remaining = panels.length;
+
+      while (currentId && remaining > 0) {
+        var currentPanel = null;
+        for (var index = 0; index < panels.length; index += 1) {
+          if (panels[index].getAttribute('data-hierarchy-panel') === currentId) {
+            currentPanel = panels[index];
+            break;
+          }
+        }
+        if (!currentPanel) break;
+
+        var heading = currentPanel.querySelector('.portal-tabs__results-title');
+        trail.unshift({ id: currentId, title: heading ? heading.textContent.trim() : '' });
+        currentId = currentPanel.getAttribute('data-hierarchy-parent');
+        remaining -= 1;
+      }
+
+      return trail;
+    }
+
+    function getBreadcrumbList(nav) {
+      return nav.querySelector('.breadcrumbs__list') || nav;
+    }
+
+    function addBreadcrumbSeparator(list) {
+      var item = document.createElement('li');
+      item.className = 'breadcrumbs__item';
+      var separator = document.createElement('span');
+      separator.className = 'breadcrumbs__separator';
+      separator.setAttribute('aria-hidden', 'true');
+      separator.textContent = '›';
+      item.appendChild(separator);
+      list.appendChild(item);
+    }
+
+    function addBreadcrumbButton(list, title, attribute, value) {
+      var item = document.createElement('li');
+      item.className = 'breadcrumbs__item';
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'breadcrumbs__link eyebrow-2xs';
+      button.textContent = title;
+      button.setAttribute(attribute, value);
+      item.appendChild(button);
+      list.appendChild(item);
+    }
+
+    function addBreadcrumbCurrent(list, title) {
+      var item = document.createElement('li');
+      item.className = 'breadcrumbs__item';
+      var current = document.createElement('span');
+      current.className = 'breadcrumbs__link eyebrow-2xs';
+      current.textContent = title;
+      current.setAttribute('aria-current', 'page');
+      item.appendChild(current);
+      list.appendChild(item);
+    }
+
+    function renderHierarchyBreadcrumbs(hierarchy, panelId) {
+      var nav = hierarchy.querySelector('[data-hierarchy-breadcrumbs]');
+      if (!nav) return;
+      var list = getBreadcrumbList(nav);
+      list.replaceChildren();
+      nav.hidden = !panelId;
+      if (!panelId) return;
+
+      addBreadcrumbButton(list, 'All catalogs', 'data-hierarchy-target', '');
+      findHierarchyTrail(hierarchy, panelId).forEach(function (item, index, trail) {
+        addBreadcrumbSeparator(list);
+        if (index === trail.length - 1) {
+          addBreadcrumbCurrent(list, item.title);
+        } else {
+          addBreadcrumbButton(list, item.title, 'data-hierarchy-target', item.id);
+        }
+      });
+    }
+
+    function renderCatalogBreadcrumbs(panel, results, collectionTitle) {
+      var nav = results.querySelector('[data-catalog-breadcrumbs]');
+      if (!nav) return;
+      var list = getBreadcrumbList(nav);
+      list.replaceChildren();
+
+      var hierarchy = panel.closest('[data-portal-hierarchy]');
+      var hierarchyPanel = panel.closest('[data-hierarchy-panel]');
+      if (hierarchy && hierarchyPanel) {
+        var panelId = hierarchyPanel.getAttribute('data-hierarchy-panel');
+        addBreadcrumbButton(list, 'All catalogs', 'data-hierarchy-target', '');
+        findHierarchyTrail(hierarchy, panelId).forEach(function (item, index, trail) {
+          addBreadcrumbSeparator(list);
+          if (index === trail.length - 1) {
+            addBreadcrumbButton(list, item.title, 'data-portal-back', '');
+          } else {
+            addBreadcrumbButton(list, item.title, 'data-hierarchy-target', item.id);
+          }
+        });
+      } else {
+        addBreadcrumbButton(list, 'All catalogs', 'data-portal-back', '');
+      }
+
+      addBreadcrumbSeparator(list);
+      addBreadcrumbCurrent(list, collectionTitle);
+    }
+
+    function openCatalog(panel, url, collectionTitle) {
       var list = panel.querySelector('[data-portal-catalog-list]');
       var results = panel.querySelector('[data-portal-catalog-results]');
       var body = results.querySelector('[data-portal-results-body]');
       list.hidden = true;
       results.hidden = false;
       body.textContent = 'Loading...';
+      renderCatalogBreadcrumbs(panel, results, collectionTitle);
+      var hierarchy = panel.closest('[data-portal-hierarchy]');
+      if (hierarchy) {
+        var hierarchyBreadcrumbs = hierarchy.querySelector('[data-hierarchy-breadcrumbs]');
+        if (hierarchyBreadcrumbs) hierarchyBreadcrumbs.hidden = true;
+      }
       results.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
       var request = catalogCache[url] || (catalogCache[url] = fetch(url.split('?')[0] + '?view=portal-products', { credentials: 'same-origin' })
@@ -356,9 +478,14 @@
     function showHierarchyNode(hierarchy, panelId) {
       var rootPanel = hierarchy.querySelector('[data-hierarchy-root]');
       rootPanel.hidden = panelId !== '';
+      hierarchy.querySelectorAll('[data-portal-catalog-context]').forEach(function (context) {
+        context.querySelector('[data-portal-catalog-list]').hidden = false;
+        context.querySelector('[data-portal-catalog-results]').hidden = true;
+      });
       hierarchy.querySelectorAll('[data-hierarchy-panel]').forEach(function (panel) {
         panel.hidden = panel.getAttribute('data-hierarchy-panel') !== panelId;
       });
+      renderHierarchyBreadcrumbs(hierarchy, panelId);
       hierarchy.querySelectorAll('[data-hierarchy-open]').forEach(function (button) {
         button.setAttribute('aria-expanded', button.getAttribute('data-hierarchy-open') === panelId ? 'true' : 'false');
       });
@@ -372,10 +499,10 @@
         return;
       }
 
-      var hierarchyBack = event.target.closest('[data-hierarchy-back]');
-      if (hierarchyBack) {
-        var hierarchy = hierarchyBack.closest('[data-portal-hierarchy]');
-        if (hierarchy) showHierarchyNode(hierarchy, hierarchyBack.getAttribute('data-hierarchy-back') || '');
+      var hierarchyTarget = event.target.closest('[data-hierarchy-target]');
+      if (hierarchyTarget) {
+        var hierarchy = hierarchyTarget.closest('[data-portal-hierarchy]');
+        if (hierarchy) showHierarchyNode(hierarchy, hierarchyTarget.getAttribute('data-hierarchy-target') || '');
         return;
       }
 
@@ -390,7 +517,8 @@
       if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
       event.preventDefault();
       var catalogContext = link.closest('[data-portal-catalog-context]') || link.closest('.portal-tabs__panel');
-      openCatalog(catalogContext, link.href);
+      var cardTitle = link.querySelector('.portal-tabs__scheme-title');
+      openCatalog(catalogContext, link.href, cardTitle ? cardTitle.textContent.trim() : link.textContent.trim());
     });
 
     document.addEventListener('click', function (event) {
@@ -497,6 +625,30 @@
   }
   .portal-tabs__back {
     margin-bottom: var(--spacing-lg, 1.5rem);
+  }
+  .portal-tabs__breadcrumbs {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 0 var(--spacing-lg, 1.5rem);
+  }
+  .portal-tabs__breadcrumbs button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-decoration: inherit;
+    cursor: pointer;
+  }
+  .portal-tabs__breadcrumbs .breadcrumbs__separator {
+    text-decoration: none;
+  }
+  .portal-tabs__breadcrumbs button:focus-visible {
+    outline: 2px solid currentcolor;
+    outline-offset: 3px;
+  }
+  .portal-tabs__breadcrumbs [aria-current='page'] {
+    font-weight: 600;
   }
   .portal-tabs__hierarchy-collections {
     margin-top: var(--spacing-xl, 2rem);
