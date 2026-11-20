@@ -10,17 +10,21 @@
     </div>
   </header>
 
-  <div class="cart-print__actions">
+  <div class="cart-print__actions cart-print__no-print">
     <button type="button" class="cart-print__btn" onclick="window.print()">
       {{ section.settings.print_label }}
     </button>
     <button type="button" class="cart-print__btn" data-save-pdf>
       {{ section.settings.pdf_label }}
     </button>
+    <a href="{{ routes.cart_url }}" class="cart-print__btn cart-print__btn--ghost">Back to cart</a>
   </div>
 
   <p class="cart-print__meta">{{ 'now' | date: '%d %b %Y' }}</p>
 
+  <p class="cart-print__error cart-print__no-print" role="alert" hidden data-cart-print-error></p>
+
+  <div data-cart-print-items>
   {% if cart.item_count == 0 %}
     <p>Your basket is empty.</p>
   {% else %}
@@ -32,12 +36,14 @@
           <th class="num">Price</th>
           <th class="num">Qty</th>
           <th class="num">Total</th>
+          <th class="cart-print__no-print cart-print__remove-col"><span class="visually-hidden">Remove</span></th>
         </tr>
       </thead>
       <tbody>
         {% for item in cart.items %}
-          <tr>
-            <td class="cart-print__product">
+          <tr data-line-key="{{ item.key }}">
+            <td>
+              <div class="cart-print__product">
               {% if item.image %}
                 <img
                   src="{{ item.image | image_url: width: 160 }}"
@@ -54,11 +60,22 @@
                 {% endunless %}
                 {% if item.sku != blank %}<div class="cart-print__variant">SKU: {{ item.sku }}</div>{% endif %}
               </div>
+              </div>
             </td>
             <td>{{ item.properties['Room Number'] | default: '—' }}</td>
             <td class="num">{{ item.final_price | money }}</td>
-            <td class="num">{{ item.quantity }}</td>
+            <td class="num">
+              <span class="cart-print__qty-print">{{ item.quantity }}</span>
+              <div class="cart-print__qty cart-print__no-print">
+                <button type="button" class="cart-print__qty-btn" data-qty-change="-1" data-quantity="{{ item.quantity }}" aria-label="Decrease quantity">&minus;</button>
+                <span class="cart-print__qty-value" aria-live="polite">{{ item.quantity }}</span>
+                <button type="button" class="cart-print__qty-btn" data-qty-change="1" data-quantity="{{ item.quantity }}" aria-label="Increase quantity">+</button>
+              </div>
+            </td>
             <td class="num">{{ item.final_line_price | money }}</td>
+            <td class="cart-print__no-print cart-print__remove-col">
+              <button type="button" class="cart-print__remove" data-remove-line aria-label="Remove {{ item.product.title | split: '|' | first | escape }}">&times;</button>
+            </td>
           </tr>
         {% endfor %}
       </tbody>
@@ -66,10 +83,12 @@
         <tr>
           <td colspan="4" class="num"><strong>Subtotal</strong></td>
           <td class="num"><strong>{{ cart.total_price | money }}</strong></td>
+          <td class="cart-print__no-print cart-print__remove-col"></td>
         </tr>
       </tfoot>
     </table>
   {% endif %}
+  </div>
 </section>
 
 <script>
@@ -86,6 +105,64 @@
         document.head.appendChild(s);
       });
     }
+
+    var ITEMS = '[data-cart-print-items]';
+
+    function showError(text) {
+      var el = document.querySelector('[data-cart-print-error]');
+      if (!el) return;
+      el.textContent = text || '';
+      el.hidden = !text;
+    }
+
+    async function updateLine(key, quantity) {
+      var wrap = document.querySelector(ITEMS);
+      if (!wrap) return;
+      wrap.classList.add('is-loading');
+      showError('');
+
+      try {
+        var response = await fetch('{{ routes.cart_change_url }}.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ id: key, quantity: quantity })
+        });
+        var result = await response.json();
+        if (!response.ok) {
+          showError(result.description || result.message || 'Could not update the quote.');
+        }
+
+        // Re-render the table from the server so totals stay correct
+        var html = await (await fetch(window.location.href, { cache: 'no-store' })).text();
+        var fresh = new DOMParser().parseFromString(html, 'text/html').querySelector(ITEMS);
+        if (fresh) {
+          wrap.innerHTML = fresh.innerHTML;
+        } else {
+          window.location.reload();
+        }
+      } catch (err) {
+        window.location.reload();
+      } finally {
+        wrap.classList.remove('is-loading');
+      }
+    }
+
+    document.addEventListener('click', function (event) {
+      var qtyBtn = event.target.closest('[data-qty-change]');
+      if (qtyBtn) {
+        var row = qtyBtn.closest('[data-line-key]');
+        var next = parseInt(qtyBtn.dataset.quantity, 10) + parseInt(qtyBtn.dataset.qtyChange, 10);
+        if (row) updateLine(row.dataset.lineKey, Math.max(0, next));
+        return;
+      }
+
+      var removeBtn = event.target.closest('[data-remove-line]');
+      if (removeBtn) {
+        var line = removeBtn.closest('[data-line-key]');
+        if (line) updateLine(line.dataset.lineKey, 0);
+        return;
+      }
+    });
 
     document.addEventListener('click', function (event) {
       var btn = event.target.closest('[data-save-pdf]');
@@ -106,8 +183,9 @@
               html2canvas: {
                 scale: 2,
                 useCORS: true,
-                ignoreElements: function (el) {
-                  return el.classList && el.classList.contains('cart-print__actions');
+                onclone: function (doc) {
+                  doc.querySelectorAll('.cart-print__no-print').forEach(function (el) { el.style.display = 'none'; });
+                  doc.querySelectorAll('.cart-print__qty-print').forEach(function (el) { el.style.display = 'inline'; });
                 }
               },
               jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
@@ -146,6 +224,22 @@
   .cart-print__table th, .cart-print__table td { padding: 12px 8px; border-bottom: 1px solid #d9dde3; text-align: left; vertical-align: middle; }
   .cart-print__table .num { text-align: right; white-space: nowrap; }
   .cart-print__product { display: flex; align-items: center; gap: 12px; }
+  [data-cart-print-items].is-loading { opacity: 0.5; pointer-events: none; transition: opacity 0.15s; }
+  .cart-print__error { color: #b42318; font-weight: 600; margin-block: 0 12px; }
+  .cart-print__qty-print { display: none; }
+  .cart-print__qty { display: inline-flex; align-items: center; border: 1px solid #d9dde3; }
+  .cart-print__qty-btn {
+    width: 32px; height: 32px; border: 0; background: #fff; font: inherit; font-size: 18px;
+    line-height: 1; cursor: pointer; color: #1f3854;
+  }
+  .cart-print__qty-btn:hover { background: #f1f3f6; }
+  .cart-print__qty-value { min-width: 32px; text-align: center; }
+  .cart-print__remove-col { width: 40px; text-align: right !important; }
+  .cart-print__remove {
+    width: 32px; height: 32px; border: 0; background: none; font-size: 22px; line-height: 1;
+    cursor: pointer; color: #666;
+  }
+  .cart-print__remove:hover { color: #b42318; }
   .cart-print__product img { width: 80px; height: 80px; object-fit: cover; }
   .cart-print__variant { font-size: 0.85em; color: #666; }
 
@@ -155,6 +249,8 @@
 
   @media print {
     header, footer, nav, .breadcrumbs, [id*="header"], [id*="footer"], .cart-print__actions { display: none !important; }
+    .cart-print__no-print { display: none !important; }
+    .cart-print__qty-print { display: inline !important; }
     .cart-print { max-width: none; padding: 0; }
     .cart-print__table tr { break-inside: avoid; }
     .cart-print__table th:nth-child(3), .cart-print__table td:nth-child(3) { display: table-cell; }
@@ -166,7 +262,7 @@
 {
   "name": "Cart print",
   "settings": [
-    { "type": "text", "id": "title", "label": "Title", "default": "Quote Summary" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Order Summary" },
     { "type": "image_picker", "id": "logo", "label": "Store logo", "info": "Shown on the right of the title. Falls back to the store name." },
     { "type": "range", "id": "logo_height", "label": "Logo height", "min": 24, "max": 120, "step": 4, "unit": "px", "default": 48 },
     { "type": "text", "id": "print_label", "label": "Print button label", "default": "Print" },
