@@ -48,25 +48,36 @@
         {% for item in cart.items %}
           <tr data-line-key="{{ item.key }}">
             <td>
-              <div class="cart-print__product">
-              {% if item.image %}
-                <img
-                  src="{{ item.image | image_url: width: 160 }}"
-                  alt="{{ item.image.alt | escape }}"
-                  width="80"
-                  height="80"
-                  loading="eager"
-                >
-              {% endif %}
-              <div>
-                <strong>{{ item.product.title | split: '|' | first }}</strong>
-                {% unless item.product.has_only_default_variant %}
-                  <div class="cart-print__variant">{{ item.variant.title }}</div>
-                {% endunless %}
-                {% if item.sku != blank %}<div class="cart-print__variant">SKU: {{ item.sku }}</div>{% endif %}
-              </div>
-              </div>
-            </td>
+  <div class="cart-print__product">
+    {% if item.image %}
+      <a href="{{ item.url }}">
+        <img
+          src="{{ item.image | image_url: width: 160 }}"
+          alt="{{ item.image.alt | escape }}"
+          width="80"
+          height="80"
+          loading="eager"
+        >
+      </a>
+    {% endif %}
+
+    <div>
+      <strong>
+        <a href="{{ item.url }}" class="cart-print__product-link">
+          {{ item.product.title | split: '|' | first }}
+        </a>
+      </strong>
+
+      {% unless item.product.has_only_default_variant %}
+        <div class="cart-print__variant">{{ item.variant.title }}</div>
+      {% endunless %}
+
+      {% if item.sku != blank %}
+        <div class="cart-print__variant">SKU: {{ item.sku }}</div>
+      {% endif %}
+    </div>
+  </div>
+</td>
             <td>{{ item.properties['Room Number'] | default: '—' }}</td>
             <td class="num">{{ item.final_price | money }}</td>
             <td class="num">
