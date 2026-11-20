@@ -22,7 +22,7 @@
     <button type="button" class="cart-print__btn" data-save-pdf>
       {{ section.settings.pdf_label }}
     </button>
-    <a href="{{ routes.cart_url }}" class="cart-print__btn cart-print__btn--ghost">Back to cart</a>
+    <a href="/pages/portal-home" class="cart-print__btn cart-print__btn--ghost">Portal</a>
   </div>
 
   <p class="cart-print__meta">{{ 'now' | date: '%d %b %Y' }}</p>
@@ -229,7 +229,7 @@
     font: inherit; cursor: pointer; text-decoration: none;
   }
   .cart-print__btn:hover { background: #334833; border-color: #334833; }
-  .cart-print__btn--ghost { background: #fff; color: #243222; }
+  .cart-print__btn--ghost { background: #fff; color: #334833; }
   .cart-print__table { width: 100%; border-collapse: collapse; }
   .cart-print__table th, .cart-print__table td { padding: 12px 8px; border-bottom: 1px solid #d9dde3; text-align: left; vertical-align: middle; }
   .cart-print__table .num { text-align: right; white-space: nowrap; }
