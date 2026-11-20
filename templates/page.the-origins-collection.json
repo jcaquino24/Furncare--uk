@@ -15,7 +15,7 @@
         "eyebrow_NfMeef": {
           "type": "eyebrow",
           "settings": {
-            "text": "32,955 possible configurations",
+            "text": "988,650 possible configurations",
             "eyebrow_size": "sm",
             "text_color": "#f9f7f0"
           }
@@ -1215,7 +1215,7 @@
         "content_QbbHRd": {
           "type": "content",
           "settings": {
-            "title": "&nbsp;32,955 Possible Configurations",
+            "title": "&nbsp;988,650 Possible Configurations",
             "title_size": "xl",
             "text": "<h4>Crafted for <i>everyday</i> care</h4>\n\nCombining durable materials with practical styles, Origins is designed to meet the demands of high use care interiors. With soft-close mechanisms, easy-clean surfaces and a 10 year guarantee, every detail is made to last!\n\n<h4>Five distinctive styles </h4>\n\nFrom classic framed fronts to clean, contemporary designs, the Origins Collection offers five individual styles to complement a large range of interior schemes, each with the ability to be personalised with your choice of finish and handle.\n\n\n<h4>One collection, <i> every </i> scheme </h4>\n\nThe flexibility of this range ensures that every scheme can have individuality and difference, but maintaining a cohesive, harmonious feel across the wider home.",
             "button_style": "underline",
@@ -1281,7 +1281,7 @@
         "content_alignment_mobile": "center",
         "button_margin_top_mobile": 21,
         "button_bg_color_mobile": "#243222",
-        "button_text_color_mobile": "#F9F7F0",
+        "button_text_color_mobile": "#f9f7f0",
         "button_secondary_text_color_mobile": "#243222",
         "button_secondary_border_color_mobile": "#243222",
         "button_label": "Contact Us",
