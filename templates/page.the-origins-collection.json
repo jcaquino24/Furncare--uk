@@ -716,7 +716,7 @@
         "button_6AUQw4": {
           "type": "button",
           "settings": {
-            "text": "Order yours",
+            "text": "Explore this Collection",
             "button_url": "shopify://collections/the-ellington-collection",
             "new_tab": false,
             "button_style": "underline",
@@ -818,7 +818,7 @@
         "button_CPJQUx": {
           "type": "button",
           "settings": {
-            "text": "Order yours",
+            "text": "Explore this Collection",
             "button_url": "shopify://collections/the-abbott-collection",
             "new_tab": false,
             "button_style": "underline",
@@ -920,7 +920,7 @@
         "button_Lgedcc": {
           "type": "button",
           "settings": {
-            "text": "Order yours",
+            "text": "Explore this Collection",
             "button_url": "shopify://collections/the-tilbury-collection",
             "new_tab": false,
             "button_style": "underline",
@@ -1022,7 +1022,7 @@
         "button_JkLniQ": {
           "type": "button",
           "settings": {
-            "text": "Order yours",
+            "text": "Explore this Collection",
             "button_url": "shopify://collections/the-ellington-collection-copy",
             "new_tab": false,
             "button_style": "underline",
@@ -1124,7 +1124,7 @@
         "button_kVmrgp": {
           "type": "button",
           "settings": {
-            "text": "Order yours",
+            "text": "Explore this Collection",
             "button_url": "shopify://collections/the-bronson-collection",
             "new_tab": false,
             "button_style": "underline",
