@@ -181,67 +181,30 @@
         "panel_shadow_opacity": 6
       }
     },
-    "image_text_KacAb9": {
-      "type": "image-text",
-      "blocks": {
-        "images_bXQ7Jz": {
-          "type": "images",
-          "settings": {
-            "image_one": "shopify://shop_images/Untitled_-_September_18_2026_at_16.16.20.png",
-            "image_two": "shopify://shop_images/Untitled_-_September_21_2026_at_15.57.50.png"
-          }
-        },
-        "content_GFYVgY": {
-          "type": "content",
-          "settings": {
-            "title": "<em>Handcrafted</em> in Norfolk.",
-            "title_size": "display",
-            "text": "We manufacture furniture with the realities of care environments in mind, giving us greater control over quality, consistency and finish from the very start.\n\nKeeping manufacturing close means we can respond more effectively to project requirements, maintain high standards and apply our specialist care-sector knowledge directly to the products we make.\n\nIt’s all part of giving our customers greater confidence in the furniture they specify, install and use every day.",
-            "button_style": "primary",
-            "button_text": "",
-            "button_action": "link",
-            "button_url": "shopify://pages/our-people"
-          }
-        }
-      },
-      "block_order": [
-        "images_bXQ7Jz",
-        "content_GFYVgY"
-      ],
-      "name": "Image - Text",
-      "settings": {
-        "colour_scheme": "base-white-01",
-        "section_padding": "--spacing-2xl",
-        "contact_form_html": "",
-        "enable_reveal": true,
-        "reveal_distance": 80,
-        "reveal_duration": 1400
-      }
-    },
     "blocks_EKCcUh": {
       "type": "_blocks",
       "blocks": {
         "ai_gen_block_8c6d895_8QDpGh": {
           "type": "ai_gen_block_8c6d895",
           "settings": {
-            "video": "shopify://files/videos/Furncare Edit V6.mp4",
+            "video": "shopify://files/videos/Furncare_Warton Point Video.mp4",
             "autoplay": true,
             "loop": true,
             "muted": true,
             "controls": true,
-            "video_position": "last",
+            "video_position": "first",
             "eyebrow": "",
-            "heading": "Family is at the heart of everything we do.",
-            "text": "<p>As a family-run business, we’ve grown by staying close to our customers, our team and the values we started with. That means taking pride in what we do, building lasting relationships and caring about the details at every stage.</p>",
-            "button_label": "Meet our Team",
-            "button_link": "shopify://pages/our-people",
+            "heading": "Handcrafted in Norfolk.",
+            "text": "<p>We manufacture furniture with the realities of care environments in mind, giving us greater control over quality, consistency and finish from the very start.<br/><br/>Keeping manufacturing close means we can respond more effectively to project requirements, maintain high standards and apply our specialist care-sector knowledge directly to the products we make.<br/><br/>It’s all part of giving our customers greater confidence in the furniture they specify, install and use every day.</p>",
+            "button_label": "Visit Us",
+            "button_link": "shopify://pages/visit-us",
             "desktop_width_percent": 100,
             "vertical_alignment": "center",
             "text_alignment": "left",
             "gap": 50,
             "mobile_gap": 25,
             "minimum_height": 750,
-            "media_height": 600,
+            "media_height": 350,
             "mobile_media_height": 320,
             "content_padding": 100,
             "mobile_content_padding": 25,
@@ -261,6 +224,88 @@
       },
       "block_order": [
         "ai_gen_block_8c6d895_8QDpGh"
+      ],
+      "name": "Video with text",
+      "settings": {}
+    },
+    "blocks_N69ijM": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ed0e5ef_eyYac9": {
+          "type": "ai_gen_block_ed0e5ef",
+          "settings": {
+            "image_width": 400,
+            "image_height": 300,
+            "image_gap": 24,
+            "vertical_padding": 40,
+            "border_radius": 0,
+            "scroll_speed": 60,
+            "background_color": "#F9F7F0",
+            "image_1": "shopify://shop_images/Screenshot_2026-08-20_at_11.48.41.png",
+            "image_2": "shopify://shop_images/Screenshot_2026-08-25_112648.jpg",
+            "image_3": "shopify://shop_images/DSC_1918.jpg",
+            "image_4": "shopify://shop_images/DSC_2023.jpg",
+            "image_5": "shopify://shop_images/DSC_1974.jpg",
+            "image_6": "shopify://shop_images/DSC_2087.jpg",
+            "image_7": "shopify://shop_images/DSC_2029_640f5d1e-8b62-49fd-b055-d7742b0bb9a1.jpg",
+            "image_8": "shopify://shop_images/DSC_1937.jpg",
+            "image_9": "shopify://shop_images/Screenshot_2026-08-25_112631.jpg",
+            "image_10": "shopify://shop_images/Screenshot_2026-08-25_112722.jpg",
+            "image_11": "shopify://shop_images/Screenshot_2026-08-25_112956.jpg",
+            "image_12": "shopify://shop_images/Screenshot_2026-05-15_at_14.18.10.png"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ed0e5ef_eyYac9"
+      ],
+      "name": "Image marquee",
+      "settings": {}
+    },
+    "blocks_TwYYM6": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_8c6d895_kxkUAc": {
+          "type": "ai_gen_block_8c6d895",
+          "settings": {
+            "video": "shopify://files/videos/Furncare Edit V6.mp4",
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": true,
+            "video_position": "last",
+            "eyebrow": "",
+            "heading": "Family is at the heart of everything we do.",
+            "text": "<p>As a family-run business, we’ve grown by staying close to our customers, our team and the values we started with. That means taking pride in what we do, building lasting relationships and caring about the details at every stage.</p>",
+            "button_label": "Meet our Team",
+            "button_link": "shopify://pages/our-people",
+            "desktop_width_percent": 100,
+            "vertical_alignment": "center",
+            "text_alignment": "left",
+            "gap": 50,
+            "mobile_gap": 25,
+            "minimum_height": 750,
+            "media_height": 400,
+            "mobile_media_height": 320,
+            "content_padding": 100,
+            "mobile_content_padding": 25,
+            "background_color": "#f9f7f0",
+            "text_color": "#243222",
+            "accent_color": "#6b4f3a",
+            "button_color": "#243222",
+            "button_text_color": "#f9f7f0",
+            "heading_size": 52,
+            "mobile_heading_size": 32,
+            "body_size": 16,
+            "media_radius": 0,
+            "button_radius": 6
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_8c6d895_kxkUAc"
       ],
       "name": "Video with text",
       "settings": {}
@@ -1022,8 +1067,9 @@
   "order": [
     "hero",
     "statement",
-    "image_text_KacAb9",
     "blocks_EKCcUh",
+    "blocks_N69ijM",
+    "blocks_TwYYM6",
     "audience",
     "process",
     "pathways",
