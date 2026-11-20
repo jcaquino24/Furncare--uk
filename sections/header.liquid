@@ -125,11 +125,7 @@
           {% render 'icons', icon: 'account' %}
         </a>
 
-        {% if is_portal_company %}
-          <a class="header__action header__action--cart" href="{{ routes.cart_url }}?view=print" aria-label="Quote basket" title="Quote basket">
-            {% render 'icons', icon: 'basket' %}
-          </a>
-        {% else %}
+        
         {% liquid
           assign upsell_product_obj = settings.cart_upsell.product
           if upsell_product_obj != blank and upsell_product_obj.value
@@ -148,7 +144,7 @@
           >
           </uwp-minicart>
         </div>
-        {% endif %}
+     
       </div>
     </div>
   </div>
