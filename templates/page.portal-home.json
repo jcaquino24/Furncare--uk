@@ -34,6 +34,7 @@
         "block_fQQn84",
         "block_9UVM3c"
       ],
+      "disabled": true,
       "name": "Featured Blocks",
       "settings": {
         "colour_scheme": "base-white-01",
