@@ -110,7 +110,9 @@
             "title": "Bedrooms",
             "link_url": "",
             "card_image": "shopify://shop_images/Bedrooms_10.jpg",
-            "collections": []
+            "collections": [
+              "care-uk-scheme-c"
+            ]
           }
         },
         "catalog_node_hM7pRj": {
@@ -157,17 +159,6 @@
             "collections": []
           }
         },
-        "catalog_node_3rXnpc": {
-          "type": "catalog_node",
-          "settings": {
-            "catalog_id": "HazelBedroom",
-            "parent_id": "Bedrooms",
-            "title": "Hazel Bedroom Scheeme",
-            "link_url": "",
-            "card_image": "shopify://shop_images/Screenshot_2026-11-12_at_16.08.30.png",
-            "collections": []
-          }
-        },
         "products_ebH7qW": {
           "type": "products",
           "settings": {
@@ -200,7 +191,6 @@
         "catalog_node_EkRQLy",
         "catalog_node_m3X8Gd",
         "catalog_node_ijP84x",
-        "catalog_node_3rXnpc",
         "products_ebH7qW",
         "contact_TPcLmM",
         "link_p8mLnL"

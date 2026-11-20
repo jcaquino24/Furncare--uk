@@ -163,7 +163,7 @@
         aria-roledescription="region"
       ></uwp-cart>
     {% endunless %}
-    {% unless is_cart_print_template %}
+    {% unless is_portal_company %}
       {% render 'search-modal' %}
       {% sections 'header-group' %}
     {% endunless %}
@@ -176,7 +176,7 @@
       {{ content_for_layout }}
     </main>
 
-    {% unless is_cart_print_template %}
+    {% unless is_portal_company %}
       {% sections 'footer-group' %}
     {% endunless %}
 
