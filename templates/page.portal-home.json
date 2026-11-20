@@ -102,19 +102,6 @@
             "title": "All Schemes"
           }
         },
-        "catalog_node_RmLTCY": {
-          "type": "catalog_node",
-          "settings": {
-            "catalog_id": "",
-            "parent_id": "Bedroom",
-            "title": "Hazel Bedroom Scheme",
-            "link_url": "",
-            "card_image": "shopify://shop_images/Screenshot_2026-11-12_at_16.08.30.png",
-            "collections": [
-              "care-uk-scheme-c"
-            ]
-          }
-        },
         "catalog_node_qk9kGj": {
           "type": "catalog_node",
           "settings": {
@@ -199,7 +186,6 @@
       },
       "block_order": [
         "catalog_hierarchy_p7aXsW",
-        "catalog_node_RmLTCY",
         "catalog_node_qk9kGj",
         "catalog_node_hM7pRj",
         "catalog_node_EkRQLy",
