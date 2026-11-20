@@ -186,21 +186,31 @@
                     {%- endif -%}
 
                     {%- if node.settings.collections.size > 0 -%}
-                      <ul class="portal-tabs__scheme-list portal-tabs__hierarchy-collections" style="--scheme-columns-desktop: {{ section.settings.scheme_columns_desktop }}; --scheme-columns-mobile: {{ section.settings.scheme_columns_mobile }}; --scheme-card-gap: 24px; --scheme-card-padding: 24px; --scheme-card-border-width: 1px; --scheme-card-border-color: #d0d0d0; --scheme-card-radius: 8px; --scheme-title-font: var(--font-heading-family); --scheme-title-size: 24px; --scheme-title-weight: 500; --scheme-title-style: normal; --scheme-eyebrow-size: 12px">
-                        {%- for collection in node.settings.collections -%}
-                          <li>
-                            <a class="portal-tabs__scheme-card" href="{{ collection.url }}">
-                              {%- if collection.image != blank -%}
-                                {{ collection.image | image_url: width: 1000 | image_tag: class: 'portal-tabs__scheme-image', loading: 'lazy', alt: collection.title }}
-                              {%- endif -%}
-                              <span class="portal-tabs__scheme-overlay" aria-hidden="true"></span>
-                              <span class="portal-tabs__scheme-copy">
-                                <span class="portal-tabs__scheme-title">{{ collection.title | escape }}</span>
-                              </span>
-                            </a>
-                          </li>
-                        {%- endfor -%}
-                      </ul>
+                      <div data-portal-catalog-context>
+                        <div data-portal-catalog-list>
+                          <ul class="portal-tabs__scheme-list portal-tabs__hierarchy-collections" style="--scheme-columns-desktop: {{ section.settings.scheme_columns_desktop }}; --scheme-columns-mobile: {{ section.settings.scheme_columns_mobile }}; --scheme-card-gap: 24px; --scheme-card-padding: 24px; --scheme-card-border-width: 1px; --scheme-card-border-color: #d0d0d0; --scheme-card-radius: 8px; --scheme-title-font: var(--font-heading-family); --scheme-title-size: 24px; --scheme-title-weight: 500; --scheme-title-style: normal; --scheme-eyebrow-size: 12px">
+                            {%- for collection in node.settings.collections -%}
+                              <li>
+                                <a class="portal-tabs__scheme-card" href="{{ collection.url }}">
+                                  {%- if collection.image != blank -%}
+                                    {{ collection.image | image_url: width: 1000 | image_tag: class: 'portal-tabs__scheme-image', loading: 'lazy', alt: collection.title }}
+                                  {%- endif -%}
+                                  <span class="portal-tabs__scheme-overlay" aria-hidden="true"></span>
+                                  <span class="portal-tabs__scheme-copy">
+                                    <span class="portal-tabs__scheme-title">{{ collection.title | escape }}</span>
+                                  </span>
+                                </a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        </div>
+                        <div data-portal-catalog-results hidden>
+                          <button type="button" class="button button--secondary portal-tabs__back" data-portal-back>
+                            &larr; Back to catalogs
+                          </button>
+                          <div data-portal-results-body aria-live="polite"></div>
+                        </div>
+                      </div>
                     {%- elsif node_has_children == false and node.settings.link_url == blank -%}
                       <p>No catalogs available.</p>
                     {%- endif -%}
@@ -371,14 +381,16 @@
 
       var back = event.target.closest('[data-portal-back]');
       if (back) {
-        showCatalogList(back.closest('.portal-tabs__panel'));
+        var catalogContext = back.closest('[data-portal-catalog-context]') || back.closest('.portal-tabs__panel');
+        showCatalogList(catalogContext);
         return;
       }
 
       var link = event.target.closest('[data-portal-catalog-list] a');
       if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
       event.preventDefault();
-      openCatalog(link.closest('.portal-tabs__panel'), link.href);
+      var catalogContext = link.closest('[data-portal-catalog-context]') || link.closest('.portal-tabs__panel');
+      openCatalog(catalogContext, link.href);
     });
 
     document.addEventListener('click', function (event) {
