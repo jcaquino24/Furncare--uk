@@ -1,21 +1,19 @@
 <section class="cart-print">
-
   <header class="cart-print__header">
     <h1 class="cart-print__title">{{ section.settings.title }}</h1>
+    <div class="cart-print__logo">
+      {%- if section.settings.logo != blank -%}
+        {{ section.settings.logo | image_url: width: 600 | image_tag: loading: 'eager', alt: shop.name, class: 'cart-print__logo-img' }}
+      {%- else -%}
+        <span class="cart-print__logo-text">{{ shop.name }}</span>
+      {%- endif -%}
+    </div>
   </header>
-
-  <div class="cart-print__actions cart-print__no-print">
-    <button type="button" class="cart-print__btn" onclick="window.print()">
-      {{ section.settings.print_label }}
-    </button>
-    <button type="button" class="cart-print__btn" data-save-pdf>
-      {{ section.settings.pdf_label }}
-    </button>
-    <a href="/pages/portal-home" class="cart-print__btn cart-print__btn--ghost">Portal</a>
-  </div>
 
   <p class="cart-print__meta">{{ 'now' | date: '%d %b %Y' }}</p>
 
+  <div class="cart-print__layout">
+    <div class="cart-print__main">
   <p class="cart-print__error cart-print__no-print" role="alert" hidden data-cart-print-error></p>
 
   <div data-cart-print-items>
@@ -37,36 +35,25 @@
         {% for item in cart.items %}
           <tr data-line-key="{{ item.key }}">
             <td>
-  <div class="cart-print__product">
-    {% if item.image %}
-      <a href="{{ item.url }}">
-        <img
-          src="{{ item.image | image_url: width: 160 }}"
-          alt="{{ item.image.alt | escape }}"
-          width="80"
-          height="80"
-          loading="eager"
-        >
-      </a>
-    {% endif %}
-
-    <div>
-      <strong>
-        <a href="{{ item.url }}" class="cart-print__product-link">
-          {{ item.product.title | split: '|' | first }}
-        </a>
-      </strong>
-
-      {% unless item.product.has_only_default_variant %}
-        <div class="cart-print__variant">{{ item.variant.title }}</div>
-      {% endunless %}
-
-      {% if item.sku != blank %}
-        <div class="cart-print__variant">SKU: {{ item.sku }}</div>
-      {% endif %}
-    </div>
-  </div>
-</td>
+              <div class="cart-print__product">
+              {% if item.image %}
+                <img
+                  src="{{ item.image | image_url: width: 160 }}"
+                  alt="{{ item.image.alt | escape }}"
+                  width="80"
+                  height="80"
+                  loading="eager"
+                >
+              {% endif %}
+              <div>
+                <strong>{{ item.product.title | split: '|' | first }}</strong>
+                {% unless item.product.has_only_default_variant %}
+                  <div class="cart-print__variant">{{ item.variant.title }}</div>
+                {% endunless %}
+                {% if item.sku != blank %}<div class="cart-print__variant">SKU: {{ item.sku }}</div>{% endif %}
+              </div>
+              </div>
+            </td>
             <td>{{ item.properties['Room Number'] | default: '—' }}</td>
             <td class="num">{{ item.final_price | money }}</td>
             <td class="num">
@@ -94,6 +81,60 @@
     </table>
   {% endif %}
   </div>
+    </div>
+
+    <aside class="cart-print__delivery">
+      <form class="cart-print__form" onsubmit="return false" data-delivery-form autocomplete="on">
+        <h2 class="cart-print__form-title">{{ section.settings.delivery_title }}</h2>
+
+        <div class="cart-print__row">
+          <label class="cart-print__field">
+            <span>First name</span>
+            <input type="text" required name="first_name" autocomplete="given-name">
+          </label>
+          <label class="cart-print__field">
+            <span>Last name</span>
+            <input type="text" required name="last_name" autocomplete="family-name">
+          </label>
+        </div>
+
+        <div class="cart-print__row">
+          <label class="cart-print__field">
+            <span>Email</span>
+            <input type="email" required name="email" autocomplete="email">
+          </label>
+          <label class="cart-print__field">
+            <span>Phone</span>
+            <input type="tel" required name="phone" autocomplete="tel">
+          </label>
+        </div>
+
+        <div class="cart-print__row cart-print__row--single">
+          <label class="cart-print__field">
+            <span>Address line 1</span>
+            <input type="text" required name="address1" autocomplete="address-line1">
+          </label>
+        </div>
+
+        <div class="cart-print__row">
+          <label class="cart-print__field">
+            <span>City</span>
+            <input type="text" required name="city" autocomplete="address-level2">
+          </label>
+          <label class="cart-print__field">
+            <span>Zip code</span>
+            <input type="text" required name="zip" autocomplete="postal-code">
+          </label>
+        </div>
+
+        <div class="cart-print__no-print">
+          <button type="button" class="cart-print__btn cart-print__btn--full" data-save-pdf>
+            {{ section.settings.pdf_label }}
+          </button>
+        </div>
+      </form>
+    </aside>
+  </div>
 </section>
 
 <script>
@@ -112,6 +153,25 @@
     }
 
     var ITEMS = '[data-cart-print-items]';
+    var STORE_KEY = 'cartPrintDelivery';
+
+    (function initDeliveryForm() {
+      var form = document.querySelector('[data-delivery-form]');
+      if (!form) return;
+      try {
+        var saved = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+        Object.keys(saved).forEach(function (name) {
+          if (form.elements[name]) form.elements[name].value = saved[name];
+        });
+      } catch (e) {}
+      form.addEventListener('input', function () {
+        var data = {};
+        Array.prototype.forEach.call(form.elements, function (el) {
+          if (el.name) data[el.name] = el.value;
+        });
+        try { localStorage.setItem(STORE_KEY, JSON.stringify(data)); } catch (e) {}
+      });
+    })();
 
     function showError(text) {
       var el = document.querySelector('[data-cart-print-error]');
@@ -173,6 +233,14 @@
       var btn = event.target.closest('[data-save-pdf]');
       if (!btn) return;
 
+      var form = btn.closest('form');
+      if (form && !form.reportValidity()) return;
+      if (!document.querySelector('[data-line-key]')) {
+        showError('Your quote is empty. Add at least one product first.');
+        return;
+      }
+      showError('');
+
       var target = btn.closest('.cart-print');
       var label = btn.textContent;
       btn.disabled = true;
@@ -212,11 +280,23 @@
 </script>
 
 {% style %}
-  .cart-print { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
-  .cart-print__brand-header { display: flex; align-items: center; justify-content: center; gap: 40px; margin: 0 auto 40px; }
-  .cart-print__brand-logo { display: block; width: auto; height: auto; max-height: 40px; object-fit: contain; }
-  .cart-print__brand-logo--furncare { max-width: 150px; }
-  .cart-print__brand-logo--partner { max-width: 130px; }
+  .cart-print { max-width: 1280px; margin: 0 auto; padding: 24px 16px; }
+  .cart-print__layout { display: grid; grid-template-columns: 70% 30%; gap: 0; align-items: start; }
+  .cart-print__main { min-width: 0; padding-inline-end: 24px; }
+  .cart-print__delivery { min-width: 0; }
+  .cart-print__form { border: 1px solid #d9dde3; background: #f8f8f8; padding: 20px; }
+  .cart-print__form-title { margin: 0 0 16px; font-size: 1.125rem; }
+  .cart-print__row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-block-end: 12px; }
+  .cart-print__row--single { grid-template-columns: 1fr; }
+  .cart-print__field { display: flex; flex-direction: column; gap: 4px; min-width: 0; font-size: 0.85em; }
+  .cart-print__field input {
+    width: 100%; padding: 10px 12px; border: 1px solid #d9dde3; background: #fff; font: inherit; font-size: 1rem;
+  }
+  .cart-print__field input:focus-visible { outline: 2px solid #243a53; outline-offset: 1px; }
+  @media (max-width: 900px) {
+    .cart-print__layout { grid-template-columns: 1fr; gap: 24px; }
+    .cart-print__main { padding-inline-end: 0; }
+  }
   .cart-print__header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
   .cart-print__title { margin: 0; }
   .cart-print__logo { display: flex; align-items: center; justify-content: flex-end; }
@@ -225,12 +305,13 @@
   .cart-print__meta { color: #666; margin-block: 8px 24px; }
   .cart-print__actions { display: flex; gap: 8px; flex-wrap: wrap; margin-block-start: 16px; }
   .cart-print__btn {
-    padding: 12px 20px; border: 1px solid #243222; background: #243222; color: #fff;
+    padding: 12px 20px; border: 1px solid #1f3854; background: #1f3854; color: #fff;
     font: inherit; cursor: pointer; text-decoration: none;
   }
-  .cart-print__btn:hover { background: #243222;  }
-  .cart-print__btn--ghost { background: #fff; color: #243222; }
-  .cart-print__btn--ghost:hover { background: #243222; color: #fff; }
+  .cart-print__btn--ghost { background: #fff; color: #1f3854; }
+  .cart-print__btn--full { width: 100%; margin-block-start: 4px; }
+  .cart-print__btn:disabled { opacity: 0.6; cursor: progress; }
+  .cart-print__field:has(input:required) > span::after { content: " *"; }
   .cart-print__table { width: 100%; border-collapse: collapse; }
   .cart-print__table th, .cart-print__table td { padding: 12px 8px; border-bottom: 1px solid #d9dde3; text-align: left; vertical-align: middle; }
   .cart-print__table .num { text-align: right; white-space: nowrap; }
@@ -255,10 +336,6 @@
   .cart-print__variant { font-size: 0.85em; color: #666; }
 
   @media (max-width: 640px) {
-    .cart-print__brand-header { gap: 24px; margin-bottom: 28px; }
-    .cart-print__brand-logo { max-height: 34px; }
-    .cart-print__brand-logo--furncare { max-width: 128px; }
-    .cart-print__brand-logo--partner { max-width: 112px; }
     .cart-print__table th:nth-child(3), .cart-print__table td:nth-child(3) { display: none; }
   }
 
@@ -277,10 +354,10 @@
 {
   "name": "Cart print",
   "settings": [
-    { "type": "text", "id": "title", "label": "Title", "default": "Quote Summary" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Order Summary" },
     { "type": "image_picker", "id": "logo", "label": "Store logo", "info": "Shown on the right of the title. Falls back to the store name." },
     { "type": "range", "id": "logo_height", "label": "Logo height", "min": 24, "max": 120, "step": 4, "unit": "px", "default": 48 },
-    { "type": "text", "id": "print_label", "label": "Print button label", "default": "Print" },
+    { "type": "text", "id": "delivery_title", "label": "Delivery form title", "default": "Delivery details" },
     { "type": "text", "id": "pdf_label", "label": "Save as PDF button label", "default": "Save as PDF" }
   ],
   "presets": [{ "name": "Cart print" }]
