@@ -2,16 +2,27 @@
   {%- if section.settings.pdf_logo_1 != blank or section.settings.pdf_logo_2 != blank -%}
     <div class="cart-print__pdf-logos">
       {%- if section.settings.pdf_logo_1 != blank -%}
-        {{ section.settings.pdf_logo_1 | image_url: width: 600 | image_tag: loading: 'eager', alt: shop.name, class: 'cart-print__pdf-logo' }}
+        <div class="cart-print__pdf-logo-item">
+          {{ section.settings.pdf_logo_1 | image_url: width: 600 | image_tag: loading: 'eager', alt: shop.name, class: 'cart-print__pdf-logo' }}
+        </div>
       {%- endif -%}
       {%- if section.settings.pdf_logo_2 != blank -%}
-        {{ section.settings.pdf_logo_2 | image_url: width: 600 | image_tag: loading: 'eager', alt: '', class: 'cart-print__pdf-logo' }}
+        <div class="cart-print__pdf-logo-item">
+          {{ section.settings.pdf_logo_2 | image_url: width: 600 | image_tag: loading: 'eager', alt: '', class: 'cart-print__pdf-logo' }}
+        </div>
       {%- endif -%}
     </div>
   {%- endif -%}
 
   <header class="cart-print__header">
     <h1 class="cart-print__title">{{ section.settings.title }}</h1>
+    <div class="cart-print__logo">
+      {%- if section.settings.logo != blank -%}
+        {{ section.settings.logo | image_url: width: 600 | image_tag: loading: 'eager', alt: shop.name, class: 'cart-print__logo-img' }}
+      {%- else -%}
+        <span class="cart-print__logo-text">{{ shop.name }}</span>
+      {%- endif -%}
+    </div>
   </header>
 
   <p class="cart-print__meta">{{ 'now' | date: '%d %b %Y' }}</p>
@@ -353,8 +364,16 @@
   .cart-print__variant { font-size: 0.85em; color: #666; }
 
   /* Logo strip: hidden on screen (the site header shows the logos), shown in PDF and print */
-  .cart-print__pdf-logos { display: none; align-items: center; justify-content: center; gap: 32px; margin-block-end: 24px; }
-  .cart-print__pdf-logo { width: auto; max-width: 45%; height: {{ section.settings.pdf_logo_height }}px; object-fit: contain; }
+  .cart-print__pdf-logos { display: none; align-items: center; justify-content: center; gap: 40px; width: 100%; margin-block-end: 24px; text-align: center; }
+  .cart-print__pdf-logo-item { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; }
+  .cart-print__pdf-logo {
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    height: {{ section.settings.pdf_logo_height }}px !important;
+    margin: 0 !important;
+    object-fit: contain;
+  }
   .cart-print.is-pdf .cart-print__pdf-logos { display: flex; }
   .cart-print.has-pdf-logos.is-pdf .cart-print__logo { display: none; }
 
