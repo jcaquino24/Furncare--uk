@@ -15,7 +15,8 @@
         "title": "Order Summary",
         "logo": "shopify://shop_images/Designer_2.png",
         "logo_height": 120,
-        "pdf_logo_1": "shopify://shop_images/Designer_2.png",
+        "pdf_logo_1": "shopify://shop_images/careuk.png",
+        "pdf_logo_2": "shopify://shop_images/Furncare_logo_green_2.png",
         "pdf_logo_height": 120,
         "delivery_title": "Delivery details",
         "pdf_label": "Save as PDF"
