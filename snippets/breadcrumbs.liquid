@@ -194,60 +194,80 @@
 {%- elsif template.name == 'product' -%}
   <script>
     (function () {
-      try {
-        var nav = document.currentScript.previousElementSibling;
-        var list = nav && nav.querySelector('.breadcrumbs__list');
-        if (!list || !document.referrer) return;
+      var cachedTitle = null;
 
-        var ref = new URL(document.referrer);
-        if (ref.origin !== location.origin) return;
-        if (!/\/(pages|collections)\//.test(ref.pathname) || ref.pathname.indexOf('/products/') !== -1) return;
+      function run() {
+        try {
+          // Look the list up each time: the swatch component replaces the
+          // breadcrumbs markup when the visitor switches product.
+          var list = document.querySelector('.breadcrumbs__list');
+          if (!list || list.dataset.originApplied || !document.referrer) return;
 
-        function apply(title) {
-          var items = Array.prototype.slice.call(list.querySelectorAll('.breadcrumbs__item'));
-          var last = items[items.length - 1];
-          if (!last || !title) return;
+          var ref = new URL(document.referrer);
+          if (ref.origin !== location.origin) return;
+          if (!/\/(pages|collections)\//.test(ref.pathname) || ref.pathname.indexOf('/products/') !== -1) return;
 
-          // Remove everything between Home (the item without a chevron) and the product
-          items.forEach(function (item, index) {
-            var isHome = index === 0 && !item.querySelector('svg');
-            if (item !== last && !isHome) item.remove();
-          });
+          function apply(title) {
+            var current = document.querySelector('.breadcrumbs__list');
+            if (!current || current.dataset.originApplied || !title) return;
 
-          var li = document.createElement('li');
-          li.className = 'breadcrumbs__item eyebrow-2xs';
+            var items = Array.prototype.slice.call(current.querySelectorAll('.breadcrumbs__item'));
+            var last = items[items.length - 1];
+            if (!last) return;
 
-          var icon = last.querySelector('svg');
-          if (icon) li.appendChild(icon.cloneNode(true));
+            // Remove everything between Home (the item without a chevron) and the product
+            items.forEach(function (item, index) {
+              var isHome = index === 0 && !item.querySelector('svg');
+              if (item !== last && !isHome) item.remove();
+            });
 
-          var link = document.createElement('a');
-          link.className = 'breadcrumbs__link eyebrow-2xs';
-          link.href = ref.pathname;
-          link.textContent = title;
-          li.appendChild(link);
+            var li = document.createElement('li');
+            li.className = 'breadcrumbs__item eyebrow-2xs';
 
-          list.insertBefore(li, last);
-        }
+            var icon = last.querySelector('svg');
+            if (icon) li.appendChild(icon.cloneNode(true));
 
-        var stored = null;
-        try { stored = JSON.parse(sessionStorage.getItem('breadcrumbOrigin') || 'null'); } catch (e) {}
-        if (stored && stored.url === ref.pathname && stored.title) {
-          apply(stored.title);
-          return;
-        }
+            var link = document.createElement('a');
+            link.className = 'breadcrumbs__link eyebrow-2xs';
+            link.href = ref.pathname;
+            link.textContent = title;
+            li.appendChild(link);
 
-        // Previous page did not store its title: read it from the page itself
-        fetch(ref.pathname, { credentials: 'same-origin' })
-          .then(function (response) { return response.ok ? response.text() : ''; })
-          .then(function (html) {
-            if (!html) return;
-            var doc = new DOMParser().parseFromString(html, 'text/html');
-            var heading = doc.querySelector('main h1, #MainContent h1') || doc.querySelector('h1');
-            var title = (heading && heading.textContent.trim()) || (doc.title || '').split(/\s[–|-]\s/)[0].trim();
-            apply(title);
-          })
-          .catch(function () {});
-      } catch (e) {}
+            current.insertBefore(li, last);
+            current.dataset.originApplied = 'true';
+          }
+
+          if (cachedTitle) {
+            apply(cachedTitle);
+            return;
+          }
+
+          var stored = null;
+          try { stored = JSON.parse(sessionStorage.getItem('breadcrumbOrigin') || 'null'); } catch (e) {}
+          if (stored && stored.url === ref.pathname && stored.title) {
+            cachedTitle = stored.title;
+            apply(cachedTitle);
+            return;
+          }
+
+          // Previous page did not store its title: read it from the page itself
+          fetch(ref.pathname, { credentials: 'same-origin' })
+            .then(function (response) { return response.ok ? response.text() : ''; })
+            .then(function (html) {
+              if (!html) return;
+              var doc = new DOMParser().parseFromString(html, 'text/html');
+              var heading = doc.querySelector('main h1, #MainContent h1') || doc.querySelector('h1');
+              cachedTitle = (heading && heading.textContent.trim()) || (doc.title || '').split(/\s[–|-]\s/)[0].trim();
+              apply(cachedTitle);
+            })
+            .catch(function () {});
+        } catch (e) {}
+      }
+
+      run();
+
+      // The swatch component swaps products without a page load and then fires this event.
+      window.addEventListener('product:changed', run);
     })();
   </script>
 {%- endif -%}
