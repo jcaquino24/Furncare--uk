@@ -14,73 +14,73 @@
 
   <div class="cart-print__layout">
     <div class="cart-print__main">
-  <p class="cart-print__error cart-print__no-print" role="alert" hidden data-cart-print-error></p>
+      <p class="cart-print__error cart-print__no-print" role="alert" hidden data-cart-print-error></p>
 
-  <div data-cart-print-items>
-  {% if cart.item_count == 0 %}
-    <p>Your basket is empty.</p>
-  {% else %}
-    <table class="cart-print__table">
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>Room Number</th>
-          <th class="num">Price</th>
-          <th class="num">Qty</th>
-          <th class="num">Total</th>
-          <th class="cart-print__no-print cart-print__remove-col"><span class="visually-hidden">Remove</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in cart.items %}
-          <tr data-line-key="{{ item.key }}">
-            <td>
-              <div class="cart-print__product">
-              {% if item.image %}
-                <img
-                  src="{{ item.image | image_url: width: 160 }}"
-                  alt="{{ item.image.alt | escape }}"
-                  width="80"
-                  height="80"
-                  loading="eager"
-                >
-              {% endif %}
-              <div>
-                <strong>{{ item.product.title | split: '|' | first }}</strong>
-                {% unless item.product.has_only_default_variant %}
-                  <div class="cart-print__variant">{{ item.variant.title }}</div>
-                {% endunless %}
-                {% if item.sku != blank %}<div class="cart-print__variant">SKU: {{ item.sku }}</div>{% endif %}
-              </div>
-              </div>
-            </td>
-            <td>{{ item.properties['Room Number'] | default: '—' }}</td>
-            <td class="num">{{ item.final_price | money }}</td>
-            <td class="num">
-              <span class="cart-print__qty-print">{{ item.quantity }}</span>
-              <div class="cart-print__qty cart-print__no-print">
-                <button type="button" class="cart-print__qty-btn" data-qty-change="-1" data-quantity="{{ item.quantity }}" aria-label="Decrease quantity">&minus;</button>
-                <span class="cart-print__qty-value" aria-live="polite">{{ item.quantity }}</span>
-                <button type="button" class="cart-print__qty-btn" data-qty-change="1" data-quantity="{{ item.quantity }}" aria-label="Increase quantity">+</button>
-              </div>
-            </td>
-            <td class="num">{{ item.final_line_price | money }}</td>
-            <td class="cart-print__no-print cart-print__remove-col">
-              <button type="button" class="cart-print__remove" data-remove-line aria-label="Remove {{ item.product.title | split: '|' | first | escape }}">&times;</button>
-            </td>
-          </tr>
-        {% endfor %}
-      </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="4" class="num"><strong>Subtotal</strong></td>
-          <td class="num"><strong>{{ cart.total_price | money }}</strong></td>
-          <td class="cart-print__no-print cart-print__remove-col"></td>
-        </tr>
-      </tfoot>
-    </table>
-  {% endif %}
-  </div>
+      <div data-cart-print-items>
+        {% if cart.item_count == 0 %}
+          <p>Your basket is empty.</p>
+        {% else %}
+          <table class="cart-print__table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Room Number</th>
+                <th class="num">Price</th>
+                <th class="num">Qty</th>
+                <th class="num">Total</th>
+                <th class="cart-print__no-print cart-print__remove-col"><span class="visually-hidden">Remove</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in cart.items %}
+                <tr data-line-key="{{ item.key }}">
+                  <td>
+                    <div class="cart-print__product">
+                      {% if item.image %}
+                        <img
+                          src="{{ item.image | image_url: width: 160 }}"
+                          alt="{{ item.image.alt | escape }}"
+                          width="80"
+                          height="80"
+                          loading="eager"
+                        >
+                      {% endif %}
+                      <div>
+                        <strong>{{ item.product.title | split: '|' | first }}</strong>
+                        {% unless item.product.has_only_default_variant %}
+                          <div class="cart-print__variant">{{ item.variant.title }}</div>
+                        {% endunless %}
+                        {% if item.sku != blank %}<div class="cart-print__variant">SKU: {{ item.sku }}</div>{% endif %}
+                      </div>
+                    </div>
+                  </td>
+                  <td>{{ item.properties['Room Number'] | default: '—' }}</td>
+                  <td class="num">{{ item.final_price | money }}</td>
+                  <td class="num">
+                    <span class="cart-print__qty-print">{{ item.quantity }}</span>
+                    <div class="cart-print__qty cart-print__no-print">
+                      <button type="button" class="cart-print__qty-btn" data-qty-change="-1" data-quantity="{{ item.quantity }}" aria-label="Decrease quantity">&minus;</button>
+                      <span class="cart-print__qty-value" aria-live="polite">{{ item.quantity }}</span>
+                      <button type="button" class="cart-print__qty-btn" data-qty-change="1" data-quantity="{{ item.quantity }}" aria-label="Increase quantity">+</button>
+                    </div>
+                  </td>
+                  <td class="num">{{ item.final_line_price | money }}</td>
+                  <td class="cart-print__no-print cart-print__remove-col">
+                    <button type="button" class="cart-print__remove" data-remove-line aria-label="Remove {{ item.product.title | split: '|' | first | escape }}">&times;</button>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4" class="num"><strong>Subtotal</strong></td>
+                <td class="num"><strong>{{ cart.total_price | money }}</strong></td>
+                <td class="cart-print__no-print cart-print__remove-col"></td>
+              </tr>
+            </tfoot>
+          </table>
+        {% endif %}
+      </div>
     </div>
 
     <aside class="cart-print__delivery">
@@ -259,10 +259,19 @@
                 onclone: function (doc) {
                   doc.querySelectorAll('.cart-print__no-print').forEach(function (el) { el.style.display = 'none'; });
                   doc.querySelectorAll('.cart-print__qty-print').forEach(function (el) { el.style.display = 'inline'; });
+
+                  // PDF only: summary full width, delivery form below it
+                  doc.querySelectorAll('.cart-print__layout').forEach(function (el) {
+                    el.style.gridTemplateColumns = '1fr';
+                    el.style.gap = '24px';
+                  });
+                  doc.querySelectorAll('.cart-print__main').forEach(function (el) {
+                    el.style.paddingInlineEnd = '0';
+                  });
                 }
               },
               jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-              pagebreak: { mode: ['css', 'legacy'], avoid: 'tr' }
+              pagebreak: { mode: ['css', 'legacy'], avoid: ['tr', '.cart-print__form'] }
             })
             .from(target)
             .save();
