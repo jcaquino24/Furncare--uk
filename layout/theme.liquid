@@ -163,31 +163,7 @@
         aria-roledescription="region"
       ></uwp-cart>
     {% endunless %}
-    {% if is_portal_company %}
-      <header class="portal-brand-header">
-        <div class="portal-brand-header__logos">
-          <a class="portal-brand-header__link" href="{{ routes.root_url }}" aria-label="Furncare home">
-            {{ images['icon-logo.svg'] | image_url: width: 400 | image_tag: class: 'portal-brand-header__logo portal-brand-header__logo--furncare', alt: 'Furncare' }}
-          </a>
-          {{ images['careuk.png'] | image_url: width: 400 | image_tag: class: 'portal-brand-header__logo portal-brand-header__logo--partner', alt: 'Care UK' }}
-        </div>
-      </header>
-      <style>
-        .portal-brand-header { display: flex; justify-content: center; padding: 40px 24px; }
-        .portal-brand-header__logos { display: flex; align-items: center; justify-content: center; gap: 40px; min-height: 40px; }
-        .portal-brand-header__link { display: flex; align-items: center; }
-        .portal-brand-header__logo { display: block; width: auto; height: auto; max-height: 40px; object-fit: contain; }
-        .portal-brand-header__logo--furncare { max-width: 150px; }
-        .portal-brand-header__logo--partner { max-width: 130px; }
-        @media (max-width: 480px) {
-          .portal-brand-header { padding: 28px 16px; }
-          .portal-brand-header__logos { gap: 24px; }
-          .portal-brand-header__logo { max-height: 34px; }
-          .portal-brand-header__logo--furncare { max-width: 128px; }
-          .portal-brand-header__logo--partner { max-width: 112px; }
-        }
-      </style>
-    {% endif %}
+   
     {% unless is_portal_company %}
       {% render 'search-modal' %}
       {% sections 'header-group' %}
