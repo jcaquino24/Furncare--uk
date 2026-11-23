@@ -169,32 +169,38 @@
 </nav>
 
 {%- comment -%}
-  Show the page the visitor came from in the product breadcrumbs.
+  Portal breadcrumbs.
 
-  On the product page, if the visitor arrived from a page or collection on this
-  store (document.referrer), the middle of the trail is replaced with it:
-    Home > [page they came from] > Product
+  When a visitor reaches a product from a page or collection of this store
+  (e.g. the portal landing page), the first crumb "Home" becomes a fixed label
+  linking back to that page, instead of showing the page's own title
+  (for example "Welcome, <name>"):
 
-  The title comes from sessionStorage when the previous page rendered this
-  snippet, otherwise it is read from the previous page itself (so portal
-  templates that do not render breadcrumbs still work). Arrivals from search,
-  bookmarks, other sites or the home page keep the normal breadcrumbs.
+    All Catalogs > [category] > Product
+
+  [category] is whatever the product page already shows (custom breadcrumbs
+  metafield, or the collection in the URL). If there is none, the product's
+  first collection is used. Search, bookmarks, other sites and the home page
+  keep the normal breadcrumbs.
 {%- endcomment -%}
-{%- if template.name == 'collection' or template.name == 'page' -%}
-  {%- assign origin_title = collection.title | default: page.title -%}
-  {%- assign origin_url = collection.url | default: page.url -%}
-  <script>
-    try {
-      sessionStorage.setItem(
-        'breadcrumbOrigin',
-        JSON.stringify({ url: {{ origin_url | json }}, title: {{ origin_title | json }} })
-      );
-    } catch (e) {}
-  </script>
-{%- elsif template.name == 'product' -%}
+{%- if template.name == 'product' -%}
+  {%- liquid
+    assign portal_root_label = 'All Catalogs'
+    assign fallback_title = ''
+    assign fallback_url = ''
+    for product_collection in product.collections
+      unless product_collection.handle == 'all' or product_collection.handle == 'frontpage'
+        assign fallback_title = product_collection.title
+        assign fallback_url = product_collection.url
+        break
+      endunless
+    endfor
+  -%}
   <script>
     (function () {
-      var cachedTitle = null;
+      var ROOT_LABEL = {{ portal_root_label | json }};
+      var FALLBACK_TITLE = {{ fallback_title | json }};
+      var FALLBACK_URL = {{ fallback_url | json }};
 
       function run() {
         try {
@@ -207,20 +213,26 @@
           if (ref.origin !== location.origin) return;
           if (!/\/(pages|collections)\//.test(ref.pathname) || ref.pathname.indexOf('/products/') !== -1) return;
 
-          function apply(title) {
-            var current = document.querySelector('.breadcrumbs__list');
-            if (!current || current.dataset.originApplied || !title) return;
+          var items = Array.prototype.slice.call(list.querySelectorAll('.breadcrumbs__item'));
+          var home = items[0];
+          var last = items[items.length - 1];
+          if (!home || !last || home === last || home.querySelector('svg')) return;
 
-            var items = Array.prototype.slice.call(current.querySelectorAll('.breadcrumbs__item'));
-            var last = items[items.length - 1];
-            if (!last) return;
+          var homeLink = home.querySelector('a');
+          if (!homeLink) return;
+          homeLink.textContent = ROOT_LABEL;
+          homeLink.href = ref.pathname;
 
-            // Remove everything between Home (the item without a chevron) and the product
-            items.forEach(function (item, index) {
-              var isHome = index === 0 && !item.querySelector('svg');
-              if (item !== last && !isHome) item.remove();
-            });
+          var middle = items.slice(1, -1);
 
+          // Drop a leading duplicate of the root label (e.g. already in the metafield)
+          if (middle.length && (middle[0].textContent || '').trim().toLowerCase() === ROOT_LABEL.toLowerCase()) {
+            middle[0].remove();
+            middle.shift();
+          }
+
+          // No category shown yet: use the product's collection
+          if (!middle.length && FALLBACK_TITLE && FALLBACK_URL) {
             var li = document.createElement('li');
             li.className = 'breadcrumbs__item eyebrow-2xs';
 
@@ -229,38 +241,14 @@
 
             var link = document.createElement('a');
             link.className = 'breadcrumbs__link eyebrow-2xs';
-            link.href = ref.pathname;
-            link.textContent = title;
+            link.href = FALLBACK_URL;
+            link.textContent = FALLBACK_TITLE;
             li.appendChild(link);
 
-            current.insertBefore(li, last);
-            current.dataset.originApplied = 'true';
+            list.insertBefore(li, last);
           }
 
-          if (cachedTitle) {
-            apply(cachedTitle);
-            return;
-          }
-
-          var stored = null;
-          try { stored = JSON.parse(sessionStorage.getItem('breadcrumbOrigin') || 'null'); } catch (e) {}
-          if (stored && stored.url === ref.pathname && stored.title) {
-            cachedTitle = stored.title;
-            apply(cachedTitle);
-            return;
-          }
-
-          // Previous page did not store its title: read it from the page itself
-          fetch(ref.pathname, { credentials: 'same-origin' })
-            .then(function (response) { return response.ok ? response.text() : ''; })
-            .then(function (html) {
-              if (!html) return;
-              var doc = new DOMParser().parseFromString(html, 'text/html');
-              var heading = doc.querySelector('main h1, #MainContent h1') || doc.querySelector('h1');
-              cachedTitle = (heading && heading.textContent.trim()) || (doc.title || '').split(/\s[–|-]\s/)[0].trim();
-              apply(cachedTitle);
-            })
-            .catch(function () {});
+          list.dataset.originApplied = 'true';
         } catch (e) {}
       }
 
