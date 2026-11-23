@@ -1,13 +1,4 @@
 <section class="cart-print has-pdf-logos">
-  {%- if section.settings.pdf_logo_1 != blank or section.settings.pdf_logo_2 != blank -%}
-    <div class="cart-print__pdf-logos">
-      {%- if section.settings.pdf_logo_1 != blank -%}
-        <div class="cart-print__pdf-logo-item">
-          {{ section.settings.pdf_logo_1 | image_url: width: 600 | image_tag: loading: 'eager', alt: shop.name, class: 'cart-print__pdf-logo' }}
-        </div>
-      {%- endif -%}
-    </div>
-  {%- endif -%}
 
   <header class="cart-print__header">
     <h1 class="cart-print__title">{{ section.settings.title }}</h1>
