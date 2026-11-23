@@ -1,6 +1,24 @@
-<section class="cart-print">
+<section class="cart-print{% if section.settings.pdf_logo_1 != blank or section.settings.pdf_logo_2 != blank %} has-pdf-logos{% endif %}">
+  {%- if section.settings.pdf_logo_1 != blank or section.settings.pdf_logo_2 != blank -%}
+    <div class="cart-print__pdf-logos">
+      {%- if section.settings.pdf_logo_1 != blank -%}
+        {{ section.settings.pdf_logo_1 | image_url: width: 600 | image_tag: loading: 'eager', alt: shop.name, class: 'cart-print__pdf-logo' }}
+      {%- endif -%}
+      {%- if section.settings.pdf_logo_2 != blank -%}
+        {{ section.settings.pdf_logo_2 | image_url: width: 600 | image_tag: loading: 'eager', alt: '', class: 'cart-print__pdf-logo' }}
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
   <header class="cart-print__header">
     <h1 class="cart-print__title">{{ section.settings.title }}</h1>
+    <div class="cart-print__logo">
+      {%- if section.settings.logo != blank -%}
+        {{ section.settings.logo | image_url: width: 600 | image_tag: loading: 'eager', alt: shop.name, class: 'cart-print__logo-img' }}
+      {%- else -%}
+        <span class="cart-print__logo-text">{{ shop.name }}</span>
+      {%- endif -%}
+    </div>
   </header>
 
   <p class="cart-print__meta">{{ 'now' | date: '%d %b %Y' }}</p>
@@ -341,6 +359,12 @@
   .cart-print__product img { width: 80px; height: 80px; object-fit: cover; }
   .cart-print__variant { font-size: 0.85em; color: #666; }
 
+  /* Logo strip: hidden on screen (the site header shows the logos), shown in PDF and print */
+  .cart-print__pdf-logos { display: none; align-items: center; justify-content: center; gap: 32px; margin-block-end: 24px; }
+  .cart-print__pdf-logo { width: auto; max-width: 45%; height: {{ section.settings.pdf_logo_height }}px; object-fit: contain; }
+  .cart-print.is-pdf .cart-print__pdf-logos { display: flex; }
+  .cart-print.has-pdf-logos.is-pdf .cart-print__logo { display: none; }
+
   /* PDF-only layout (applied to the off-screen copy used for the PDF) */
   .cart-print.is-pdf { max-width: none; padding: 0; }
   .cart-print.is-pdf .cart-print__layout { grid-template-columns: 1fr; gap: 24px; }
@@ -358,6 +382,8 @@
   @media print {
     header, footer, nav, .breadcrumbs, [id*="header"], [id*="footer"], .cart-print__actions { display: none !important; }
     .cart-print__no-print { display: none !important; }
+    .cart-print__pdf-logos { display: flex !important; }
+    .cart-print.has-pdf-logos .cart-print__logo { display: none; }
     .cart-print__qty-print { display: inline !important; }
     .cart-print { max-width: none; padding: 0; }
     .cart-print__table tr { break-inside: avoid; }
@@ -373,6 +399,10 @@
     { "type": "text", "id": "title", "label": "Title", "default": "Order Summary" },
     { "type": "image_picker", "id": "logo", "label": "Store logo", "info": "Shown on the right of the title. Falls back to the store name." },
     { "type": "range", "id": "logo_height", "label": "Logo height", "min": 24, "max": 120, "step": 4, "unit": "px", "default": 48 },
+    { "type": "header", "content": "PDF / print logos" },
+    { "type": "image_picker", "id": "pdf_logo_1", "label": "PDF logo 1 (e.g. Furncare)", "info": "Use PNG or JPG. Shown centred at the top of the PDF and printout only." },
+    { "type": "image_picker", "id": "pdf_logo_2", "label": "PDF logo 2 (e.g. Care UK)" },
+    { "type": "range", "id": "pdf_logo_height", "label": "PDF logo height", "min": 24, "max": 120, "step": 4, "unit": "px", "default": 48 },
     { "type": "text", "id": "delivery_title", "label": "Delivery form title", "default": "Delivery details" },
     { "type": "text", "id": "pdf_label", "label": "Save as PDF button label", "default": "Save as PDF" }
   ],
