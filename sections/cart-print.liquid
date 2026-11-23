@@ -12,13 +12,6 @@
 
   <header class="cart-print__header">
     <h1 class="cart-print__title">{{ section.settings.title }}</h1>
-    <div class="cart-print__logo">
-      {%- if section.settings.logo != blank -%}
-        {{ section.settings.logo | image_url: width: 600 | image_tag: loading: 'eager', alt: shop.name, class: 'cart-print__logo-img' }}
-      {%- else -%}
-        <span class="cart-print__logo-text">{{ shop.name }}</span>
-      {%- endif -%}
-    </div>
   </header>
 
   <p class="cart-print__meta">{{ 'now' | date: '%d %b %Y' }}</p>
