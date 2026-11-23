@@ -1,21 +1,6 @@
 {% liquid
   assign show_home = show_home | default: true, allow_false: true
 
-  # Same portal-company check used in the product section
-  assign portal_company_names = settings.portal_company_name | default: 'Furncare Test' | split: ','
-  assign current_company_name = customer.current_company.name | downcase | strip
-  assign is_portal_company = false
-  if request.design_mode
-    assign is_portal_company = true
-  else
-    for portal_company_name in portal_company_names
-      assign normalized_company_name = portal_company_name | downcase | strip
-      if current_company_name != blank and current_company_name == normalized_company_name
-        assign is_portal_company = true
-        break
-      endif
-    endfor
-  endif
 %}
 
 <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
@@ -184,15 +169,16 @@
 </nav>
 
 {%- comment -%}
-  Remember where the visitor came from, so the product page can show it.
+  Show the page the visitor came from in the product breadcrumbs.
 
-  1) On collection and page templates, store the current page (url + title)
-     for this browser tab only (sessionStorage).
-  2) On the product page, for portal companies only, if the visitor really
-     arrived from that stored page (checked with document.referrer), replace
-     the middle breadcrumb(s) with it:  Home > [portal page] > Product.
-     Anyone else, and anyone arriving from anywhere else (search, direct link,
-     bookmark), keeps the normal breadcrumbs above.
+  On the product page, if the visitor arrived from a page or collection on this
+  store (document.referrer), the middle of the trail is replaced with it:
+    Home > [page they came from] > Product
+
+  The title comes from sessionStorage when the previous page rendered this
+  snippet, otherwise it is read from the previous page itself (so portal
+  templates that do not render breadcrumbs still work). Arrivals from search,
+  bookmarks, other sites or the home page keep the normal breadcrumbs.
 {%- endcomment -%}
 {%- if template.name == 'collection' or template.name == 'page' -%}
   {%- assign origin_title = collection.title | default: page.title -%}
@@ -205,42 +191,62 @@
       );
     } catch (e) {}
   </script>
-{%- elsif template.name == 'product' and is_portal_company -%}
+{%- elsif template.name == 'product' -%}
   <script>
     (function () {
       try {
         var nav = document.currentScript.previousElementSibling;
         var list = nav && nav.querySelector('.breadcrumbs__list');
-        var raw = sessionStorage.getItem('breadcrumbOrigin');
-        if (!list || !raw || !document.referrer) return;
+        if (!list || !document.referrer) return;
 
-        var origin = JSON.parse(raw);
         var ref = new URL(document.referrer);
-        if (ref.origin !== location.origin || ref.pathname !== origin.url) return;
+        if (ref.origin !== location.origin) return;
+        if (!/\/(pages|collections)\//.test(ref.pathname) || ref.pathname.indexOf('/products/') !== -1) return;
 
-        var items = Array.prototype.slice.call(list.querySelectorAll('.breadcrumbs__item'));
-        var last = items[items.length - 1];
-        if (!last) return;
+        function apply(title) {
+          var items = Array.prototype.slice.call(list.querySelectorAll('.breadcrumbs__item'));
+          var last = items[items.length - 1];
+          if (!last || !title) return;
 
-        // Remove everything between Home (the item without a chevron) and the product
-        items.forEach(function (item, index) {
-          var isHome = index === 0 && !item.querySelector('svg');
-          if (item !== last && !isHome) item.remove();
-        });
+          // Remove everything between Home (the item without a chevron) and the product
+          items.forEach(function (item, index) {
+            var isHome = index === 0 && !item.querySelector('svg');
+            if (item !== last && !isHome) item.remove();
+          });
 
-        var li = document.createElement('li');
-        li.className = 'breadcrumbs__item eyebrow-2xs';
+          var li = document.createElement('li');
+          li.className = 'breadcrumbs__item eyebrow-2xs';
 
-        var icon = last.querySelector('svg');
-        if (icon) li.appendChild(icon.cloneNode(true));
+          var icon = last.querySelector('svg');
+          if (icon) li.appendChild(icon.cloneNode(true));
 
-        var link = document.createElement('a');
-        link.className = 'breadcrumbs__link eyebrow-2xs';
-        link.href = origin.url;
-        link.textContent = origin.title;
-        li.appendChild(link);
+          var link = document.createElement('a');
+          link.className = 'breadcrumbs__link eyebrow-2xs';
+          link.href = ref.pathname;
+          link.textContent = title;
+          li.appendChild(link);
 
-        list.insertBefore(li, last);
+          list.insertBefore(li, last);
+        }
+
+        var stored = null;
+        try { stored = JSON.parse(sessionStorage.getItem('breadcrumbOrigin') || 'null'); } catch (e) {}
+        if (stored && stored.url === ref.pathname && stored.title) {
+          apply(stored.title);
+          return;
+        }
+
+        // Previous page did not store its title: read it from the page itself
+        fetch(ref.pathname, { credentials: 'same-origin' })
+          .then(function (response) { return response.ok ? response.text() : ''; })
+          .then(function (html) {
+            if (!html) return;
+            var doc = new DOMParser().parseFromString(html, 'text/html');
+            var heading = doc.querySelector('main h1, #MainContent h1') || doc.querySelector('h1');
+            var title = (heading && heading.textContent.trim()) || (doc.title || '').split(/\s[–|-]\s/)[0].trim();
+            apply(title);
+          })
+          .catch(function () {});
       } catch (e) {}
     })();
   </script>
