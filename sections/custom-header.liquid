@@ -119,7 +119,7 @@
         -%}
         {%- if section.settings.show_account_link and shop.customer_accounts_enabled and section.settings.account_icon != blank -%}
           <a
-            href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}"
+            href="{% if customer %}{{ routes.account_url }}{% else %}/account/login?return_to=/ {% endif %}"
             class="kozler-custom-nav__utility-link"
             aria-label="{{ 'accessibility.account' | t }}"
           >
