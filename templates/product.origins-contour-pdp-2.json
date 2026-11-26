@@ -16,7 +16,7 @@
           "type": "collection_popup",
           "settings": {
             "collection": "create-your-perfect-origins-look",
-            "button_text": "Browse Finishes",
+            "button_text": "Browse Finish Options",
             "button_subtext": "",
             "button_border": "1.5px solid #d9d9d9",
             "button_background_color": "#fffef8",
