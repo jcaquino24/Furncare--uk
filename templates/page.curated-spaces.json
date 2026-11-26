@@ -311,13 +311,13 @@
         "images_ycgBQz": {
           "type": "images",
           "settings": {
-            "image_one": "shopify://shop_images/Screenshot_2026-11-26_at_15.09.34.png"
+            "image_one": "shopify://shop_images/Screenshot_2026-11-26_at_15.10.08.png"
           }
         },
         "content_TLWTa3": {
           "type": "content",
           "settings": {
-            "title": "Mid Level Scheme B",
+            "title": "Premium Level Scheme A",
             "title_size": "xl",
             "text": "Display an image alongside text content to highlight key information about your brand or products.",
             "button_style": "primary",
