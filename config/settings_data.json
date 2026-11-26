@@ -117,7 +117,7 @@
           "product-page": false,
           "collection-page": false,
           "search-page": false,
-          "settingCurrentFilterwfq": "none",
+          "settingCurrentFilterwfq": "boostFilter",
           "productGridElement": "",
           "productAnchorElement": "",
           "iconElement": ""
