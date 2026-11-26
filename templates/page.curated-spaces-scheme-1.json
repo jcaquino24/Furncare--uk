@@ -212,6 +212,60 @@
         "colour_scheme": "base-white-01"
       }
     },
+    "product_blocks_88dAwK": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_97HreE": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
+            "products": [
+              "torino-high-fluted-back-chair",
+              "torino-high-button-back-chair",
+              "torino-high-back-chair",
+              "torino-high-back-2-seater"
+            ],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        },
+        "product_block_DhyPem": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_97HreE",
+        "product_block_DhyPem"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "Featured Products",
+        "products_per_row": 4,
+        "max_products": 8,
+        "section_padding": "--spacing-2xl"
+      }
+    },
     "product_blocks_Fra7Pt": {
       "type": "product-blocks",
       "blocks": {
@@ -221,6 +275,8 @@
             "title": "New Arrivals",
             "handle": "new-arrivals",
             "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [
               "amaryllis-papaya",
               "amaryllis-aquamarine",
@@ -243,6 +299,8 @@
             "title": "Best Sellers",
             "handle": "best-sellers",
             "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [],
             "collection": "",
             "seed_product": "",
@@ -259,6 +317,8 @@
       "name": "Product blocks",
       "settings": {
         "title": "Featured Fabrics",
+        "products_per_row": 4,
+        "max_products": 8,
         "section_padding": "--spacing-2xl"
       }
     },
@@ -313,6 +373,7 @@
     "main",
     "richtext_iLabEM",
     "hotspots_bfFtxR",
+    "product_blocks_88dAwK",
     "product_blocks_Fra7Pt",
     "blocks_whr8ft"
   ]
