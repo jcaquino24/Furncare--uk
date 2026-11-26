@@ -27,10 +27,20 @@
             "heading_style": "title-display"
           },
           "blocks": {}
+        },
+        "tagline_9LzaNJ": {
+          "type": "tagline",
+          "name": "Tagline",
+          "settings": {
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "tagline_style": "body-md"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "heading_UeeDLH"
+        "heading_UeeDLH",
+        "tagline_9LzaNJ"
       ],
       "name": "Rich Text",
       "settings": {
