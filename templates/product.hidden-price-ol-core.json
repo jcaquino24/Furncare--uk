@@ -19,7 +19,7 @@
             "button_text": "Browse Finish Options",
             "button_subtext": "",
             "button_border": "1px solid #d9d9d9",
-            "button_background_color": "#FFFEF8",
+            "button_background_color": "#fffef8",
             "button_text_color": "#1a1a1a",
             "button_font_size": 14,
             "button_font_weight": "400",
@@ -31,11 +31,11 @@
         "collection_popup_3PDAfg": {
           "type": "collection_popup",
           "settings": {
-            "collection": "create-your-perfect-origins-look-copy-1",
+            "collection": "create-your-perfect-origins-look-copy",
             "button_text": "Browse Handle Options",
             "button_subtext": "",
             "button_border": "1px solid #d9d9d9",
-            "button_background_color": "#FFFEF8",
+            "button_background_color": "#fffef8",
             "button_text_color": "#1a1a1a",
             "button_font_size": 14,
             "button_font_weight": "400",
