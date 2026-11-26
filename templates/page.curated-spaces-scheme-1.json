@@ -37,7 +37,7 @@
         "id_anchor": "",
         "max_width_desktop": 100,
         "section_padding": "--spacing-2xl",
-        "text_alignment": "center",
+        "text_alignment": "left",
         "colour_scheme": "base-white-01",
         "enable_animation": true,
         "optional_richtext": "",
