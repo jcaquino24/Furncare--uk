@@ -11,6 +11,27 @@
   "sections": {
     "main": {
       "type": "product",
+      "blocks": {
+        "collection_popup_3PDAfg": {
+          "type": "collection_popup",
+          "settings": {
+            "collection": "create-your-perfect-origins-look-copy-1",
+            "button_text": "Browse Handle Options",
+            "button_subtext": "View products without leaving the product page",
+            "button_border": "1px solid #d9d9d9",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#1a1a1a",
+            "button_font_size": 16,
+            "button_font_weight": "700",
+            "modal_title": "Products in collection",
+            "modal_description": "Explore this collection without leaving the product page.",
+            "products_limit": 8
+          }
+        }
+      },
+      "block_order": [
+        "collection_popup_3PDAfg"
+      ],
       "settings": {
         "show_sku": true,
         "show_vat_badge": true,
@@ -19,8 +40,13 @@
         "show_call_to_action": true,
         "show_collection_popup": true,
         "contact_form_html": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+        "contact_trigger_text": "Need help? Contact us",
+        "alt_contact_trigger_text": "Need help? Contact us",
+        "alt_contact_form_tags": "",
+        "alt_contact_form_html": "",
         "lead_time_icon": "shopify://shop_images/dark-delivery-icon.svg",
         "lead_time_text": "Delivered",
+        "specifications_title": "Specifications",
         "product_swatch_information": "",
         "show_thumbnails": true,
         "zoom": true,
@@ -46,6 +72,8 @@
             "title": "New Arrivals",
             "handle": "new-arrivals",
             "product_feed_source": "collection",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [],
             "collection": "",
             "seed_product": "",
@@ -61,6 +89,8 @@
             "title": "Best Sellers",
             "handle": "best-sellers",
             "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
             "products": [],
             "collection": "",
             "seed_product": "",
@@ -77,6 +107,8 @@
       "name": "Product blocks",
       "settings": {
         "title": "You may also like",
+        "products_per_row": 4,
+        "max_products": 8,
         "section_padding": "--spacing-2xl"
       }
     }
