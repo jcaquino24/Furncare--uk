@@ -12,24 +12,41 @@
     "main": {
       "type": "product",
       "blocks": {
+        "collection_popup_dGVTr7": {
+          "type": "collection_popup",
+          "settings": {
+            "collection": "create-your-perfect-origins-look",
+            "button_text": "Browse Finish Options",
+            "button_subtext": "",
+            "button_border": "1px solid #d9d9d9",
+            "button_background_color": "#FFFEF8",
+            "button_text_color": "#1a1a1a",
+            "button_font_size": 14,
+            "button_font_weight": "400",
+            "modal_title": "Create Your Perfect Origins Look",
+            "modal_description": "Create an Origins furniture look perfectly suited to your care environment. Choose one wood finish or colour across the entire piece for a coordinated design, or combine finishes across the top and body to create a warm, natural or distinctive two-tone look.",
+            "products_limit": 14
+          }
+        },
         "collection_popup_3PDAfg": {
           "type": "collection_popup",
           "settings": {
             "collection": "create-your-perfect-origins-look-copy-1",
             "button_text": "Browse Handle Options",
-            "button_subtext": "View products without leaving the product page",
+            "button_subtext": "",
             "button_border": "1px solid #d9d9d9",
-            "button_background_color": "#ffffff",
+            "button_background_color": "#FFFEF8",
             "button_text_color": "#1a1a1a",
-            "button_font_size": 16,
-            "button_font_weight": "700",
-            "modal_title": "Products in collection",
-            "modal_description": "Explore this collection without leaving the product page.",
+            "button_font_size": 14,
+            "button_font_weight": "400",
+            "modal_title": "Create Your Perfect Origins Look",
+            "modal_description": "Create an Origins look perfectly suited to your space with our contour handle options. Choose the standard handle or upgrade to a black or gold finish for a more elevated, considered look across your care home furniture.",
             "products_limit": 8
           }
         }
       },
       "block_order": [
+        "collection_popup_dGVTr7",
         "collection_popup_3PDAfg"
       ],
       "settings": {
