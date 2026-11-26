@@ -95,11 +95,6 @@
         "disabled": true,
         "settings": {}
       },
-      "16556818989376849476": {
-        "type": "shopify://apps/password-lock-pages/blocks/password_protection/4dc6a6fa-3301-49ba-95e6-03c694327386",
-        "disabled": false,
-        "settings": {}
-      },
       "7870687481494312845": {
         "type": "shopify://apps/wishlist-hero/blocks/app-embed/a9a5079b-59e8-47cb-b659-ecf1c60b9b72",
         "disabled": true,
@@ -113,10 +108,20 @@
           "customLoginUrl": "/account/login"
         }
       },
-      "10145915593124433170": {
-        "type": "shopify://apps/sp-request-a-quote-rfq/blocks/mp-request-for-quote-embed/019a3441-fea6-7e7b-ada9-3c4f6e8c5569",
+      "1956716335153262577": {
+        "type": "shopify://apps/quotes-guru-rfq/blocks/app_config/c0f70336-c24d-4c0b-b5cb-0972b425a28d",
         "disabled": false,
-        "settings": {}
+        "settings": {
+          "wfqPageBuilder": "none",
+          "home-page": false,
+          "product-page": false,
+          "collection-page": false,
+          "search-page": false,
+          "settingCurrentFilterwfq": "none",
+          "productGridElement": "",
+          "productAnchorElement": "",
+          "iconElement": ""
+        }
       }
     }
   },
