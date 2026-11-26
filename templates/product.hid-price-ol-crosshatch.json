@@ -1,0 +1,137 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "blocks": {
+        "collection_popup_dGVTr7": {
+          "type": "collection_popup",
+          "settings": {
+            "collection": "create-your-perfect-origins-look",
+            "button_text": "Browse Finish Options",
+            "button_subtext": "",
+            "button_border": "1px solid #d9d9d9",
+            "button_background_color": "#FFFEF8",
+            "button_text_color": "#1a1a1a",
+            "button_font_size": 14,
+            "button_font_weight": "400",
+            "modal_title": "Create Your Perfect Origins Look",
+            "modal_description": "Create an Origins furniture look perfectly suited to your care environment. Choose one wood finish or colour across the entire piece for a coordinated design, or combine finishes across the top and body to create a warm, natural or distinctive two-tone look.",
+            "products_limit": 14
+          }
+        },
+        "collection_popup_3PDAfg": {
+          "type": "collection_popup",
+          "settings": {
+            "collection": "create-your-perfect-origins-look-copy-1",
+            "button_text": "Browse Handle Options",
+            "button_subtext": "",
+            "button_border": "1px solid #d9d9d9",
+            "button_background_color": "#FFFEF8",
+            "button_text_color": "#1a1a1a",
+            "button_font_size": 14,
+            "button_font_weight": "400",
+            "modal_title": "Create Your Perfect Origins Look",
+            "modal_description": "Create an Origins look perfectly suited to your space with our contour handle options. Choose the standard handle or upgrade to a black or gold finish for a more elevated, considered look across your care home furniture.",
+            "products_limit": 8
+          }
+        }
+      },
+      "block_order": [
+        "collection_popup_dGVTr7",
+        "collection_popup_3PDAfg"
+      ],
+      "settings": {
+        "show_sku": true,
+        "show_vat_badge": true,
+        "show_free_sample_label": true,
+        "show_price": false,
+        "show_call_to_action": true,
+        "show_collection_popup": true,
+        "contact_form_html": "<script src=\"https://js-eu1.hsforms.net/forms/embed/145723791.js\" defer></script>\n<div class=\"hs-form-frame\" data-region=\"eu1\" data-form-id=\"09631399-dabb-4b06-95ad-b7723e4d52c2\" data-portal-id=\"145723791\"></div>",
+        "contact_trigger_text": "Need help? Contact us",
+        "alt_contact_trigger_text": "Need help? Contact us",
+        "alt_contact_form_tags": "",
+        "alt_contact_form_html": "",
+        "lead_time_icon": "shopify://shop_images/dark-delivery-icon.svg",
+        "lead_time_text": "Delivered",
+        "specifications_title": "Specifications",
+        "product_swatch_information": "",
+        "show_thumbnails": true,
+        "zoom": true,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "arrows": true,
+        "enlarge": true,
+        "show_design_services": false,
+        "design_services_text": "Interior design services",
+        "design_services_url": "",
+        "sustainability_content": "",
+        "warranty_content": "",
+        "shipping_returns_content": "",
+        "security_grading_title": "Security Grading"
+      }
+    },
+    "product_blocks_tncMV6": {
+      "type": "product-blocks",
+      "blocks": {
+        "product_block_YAcrU9": {
+          "type": "product_block",
+          "settings": {
+            "title": "New Arrivals",
+            "handle": "new-arrivals",
+            "product_feed_source": "collection",
+            "use_custom_collection": false,
+            "match_similar_names": false,
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": true,
+            "recommendation_intent": "related",
+            "colour_scheme": "base-white-01"
+          }
+        },
+        "product_block_HCFHCd": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "title": "Best Sellers",
+            "handle": "best-sellers",
+            "product_feed_source": "product_list",
+            "use_custom_collection": false,
+            "match_similar_names": false,
+            "products": [],
+            "collection": "",
+            "seed_product": "",
+            "use_current_product": false,
+            "recommendation_intent": "related",
+            "colour_scheme": "warm-stone"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_YAcrU9",
+        "product_block_HCFHCd"
+      ],
+      "name": "Product blocks",
+      "settings": {
+        "title": "You may also like",
+        "products_per_row": 4,
+        "max_products": 8,
+        "section_padding": "--spacing-2xl"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_blocks_tncMV6"
+  ]
+}
